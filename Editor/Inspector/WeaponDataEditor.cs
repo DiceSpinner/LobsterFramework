@@ -36,10 +36,8 @@ namespace LobsterFramework.Editors
             {
                 DrawWeaponStats(weaponData);
             }
-            catch (ArgumentException)
-            {
-                // Ignore this error
-            }
+            catch (ArgumentException) { }
+
             if (EditorGUI.EndChangeCheck())
             {
                 serializedObject.ApplyModifiedProperties();
@@ -126,10 +124,18 @@ namespace LobsterFramework.Editors
                     {
                         var m = typeof(WeaponData).GetMethod("RemoveWeaponStat", BindingFlags.Instance | BindingFlags.NonPublic);
                         MethodInfo removed = m.MakeGenericMethod(selectedWeaponStat.GetType());
+                        DestroyImmediate(weaponStatsEditors[type]);
                         weaponStatsEditors.Remove(type);
                         removed.Invoke(weaponData, null);
                     }
                 }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (Editor editor in weaponStatsEditors.Values) {
+                DestroyImmediate(editor);
             }
         }
     }

@@ -7,9 +7,6 @@ namespace LobsterFramework.AbilitySystem
 {
     public class LightWeaponAttackConfig : AbilityConfig
     {
-        [HideInInspector]
-        public bool signaled;
-        [HideInInspector]
-        public Weapon currentWeapon;
+
     }
 }

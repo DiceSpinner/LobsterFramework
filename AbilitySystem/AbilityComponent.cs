@@ -9,25 +9,25 @@ namespace LobsterFramework.AbilitySystem
     /// </summary>
     public abstract class AbilityComponent : ScriptableObject
     {
-        public void Reset()
-        {
-            OnClose();
-            Initialize();
-        }
-
         /// <summary>
         /// Initialize the component
         /// </summary>
-        public virtual void Initialize() { }
+        internal protected virtual void Initialize() { }
 
         /// <summary>
         /// Callback before disabled
         /// </summary>
-        public virtual void OnClose() { }
+        internal protected virtual void OnClose() { }
 
         /// <summary>
         /// Callback to update internal state on each frame during the regular unity update cycle
         /// </summary>
-        public virtual void Update() { }
+        internal protected virtual void Update() { }
+
+        internal void Reset()
+        {
+            OnClose();
+            Initialize();
+        }
     }
 }

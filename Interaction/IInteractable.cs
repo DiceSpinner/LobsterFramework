@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Runtime.InteropServices;
 
 namespace LobsterFramework.Interaction
 {
+    /// <summary>
+    /// The types of interactions that are possible
+    /// </summary>
     public enum InteractionType
     {
         Primary,
@@ -14,6 +16,9 @@ namespace LobsterFramework.Interaction
         Quaternary
     }
 
+    /// <summary>
+    /// Represents the avaibility of an object for interaction
+    /// </summary>
     public struct InteractionPrompt
     {
         public static InteractionPrompt none = new() { };
@@ -39,7 +44,10 @@ namespace LobsterFramework.Interaction
         }
     }
 
-    public abstract class InteractableObject : MonoBehaviour
+    /// <summary>
+    /// A marker interface for interactable objects
+    /// </summary>
+    public interface IInteractable
     {
     }
 }

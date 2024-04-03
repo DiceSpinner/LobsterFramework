@@ -1,6 +1,4 @@
-using PlasticPipe.PlasticProtocol.Messages;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -158,9 +156,9 @@ namespace LobsterFramework.Interaction
                     Quantity -= 1;
                 }
             }
-            catch
+            catch(Exception e)
             {
-                Debug.Log("Cannot use consume on this item!");
+                Debug.Log($"Cannot use consume on this item: {e.Message}");
             }
         }
 

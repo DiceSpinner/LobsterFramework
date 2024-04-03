@@ -6,21 +6,21 @@ using System;
 namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
-    [ComponentRequired(typeof(WeaponWielder))]
+    [ComponentRequired(typeof(WeaponManager))]
     public class OffhandAbility : Ability
     {
-        private WeaponWielder weaponWielder;
+        private WeaponManager weaponWielder;
         protected override void Initialize()
         {
-            weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
+            weaponWielder = abilityManager.GetComponentInBoth<WeaponManager>();
         }
 
         protected override bool ConditionSatisfied()
         {
-            if (weaponWielder.Offhand != null)
+            if (weaponWielder.Offhand != null && (weaponWielder.Mainhand == null || !weaponWielder.Mainhand.DoubleHanded))
             {
                 ValueTuple<Type, string> setting = weaponWielder.Offhand.AbilitySetting;
-                return abilityRunner.IsAbilityReady(setting.Item1, setting.Item2);
+                return abilityManager.IsAbilityReady(setting.Item1, setting.Item2);
             }
             return false;
         }
@@ -28,8 +28,13 @@ namespace LobsterFramework.AbilitySystem
         protected override void OnEnqueue()
         {
             ValueTuple<Type, string> setting = weaponWielder.Offhand.AbilitySetting;
-            abilityRunner.EnqueueAbility(setting.Item1, setting.Item2);
-            JoinAsSecondary(setting.Item1, setting.Item2);
+            if (abilityManager.EnqueueAbility(setting.Item1, setting.Item2))
+            {
+                JoinAsSecondary(setting.Item1, setting.Item2);
+            }
+            else {
+                SuspendInstance(ConfigName);
+            }
         }
 
         protected override bool Action()
@@ -38,6 +43,6 @@ namespace LobsterFramework.AbilitySystem
             return true;
         }
     }
-    public class OffhandAbilityPipe : AbilityPipe { }
+    public class OffhandAbilityChannel : AbilityChannel { }
     public class OffhandAbilityRuntime : AbilityRuntime { }
 }

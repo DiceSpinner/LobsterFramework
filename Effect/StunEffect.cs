@@ -11,7 +11,7 @@ namespace LobsterFramework.Effects
     {
         private CombinedValueEffector<bool> abilityLock;
         private CombinedValueEffector<bool> moveLock;
-        private AbilityRunner abilityRunner;
+        private AbilityManager abilityRunner;
         private MovementController moveControl;
 
         protected override void OnApply()
@@ -23,7 +23,7 @@ namespace LobsterFramework.Effects
                 moveLock.Apply(true);
             }
             
-            abilityRunner = processor.GetComponentInBoth<AbilityRunner>();
+            abilityRunner = processor.GetComponentInBoth<AbilityManager>();
             if (abilityRunner != null) {
                 abilityLock = abilityRunner.actionLock.MakeEffector();
                 abilityLock.Apply(true);

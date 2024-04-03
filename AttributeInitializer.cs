@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Reflection;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.Interaction;
+using LobsterFramework.AI;
 
 namespace LobsterFramework.Utility
 {
@@ -14,16 +15,24 @@ namespace LobsterFramework.Utility
         public static void Initialize(Assembly assembly)
         {
             Type[] types = assembly.GetTypes();
+
+            // AbilitySystem
             AddAbilityMenu(types);
             AddAbilityStatMenu(types);
             AddComponentRequirement(types); 
             AddAbilityStatRequirement(types);
-            AddInteractions(types);
             AddWeaponStatMenu(types);
             AddWeaponArtMenu(types);
             AddWeaponStatRequirement(types);
             AddOffhandAbilitySpec(types);
             AddWeaponDataEntries(types);
+
+            // Interaction
+            AddInteractions(types);
+
+            // AI
+            AddStateMenu(types);
+            AddStateTransition(types);
         }
 
         private static void AddAbilityMenu(Type[] types)
@@ -123,6 +132,30 @@ namespace LobsterFramework.Utility
             foreach (Type type in types)
             {
                 WeaponAnimationAttribute info = type.GetCustomAttribute<WeaponAnimationAttribute>();
+                if (info != null)
+                {
+                    info.Init(type);
+                }
+            }
+        }
+
+        private static void AddStateMenu(Type[] types)
+        {
+            foreach (Type type in types)
+            {
+                AddStateMenuAttribute info = type.GetCustomAttribute<AddStateMenuAttribute>();
+                if (info != null)
+                {
+                    info.Init(type);
+                }
+            }
+        }
+
+        private static void AddStateTransition(Type[] types)
+        {
+            foreach (Type type in types)
+            {
+                StateTransitionAttribute info = type.GetCustomAttribute<StateTransitionAttribute>();
                 if (info != null)
                 {
                     info.Init(type);

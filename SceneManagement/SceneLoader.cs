@@ -1,4 +1,5 @@
-using System.Collections;
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,12 +12,19 @@ namespace LobsterFramework
 	{
 		[SerializeField] private SceneEventChannel loadChannel;
 		[SerializeField] private SceneEventChannel unloadChannel;
+		[SerializeField] List<string> scenesToLoad;
 
-		private void Start()
-		{
-			loadChannel.OnEventRaised += LoadScene;
-			unloadChannel.OnEventRaised += UnloadScene;
-		}
+        private void Awake()
+        {
+            loadChannel.OnEventRaised += LoadScene;
+            unloadChannel.OnEventRaised += UnloadScene;
+			foreach (string scene in scenesToLoad)
+			{
+				if (!SceneManager.GetSceneByName(scene).isLoaded) {
+                    SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+                }
+			}
+        }
 
 		private void LoadScene(Scene scene)
 		{

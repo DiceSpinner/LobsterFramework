@@ -13,48 +13,45 @@ namespace LobsterFramework.AI
     {
         [SerializeField] private List<ControllerData> controllerDatas;
         [SerializeField] private EntityGroup targetGroup;
-        [SerializeField] private AbilityRunner abilityRunner;
+        [SerializeField] private AbilityManager abilityManager;
         [SerializeField] private StateMachine stateMachine;
-        [SerializeField] private AbilityRunner playerAbilityRunner;
+        [SerializeField] private AbilityManager playerAbilityManager;
         [SerializeField] private float visableDegree;
         [SerializeField] private List<MonoBehaviour> utilities;
+        [SerializeField] private Entity entity;
 
         public Entity target;
         private Transform _transform;
         private Collider2D _collider;
         private AIPathFinder pathFinder;
         private GridGraph gridGraph;
-        private Dictionary<Type, ControllerData> controllerData;
-        private Entity entityComponent;
+        
         private MovementController moveControl;
 
 
-        public AbilityRunner AbilityRunner { get { return abilityRunner; }}
-        public AbilityRunner PlayerAbilityRunner { get { return playerAbilityRunner; } }
-        public Entity GetEntity { get { return entityComponent; } }
+        public AbilityManager AbilityManager { get { return abilityManager; }}
+        public AbilityManager PlayerAbilityRunner { get { return playerAbilityManager; } }
+        public Entity GetEntity { get { return entity; } }
         private void Awake()
         {
             gridGraph = AstarPath.active.data.gridGraph;
-            controllerData = new();
-            foreach (ControllerData data in controllerDatas)
-            {
-                controllerData[data.GetType()] = data;
-            }
-            entityComponent = GetComponent<Entity>();
             moveControl = GetComponent<MovementController>();
             _transform = GetComponent<Transform>();
             _collider = GetComponent<Collider2D>();
             pathFinder = GetComponent<AIPathFinder>();
         }
 
-        private void OnEnable()
+        private void FixedUpdate()
         {
-            moveControl.onMovementBlocked += BlockMovement;
-        }
-
-        private void OnDisable()
-        {
-            moveControl.onMovementBlocked -= BlockMovement;
+            if (isTargeting) {
+                if (target != null)
+                {
+                    moveControl.RotateForwardDirection(target.transform.position - transform.position);
+                }
+                else {
+                    isTargeting = false;
+                }
+            }
         }
 
         private void OnDrawGizmos()
@@ -66,7 +63,6 @@ namespace LobsterFramework.AI
                 Draw.Gizmos.Line(_transform.position, _transform.position + (Quaternion.Euler(0, 0, -45) * transform.up).normalized * 5, Color.blue);
                 Draw.Gizmos.Line(_transform.position, pathFinder.Destination, Color.yellow);
             }
-          
         }
 
         public T GetUtil<T>() where T : MonoBehaviour {
@@ -78,24 +74,13 @@ namespace LobsterFramework.AI
             return default;
         }
 
-        private void BlockMovement(bool value)
-        {
-            if (stateMachine != null)
-            {
-                stateMachine.enabled = !value;
-            }
-            if (pathFinder != null)
-            {
-                pathFinder.enabled = !value;
-            }
-        }
-
         public T GetControllerData<T>() where T : ControllerData
         {
             Type t = typeof(T);
-            if (controllerData.TryGetValue(t, out ControllerData value))
-            {
-                return (T)value;
+            foreach (ControllerData data in controllerDatas) {
+                if (data.GetType() == t) {
+                    return (T)data;
+                }
             }
             return null;
         }
@@ -126,7 +111,7 @@ namespace LobsterFramework.AI
             }
             target = null;
         }
-        public void stopChaseTarget()
+        public void StopChaseTarget()
         {
             if (target != null)
             {
@@ -135,7 +120,7 @@ namespace LobsterFramework.AI
         }
         public bool SearchTarget(float sightRange)
         {
-            Damage info = entityComponent.LatestDamageInfo;
+            Damage info = entity.LatestDamageInfo;
             if (info.source != null)
             {
                 target = info.source;
@@ -155,14 +140,13 @@ namespace LobsterFramework.AI
             }
             return false;
         }
-        public bool TargetVisible(Vector3 position,Vector3 direction, float range)
+        public bool TargetVisibleAtPosition(Vector3 position,Vector3 direction, float range)
         {
             
             float angle = Vector3.Angle(direction, target.transform.position-position);
             Debug.Log(angle);
             if (angle > visableDegree || angle < -visableDegree)
             {
-                Debug.Log("check false");
                 return false;
             }
             RaycastHit2D hit = AIUtility.Raycast2D(gameObject, position, target.transform.position - position, range, AIUtility.VisibilityMask);
@@ -171,23 +155,33 @@ namespace LobsterFramework.AI
                 Entity t = hit.collider.GetComponent<Entity>();
                 if (t != null && t == target)
                 {
-                    Debug.Log("check true");
                     return true;
                 }
             }
-            Debug.Log("check false");
             return false;
         }
         public void PatrolLine(Vector3 postion)
         {
-            pathFinder.MoveTowards(postion);
+            pathFinder.MoveTo(postion);
         }
-        public void KeepDistanceFromTarget(Vector3 position, float distanceNeeded , float movedistance)
+
+        /// <summary>
+        /// Attemps to keep distance from the target
+        /// </summary>
+        /// <param name="distance">The amount of distance needed</param>
+        /// <param name="rotateDegree"> The relative angle to rotate around the target </param>
+        public void KeepDistanceFromTarget( float distance , float rotateDegree, float stopDistance = 1)
         {
-            Quaternion rotation = Quaternion.AngleAxis(90, Vector3.forward);
-            Vector3 vector = (position - target.transform.position).normalized* distanceNeeded;
-            Vector3 tangengvector = rotation * vector;
-            pathFinder.MoveTowards(tangengvector.normalized * movedistance + target.transform.position +vector);
+            StopChaseTarget();
+            Quaternion rotation = Quaternion.AngleAxis(rotateDegree, Vector3.forward);
+            Vector3 viewDirection = transform.position - target.transform.position;
+            viewDirection = (rotation * viewDirection).normalized * distance;
+
+            Vector3 finalPosition = target.transform.position + viewDirection;
+            Vector3 finalDirection = (finalPosition - transform.position);
+            float targetDistance =finalDirection.magnitude;
+            Debug.DrawLine(transform.position, finalPosition, Color.magenta);
+            moveControl.MoveInDirection(finalDirection, targetDistance / stopDistance);
         }
         public void Wander(int wanderRadius)
         {
@@ -196,13 +190,20 @@ namespace LobsterFramework.AI
             if (nodes.Count > 0)
             {
                 Vector3 dest = PathUtilities.GetPointsOnNodes(nodes, 1)[0];
-                pathFinder.MoveTowards(dest);
+                pathFinder.MoveTo(dest);
             }
         }
 
         public void LookTowards()
         {
-            moveControl.RotateTowards(target.transform.position - _transform.position);
+            moveControl.RotateForwardDirection(target.transform.position - _transform.position);
+        }
+
+        private bool isTargeting = false;
+        public void SetFaceTarget(bool lookAt) {
+            if (target != null) {
+                isTargeting = lookAt;
+            }
         }
 
         public void MoveInDirection(Vector3 direction, float distance)
@@ -215,12 +216,12 @@ namespace LobsterFramework.AI
             RaycastHit2D hit = Physics2D.Raycast(_transform.position, direction, distance + offset);
             if (hit.collider == null)
             {
-                pathFinder.MoveTowards(_transform.position + direction.normalized * distance);
+                pathFinder.MoveTo(_transform.position + direction.normalized * distance);
             }
             else
             {
                 Vector2 dir = (Vector2)direction;
-                pathFinder.MoveTowards(hit.point - dir.normalized * offset);
+                pathFinder.MoveTo(hit.point - dir.normalized * offset);
             }
         }
 

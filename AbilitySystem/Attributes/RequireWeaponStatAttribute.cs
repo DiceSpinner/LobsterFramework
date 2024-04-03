@@ -1,6 +1,4 @@
-using PlasticPipe.PlasticProtocol.Messages;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,7 +38,7 @@ namespace LobsterFramework.AbilitySystem
         /// <param name="abilityType">The type of the ability being queried</param>
         /// <param name="weapon">The weapon being queried</param>
         /// <returns>True if the weapon contains all of the required stats, otherwise false</returns>
-        public static bool HasWeaponStats(Type abilityType, WeaponWielder weaponWielder) {
+        public static bool HasWeaponStats(Type abilityType, WeaponManager weaponWielder) {
             if (!abilityType.IsSubclassOf(typeof(WeaponAbility))) {
                 Debug.LogWarning("The ability type being queried is not a WeaponAbility!");
                 return false;

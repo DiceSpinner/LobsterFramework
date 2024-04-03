@@ -4,27 +4,28 @@ using UnityEngine;
 using System;
 using LobsterFramework.Utility;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace LobsterFramework.AI
 {
     public class StateMachine : MonoBehaviour
     {
         [SerializeField] private AIController controller;
-        [SerializeField] internal XList<State> allStates;
-        [DisableInPlayMode]
-        [SerializeField] private State initialState;
+        [SerializeField] internal StateData inputData;
+        internal StateData runtimeData;
+
         [ReadOnly]
         [SerializeField] private State currentState;
         [HideInInspector]
         [SerializeField] internal string statePath;    
 
-        internal readonly Dictionary<Type, State> states = new();
-
-
         #region Coroutine
         public readonly CoroutineRunner coroutineRunner = new();
         private Type switchingTo = null;
 
-        public Utility.Coroutine RunCoroutine(IEnumerator<CoroutineOption> coroutine) {
+        public Utility.Coroutine RunCoroutine(IEnumerable<CoroutineOption> coroutine) {
             return coroutineRunner.AddCoroutine(coroutine);
         }
         #endregion
@@ -35,42 +36,35 @@ namespace LobsterFramework.AI
             set { currentState = value; }
         }
 
-        void Start()
+        private void OnEnable()
         {
-            ReferenceCheck();
-
-            foreach (State s in allStates)
-            {
-                State state = Instantiate(s);
-                state.name = s.name;
-                states[state.GetType()] = state;
-                state.controller = controller;
-                state.stateMachine = this;
-                state.InitializeFields(gameObject);
+            if (!inputData.Validate()) {
+                Debug.Log("Input state data is missing initial state or missing transitions.");
+                return;
             }
-            if (initialState == null)
-            {
-                initialState = allStates[0];
-            }
-            currentState = states[initialState.GetType()];
+            runtimeData = inputData.Clone();
+            currentState = runtimeData.initialState;
+            runtimeData.Initialize(this, controller);
         }
 
-        private void ReferenceCheck()
+        private void OnDisable()
         {
-            if (initialState == null)
-            {
-                Debug.LogWarning("Initial state of the state machine is not set!");
-            }
+            runtimeData.Close();
+            Destroy(runtimeData);
         }
 
         public void Update()
         {
+            if (currentState == null) {
+                return;
+            }
+
             // Execute Coroutine
             if (coroutineRunner.Size > 0) {
                 coroutineRunner.Run();
                 if (switchingTo != null && coroutineRunner.Size == 0) {
                     currentState.OnExit();
-                    currentState = states[switchingTo];
+                    currentState = runtimeData.states[switchingTo.AssemblyQualifiedName];
                     currentState.OnEnter();
                     switchingTo = null;
                 }
@@ -82,10 +76,16 @@ namespace LobsterFramework.AI
 
             if (target != null)
             {
+                if (!runtimeData.states.ContainsKey(target.AssemblyQualifiedName)) {
+                    Debug.LogError($"Cannot transition to {target.FullName}. This state is not defined in the StateData.");
+                    enabled = false;
+                    return;
+                }
+
                 if (coroutineRunner.Size == 0)
                 {
                     currentState.OnExit();
-                    currentState = states[target];
+                    currentState = runtimeData.states[target.AssemblyQualifiedName];
                     currentState.OnEnter();
                 }
                 else { // Coroutine is called by a state, postpone state switch until coroutine is finished
@@ -94,41 +94,28 @@ namespace LobsterFramework.AI
             }
         }
 
-        public void OnDestroy()
-        {
-            foreach (State s in states.Values)
+#if UNITY_EDITOR
+        public void SaveRuntimeData(string path) {
+            if (path.StartsWith(Application.dataPath))
             {
-                Destroy(s);
+                path = "Assets/" + path[Application.dataPath.Length..];
+            }
+            else if (path == "")
+            {
+                path = AssetDatabase.GetAssetPath(inputData);
+            }
+            else
+            {
+                Debug.LogError($"Invalid path {path}, can't save state data!");
+                return;
+            }
+            if (runtimeData != null)
+            {
+                StateData cloned = runtimeData.Clone();
+                cloned.SaveAsAsset(path);
+                inputData = cloned;
             }
         }
-
-        /// <summary>
-        /// Reset the state by replacing it with a copy with parameters set to the its initial values at the start of play mode
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        internal State ResetState(int index){
-            try { 
-                State state = allStates[index];
-                Type type = state.GetType();
-                bool currentlyRunning = states[type] == currentState;
-
-                DestroyImmediate(states[type]);
-                State newState = Instantiate(state);
-                newState.name = state.name;
-                states[type] = newState;
-                newState.controller = controller;
-                newState.stateMachine = this;
-                newState.InitializeFields(gameObject);
-                if (currentlyRunning) {
-                    newState.OnEnter();
-                    currentState = newState;
-                }
-                return newState;
-            } catch(Exception e) {
-                Debug.LogException(e);
-            }
-            return null;
-        }
+#endif
     }
 }

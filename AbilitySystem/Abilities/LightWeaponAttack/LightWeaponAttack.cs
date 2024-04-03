@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands;
 using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
     [RequireAbilityComponents(typeof(DamageModifier))]
-    [ComponentRequired(typeof(WeaponWielder))]
+    [ComponentRequired(typeof(WeaponManager))]
     public class LightWeaponAttack : WeaponAbility
     {
         [SerializeField] private TargetSetting targets;
@@ -18,62 +19,56 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void Init()
         {
-            attacker = WeaponWielder.Wielder;
+            attacker = WeaponManager.Wielder;
             moveControl = attacker.GetComponent<MovementController>();
-            damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
+            damageModifier = abilityManager.GetAbilityComponent<DamageModifier>();
             move = moveControl.moveSpeedModifier.MakeEffector();
             rotate = moveControl.rotateSpeedModifier.MakeEffector();
         }
 
-        protected override bool WConditionSatisfied()
-        {
-            return WeaponWielder.GetAbilityClip(GetType(), WeaponWielder.Mainhand.WeaponType) != null && WeaponWielder.Mainhand.state != WeaponState.Attacking;
-        }
-
         protected override void OnCoroutineEnqueue()
         {
-            LightWeaponAttackConfig c = (LightWeaponAttackConfig)Config;
-            c.currentWeapon = WeaponWielder.Mainhand;
-            SubscribeWeaponEvent(c.currentWeapon);
-            c.signaled = false;
-            move.Apply(c.currentWeapon.LMoveSpeedModifier);
-            rotate.Apply(c.currentWeapon.LRotationSpeedModifier);
-            abilityRunner.StartAnimation(this, ConfigName, WeaponWielder.GetAbilityClip(GetType(), WeaponWielder.Mainhand.WeaponType), c.currentWeapon.AttackSpeed);
+            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
+            runtime.currentWeapon = WeaponManager.Mainhand;
+
+            AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip(WeaponManager.Mainhand.WeaponType, typeof(LightWeaponAttack));
+            abilityManager.StartAnimation(this, ConfigName, animation, runtime.currentWeapon.AttackSpeed);
+
+            SubscribeWeaponEvent(runtime.currentWeapon);
+            move.Apply(runtime.currentWeapon.LMoveSpeedModifier);
+            rotate.Apply(runtime.currentWeapon.LRotationSpeedModifier);
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine()
+        protected override IEnumerable<CoroutineOption> Coroutine()
         {
-            LightWeaponAttackConfig c = (LightWeaponAttackConfig)Config;
-            // Wait for signal to attack
-            while (!c.signaled)
-            {
-                yield return CoroutineOption.Continue;
-            }
-            c.signaled = false;
+            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
 
-            c.currentWeapon.Enable();
-            // Wait for signal of recovery
-            while (!c.signaled)
-            {
-                yield return CoroutineOption.Continue;
-            }
-            c.signaled = false;
-            c.currentWeapon.Disable();
+            do {
+                // Wait for signal to attack
+                while (!runtime.animationSignaled)
+                {
+                    yield return CoroutineOption.Continue;
+                }
 
-            move.Release();
-            rotate.Release();
+                runtime.currentWeapon.Enable();
+                // Wait for signal of end attack
+                while (!runtime.animationSignaled)
+                {
+                    yield return CoroutineOption.Continue;
+                }
+                runtime.currentWeapon.Pause();
 
-            // Wait for animation to finish
-            while (true)
-            {
-                yield return CoroutineOption.Continue;
-            }
+                // Wait for animation signal of end recovery
+                while (!runtime.animationSignaled) {
+                    yield return CoroutineOption.Continue;
+                }
+            } while (runtime.inputSignaled); // Continue to perform attack if the user signal is received
         }
 
         protected override void OnCoroutineFinish(){
-            LightWeaponAttackConfig l = (LightWeaponAttackConfig)Config;
-            UnSubscribeWeaponEvent(l.currentWeapon);
-            l.currentWeapon.Disable();
+            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
+            UnSubscribeWeaponEvent(runtime.currentWeapon);
+            runtime.currentWeapon.Disable();
             move.Release();
             rotate.Release();
         }
@@ -83,12 +78,19 @@ namespace LobsterFramework.AbilitySystem
             throw new System.NotImplementedException();
         }
 
-        protected override void Signal(AnimationEvent animationEvent)
+        // Animation signal
+        protected override void OnSignaled(AnimationEvent animationEvent)
         {
-            if (animationEvent != null)
-            {
-                LightWeaponAttackConfig c = (LightWeaponAttackConfig)Config;
-                c.signaled = true;
+            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
+            runtime.animationSignaled.Put(true);
+        }
+
+        // Player input
+        protected override void OnSignaled()
+        {
+            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
+            if (runtime.currentWeapon.state != WeaponState.Attacking) {
+                runtime.inputSignaled.Put(true);
             }
         }
 
@@ -106,32 +108,36 @@ namespace LobsterFramework.AbilitySystem
 
         private void OnEntityHit(Entity entity)
         {
-            LightWeaponAttackConfig config = (LightWeaponAttackConfig)Config;
+            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
             if (targets.IsTarget(entity))
             {
-                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
+                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else {
-                config.currentWeapon.SetOnHitDamage(Damage.none);
+                runtime.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
 
         private void OnWeaponHit(Weapon weapon)
         {
-            LightWeaponAttackConfig config = (LightWeaponAttackConfig)Config;
+            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
             
             if (targets.IsTarget(weapon.Entity))
             {
-                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
+                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else
             {
-                config.currentWeapon.SetOnHitDamage(Damage.none);
+                runtime.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
     }
 
-    public class LightWeaponAttackPipe : AbilityPipe { }
+    public class LightWeaponAttackChannel : AbilityChannel { }
 
-    public class LightWeaponAttackRuntime : AbilityCoroutineRuntime { }
+    public class LightWeaponAttackRuntime : AbilityCoroutineRuntime {
+        public Weapon currentWeapon;
+        public Signal<bool> animationSignaled = new();
+        public Signal<bool> inputSignaled = new();
+    }
 }

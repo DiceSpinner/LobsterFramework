@@ -6,12 +6,9 @@ using UnityEngine;
 namespace LobsterFramework.Utility
 {
     /// <summary>
-    /// Stats that can combined, meaning it can be affected by multiple effectors. <br/>
-    /// i.e The player may be unable to act for some time due to multiple sources of negative effects, <br/>
-    /// and the flag setting (CombinedStat) that governs this player state will remain unchanged if not <br/> 
-    /// all of these effects (effectors) are removed.
+    /// Represents the combined value of a set of values of the same type. <br/>
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The type of the value</typeparam>
     public abstract class CombinedValue<T> where T : IEquatable<T>
     {
         private IdDistributor distributor = new();
@@ -20,6 +17,8 @@ namespace LobsterFramework.Utility
         private T value;
         internal Action onEffectorCleared;
         internal Action<T> onValueChanged;
+
+        public static implicit operator T(CombinedValue<T> value) { return value.Value; }
 
         /// <summary>
         ///
@@ -269,9 +268,9 @@ namespace LobsterFramework.Utility
     /// <summary>
     /// Value is true if all effectors are true, otherwise return base value
     /// </summary>
-    public class BaseAnd : CombinedValue<bool>
+    public class And : CombinedValue<bool>
     {
-        public BaseAnd(bool value) : base(value)
+        public And(bool value) : base(value)
         {
         }
 

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using System;
 
 namespace LobsterFramework
 {
@@ -9,8 +9,8 @@ namespace LobsterFramework
     public class EntityGroup : ScriptableObject, IEnumerable<Entity>, ISet<Entity>
     {
         private HashSet<Entity> group = new();
-        public UnityEvent<Entity> OnEntityAdded = new();
-        public UnityEvent<Entity> OnEntityRemoved = new();
+        public Action<Entity> OnEntityAdded;
+        public Action<Entity> OnEntityRemoved;
 
         public int Count => ((ICollection<Entity>)group).Count;
 
@@ -29,7 +29,7 @@ namespace LobsterFramework
         public bool Add(Entity item)
         {
             if (((ISet<Entity>)group).Add(item)) { 
-                OnEntityAdded.Invoke(item);
+                OnEntityAdded?.Invoke(item);
                 return true;
             }
             return false;
@@ -94,7 +94,7 @@ namespace LobsterFramework
         {
             foreach(Entity entity in group)
             {
-                OnEntityRemoved.Invoke(entity);
+                OnEntityRemoved?.Invoke(entity);
             }
             ((ICollection<Entity>)group).Clear();
         }
@@ -112,7 +112,7 @@ namespace LobsterFramework
         public bool Remove(Entity item)
         {
             if (((ICollection<Entity>)group).Remove(item)) { 
-                OnEntityRemoved.Invoke(item); return true;
+                OnEntityRemoved?.Invoke(item); return true;
             }
             return false;
         }

@@ -99,7 +99,7 @@ namespace LobsterFramework.Utility
             }
         }
 
-        public IEnumerator<CoroutineOption> DisplayText()
+        public IEnumerable<CoroutineOption> DisplayText()
         {
             if (currentDialogue == null) {
                 onStopDisplaying.Invoke();

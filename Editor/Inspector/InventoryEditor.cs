@@ -14,8 +14,6 @@ namespace LobsterFramework.Editors
     public class InventoryEditor : Editor
     {
         public VisualTreeAsset treeAsset;
-
-        private PropertyField responseChannel;
         private VisualElement root;
         private EnumField itemType;
         private ScrollView scrollView;
@@ -34,13 +32,12 @@ namespace LobsterFramework.Editors
 
         private void LoadElements() {
             if (treeAsset == null) {
-                treeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Framework/Editor/Inspector/InventoryInspector.uxml");
+                treeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/LobsterFramework/Editor/Inspector/InventoryInspector.uxml");
             }
             root = treeAsset.CloneTree();
             itemType = root.Q<EnumField>("item_type");
             scrollView = root.Q<ScrollView>();
             itemList = scrollView.Q<PropertyField>();
-            responseChannel = root.Q<PropertyField>();
         }
 
         private void DisplaySetting(ChangeEvent<Enum> changeEvent=null) {

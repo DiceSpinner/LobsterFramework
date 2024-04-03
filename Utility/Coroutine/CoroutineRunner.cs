@@ -18,7 +18,7 @@ namespace LobsterFramework.Utility
         /// </summary>
         /// <param name="coroutine">The coroutine to be runned</param>
         /// <returns> The Coroutine Object that represents the state of coroutine </returns>
-        public Coroutine AddCoroutine(IEnumerator<CoroutineOption> coroutine) {
+        public Coroutine AddCoroutine(IEnumerable<CoroutineOption> coroutine) {
             Coroutine corout = new(this, coroutine);
             coroutines.Add(corout);
             return corout;

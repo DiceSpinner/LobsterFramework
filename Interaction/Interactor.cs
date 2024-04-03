@@ -21,17 +21,17 @@ namespace LobsterFramework.Interaction
     public abstract class Interactor : MonoBehaviour
     {
         [SerializeField] private StringEventChannel responseChannel;
-        private Dictionary<Collider2D, InteractableObject[]> objectsInRange = new();
-        private HashSet<InteractableObject> interactables = new();
+        private Dictionary<Collider2D, IInteractable[]> objectsInRange = new();
+        private HashSet<IInteractable> interactables = new();
 
         /// <summary>
         /// Called when an interactable gets in range
         /// </summary>
-        public Action<InteractableObject> onInteractableAdded;
+        public Action<IInteractable> onInteractableAdded;
         /// <summary>
         /// Called when an interactable goes out of range
         /// </summary>
-        public Action<InteractableObject> onInteractableRemoved;
+        public Action<IInteractable> onInteractableRemoved;
 
         /// <summary>
         /// Find any interactable objects on the collided object and add them to the interactables.
@@ -39,8 +39,8 @@ namespace LobsterFramework.Interaction
         /// <param name="collision"></param>
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            InteractableObject[] objs = collision.GetComponents<InteractableObject>();
-            foreach (InteractableObject obj in objs) {
+            IInteractable[] objs = collision.GetComponents<IInteractable>();
+            foreach (IInteractable obj in objs) {
                 interactables.Add(obj);
                 onInteractableAdded?.Invoke(obj);
             }
@@ -58,8 +58,8 @@ namespace LobsterFramework.Interaction
             if (!objectsInRange.ContainsKey(collision)) {
                 return;
             }
-            InteractableObject[] objs = objectsInRange[collision];
-            foreach (InteractableObject obj in objs) {
+            IInteractable[] objs = objectsInRange[collision];
+            foreach (IInteractable obj in objs) {
                 interactables.Remove(obj);
                 onInteractableRemoved?.Invoke(obj);
             }
@@ -71,17 +71,17 @@ namespace LobsterFramework.Interaction
         /// Use CheckInteractability to check for this info.
         /// </summary>
         /// <returns>A list contains all of the interactable objects in range of this interactor</returns>
-        public void GetInteractablesInRange(List<InteractableObject> objects){
+        public void GetInteractablesInRange(List<IInteractable> objects){
             objects.Clear();
             objects.AddRange(interactables);
         }
 
         /// <summary>
-        /// Check the interactablity between the interactor and the object using the corresponding checker, if no checker is defined, return default value no interaction is available
+        /// Check the interactablity between the interactor and the object using the corresponding checker, if no checker is defined, return default value where no interaction is available
         /// </summary>
         /// <param name="interactableObject">The object to be queried</param>
         /// <returns>The interactability of this object</returns>
-        public InteractionPrompt CheckInteractability(InteractableObject interactableObject)
+        public InteractionPrompt CheckInteractability(IInteractable interactableObject)
         {
             return InteractabilityCheckerAttribute.GetInteractionPrompts(this, interactableObject);
         }
@@ -91,7 +91,7 @@ namespace LobsterFramework.Interaction
         /// </summary>
         /// <param name="interactable">The object to interact with</param>
         /// <param name="interactionType">The type of the interaction</param>
-        public void Interact(InteractableObject interactable, InteractionType interactionType)
+        public void Interact(IInteractable interactable, InteractionType interactionType)
         {
             // Do nothing if object is out of range
             if (interactable == null || !interactables.Contains(interactable)) {

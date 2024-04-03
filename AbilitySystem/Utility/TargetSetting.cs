@@ -30,14 +30,14 @@ namespace LobsterFramework.AbilitySystem
             foreach (EntityGroup group in targetGroups)
             {
                 targets.UnionWith(group);
-                group.OnEntityAdded.AddListener(Add);
-                group.OnEntityRemoved.AddListener(Remove);
+                group.OnEntityAdded += Add;
+                group.OnEntityRemoved += Remove;
             }
             foreach (EntityGroup group in ignoreGroups)
             {
                 ignores.UnionWith(group);
-                group.OnEntityAdded.AddListener(AddIgnore);
-                group.OnEntityRemoved.AddListener(RemoveIgnore);
+                group.OnEntityAdded += AddIgnore;
+                group.OnEntityRemoved += RemoveIgnore;
             }
         }
 
@@ -62,13 +62,13 @@ namespace LobsterFramework.AbilitySystem
         {
             foreach (EntityGroup group in targetGroups)
             {
-                group.OnEntityAdded.RemoveListener((Entity entity) => { targets.Add(entity); });
-                group.OnEntityRemoved.RemoveListener((Entity entity) => { targets.Remove(entity); });
+                group.OnEntityAdded += (Entity entity) => { targets.Add(entity); };
+                group.OnEntityRemoved += (Entity entity) => { targets.Remove(entity); };
             }
             foreach (EntityGroup group in ignoreGroups)
             {
-                group.OnEntityAdded.RemoveListener((Entity entity) => { ignores.Add(entity); });
-                group.OnEntityRemoved.RemoveListener((Entity entity) => { ignores.Remove(entity); });
+                group.OnEntityAdded += (Entity entity) => { ignores.Add(entity); };
+                group.OnEntityRemoved += (Entity entity) => { ignores.Remove(entity); };
             }
             targets.Clear();
             ignores.Clear();

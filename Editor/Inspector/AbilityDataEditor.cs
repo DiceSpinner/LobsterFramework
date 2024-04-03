@@ -86,6 +86,9 @@ namespace LobsterFramework.Editors
                 }
             }
 
+            EditorGUILayout.HelpBox("Note: When editing list properties of abilities, drag reference directly to the list itself instead of its element fields, " +
+            "otherwise the reference may not be saved.", MessageType.Info, true);
+
             EditorGUI.BeginChangeCheck();
 
             DrawAbilityComponents(abilityData);
@@ -165,7 +168,7 @@ namespace LobsterFramework.Editors
                     if (selected)
                     {
                         selectAbilityComponentRect.position = Event.current.mousePosition;
-                        SelectAbilityStatPopup popup = new SelectAbilityStatPopup();
+                        SelectAbilityComponentPopup popup = new SelectAbilityComponentPopup();
                         popup.editor = this;
                         popup.data = abilityData;
                         PopupWindow.Show(selectAbilityComponentRect, popup);
@@ -199,8 +202,6 @@ namespace LobsterFramework.Editors
             if (abilities.isExpanded)
             {
                 EditorGUILayout.Space();
-                EditorGUILayout.HelpBox("Note: When editing list properties of abilities, drag reference directly to the list itself instead of its element fields, " +
-                "otherwise the reference may not be saved.", MessageType.Info, true);
                 UnityEditor.Editor editor;
                 if (abilityData.abilities.Count == 0)
                 {

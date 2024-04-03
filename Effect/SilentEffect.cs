@@ -7,12 +7,12 @@ namespace LobsterFramework.Effects
     [CreateAssetMenu(menuName = "Effect/Silent Effect")]
     public class SilentEffect : Effect
     {
-        private AbilityRunner ar;
+        private AbilityManager ar;
         private CombinedValueEffector<bool> valueAccessor;
 
         protected override void OnApply()
         {
-            ar = processor.GetComponentInBoth<AbilityRunner>();
+            ar = processor.GetComponentInBoth<AbilityManager>();
             
             if (ar != null) {
                 valueAccessor = ar.actionLock.MakeEffector();

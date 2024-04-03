@@ -2,39 +2,38 @@ using LobsterFramework.Utility;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace LobsterFramework.AbilitySystem
 {
     [CreateAssetMenu(menuName = "Ability/AbilityData")]
     public class AbilityData : ScriptableObject
     {
-        public TypeAbilityComponentDictionary components = new();
-        public TypeAbilityDictionary abilities = new();
+        [SerializeField] internal AbilityComponentDictionary components = new();
+        [SerializeField] internal AbilityDictionary abilities = new();
         internal Dictionary<string, Ability> availableAbilities = new();
+        internal bool isRuntime = false;
 
         /// <summary>
         /// Initialize the ability runtime environments
         /// </summary>
         /// <param name="abilityRunner">The component that operates on this data</param>
-        internal void Open(AbilityRunner abilityRunner)
+        internal void Open(AbilityManager abilityRunner)
         {
+            isRuntime = true;
             availableAbilities.Clear();
             GameObject topLevel = default;
             if (abilityRunner.TopLevelTransform != null) {
                 topLevel = abilityRunner.TopLevelTransform.gameObject;
             }
 
-            List<string> removed = new();
-
             foreach (string key in abilities.Keys)
             {
                 Ability ai = abilities[key];
-                if (ai == null) {
-                    removed.Add(key);
-                    continue;
-                }
+
                 bool result;
                 if (topLevel == null) {
                     result = ComponentRequiredAttribute.ComponentCheck(ai.GetType(), abilityRunner.gameObject);
@@ -44,31 +43,26 @@ namespace LobsterFramework.AbilitySystem
                 }
                 if (result)
                 {
-                    ai.abilityRunner = abilityRunner;
+                    ai.abilityManager = abilityRunner;
                     ai.OnOpen();
-                    availableAbilities[ai.GetType().ToString()] = ai;
+                    availableAbilities[ai.GetType().AssemblyQualifiedName] = ai;
                 }
             }
-            foreach (string n in removed) {
-                abilities.Remove(n);
-            }
-            removed.Clear();
 
             foreach (string key in components.Keys)
             {
-                AbilityComponent stat = components[key];
-                stat.Initialize();
+                AbilityComponent component = components[key];
+                component.Initialize();
             }
-            foreach (string key in removed) {
-                components.Remove(key);
-            }
-            AssetDatabase.SaveAssets();
         }
 
         /// <summary>
-        /// Clean up ability runtime environments
+        /// Clean up ability runtime environments. This has no effect if this is an asset.
         /// </summary>
-        private void OnDestroy() {
+        public void Close() {
+            if (!isRuntime) {
+                return;
+            }
             foreach (Ability ability in availableAbilities.Values)
             {
                 ability.OnClose();
@@ -80,25 +74,6 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        /// <summary>
-        /// Save data as assets by adding them to the AssetDataBase
-        /// </summary>
-        public void SaveContentsAsAsset()
-        {
-            if (AssetDatabase.Contains(this))
-            {
-                foreach (AbilityComponent cmp in components.Values)
-                {
-                    AssetDatabase.AddObjectToAsset(cmp, this);
-                }
-                foreach (Ability ai in abilities.Values)
-                {
-                    AssetDatabase.AddObjectToAsset(ai, this);
-                    ai.SaveConfigsAsAsset();
-                }
-            }
-        }
-        
         /// <summary>
         /// Deep copy of action datas. Call this method after duplicate the AbilityData to ensure all of its contents are properly duplicated.
         /// </summary>
@@ -116,7 +91,7 @@ namespace LobsterFramework.AbilitySystem
             // Duplicate AbilityConfig assiciated with each Ability
             foreach (var ability in abilities)
             {
-                this.abilities[ability.GetType().ToString()] = ability;
+                this.abilities[ability.GetType().AssemblyQualifiedName] = ability;
 
                 // AbilityConfig
                 List<(string, AbilityConfig)> configs = new();
@@ -145,19 +120,25 @@ namespace LobsterFramework.AbilitySystem
             }
             foreach (var abilityComponent in abilityComponents)
             {
-                components[abilityComponent.GetType().ToString()] = abilityComponent;
+                components[abilityComponent.GetType().AssemblyQualifiedName] = abilityComponent;
             }
         }
 
+        /// <summary>
+        /// Clones the ability data
+        /// </summary>
+        /// <returns>A copy of the ability data</returns>
         public AbilityData Clone() { 
             AbilityData cloned = Instantiate(this);
             cloned.CopyAbilityAsset();
+            cloned.name = this.name;
+            cloned.isRuntime = false;
             return cloned;
         }
 
         private T GetAbility<T>() where T : Ability
         {
-            string type = typeof(T).ToString();
+            string type = typeof(T).AssemblyQualifiedName;
             if (abilities.TryGetValue(type, out Ability ability))
             {
                 return (T)ability;
@@ -167,7 +148,7 @@ namespace LobsterFramework.AbilitySystem
 
         private T GetAbilityComponent<T>() where T : AbilityComponent
         {
-            string type = typeof(T).ToString();
+            string type = typeof(T).AssemblyQualifiedName;
             if (components.TryGetValue(type, out AbilityComponent stat))
             {
                 return (T)stat;
@@ -176,7 +157,7 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Check if requirements for ActionComponents by Ability T are satisfied
+        /// Check if requirements for AbilityComponents by Ability T are satisfied
         /// </summary>
         /// <typeparam name="T"> Type of the Ability to be queried </typeparam>
         /// <returns>The result of the query</returns>
@@ -190,7 +171,7 @@ namespace LobsterFramework.AbilitySystem
                 List<Type> lst1 = new List<Type>();
                 foreach (Type t in ts)
                 {
-                    if (!components.ContainsKey(t.ToString()))
+                    if (!components.ContainsKey(t.AssemblyQualifiedName))
                     {
                         lst1.Add(t);
                         f1 = false;
@@ -202,7 +183,7 @@ namespace LobsterFramework.AbilitySystem
                 }
 
                 StringBuilder sb = new StringBuilder();
-                sb.Append("Missing AbilityStats: ");
+                sb.Append("Missing AbilityComponents: ");
                 foreach (Type t in lst1)
                 {
                     sb.Append(t.Name);
@@ -216,14 +197,35 @@ namespace LobsterFramework.AbilitySystem
             return true;
         }
 
+#if UNITY_EDITOR
         /// <summary>
-        /// Called by editor scritps, add ActionComponent of type T to the set of available AbilityStats if not already present, return the status of the operation. <br/>
+        /// Save data as assets by adding them to the AssetDataBase
         /// </summary>
-        /// <typeparam name="T">Type of the AbilityStat to be added</typeparam>
-        /// <returns>The status of the operation</returns>
+        public void SaveContentsAsAsset()
+        {
+            if (AssetDatabase.Contains(this))
+            {
+                foreach (AbilityComponent cmp in components.Values)
+                {
+                    AssetDatabase.AddObjectToAsset(cmp, this);
+                }
+                foreach (Ability ai in abilities.Values)
+                {
+                    AssetDatabase.AddObjectToAsset(ai, this);
+                    ai.SaveConfigsAsAsset();
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Called by editor scritps, add AbilityComponent of type T to the set of available AbilityComponents if not already present, return the status of the operation. <br/>
+        /// </summary>
+        /// <typeparam name="T">Type of the AbilityComponent to be added</typeparam>
+        /// <returns>true if successfully added AbilityComponent, false otherwise</returns>
         internal bool AddAbilityComponent<T>() where T : AbilityComponent
         {
-            string str = typeof(T).ToString();
+            string str = typeof(T).AssemblyQualifiedName;
             if (components.ContainsKey(str))
             {
                 return false;
@@ -237,6 +239,12 @@ namespace LobsterFramework.AbilitySystem
             return true;
         }
 
+
+        /// <summary>
+        /// Called by editor scritps, add Ability of type T to the set of available Abilities if not already present, return the status of the operation. <br/>
+        /// </summary>
+        /// <typeparam name="T">Type of the Abilityto be added</typeparam>
+        /// <returns>true if successfully added Ability, false otherwise</returns>
         internal bool AddAbility<T>() where T : Ability
         {
             if (GetAbility<T>() != default)
@@ -247,9 +255,9 @@ namespace LobsterFramework.AbilitySystem
             if (AbilityComponentsCheck<T>())
             {
                 T ai = CreateInstance<T>();
-                abilities.Add(typeof(T).ToString(), ai);
+                abilities.Add(typeof(T).AssemblyQualifiedName, ai);
                 ai.configs = new();
-                ai.name = typeof(T).ToString();
+                ai.name = typeof(T).FullName;
                 if (AssetDatabase.Contains(this))
                 {
                     AssetDatabase.AddObjectToAsset(ai, this);
@@ -259,14 +267,19 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
+        /// <summary>
+        /// Called by editor script only! Remove the ability of specified type. If the ability is an asset it will be destroyed.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         internal bool RemoveAbility<T>() where T : Ability
         {
-            Ability ai = GetAbility<T>();
-            if (ai != null)
+            Ability ability = GetAbility<T>();
+            if (ability != null)
             {
-                abilities.Remove(typeof(T).ToString());
-                AssetDatabase.RemoveObjectFromAsset(ai);
-                DestroyImmediate(ai, true);
+                abilities.Remove(typeof(T).AssemblyQualifiedName);
+                AssetDatabase.RemoveObjectFromAsset(ability);
+                DestroyImmediate(ability, true);
                 return true;
             }
             return false;
@@ -274,24 +287,24 @@ namespace LobsterFramework.AbilitySystem
 
         internal bool RemoveAbilityComponent<T>() where T : AbilityComponent
         {
-            string str = typeof(T).ToString();
+            string str = typeof(T).AssemblyQualifiedName;
             if (components.ContainsKey(str))
             {
                 if (RequireAbilityComponentsAttribute.rev_requirement.ContainsKey(typeof(T)))
                 {
                     StringBuilder sb = new();
-                    sb.Append("Cannot remove AbilityComponent: " + typeof(T).ToString() + ", since the following abilities requires it: ");
+                    sb.Append("Cannot remove AbilityComponent: " + typeof(T).FullName + ", since the following abilities requires it: ");
                     bool flag = false;
                     foreach (Type t in RequireAbilityComponentsAttribute.rev_requirement[typeof(T)])
                     {
-                        if (abilities.ContainsKey(t.ToString()))
+                        if (abilities.ContainsKey(t.AssemblyQualifiedName))
                         {
                             flag = true;
                             sb.Append(t.Name);
                             sb.Append(", ");
                         }
                     }
-                    if (flag) 
+                    if (flag)
                     {
                         sb.Remove(sb.Length - 2, 2);
                         Debug.LogError(sb.ToString());
@@ -309,6 +322,7 @@ namespace LobsterFramework.AbilitySystem
             }
             return false;
         }
+#endif
     }
 }
 

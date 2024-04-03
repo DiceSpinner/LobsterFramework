@@ -29,7 +29,7 @@ namespace LobsterFramework.Editors
                     continue;
                 }
                 // Display icon in options if there's one for the ability script
-                string key = type.ToString();
+                string key = type.AssemblyQualifiedName;
                 if (!data.abilities.ContainsKey(key))
                 {
                     continue;

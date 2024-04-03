@@ -3,8 +3,6 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 using LobsterFramework.Utility;
-using static Animancer.Validate;
-using Codice.Client.Common.GameUI;
 
 namespace LobsterFramework
 {

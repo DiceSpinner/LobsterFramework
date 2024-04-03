@@ -58,10 +58,14 @@ namespace LobsterFramework
             movementLock.onValueChanged -= OnMovementStatusChanged;
             moveSpeedModifier.onValueChanged -= OnMoveSpeedChanged;
             rotateSpeedModifier.onValueChanged -= OnRotateSpeedChanged;
-        }
+        } 
 
         private void FixedUpdate()
         {
+            if (MovementBlocked)
+            {
+                return;
+            }
             if (targetVelocity != Vector2.zero) {
                 _rigidBody.AddForce(ComputeVelocityForce(), ForceMode2D.Impulse);
                 targetVelocity = Vector2.zero;
@@ -69,7 +73,7 @@ namespace LobsterFramework
 
             if (steering != Vector2.zero)
             {
-                _rigidBody.AddForce(transform.rotation * steering);
+                _rigidBody.AddForce(steering);
             }
         }
         #region MovementUtils
@@ -110,11 +114,11 @@ namespace LobsterFramework
 
         #region MovementMethods
         /// <summary>
-        /// Attempt to rotate the entity towards the specified direction. If the specified angle is larger than the max rotation speed,
-        /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
+        /// Attempt to rotate the entity towards the specified direction. If the angle needed is larger than the max rotation speed,
+        /// the entity will rotate towards target angle will max speed. Do nothing if movement is blocked. 
         /// </summary>
         /// <param name="direction">The target direction to rotate towards</param>
-        public void RotateTowards(Vector2 direction)
+        public void RotateForwardDirection(Vector2 direction)
         {
             if (MovementBlocked)
             {
@@ -159,18 +163,10 @@ namespace LobsterFramework
         /// Start moving the entity towards the specified direction, will fail if Movement is blocked on this entity
         /// </summary>
         /// <param name="direction"></param>
-        public void Move(Vector2 direction, float acceleration = -1)
+        public void MoveInDirection(Vector2 direction, float acceleration = 1)
         {
-            if (MovementBlocked)
-            {
-                steering = Vector2.zero;
-                return;
-            }
-            if (acceleration <= 0 || acceleration > Speed)
-            {
-                acceleration = Speed;
-            }
-            steering = direction.normalized * acceleration;
+            acceleration = Mathf.Clamp01(acceleration);
+            steering = direction.normalized * Speed * acceleration;
         }
 
         public void SetVelocityImmediate(Vector2 velocity)

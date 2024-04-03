@@ -14,6 +14,7 @@ namespace LobsterFramework.Editors
             MovementController controller = (MovementController)target;
             EditorGUILayout.LabelField("Current Max Speed", controller.Speed + "");
             EditorGUILayout.LabelField("Current Rotate Speed", controller.RotateSpeed + "");
+            EditorGUILayout.LabelField($"Movement Blocking: {controller.movementLock.EffectorCount}");
         }
     }
 }

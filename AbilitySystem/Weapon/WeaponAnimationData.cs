@@ -25,4 +25,9 @@ namespace LobsterFramework.AbilitySystem
             return moveSetting[(int)weaponType];
         }
     }
+
+    [Serializable]
+    public class WeaponStatDictionary : SerializableDictionary<string, WeaponStat> { }
+    [Serializable]
+    public class AbilityAnimationConfig : SerializableDictionary<string, AnimationClipArray> { }
 }

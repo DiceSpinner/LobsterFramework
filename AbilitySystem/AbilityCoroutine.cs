@@ -50,7 +50,7 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         /// <param name="config">The ability configuration to execute on</param>
         /// <returns></returns>
-        protected abstract IEnumerator<CoroutineOption> Coroutine();
+        protected abstract IEnumerable<CoroutineOption> Coroutine();
     }
 
     /// <summary>

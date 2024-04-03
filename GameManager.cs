@@ -3,15 +3,17 @@ using UnityEngine;
 using System.Reflection;
 using UnityEngine.Events;
 using LobsterFramework.Utility;
-using UnityEngine.InputSystem;
 using System;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("LobsterFrameworkEditor")]
 
 namespace LobsterFramework
 {
     public enum Scene
     {
         IntroMenu,
-        Gameplay
+        Gameplay,
     }
 
     public class GameManager : MonoBehaviour
@@ -114,9 +116,15 @@ namespace LobsterFramework
             Debug.Log("Exit!");
         }
 
+        
+#if UNITY_EDITOR
         [UnityEditor.Callbacks.DidReloadScripts]
-        private static void InitializeAttributes()
+#else
+        [RuntimeInitializeOnLoadMethod]
+#endif
+        private static void OnInitScript()
         {
+            // Initialize custom attributes
             foreach (Assembly assembly in System.AppDomain.CurrentDomain.GetAssemblies())
             {
                 AttributeInitializer.Initialize(assembly);

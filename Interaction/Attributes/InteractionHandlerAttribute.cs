@@ -21,9 +21,9 @@ namespace LobsterFramework.Interaction
         /// </summary>
         internal static Dictionary<Type, Dictionary<(Type, InteractionType), Func<string>>> interactionHandlers = new();
         private static Interactor interactor;
-        private static InteractableObject interactableObject;
+        private static IInteractable interactableObject;
 
-        internal static string HandleInteraction(Interactor actor, InteractableObject obj, InteractionType interactionType) {
+        internal static string HandleInteraction(Interactor actor, IInteractable obj, InteractionType interactionType) {
             interactor = actor;
             interactableObject = obj;
             Type t = actor.GetType();
@@ -38,16 +38,16 @@ namespace LobsterFramework.Interaction
             }
         }
 
-        private static Func<string> ConvertMethod<T, V>(MethodInfo method) where T : Interactor  where V : InteractableObject {
+        private static Func<string> ConvertMethod<T, V>(MethodInfo method) where T : Interactor  where V : IInteractable {
            Func<T, V, string> delegateMethod = (Func<T, V, string>)Delegate.CreateDelegate(typeof(Func<T, V, string>), method, true); 
-            return () => { return delegateMethod.Invoke((T)interactor, (V)interactableObject); };
+            return () => { return delegateMethod.Invoke((T)interactor, (V)interactableObject); }; 
         }
 
         internal static void RegisterHandler(MethodInfo method, InteractionHandlerAttribute attribute, Type interactorType) {
             Dictionary<(Type, InteractionType), Func<string>> handlers = new();
-            if (attribute.interactableType == null || !attribute.interactableType.IsSubclassOf(typeof(InteractableObject)))
+            if (attribute.interactableType == null || !typeof(IInteractable).IsAssignableFrom(attribute.interactableType))
             {
-                Debug.LogError("Failed to register interaction handler for " + interactorType.Name + ": Bad interactable object type!");
+                Debug.LogError("Failed to register interaction handler for " + interactorType.Name + $": Bad interactable object type {attribute.interactableType}!");
                 return;
             }
             if (!CheckHandlerSignature(method))
@@ -71,7 +71,7 @@ namespace LobsterFramework.Interaction
             {
                 return false;
             }
-            return info[0].ParameterType.IsSubclassOf(typeof(InteractableObject));
+            return typeof(IInteractable).IsAssignableFrom(info[0].ParameterType);
         }
 
         public Type interactableType = default;

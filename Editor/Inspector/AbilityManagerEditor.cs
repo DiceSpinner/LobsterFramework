@@ -8,19 +8,16 @@ using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.Editors
 {
-    [CustomEditor(typeof(AbilityRunner))]
-    public class AbilityRunnerEditor : UnityEditor.Editor
+    [CustomEditor(typeof(AbilityManager))]
+    public class AbilityManagerEditor : UnityEditor.Editor
     {
         private UnityEditor.Editor editor;
         private bool editData = false;
-        private string assetName = "";
 
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.HelpBox("Note: The ability data may not work properly before the first run of the game. " +
-                "Enter play mode for the first time to verify its integrity!", MessageType.Info);
             base.OnInspectorGUI();
-            AbilityRunner abilityRunner = (AbilityRunner)target;
+            AbilityManager abilityRunner = (AbilityManager)target;
             EditorGUI.BeginChangeCheck();
             SerializedProperty abilityData = serializedObject.FindProperty("abilityData");
             if (!editData)
@@ -59,15 +56,19 @@ namespace LobsterFramework.Editors
                 EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField("Asset Name");
-                assetName = EditorGUILayout.TextField(assetName);
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();
-                if (GUILayout.Button("Save Ability Data", GUILayout.Width(150)))
+                if (GUILayout.Button("Save", GUILayout.Width(80)))
                 {
-                    string path = EditorUtility.OpenFolderPanel("Select Saving Path", Application.dataPath, "");
-                    abilityRunner.SaveAbilityData(assetName, path); 
+                    abilityRunner.SaveRuntimeData(""); 
+                }
+
+                if (GUILayout.Button("Save As", GUILayout.Width(80)))
+                {
+                    string path = EditorUtility.SaveFilePanel("Select Saving Path", Application.dataPath, abilityRunner.abilityData.name, "asset");
+                    if (path != null) { abilityRunner.SaveRuntimeData(path); } 
                     GUIUtility.ExitGUI();
                 }
                 GUILayout.FlexibleSpace();

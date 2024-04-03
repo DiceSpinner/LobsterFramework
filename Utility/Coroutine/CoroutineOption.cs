@@ -11,7 +11,7 @@ namespace LobsterFramework.Utility
         public bool reset;
         public float waitTime;
         public bool unscaled;
-        public IEnumerator<CoroutineOption> waitFor;
+        public IEnumerable<CoroutineOption> waitFor;
         public Func<bool> predicateCondition;
         public Coroutine wait;
 
@@ -48,7 +48,7 @@ namespace LobsterFramework.Utility
         /// </summary>
         /// <param name="coroutine">The subcoroutine to be executed</param>
         /// <returns>The CoroutineOption represents this option</returns>
-        public static CoroutineOption WaitForCoroutine(IEnumerator<CoroutineOption> coroutine) {
+        public static CoroutineOption WaitForCoroutine(IEnumerable<CoroutineOption> coroutine) {
             CoroutineOption option = new() { waitFor = coroutine};
             return option;
         }

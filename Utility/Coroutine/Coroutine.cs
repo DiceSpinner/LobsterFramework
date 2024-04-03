@@ -11,7 +11,8 @@ namespace LobsterFramework.Utility
     public class Coroutine
     {
         private CoroutineRunner runner;
-        private IEnumerator<CoroutineOption> coroutine;
+        private IEnumerable<CoroutineOption> coroutine;
+        private IEnumerator<CoroutineOption> enumerator;
         private Coroutine waitFor; // The child coroutine to wait for
         private Func<bool> conditionSatisfied;
         private bool unscaled; // Whether to use unscaled time
@@ -23,8 +24,9 @@ namespace LobsterFramework.Utility
         /// </summary>
         public bool IsFinished { get; private set; }
 
-        public Coroutine(CoroutineRunner runner, IEnumerator<CoroutineOption> coroutine) { 
+        public Coroutine(CoroutineRunner runner, IEnumerable<CoroutineOption> coroutine) { 
             this.coroutine = coroutine;
+            enumerator = coroutine.GetEnumerator();
             IsFinished = false;
             this.runner = runner;
         }
@@ -71,8 +73,8 @@ namespace LobsterFramework.Utility
                 }
             }
 
-            bool next = coroutine.MoveNext();
-            CoroutineOption option = coroutine.Current;
+            bool next = enumerator.MoveNext();
+            CoroutineOption option = enumerator.Current;
             if (!next)
             {
                 IsFinished = true;
@@ -82,7 +84,7 @@ namespace LobsterFramework.Utility
             {
                 if (option.reset)
                 {
-                    coroutine.Reset();
+                    enumerator = coroutine.GetEnumerator();
                     onReset?.Invoke();
                     return true;
                 }

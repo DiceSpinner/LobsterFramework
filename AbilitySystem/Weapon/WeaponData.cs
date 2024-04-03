@@ -1,16 +1,16 @@
 using LobsterFramework.Utility;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace LobsterFramework.AbilitySystem
 {
     [CreateAssetMenu(menuName = "Ability/Weapon Data")]
     public class WeaponData : ScriptableObject
     {
-        [SerializeField] public TypeWeaponStatDictionary weaponStats;
+        [SerializeField] internal WeaponStatDictionary weaponStats;
 
         public WeaponData Clone() {
             WeaponData data = CreateInstance<WeaponData>();
@@ -21,6 +21,7 @@ namespace LobsterFramework.AbilitySystem
             return data;
         }
 
+#if UNITY_EDITOR
         /// <summary>
         /// Called by editor scritps, add WeaponStat of type T to the set of available WeaponStats if not already present, return the status of the operation. <br/>
         /// </summary>
@@ -66,5 +67,6 @@ namespace LobsterFramework.AbilitySystem
             }
             return false;
         }
+#endif
     }
 }

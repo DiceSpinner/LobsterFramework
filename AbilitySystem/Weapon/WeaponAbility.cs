@@ -4,35 +4,46 @@ using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem
 {
+    /// <summary>
+    /// Convenient template for creating weapon abilities. Weapon abilities can only have one instance running at any given moment.
+    /// Inheriting from this will provide automatic weapon stats, state, compatibility check when attempting to enqueue the ability.
+    /// </summary>
     public abstract class WeaponAbility : AbilityCoroutine
     {
-        protected WeaponWielder WeaponWielder { get; private set; }
+        protected WeaponManager WeaponManager { get; private set; }
         protected bool IsMainhanded { get;private set; }
 
         protected sealed override void Initialize()
         {
-            WeaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
+            WeaponManager = abilityManager.GetComponentInBoth<WeaponManager>();
             IsMainhanded = !OffhandWeaponAbilityAttribute.IsOffhand(GetType());
             Init();
         }
 
+        /// <summary>
+        /// Use this to implement custom initialization routines
+        /// </summary>
         protected virtual void Init() { }
 
         protected sealed override bool ConditionSatisfied()
         {
             Weapon query;
             if (IsMainhanded) {
-                query = WeaponWielder.Mainhand;
+                query = WeaponManager.Mainhand;
             }
             else {
-                query = WeaponWielder.Offhand;
-                if (WeaponWielder.Mainhand != null && WeaponWielder.Mainhand.state != WeaponState.Idle) {
+                query = WeaponManager.Offhand;
+                if (WeaponManager.Mainhand != null && WeaponManager.Mainhand.state != WeaponState.Idle) {
                     return false;
                 }
             }
-            return query != null && RunningCount == 0 && RequireWeaponStatAttribute.HasWeaponStats(GetType(), WeaponWielder) && WConditionSatisfied();
+            return query != null && Running == 0 && RequireWeaponStatAttribute.HasWeaponStats(GetType(), WeaponManager) && WConditionSatisfied();
         }
 
+        /// <summary>
+        /// Use this to implement custom weapon ability rules
+        /// </summary>
+        /// <returns>true if the ability is ready, otherwise false</returns>
         protected virtual bool WConditionSatisfied() { return true; } 
     }
 }

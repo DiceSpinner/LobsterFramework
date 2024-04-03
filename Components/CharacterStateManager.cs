@@ -13,8 +13,8 @@ namespace LobsterFramework
     {
         [Header("Component Reference")]
         [SerializeField] private AnimancerComponent animancer;
-        [SerializeField] private WeaponWielder weaponWielder;
-        [SerializeField] private AbilityRunner abilityRunner;
+        [SerializeField] private WeaponManager weaponWielder;
+        [SerializeField] private AbilityManager abilityManager;
 
         [Header("Animations")]
         [SerializeField] private AnimationClip onPostureBroken;
@@ -49,13 +49,13 @@ namespace LobsterFramework
             poiseMoveLock = moveControl.movementLock.MakeEffector();
             suppressMoveLock = moveControl.movementLock.MakeEffector();
 
-            suppressAbilityLock = abilityRunner.actionLock.MakeEffector();
-            poiseAbilityLock = abilityRunner.actionLock.MakeEffector();
+            suppressAbilityLock = abilityManager.actionLock.MakeEffector(); 
+            poiseAbilityLock = abilityManager.actionLock.MakeEffector();
 
             characterState = CharacterState.Normal;
             poise.onPoiseStatusChange += OnPoiseStatusChanged;
             entity.onPostureStatusChange += OnPostureStatusChanged;
-            abilityRunner.onAbilityAnimation += OnAbilityAnimation;
+            abilityManager.onAbilityAnimation += OnAbilityAnimation;
 
             PlayAnimation(CharacterState.Normal);
             stateMap = new bool[enumStates.Length];

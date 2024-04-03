@@ -5,7 +5,7 @@ using UnityEditor;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.Utility;
 using System;
-using UnityEditor.Playables;
+
 
 namespace LobsterFramework.Editors
 {
@@ -80,7 +80,7 @@ namespace LobsterFramework.Editors
                 EditorGUILayout.LabelField(abilityType.Name);
                 EditorGUI.indentLevel++;
                 string[] enums = Enum.GetNames(WeaponAnimationAttribute.abilityAnimationEntry[abilityType]);
-                if (clips == null)
+                if (clips == null || clips.Length != enums.Length)
                 {
                     setting[abilityType.AssemblyQualifiedName] = new AnimationClip[enums.Length];
                     clips = setting[abilityType.AssemblyQualifiedName];

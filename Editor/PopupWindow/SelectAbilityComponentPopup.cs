@@ -5,7 +5,7 @@ using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.Editors
 {
-    public class SelectAbilityStatPopup : PopupWindowContent
+    public class SelectAbilityComponentPopup : PopupWindowContent
     {
         public AbilityDataEditor editor;
         public AbilityData data;
@@ -26,7 +26,7 @@ namespace LobsterFramework.Editors
                     continue;
                 }
                 // Display icon in options if there's one for the ability script
-                string key = type.ToString();
+                string key = type.AssemblyQualifiedName;
                 if (!data.components.ContainsKey(key))
                 {
                     continue;

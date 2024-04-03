@@ -23,8 +23,8 @@ namespace LobsterFramework.Editors
             foreach (Type type in AddWeaponStatMenuAttribute.types)
             {
                 // Display icon in options if there's one for the WeaponStat script
-                string key = type.ToString();
-                if (!data.weaponStats.ContainsKey(key))
+                string key = type.AssemblyQualifiedName;
+                if (data.weaponStats.ContainsKey(key))
                 {
                     continue;
                 }

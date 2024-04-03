@@ -6,7 +6,7 @@ using UnityEngine;
 namespace LobsterFramework.Interaction
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public sealed class CollectableItem : InteractableObject
+    public sealed class CollectableItem : MonoBehaviour, IInteractable
     {
         [SerializeField] internal bool destroyWhenDeplete;
         [SerializeField] private InventoryItem item;

@@ -24,8 +24,6 @@ namespace LobsterFramework.AI
         private float lastPathed;
         [SerializeField] private float repathInterval;
 
-
-
         public Vector3 Destination { get { return targetPosition; } }
         public bool ReachedDestination { get { return path == null; } }
 
@@ -38,7 +36,7 @@ namespace LobsterFramework.AI
             // and use the alternative way to move sugggested further below.
         }
 
-        public void OnPathComplete(Path p)
+        private void OnPathComplete(Path p)
         {
             if (!p.error)
             {
@@ -49,7 +47,11 @@ namespace LobsterFramework.AI
             }
         }
 
-        public void MoveTowards(Vector3 position) {
+        /// <summary>
+        /// Attempts to move the agent towards the specified position
+        /// </summary>
+        /// <param name="position">The target position to move to</param>
+        public void MoveTo(Vector3 position) {
             if (path != null) {
                 path.Release(this);
                 path = null;
@@ -72,6 +74,10 @@ namespace LobsterFramework.AI
             targetPosition = position;
         }
 
+        /// <summary>
+        /// Set the target to follow, will recalculate path according to the specified time interval
+        /// </summary>
+        /// <param name="target">The target to follow</param>
         public void SetTarget(Transform target)
         {
             this.target = target;
@@ -79,9 +85,9 @@ namespace LobsterFramework.AI
 
         public void Stop()
         {
+            target = null;
             if(path != null)
             {
-                target = null;
                 path.Release(this);
                 path = null;
             }

@@ -16,12 +16,12 @@ namespace LobsterFramework.AbilitySystem
         }
 
         public void Init(Type abilityType) {
-            if (enumType.IsEnum)
+            if (enumType.IsEnum && Enum.GetUnderlyingType(enumType) == typeof(int))
             {
                 abilityAnimationEntry[abilityType] = enumType;
             }
             else {
-                Debug.LogError("You must assign a valid enum Type for ability " + abilityType.Name);
+                Debug.LogError("You must assign a enum type backed by integer for ability " + abilityType.Name);
             }
         }
     }

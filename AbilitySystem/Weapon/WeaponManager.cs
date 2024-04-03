@@ -9,7 +9,7 @@ namespace LobsterFramework.AbilitySystem
     /// <summary>
     /// Required for the character to use weapon abilities
     /// </summary>
-    public class WeaponWielder : MonoBehaviour
+    public class WeaponManager : MonoBehaviour
     {
         [Header("Weapon Prefabs")]
         [SerializeField] private GameObject mainhandWeapon1;
@@ -28,7 +28,7 @@ namespace LobsterFramework.AbilitySystem
         [Header("Component Reference")]
         [SerializeField] private Entity entity;
         [SerializeField] private AnimancerComponent animancer;
-        [SerializeField] private AbilityRunner abilityRunner;
+        [SerializeField] private AbilityManager abilityManager;
 
         private Weapon mainWeapon1;
         private Weapon mainWeapon2;
@@ -52,6 +52,7 @@ namespace LobsterFramework.AbilitySystem
         public Weapon Offhand2 { get; private set; }
 
         public Entity Wielder { get { return entity; } } 
+        public WeaponAnimationData AnimationData { get { return animationData; } }
 
         private void Awake()
         {
@@ -101,7 +102,7 @@ namespace LobsterFramework.AbilitySystem
                 mainWeapon1Inst.transform.SetPositionAndRotation(mainhandWeaponPosition.position, mainhandWeaponPosition.rotation);
                 mainWeapon1Inst.transform.SetParent(mainhandWeaponPosition);
                 Mainhand = mainWeapon1;
-                mainWeapon1.weaponWielder = this;
+                mainWeapon1.weaponManager = this;
                 objLookup[mainWeapon1] = mainWeapon1Inst;
             }
             if (mainhandWeapon2 != null)
@@ -120,7 +121,7 @@ namespace LobsterFramework.AbilitySystem
                     mainWeapon2Inst.SetActive(false);
                     Mainhand2 = mainWeapon2;
                 }
-                mainWeapon2.weaponWielder = this;
+                mainWeapon2.weaponManager = this;
                 objLookup[mainWeapon2] = mainWeapon2Inst;
             }
             if (emptyHand != null) {
@@ -184,9 +185,9 @@ namespace LobsterFramework.AbilitySystem
                     (Mainhand2, Mainhand) = (Mainhand, Mainhand2);
                     objLookup[Mainhand2].SetActive(false);
                     objLookup[Mainhand].SetActive(true);
-                    if (abilityRunner.IsAnimating())
+                    if (abilityManager.IsAnimating())
                     {
-                        abilityRunner.InterruptAbilityAnimation();
+                        abilityManager.InterruptAbilityAnimation();
                     }
                     PlayTransitionAnimation();
                 }
@@ -238,20 +239,11 @@ namespace LobsterFramework.AbilitySystem
         public void PlayTransitionAnimation() {
             if(Mainhand != null && animancer != null)
             {
-                if (abilityRunner != null && !abilityRunner.IsAnimating()) {
+                if (abilityManager != null && !abilityManager.IsAnimating()) {
                     AnimationClip clip = animationData.GetMoveClip(Mainhand.WeaponType);
                     animancer.Play(clip, 0.25f, FadeMode.FixedDuration).Speed = 1;
                 }
             }
-        }
-
-        public AnimationClip GetAbilityClip(Type abilityType, WeaponType weaponType) {
-            return animationData.GetAbilityClip(weaponType, abilityType);
-        }
-
-        public AnimationClip GetMainHandMoveClip(WeaponType weaponType)
-        {
-            return animationData.GetMoveClip(weaponType);
         }
     }
 }

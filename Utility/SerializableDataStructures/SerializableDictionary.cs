@@ -101,18 +101,4 @@ namespace LobsterFramework.Utility {
             return ((IEnumerable)dictionary).GetEnumerator();
         }
     }
-
-    [Serializable]
-    public class TypeAbilityComponentDictionary : SerializableDictionary<string, AbilityComponent> { }
-    [Serializable]
-    public class TypeAbilityDictionary : SerializableDictionary<string, Ability> { }
-
-    [Serializable]
-    public class StringAbilityConfigDictionary : SerializableDictionary<string, AbilityConfig> { }
-
-    [Serializable]
-    public class TypeWeaponStatDictionary : SerializableDictionary<string, WeaponStat> { }
-
-    [Serializable]
-    public class AbilityAnimationConfig : SerializableDictionary<string, AnimationClipArray> { }
 }

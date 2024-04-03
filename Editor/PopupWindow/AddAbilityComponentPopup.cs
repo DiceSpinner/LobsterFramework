@@ -25,7 +25,7 @@ namespace LobsterFramework.Editors
             foreach (Type type in AddAbilityComponentMenuAttribute.types)
             {
                 // Display icon in options if there's one for the ability script
-                if (data.components.ContainsKey(type.ToString()))
+                if (data.components.ContainsKey(type.AssemblyQualifiedName))
                 {
                     continue;
                 }

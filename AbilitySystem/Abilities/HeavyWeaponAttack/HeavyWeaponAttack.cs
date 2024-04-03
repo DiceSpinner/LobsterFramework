@@ -7,7 +7,7 @@ namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
     [RequireAbilityComponents(typeof(DamageModifier))]
-    [ComponentRequired(typeof(WeaponWielder))]
+    [ComponentRequired(typeof(WeaponManager))]
     public class HeavyWeaponAttack : WeaponAbility
     {
         [SerializeField] private TargetSetting targets;
@@ -19,31 +19,29 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void Init()
         {
-            moveControl = abilityRunner.GetComponentInBoth<MovementController>();
-            damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
+            moveControl = abilityManager.GetComponentInBoth<MovementController>();
+            damageModifier = abilityManager.GetAbilityComponent<DamageModifier>();
             move = moveControl.moveSpeedModifier.MakeEffector();
             rotate = moveControl.rotateSpeedModifier.MakeEffector();
-        }
-
-        protected override bool WConditionSatisfied()
-        {
-            return WeaponWielder.GetAbilityClip(GetType(), WeaponWielder.Mainhand.WeaponType) != null && WeaponWielder.Mainhand.state != WeaponState.Attacking;
         }
 
         protected override void OnCoroutineEnqueue()
         {
             HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
-            runtime.currentWeapon = WeaponWielder.Mainhand;
-            SubscribeWeaponEvent();
+            runtime.currentWeapon = WeaponManager.Mainhand;
             runtime.animationSignaled = false;
             runtime.inputSignaled = false;
             runtime.chargeTimer = 0;
+
+            AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip(runtime.currentWeapon.WeaponType, typeof(HeavyWeaponAttack));
+
+            SubscribeWeaponEvent();
             move.Apply(runtime.currentWeapon.HMoveSpeedModifier);
             rotate.Apply(runtime.currentWeapon.HRotationSpeedModifier);
-            runtime.animationState = abilityRunner.StartAnimation(this, ConfigName, WeaponWielder.GetAbilityClip(GetType(), runtime.currentWeapon.WeaponType), WeaponWielder.Mainhand.AttackSpeed);
+            runtime.animationState = abilityManager.StartAnimation(this, ConfigName, animation, WeaponManager.Mainhand.AttackSpeed);
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine()
+        protected override IEnumerable<CoroutineOption> Coroutine()
         {
             HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
             HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)Config;
@@ -91,7 +89,7 @@ namespace LobsterFramework.AbilitySystem
             rotate.Release();
         }
 
-        protected override void Signal(AnimationEvent animationEvent)
+        protected override void OnSignaled(AnimationEvent animationEvent)
         {
             HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
             if (animationEvent != null)
@@ -100,14 +98,6 @@ namespace LobsterFramework.AbilitySystem
             }
             else {
                 runtime.inputSignaled = true;
-            }
-        }
-
-        private void DealDamage(Entity entity, float modifier)
-        {
-            if (targets.IsTarget(entity))
-            {
-                WeaponUtility.WeaponDamage(WeaponWielder.Mainhand, entity, damageModifier, modifier);
             }
         }
 
@@ -126,7 +116,7 @@ namespace LobsterFramework.AbilitySystem
                 {
                     runtime.chargeTimer = config.ChargeMaxTime;
                 }
-                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
+                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else {
                 runtime.currentWeapon.SetOnHitDamage(Damage.none);
@@ -143,7 +133,7 @@ namespace LobsterFramework.AbilitySystem
                 {
                     runtime.chargeTimer = config.ChargeMaxTime;
                 }
-                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
+                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else
             {
@@ -166,7 +156,7 @@ namespace LobsterFramework.AbilitySystem
         }  
     }
 
-    public class HeavyWeaponAttackPipe : AbilityPipe
+    public class HeavyWeaponAttackChannel : AbilityChannel
     {
         private HeavyWeaponAttackConfig conf;
         public float MaxChargeTime { get { return conf.ChargeMaxTime; } }

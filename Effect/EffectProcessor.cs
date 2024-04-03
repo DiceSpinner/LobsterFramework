@@ -7,7 +7,7 @@ namespace LobsterFramework
 {
     public class EffectProcessor : SubLevelComponent
     {
-        [SerializeField] public Dictionary<Type, Effect> activeEffects = new();
+        internal Dictionary<Type, Effect> activeEffects = new();
 
         // Update is called once per frame
         void Update()

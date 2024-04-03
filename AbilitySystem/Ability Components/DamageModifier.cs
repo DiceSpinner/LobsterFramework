@@ -26,7 +26,7 @@ namespace LobsterFramework.AbilitySystem
             return damage;
         }
 
-        public override void Update() {
+        internal protected override void Update() {
             flatDamage = flatDamageModification.Value;
             percentageDamage = percentageDamageModifcation.Value;
         }

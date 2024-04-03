@@ -5,7 +5,7 @@ using UnityEditor;
 
 namespace LobsterFramework.Editors
 {
-    public class EditorUtils
+    public static class EditorUtils
     {
         #region Button
         public static bool Button(Color color, GUIContent content, GUIStyle style, params GUILayoutOption[] options)
@@ -61,6 +61,22 @@ namespace LobsterFramework.Editors
                 }
             }
             return true;
+        }
+        public static Texture2D MakeBackgroundTexture(int width, int height, Color color)
+        {
+            Color[] pixels = new Color[width * height];
+
+            for (int i = 0; i < pixels.Length; i++)
+            {
+                pixels[i] = color;
+            }
+
+            Texture2D backgroundTexture = new Texture2D(width, height);
+
+            backgroundTexture.SetPixels(pixels);
+            backgroundTexture.Apply();
+
+            return backgroundTexture;
         }
     }
 }

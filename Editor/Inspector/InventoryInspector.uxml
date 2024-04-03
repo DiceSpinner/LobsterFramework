@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <uie:PropertyField name="response_channel" binding-path="responseChannel" style="height: 23px;" />
+    <uie:PropertyField name="entity" binding-path="entity" data-source-type="LobsterFramework.Entity, LobsterFramework" style="height: 23px;" />
     <ui:EnumField label="Item Type" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="item_type" include-obsolete-values="false" style="-unity-text-align: middle-left; font-size: 12px; -unity-font-style: bold; height: 20px; align-items: auto;" />
     <ui:ScrollView name="scroll" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" style="height: -2px;">
         <uie:PropertyField name="items" />

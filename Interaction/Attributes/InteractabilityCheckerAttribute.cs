@@ -8,7 +8,7 @@ namespace LobsterFramework.Interaction
 {
     /// <summary>
     /// Registers a method as interactability checker for the interactor with respect to the specified interactable object. The method must have the correct signature:<br/>
-    /// 1. Accepts a <see cref="InteractableObject"/> as the only argument <br/>
+    /// 1. Accepts a <see cref="IInteractable"/> as the only argument <br/>
     /// 2. Have a return type of <see cref="bool"/> <br/>
     /// 3. Method must be private
     /// If mutiple checkers are registered for the same interactable object, only the last one will be considered.
@@ -21,9 +21,9 @@ namespace LobsterFramework.Interaction
         /// </summary>
         internal static Dictionary<Type, Dictionary<Type, Func<InteractionPrompt>>> interactabilityCheckers = new();
         private static Interactor interactor;
-        private static InteractableObject interactableObject;
+        private static IInteractable interactableObject;
 
-        internal static InteractionPrompt GetInteractionPrompts(Interactor actor, InteractableObject obj)
+        internal static InteractionPrompt GetInteractionPrompts(Interactor actor, IInteractable obj)
         {
             interactor = actor;
             interactableObject = obj;
@@ -40,7 +40,7 @@ namespace LobsterFramework.Interaction
             }
         }
 
-        private static Func<InteractionPrompt> ConvertMethod<T, V>(MethodInfo method) where T : Interactor where V : InteractableObject
+        private static Func<InteractionPrompt> ConvertMethod<T, V>(MethodInfo method) where T : Interactor where V : IInteractable
         {
             Func<T, V, InteractionPrompt> delegateMethod = (Func<T, V, InteractionPrompt>)Delegate.CreateDelegate(typeof(Func<T, V, InteractionPrompt>), method, true);
             return () => { return delegateMethod.Invoke((T)interactor, (V)interactableObject); };
@@ -49,9 +49,9 @@ namespace LobsterFramework.Interaction
         internal static void RegisterChecker(MethodInfo method, InteractabilityCheckerAttribute attribute, Type interactorType)
         {
             Dictionary<Type, Func<InteractionPrompt>> checkers = new();
-            if (attribute.interactableType == null || !attribute.interactableType.IsSubclassOf(typeof(InteractableObject)))
+            if (attribute.interactableType == null || !typeof(IInteractable).IsAssignableFrom(attribute.interactableType))
             {
-                Debug.LogError("Failed to register interactablity checker for " + interactorType.Name + ": Bad interactable object type!");
+                Debug.LogError("Failed to register interactablity checker for " + interactorType.Name + $": Bad interactable object type {attribute.interactableType}!");
                 return;
             }
 
@@ -74,11 +74,11 @@ namespace LobsterFramework.Interaction
             }
 
             ParameterInfo[] info = method.GetParameters();
-            if (info == null || info.Length != 1)
+            if (info == null || info.Length != 1) 
             {
                 return false;
             }
-            return info[0].ParameterType.IsSubclassOf(typeof(InteractableObject));
+            return typeof(IInteractable).IsAssignableFrom(info[0].ParameterType);
         }
 
         public Type interactableType = default;

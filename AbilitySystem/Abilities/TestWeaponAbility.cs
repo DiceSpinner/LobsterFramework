@@ -7,15 +7,15 @@ namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
     [WeaponAnimation(typeof(TestAnimationEntries))]
-    [AddWeaponArtMenu(false, WeaponType.EmptyHand, WeaponType.Firearm)]
+    [AddWeaponArtMenu(WeaponType.EmptyHand)]
     public class TestWeaponAbility : WeaponAbility
     {
         protected class TestWeaponAbilityConfig : AbilityConfig { 
         }
 
-        public class TestWeaponAbilityPipe : AbilityPipe { }
+        public class TestWeaponAbilityPipe : AbilityChannel { }
 
-        protected override IEnumerator<CoroutineOption> Coroutine()
+        protected override IEnumerable<CoroutineOption> Coroutine()
         {
             throw new System.NotImplementedException();
         }

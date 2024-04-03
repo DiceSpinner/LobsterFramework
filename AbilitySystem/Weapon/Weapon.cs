@@ -54,9 +54,9 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private WeaponData weaponData;
         [SerializeField] private WeaponArtSelector abilitySelector;
         private WeaponData data;
-        private TypeWeaponStatDictionary weaponStats;
+        private WeaponStatDictionary weaponStats;
 
-        internal WeaponWielder weaponWielder;
+        internal WeaponManager weaponManager;
 
         public Action<Entity> onEntityHit;
         public Action<Weapon> onWeaponHit;
@@ -156,6 +156,9 @@ namespace LobsterFramework.AbilitySystem
             hitted.Clear();
         }
 
+        /// <summary>
+        /// Disable the weapon collider but keep the weapon occupied s.t other offensive abilities cannot override.
+        /// </summary>
         public void Pause()
         {
             thisCollider.enabled = false;

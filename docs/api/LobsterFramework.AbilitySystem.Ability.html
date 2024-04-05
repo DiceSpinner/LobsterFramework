@@ -1,0 +1,1549 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Ability
+ | LobsterFramework documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Ability
+ | LobsterFramework documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LobsterFramework.AbilitySystem.Ability">
+
+
+
+  <h1 id="LobsterFramework_AbilitySystem_Ability" data-uid="LobsterFramework.AbilitySystem.Ability" class="text-break">Class Ability
+</h1>
+  <div class="markdown level0 summary"><p>Abilities defines the kind of actions the parent object can make. <br>
+Each subclass of Ability defines its own AbilityConfig and can be runned on multiple instances of its AbilityConfigs.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
+    <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+    <div class="level3"><span class="xref">Ability</span></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html">AbilityCoroutine</a></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.OffhandAbility.html">OffhandAbility</a></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponArt.html">WeaponArt</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.SetDirty.html">ScriptableObject.SetDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.GetInstanceID.html">Object.GetInstanceID()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.GetHashCode.html">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Vector3, Quaternion, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html">Object.DontDestroyOnLoad(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfType.html">Object.FindObjectsOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsByType.html">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsByType.html">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectOfType.html">Object.FindObjectOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindFirstObjectByType.html">Object.FindFirstObjectByType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindAnyObjectByType.html">Object.FindAnyObjectByType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindFirstObjectByType.html">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindAnyObjectByType.html">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.ToString.html">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object-name.html">Object.name</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object-hideFlags.html">Object.hideFlags</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.AbilitySystem.html">AbilitySystem</a></h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
+  <h5 id="LobsterFramework_AbilitySystem_Ability_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Ability : ScriptableObject</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_abilityManager.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.abilityManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L19">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_abilityManager" data-uid="LobsterFramework.AbilitySystem.Ability.abilityManager">abilityManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AbilityManager abilityManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.AbilityManager.html">AbilityManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_abilityPriority.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.abilityPriority%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L20">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_abilityPriority" data-uid="LobsterFramework.AbilitySystem.Ability.abilityPriority">abilityPriority</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RefAbilityPriority abilityPriority</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.RefAbilityPriority.html">RefAbilityPriority</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Channel.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Channel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L30">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Channel_" data-uid="LobsterFramework.AbilitySystem.Ability.Channel*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Channel" data-uid="LobsterFramework.AbilitySystem.Ability.Channel">Channel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AbilityChannel Channel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.AbilityChannel.html">AbilityChannel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Config.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Config%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L29">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Config_" data-uid="LobsterFramework.AbilitySystem.Ability.Config*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Config" data-uid="LobsterFramework.AbilitySystem.Ability.Config">Config</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AbilityConfig Config { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.AbilityConfig.html">AbilityConfig</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_ConfigName.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.ConfigName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L28">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_ConfigName_" data-uid="LobsterFramework.AbilitySystem.Ability.ConfigName*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_ConfigName" data-uid="LobsterFramework.AbilitySystem.Ability.ConfigName">ConfigName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string ConfigName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Running.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Running%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L204">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Running_" data-uid="LobsterFramework.AbilitySystem.Ability.Running*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Running" data-uid="LobsterFramework.AbilitySystem.Ability.Running">Running</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Running { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Runtime.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Runtime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L31">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Runtime_" data-uid="LobsterFramework.AbilitySystem.Ability.Runtime*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Runtime" data-uid="LobsterFramework.AbilitySystem.Ability.Runtime">Runtime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AbilityRuntime Runtime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.AbilityRuntime.html">AbilityRuntime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Action.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Action%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L340">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Action_" data-uid="LobsterFramework.AbilitySystem.Ability.Action*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Action" data-uid="LobsterFramework.AbilitySystem.Ability.Action">Action()</h4>
+  <div class="markdown level1 summary"><p>Main body of the ability execution, implement this to create different abilities!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool Action()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>False if the ability has finished, otherwise true</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Clear.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L109">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Clear_" data-uid="LobsterFramework.AbilitySystem.Ability.Clear*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Clear" data-uid="LobsterFramework.AbilitySystem.Ability.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Callback when the gameobject is about to be disabled or destroyed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_CompareByEnqueuePriority_LobsterFramework_AbilitySystem_Ability_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L117">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_CompareByEnqueuePriority_" data-uid="LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_CompareByEnqueuePriority_LobsterFramework_AbilitySystem_Ability_" data-uid="LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)">CompareByEnqueuePriority(Ability)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareByEnqueuePriority(Ability other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_LobsterFramework_AbilitySystem_Ability_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L112">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_" data-uid="LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_LobsterFramework_AbilitySystem_Ability_" data-uid="LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)">CompareByExecutionPriority(Ability)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareByExecutionPriority(Ability other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_ConditionSatisfied.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.ConditionSatisfied%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L131">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_ConditionSatisfied_" data-uid="LobsterFramework.AbilitySystem.Ability.ConditionSatisfied*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_ConditionSatisfied" data-uid="LobsterFramework.AbilitySystem.Ability.ConditionSatisfied">ConditionSatisfied()</h4>
+  <div class="markdown level1 summary"><p>Additionaly utility method for skill check that can be imeplemented if the ability have additional requirements, this may varies beween different configs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool ConditionSatisfied()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_HasConfig_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L482">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_HasConfig_" data-uid="LobsterFramework.AbilitySystem.Ability.HasConfig*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_HasConfig_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)">HasConfig(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasConfig(string configName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Initialize.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Initialize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L249">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Initialize_" data-uid="LobsterFramework.AbilitySystem.Ability.Initialize*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Initialize" data-uid="LobsterFramework.AbilitySystem.Ability.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"><p>Callback to initialize the ability runtime environment</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_IsExecuting_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L256">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_IsExecuting_" data-uid="LobsterFramework.AbilitySystem.Ability.IsExecuting*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_IsExecuting_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)">IsExecuting(string)</h4>
+  <div class="markdown level1 summary"><p>Check if the provided config is executing, this method will return false if the config is not present</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsExecuting(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the config to be examined</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the specified config is executing, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_IsReady_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.IsReady(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L266">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_IsReady_" data-uid="LobsterFramework.AbilitySystem.Ability.IsReady*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_IsReady_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.IsReady(System.String)">IsReady(string)</h4>
+  <div class="markdown level1 summary"><p>Check if the ability with specified config name is ready</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReady(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the ability config</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if config with specified name exists and is ready, false otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_JoinAsSecondary_System_Type_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L392">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_JoinAsSecondary_" data-uid="LobsterFramework.AbilitySystem.Ability.JoinAsSecondary*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_JoinAsSecondary_System_Type_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)">JoinAsSecondary(Type, string)</h4>
+  <div class="markdown level1 summary"><p>Attempt to join the current running ability with another ability that is running.
+On success, the current running ability will terminate no later than the joined ability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool JoinAsSecondary(Type abilityType, string configName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">abilityType</span></td>
+        <td><p>The type of the ability to be joined with</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td><p>The name of the configuration of the ability to be joined</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Return true on success, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_JoinAsSecondary__1_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.JoinAsSecondary%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L380">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_JoinAsSecondary_" data-uid="LobsterFramework.AbilitySystem.Ability.JoinAsSecondary*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_JoinAsSecondary__1_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)">JoinAsSecondary&lt;T&gt;(string)</h4>
+  <div class="markdown level1 summary"><p>Attempt to join the current running ability with another ability that is running.
+On success, the current running ability will terminate no later than the joined ability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool JoinAsSecondary&lt;T&gt;(string configName) where T : Ability</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td><p>The name of the configuration of the running ability to be joined</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Return true on success, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the ability to be joined with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnActionFinish.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnActionFinish%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L346">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnActionFinish_" data-uid="LobsterFramework.AbilitySystem.Ability.OnActionFinish*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnActionFinish" data-uid="LobsterFramework.AbilitySystem.Ability.OnActionFinish">OnActionFinish()</h4>
+  <div class="markdown level1 summary"><p>Callback when the action is finished or halted, override this to clean up temporary data generated during the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActionFinish()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_Animancer_AnimancerState_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L352">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_" data-uid="LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_Animancer_AnimancerState_" data-uid="LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)">OnAnimationInterrupt(AnimancerState)</h4>
+  <div class="markdown level1 summary"><p>Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
+Default implementation suspends the ability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAnimationInterrupt(AnimancerState state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">AnimancerState</span></td>
+        <td><span class="parametername">state</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnEnqueue.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnEnqueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L370">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnEnqueue_" data-uid="LobsterFramework.AbilitySystem.Ability.OnEnqueue*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnEnqueue" data-uid="LobsterFramework.AbilitySystem.Ability.OnEnqueue">OnEnqueue()</h4>
+  <div class="markdown level1 summary"><p>Callback when the ability is added to the action executing queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnEnqueue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnSignaled.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnSignaled%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L569">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnSignaled_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnSignaled" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled">OnSignaled()</h4>
+  <div class="markdown level1 summary"><p>Override this to implement signal event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSignaled()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnSignaled_System_Boolean_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnSignaled(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L579">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnSignaled_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnSignaled_System_Boolean_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled(System.Boolean)">OnSignaled(bool)</h4>
+  <div class="markdown level1 summary"><p>Override this to implement signal event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSignaled(bool flag)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">flag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnSignaled_System_Int32_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnSignaled(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L574">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnSignaled_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnSignaled_System_Int32_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled(System.Int32)">OnSignaled(int)</h4>
+  <div class="markdown level1 summary"><p>Override this to implement signal event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSignaled(int num)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">num</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnSignaled_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnSignaled(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L584">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnSignaled_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnSignaled_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled(System.String)">OnSignaled(string)</h4>
+  <div class="markdown level1 summary"><p>Override this to implement signal event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSignaled(string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">text</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnSignaled_UnityEngine_AnimationEvent_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L564">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnSignaled_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnSignaled_UnityEngine_AnimationEvent_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)">OnSignaled(AnimationEvent)</h4>
+  <div class="markdown level1 summary"><p>Override this to implement signal event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSignaled(AnimationEvent animationEvent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/AnimationEvent.html">AnimationEvent</a></td>
+        <td><span class="parametername">animationEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_OnSignaled_UnityEngine_Object_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L589">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_OnSignaled_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_OnSignaled_UnityEngine_Object_" data-uid="LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.Object)">OnSignaled(Object)</h4>
+  <div class="markdown level1 summary"><p>Override this to implement signal event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSignaled(Object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Signal_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Signal(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L505">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Signal_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Signal_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal(System.String)">Signal(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Signal(string configName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Signal(System.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L527">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Signal_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_Boolean_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal(System.String,System.Boolean)">Signal(string, bool)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Signal(string configName, bool flag)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">flag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Signal(System.String%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L516">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Signal_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_Int32_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal(System.String,System.Int32)">Signal(string, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Signal(string configName, int num)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">num</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Signal(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L538">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Signal_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal(System.String,System.String)">Signal(string, string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Signal(string configName, string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">text</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Signal_System_String_UnityEngine_AnimationEvent_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Signal(System.String%2CUnityEngine.AnimationEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L494">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Signal_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Signal_System_String_UnityEngine_AnimationEvent_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal(System.String,UnityEngine.AnimationEvent)">Signal(string, AnimationEvent)</h4>
+  <div class="markdown level1 summary"><p>Signal this ability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Signal(string configName, AnimationEvent animationEvent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/AnimationEvent.html">AnimationEvent</a></td>
+        <td><span class="parametername">animationEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_Signal_System_String_UnityEngine_Object_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.Signal(System.String%2CUnityEngine.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L549">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_Signal_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_Signal_System_String_UnityEngine_Object_" data-uid="LobsterFramework.AbilitySystem.Ability.Signal(System.String,UnityEngine.Object)">Signal(string, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Signal(string configName, Object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_StartAnimation_System_String_UnityEngine_AnimationClip_System_Single_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String%2CUnityEngine.AnimationClip%2CSystem.Single)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L122">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_StartAnimation_" data-uid="LobsterFramework.AbilitySystem.Ability.StartAnimation*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_StartAnimation_System_String_UnityEngine_AnimationClip_System_Single_" data-uid="LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)">StartAnimation(string, AnimationClip, float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void StartAnimation(string configName, AnimationClip animation, float speed = 1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/AnimationClip.html">AnimationClip</a></td>
+        <td><span class="parametername">animation</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">speed</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_SuspendAll.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.SuspendAll%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L238">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_SuspendAll_" data-uid="LobsterFramework.AbilitySystem.Ability.SuspendAll*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_SuspendAll" data-uid="LobsterFramework.AbilitySystem.Ability.SuspendAll">SuspendAll()</h4>
+  <div class="markdown level1 summary"><p>Suspend the execution of all configs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SuspendAll()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability_SuspendInstance_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L211">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_Ability_SuspendInstance_" data-uid="LobsterFramework.AbilitySystem.Ability.SuspendInstance*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_Ability_SuspendInstance_System_String_" data-uid="LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)">SuspendInstance(string)</h4>
+  <div class="markdown level1 summary"><p>Suspend the execution of the specified configuration and casuing it to finish at the current frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuspendInstance(string configName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">configName</span></td>
+        <td><p>Name of the configuration to terminate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the config exists and is suspended, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_Ability.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.Ability%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      LobsterFramework documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

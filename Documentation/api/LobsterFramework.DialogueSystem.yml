@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.DialogueSystem
+  commentId: N:LobsterFramework.DialogueSystem
+  id: LobsterFramework.DialogueSystem
+  children:
+  - LobsterFramework.DialogueSystem.DialogueNode
+  - LobsterFramework.DialogueSystem.DialogueObject
+  - LobsterFramework.DialogueSystem.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.DialogueSystem
+  nameWithType: LobsterFramework.DialogueSystem
+  fullName: LobsterFramework.DialogueSystem
+  type: Namespace
+  assemblies:
+  - LobsterFramework
+references:
+- uid: LobsterFramework.DialogueSystem.DialogueResponse
+  commentId: T:LobsterFramework.DialogueSystem.DialogueResponse
+  href: LobsterFramework.DialogueSystem.DialogueResponse.html
+  name: DialogueResponse
+  nameWithType: DialogueResponse
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse
+- uid: LobsterFramework.DialogueSystem.DialogueObject
+  commentId: T:LobsterFramework.DialogueSystem.DialogueObject
+  parent: LobsterFramework.DialogueSystem
+  href: LobsterFramework.DialogueSystem.DialogueObject.html
+  name: DialogueObject
+  nameWithType: DialogueObject
+  fullName: LobsterFramework.DialogueSystem.DialogueObject
+- uid: LobsterFramework.DialogueSystem.DialogueNode
+  commentId: T:LobsterFramework.DialogueSystem.DialogueNode
+  href: LobsterFramework.DialogueSystem.DialogueNode.html
+  name: DialogueNode
+  nameWithType: DialogueNode
+  fullName: LobsterFramework.DialogueSystem.DialogueNode
+- uid: LobsterFramework.DialogueSystem
+  commentId: N:LobsterFramework.DialogueSystem
+  href: LobsterFramework.html
+  name: LobsterFramework.DialogueSystem
+  nameWithType: LobsterFramework.DialogueSystem
+  fullName: LobsterFramework.DialogueSystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.DialogueSystem
+    name: DialogueSystem
+    href: LobsterFramework.DialogueSystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.DialogueSystem
+    name: DialogueSystem
+    href: LobsterFramework.DialogueSystem.html

@@ -1,0 +1,240 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.DialogueResponse
+  commentId: T:LobsterFramework.Utility.DialogueResponse
+  id: DialogueResponse
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.DialogueResponse.Dialogue
+  - LobsterFramework.Utility.DialogueResponse.Respond
+  - LobsterFramework.Utility.DialogueResponse.Text
+  - LobsterFramework.Utility.DialogueResponse.onResponseSelected
+  langs:
+  - csharp
+  - vb
+  name: DialogueResponse
+  nameWithType: DialogueResponse
+  fullName: LobsterFramework.Utility.DialogueResponse
+  type: Class
+  source:
+    remote:
+      path: Interaction/Dialogue/DialogueResponse.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: DialogueResponse
+    path: ../Interaction/Dialogue/DialogueResponse.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class DialogueResponse
+    content.vb: >-
+      <Serializable>
+
+      Public Class DialogueResponse
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.Utility.DialogueResponse.onResponseSelected
+  commentId: F:LobsterFramework.Utility.DialogueResponse.onResponseSelected
+  id: onResponseSelected
+  parent: LobsterFramework.Utility.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: onResponseSelected
+  nameWithType: DialogueResponse.onResponseSelected
+  fullName: LobsterFramework.Utility.DialogueResponse.onResponseSelected
+  type: Field
+  source:
+    remote:
+      path: Interaction/Dialogue/DialogueResponse.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: onResponseSelected
+    path: ../Interaction/Dialogue/DialogueResponse.cs
+    startLine: 15
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public Action onResponseSelected
+    return:
+      type: System.Action
+    content.vb: Public onResponseSelected As Action
+- uid: LobsterFramework.Utility.DialogueResponse.Respond
+  commentId: M:LobsterFramework.Utility.DialogueResponse.Respond
+  id: Respond
+  parent: LobsterFramework.Utility.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: Respond()
+  nameWithType: DialogueResponse.Respond()
+  fullName: LobsterFramework.Utility.DialogueResponse.Respond()
+  type: Method
+  source:
+    remote:
+      path: Interaction/Dialogue/DialogueResponse.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Respond
+    path: ../Interaction/Dialogue/DialogueResponse.cs
+    startLine: 17
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public void Respond()
+    content.vb: Public Sub Respond()
+  overload: LobsterFramework.Utility.DialogueResponse.Respond*
+- uid: LobsterFramework.Utility.DialogueResponse.Dialogue
+  commentId: P:LobsterFramework.Utility.DialogueResponse.Dialogue
+  id: Dialogue
+  parent: LobsterFramework.Utility.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: Dialogue
+  nameWithType: DialogueResponse.Dialogue
+  fullName: LobsterFramework.Utility.DialogueResponse.Dialogue
+  type: Property
+  source:
+    remote:
+      path: Interaction/Dialogue/DialogueResponse.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Dialogue
+    path: ../Interaction/Dialogue/DialogueResponse.cs
+    startLine: 22
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public DialogueObject Dialogue { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.Utility.DialogueObject
+    content.vb: Public ReadOnly Property Dialogue As DialogueObject
+  overload: LobsterFramework.Utility.DialogueResponse.Dialogue*
+- uid: LobsterFramework.Utility.DialogueResponse.Text
+  commentId: P:LobsterFramework.Utility.DialogueResponse.Text
+  id: Text
+  parent: LobsterFramework.Utility.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: DialogueResponse.Text
+  fullName: LobsterFramework.Utility.DialogueResponse.Text
+  type: Property
+  source:
+    remote:
+      path: Interaction/Dialogue/DialogueResponse.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Text
+    path: ../Interaction/Dialogue/DialogueResponse.cs
+    startLine: 27
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public string Text { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Text As String
+  overload: LobsterFramework.Utility.DialogueResponse.Text*
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: LobsterFramework.Utility.DialogueResponse.Respond*
+  commentId: Overload:LobsterFramework.Utility.DialogueResponse.Respond
+  href: LobsterFramework.Utility.DialogueResponse.html#LobsterFramework.Utility.DialogueResponse.Respond
+  name: Respond
+  nameWithType: DialogueResponse.Respond
+  fullName: LobsterFramework.Utility.DialogueResponse.Respond
+- uid: LobsterFramework.Utility.DialogueResponse.Dialogue*
+  commentId: Overload:LobsterFramework.Utility.DialogueResponse.Dialogue
+  href: LobsterFramework.Utility.DialogueResponse.html#LobsterFramework.Utility.DialogueResponse.Dialogue
+  name: Dialogue
+  nameWithType: DialogueResponse.Dialogue
+  fullName: LobsterFramework.Utility.DialogueResponse.Dialogue
+- uid: LobsterFramework.Utility.DialogueObject
+  commentId: T:LobsterFramework.Utility.DialogueObject
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.DialogueObject.html
+  name: DialogueObject
+  nameWithType: DialogueObject
+  fullName: LobsterFramework.Utility.DialogueObject
+- uid: LobsterFramework.Utility.DialogueResponse.Text*
+  commentId: Overload:LobsterFramework.Utility.DialogueResponse.Text
+  href: LobsterFramework.Utility.DialogueResponse.html#LobsterFramework.Utility.DialogueResponse.Text
+  name: Text
+  nameWithType: DialogueResponse.Text
+  fullName: LobsterFramework.Utility.DialogueResponse.Text
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

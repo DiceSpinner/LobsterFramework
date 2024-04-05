@@ -1,0 +1,133 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AI.Transition
+  commentId: T:LobsterFramework.AI.Transition
+  id: Transition
+  parent: LobsterFramework.AI
+  children:
+  - LobsterFramework.AI.Transition.Eval
+  - LobsterFramework.AI.Transition.TargetState
+  langs:
+  - csharp
+  - vb
+  name: Transition
+  nameWithType: Transition
+  fullName: LobsterFramework.AI.Transition
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/Transition.cs
+    id: Transition
+    path: ../Assets/Framework/StateMachine/Transition.cs
+    startLine: 7
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct Transition
+    content.vb: >-
+      <Serializable>
+
+      Public Structure Transition
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.AI.Transition.Eval
+  commentId: M:LobsterFramework.AI.Transition.Eval
+  id: Eval
+  parent: LobsterFramework.AI.Transition
+  langs:
+  - csharp
+  - vb
+  name: Eval()
+  nameWithType: Transition.Eval()
+  fullName: LobsterFramework.AI.Transition.Eval()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/Transition.cs
+    id: Eval
+    path: ../Assets/Framework/StateMachine/Transition.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public State Eval()
+    return:
+      type: LobsterFramework.AI.State
+    content.vb: Public Function Eval() As State
+  overload: LobsterFramework.AI.Transition.Eval*
+- uid: LobsterFramework.AI.Transition.TargetState
+  commentId: P:LobsterFramework.AI.Transition.TargetState
+  id: TargetState
+  parent: LobsterFramework.AI.Transition
+  langs:
+  - csharp
+  - vb
+  name: TargetState
+  nameWithType: Transition.TargetState
+  fullName: LobsterFramework.AI.Transition.TargetState
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/Transition.cs
+    id: TargetState
+    path: ../Assets/Framework/StateMachine/Transition.cs
+    startLine: 25
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public State TargetState { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.AI.State
+    content.vb: Public ReadOnly Property TargetState As State
+  overload: LobsterFramework.AI.Transition.TargetState*
+references:
+- uid: LobsterFramework.AI
+  commentId: N:LobsterFramework.AI
+  href: LobsterFramework.html
+  name: LobsterFramework.AI
+  nameWithType: LobsterFramework.AI
+  fullName: LobsterFramework.AI
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+- uid: LobsterFramework.AI.Transition.Eval*
+  commentId: Overload:LobsterFramework.AI.Transition.Eval
+  href: LobsterFramework.AI.Transition.html#LobsterFramework.AI.Transition.Eval
+  name: Eval
+  nameWithType: Transition.Eval
+  fullName: LobsterFramework.AI.Transition.Eval
+- uid: LobsterFramework.AI.State
+  commentId: T:LobsterFramework.AI.State
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.State.html
+  name: State
+  nameWithType: State
+  fullName: LobsterFramework.AI.State
+- uid: LobsterFramework.AI.Transition.TargetState*
+  commentId: Overload:LobsterFramework.AI.Transition.TargetState
+  href: LobsterFramework.AI.Transition.html#LobsterFramework.AI.Transition.TargetState
+  name: TargetState
+  nameWithType: Transition.TargetState
+  fullName: LobsterFramework.AI.Transition.TargetState

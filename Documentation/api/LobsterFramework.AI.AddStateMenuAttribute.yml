@@ -1,0 +1,154 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AI.AddStateMenuAttribute
+  commentId: T:LobsterFramework.AI.AddStateMenuAttribute
+  id: AddStateMenuAttribute
+  parent: LobsterFramework.AI
+  children:
+  - LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
+  langs:
+  - csharp
+  - vb
+  name: AddStateMenuAttribute
+  nameWithType: AddStateMenuAttribute
+  fullName: LobsterFramework.AI.AddStateMenuAttribute
+  type: Class
+  source:
+    remote:
+      path: AI/Attributes/AddStateMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: AddStateMenuAttribute
+    path: ../AI/Attributes/AddStateMenuAttribute.cs
+    startLine: 15
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  summary: Make this state visible to the editor script. Pass in path string to specify the menus groups that leads to this state.
+  example: []
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+
+      public class AddStateMenuAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False, Inherited:=False)>
+
+      Public Class AddStateMenuAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: false
+    - name: Inherited
+      type: System.Boolean
+      value: false
+- uid: LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
+  commentId: M:LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: LobsterFramework.AI.AddStateMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: AddStateMenuAttribute(string)
+  nameWithType: AddStateMenuAttribute.AddStateMenuAttribute(string)
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.AddStateMenuAttribute(string)
+  type: Constructor
+  source:
+    remote:
+      path: AI/Attributes/AddStateMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../AI/Attributes/AddStateMenuAttribute.cs
+    startLine: 36
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public AddStateMenuAttribute(string menuPath = "")
+    parameters:
+    - id: menuPath
+      type: System.String
+    content.vb: Public Sub New(menuPath As String = "")
+  overload: LobsterFramework.AI.AddStateMenuAttribute.#ctor*
+  nameWithType.vb: AddStateMenuAttribute.New(String)
+  fullName.vb: LobsterFramework.AI.AddStateMenuAttribute.New(String)
+  name.vb: New(String)
+references:
+- uid: LobsterFramework.AI
+  commentId: N:LobsterFramework.AI
+  href: LobsterFramework.html
+  name: LobsterFramework.AI
+  nameWithType: LobsterFramework.AI
+  fullName: LobsterFramework.AI
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AI.AddStateMenuAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AI.AddStateMenuAttribute.#ctor
+  href: LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
+  name: AddStateMenuAttribute
+  nameWithType: AddStateMenuAttribute.AddStateMenuAttribute
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.AddStateMenuAttribute
+  nameWithType.vb: AddStateMenuAttribute.New
+  fullName.vb: LobsterFramework.AI.AddStateMenuAttribute.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Editors.FolderIcon
+  commentId: T:LobsterFramework.Editors.FolderIcon
+  id: FolderIcon
+  parent: LobsterFramework.Editors
+  children:
+  - LobsterFramework.Editors.FolderIcon.icon
+  - LobsterFramework.Editors.FolderIcon.name
+  - LobsterFramework.Editors.FolderIcon.path
+  langs:
+  - csharp
+  - vb
+  name: FolderIcon
+  nameWithType: FolderIcon
+  fullName: LobsterFramework.Editors.FolderIcon
+  type: Class
+  source:
+    remote:
+      path: Editor/Singletons/StateDataEditorSetting.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: FolderIcon
+    path: ../Editor/Singletons/StateDataEditorSetting.cs
+    startLine: 32
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class FolderIcon
+    content.vb: >-
+      <Serializable>
+
+      Public Class FolderIcon
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.Editors.FolderIcon.name
+  commentId: F:LobsterFramework.Editors.FolderIcon.name
+  id: name
+  parent: LobsterFramework.Editors.FolderIcon
+  langs:
+  - csharp
+  - vb
+  name: name
+  nameWithType: FolderIcon.name
+  fullName: LobsterFramework.Editors.FolderIcon.name
+  type: Field
+  source:
+    remote:
+      path: Editor/Singletons/StateDataEditorSetting.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: name
+    path: ../Editor/Singletons/StateDataEditorSetting.cs
+    startLine: 35
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public string name
+    return:
+      type: System.String
+    content.vb: Public name As String
+- uid: LobsterFramework.Editors.FolderIcon.path
+  commentId: F:LobsterFramework.Editors.FolderIcon.path
+  id: path
+  parent: LobsterFramework.Editors.FolderIcon
+  langs:
+  - csharp
+  - vb
+  name: path
+  nameWithType: FolderIcon.path
+  fullName: LobsterFramework.Editors.FolderIcon.path
+  type: Field
+  source:
+    remote:
+      path: Editor/Singletons/StateDataEditorSetting.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: path
+    path: ../Editor/Singletons/StateDataEditorSetting.cs
+    startLine: 37
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: >-
+      [FilePath("", "")]
+
+      public string path
+    return:
+      type: System.String
+    content.vb: >-
+      <FilePath("", "")>
+
+      Public path As String
+  attributes:
+  - type: LobsterFramework.FilePathAttribute
+    ctor: LobsterFramework.FilePathAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: ''
+- uid: LobsterFramework.Editors.FolderIcon.icon
+  commentId: F:LobsterFramework.Editors.FolderIcon.icon
+  id: icon
+  parent: LobsterFramework.Editors.FolderIcon
+  langs:
+  - csharp
+  - vb
+  name: icon
+  nameWithType: FolderIcon.icon
+  fullName: LobsterFramework.Editors.FolderIcon.icon
+  type: Field
+  source:
+    remote:
+      path: Editor/Singletons/StateDataEditorSetting.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: icon
+    path: ../Editor/Singletons/StateDataEditorSetting.cs
+    startLine: 38
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public Texture2D icon
+    return:
+      type: UnityEngine.Texture2D
+    content.vb: Public icon As Texture2D
+references:
+- uid: LobsterFramework.Editors
+  commentId: N:LobsterFramework.Editors
+  href: LobsterFramework.html
+  name: LobsterFramework.Editors
+  nameWithType: LobsterFramework.Editors
+  fullName: LobsterFramework.Editors
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UnityEngine.Texture2D
+  commentId: T:UnityEngine.Texture2D
+  parent: UnityEngine
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: UnityEngine.Texture2D
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

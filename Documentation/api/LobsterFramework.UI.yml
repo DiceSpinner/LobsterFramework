@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.UI
+  commentId: N:LobsterFramework.UI
+  id: LobsterFramework.UI
+  children:
+  - LobsterFramework.UI.InventoryUI
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.UI
+  nameWithType: LobsterFramework.UI
+  fullName: LobsterFramework.UI
+  type: Namespace
+  assemblies:
+  - LobsterFramework
+references:
+- uid: LobsterFramework.UI.InventoryUI
+  commentId: T:LobsterFramework.UI.InventoryUI
+  href: LobsterFramework.UI.InventoryUI.html
+  name: InventoryUI
+  nameWithType: InventoryUI
+  fullName: LobsterFramework.UI.InventoryUI

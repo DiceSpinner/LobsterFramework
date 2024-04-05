@@ -1,0 +1,254 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.GameUtility
+  commentId: T:LobsterFramework.Utility.GameUtility
+  id: GameUtility
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.GameUtility.CrossFade(UnityEngine.Animator,System.String,System.Single,System.Single)
+  - LobsterFramework.Utility.GameUtility.FindEntity(UnityEngine.GameObject)
+  - LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  langs:
+  - csharp
+  - vb
+  name: GameUtility
+  nameWithType: GameUtility
+  fullName: LobsterFramework.Utility.GameUtility
+  type: Class
+  source:
+    remote:
+      path: Utility/GameUtility.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: GameUtility
+    path: ../Utility/GameUtility.cs
+    startLine: 3
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public static class GameUtility
+    content.vb: Public Module GameUtility
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  commentId: M:LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  id: SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  parent: LobsterFramework.Utility.GameUtility
+  langs:
+  - csharp
+  - vb
+  name: SetAbsoluteScale(GameObject, Vector2)
+  nameWithType: GameUtility.SetAbsoluteScale(GameObject, Vector2)
+  fullName: LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject, UnityEngine.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Utility/GameUtility.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: SetAbsoluteScale
+    path: ../Utility/GameUtility.cs
+    startLine: 5
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public static void SetAbsoluteScale(GameObject obj, Vector2 size)
+    parameters:
+    - id: obj
+      type: UnityEngine.GameObject
+    - id: size
+      type: UnityEngine.Vector2
+    content.vb: Public Shared Sub SetAbsoluteScale(obj As GameObject, size As Vector2)
+  overload: LobsterFramework.Utility.GameUtility.SetAbsoluteScale*
+- uid: LobsterFramework.Utility.GameUtility.FindEntity(UnityEngine.GameObject)
+  commentId: M:LobsterFramework.Utility.GameUtility.FindEntity(UnityEngine.GameObject)
+  id: FindEntity(UnityEngine.GameObject)
+  parent: LobsterFramework.Utility.GameUtility
+  langs:
+  - csharp
+  - vb
+  name: FindEntity(GameObject)
+  nameWithType: GameUtility.FindEntity(GameObject)
+  fullName: LobsterFramework.Utility.GameUtility.FindEntity(UnityEngine.GameObject)
+  type: Method
+  source:
+    remote:
+      path: Utility/GameUtility.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: FindEntity
+    path: ../Utility/GameUtility.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public static Entity FindEntity(GameObject obj)
+    parameters:
+    - id: obj
+      type: UnityEngine.GameObject
+    return:
+      type: LobsterFramework.Entity
+    content.vb: Public Shared Function FindEntity(obj As GameObject) As Entity
+  overload: LobsterFramework.Utility.GameUtility.FindEntity*
+- uid: LobsterFramework.Utility.GameUtility.CrossFade(UnityEngine.Animator,System.String,System.Single,System.Single)
+  commentId: M:LobsterFramework.Utility.GameUtility.CrossFade(UnityEngine.Animator,System.String,System.Single,System.Single)
+  id: CrossFade(UnityEngine.Animator,System.String,System.Single,System.Single)
+  parent: LobsterFramework.Utility.GameUtility
+  langs:
+  - csharp
+  - vb
+  name: CrossFade(Animator, string, float, float)
+  nameWithType: GameUtility.CrossFade(Animator, string, float, float)
+  fullName: LobsterFramework.Utility.GameUtility.CrossFade(UnityEngine.Animator, string, float, float)
+  type: Method
+  source:
+    remote:
+      path: Utility/GameUtility.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: CrossFade
+    path: ../Utility/GameUtility.cs
+    startLine: 23
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public static void CrossFade(Animator animator, string animation, float transitionDuration, float normalizedTime)
+    parameters:
+    - id: animator
+      type: UnityEngine.Animator
+    - id: animation
+      type: System.String
+    - id: transitionDuration
+      type: System.Single
+    - id: normalizedTime
+      type: System.Single
+    content.vb: Public Shared Sub CrossFade(animator As Animator, animation As String, transitionDuration As Single, normalizedTime As Single)
+  overload: LobsterFramework.Utility.GameUtility.CrossFade*
+  nameWithType.vb: GameUtility.CrossFade(Animator, String, Single, Single)
+  fullName.vb: LobsterFramework.Utility.GameUtility.CrossFade(UnityEngine.Animator, String, Single, Single)
+  name.vb: CrossFade(Animator, String, Single, Single)
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.GameUtility.SetAbsoluteScale*
+  commentId: Overload:LobsterFramework.Utility.GameUtility.SetAbsoluteScale
+  href: LobsterFramework.Utility.GameUtility.html#LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  name: SetAbsoluteScale
+  nameWithType: GameUtility.SetAbsoluteScale
+  fullName: LobsterFramework.Utility.GameUtility.SetAbsoluteScale
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: UnityEngine.Vector2
+  commentId: T:UnityEngine.Vector2
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: UnityEngine.Vector2
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Utility.GameUtility.FindEntity*
+  commentId: Overload:LobsterFramework.Utility.GameUtility.FindEntity
+  href: LobsterFramework.Utility.GameUtility.html#LobsterFramework.Utility.GameUtility.FindEntity(UnityEngine.GameObject)
+  name: FindEntity
+  nameWithType: GameUtility.FindEntity
+  fullName: LobsterFramework.Utility.GameUtility.FindEntity
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.Entity
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: LobsterFramework.Utility.GameUtility.CrossFade*
+  commentId: Overload:LobsterFramework.Utility.GameUtility.CrossFade
+  href: LobsterFramework.Utility.GameUtility.html#LobsterFramework.Utility.GameUtility.CrossFade(UnityEngine.Animator,System.String,System.Single,System.Single)
+  name: CrossFade
+  nameWithType: GameUtility.CrossFade
+  fullName: LobsterFramework.Utility.GameUtility.CrossFade
+- uid: UnityEngine.Animator
+  commentId: T:UnityEngine.Animator
+  parent: UnityEngine
+  isExternal: true
+  name: Animator
+  nameWithType: Animator
+  fullName: UnityEngine.Animator
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single

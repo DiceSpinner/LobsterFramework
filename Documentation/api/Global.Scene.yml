@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Scene
+  commentId: T:Global.Scene
+  id: Scene
+  parent: Global
+  children:
+  - Global.Scene.Gameplay
+  - Global.Scene.IntroMenu
+  langs:
+  - csharp
+  - vb
+  name: Scene
+  nameWithType: Scene
+  fullName: Scene
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/GameManager.cs
+    id: Scene
+    path: ../Assets/Framework/Persistent Managers/GameManager.cs
+    startLine: 6
+  assemblies:
+  - LobsterFramework
+  namespace: Global
+  syntax:
+    content: public enum Scene
+    content.vb: Public Enum Scene
+- uid: Global.Scene.IntroMenu
+  commentId: F:Global.Scene.IntroMenu
+  id: IntroMenu
+  parent: Global.Scene
+  langs:
+  - csharp
+  - vb
+  name: IntroMenu
+  nameWithType: Scene.IntroMenu
+  fullName: Scene.IntroMenu
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/GameManager.cs
+    id: IntroMenu
+    path: ../Assets/Framework/Persistent Managers/GameManager.cs
+    startLine: 7
+  assemblies:
+  - LobsterFramework
+  namespace: Global
+  syntax:
+    content: IntroMenu = 0
+    return:
+      type: Global.Scene
+- uid: Global.Scene.Gameplay
+  commentId: F:Global.Scene.Gameplay
+  id: Gameplay
+  parent: Global.Scene
+  langs:
+  - csharp
+  - vb
+  name: Gameplay
+  nameWithType: Scene.Gameplay
+  fullName: Scene.Gameplay
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/GameManager.cs
+    id: Gameplay
+    path: ../Assets/Framework/Persistent Managers/GameManager.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: Global
+  syntax:
+    content: Gameplay = 1
+    return:
+      type: Global.Scene
+references:
+- uid: Global
+- uid: Global.Scene
+  commentId: T:Global.Scene
+  href: Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: Scene

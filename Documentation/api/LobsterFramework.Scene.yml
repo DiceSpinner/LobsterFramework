@@ -1,0 +1,96 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Scene
+  commentId: T:LobsterFramework.Scene
+  id: Scene
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.Scene.Gameplay
+  - LobsterFramework.Scene.IntroMenu
+  langs:
+  - csharp
+  - vb
+  name: Scene
+  nameWithType: Scene
+  fullName: LobsterFramework.Scene
+  type: Enum
+  source:
+    remote:
+      path: GameManager.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Scene
+    path: ../GameManager.cs
+    startLine: 12
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public enum Scene
+    content.vb: Public Enum Scene
+- uid: LobsterFramework.Scene.IntroMenu
+  commentId: F:LobsterFramework.Scene.IntroMenu
+  id: IntroMenu
+  parent: LobsterFramework.Scene
+  langs:
+  - csharp
+  - vb
+  name: IntroMenu
+  nameWithType: Scene.IntroMenu
+  fullName: LobsterFramework.Scene.IntroMenu
+  type: Field
+  source:
+    remote:
+      path: GameManager.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IntroMenu
+    path: ../GameManager.cs
+    startLine: 14
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: IntroMenu = 0
+    return:
+      type: LobsterFramework.Scene
+- uid: LobsterFramework.Scene.Gameplay
+  commentId: F:LobsterFramework.Scene.Gameplay
+  id: Gameplay
+  parent: LobsterFramework.Scene
+  langs:
+  - csharp
+  - vb
+  name: Gameplay
+  nameWithType: Scene.Gameplay
+  fullName: LobsterFramework.Scene.Gameplay
+  type: Field
+  source:
+    remote:
+      path: GameManager.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Gameplay
+    path: ../GameManager.cs
+    startLine: 15
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: Gameplay = 1
+    return:
+      type: LobsterFramework.Scene
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: LobsterFramework.Scene
+  commentId: T:LobsterFramework.Scene
+  parent: LobsterFramework
+  href: LobsterFramework.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: LobsterFramework.Scene

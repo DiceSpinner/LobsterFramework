@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AI.StateTransitionAttribute
+  commentId: T:LobsterFramework.AI.StateTransitionAttribute
+  id: StateTransitionAttribute
+  parent: LobsterFramework.AI
+  children:
+  - LobsterFramework.AI.StateTransitionAttribute.#ctor(System.Type[])
+  langs:
+  - csharp
+  - vb
+  name: StateTransitionAttribute
+  nameWithType: StateTransitionAttribute
+  fullName: LobsterFramework.AI.StateTransitionAttribute
+  type: Class
+  source:
+    remote:
+      path: AI/Attributes/StateTransitionAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: StateTransitionAttribute
+    path: ../AI/Attributes/StateTransitionAttribute.cs
+    startLine: 10
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  summary: Marks the transitions of this state. The state data will be verified against the list of transition states provided here.
+  example: []
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
+
+      public class StateTransitionAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=True, Inherited:=False)>
+
+      Public Class StateTransitionAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: true
+    - name: Inherited
+      type: System.Boolean
+      value: false
+- uid: LobsterFramework.AI.StateTransitionAttribute.#ctor(System.Type[])
+  commentId: M:LobsterFramework.AI.StateTransitionAttribute.#ctor(System.Type[])
+  id: '#ctor(System.Type[])'
+  parent: LobsterFramework.AI.StateTransitionAttribute
+  langs:
+  - csharp
+  - vb
+  name: StateTransitionAttribute(params Type[])
+  nameWithType: StateTransitionAttribute.StateTransitionAttribute(params Type[])
+  fullName: LobsterFramework.AI.StateTransitionAttribute.StateTransitionAttribute(params System.Type[])
+  type: Constructor
+  source:
+    remote:
+      path: AI/Attributes/StateTransitionAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../AI/Attributes/StateTransitionAttribute.cs
+    startLine: 17
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public StateTransitionAttribute(params Type[] transitions)
+    parameters:
+    - id: transitions
+      type: System.Type[]
+    content.vb: Public Sub New(ParamArray transitions As Type())
+  overload: LobsterFramework.AI.StateTransitionAttribute.#ctor*
+  nameWithType.vb: StateTransitionAttribute.New(ParamArray Type())
+  fullName.vb: LobsterFramework.AI.StateTransitionAttribute.New(ParamArray System.Type())
+  name.vb: New(ParamArray Type())
+references:
+- uid: LobsterFramework.AI
+  commentId: N:LobsterFramework.AI
+  href: LobsterFramework.html
+  name: LobsterFramework.AI
+  nameWithType: LobsterFramework.AI
+  fullName: LobsterFramework.AI
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AI.StateTransitionAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AI.StateTransitionAttribute.#ctor
+  href: LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework.AI.StateTransitionAttribute.#ctor(System.Type[])
+  name: StateTransitionAttribute
+  nameWithType: StateTransitionAttribute.StateTransitionAttribute
+  fullName: LobsterFramework.AI.StateTransitionAttribute.StateTransitionAttribute
+  nameWithType.vb: StateTransitionAttribute.New
+  fullName.vb: LobsterFramework.AI.StateTransitionAttribute.New
+  name.vb: New
+- uid: System.Type[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type[]
+  nameWithType: Type[]
+  fullName: System.Type[]
+  nameWithType.vb: Type()
+  fullName.vb: System.Type()
+  name.vb: Type()
+  spec.csharp:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: (
+  - name: )

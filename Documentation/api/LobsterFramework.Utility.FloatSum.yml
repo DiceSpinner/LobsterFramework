@@ -1,0 +1,555 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.FloatSum
+  commentId: T:LobsterFramework.Utility.FloatSum
+  id: FloatSum
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  - LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  - LobsterFramework.Utility.FloatSum.ComputeValue
+  langs:
+  - csharp
+  - vb
+  name: FloatSum
+  nameWithType: FloatSum
+  fullName: LobsterFramework.Utility.FloatSum
+  type: Class
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: FloatSum
+    path: ../Utility/CombinedValue.cs
+    startLine: 186
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Value is the sum of all effectors
+  example: []
+  syntax:
+    content: 'public class FloatSum : CombinedValue<float>'
+    content.vb: Public Class FloatSum Inherits CombinedValue(Of Single)
+  inheritance:
+  - System.Object
+  - LobsterFramework.Utility.CombinedValue{System.Single}
+  inheritedMembers:
+  - LobsterFramework.Utility.CombinedValue{System.Single}.stats
+  - LobsterFramework.Utility.CombinedValue{System.Single}.baseValue
+  - LobsterFramework.Utility.CombinedValue{System.Single}.Value
+  - LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+  - LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+  - LobsterFramework.Utility.CombinedValue{System.Single}.EffectorCount
+- uid: LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  commentId: M:LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  id: '#ctor(System.Int32,System.Boolean,System.Boolean)'
+  parent: LobsterFramework.Utility.FloatSum
+  langs:
+  - csharp
+  - vb
+  name: FloatSum(int, bool, bool)
+  nameWithType: FloatSum.FloatSum(int, bool, bool)
+  fullName: LobsterFramework.Utility.FloatSum.FloatSum(int, bool, bool)
+  type: Constructor
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../Utility/CombinedValue.cs
+    startLine: 190
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public FloatSum(int value, bool nonNegative = false, bool addNegative = true)
+    parameters:
+    - id: value
+      type: System.Int32
+    - id: nonNegative
+      type: System.Boolean
+    - id: addNegative
+      type: System.Boolean
+    content.vb: Public Sub New(value As Integer, nonNegative As Boolean = False, addNegative As Boolean = True)
+  overload: LobsterFramework.Utility.FloatSum.#ctor*
+  nameWithType.vb: FloatSum.New(Integer, Boolean, Boolean)
+  fullName.vb: LobsterFramework.Utility.FloatSum.New(Integer, Boolean, Boolean)
+  name.vb: New(Integer, Boolean, Boolean)
+- uid: LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  commentId: M:LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  id: Compatible(System.Single)
+  parent: LobsterFramework.Utility.FloatSum
+  langs:
+  - csharp
+  - vb
+  name: Compatible(float)
+  nameWithType: FloatSum.Compatible(float)
+  fullName: LobsterFramework.Utility.FloatSum.Compatible(float)
+  type: Method
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Compatible
+    path: ../Utility/CombinedValue.cs
+    startLine: 196
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Determines if the effector can be added
+  example: []
+  syntax:
+    content: public override bool Compatible(float obj)
+    parameters:
+    - id: obj
+      type: System.Single
+      description: The value of the effector to be examined
+    return:
+      type: System.Boolean
+      description: true if can be added, otherwise false
+    content.vb: Public Overrides Function Compatible(obj As Single) As Boolean
+  overridden: LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+  overload: LobsterFramework.Utility.FloatSum.Compatible*
+  nameWithType.vb: FloatSum.Compatible(Single)
+  fullName.vb: LobsterFramework.Utility.FloatSum.Compatible(Single)
+  name.vb: Compatible(Single)
+- uid: LobsterFramework.Utility.FloatSum.ComputeValue
+  commentId: M:LobsterFramework.Utility.FloatSum.ComputeValue
+  id: ComputeValue
+  parent: LobsterFramework.Utility.FloatSum
+  langs:
+  - csharp
+  - vb
+  name: ComputeValue()
+  nameWithType: FloatSum.ComputeValue()
+  fullName: LobsterFramework.Utility.FloatSum.ComputeValue()
+  type: Method
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: ComputeValue
+    path: ../Utility/CombinedValue.cs
+    startLine: 204
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Compute the value taking all effectors into account
+  example: []
+  syntax:
+    content: protected override float ComputeValue()
+    return:
+      type: System.Single
+      description: ''
+    content.vb: Protected Overrides Function ComputeValue() As Single
+  overridden: LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+  overload: LobsterFramework.Utility.FloatSum.ComputeValue*
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}
+  commentId: T:LobsterFramework.Utility.CombinedValue{System.Single}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.CombinedValue`1
+  href: LobsterFramework.Utility.CombinedValue-1.html
+  name: CombinedValue<float>
+  nameWithType: CombinedValue<float>
+  fullName: LobsterFramework.Utility.CombinedValue<float>
+  nameWithType.vb: CombinedValue(Of Single)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single)
+  name.vb: CombinedValue(Of Single)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.stats
+  commentId: F:LobsterFramework.Utility.CombinedValue{System.Single}.stats
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.stats
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.stats
+  name: stats
+  nameWithType: CombinedValue<float>.stats
+  fullName: LobsterFramework.Utility.CombinedValue<float>.stats
+  nameWithType.vb: CombinedValue(Of Single).stats
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).stats
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.baseValue
+  commentId: F:LobsterFramework.Utility.CombinedValue{System.Single}.baseValue
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.baseValue
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.baseValue
+  name: baseValue
+  nameWithType: CombinedValue<float>.baseValue
+  fullName: LobsterFramework.Utility.CombinedValue<float>.baseValue
+  nameWithType.vb: CombinedValue(Of Single).baseValue
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).baseValue
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.Value
+  commentId: P:LobsterFramework.Utility.CombinedValue{System.Single}.Value
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.Value
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.Value
+  name: Value
+  nameWithType: CombinedValue<float>.Value
+  fullName: LobsterFramework.Utility.CombinedValue<float>.Value
+  nameWithType.vb: CombinedValue(Of Single).Value
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).Value
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+  name: ClearEffectors()
+  nameWithType: CombinedValue<float>.ClearEffectors()
+  fullName: LobsterFramework.Utility.CombinedValue<float>.ClearEffectors()
+  nameWithType.vb: CombinedValue(Of Single).ClearEffectors()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).ClearEffectors()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+  name: MakeEffector()
+  nameWithType: CombinedValue<float>.MakeEffector()
+  fullName: LobsterFramework.Utility.CombinedValue<float>.MakeEffector()
+  nameWithType.vb: CombinedValue(Of Single).MakeEffector()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).MakeEffector()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.EffectorCount
+  commentId: P:LobsterFramework.Utility.CombinedValue{System.Single}.EffectorCount
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.EffectorCount
+  name: EffectorCount
+  nameWithType: CombinedValue<float>.EffectorCount
+  fullName: LobsterFramework.Utility.CombinedValue<float>.EffectorCount
+  nameWithType.vb: CombinedValue(Of Single).EffectorCount
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).EffectorCount
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.CombinedValue`1
+  commentId: T:LobsterFramework.Utility.CombinedValue`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CombinedValue-1.html
+  name: CombinedValue<T>
+  nameWithType: CombinedValue<T>
+  fullName: LobsterFramework.Utility.CombinedValue<T>
+  nameWithType.vb: CombinedValue(Of T)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T)
+  name.vb: CombinedValue(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue`1.stats
+  commentId: F:LobsterFramework.Utility.CombinedValue`1.stats
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.stats
+  name: stats
+  nameWithType: CombinedValue<T>.stats
+  fullName: LobsterFramework.Utility.CombinedValue<T>.stats
+  nameWithType.vb: CombinedValue(Of T).stats
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).stats
+- uid: LobsterFramework.Utility.CombinedValue`1.baseValue
+  commentId: F:LobsterFramework.Utility.CombinedValue`1.baseValue
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.baseValue
+  name: baseValue
+  nameWithType: CombinedValue<T>.baseValue
+  fullName: LobsterFramework.Utility.CombinedValue<T>.baseValue
+  nameWithType.vb: CombinedValue(Of T).baseValue
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).baseValue
+- uid: LobsterFramework.Utility.CombinedValue`1.Value
+  commentId: P:LobsterFramework.Utility.CombinedValue`1.Value
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Value
+  name: Value
+  nameWithType: CombinedValue<T>.Value
+  fullName: LobsterFramework.Utility.CombinedValue<T>.Value
+  nameWithType.vb: CombinedValue(Of T).Value
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).Value
+- uid: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  name: ClearEffectors()
+  nameWithType: CombinedValue<T>.ClearEffectors()
+  fullName: LobsterFramework.Utility.CombinedValue<T>.ClearEffectors()
+  nameWithType.vb: CombinedValue(Of T).ClearEffectors()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).ClearEffectors()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  name: MakeEffector()
+  nameWithType: CombinedValue<T>.MakeEffector()
+  fullName: LobsterFramework.Utility.CombinedValue<T>.MakeEffector()
+  nameWithType.vb: CombinedValue(Of T).MakeEffector()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).MakeEffector()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  commentId: P:LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  name: EffectorCount
+  nameWithType: CombinedValue<T>.EffectorCount
+  fullName: LobsterFramework.Utility.CombinedValue<T>.EffectorCount
+  nameWithType.vb: CombinedValue(Of T).EffectorCount
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).EffectorCount
+- uid: LobsterFramework.Utility.FloatSum.#ctor*
+  commentId: Overload:LobsterFramework.Utility.FloatSum.#ctor
+  href: LobsterFramework.Utility.FloatSum.html#LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  name: FloatSum
+  nameWithType: FloatSum.FloatSum
+  fullName: LobsterFramework.Utility.FloatSum.FloatSum
+  nameWithType.vb: FloatSum.New
+  fullName.vb: LobsterFramework.Utility.FloatSum.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+  name: Compatible(float)
+  nameWithType: CombinedValue<float>.Compatible(float)
+  fullName: LobsterFramework.Utility.CombinedValue<float>.Compatible(float)
+  nameWithType.vb: CombinedValue(Of Single).Compatible(Single)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).Compatible(Single)
+  name.vb: Compatible(Single)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.Compatible(System.Single)
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: LobsterFramework.Utility.FloatSum.Compatible*
+  commentId: Overload:LobsterFramework.Utility.FloatSum.Compatible
+  href: LobsterFramework.Utility.FloatSum.html#LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  name: Compatible
+  nameWithType: FloatSum.Compatible
+  fullName: LobsterFramework.Utility.FloatSum.Compatible
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  name: Compatible(T)
+  nameWithType: CombinedValue<T>.Compatible(T)
+  fullName: LobsterFramework.Utility.CombinedValue<T>.Compatible(T)
+  nameWithType.vb: CombinedValue(Of T).Compatible(T)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).Compatible(T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  - name: (
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+  name: ComputeValue()
+  nameWithType: CombinedValue<float>.ComputeValue()
+  fullName: LobsterFramework.Utility.CombinedValue<float>.ComputeValue()
+  nameWithType.vb: CombinedValue(Of Single).ComputeValue()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).ComputeValue()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.ComputeValue
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.FloatSum.ComputeValue*
+  commentId: Overload:LobsterFramework.Utility.FloatSum.ComputeValue
+  href: LobsterFramework.Utility.FloatSum.html#LobsterFramework.Utility.FloatSum.ComputeValue
+  name: ComputeValue
+  nameWithType: FloatSum.ComputeValue
+  fullName: LobsterFramework.Utility.FloatSum.ComputeValue
+- uid: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  name: ComputeValue()
+  nameWithType: CombinedValue<T>.ComputeValue()
+  fullName: LobsterFramework.Utility.CombinedValue<T>.ComputeValue()
+  nameWithType.vb: CombinedValue(Of T).ComputeValue()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).ComputeValue()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  - name: (
+  - name: )

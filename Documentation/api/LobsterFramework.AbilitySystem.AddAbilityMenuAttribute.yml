@@ -1,0 +1,380 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  commentId: T:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  id: AddAbilityMenuAttribute
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
+  - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilities
+  - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilityIcons
+  langs:
+  - csharp
+  - vb
+  name: AddAbilityMenuAttribute
+  nameWithType: AddAbilityMenuAttribute
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  type: Class
+  source:
+    remote:
+      path: AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: AddAbilityMenuAttribute
+    path: ../AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+    startLine: 14
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: Used to add Abilities to the pool of available Abilities. This will allow the creations of these abilities inside AbilityData
+  example: []
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+
+      public class AddAbilityMenuAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False, Inherited:=False)>
+
+      Public Class AddAbilityMenuAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: false
+    - name: Inherited
+      type: System.Boolean
+      value: false
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilities
+  commentId: F:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilities
+  id: abilities
+  parent: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: abilities
+  nameWithType: AddAbilityMenuAttribute.abilities
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilities
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: abilities
+    path: ../AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+    startLine: 17
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public static HashSet<Type> abilities
+    return:
+      type: System.Collections.Generic.HashSet{System.Type}
+    content.vb: Public Shared abilities As HashSet(Of Type)
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilityIcons
+  commentId: F:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilityIcons
+  id: abilityIcons
+  parent: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: abilityIcons
+  nameWithType: AddAbilityMenuAttribute.abilityIcons
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.abilityIcons
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: abilityIcons
+    path: ../AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+    startLine: 18
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public static Dictionary<Type, Texture2D> abilityIcons
+    return:
+      type: System.Collections.Generic.Dictionary{System.Type,UnityEngine.Texture2D}
+    content.vb: Public Shared abilityIcons As Dictionary(Of Type, Texture2D)
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
+  commentId: M:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
+  id: AddAbility(System.Type)
+  parent: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: AddAbility(Type)
+  nameWithType: AddAbilityMenuAttribute.AddAbility(Type)
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
+  type: Method
+  source:
+    remote:
+      path: AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: AddAbility
+    path: ../AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
+    startLine: 20
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public void AddAbility(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    content.vb: Public Sub AddAbility(type As Type)
+  overload: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility*
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.HashSet{System.Type}
+  commentId: T:System.Collections.Generic.HashSet{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<Type>
+  nameWithType: HashSet<Type>
+  fullName: System.Collections.Generic.HashSet<System.Type>
+  nameWithType.vb: HashSet(Of Type)
+  fullName.vb: System.Collections.Generic.HashSet(Of System.Type)
+  name.vb: HashSet(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.Dictionary{System.Type,UnityEngine.Texture2D}
+  commentId: T:System.Collections.Generic.Dictionary{System.Type,UnityEngine.Texture2D}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Type, Texture2D>
+  nameWithType: Dictionary<Type, Texture2D>
+  fullName: System.Collections.Generic.Dictionary<System.Type, UnityEngine.Texture2D>
+  nameWithType.vb: Dictionary(Of Type, Texture2D)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, UnityEngine.Texture2D)
+  name.vb: Dictionary(Of Type, Texture2D)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility*
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility
+  href: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
+  name: AddAbility
+  nameWithType: AddAbilityMenuAttribute.AddAbility
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

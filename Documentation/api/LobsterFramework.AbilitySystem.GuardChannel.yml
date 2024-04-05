@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.GuardChannel
+  commentId: T:LobsterFramework.AbilitySystem.GuardChannel
+  id: GuardChannel
+  parent: LobsterFramework.AbilitySystem
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: GuardChannel
+  nameWithType: GuardChannel
+  fullName: LobsterFramework.AbilitySystem.GuardChannel
+  type: Class
+  source:
+    remote:
+      path: AbilitySystem/Abilities/Guard/Guard.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: GuardChannel
+    path: ../AbilitySystem/Abilities/Guard/Guard.cs
+    startLine: 138
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: 'public class GuardChannel : AbilityChannel'
+    content.vb: Public Class GuardChannel Inherits AbilityChannel
+  inheritance:
+  - System.Object
+  - LobsterFramework.AbilitySystem.AbilityChannel
+  inheritedMembers:
+  - LobsterFramework.AbilitySystem.AbilityChannel.config
+  - LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+  - LobsterFramework.AbilitySystem.AbilityChannel.Construct
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.AbilitySystem.AbilityChannel
+  commentId: T:LobsterFramework.AbilitySystem.AbilityChannel
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html
+  name: AbilityChannel
+  nameWithType: AbilityChannel
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.config
+  name: config
+  nameWithType: AbilityChannel.config
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+  commentId: M:LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+  name: Construct(AbilityConfig)
+  nameWithType: AbilityChannel.Construct(AbilityConfig)
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+    name: Construct
+    href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+  - name: (
+  - uid: LobsterFramework.AbilitySystem.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.AbilityConfig.html
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+    name: Construct
+    href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
+  - name: (
+  - uid: LobsterFramework.AbilitySystem.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.AbilityConfig.html
+  - name: )
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct
+  commentId: M:LobsterFramework.AbilitySystem.AbilityChannel.Construct
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Construct
+  name: Construct()
+  nameWithType: AbilityChannel.Construct()
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Construct()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct
+    name: Construct
+    href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Construct
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct
+    name: Construct
+    href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Construct
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

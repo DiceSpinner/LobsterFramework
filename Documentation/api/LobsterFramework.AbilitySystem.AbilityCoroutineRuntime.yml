@@ -1,0 +1,242 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  id: AbilityCoroutineRuntime
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  - LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  langs:
+  - csharp
+  - vb
+  name: AbilityCoroutineRuntime
+  nameWithType: AbilityCoroutineRuntime
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  type: Class
+  source:
+    remote:
+      path: AbilitySystem/AbilityCoroutine.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: AbilityCoroutineRuntime
+    path: ../AbilitySystem/AbilityCoroutine.cs
+    startLine: 58
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: AbilityConfig of coroutines, subclass configs need to inherit from this to properly work
+  example: []
+  syntax:
+    content: 'public class AbilityCoroutineRuntime : AbilityRuntime'
+    content.vb: Public Class AbilityCoroutineRuntime Inherits AbilityRuntime
+  inheritance:
+  - System.Object
+  - LobsterFramework.AbilitySystem.AbilityRuntime
+  derivedClasses:
+  - LobsterFramework.AbilitySystem.GuardRuntime
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime
+  - LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  inheritedMembers:
+  - LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  - LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  - LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  - LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  - LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  id: coroutineRunner
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  langs:
+  - csharp
+  - vb
+  name: coroutineRunner
+  nameWithType: AbilityCoroutineRuntime.coroutineRunner
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/AbilityCoroutine.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: coroutineRunner
+    path: ../AbilitySystem/AbilityCoroutine.cs
+    startLine: 60
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public CoroutineRunner coroutineRunner
+    return:
+      type: LobsterFramework.Utility.CoroutineRunner
+    content.vb: Public coroutineRunner As CoroutineRunner
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  id: coroutine
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  langs:
+  - csharp
+  - vb
+  name: coroutine
+  nameWithType: AbilityCoroutineRuntime.coroutine
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/AbilityCoroutine.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: coroutine
+    path: ../AbilitySystem/AbilityCoroutine.cs
+    startLine: 61
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public Coroutine coroutine
+    return:
+      type: LobsterFramework.Utility.Coroutine
+    content.vb: Public coroutine As Coroutine
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime
+  commentId: T:LobsterFramework.AbilitySystem.AbilityRuntime
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html
+  name: AbilityRuntime
+  nameWithType: AbilityRuntime
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  commentId: F:LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  name: ability
+  nameWithType: AbilityRuntime.ability
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.ability
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  commentId: P:LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  name: IsRunning
+  nameWithType: AbilityRuntime.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  name: OnCooldown
+  nameWithType: AbilityRuntime.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  commentId: M:LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  name: Clear()
+  nameWithType: AbilityRuntime.Clear()
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Clear()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+    name: Clear
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+    name: Clear
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  commentId: M:LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  name: Initialize()
+  nameWithType: AbilityRuntime.Initialize()
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+    name: Initialize
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+    name: Initialize
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.CoroutineRunner
+  commentId: T:LobsterFramework.Utility.CoroutineRunner
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineRunner.html
+  name: CoroutineRunner
+  nameWithType: CoroutineRunner
+  fullName: LobsterFramework.Utility.CoroutineRunner
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: LobsterFramework.Utility.Coroutine
+  commentId: T:LobsterFramework.Utility.Coroutine
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Utility.Coroutine

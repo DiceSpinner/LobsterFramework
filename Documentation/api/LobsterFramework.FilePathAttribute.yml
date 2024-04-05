@@ -1,0 +1,202 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.FilePathAttribute
+  commentId: T:LobsterFramework.FilePathAttribute
+  id: FilePathAttribute
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.FilePathAttribute.#ctor(System.String,System.String)
+  - LobsterFramework.FilePathAttribute.defaultName
+  - LobsterFramework.FilePathAttribute.extension
+  langs:
+  - csharp
+  - vb
+  name: FilePathAttribute
+  nameWithType: FilePathAttribute
+  fullName: LobsterFramework.FilePathAttribute
+  type: Class
+  source:
+    remote:
+      path: Attributes/PropertyAttribute/FilePathAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: FilePathAttribute
+    path: ../Attributes/PropertyAttribute/FilePathAttribute.cs
+    startLine: 6
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: 'public class FilePathAttribute : PropertyAttribute'
+    content.vb: Public Class FilePathAttribute Inherits PropertyAttribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  - UnityEngine.PropertyAttribute
+  inheritedMembers:
+  - UnityEngine.PropertyAttribute.order
+- uid: LobsterFramework.FilePathAttribute.extension
+  commentId: F:LobsterFramework.FilePathAttribute.extension
+  id: extension
+  parent: LobsterFramework.FilePathAttribute
+  langs:
+  - csharp
+  - vb
+  name: extension
+  nameWithType: FilePathAttribute.extension
+  fullName: LobsterFramework.FilePathAttribute.extension
+  type: Field
+  source:
+    remote:
+      path: Attributes/PropertyAttribute/FilePathAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: extension
+    path: ../Attributes/PropertyAttribute/FilePathAttribute.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public string extension
+    return:
+      type: System.String
+    content.vb: Public extension As String
+- uid: LobsterFramework.FilePathAttribute.defaultName
+  commentId: F:LobsterFramework.FilePathAttribute.defaultName
+  id: defaultName
+  parent: LobsterFramework.FilePathAttribute
+  langs:
+  - csharp
+  - vb
+  name: defaultName
+  nameWithType: FilePathAttribute.defaultName
+  fullName: LobsterFramework.FilePathAttribute.defaultName
+  type: Field
+  source:
+    remote:
+      path: Attributes/PropertyAttribute/FilePathAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: defaultName
+    path: ../Attributes/PropertyAttribute/FilePathAttribute.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public string defaultName
+    return:
+      type: System.String
+    content.vb: Public defaultName As String
+- uid: LobsterFramework.FilePathAttribute.#ctor(System.String,System.String)
+  commentId: M:LobsterFramework.FilePathAttribute.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: LobsterFramework.FilePathAttribute
+  langs:
+  - csharp
+  - vb
+  name: FilePathAttribute(string, string)
+  nameWithType: FilePathAttribute.FilePathAttribute(string, string)
+  fullName: LobsterFramework.FilePathAttribute.FilePathAttribute(string, string)
+  type: Constructor
+  source:
+    remote:
+      path: Attributes/PropertyAttribute/FilePathAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../Attributes/PropertyAttribute/FilePathAttribute.cs
+    startLine: 16
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: ''
+  example: []
+  syntax:
+    content: public FilePathAttribute(string defaultName = "", string extension = "")
+    parameters:
+    - id: defaultName
+      type: System.String
+      description: The default name of the lookup file, empty string means the current value of the field will be used.
+    - id: extension
+      type: System.String
+      description: The file extension to look up for, empty string means to display all files
+    content.vb: Public Sub New(defaultName As String = "", extension As String = "")
+  overload: LobsterFramework.FilePathAttribute.#ctor*
+  nameWithType.vb: FilePathAttribute.New(String, String)
+  fullName.vb: LobsterFramework.FilePathAttribute.New(String, String)
+  name.vb: New(String, String)
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: UnityEngine.PropertyAttribute
+  commentId: T:UnityEngine.PropertyAttribute
+  parent: UnityEngine
+  isExternal: true
+  name: PropertyAttribute
+  nameWithType: PropertyAttribute
+  fullName: UnityEngine.PropertyAttribute
+- uid: UnityEngine.PropertyAttribute.order
+  commentId: P:UnityEngine.PropertyAttribute.order
+  parent: UnityEngine.PropertyAttribute
+  isExternal: true
+  name: order
+  nameWithType: PropertyAttribute.order
+  fullName: UnityEngine.PropertyAttribute.order
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: LobsterFramework.FilePathAttribute.#ctor*
+  commentId: Overload:LobsterFramework.FilePathAttribute.#ctor
+  href: LobsterFramework.FilePathAttribute.html#LobsterFramework.FilePathAttribute.#ctor(System.String,System.String)
+  name: FilePathAttribute
+  nameWithType: FilePathAttribute.FilePathAttribute
+  fullName: LobsterFramework.FilePathAttribute.FilePathAttribute
+  nameWithType.vb: FilePathAttribute.New
+  fullName.vb: LobsterFramework.FilePathAttribute.New
+  name.vb: New

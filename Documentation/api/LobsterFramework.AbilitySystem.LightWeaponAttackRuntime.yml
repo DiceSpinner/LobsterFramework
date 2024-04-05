@@ -1,0 +1,340 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  commentId: T:LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  id: LightWeaponAttackRuntime
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.animationSignaled
+  - LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.currentWeapon
+  - LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.inputSignaled
+  langs:
+  - csharp
+  - vb
+  name: LightWeaponAttackRuntime
+  nameWithType: LightWeaponAttackRuntime
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  type: Class
+  source:
+    remote:
+      path: AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: LightWeaponAttackRuntime
+    path: ../AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+    startLine: 137
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: 'public class LightWeaponAttackRuntime : AbilityCoroutineRuntime'
+    content.vb: Public Class LightWeaponAttackRuntime Inherits AbilityCoroutineRuntime
+  inheritance:
+  - System.Object
+  - LobsterFramework.AbilitySystem.AbilityRuntime
+  - LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  inheritedMembers:
+  - LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  - LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  - LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  - LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  - LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  - LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  - LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.currentWeapon
+  commentId: F:LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.currentWeapon
+  id: currentWeapon
+  parent: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  langs:
+  - csharp
+  - vb
+  name: currentWeapon
+  nameWithType: LightWeaponAttackRuntime.currentWeapon
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.currentWeapon
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: currentWeapon
+    path: ../AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+    startLine: 138
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public Weapon currentWeapon
+    return:
+      type: LobsterFramework.AbilitySystem.Weapon
+    content.vb: Public currentWeapon As Weapon
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.animationSignaled
+  commentId: F:LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.animationSignaled
+  id: animationSignaled
+  parent: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  langs:
+  - csharp
+  - vb
+  name: animationSignaled
+  nameWithType: LightWeaponAttackRuntime.animationSignaled
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.animationSignaled
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: animationSignaled
+    path: ../AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+    startLine: 139
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public Signal<bool> animationSignaled
+    return:
+      type: LobsterFramework.Utility.Signal{System.Boolean}
+    content.vb: Public animationSignaled As Signal(Of Boolean)
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.inputSignaled
+  commentId: F:LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.inputSignaled
+  id: inputSignaled
+  parent: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  langs:
+  - csharp
+  - vb
+  name: inputSignaled
+  nameWithType: LightWeaponAttackRuntime.inputSignaled
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.inputSignaled
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: inputSignaled
+    path: ../AbilitySystem/Abilities/LightWeaponAttack/LightWeaponAttack.cs
+    startLine: 140
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public Signal<bool> inputSignaled
+    return:
+      type: LobsterFramework.Utility.Signal{System.Boolean}
+    content.vb: Public inputSignaled As Signal(Of Boolean)
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime
+  commentId: T:LobsterFramework.AbilitySystem.AbilityRuntime
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html
+  name: AbilityRuntime
+  nameWithType: AbilityRuntime
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.html
+  name: AbilityCoroutineRuntime
+  nameWithType: AbilityCoroutineRuntime
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  href: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.html#LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+  name: coroutineRunner
+  nameWithType: AbilityCoroutineRuntime.coroutineRunner
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutineRunner
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  href: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.html#LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+  name: coroutine
+  nameWithType: AbilityCoroutineRuntime.coroutine
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.coroutine
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  commentId: F:LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  name: ability
+  nameWithType: AbilityRuntime.ability
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.ability
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  commentId: P:LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  name: IsRunning
+  nameWithType: AbilityRuntime.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  name: OnCooldown
+  nameWithType: AbilityRuntime.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  commentId: M:LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  name: Clear()
+  nameWithType: AbilityRuntime.Clear()
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Clear()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+    name: Clear
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+    name: Clear
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  commentId: M:LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  name: Initialize()
+  nameWithType: AbilityRuntime.Initialize()
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+    name: Initialize
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+    name: Initialize
+    href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AbilitySystem.Weapon
+  commentId: T:LobsterFramework.AbilitySystem.Weapon
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Weapon.html
+  name: Weapon
+  nameWithType: Weapon
+  fullName: LobsterFramework.AbilitySystem.Weapon
+- uid: LobsterFramework.Utility.Signal{System.Boolean}
+  commentId: T:LobsterFramework.Utility.Signal{System.Boolean}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.Signal`1
+  href: LobsterFramework.Utility.Signal-1.html
+  name: Signal<bool>
+  nameWithType: Signal<bool>
+  fullName: LobsterFramework.Utility.Signal<bool>
+  nameWithType.vb: Signal(Of Boolean)
+  fullName.vb: LobsterFramework.Utility.Signal(Of Boolean)
+  name.vb: Signal(Of Boolean)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: LobsterFramework.Utility.Signal`1
+  commentId: T:LobsterFramework.Utility.Signal`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Signal-1.html
+  name: Signal<T>
+  nameWithType: Signal<T>
+  fullName: LobsterFramework.Utility.Signal<T>
+  nameWithType.vb: Signal(Of T)
+  fullName.vb: LobsterFramework.Utility.Signal(Of T)
+  name.vb: Signal(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html

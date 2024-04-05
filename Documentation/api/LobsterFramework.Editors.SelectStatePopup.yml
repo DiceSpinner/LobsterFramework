@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Editors.SelectStatePopup
+  commentId: T:LobsterFramework.Editors.SelectStatePopup
+  id: SelectStatePopup
+  parent: LobsterFramework.Editors
+  children:
+  - LobsterFramework.Editors.SelectStatePopup.#ctor(LobsterFramework.Editors.StateDataEditor,LobsterFramework.AI.StateData)
+  - LobsterFramework.Editors.SelectStatePopup.OnGUI(UnityEngine.Rect)
+  langs:
+  - csharp
+  - vb
+  name: SelectStatePopup
+  nameWithType: SelectStatePopup
+  fullName: LobsterFramework.Editors.SelectStatePopup
+  type: Class
+  source:
+    remote:
+      path: Editor/PopupWindow/SelectStatePopup.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: SelectStatePopup
+    path: ../Editor/PopupWindow/SelectStatePopup.cs
+    startLine: 12
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: 'public class SelectStatePopup : PopupWindowContent'
+    content.vb: Public Class SelectStatePopup Inherits PopupWindowContent
+  inheritance:
+  - System.Object
+  - UnityEditor.PopupWindowContent
+- uid: LobsterFramework.Editors.SelectStatePopup.#ctor(LobsterFramework.Editors.StateDataEditor,LobsterFramework.AI.StateData)
+  commentId: M:LobsterFramework.Editors.SelectStatePopup.#ctor(LobsterFramework.Editors.StateDataEditor,LobsterFramework.AI.StateData)
+  id: '#ctor(LobsterFramework.Editors.StateDataEditor,LobsterFramework.AI.StateData)'
+  parent: LobsterFramework.Editors.SelectStatePopup
+  langs:
+  - csharp
+  - vb
+  name: SelectStatePopup(StateDataEditor, StateData)
+  nameWithType: SelectStatePopup.SelectStatePopup(StateDataEditor, StateData)
+  fullName: LobsterFramework.Editors.SelectStatePopup.SelectStatePopup(LobsterFramework.Editors.StateDataEditor, LobsterFramework.AI.StateData)
+  type: Constructor
+  source:
+    remote:
+      path: Editor/PopupWindow/SelectStatePopup.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../Editor/PopupWindow/SelectStatePopup.cs
+    startLine: 19
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public SelectStatePopup(StateDataEditor editor, StateData data)
+    parameters:
+    - id: editor
+      type: LobsterFramework.Editors.StateDataEditor
+    - id: data
+      type: LobsterFramework.AI.StateData
+    content.vb: Public Sub New(editor As StateDataEditor, data As StateData)
+  overload: LobsterFramework.Editors.SelectStatePopup.#ctor*
+  nameWithType.vb: SelectStatePopup.New(StateDataEditor, StateData)
+  fullName.vb: LobsterFramework.Editors.SelectStatePopup.New(LobsterFramework.Editors.StateDataEditor, LobsterFramework.AI.StateData)
+  name.vb: New(StateDataEditor, StateData)
+- uid: LobsterFramework.Editors.SelectStatePopup.OnGUI(UnityEngine.Rect)
+  commentId: M:LobsterFramework.Editors.SelectStatePopup.OnGUI(UnityEngine.Rect)
+  id: OnGUI(UnityEngine.Rect)
+  parent: LobsterFramework.Editors.SelectStatePopup
+  langs:
+  - csharp
+  - vb
+  name: OnGUI(Rect)
+  nameWithType: SelectStatePopup.OnGUI(Rect)
+  fullName: LobsterFramework.Editors.SelectStatePopup.OnGUI(UnityEngine.Rect)
+  type: Method
+  source:
+    remote:
+      path: Editor/PopupWindow/SelectStatePopup.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnGUI
+    path: ../Editor/PopupWindow/SelectStatePopup.cs
+    startLine: 25
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  summary: <p>Callback for drawing GUI controls for the popup window.</p>
+  example: []
+  syntax:
+    content: public override void OnGUI(Rect rect)
+    parameters:
+    - id: rect
+      type: UnityEngine.Rect
+      description: The rectangle to draw the GUI inside.
+    content.vb: Public Overrides Sub OnGUI(rect As Rect)
+  overridden: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  overload: LobsterFramework.Editors.SelectStatePopup.OnGUI*
+references:
+- uid: LobsterFramework.Editors
+  commentId: N:LobsterFramework.Editors
+  href: LobsterFramework.html
+  name: LobsterFramework.Editors
+  nameWithType: LobsterFramework.Editors
+  fullName: LobsterFramework.Editors
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEditor.PopupWindowContent
+  commentId: T:UnityEditor.PopupWindowContent
+  parent: UnityEditor
+  isExternal: true
+  name: PopupWindowContent
+  nameWithType: PopupWindowContent
+  fullName: UnityEditor.PopupWindowContent
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: LobsterFramework.Editors.SelectStatePopup.#ctor*
+  commentId: Overload:LobsterFramework.Editors.SelectStatePopup.#ctor
+  href: LobsterFramework.Editors.SelectStatePopup.html#LobsterFramework.Editors.SelectStatePopup.#ctor(LobsterFramework.Editors.StateDataEditor,LobsterFramework.AI.StateData)
+  name: SelectStatePopup
+  nameWithType: SelectStatePopup.SelectStatePopup
+  fullName: LobsterFramework.Editors.SelectStatePopup.SelectStatePopup
+  nameWithType.vb: SelectStatePopup.New
+  fullName.vb: LobsterFramework.Editors.SelectStatePopup.New
+  name.vb: New
+- uid: LobsterFramework.Editors.StateDataEditor
+  commentId: T:LobsterFramework.Editors.StateDataEditor
+  parent: LobsterFramework.Editors
+  href: LobsterFramework.Editors.StateDataEditor.html
+  name: StateDataEditor
+  nameWithType: StateDataEditor
+  fullName: LobsterFramework.Editors.StateDataEditor
+- uid: LobsterFramework.AI.StateData
+  commentId: T:LobsterFramework.AI.StateData
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.StateData.html
+  name: StateData
+  nameWithType: StateData
+  fullName: LobsterFramework.AI.StateData
+- uid: LobsterFramework.AI
+  commentId: N:LobsterFramework.AI
+  href: LobsterFramework.html
+  name: LobsterFramework.AI
+  nameWithType: LobsterFramework.AI
+  fullName: LobsterFramework.AI
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+    href: LobsterFramework.AI.html
+- uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  commentId: M:UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  parent: UnityEditor.PopupWindowContent
+  isExternal: true
+  name: OnGUI(Rect)
+  nameWithType: PopupWindowContent.OnGUI(Rect)
+  fullName: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  spec.csharp:
+  - uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+    name: OnGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+    name: OnGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Editors.SelectStatePopup.OnGUI*
+  commentId: Overload:LobsterFramework.Editors.SelectStatePopup.OnGUI
+  href: LobsterFramework.Editors.SelectStatePopup.html#LobsterFramework.Editors.SelectStatePopup.OnGUI(UnityEngine.Rect)
+  name: OnGUI
+  nameWithType: SelectStatePopup.OnGUI
+  fullName: LobsterFramework.Editors.SelectStatePopup.OnGUI
+- uid: UnityEngine.Rect
+  commentId: T:UnityEngine.Rect
+  parent: UnityEngine
+  isExternal: true
+  name: Rect
+  nameWithType: Rect
+  fullName: UnityEngine.Rect
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

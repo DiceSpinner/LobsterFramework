@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime
+  commentId: T:LobsterFramework.AbilitySystem.AbilityRuntime
+  id: AbilityRuntime
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  - LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  - LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  - LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  - LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  langs:
+  - csharp
+  - vb
+  name: AbilityRuntime
+  nameWithType: AbilityRuntime
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime
+  type: Class
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: AbilityRuntime
+    path: ../AbilitySystem/Ability.cs
+    startLine: 607
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: >-
+    A configuration of the Ability, each configuration has its own settings that affects the execution of the Ability.
+
+    This class should be subclassed inside subclasses of Ability with name 'Ability_Subclass_Name'Runtime.
+
+    i.e CircleAttack which inherit from Ability must define a class named CircleAttackConfig inherited from this class within the same namespace as CircleAttack
+  example: []
+  syntax:
+    content: public class AbilityRuntime
+    content.vb: Public Class AbilityRuntime
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  - LobsterFramework.AbilitySystem.OffhandAbilityRuntime
+  - LobsterFramework.AbilitySystem.WeaponArtRuntime
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  commentId: F:LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  id: ability
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  langs:
+  - csharp
+  - vb
+  name: ability
+  nameWithType: AbilityRuntime.ability
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.ability
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: ability
+    path: ../AbilitySystem/Ability.cs
+    startLine: 609
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: protected Ability ability
+    return:
+      type: LobsterFramework.AbilitySystem.Ability
+    content.vb: Protected ability As Ability
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  commentId: P:LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  id: IsRunning
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  langs:
+  - csharp
+  - vb
+  name: IsRunning
+  nameWithType: AbilityRuntime.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IsRunning
+    path: ../AbilitySystem/Ability.cs
+    startLine: 613
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public bool IsRunning { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsRunning As Boolean
+  overload: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning*
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  id: OnCooldown
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  langs:
+  - csharp
+  - vb
+  name: OnCooldown
+  nameWithType: AbilityRuntime.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnCooldown
+    path: ../AbilitySystem/Ability.cs
+    startLine: 614
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public bool OnCooldown { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property OnCooldown As Boolean
+  overload: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown*
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  commentId: M:LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  id: Clear
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: AbilityRuntime.Clear()
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Clear()
+  type: Method
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Clear
+    path: ../AbilitySystem/Ability.cs
+    startLine: 624
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: Callback to clean up the runtime environment
+  example: []
+  syntax:
+    content: protected virtual void Clear()
+    content.vb: Protected Overridable Sub Clear()
+  overload: LobsterFramework.AbilitySystem.AbilityRuntime.Clear*
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  commentId: M:LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  id: Initialize
+  parent: LobsterFramework.AbilitySystem.AbilityRuntime
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: AbilityRuntime.Initialize()
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize()
+  type: Method
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Initialize
+    path: ../AbilitySystem/Ability.cs
+    startLine: 629
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: Callback to initialize the runtime environment
+  example: []
+  syntax:
+    content: protected virtual void Initialize()
+    content.vb: Protected Overridable Sub Initialize()
+  overload: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize*
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AbilitySystem.Ability
+  commentId: T:LobsterFramework.AbilitySystem.Ability
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability
+  nameWithType: Ability
+  fullName: LobsterFramework.AbilitySystem.Ability
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+  name: IsRunning
+  nameWithType: AbilityRuntime.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.IsRunning
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+  name: OnCooldown
+  nameWithType: AbilityRuntime.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.OnCooldown
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Clear*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+  name: Clear
+  nameWithType: AbilityRuntime.Clear
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Clear
+- uid: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  href: LobsterFramework.AbilitySystem.AbilityRuntime.html#LobsterFramework.AbilitySystem.AbilityRuntime.Initialize
+  name: Initialize
+  nameWithType: AbilityRuntime.Initialize
+  fullName: LobsterFramework.AbilitySystem.AbilityRuntime.Initialize

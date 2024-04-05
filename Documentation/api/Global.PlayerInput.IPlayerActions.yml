@@ -1,0 +1,413 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.PlayerInput.IPlayerActions
+  commentId: T:Global.PlayerInput.IPlayerActions
+  id: PlayerInput.IPlayerActions
+  parent: Global
+  children:
+  - Global.PlayerInput.IPlayerActions.OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnGuard(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnMove(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnNextInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnPauseResume(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnPreviousInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnPrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnRotate(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnSecondaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  - Global.PlayerInput.IPlayerActions.OnShoot(UnityEngine.InputSystem.InputAction.CallbackContext)
+  langs:
+  - csharp
+  - vb
+  name: PlayerInput.IPlayerActions
+  nameWithType: PlayerInput.IPlayerActions
+  fullName: PlayerInput.IPlayerActions
+  type: Interface
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: IPlayerActions
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 467
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: public interface PlayerInput.IPlayerActions
+    content.vb: Public Interface PlayerInput.IPlayerActions
+- uid: Global.PlayerInput.IPlayerActions.OnMove(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnMove(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnMove(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnMove(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnMove(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnMove(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnMove
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 469
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnMove(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnMove(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnMove*
+- uid: Global.PlayerInput.IPlayerActions.OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnAttack(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnAttack(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnAttack
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 470
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnAttack(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnAttack(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnAttack*
+- uid: Global.PlayerInput.IPlayerActions.OnGuard(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnGuard(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnGuard(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnGuard(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnGuard(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnGuard(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnGuard
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 471
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnGuard(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnGuard(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnGuard*
+- uid: Global.PlayerInput.IPlayerActions.OnPauseResume(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnPauseResume(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnPauseResume(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnPauseResume(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnPauseResume(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnPauseResume(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnPauseResume
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 472
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnPauseResume(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnPauseResume(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnPauseResume*
+- uid: Global.PlayerInput.IPlayerActions.OnPrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnPrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnPrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnPrimaryInteraction(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnPrimaryInteraction(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnPrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnPrimaryInteraction
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 473
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnPrimaryInteraction(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnPrimaryInteraction(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnPrimaryInteraction*
+- uid: Global.PlayerInput.IPlayerActions.OnSecondaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnSecondaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnSecondaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnSecondaryInteraction(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnSecondaryInteraction(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnSecondaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnSecondaryInteraction
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 474
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnSecondaryInteraction(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnSecondaryInteraction(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnSecondaryInteraction*
+- uid: Global.PlayerInput.IPlayerActions.OnNextInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnNextInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnNextInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnNextInteractable(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnNextInteractable(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnNextInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnNextInteractable
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 475
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnNextInteractable(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnNextInteractable(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnNextInteractable*
+- uid: Global.PlayerInput.IPlayerActions.OnPreviousInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnPreviousInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnPreviousInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnPreviousInteractable(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnPreviousInteractable(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnPreviousInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnPreviousInteractable
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 476
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnPreviousInteractable(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnPreviousInteractable(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnPreviousInteractable*
+- uid: Global.PlayerInput.IPlayerActions.OnRotate(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnRotate(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnRotate(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnRotate(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnRotate(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnRotate(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnRotate
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 477
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnRotate(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnRotate(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnRotate*
+- uid: Global.PlayerInput.IPlayerActions.OnShoot(UnityEngine.InputSystem.InputAction.CallbackContext)
+  commentId: M:Global.PlayerInput.IPlayerActions.OnShoot(UnityEngine.InputSystem.InputAction.CallbackContext)
+  id: OnShoot(UnityEngine.InputSystem.InputAction.CallbackContext)
+  parent: Global.PlayerInput.IPlayerActions
+  langs:
+  - csharp
+  - vb
+  name: OnShoot(CallbackContext)
+  nameWithType: PlayerInput.IPlayerActions.OnShoot(InputAction.CallbackContext)
+  fullName: PlayerInput.IPlayerActions.OnShoot(UnityEngine.InputSystem.InputAction.CallbackContext)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
+    id: OnShoot
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
+    startLine: 478
+  assemblies:
+  - GameScripts
+  namespace: Global
+  syntax:
+    content: void OnShoot(InputAction.CallbackContext context)
+    parameters:
+    - id: context
+      type: UnityEngine.InputSystem.InputAction.CallbackContext
+    content.vb: Sub OnShoot(context As InputAction.CallbackContext)
+  overload: Global.PlayerInput.IPlayerActions.OnShoot*
+references:
+- uid: Global
+- uid: Global.PlayerInput.IPlayerActions.OnMove*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnMove
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnMove(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnMove
+  nameWithType: PlayerInput.IPlayerActions.OnMove
+  fullName: PlayerInput.IPlayerActions.OnMove
+- uid: UnityEngine.InputSystem.InputAction.CallbackContext
+  commentId: T:UnityEngine.InputSystem.InputAction.CallbackContext
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: InputAction.CallbackContext
+  nameWithType: InputAction.CallbackContext
+  fullName: UnityEngine.InputSystem.InputAction.CallbackContext
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem.InputAction.CallbackContext
+    name: CallbackContext
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem.InputAction.CallbackContext
+    name: CallbackContext
+    isExternal: true
+- uid: UnityEngine.InputSystem
+  commentId: N:UnityEngine.InputSystem
+  isExternal: true
+  name: UnityEngine.InputSystem
+  nameWithType: UnityEngine.InputSystem
+  fullName: UnityEngine.InputSystem
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+- uid: Global.PlayerInput.IPlayerActions.OnAttack*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnAttack
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnAttack
+  nameWithType: PlayerInput.IPlayerActions.OnAttack
+  fullName: PlayerInput.IPlayerActions.OnAttack
+- uid: Global.PlayerInput.IPlayerActions.OnGuard*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnGuard
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnGuard(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnGuard
+  nameWithType: PlayerInput.IPlayerActions.OnGuard
+  fullName: PlayerInput.IPlayerActions.OnGuard
+- uid: Global.PlayerInput.IPlayerActions.OnPauseResume*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnPauseResume
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnPauseResume(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnPauseResume
+  nameWithType: PlayerInput.IPlayerActions.OnPauseResume
+  fullName: PlayerInput.IPlayerActions.OnPauseResume
+- uid: Global.PlayerInput.IPlayerActions.OnPrimaryInteraction*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnPrimaryInteraction
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnPrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnPrimaryInteraction
+  nameWithType: PlayerInput.IPlayerActions.OnPrimaryInteraction
+  fullName: PlayerInput.IPlayerActions.OnPrimaryInteraction
+- uid: Global.PlayerInput.IPlayerActions.OnSecondaryInteraction*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnSecondaryInteraction
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnSecondaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnSecondaryInteraction
+  nameWithType: PlayerInput.IPlayerActions.OnSecondaryInteraction
+  fullName: PlayerInput.IPlayerActions.OnSecondaryInteraction
+- uid: Global.PlayerInput.IPlayerActions.OnNextInteractable*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnNextInteractable
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnNextInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnNextInteractable
+  nameWithType: PlayerInput.IPlayerActions.OnNextInteractable
+  fullName: PlayerInput.IPlayerActions.OnNextInteractable
+- uid: Global.PlayerInput.IPlayerActions.OnPreviousInteractable*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnPreviousInteractable
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnPreviousInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnPreviousInteractable
+  nameWithType: PlayerInput.IPlayerActions.OnPreviousInteractable
+  fullName: PlayerInput.IPlayerActions.OnPreviousInteractable
+- uid: Global.PlayerInput.IPlayerActions.OnRotate*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnRotate
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnRotate(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnRotate
+  nameWithType: PlayerInput.IPlayerActions.OnRotate
+  fullName: PlayerInput.IPlayerActions.OnRotate
+- uid: Global.PlayerInput.IPlayerActions.OnShoot*
+  commentId: Overload:Global.PlayerInput.IPlayerActions.OnShoot
+  href: Global.PlayerInput.IPlayerActions.html#PlayerInput.IPlayerActions.OnShoot(UnityEngine.InputSystem.InputAction.CallbackContext)
+  name: OnShoot
+  nameWithType: PlayerInput.IPlayerActions.OnShoot
+  fullName: PlayerInput.IPlayerActions.OnShoot

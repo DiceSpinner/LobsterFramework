@@ -1,0 +1,128 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  commentId: T:LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  id: Guard.GuardAnimations
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectLeft
+  - LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectRight
+  langs:
+  - csharp
+  - vb
+  name: Guard.GuardAnimations
+  nameWithType: Guard.GuardAnimations
+  fullName: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  type: Enum
+  source:
+    remote:
+      path: AbilitySystem/Abilities/Guard/Guard.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: GuardAnimations
+    path: ../AbilitySystem/Abilities/Guard/Guard.cs
+    startLine: 124
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public enum Guard.GuardAnimations
+    content.vb: Public Enum Guard.GuardAnimations
+- uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectLeft
+  commentId: F:LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectLeft
+  id: DeflectLeft
+  parent: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  langs:
+  - csharp
+  - vb
+  name: DeflectLeft
+  nameWithType: Guard.GuardAnimations.DeflectLeft
+  fullName: LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectLeft
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Abilities/Guard/Guard.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: DeflectLeft
+    path: ../AbilitySystem/Abilities/Guard/Guard.cs
+    startLine: 125
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: DeflectLeft = 0
+    return:
+      type: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+- uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectRight
+  commentId: F:LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectRight
+  id: DeflectRight
+  parent: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  langs:
+  - csharp
+  - vb
+  name: DeflectRight
+  nameWithType: Guard.GuardAnimations.DeflectRight
+  fullName: LobsterFramework.AbilitySystem.Guard.GuardAnimations.DeflectRight
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Abilities/Guard/Guard.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: DeflectRight
+    path: ../AbilitySystem/Abilities/Guard/Guard.cs
+    startLine: 126
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: DeflectRight = 1
+    return:
+      type: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  commentId: T:LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Guard.html
+  name: Guard.GuardAnimations
+  nameWithType: Guard.GuardAnimations
+  fullName: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Guard
+    name: Guard
+    href: LobsterFramework.AbilitySystem.Guard.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+    name: GuardAnimations
+    href: LobsterFramework.AbilitySystem.Guard.GuardAnimations.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Guard
+    name: Guard
+    href: LobsterFramework.AbilitySystem.Guard.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations
+    name: GuardAnimations
+    href: LobsterFramework.AbilitySystem.Guard.GuardAnimations.html

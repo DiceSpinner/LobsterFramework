@@ -1,0 +1,4606 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "api/*": {
+        "baseUrl": "https://dicespinner.github.io/Unity-Game/",
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https://dicespinner.github.io/Unity-Game/",
+    "changefreq": "weekly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/LobsterFramework/LobsterFramework/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AIAnimationConfigurator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AIAnimationConfigurator.html",
+          "hash": "Cb31nchRQ5j8xJTPnHonJ+UT0YejyLwIfKfhTJDYdYo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AITrackData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AITrackData.html",
+          "hash": "Kkp90Cnu7eawlPBP+gu/NlVJTWLkHEOplbGBEfbYarU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ActionDataSODrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ActionDataSODrawer.html",
+          "hash": "9Aa/HvhmpczEMYCNWGZZSVRnZKhGB24RFkbp8OT1N8I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ActionPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ActionPriority.html",
+          "hash": "dEpzCxLF+DnkPYp44fdRMhnELc62N6Rg1XMsF6KUOEE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ActionPrioritySO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ActionPrioritySO.html",
+          "hash": "9bYMR3QMVZ9ECK18T9QW6n+XpqnJmZQceGtln6AqLUI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AstarPath.AstarDistribution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AstarPath.AstarDistribution.html",
+          "hash": "JXpoW6H+dcKiN9uHAno40rmJBhkSOio+eeED+7RwFU8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AstarPath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AstarPath.html",
+          "hash": "avewEMzTNkaUHCAjwRJ1LK4UyF1dOEMxJITVP5VdwTM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.BoolEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BoolEventChannel.html",
+          "hash": "6Uy49LclERgdN/fdrPGSDX01TTLtMx9M4AqKlmIBnPw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ChatController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ChatController.html",
+          "hash": "98ajdWvu6ni30qoSy8O7rR5WV4eWSTPPbQj2wgUR/uU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ControllerData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ControllerData.html",
+          "hash": "1hWpiIZkpodm6Rz5Hc9kYJP9rrI4mD0BmjwuYx8G+j0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.DescriptionBaseSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DescriptionBaseSO.html",
+          "hash": "c0Rb8V/5KlHJFwlZGM9nXDc04QlOEpLxZQ1s0x6/D2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.DialogueBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DialogueBox.html",
+          "hash": "OcXkJASGed8THpq53RNV5G/hgWh5Tci0YiY1NtyZFKg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.DropdownSample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DropdownSample.html",
+          "hash": "PEHI2ZUoI6VK0JtrtoMNts/7gZtBc9iMC+NyiAXiUhM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EnvMapAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EnvMapAnimator.html",
+          "hash": "2Py1pQ6j6q10RxueOXoRco4gdkD3O4ORNxdaf5zjTW0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ExposedFieldAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ExposedFieldAttribute.html",
+          "hash": "/uLE+F+rbio4i3jf03ppYUeXWoDY8jRaG/5PNr0YxZ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.FloatEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.FloatEventChannel.html",
+          "hash": "dFqZqS1U6PlaYptvzwVFJrzzb0z6321ddLU+7ehvWvg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.GameManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.GameManager.html",
+          "hash": "X1WAmmmvwZwCFzEjLoKJqMUxiwtw3NOqFjGWHAMa09Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.GameStateManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.GameStateManager.html",
+          "hash": "4Evflf7GdtqkwLNYcmApruRLIt2QNUtyZGVk6PJQcZE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.IConsumable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.IConsumable.html",
+          "hash": "hN0P0TfBAaTjiXcrUZJGLwIKnmF0OHHoKmsD8inbH5I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.IEquipable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.IEquipable.html",
+          "hash": "EASJpF6XkR8uuKYfdcrQkjJHqWCtUjEre1FnOvLz6Vs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.IntEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.IntEventChannel.html",
+          "hash": "7Vv50Tv0J9kkR92n7gUNH0G0c61HZemXf9BkcY3SJ14="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.IntroMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.IntroMenu.html",
+          "hash": "7bbhGkuOnaiHwQofOajo4q3qaZ6az43UQE4/IvgFAXw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.OrderedSet-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.OrderedSet-1.html",
+          "hash": "FvIDO4i/gLOA0RRwRb0WdDjfMijvcSH1lENy02xfOQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerInput.IPlayerActions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerInput.IPlayerActions.html",
+          "hash": "MmtvLdrhGWJefyY1q/THtzCDRi0OMxSBvkAxlWoUBXQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerInput.PlayerActions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerInput.PlayerActions.html",
+          "hash": "vb6kQbMdfMFkbQVJkzL3mSpaRTWt/GKXoFFifK+PSDE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerInput.html",
+          "hash": "2ukNJ+LHdQhQ8uAa/U3tb8EJZNUi8evF1dwRHt03660="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Projectile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Projectile.html",
+          "hash": "m4wWmmttUcGxVcmThBZmZISH6zQ/2SOEmuwUp54o8yI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefAbilityPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefAbilityPriority.html",
+          "hash": "Jn+/84RNV3DMLl80DOrt7FxomXVHyXYJxpk4pUJHVrM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefActionPriorityDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefActionPriorityDrawer.html",
+          "hash": "81yf4ChfhyEBU8TOoP9HI7zlu0UJLoB3Mgd/RBEY1ew="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefBool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefBool.html",
+          "hash": "dJSshRinenXIuW5xRfrBZQMpBLSIH6REvE104HaS0tg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefBoolDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefBoolDrawer.html",
+          "hash": "oxXeokM10A7XxH1W71jLhNTqEef5+1EKvGT1WceRa7w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefFloat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefFloat.html",
+          "hash": "wc54T3U7x06tpFuznK5aUhtCaZyYDYCYs0FbQj351xg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefFloatDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefFloatDrawer.html",
+          "hash": "df3RXT8S8glBWKa1sWKE+L1Ep71wbuqthEE1KOoT6vA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefInt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefInt.html",
+          "hash": "W1pJFvJXlZSB++nheWQwbHMOP1+GgFhESYOozKGoEpA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefIntDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefIntDrawer.html",
+          "hash": "0Y1oiHanQcs8CaPj641PSXjFGMVcNu3+AZKyybWzkTI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefString.html",
+          "hash": "GVV7229s0ShgKRMe8t93VZAfYJShUWQmYQH4ErjoQjk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RefStringDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RefStringDrawer.html",
+          "hash": "OTgo3GFFYl9/ORHOvYJruX5d0ApM6uBtgL9bgjiwXos="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ResourceStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ResourceStorage.html",
+          "hash": "8IJw4Dwcizv2NnHRLZLib7UGPgLNYUqmEAQU5KaBrDI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Scene.html",
+          "hash": "Tm1EjZPlhSxnTUTRJ+zi2409E3p4+ZfUhVDHwKOKcfQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SceneEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SceneEventChannel.html",
+          "hash": "7jXq8+TZJzmXxOdbkqYnSd+TmYgdktlT5/3hVXNsfyo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SceneLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SceneLoader.html",
+          "hash": "4SmiCQGkEf8gPcz07dBFWwhjmrsBWU1hnZC/mqehNpc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SerializableLinkedList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SerializableLinkedList-1.html",
+          "hash": "6PTmOVmZY0QWN8nqbXFQY/oQxC6ReaEesh+WFDvF7XM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SerializedPropertyExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SerializedPropertyExtensions.html",
+          "hash": "05o+XMRS4Uc+OASQ3Wrgi7mtWorTQMGsCwJJsQRznYA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SimpleItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SimpleItem.html",
+          "hash": "rcUyi5CTKN8wEwvMWsgaYGMcQGnLgjoIyj/qTsGCvTA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SnapToNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SnapToNode.html",
+          "hash": "+J8foms7T6jHBLQqW9E1c6PSAW+V+yJzGYV3lo4MIjs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.StringEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.StringEventChannel.html",
+          "hash": "dV/+LI47WRQ9aA3dKVhQL8jQRX16OxfHE7qHfp/1YOs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.TargetConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.TargetConfig.html",
+          "hash": "Lg0qGJ3jhhTdV8AdeXPPvc3EO85zrAkeYbS38A9Vflk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Task.FinishedHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Task.FinishedHandler.html",
+          "hash": "PbIxOT4kgop6tpLr+F/7VrdND7O72fTAdARROa1QiFw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Task.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Task.html",
+          "hash": "DR2ukwyE4tN/undy+bIRjWNMhuKXbv2UZomhjX2Ta2U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.TestBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.TestBehavior.html",
+          "hash": "FQWjLMx/qt+VPl5/fkqDPjRYNS4YUQmMFQ30lv/Eeqw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarBool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarBool.html",
+          "hash": "im0MxMAz0fe2qDNA5tS7tuMe9eqdeBokc5q2lfwMvQ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarBoolDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarBoolDrawer.html",
+          "hash": "2VqdiEZ2c+0hKCMYFQ9cnIe7hXJ3tiMpVKo9Dl/s4Gg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarFloat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarFloat.html",
+          "hash": "H1120pRbpTD5RoJ+FcbvGvpnwCxygGkpF31GriKrtXA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarFloatDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarFloatDrawer.html",
+          "hash": "Oj7rB4twWz+Pc38XSxHc8fZ3d9wkNqNAANcTfFgt+MQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarInt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarInt.html",
+          "hash": "DsnJR4iiBPLHKsMzoONdmo26v+rH6lm+iS4pOWzDfRE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarIntDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarIntDrawer.html",
+          "hash": "9Tar0SgBeks01JKgnj+hensh1baaN1+XyWQ4AofodQQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarString.html",
+          "hash": "ujOVxmdKoB0bZv5U3kRGCJuyw5kb5RzgF60w6NdEMI8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VarStringDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VarStringDrawer.html",
+          "hash": "cRInIvK0PShKjcEjEKqn7h/xYy1XZD5lK5NducWmMFI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Variable-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Variable-1.html",
+          "hash": "BOjOd6fFVCuZIw3iZ7mUweFPvmiohV77T8MYqTpoDGI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.VoidEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.VoidEventChannel.html",
+          "hash": "4B1wwWWtkqdxUhKPAsULZFcuwGuao8Vdi3MU6HYbvhQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.html",
+          "hash": "kaHZp27I3fRoE78mdj/AoUMPOPM1JRk0INe7P6x1ea0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.AIController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.AIController.html",
+          "hash": "VxekwvDnDvb2wYhVwDiAfX2zxduGgj46wbuuruUgVYw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.AIPathFinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.AIPathFinder.html",
+          "hash": "/ASy6wL1YpK07Hbw+PNciHkkGJ6wu29rEFVFO/iwt/0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.AIUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.AIUtility.html",
+          "hash": "32TUURFljveQYGgdR4VwFV3D6SetqdiuYXpD/vc89HY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.AddStateMenuAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.AddStateMenuAttribute.html",
+          "hash": "nHEGDiScIrmFAJ7gPR3IsKVxNTk/l9arYF7tE30qHg4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.EntityAlertBar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.EntityAlertBar.html",
+          "hash": "SSvKSCO4DO2bv4Mrir+QNy+MYNsBlgJwUWZxFVHlp2I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.EntityHealthBar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.EntityHealthBar.html",
+          "hash": "HVyhXEhPrmFOdvLWMx7NgNhCg9O1IlI8aw86bUheefU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.MeleeChaseState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.MeleeChaseState.html",
+          "hash": "sj8VuWWAI+q/uY5Dh88fXFiyT03nnZCg3Ry6gfyChQc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.MeleeChaseState2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.MeleeChaseState2.html",
+          "hash": "UFG1YdRX5JU48gMjt5L6q3TLc7hZDJXR2qloCtdXAcg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.RangedChaseState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.RangedChaseState.html",
+          "hash": "Vjjp+3Kn7IPCIn1MjcotwvONQbhvoYbUpV6AeoTECkk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.State.html",
+          "hash": "Q2TQeR+cYHdePHHVar/mBZmqdD/zT9gzXuUlW23jRF0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.StateData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.StateData.html",
+          "hash": "frBmMKSxhRAw8xmFrt53OuxDdUCr/+nI7XE6GR73yLo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.StateDicationary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.StateDicationary.html",
+          "hash": "i6YyyJGcDbGXpYbeIugQmzPErSMkVWAqNBDcVOOjdDk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.StateMachine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.StateMachine.html",
+          "hash": "VSZ6a1Am4WDLZe4g4tMCOODcfWfhtwxzxZPgKyLXE7I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.StateTransitionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.StateTransitionAttribute.html",
+          "hash": "rSbodZ2xyvop8MUf231tpKbcG12IcXhlUn4e08Q54k0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.Transition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.Transition.html",
+          "hash": "A1NwDVgNLy9lfnL+EedJpBCgnKF+GJyfZrbIpelFIck="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.TransitionTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.TransitionTable.html",
+          "hash": "gqMeYEmrHPFsMphkQpjPwBy5s68sxwzvc2IeTXCOnHQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.Wander2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.Wander2.html",
+          "hash": "B4To7h/w/Udcu1NUkckwOOhwyRx4tlPekAubeX6hF/0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.WanderState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.WanderState.html",
+          "hash": "38+hGAhVV5fdeihun1/UbLBzUhhcthcrCUUSfQpYz+k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AI.html",
+          "hash": "O1iqIe2mX8/qm25LpSd/hVbBRTa6OwKIPj7o55p6YaM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AIUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AIUtility.html",
+          "hash": "P2W33kDUdIThnzRXv1yKNBqh38gM6Pn3Z0DcSVIk180="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Ability.AbilityConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Ability.AbilityConfig.html",
+          "hash": "NN+s0hsA8+80wcpN2grIYWL42P4mKGHsSMswn7FqWnE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Ability.AbilityPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Ability.AbilityPipe.html",
+          "hash": "x8MZ9S1JibDnW7JOSpjOQnPu2KWnVAYxEL5AhoG2tLk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Ability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Ability.html",
+          "hash": "p5lZwZCIIberscbkSKaIrEy289EWxn7ohAqDq/nmXHw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityAnimationConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityAnimationConfig.html",
+          "hash": "aRbpYCeMik3MCfC98KwftaFZXvvJnHDiBjgBSvZyjhE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityChannel.html",
+          "hash": "o1mkJTV1fylW0irnXgCfdVa38QC/vZWJBB3U1sYqH3E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityComponent.html",
+          "hash": "z5ZiS41E65dEUj2dJnWYvT1pDW0eZ3egl4UGFq8YTqY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityComponentDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityComponentDictionary.html",
+          "hash": "t9B5Zw3/bQXe3foKHNbh1IYei7oxtzHmPRzY9V4Fops="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfig.html",
+          "hash": "Wr4OIY446BNiiZNJ8ttzLLBiJHYyo/AC+8axDRPofOk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfigDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfigDictionary.html",
+          "hash": "ekuiP4p4u5DRXsnpSGHOs/0m5piJd9veeMBPoGsPTyU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig.html",
+          "hash": "iNaodJ/ebsf99jrYwo6H54KRkDKUmEQInrPsFEoH7Nw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityCoroutine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityCoroutine.html",
+          "hash": "czLDBVuK/PEC/kraFKUkHqS2RGZeLcmlJcv+3hCphUw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.html",
+          "hash": "VV+Lsxl3HZ9qjMd5FNei8HqyhP8kba18wCgQ73U+pGg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityData.html",
+          "hash": "q5v9f8/vPJn7/w1MsSXumq9j+nW+oPINiAyttff/ZAw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityDictionary.html",
+          "hash": "pOZi1nb/F7N+4WabdR/pae8F3MuKUq8KWepMik39ON4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityExecutor.html",
+          "hash": "A/TN5g7cl7OYDRa1S3zknsOSSOKuFB8w7gVJwpKuVFw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityManager.html",
+          "hash": "ZenWStQbilYyjhiwac8qGLIEKn7GXm6yxAASdW6Jq/4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityRunner.html",
+          "hash": "HyPNNwDBf9X8n1V6dpHKj4s3YK7FtSpG03aNLH3BD4I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityRuntime.html",
+          "hash": "4JmbLilR56RGu+nT8B3/RyZ6NUzTK1RmFSEub/USHpk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilitySelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilitySelector.html",
+          "hash": "RYYz2LBAKseo6VQTGUjJltwVR7xJV6eQLG+OlpaShiw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityStat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityStat.html",
+          "hash": "EIHht58K85BJbT1Urqro2hL5/KADwOUdyL9Lcub0+l4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityStatAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityStatAttribute.html",
+          "hash": "0hevTXmeNRK5xMIdv49b6Bu2ciloLDO1HuZUQTrLwBo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.ActionOverseer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.ActionOverseer.html",
+          "hash": "5yv8ea8qeh/Vr5d1F9Uiwl6FgVdZpZ9HB4v0vVneVUc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html",
+          "hash": "vNvkiV5EDl21BuOtCZUIJdXfQosS8BXizRnK/fZuRUQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html",
+          "hash": "RtNPyxOzV4q+o86jKxOcXduUdzxrdrmcsM0KDqjk+JQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.html",
+          "hash": "5Vvo9qXpZ2JxwMbL7ueaTUqsIjCy0qT+iU7oB82ujp4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute.html",
+          "hash": "lFTxF2s8LsWg5g/7RBSP09ry2pRiiSxISU/y3bI0JXY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute.html",
+          "hash": "YC9Mo/qwqD6VJQdu5g1+5ugFXMnvK6YWyOmBdVzipVE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig.html",
+          "hash": "+JChX+pq4fhzsyrIWzyBhSER1DXOUS8d7VVk1owozWM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.CircleAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.CircleAttack.html",
+          "hash": "ceYQjzewuKXm21GxnoOKT5E7GY0CE2sLu1l2exPGDQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.ClassNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.ClassNode.html",
+          "hash": "yrCMQkm6kxf6DJ1iJsrBuoe2rqsX9S57RjIEDuctsSQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.CombatStat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.CombatStat.html",
+          "hash": "ImxokwVHibrJOukNRDDhiW8CoCRs/cxW9ZUPTcaFbuA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.ComponentRequiredAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html",
+          "hash": "Um1j0BhfgCudoCq5aM9Q7VKv7rOyMTBe/owTNgoCkgo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.DamageModifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.DamageModifier.html",
+          "hash": "uyjvIH4Z5hruHmbJUdylIaSt49QKgZBclRd2N51TplI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Endure.EndureConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Endure.EndureConfig.html",
+          "hash": "rAlKJ3/xzlRGB1OJEqYgVITXzmhwnWbGOKSD8c0tFZ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Endure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Endure.html",
+          "hash": "GdpI6/Q0TYJL0tOGpZrEETI6dhcsz6FKdnuRUZ+6jw8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Guard.GuardAnimations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Guard.GuardAnimations.html",
+          "hash": "J7leZtXGmpeG2P8wy9bc+Ag4UtAjgv/5DfNVTHO/BOQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Guard.GuardConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Guard.GuardConfig.html",
+          "hash": "OAFSh06rx1Lyz6vnS2H1yUxjVi4oXazfqyN/WG8Ohss="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Guard.GuardPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Guard.GuardPipe.html",
+          "hash": "nTEXNmqZuZ+yXnsMv4kH6/okU/9nT3amxU707FdN23I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Guard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Guard.html",
+          "hash": "s5O1d0RUZUjyYPnpIxnV1en5Xap3aaS4ygkGXtGkPBE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.GuardChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.GuardChannel.html",
+          "hash": "6WWFGpar+NhNJKBVn4J6InYp13xdHq9y6MA/NAtcPQw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.GuardConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.GuardConfig.html",
+          "hash": "2NRUwvpAuYe/SApkqp1jzeb6BCtb4/immH2VwaUPjjA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.GuardRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.GuardRuntime.html",
+          "hash": "J8RjN1ngDTnVNhP6D/7zLjWcU2saP/CLy5FMOMT7Nd4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig.html",
+          "hash": "Df6hN0om/8efiMWPcewELklO+pAXDG0PBq/93kjwohg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.html",
+          "hash": "7eTYXw37QDUL4d/EE27TxynEm5kQtr7+honV+2bAVE0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttack.html",
+          "hash": "wAc9/aE07VF74+VQjdok4EW2O0sA4TWKH6gO4Che4Gs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel.html",
+          "hash": "loZMlqZLtGwB5of+ddVuutz417aTDRrH8qE2k3n0ob4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttackConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttackConfig.html",
+          "hash": "EBNl21iYE2Mjkx1JnrfasnixHvIQ4bcs6eIA1HQ6cVc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime.html",
+          "hash": "O1pTj8dS0UyrMQjDl8XDK2B5oQ4HvkvzBzOlIXoA9Oc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig.html",
+          "hash": "Drj6sPIoxjMeDPkQw5tHQCIP9sBFfEWAA5l0zblzCLY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe.html",
+          "hash": "8fsqZhhspPZoX8N4xK1+pfutbD7fxkPpR8C3m9R9k3w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttack.html",
+          "hash": "tKJXqcMY9DYxs85HlFtDbQY1bHNg+2B3zj8H9+dN09k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttackChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttackChannel.html",
+          "hash": "31GmnwMwsctjEFXo7l408r25B7rjhrCOZ4BVP2+kg1M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttackConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttackConfig.html",
+          "hash": "5kNMZmVL4YJkWn9vpYbHvlbodUt6qvyFAbuA1Aeizac="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.html",
+          "hash": "cwruVHLz09mjk/JFX/qNtP1Vec4OSwdkxJxofs7wGEA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Mana.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Mana.html",
+          "hash": "QMMA4EVbQBnkHe0xR1CHpWcEQUovNZ6jo54kVVDEVz0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig.html",
+          "hash": "UIQ0g6zqpYEqWQ4KsssyLP59NbdQvIOZQ24EGeoRHSM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe.html",
+          "hash": "BBdIN24BgImLP8ZWsl6YhGMQbj0RPub0qyrVKEz1S0A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbility.html",
+          "hash": "cP3QtPWDRf5HPBF/2L6IpKZdGP85vLXtCflP9/A2AIQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbilityChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbilityChannel.html",
+          "hash": "UuDTi/5ByNj3F2K3nRMWgIxFX6eTrHs1TWgfa0L5l6o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbilityConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbilityConfig.html",
+          "hash": "Avjxs9gENAgWzEqL9MvhX7Lnt0k29H3AsVjqZy4MTbU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbilityRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.OffhandAbilityRuntime.html",
+          "hash": "Gm9RrboacWy+gVFN8IRP6pR01JaI0GA9ZO5gwPO7hXU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html",
+          "hash": "R9SMDiWbtSsjzzy9tEDQqpV+BVJbeQ67l4aJFIFN/3E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.html",
+          "hash": "y6fPK4tEhVt588ARKodF1aNgqHKpQNrg9gxzuy0gzHY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.html",
+          "hash": "YVW35khampCsShQ2Vld4NKfAQd6hXlheztjySPnV0hY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig.html",
+          "hash": "D7llqk69Z6EOuNUiilONhbUvIiMqHUtSbIZLG2s1Gsg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.RightSwipe.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.RightSwipe.State.html",
+          "hash": "V0+ViEbvSw771HQ9MxyhALKBqWOGhhyH404ZtLRa+XI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.RightSwipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.RightSwipe.html",
+          "hash": "/OIsHmljJJ7guhyLCyxQGbnU+kOW3tGnl4gquELqcgg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Shoot.ShootConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Shoot.ShootConfig.html",
+          "hash": "4DOD18I9pkCYkrDNh6+z17mzduNk7VIvVMlQSa1oUwc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Shoot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Shoot.html",
+          "hash": "TOC1G+RErpXE71PWDrafU4BhFqWqLuDqKgxEr+busnk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.TargetSetting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.TargetSetting.html",
+          "hash": "Qjh4ebtQwrH1Wl7zfGo26/h4+KE6W5/weSrA4bLb9sA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.TestAnimationEntries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.TestAnimationEntries.html",
+          "hash": "E/u/zOG/Rb+s+VHzZN9Zu/rmLYjz2Q6Muv5CbtmQOHs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig.html",
+          "hash": "Gl+JZhwI1j6axHtYx1D5mazOhrW0YyYbkwg30cbAUu0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.TestCoroutine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.TestCoroutine.html",
+          "hash": "+sczu6cF+t4iyhOzhJAqvV3gJZlXgjoYRniymv3t2RQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig.html",
+          "hash": "I+CackNcub2I5uNuHtQA8XqlYxMgJ8htrRR7PLFMAVc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe.html",
+          "hash": "8/kwhz+JCkxn4eSsi1QSLDC0YpRT8HigOr5kHkygr90="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.TestWeaponAbility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.TestWeaponAbility.html",
+          "hash": "vsWXOrPM8fxHHy0CSSFG8sMSimLZRuC+PYt/ikR4aK4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.html",
+          "hash": "WAQjJrQuiTDji31K1u4mGSIUqZ5nC8q5iFgI51gB0fY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.TestWeapon.TestWeaponConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.TestWeapon.TestWeaponConfig.html",
+          "hash": "R054zvIc9lVKdh/2+aXZHoDgrAAao5EefmhZApE0UfQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.TestWeapon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.TestWeapon.html",
+          "hash": "if8mUb+fgblcIBwMUel/VaCHVIF309WsoTgYmd9f7Wo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.Weapon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.Weapon.html",
+          "hash": "SR3yRobuae/IL0PMAK/RFwQZlu+Gca/QvC5kP+KCY84="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.WeaponAbility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.WeaponAbility.html",
+          "hash": "c0GLYln72paPsPni5Mt1eNi+MdytfdXzdU/arJw962k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.WeaponType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.WeaponType.html",
+          "hash": "Q6vHgi3VUrla2Bi+scIWrjZQN9U9K5AkV4djDHssGZY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.WeaponWielder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.WeaponWielder.html",
+          "hash": "HSIky4CwEsYzidxONxHvFa8ssWkJVBe0wPy5jpQJ6ww="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "DuplicateUids"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.Weapon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.Weapon.html",
+          "hash": "f2oH9wPBz1kyIx2F0Y31y340i4eoOrJu0JEC7lBG/vI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponAbility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponAbility.html",
+          "hash": "P66X5b92vd1vNjtW1vsIiaWD2MfZVn4oR6ez3DFrNHU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponAnimationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponAnimationAttribute.html",
+          "hash": "8h64QHaJ9ghGpOo4hQw/IDK+XRCfB5CtXpaFyw3Nb7Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponAnimationData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponAnimationData.html",
+          "hash": "WJ+J12uVFY2fJ49lsSpfK2nLu2CDdBqKt5p9Lv8tbxM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig.html",
+          "hash": "fuH9Sted4LSM3IFu9Wm6ShDG9bB/aUdlzRSiJUtk5s8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe.html",
+          "hash": "sLrsUZoNF4PkpX+ksUb/DqREAFSNQj/G9JvWe1CoYuo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponArt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponArt.html",
+          "hash": "XoWBKjIPbpDZS3BIVTtUuGRWgQ8/GIE3CJTuaylIrZ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtChannel.html",
+          "hash": "NtabOE4TtGrJQET4VumO7tnVcQBYSvLW4xJZUxWOMVM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtConfig.html",
+          "hash": "a6lygO2K97+fFGXIt+iTY0Be1At2a0aCqJtZtcoKvIU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtRuntime.html",
+          "hash": "gfGbWNLLVfBiLB8zmrO4Y4DNVdiRogbc+aFg1Rhvrec="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponArtSelector.html",
+          "hash": "XXGI1V+t39bRWF2xJYezMYDY/0SpBxmpa2ZpWmx6Un8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponData.html",
+          "hash": "JL80RZT7vZhTkF5WtgjKEa+8Il7PUjX7wrfTxTQiQMk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponManager.html",
+          "hash": "YwhJfEH/L/lbG8SJRPCKnMahvdBs74JaW2f3GE2wwiY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponStat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponStat.html",
+          "hash": "CWUZo/hVLCYC0OnH+HcM8LJHE2OmdFWhdSa/Bb6EGBk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponStatDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponStatDictionary.html",
+          "hash": "lMHg71EE9t7sU7pAhUqIUSwiCtHZEq9FMu+GLlUQc8A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponState.html",
+          "hash": "kT0//RI9bYn/oXuGgGWE5aV/vKORhoLXeCzC4BZo5A0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponType.html",
+          "hash": "P9Qyf6riSjydm4eVDyhvicItziH+9XyNoP82gasvI/s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponUtility.html",
+          "hash": "a8hNNkiQWBhkh0D/aW+XQrp+eXgsdB3RevKsoQwGqm0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponWielder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponWielder.html",
+          "hash": "FmVKFCsoLxqn00urR85JdNCq0ovUj/1zCaBZu+bVR7I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.html",
+          "hash": "glhbAEnVnI+vBcqhKSCzWjV8XzEuDPEDUvqeUM+JAWo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AnimationClipArray.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AnimationClipArray.html",
+          "hash": "/CBCH2nmH+ffRq0ifSpdiEztKZfQNFERn5NirDoQDbg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.CharacterStateManager.CharacterState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.CharacterStateManager.CharacterState.html",
+          "hash": "ns+mpXgPUMTK4+vMKxtLlJlxbJBRAnKcqpgra4ef9TY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.CharacterStateManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.CharacterStateManager.html",
+          "hash": "ewK3SOiUDRqXFdKBqzqbHEjfQssbHOljZnYuMss81PI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.ContinousCollision2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.ContinousCollision2D.html",
+          "hash": "80FTtKu2qdUhKX7I2ZOHLWdzuGqDOYp5ozexuYx1EhM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.CoroutineOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.CoroutineOption.html",
+          "hash": "1drrK3CPhg+KRFgIg3eLzuQCXPgx9LQ926CupuTJ5Kk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Damage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Damage.html",
+          "hash": "sw0gXplVp0rRcNTtI5vr/mK1pe4XiUQYDuuufxj2sfo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DamageType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DamageType.html",
+          "hash": "sQ+FiOshAmKZlZrBoTHV3zYLr07/Ud7UCPtwBYFSGcc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueSystem.DialogueNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueSystem.DialogueNode.html",
+          "hash": "gxA8OrXB4xtHCzKioOEumEJNsgaWvVgSBZ8K5UXXnPc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueSystem.DialogueObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueSystem.DialogueObject.html",
+          "hash": "6O7MPpXsWERETRcLyl0sfK8kbRcAs0AhEUOmImdHVXY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueSystem.DialogueResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueSystem.DialogueResponse.html",
+          "hash": "Is9Y3fuevw9JUPT1SrCD+kEIj3WDbdfPA9zi6uBAUQI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueSystem.html",
+          "hash": "Xqcm4iunbEt+3vPtqlyqaP7mYmuE9QYyIpdzqlC+m6Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DisableInPlayMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DisableInPlayMode.html",
+          "hash": "S/QlOMYZdzuH68M/698GG9mxT4sGLZpZApoDEDmo+aA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.AbilityConfigEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.AbilityConfigEditor.html",
+          "hash": "IAc6ADBtyYbVgvjxn5hp07BotbAMm1yGKleV51hmgNc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.AbilityDataEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.AbilityDataEditor.html",
+          "hash": "O32RV1U0aCyJzF76L9hIaYzw7HUnMvo6UZaXb+lXkic="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.AbilityEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.AbilityEditor.html",
+          "hash": "h6KI9IyuCT6aFg1Q8nQrz120/DmwYmLI0xhe/BupIzU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.AbilityRunnerEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.AbilityRunnerEditor.html",
+          "hash": "cmXSrlN/H6qEGRqnZVWg7is3Oh3yisFIp72+ms75Y5Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.ActionConfigEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.ActionConfigEditor.html",
+          "hash": "VV4DTLK08jiOqzrQWplAAVHVs65VcnTjghOx97MtbOU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.ActionInstanceDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.ActionInstanceDrawer.html",
+          "hash": "YCqhUB4YymuwiEs7t80jOIvcsFUiL4Lx9FUDodFrwxc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.ActionInstanceEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.ActionInstanceEditor.html",
+          "hash": "ha5wuBfP54J/nFD7kiij1bUwZHFYwy/G+TKRhayX7dw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.EntityComponentEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.EntityComponentEditor.html",
+          "hash": "vP9cvin4xcnLwZX7enUF4avSL/EqdnK/163AnrV1iQA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.EntityEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.EntityEditor.html",
+          "hash": "fNvt2yMmlEih2eTsK0foRv2IKteWWj6Tfy3aAYbP2cQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EditorUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EditorUtility.html",
+          "hash": "/PXdxwSgSlwFgl0jQdLm4S2c8oi/Bi2CxGJrqxXT5v0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityConfigEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilityConfigEditor.html",
+          "hash": "OnmZAkeWJImVx9megbjwDu13YW0Yttc3Z0/bpf5ogyw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityDataEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilityDataEditor.html",
+          "hash": "VPpq8odb96jGwLY2nPoO7Nu2AN948WjmmI+xDfadASo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilityDrawer.html",
+          "hash": "xkuTaBjDRnixjMr7m3z4ylwOd++1b547piX+NcXqKR8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilityEditor.html",
+          "hash": "fm/j5GHoPl63rCQSYs+JOlj367n7RiR5CafrSuDa+ws="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityManagerEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilityManagerEditor.html",
+          "hash": "Wxcg8PcPAdKhSKn5R0t6VU8ZDfVgE64vXkVT1CV6yDU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityRunnerEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilityRunnerEditor.html",
+          "hash": "CkvjUI13NBwBN4cFupenfRHH6LdvA0N42hThHbwcuPA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilitySelectorDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilitySelectorDrawer.html",
+          "hash": "G7IRKSfgwsxUcakClcwrfgVDwJo8Ld1kJhHYmRpq3Q8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AddAbilityComponentPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AddAbilityComponentPopup.html",
+          "hash": "xXgWEuKLnVDS+YucRLAOoyfyN1HVL3wH7t34K5ATHUc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AddAbilityPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AddAbilityPopup.html",
+          "hash": "G53Onw4XOmfYqaQa59L+MMwRpEkb5iaGkLRFezMLVNA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AddAbilityStatPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AddAbilityStatPopup.html",
+          "hash": "+VA54lTNKc8nVKQOOQ/gU3HD/vXPktrt5YZhZPELxYg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AddStatePopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AddStatePopup.html",
+          "hash": "Fv5nS/u3Kshmhjef2zBD34KqLUMV6Dc0pU/OCvksLhs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AddWeaponStatPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AddWeaponStatPopup.html",
+          "hash": "N4OK1ylYboU+3HYrNdeatox0b5JX+vHzy7VKcuKfPrU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.DisableInPlayModeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.DisableInPlayModeDrawer.html",
+          "hash": "28wVqHV/VVDdnrEMUvurBfh3pVJmeqGCqNFKmjhSWLo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.EditorUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.EditorUtils.html",
+          "hash": "m8ZGXSILQiCSZXDsscGOlSPSWxjCVAd8HzdS2mOaBGg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.EffectProcessorEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.EffectProcessorEditor.html",
+          "hash": "HluW61ww8o4cR/puAI/XCTJIVbl0ZgG16AimPhNj/hc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.EntityEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.EntityEditor.html",
+          "hash": "NLB8IWlIlrm4jOc4cdcApUKzUYvt18gSGK7SC+S0Mj8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.FilePathAttributeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.FilePathAttributeDrawer.html",
+          "hash": "PRkmFdENYEROCKpG6TPTx7CAAdJtp7/nLOKFGihkS2I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.FolderIcon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.FolderIcon.html",
+          "hash": "XoJ00vssURBImf+hUcjjR0QxSoGRTeNFvmaS4ENA9uU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.FolderPathAttriibuteDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.FolderPathAttriibuteDrawer.html",
+          "hash": "W+/WTh3KrtuhVMOFox8Vgi3d68ik8hwcE7eumZL6U9Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.InventoryEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.InventoryEditor.html",
+          "hash": "pWSgYT507ZhweJNDKEdPUIDQsgBL7QsqK1LTlvdmhXo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.LayerAttributeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.LayerAttributeDrawer.html",
+          "hash": "9mI0HIlaVpgG0kk4nJR3R3I5/JqCd+D0kj7JoKQIf2w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.MovementControllerEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.MovementControllerEditor.html",
+          "hash": "wZZwwfpe/ymw/y4iAeANmEAXHN7zWBnFSklg+a/PYAQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.PoiseEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.PoiseEditor.html",
+          "hash": "RJa9YBev92UIHTx4njmyNekMHHaYwG+sfE+fMVUUoa8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.ReadOnlyAttributeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.ReadOnlyAttributeDrawer.html",
+          "hash": "+Tpx1pKLAFcd+ZnMn9M3hftjq/+QwSrqXyGghIflT8s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.SelectAbilityComponentPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.SelectAbilityComponentPopup.html",
+          "hash": "KLsJSr/8SjMaJMGjvWnoQHGx1qIC4nO8z1IZDQi6RHw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.SelectAbilityPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.SelectAbilityPopup.html",
+          "hash": "h5BIEHmJtXvE/qLcSloToBYGAad/8C8vXhHzYGeSa8g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.SelectAbilityStatPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.SelectAbilityStatPopup.html",
+          "hash": "M/NJO/SDSlfRKaWSprige3GBV5jV5Zc6gjDecPYGoE4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.SelectStatePopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.SelectStatePopup.html",
+          "hash": "EC5XZ3osOBs6QkCjNBmkMHz8fZeqwDsWk8Jp4vpNF0E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.SelectWeaponStatPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.SelectWeaponStatPopup.html",
+          "hash": "+i+T+9U8AwSOiQIS65QRIqVEKAvJChEJBdnUTIXPxWc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.SerializedPropertyExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.SerializedPropertyExtensions.html",
+          "hash": "AyNfqdkNlMr4bEl/hYf2f6cetcPmt9aDwxjtQXFyKro="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.StateDataEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.StateDataEditor.html",
+          "hash": "UZMwNFvJjAO4On+cE4xNTOoPpNIiLEBbLmEnucrnQ9M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.StateDataEditorSetting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.StateDataEditorSetting.html",
+          "hash": "GvRxkLyQquEFUorS2T/CUPrGjSzeXYDHeHW1GuxnYnE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.StateEditorWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.StateEditorWindow.html",
+          "hash": "8+Me1ysBieQARuj5+N0uXOdKX4HZmYsUeIECivoZAKc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.WeaponAnimationDataEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.WeaponAnimationDataEditor.html",
+          "hash": "4nm9yWhm/bUKOrVGgInaCFmN0aOie4j7Osy5oJ9a9PI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.WeaponArtSelectorDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.WeaponArtSelectorDrawer.html",
+          "hash": "GReySBHye/nVrEvRTOWH+HRf6V6P7RvsCwg+iTVx+P4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.WeaponDataEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.WeaponDataEditor.html",
+          "hash": "FuDgRHj1/ZREeSq+KQXuxQdXg4n75SYbPFzdJ76e8og="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.XListPropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.XListPropertyDrawer.html",
+          "hash": "ZlPZJhKGtkX1P+M/pEXXNYVMPeuUW3/OjzTPLWW451o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.html",
+          "hash": "0+z3OPRdlUYwpgZqle56gxHLGcM0g/++YFqiEViwrVY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EffectProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EffectProcessor.html",
+          "hash": "84HkGCrNsfksSpdrm7nBhScuP3Qiv1zjGbvQxb3HtAc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Effects.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Effects.Effect.html",
+          "hash": "STMPEG7Tex/Lh3gEkzJpWBNm/TyiEZAjG6PKGVWrJWE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Effects.SilentEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Effects.SilentEffect.html",
+          "hash": "EV8XyjBy7XRaNBron/NPoH0BlaUAFEKH1cXvRwX31tc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Effects.StunEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Effects.StunEffect.html",
+          "hash": "O+8ACgE7YeXmixpAawm9yq6H+5YX6cTOT1fIbupxsic="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Effects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Effects.html",
+          "hash": "LG81P6o5kCwGvsvkGM4QvSAC0ZzLkXdk7e/Ec1Zcbg0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Entity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Entity.html",
+          "hash": "WxxLgvLn8iiH26HAW/LJSM7vx25juNXo4jFijySO1zU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntityGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntityGroup.html",
+          "hash": "xzZjVVIB8oIFNU8Rljb/jdOBGse530Q5bmsXDlByKJY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.Damage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.Damage.html",
+          "hash": "e2iEfTWL30EhTcew/ljaW0Cj9mpoEYac4tUnhx2l+VQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.DamageBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.DamageBuffer.html",
+          "hash": "GvCpo9qBjfhk1Wkmx6L29CpPJ0nIpqiKpOzeZBGBf+8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.DamageType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.DamageType.html",
+          "hash": "Bl+fPZiLP0ivcRaOQTBvz/AOzFhVJrPFUOfDEAjtkCs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.Effect.html",
+          "hash": "/gd6ADc1VvXHEydgiReiiSYSdntij0gkGfaGIb/si6E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.Entity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.Entity.html",
+          "hash": "r27QTvy6J06sbtDhspj6LeVD+r6fX3ipD5gHbwU5/+Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.RegenBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.RegenBuffer.html",
+          "hash": "FWOVyYGK5r4FMle/NSQUjei2uASPO8skINaNmfbAIqw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.SilentEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.SilentEffect.html",
+          "hash": "aSajNj7NH8NMS3JfH6MnhLSkd+7oBql84vFA6DnbjYM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.StunEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.StunEffect.html",
+          "hash": "lphu/6ZdyDTt9Bc5ofJ1n73DWOemU26lrc5OOyJfv0I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EntitySystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EntitySystem.html",
+          "hash": "q2kReIuz1QapHbFKVMTCmf1yk+8rAkVKYQVpGzmTKjE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.FilePathAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.FilePathAttribute.html",
+          "hash": "sg7gJa8NJGSZT5JKtLoZ5a42Q+wqDaqylHiNa1MxCrQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.FindMissingScript.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.FindMissingScript.html",
+          "hash": "butEldL27cuLk26JCeUqEDQdCnSsR13EZHIFNPwQSqU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.FolderPathAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.FolderPathAttribute.html",
+          "hash": "dXWQjhDQKJGmPSm60zVFctW5D/6/zxE5XwRM+E2z2dw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.GameManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.GameManager.html",
+          "hash": "x2Jou1Tw+YAf40pSx8NNQozZ5c5n2S3m4UvOhECa3Pk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.GameStateManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.GameStateManager.html",
+          "hash": "GkPXrC8uchQXDA0SV6w7OxRCud0EBOt3O/KvB9HophU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.InputControl.PlayerController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.InputControl.PlayerController.html",
+          "hash": "lWzBlf4PHyKuVqPfBvv33/gbtVeNNbaIlsdMXLlTYZY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.InputControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.InputControl.html",
+          "hash": "N1VfR9RyiEHrW94OgRODeBWrhj5mu+rDukFWoV8Vhlo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.CollectableItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.CollectableItem.html",
+          "hash": "HL+9e9GA+AakfjuVJMz2eVmKxor1dEdrydDq/2kTG+Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.GeneralInteractor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.GeneralInteractor.html",
+          "hash": "LOfUMSC6URkNXz+P/BIgLiJaLOJuXVP/3sVP6wfP6Ec="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.HealthPotion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.HealthPotion.html",
+          "hash": "HTUv0gkqdKXVJY+HTvzhVF6lM9C7VGV42BIZn8JCYDk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.IConsumable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.IConsumable.html",
+          "hash": "90h4PTRBWoYINocGttLYFDmURYKH4vD6tuSklc5WzlA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.IEquipable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.IEquipable.html",
+          "hash": "kOtly6qi8aAsUM3d1rApAKZ16MTkDDULpJqIfCB5P2g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.IInteractable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.IInteractable.html",
+          "hash": "DaRuzllqownTeJc8W5AV/eJD7EGXW3B/qVVM0Okvc1k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InteractabilityCheckerAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InteractabilityCheckerAttribute.html",
+          "hash": "8Awz0juSvA2wRnV6exblAoyy09DcNGHPWM3vwFtRuGE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InteractableObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InteractableObject.html",
+          "hash": "7GSo0CqY1D++xVgxaBfgXtI+U/aF4XmMayqRTCZm3cc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InteractionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InteractionAttribute.html",
+          "hash": "Yhkx9meB19gXH5QN++vmv2AxCBJ/8mIPJYgFgzGeWf4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InteractionHandlerAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InteractionHandlerAttribute.html",
+          "hash": "/s8GJ/1D4Vnc+J3aSJkiHFTAWtiWhkxBxrq/nfn1KPU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InteractionPrompt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InteractionPrompt.html",
+          "hash": "HO9DN3bQjzDOKXLX+x+/PevQX1dHhcfA5GQebcdmzes="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InteractionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InteractionType.html",
+          "hash": "gnnGBSDp/cb9vdbhNI4dYX4k4F1VJ6uwDA0uHSMHf58="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.Interactor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.Interactor.html",
+          "hash": "Jwr5sQtPqfHBU4BfMSQTx0GijpebF/zr4+1kczgy2w0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.Inventory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.Inventory.html",
+          "hash": "ozaP5fiDT0qnR8oAgNL7gCuXQTXTJUMKaHP4O8Qpm0w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InventoryItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InventoryItem.html",
+          "hash": "vFzLhDyS7Ixt0rLxaKzsj1MUwRotzAK6Ag3unRyS9xc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.Item.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.Item.html",
+          "hash": "YP1TZyNTukMwonplj22PNDk3G0XiRan+lqf/e83+wGs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.ItemType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.ItemType.html",
+          "hash": "V7ssl8rCP+C4/pBWviDSOji7kv2Tq58VHCtC8xQeDmU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.LockableDoor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.LockableDoor.html",
+          "hash": "YUWdTO5DZOsPTXx0Uc6L0NYEbAXU2JG9V16h0AsX98s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.RegisterInteractorAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.RegisterInteractorAttribute.html",
+          "hash": "73hCAu/LHVDZ/LliGXs3qR73BD16ll6gyn7aFKBNxn8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.SimpleDoor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.SimpleDoor.html",
+          "hash": "gUNZimxB2ag7t/aYmhhg3Lwk9PiQlyLiZcNFher0PFI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.SimpleItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.SimpleItem.html",
+          "hash": "GqUQEHLtmwzfpQ+7fBAgmj3Kg0MYEjaG1JzJbURExhs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.Teleportor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.Teleportor.html",
+          "hash": "TT7dWpmCPV7UMU+df9DwFDPucvFOc/YEZb/DTXiK8L4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.html",
+          "hash": "ZIKMSdtbPOZebc2m6tE0kpHivQoAs8Aj91wsKBGY5c8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.IntroMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.IntroMenu.html",
+          "hash": "HnmDGCaXIbXspK+8Xg/BtqwxVKnHoMmFMuzzP7tiBuU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.InventoryUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.InventoryUtil.html",
+          "hash": "6h9dyJQCuqXZkfiixcrieeU6EZ0fPuOJ6TmpUFSJyMs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.ItemEntryUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.ItemEntryUI.html",
+          "hash": "CvlV1GGTmV7dadccZLgNirs1AWN5IMbPqlRHQqwGWgo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.LayerAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.LayerAttribute.html",
+          "hash": "mpCi6yAPPa8z/gyNtMpMJwokS0DvV5MG/a9m3kF1ySs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.ModifiedPathfinding.AIPathFinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.ModifiedPathfinding.AIPathFinder.html",
+          "hash": "umof5Au5p3D2YOEQvHAbyNXKftEj/2JHbnA3mJIgJBk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.ModifiedPathfinding.EditorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.ModifiedPathfinding.EditorBase.html",
+          "hash": "TLz42TtVrjZ1q1xKd1JX4o7irqR0fasr19orJGzdOHY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.ModifiedPathfinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.ModifiedPathfinding.html",
+          "hash": "DdMrbNqysYW3Pfw/ahRTnhva1yi1JkBwoId5qVl6W8s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.MovementController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.MovementController.html",
+          "hash": "IlbKZkbnztjAfO7+D/JaNXhBJvGC67vrQKsssFC2Swg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.OffhandWeaponAbilityAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.OffhandWeaponAbilityAttribute.html",
+          "hash": "J6uQHcZuL5sMbKtcfKVWM2jQZ0YtcxzoAuoMUxVRe3k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Poise.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Poise.html",
+          "hash": "O9hq0iA3Q+BTEeMjWYR9d66f/8vWqJd4eWHHgzIjQ1Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Pool.ActionCapsuleCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Pool.ActionCapsuleCollider.html",
+          "hash": "jI1VUA3XVT95/g6gamMTzglIlTlU18Vje7MmRCxtnqc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Pool.Bullet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Pool.Bullet.html",
+          "hash": "EBYAepU0kMasohSaG3X5ap0a3Fv/y2c1A7zxG3zuri8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Pool.ObjectPool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Pool.ObjectPool.html",
+          "hash": "YzrGZOI1DGaZNwt1nAEeKnXXRpBZfor3bWCAJBHo4y8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Pool.TemporalObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Pool.TemporalObject.html",
+          "hash": "HXh0emA4Qfb0ZtfP8ePaLmamNrqYdevrPJTVMfrGT5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Pool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Pool.html",
+          "hash": "uAx+I3FNk7jKFjuLhK9O71TAwTMnMAcPK/RgfOIoYDM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.ReadOnlyAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.ReadOnlyAttribute.html",
+          "hash": "2lDoBxzWL1hf69QsSHvp5h3hpTq4+WY9HGwCI5MuCIU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Scene.html",
+          "hash": "AMGRHgi3pBLMLCXbcfGIOn/nvWFs34YnQJ8F7bhlaC8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SceneEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SceneEventChannel.html",
+          "hash": "VYJ9FKZ3bJ8lM0Egn3sYn+39XTbh0jvRNu/EhQ2jZkE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SceneLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SceneLoader.html",
+          "hash": "9686Vi4HwGpOzRzzKisCDmZ2Cg56JKsWXk0cyJb/MD8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SerializableArray-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SerializableArray-1.html",
+          "hash": "m1UJwJuDXIebKuAUE6prYLUrGbR17VMzqma1wjjYdqc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SimpleCollision2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SimpleCollision2D.html",
+          "hash": "sF/kQKpGrniLGyHzQloLb6PADu0f47gQ6EsvU75Sgyk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SubLevelComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SubLevelComponent.html",
+          "hash": "nSxENvKV1ree0MwlRxxkteA6Q5YvNa2kBMaUKACiS94="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.UI.DialogueDisplayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.UI.DialogueDisplayer.html",
+          "hash": "aOhSIwJD1dgMg1gYjdVUlL66X1tykhVvoxwjjWzrh1o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.UI.InteractionUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.UI.InteractionUI.html",
+          "hash": "U1NwBhgwX+mCicpoGmdqb4dC75SNiXE7poPoojvqIas="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.UI.InventoryUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.UI.InventoryUI.html",
+          "hash": "mxlmqVSGWtzJSM0GbjLa/MNBISIsosApTvKhs4jEcDM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.UI.PlayerUIDisplayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.UI.PlayerUIDisplayer.html",
+          "hash": "jLaVqDgT/9UrvZIg+l2Vg1SGMbwYLwi27krzuCgtsrs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.UI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.UI.html",
+          "hash": "JEvl8u+jbk1WqV0VhohlGw3f2/zU5r56m+AX64Zqj4Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.AbilityAnimationConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.AbilityAnimationConfig.html",
+          "hash": "FfszGttZ600y/mKKEbiEQlenibcbAgetr2phVsjLoU8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.AbilitySet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.AbilitySet.html",
+          "hash": "TuxaiYb9TWtvEU4d9vKeWrR9FodZa7P7S2e2h3j1raY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.And.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.And.html",
+          "hash": "7y/n7O5qyVqtV7zv+/2Xvg8PaayVVea7gFlBpOZmxNg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.AttributeInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.AttributeInitializer.html",
+          "hash": "6ygmpstISyAqyLkIfhQJfDq16gXUmkwgEeRAlNCiX2k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BaseAnd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BaseAnd.html",
+          "hash": "xsz/H7t6CoVRBzBc4UYLoRIXWlW3uao55UXpK6FqNW8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BaseOr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BaseOr.html",
+          "hash": "SNHT9ozJyz+DLraOPbILkB9VkLHIsU+mqXiOKS+kOrk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedStats.BaseAnd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedStats.BaseAnd.html",
+          "hash": "QBvM3AXRVTZajWXSJTFYtn6gGKyJ+YksJUZvGI7sOA4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedStats.BaseOr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedStats.BaseOr.html",
+          "hash": "PJMFP4jXnJ/qsxWpN8cuNmF8khSfoD3c+8DT4tMIvoI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedStats.BufferedStat-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedStats.BufferedStat-1.html",
+          "hash": "9WYW/jcJAf7gT4fB/BsLj2izZmpcTJNhZg4Wfaim25U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedStats.FloatProduct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedStats.FloatProduct.html",
+          "hash": "hkyGxgJgg4AQeTP87rzFMQ0+osEAXn3aW8ftXrz+f98="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedStats.FloatSum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedStats.FloatSum.html",
+          "hash": "W4dsXuCf7Zi6MZ5HuQb1+ucqp3qLda+4BH91jAbhEsY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedStats.IntSum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedStats.IntSum.html",
+          "hash": "/n3j6NEb/p70f6Wl3kApC3nSsEPukz1gPwJK+FBoijY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedStats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedStats.html",
+          "hash": "+33CnyEOnawtcBX+MhSctGBTjE6Dgoletq0RPH+lEnc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedValue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedValue-1.html",
+          "hash": "a670gziEwzkPX9vYXe57eX1HW0rKJVbmb0SZazmZ+X8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.BufferedValueAccessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.BufferedValueAccessor-1.html",
+          "hash": "E/g3cC0tLJgLafXDhi8gZ+mnrvLZQQNLkygmXFg3ltU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.CollisionTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.CollisionTrigger.html",
+          "hash": "w3TA91c4eQJzwsH1uVG5bua1R1A2HRWsgFDozULq8HQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.CombinedValue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.CombinedValue-1.html",
+          "hash": "5jeS1vPROLRUw8pjdbdzoXNm+z3RDI8B+dIr7cFzOfc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.CombinedValueEffector-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.CombinedValueEffector-1.html",
+          "hash": "HXk2NTHqj6gWpx+AucYoJ2xhSB90dFqtBadSJopATcA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.Condition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.Condition.html",
+          "hash": "EFqhK8bmft9X9rgz9OGf+Fy46dwWDdFNj0X7ZAAmRts="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.Coroutine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.Coroutine.html",
+          "hash": "w9LVVncr8KN5oAF3CVU+ftKKY4KPiiAgoDK5Jw6oBpw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.CoroutineOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.CoroutineOption.html",
+          "hash": "EevJlol7Xf8lATDsTw8QGm1Ly1LAuGp6uwl1Bv2xXyM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.CoroutineRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.CoroutineRunner.html",
+          "hash": "OAgZEwSIAqiy1AOwvYGYA8UWTqXm0MFBGlZ5LAPR+Gc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.DialogueDisplayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.DialogueDisplayer.html",
+          "hash": "fLGoaxKiVc6cdnR5bfIX7fO20mXEING2a8IGaY4K1GM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.DialogueNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.DialogueNode.html",
+          "hash": "AsIxqY7FZUHf5LQ0z4ekmm97IUTAbikiHOf/SZErOvo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.DialogueObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.DialogueObject.html",
+          "hash": "wFNSC5YCV462HLSiOOWwrbD0LFO0kx6WJsLYfQ2Kq3E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.DialogueResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.DialogueResponse.html",
+          "hash": "kAjqaCyE3hYEvhAp4dixpJbzs+49xHTgi09VfIq5B8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.EventChannels.EntityEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.EventChannels.EntityEventChannel.html",
+          "hash": "fxYsKBYg8LrnTXTwW9i8yUDJplMEE5R9nL7jwgVTkgc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.EventChannels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.EventChannels.html",
+          "hash": "Nv4tTFHwFtPSoPSyT70jP9DvxrPWfllunnkp6nh3jGI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.FloatProduct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.FloatProduct.html",
+          "hash": "q2034rT+A0KBBqIBooC5AlDpe4jPHVWN7YcviSTRi1g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.FloatSum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.FloatSum.html",
+          "hash": "OTrRIjdfav362fdNrNPoHqqBQ6FyLFGSFD/uMr/35HQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.GameUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.GameUtility.html",
+          "hash": "lNTXcFaM/JGk0Q0zWRhVRxQuBmQuJVEphilSvqtYYJM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.Groups.EntityGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.Groups.EntityGroup.html",
+          "hash": "Ifw4unto1/xFISrNUmH5k571ph2ZhkP2F226An3UlPk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.Groups.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.Groups.html",
+          "hash": "Lx1XzK2Sj6LqTgiNwDgRJxfi0lF6FIZdP/gm2AAbWyE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.IdDistributor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.IdDistributor.html",
+          "hash": "lMQ0MHgB35Hw2I2WAmb4WEZtDJVN5URFlxAdcZTD+zA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.IntSum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.IntSum.html",
+          "hash": "81of6rZaD8rWVS/dpAMO7bF1cYbqLFuCiovRybW3yzw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.ManagedSet-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.ManagedSet-1.html",
+          "hash": "7qmAqoBWlNYvSdyr0Q2RcU97dzTBo6FUZBT54r0My54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.MenuGroup-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.MenuGroup-1.html",
+          "hash": "YLCVKZ7LKQkaBTHf2lxNkUCx/v7agJ2WenKo1Tz4IkI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.Or.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.Or.html",
+          "hash": "dgV8X38qRC3SrdCD7bDv9kW56OX2L2z9LDEJpb4B1e0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.SerializableDictionary-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.SerializableDictionary-2.html",
+          "hash": "uHpevHUfgLjAqx9iYUsBxJdkLnW65igvJ6FngEDVjdQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.SerializableHashSet-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.SerializableHashSet-1.html",
+          "hash": "uQ7kNPvqxt2cqh7tO6YdLb+W5ZTA7sTrK2naCca9lZE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.SerializableType-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.SerializableType-1.html",
+          "hash": "+mWLKeSWbz1LlKPa5OdIX3Zc5s31r7NGrBP285aR4oU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.Signal-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.Signal-1.html",
+          "hash": "+7uXdZvEF4wE8KldIOCnXwGe7e5tlaqolUU+kcFFYqg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.SortableItem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.SortableItem-1.html",
+          "hash": "ALZgeYnYHoDqHpfGssdCRTfNppRl+VKJ/JBGadtqnt0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.StringAbilityConfigDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.StringAbilityConfigDictionary.html",
+          "hash": "LA7LgXq9xndKo0gA50wS0/GHKrs/xXQ7HYMIy5Dj90E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.TypeAbilityDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.TypeAbilityDictionary.html",
+          "hash": "8dUnvVkl2C7fHAhbRBy/kFUowfDWZCXOHZIj8AzM8Xg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.TypeAbilityStatDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.TypeAbilityStatDictionary.html",
+          "hash": "uO9UDLKix3NkjreocZvMe/LQrNsaaD2e3glbulIlMmM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.TypeWeaponStatDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.TypeWeaponStatDictionary.html",
+          "hash": "s75GUJTH053Squu2z4Rp6loXrGyW2vjQxnH5x5aDMqM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.XList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.XList-1.html",
+          "hash": "UgIhfR6tbnhKt6Wa2aMwazYP8Lvm7sC6KMLslshMmD8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.html",
+          "hash": "hXD1gHyAeSJcRQdf0T6+HLnJ2OI5zDQIF5WiLDCSTd0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.html",
+          "hash": "cJ4NnCxBZKJdGZPYPO+jbc1H2bGeIjizOH8+bIk8hBY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "HxxwE9v4Ui3tiTrUEj/datfd0VpTfWA0P5rBsQCitHo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "NUprnpEg424HDTdNBhnjkQrTYgYxw/Rkw84JXc//NsI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Intro.html",
+          "hash": "uw0Y9isUs1Xhaiy4CJ/ttaJk1J4ORPGjb3fM7kuCeWI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/coniunctis.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/coniunctis.html",
+          "hash": "e7kWrSvT5zlqQoKppoUCXEri2d2F0zbkRv/6kaVwq80="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/etiam.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/etiam.html",
+          "hash": "hb2JvhOkeRNrBkqA9GDOG8C+/OJNpK+U5lvQ0hKyibo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "QABTQyXRY/lJ8FNG5qvb4595AtlXK+qVfS8LZdrcAIY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/ExampleManual.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/ExampleManual.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/ExampleScriptingApi.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/ExampleScriptingApi.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/lobster_swipe.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/lobster_swipe.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "yJmrE3yX1pNdaVuwjza5/7HGejso5LoAwSufMStobAY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 371,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

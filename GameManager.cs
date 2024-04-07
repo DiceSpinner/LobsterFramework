@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using LobsterFramework.Utility;
 using System;
 using System.Runtime.CompilerServices;
-
 [assembly: InternalsVisibleTo("LobsterFrameworkEditor")]
 
 namespace LobsterFramework

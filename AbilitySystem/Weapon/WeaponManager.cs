@@ -185,7 +185,7 @@ namespace LobsterFramework.AbilitySystem
                     (Mainhand2, Mainhand) = (Mainhand, Mainhand2);
                     objLookup[Mainhand2].SetActive(false);
                     objLookup[Mainhand].SetActive(true);
-                    if (abilityManager.IsAnimating())
+                    if (abilityManager.IsAnimating)
                     {
                         abilityManager.InterruptAbilityAnimation();
                     }
@@ -239,7 +239,7 @@ namespace LobsterFramework.AbilitySystem
         public void PlayTransitionAnimation() {
             if(Mainhand != null && animancer != null)
             {
-                if (abilityManager != null && !abilityManager.IsAnimating()) {
+                if (abilityManager != null && !abilityManager.IsAnimating) {
                     AnimationClip clip = animationData.GetMoveClip(Mainhand.WeaponType);
                     animancer.Play(clip, 0.25f, FadeMode.FixedDuration).Speed = 1;
                 }

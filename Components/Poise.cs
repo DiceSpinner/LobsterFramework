@@ -15,7 +15,7 @@ namespace LobsterFramework
         /// Send true if poise broken, false on poise recover
         /// </summary>
         public UnityAction<bool> onPoiseStatusChange;
-        public readonly Or hyperarmor = new(false);
+        public readonly OrValue hyperarmor = new(false);
 
         private Entity entity;
         private float poise;

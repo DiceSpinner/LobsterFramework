@@ -1,7 +1,7 @@
-using Codice.Client.BaseCommands;
 using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
+using Animancer;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -15,7 +15,9 @@ namespace LobsterFramework.AbilitySystem
         private MovementController moveControl;
         private DamageModifier damageModifier;
         private CombinedValueEffector<float> move;
-        private CombinedValueEffector<float> rotate;        
+        private CombinedValueEffector<float> rotate;
+
+        private AnimancerState state;
 
         protected override void Init()
         {
@@ -28,49 +30,50 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void OnCoroutineEnqueue()
         {
-            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
-            runtime.currentWeapon = WeaponManager.Mainhand;
+            LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
+            context.currentWeapon = WeaponManager.Mainhand;
 
             AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip(WeaponManager.Mainhand.WeaponType, typeof(LightWeaponAttack));
-            abilityManager.StartAnimation(this, ConfigName, animation, runtime.currentWeapon.AttackSpeed);
+            state = abilityManager.StartAnimation(this, Instance, animation, context.currentWeapon.AttackSpeed);
 
-            SubscribeWeaponEvent(runtime.currentWeapon);
-            move.Apply(runtime.currentWeapon.LMoveSpeedModifier);
-            rotate.Apply(runtime.currentWeapon.LRotationSpeedModifier);
+            SubscribeWeaponEvent(context.currentWeapon);
+            move.Apply(context.currentWeapon.LMoveSpeedModifier);
+            rotate.Apply(context.currentWeapon.LRotationSpeedModifier);
         }
 
         protected override IEnumerable<CoroutineOption> Coroutine()
         {
-            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
+            LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
 
             do {
                 // Wait for signal to attack
-                while (!runtime.animationSignaled)
+                while (!context.animationSignaled)
                 {
                     yield return CoroutineOption.Continue;
                 }
 
-                runtime.currentWeapon.Enable();
+                context.currentWeapon.Enable();
                 // Wait for signal of end attack
-                while (!runtime.animationSignaled)
+                while (!context.animationSignaled)
                 {
                     yield return CoroutineOption.Continue;
                 }
-                runtime.currentWeapon.Pause();
+                context.currentWeapon.Pause();
 
                 // Wait for animation signal of end recovery
-                while (!runtime.animationSignaled) {
+                while (!context.animationSignaled) {
                     yield return CoroutineOption.Continue;
                 }
-            } while (runtime.inputSignaled); // Continue to perform attack if the user signal is received
+            } while (context.inputSignaled); // Continue to perform attack if the user signal is received
         }
 
         protected override void OnCoroutineFinish(){
-            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
-            UnSubscribeWeaponEvent(runtime.currentWeapon);
-            runtime.currentWeapon.Disable();
+            LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
+            UnSubscribeWeaponEvent(context.currentWeapon);
+            context.currentWeapon.Disable();
             move.Release();
             rotate.Release();
+            state = null;
         }
 
         protected override void OnCoroutineReset()
@@ -81,16 +84,16 @@ namespace LobsterFramework.AbilitySystem
         // Animation signal
         protected override void OnSignaled(AnimationEvent animationEvent)
         {
-            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
-            runtime.animationSignaled.Put(true);
+            LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
+            context.animationSignaled.Put(true);
         }
 
         // Player input
         protected override void OnSignaled()
         {
-            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
-            if (runtime.currentWeapon.state != WeaponState.Attacking) {
-                runtime.inputSignaled.Put(true);
+            LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
+            if (context.currentWeapon.state != WeaponState.Attacking) {
+                context.inputSignaled.Put(true);
             }
         }
 
@@ -108,34 +111,34 @@ namespace LobsterFramework.AbilitySystem
 
         private void OnEntityHit(Entity entity)
         {
-            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
+            LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
             if (targets.IsTarget(entity))
             {
-                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
+                context.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else {
-                runtime.currentWeapon.SetOnHitDamage(Damage.none);
+                context.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
 
         private void OnWeaponHit(Weapon weapon)
         {
-            LightWeaponAttackRuntime runtime = (LightWeaponAttackRuntime)Runtime;
+            LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
             
             if (targets.IsTarget(weapon.Entity))
             {
-                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
+                context.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else
             {
-                runtime.currentWeapon.SetOnHitDamage(Damage.none);
+                context.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
     }
 
     public class LightWeaponAttackChannel : AbilityChannel { }
 
-    public class LightWeaponAttackRuntime : AbilityCoroutineRuntime {
+    public class LightWeaponAttackContext : AbilityCoroutineContext {
         public Weapon currentWeapon;
         public Signal<bool> animationSignaled = new();
         public Signal<bool> inputSignaled = new();

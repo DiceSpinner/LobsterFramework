@@ -27,49 +27,44 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void OnCoroutineEnqueue()
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
-            runtime.currentWeapon = WeaponManager.Mainhand;
-            runtime.animationSignaled = false;
-            runtime.inputSignaled = false;
-            runtime.chargeTimer = 0;
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
+            context.currentWeapon = WeaponManager.Mainhand;
+            context.chargeTimer = 0;
 
-            AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip(runtime.currentWeapon.WeaponType, typeof(HeavyWeaponAttack));
+            AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip(context.currentWeapon.WeaponType, typeof(HeavyWeaponAttack));
 
             SubscribeWeaponEvent();
-            move.Apply(runtime.currentWeapon.HMoveSpeedModifier);
-            rotate.Apply(runtime.currentWeapon.HRotationSpeedModifier);
-            runtime.animationState = abilityManager.StartAnimation(this, ConfigName, animation, WeaponManager.Mainhand.AttackSpeed);
+            move.Apply(context.currentWeapon.HMoveSpeedModifier);
+            rotate.Apply(context.currentWeapon.HRotationSpeedModifier);
+            context.animationState = abilityManager.StartAnimation(this, Instance, animation, WeaponManager.Mainhand.AttackSpeed);
         }
 
         protected override IEnumerable<CoroutineOption> Coroutine()
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
             HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)Config;
             // Wait for signal to charge
-            while (!runtime.animationSignaled)
+            while (!context.animationSignaled)
             {
                 yield return CoroutineOption.Continue;
             }
-            runtime.animationSignaled = false;
-            runtime.animationState.IsPlaying = false;
+            context.animationState.IsPlaying = false;
             // Wait for signal to attack
-            while (!runtime.inputSignaled && runtime.chargeTimer < config.ChargeMaxTime)
+            while (!context.inputSignaled && context.chargeTimer < config.ChargeMaxTime)
             {
-                runtime.chargeTimer += Time.deltaTime;
+                context.chargeTimer += Time.deltaTime;
                 yield return CoroutineOption.Continue;
             }
 
-            runtime.inputSignaled = false;
-            runtime.animationState.IsPlaying = true;
-            runtime.currentWeapon.Enable();
+            context.animationState.IsPlaying = true;
+            context.currentWeapon.Enable();
 
             // Wait for signal of recovery
-            while (!runtime.animationSignaled)
+            while (!context.animationSignaled)
             {
                 yield return CoroutineOption.Continue;
             }
-            runtime.animationSignaled = false;
-            runtime.currentWeapon.Disable();
+            context.currentWeapon.Disable();
 
             // Wait for animation to finish
             while (true)
@@ -80,25 +75,25 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void OnCoroutineFinish()
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
             UnSubscribeWeaponEvent();
-            runtime.animationSignaled = false;
-            runtime.inputSignaled = false;
-            runtime.currentWeapon.Disable();
+            context.animationSignaled.Reset();
+            context.inputSignaled.Reset();
+            context.currentWeapon.Disable();
             move.Release();
             rotate.Release();
         }
 
         protected override void OnSignaled(AnimationEvent animationEvent)
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
-            if (animationEvent != null)
-            {
-                runtime.animationSignaled = true;
-            }
-            else {
-                runtime.inputSignaled = true;
-            }
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
+            context.animationSignaled.Put(true);
+        }
+
+        protected override void OnSignaled()
+        {
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
+            context.inputSignaled.Put(true);
         }
 
         protected override void OnCoroutineReset()
@@ -108,51 +103,51 @@ namespace LobsterFramework.AbilitySystem
 
         public void OnEntityHit(Entity entity)
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
             HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)Config;
             if (targets.IsTarget(entity))
             {
-                if (runtime.chargeTimer > config.ChargeMaxTime)
+                if (context.chargeTimer > config.ChargeMaxTime)
                 {
-                    runtime.chargeTimer = config.ChargeMaxTime;
+                    context.chargeTimer = config.ChargeMaxTime;
                 }
-                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
+                context.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else {
-                runtime.currentWeapon.SetOnHitDamage(Damage.none);
+                context.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
 
         public void OnWeaponHit(Weapon weapon)
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
             HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)Config;
             if (targets.IsTarget(weapon.Entity))
             {
-                if (runtime.chargeTimer > config.ChargeMaxTime)
+                if (context.chargeTimer > config.ChargeMaxTime)
                 {
-                    runtime.chargeTimer = config.ChargeMaxTime;
+                    context.chargeTimer = config.ChargeMaxTime;
                 }
-                runtime.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
+                context.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponManager.Mainhand, damageModifier));
             }
             else
             {
-                runtime.currentWeapon.SetOnHitDamage(Damage.none);
+                context.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
 
         public void SubscribeWeaponEvent()
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
-            runtime.currentWeapon.onEntityHit += OnEntityHit;
-            runtime.currentWeapon.onWeaponHit += OnWeaponHit;
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
+            context.currentWeapon.onEntityHit += OnEntityHit;
+            context.currentWeapon.onWeaponHit += OnWeaponHit;
         }
 
         public void UnSubscribeWeaponEvent()
         {
-            HeavyWeaponAttackRuntime runtime = (HeavyWeaponAttackRuntime)Runtime;
-            runtime.currentWeapon.onEntityHit -= OnEntityHit;
-            runtime.currentWeapon.onWeaponHit -= OnWeaponHit;
+            HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
+            context.currentWeapon.onEntityHit -= OnEntityHit;
+            context.currentWeapon.onWeaponHit -= OnWeaponHit;
         }  
     }
 
@@ -169,10 +164,10 @@ namespace LobsterFramework.AbilitySystem
         }
     }
 
-    public class HeavyWeaponAttackRuntime : AbilityCoroutineRuntime
+    public class HeavyWeaponAttackContext : AbilityCoroutineContext
     {
-        public bool animationSignaled;
-        public bool inputSignaled;
+        public Signal<bool> animationSignaled = new();
+        public Signal<bool> inputSignaled = new();
         public Weapon currentWeapon;
         public AnimancerState animationState;
         public float chargeTimer;

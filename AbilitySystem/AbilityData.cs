@@ -15,15 +15,15 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] internal AbilityComponentDictionary components = new();
         [SerializeField] internal AbilityDictionary abilities = new();
         internal Dictionary<string, Ability> availableAbilities = new();
-        internal bool isRuntime = false;
+        internal bool isContext = false;
 
         /// <summary>
-        /// Initialize the ability runtime environments
+        /// Initialize the ability context environments
         /// </summary>
         /// <param name="abilityRunner">The component that operates on this data</param>
         internal void Open(AbilityManager abilityRunner)
         {
-            isRuntime = true;
+            isContext = true;
             availableAbilities.Clear();
             GameObject topLevel = default;
             if (abilityRunner.TopLevelTransform != null) {
@@ -57,10 +57,10 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Clean up ability runtime environments. This has no effect if this is an asset.
+        /// Clean up ability context environments. This has no effect if this is an asset.
         /// </summary>
         public void Close() {
-            if (!isRuntime) {
+            if (!isContext) {
                 return;
             }
             foreach (Ability ability in availableAbilities.Values)
@@ -132,7 +132,7 @@ namespace LobsterFramework.AbilitySystem
             AbilityData cloned = Instantiate(this);
             cloned.CopyAbilityAsset();
             cloned.name = this.name;
-            cloned.isRuntime = false;
+            cloned.isContext = false;
             return cloned;
         }
 

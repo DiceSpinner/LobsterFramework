@@ -30,7 +30,7 @@ namespace LobsterFramework
         private MovementController moveControl;
 
         // Suppression
-        public readonly Or suppression = new(false);
+        public readonly OrValue suppression = new(false);
 
         // Movement block keys
         private CombinedValueEffector<bool> postureMoveLock;
@@ -55,7 +55,8 @@ namespace LobsterFramework
             characterState = CharacterState.Normal;
             poise.onPoiseStatusChange += OnPoiseStatusChanged;
             entity.onPostureStatusChange += OnPostureStatusChanged;
-            abilityManager.onAbilityAnimation += OnAbilityAnimation;
+            abilityManager.onAnimationEnd += OnAbilityAnimationEnd;
+            abilityManager.onAnimationBegin += OnAbilityAnimationBegin;
 
             PlayAnimation(CharacterState.Normal);
             stateMap = new bool[enumStates.Length];
@@ -118,9 +119,15 @@ namespace LobsterFramework
             ComputeStateAndPlayAnimation();
         }
 
-        private void OnAbilityAnimation(bool casting)
+        private void OnAbilityAnimationEnd(Type ability)
         {
-            stateMap[(int)CharacterState.AbilityCasting] = casting;
+            stateMap[(int)CharacterState.AbilityCasting] = false;
+            ComputeStateAndPlayAnimation();
+        }
+
+        private void OnAbilityAnimationBegin(Type ability)
+        {
+            stateMap[(int)CharacterState.AbilityCasting] = true;
             ComputeStateAndPlayAnimation();
         }
         #endregion

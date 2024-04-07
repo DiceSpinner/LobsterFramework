@@ -33,7 +33,7 @@ namespace LobsterFramework.AbilitySystem
                 JoinAsSecondary(setting.Item1, setting.Item2);
             }
             else {
-                SuspendInstance(ConfigName);
+                SuspendInstance(Instance);
             }
         }
 
@@ -44,5 +44,5 @@ namespace LobsterFramework.AbilitySystem
         }
     }
     public class OffhandAbilityChannel : AbilityChannel { }
-    public class OffhandAbilityRuntime : AbilityRuntime { }
+    public class OffhandAbilityContext : AbilityContext { }
 }

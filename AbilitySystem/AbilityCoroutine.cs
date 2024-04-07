@@ -14,9 +14,9 @@ namespace LobsterFramework.AbilitySystem
     {
         protected sealed override void OnEnqueue()
         {
-            AbilityCoroutineRuntime runtime = (AbilityCoroutineRuntime)Runtime;
-            runtime.coroutine = runtime.coroutineRunner.AddCoroutine(Coroutine());
-            runtime.coroutine.onReset += OnCoroutineReset;
+            AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
+            context.coroutine = context.coroutineRunner.AddCoroutine(Coroutine());
+            context.coroutine.onReset += OnCoroutineReset;
             OnCoroutineEnqueue();
         }
 
@@ -25,9 +25,9 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         protected abstract void OnCoroutineEnqueue();
 
-        protected sealed override void OnActionFinish() {
-            AbilityCoroutineRuntime runtime = (AbilityCoroutineRuntime)Runtime;
-            runtime.coroutine.Stop();
+        protected sealed override void OnAbilityFinish() {
+            AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
+            context.coroutine.Stop();
             OnCoroutineFinish();
         }
 
@@ -35,9 +35,9 @@ namespace LobsterFramework.AbilitySystem
 
         protected override sealed bool Action()
         {
-            AbilityCoroutineRuntime runtime = (AbilityCoroutineRuntime)Runtime;
-            runtime.coroutineRunner.Run();
-            return !runtime.coroutine.IsFinished;
+            AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
+            context.coroutineRunner.Run();
+            return !context.coroutine.IsFinished;
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace LobsterFramework.AbilitySystem
     /// <summary>
     /// AbilityConfig of coroutines, subclass configs need to inherit from this to properly work
     /// </summary>
-    public class AbilityCoroutineRuntime : AbilityRuntime
+    public class AbilityCoroutineContext : AbilityContext
     {
         public CoroutineRunner coroutineRunner = new();
         public Utility.Coroutine coroutine;

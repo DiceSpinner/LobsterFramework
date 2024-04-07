@@ -249,8 +249,8 @@ namespace LobsterFramework.Utility
     /// <summary>
     /// Value is true if one effector is true, otherwise return base value
     /// </summary>
-    public class Or : CombinedValue<bool> {
-        public Or(bool value) : base(value)
+    public class OrValue : CombinedValue<bool> {
+        public OrValue(bool value) : base(value)
         {
         }
 

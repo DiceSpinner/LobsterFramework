@@ -17,7 +17,7 @@ namespace LobsterFramework.Editors
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            AbilityManager abilityRunner = (AbilityManager)target;
+            AbilityManager abilityManager = (AbilityManager)target;
             EditorGUI.BeginChangeCheck();
             SerializedProperty abilityData = serializedObject.FindProperty("abilityData");
             if (!editData)
@@ -32,12 +32,8 @@ namespace LobsterFramework.Editors
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
             }
-            EditorGUILayout.LabelField("Is Blocked", abilityRunner.ActionBlocked + "");
-            if (abilityRunner.executing.Count > 0) {
-                foreach (AbilityInstance pair in abilityRunner.executing) {
-                    EditorGUILayout.LabelField(pair.ability.GetType().Name, pair.configName);
-                }
-            }
+            EditorGUILayout.LabelField("Is Blocked", abilityManager.ActionBlocked + "");
+            abilityManager.DisplayCurrentExecutingAbilitiesInEditor();
 
             if (editData)
             {
@@ -62,13 +58,13 @@ namespace LobsterFramework.Editors
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Save", GUILayout.Width(80)))
                 {
-                    abilityRunner.SaveRuntimeData(""); 
+                    abilityManager.SaveRuntimeData(""); 
                 }
 
                 if (GUILayout.Button("Save As", GUILayout.Width(80)))
                 {
-                    string path = EditorUtility.SaveFilePanel("Select Saving Path", Application.dataPath, abilityRunner.abilityData.name, "asset");
-                    if (path != null) { abilityRunner.SaveRuntimeData(path); } 
+                    string path = EditorUtility.SaveFilePanel("Select Saving Path", Application.dataPath, abilityManager.abilityData.name, "asset");
+                    if (path != null) { abilityManager.SaveRuntimeData(path); } 
                     GUIUtility.ExitGUI();
                 }
                 GUILayout.FlexibleSpace();

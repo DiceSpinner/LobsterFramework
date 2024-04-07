@@ -19,7 +19,7 @@ namespace LobsterFramework
         /// <summary>
         /// Manages movement blocking & unblocking. Add true values to block movement, remove all true values to unblock.
         /// </summary>
-        public readonly Or movementLock = new(false);
+        public readonly OrValue movementLock = new(false);
         /// <summary>
         /// Modifies movespeed, base value is 1
         /// </summary>

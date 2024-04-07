@@ -29,31 +29,31 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void OnCoroutineEnqueue()
         {
-            GuardRuntime runtime = (GuardRuntime)Runtime;
-            runtime.currentWeapon = WeaponManager.Mainhand;
-            runtime.deflected = false;
+            GuardContext context = (GuardContext)Context;
+            context.currentWeapon = WeaponManager.Mainhand;
+            context.deflected = false;
 
             // Start animation
             AnimationClip deflectAnimation;
             if (leftDeflect)
             {
-                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip(runtime.currentWeapon.WeaponType, GetType(), (int)GuardAnimations.DeflectLeft);
+                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip(context.currentWeapon.WeaponType, GetType(), (int)GuardAnimations.DeflectLeft);
             }
             else {
-                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip(runtime.currentWeapon.WeaponType, GetType(), (int)GuardAnimations.DeflectRight);
+                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip(context.currentWeapon.WeaponType, GetType(), (int)GuardAnimations.DeflectRight);
             }
             leftDeflect = !leftDeflect;
-            runtime.animancerState = abilityManager.StartAnimation(this, ConfigName, deflectAnimation, runtime.currentWeapon.DefenseSpeed);
+            context.animancerState = abilityManager.StartAnimation(this, Instance, deflectAnimation, context.currentWeapon.DefenseSpeed);
 
             // Movement constraints
-            runtime.currentWeapon.onWeaponDeflect += OnDeflect;
-            moveModifier.Apply(runtime.currentWeapon.GMoveSpeedModifier);
-            rotateModifier.Apply(runtime.currentWeapon.GRotationSpeedModifier);
+            context.currentWeapon.onWeaponDeflect += OnDeflect;
+            moveModifier.Apply(context.currentWeapon.GMoveSpeedModifier);
+            rotateModifier.Apply(context.currentWeapon.GRotationSpeedModifier);
         }
 
         protected override void OnCoroutineFinish()
         {
-            GuardRuntime g = (GuardRuntime)Runtime;
+            GuardContext g = (GuardContext)Context;
             g.animationSignaled.Reset();
             g.currentWeapon.Disable();
             moveModifier.Release();
@@ -62,38 +62,38 @@ namespace LobsterFramework.AbilitySystem
 
         protected override IEnumerable<CoroutineOption> Coroutine()
         {
-            GuardRuntime runtime = (GuardRuntime)Runtime; 
+            GuardContext context = (GuardContext)Context; 
             GuardConfig config = (GuardConfig)Config;
-            while(!runtime.animationSignaled)
+            while(!context.animationSignaled)
             {
                 yield return CoroutineOption.Continue;
             }
-            runtime.animancerState.IsPlaying = false;
-            runtime.currentWeapon.Enable(WeaponState.Deflecting);
-            runtime.deflectOver = config.DelfectTime + Time.time;
+            context.animancerState.IsPlaying = false;
+            context.currentWeapon.Enable(WeaponState.Deflecting);
+            context.deflectOver = config.DelfectTime + Time.time;
 
-            float currentClipTime = runtime.animancerState.Time;
+            float currentClipTime = context.animancerState.Time;
 
             // Wait for deflect, if deflect period has passed then wait for Guard cancel
-            while (!runtime.deflected)
+            while (!context.deflected)
             {
-                if (runtime.currentWeapon.state == WeaponState.Deflecting && Time.time >= runtime.deflectOver)
+                if (context.currentWeapon.state == WeaponState.Deflecting && Time.time >= context.deflectOver)
                 {
-                    runtime.currentWeapon.state = WeaponState.Guarding;
+                    context.currentWeapon.state = WeaponState.Guarding;
                 }
                 yield return CoroutineOption.Continue;
             }
 
             // Deflect
-            runtime.animancerState.IsPlaying = true;
+            context.animancerState.IsPlaying = true;
             // Wait for deflect animation end
-            while (!runtime.animationSignaled)
+            while (!context.animationSignaled)
             {
                 yield return CoroutineOption.Continue;
             }
-            runtime.currentWeapon.state = WeaponState.Guarding;
-            runtime.animancerState.IsPlaying = false;
-            runtime.animancerState.Time = currentClipTime;
+            context.currentWeapon.state = WeaponState.Guarding;
+            context.animancerState.IsPlaying = false;
+            context.animancerState.Time = currentClipTime;
 
             // Wait for guard cancel
             while (true) {
@@ -103,13 +103,13 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void OnSignaled(AnimationEvent animationEvent)
         {
-            GuardRuntime runtime = (GuardRuntime)Runtime;
-            runtime.animationSignaled.Put(true);
+            GuardContext context = (GuardContext)Context;
+            context.animationSignaled.Put(true);
         }
 
         protected override void OnSignaled()
         {
-            SuspendInstance(ConfigName);
+            SuspendInstance(Instance);
         }
 
         protected override void OnCoroutineReset()
@@ -118,8 +118,8 @@ namespace LobsterFramework.AbilitySystem
         }
 
         private void OnDeflect() {
-            GuardRuntime runtime = (GuardRuntime)Runtime;
-            runtime.deflected = true;
+            GuardContext context = (GuardContext)Context;
+            context.deflected = true;
         }
 
         public enum GuardAnimations : int { 
@@ -128,7 +128,7 @@ namespace LobsterFramework.AbilitySystem
         }
     }
 
-    public class GuardRuntime : AbilityCoroutineRuntime {
+    public class GuardContext : AbilityCoroutineContext {
         public Signal<bool> animationSignaled = new();
         public Weapon currentWeapon;
         public AnimancerState animancerState;

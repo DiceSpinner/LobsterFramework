@@ -15,13 +15,13 @@ namespace LobsterFramework.AI
         internal protected StateMachine stateMachine;
 
         /// <summary>
-        /// Callback to do runtime environment initialization
+        /// Callback to do context environment initialization
         /// </summary>
         /// <param name="obj">The gameobject where StateMachine is attached to.</param>
         internal protected abstract void InitializeFields(GameObject obj);
 
         /// <summary>
-        /// Callback to clean up runtime environment
+        /// Callback to clean up context environment
         /// </summary>
         internal protected abstract void Close();
 

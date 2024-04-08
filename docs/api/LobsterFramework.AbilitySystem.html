@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace LobsterFramework.AbilitySystem
+ | LobsterFramework documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace LobsterFramework.AbilitySystem
+ | LobsterFramework documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LobsterFramework.AbilitySystem">
+
+  <h1 id="LobsterFramework_AbilitySystem" data-uid="LobsterFramework.AbilitySystem" class="text-break">Namespace LobsterFramework.AbilitySystem
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a></h4>
+      <section><p>Abilities defines the kind of actions the parent object can make. <br>
+Each subclass of Ability defines its own AbilityConfig and can be runned on multiple instances of its AbilityConfigs.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityAnimationConfig.html">AbilityAnimationConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityChannel.html">AbilityChannel</a></h4>
+      <section><p>Communication channel of an ability Instance. Can be used to control ability behaviors at runtime.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html">AbilityComponent</a></h4>
+      <section><p>Components that can be attached to ability data objects to run additional logic and host shared data across all abilities</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponentDictionary.html">AbilityComponentDictionary</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityConfig.html">AbilityConfig</a></h4>
+      <section><p>The configuration of an ability instance</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityConfigDictionary.html">AbilityConfigDictionary</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityContext.html">AbilityContext</a></h4>
+      <section><p>The runtime context of an ability instance. Not accessible from outside.
+Inheritors of this class must have name 'Ability_Subclass_Name'Context.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html">AbilityCoroutine</a></h4>
+      <section><p>Abilities that must be continously runned across multiple frames</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutineContext.html">AbilityCoroutineContext</a></h4>
+      <section><p>AbilityConfig of coroutines, subclass configs need to inherit from this to properly work</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityData.html">AbilityData</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityDictionary.html">AbilityDictionary</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityExecutor.html">AbilityExecutor</a></h4>
+      <section><p>Carries out ability instance execution according to the priorities of the abilities. Singleton class.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityManager.html">AbilityManager</a></h4>
+      <section><p>Manages running and stopping abilities.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilitySelector.html">AbilitySelector</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html">AddAbilityComponentMenuAttribute</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html">AddAbilityMenuAttribute</a></h4>
+      <section><p>Used to add Abilities to the pool of available Abilities. This will allow the creations of these abilities inside AbilityData</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute.html">AddWeaponArtMenuAttribute</a></h4>
+      <section><p>Used on Ability to add it to the options of ability selection for weapon arts.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute.html">AddWeaponStatMenuAttribute</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html">ComponentRequiredAttribute</a></h4>
+      <section><p>Mark this ability as requiring the specified components on the parent gameobject to run</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.DamageModifier.html">DamageModifier</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.Guard.html">Guard</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.GuardChannel.html">GuardChannel</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.GuardConfig.html">GuardConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.GuardContext.html">GuardContext</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.HeavyWeaponAttack.html">HeavyWeaponAttack</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel.html">HeavyWeaponAttackChannel</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.HeavyWeaponAttackConfig.html">HeavyWeaponAttackConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.HeavyWeaponAttackContext.html">HeavyWeaponAttackContext</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.LightWeaponAttack.html">LightWeaponAttack</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.LightWeaponAttackChannel.html">LightWeaponAttackChannel</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.LightWeaponAttackConfig.html">LightWeaponAttackConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.LightWeaponAttackContext.html">LightWeaponAttackContext</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.OffhandAbility.html">OffhandAbility</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.OffhandAbilityChannel.html">OffhandAbilityChannel</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.OffhandAbilityConfig.html">OffhandAbilityConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.OffhandAbilityContext.html">OffhandAbilityContext</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html">RequireAbilityComponentsAttribute</a></h4>
+      <section><p>Marks this ability as requiring specified AbilityComponents to run</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.html">RequireWeaponStatAttribute</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.TargetSetting.html">TargetSetting</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.TestCoroutine.html">TestCoroutine</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig.html">TestCoroutine.TestCoroutineConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.TestWeaponAbility.html">TestWeaponAbility</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig.html">TestWeaponAbility.TestWeaponAbilityConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe.html">TestWeaponAbility.TestWeaponAbilityPipe</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.Weapon.html">Weapon</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html">WeaponAbility</a></h4>
+      <section><p>Convenient template for creating weapon abilities. Weapon abilities can only have one instance running at any given moment.
+Inheriting from this will provide automatic weapon stats, state, compatibility check when attempting to enqueue the ability.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAnimationAttribute.html">WeaponAnimationAttribute</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAnimationData.html">WeaponAnimationData</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponArt.html">WeaponArt</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponArtChannel.html">WeaponArtChannel</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponArtConfig.html">WeaponArtConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponArtContext.html">WeaponArtContext</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponArtSelector.html">WeaponArtSelector</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponData.html">WeaponData</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponManager.html">WeaponManager</a></h4>
+      <section><p>Required for the character to use weapon abilities</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponStat.html">WeaponStat</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponStatDictionary.html">WeaponStatDictionary</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponUtility.html">WeaponUtility</a></h4>
+      <section></section>
+    <h3 id="enums">
+Enums
+</h3>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.Guard.GuardAnimations.html">Guard.GuardAnimations</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.TestAnimationEntries.html">TestAnimationEntries</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponState.html">WeaponState</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponType.html">WeaponType</a></h4>
+      <section></section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      LobsterFramework documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

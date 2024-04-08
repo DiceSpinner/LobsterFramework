@@ -25,7 +25,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CharacterState
     path: ../Components/CharacterStateManager.cs
-    startLine: 191
+    startLine: 198
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -55,7 +55,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PostureBroken
     path: ../Components/CharacterStateManager.cs
-    startLine: 193
+    startLine: 200
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -81,7 +81,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PoiseBroken
     path: ../Components/CharacterStateManager.cs
-    startLine: 194
+    startLine: 201
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -107,7 +107,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Suppressed
     path: ../Components/CharacterStateManager.cs
-    startLine: 195
+    startLine: 202
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -133,7 +133,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Dashing
     path: ../Components/CharacterStateManager.cs
-    startLine: 196
+    startLine: 203
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityCasting
     path: ../Components/CharacterStateManager.cs
-    startLine: 197
+    startLine: 204
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -185,7 +185,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Normal
     path: ../Components/CharacterStateManager.cs
-    startLine: 198
+    startLine: 205
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

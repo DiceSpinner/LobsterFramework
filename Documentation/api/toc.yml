@@ -143,10 +143,12 @@ items:
     name: AbilityConfig
   - uid: LobsterFramework.AbilitySystem.AbilityConfigDictionary
     name: AbilityConfigDictionary
+  - uid: LobsterFramework.AbilitySystem.AbilityContext
+    name: AbilityContext
   - uid: LobsterFramework.AbilitySystem.AbilityCoroutine
     name: AbilityCoroutine
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
-    name: AbilityCoroutineRuntime
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutineContext
+    name: AbilityCoroutineContext
   - uid: LobsterFramework.AbilitySystem.AbilityData
     name: AbilityData
   - uid: LobsterFramework.AbilitySystem.AbilityDictionary
@@ -155,8 +157,6 @@ items:
     name: AbilityExecutor
   - uid: LobsterFramework.AbilitySystem.AbilityManager
     name: AbilityManager
-  - uid: LobsterFramework.AbilitySystem.AbilityRuntime
-    name: AbilityRuntime
   - uid: LobsterFramework.AbilitySystem.AbilitySelector
     name: AbilitySelector
   - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
@@ -179,32 +179,32 @@ items:
     name: GuardChannel
   - uid: LobsterFramework.AbilitySystem.GuardConfig
     name: GuardConfig
-  - uid: LobsterFramework.AbilitySystem.GuardRuntime
-    name: GuardRuntime
+  - uid: LobsterFramework.AbilitySystem.GuardContext
+    name: GuardContext
   - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack
     name: HeavyWeaponAttack
   - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel
     name: HeavyWeaponAttackChannel
   - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackConfig
     name: HeavyWeaponAttackConfig
-  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime
-    name: HeavyWeaponAttackRuntime
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackContext
+    name: HeavyWeaponAttackContext
   - uid: LobsterFramework.AbilitySystem.LightWeaponAttack
     name: LightWeaponAttack
   - uid: LobsterFramework.AbilitySystem.LightWeaponAttackChannel
     name: LightWeaponAttackChannel
   - uid: LobsterFramework.AbilitySystem.LightWeaponAttackConfig
     name: LightWeaponAttackConfig
-  - uid: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
-    name: LightWeaponAttackRuntime
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttackContext
+    name: LightWeaponAttackContext
   - uid: LobsterFramework.AbilitySystem.OffhandAbility
     name: OffhandAbility
   - uid: LobsterFramework.AbilitySystem.OffhandAbilityChannel
     name: OffhandAbilityChannel
   - uid: LobsterFramework.AbilitySystem.OffhandAbilityConfig
     name: OffhandAbilityConfig
-  - uid: LobsterFramework.AbilitySystem.OffhandAbilityRuntime
-    name: OffhandAbilityRuntime
+  - uid: LobsterFramework.AbilitySystem.OffhandAbilityContext
+    name: OffhandAbilityContext
   - uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
     name: RequireAbilityComponentsAttribute
   - uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
@@ -237,8 +237,8 @@ items:
     name: WeaponArtChannel
   - uid: LobsterFramework.AbilitySystem.WeaponArtConfig
     name: WeaponArtConfig
-  - uid: LobsterFramework.AbilitySystem.WeaponArtRuntime
-    name: WeaponArtRuntime
+  - uid: LobsterFramework.AbilitySystem.WeaponArtContext
+    name: WeaponArtContext
   - uid: LobsterFramework.AbilitySystem.WeaponArtSelector
     name: WeaponArtSelector
   - uid: LobsterFramework.AbilitySystem.WeaponData
@@ -444,8 +444,8 @@ items:
     name: IntSum
   - uid: LobsterFramework.Utility.MenuGroup`1
     name: MenuGroup<T>
-  - uid: LobsterFramework.Utility.Or
-    name: Or
+  - uid: LobsterFramework.Utility.OrValue
+    name: OrValue
   - uid: LobsterFramework.Utility.SerializableDictionary`2
     name: SerializableDictionary<TKey, TValue>
   - uid: LobsterFramework.Utility.SerializableHashSet`1

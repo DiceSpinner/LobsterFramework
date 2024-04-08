@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Scene
     path: ../GameManager.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -46,7 +46,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IntroMenu
     path: ../GameManager.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -72,7 +72,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Gameplay
     path: ../GameManager.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

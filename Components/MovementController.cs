@@ -17,7 +17,7 @@ namespace LobsterFramework
         /// </summary>
         public Action<bool> onMovementBlocked;
         /// <summary>
-        /// Manages movement blocking & unblocking. Add true values to block movement, remove all true values to unblock.
+        /// Manages movement blocking and unblocking. Add true values to block movement, remove all true values to unblock.
         /// </summary>
         public readonly OrValue movementLock = new(false);
         /// <summary>

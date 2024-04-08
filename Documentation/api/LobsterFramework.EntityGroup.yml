@@ -47,15 +47,20 @@ items:
     content: >-
       [CreateAssetMenu(menuName = "Groups/Entity Group")]
 
-      public class EntityGroup : ScriptableObject
+      public class EntityGroup : ScriptableObject, ISet<Entity>, ICollection<Entity>, IEnumerable<Entity>, IEnumerable
     content.vb: >-
       <CreateAssetMenu(menuName:="Groups/Entity Group")>
 
-      Public Class EntityGroup Inherits ScriptableObject
+      Public Class EntityGroup Inherits ScriptableObject Implements ISet(Of Entity), ICollection(Of Entity), IEnumerable(Of Entity), IEnumerable
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}
+  - System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  - System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
+  - System.Collections.IEnumerable
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -107,6 +112,10 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   attributes:
   - type: UnityEngine.CreateAssetMenuAttribute
     ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
@@ -199,6 +208,8 @@ items:
       type: System.Int32
     content.vb: Public ReadOnly Property Count As Integer
   overload: LobsterFramework.EntityGroup.Count*
+  implements:
+  - System.Collections.Generic.ICollection{LobsterFramework.Entity}.Count
 - uid: LobsterFramework.EntityGroup.IsReadOnly
   commentId: P:LobsterFramework.EntityGroup.IsReadOnly
   id: IsReadOnly
@@ -229,6 +240,8 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property IsReadOnly As Boolean
   overload: LobsterFramework.EntityGroup.IsReadOnly*
+  implements:
+  - System.Collections.Generic.ICollection{LobsterFramework.Entity}.IsReadOnly
 - uid: LobsterFramework.EntityGroup.GetEnumerator
   commentId: M:LobsterFramework.EntityGroup.GetEnumerator
   id: GetEnumerator
@@ -258,6 +271,8 @@ items:
       type: System.Collections.Generic.IEnumerator{LobsterFramework.Entity}
     content.vb: Public Function GetEnumerator() As IEnumerator(Of Entity)
   overload: LobsterFramework.EntityGroup.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{LobsterFramework.Entity}.GetEnumerator
 - uid: LobsterFramework.EntityGroup.Add(LobsterFramework.Entity)
   commentId: M:LobsterFramework.EntityGroup.Add(LobsterFramework.Entity)
   id: Add(LobsterFramework.Entity)
@@ -290,6 +305,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Add(item As Entity) As Boolean
   overload: LobsterFramework.EntityGroup.Add*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.Add(LobsterFramework.Entity)
 - uid: LobsterFramework.EntityGroup.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   commentId: M:LobsterFramework.EntityGroup.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   id: ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
@@ -320,6 +337,8 @@ items:
       type: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
     content.vb: Public Sub ExceptWith(other As IEnumerable(Of Entity))
   overload: LobsterFramework.EntityGroup.ExceptWith*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.ExceptWith(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.ExceptWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: ExceptWith(IEnumerable(Of Entity))
@@ -353,6 +372,8 @@ items:
       type: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
     content.vb: Public Sub IntersectWith(other As IEnumerable(Of Entity))
   overload: LobsterFramework.EntityGroup.IntersectWith*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.IntersectWith(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.IntersectWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: IntersectWith(IEnumerable(Of Entity))
@@ -388,6 +409,8 @@ items:
       type: System.Boolean
     content.vb: Public Function IsProperSubsetOf(other As IEnumerable(Of Entity)) As Boolean
   overload: LobsterFramework.EntityGroup.IsProperSubsetOf*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.IsProperSubsetOf(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.IsProperSubsetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: IsProperSubsetOf(IEnumerable(Of Entity))
@@ -423,6 +446,8 @@ items:
       type: System.Boolean
     content.vb: Public Function IsProperSupersetOf(other As IEnumerable(Of Entity)) As Boolean
   overload: LobsterFramework.EntityGroup.IsProperSupersetOf*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.IsProperSupersetOf(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.IsProperSupersetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: IsProperSupersetOf(IEnumerable(Of Entity))
@@ -458,6 +483,8 @@ items:
       type: System.Boolean
     content.vb: Public Function IsSubsetOf(other As IEnumerable(Of Entity)) As Boolean
   overload: LobsterFramework.EntityGroup.IsSubsetOf*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.IsSubsetOf(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.IsSubsetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: IsSubsetOf(IEnumerable(Of Entity))
@@ -493,6 +520,8 @@ items:
       type: System.Boolean
     content.vb: Public Function IsSupersetOf(other As IEnumerable(Of Entity)) As Boolean
   overload: LobsterFramework.EntityGroup.IsSupersetOf*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.IsSupersetOf(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.IsSupersetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: IsSupersetOf(IEnumerable(Of Entity))
@@ -528,6 +557,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Overlaps(other As IEnumerable(Of Entity)) As Boolean
   overload: LobsterFramework.EntityGroup.Overlaps*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.Overlaps(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.Overlaps(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: Overlaps(IEnumerable(Of Entity))
@@ -563,6 +594,8 @@ items:
       type: System.Boolean
     content.vb: Public Function SetEquals(other As IEnumerable(Of Entity)) As Boolean
   overload: LobsterFramework.EntityGroup.SetEquals*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.SetEquals(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.SetEquals(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: SetEquals(IEnumerable(Of Entity))
@@ -596,6 +629,8 @@ items:
       type: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
     content.vb: Public Sub SymmetricExceptWith(other As IEnumerable(Of Entity))
   overload: LobsterFramework.EntityGroup.SymmetricExceptWith*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.SymmetricExceptWith(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.SymmetricExceptWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: SymmetricExceptWith(IEnumerable(Of Entity))
@@ -629,6 +664,8 @@ items:
       type: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
     content.vb: Public Sub UnionWith(other As IEnumerable(Of Entity))
   overload: LobsterFramework.EntityGroup.UnionWith*
+  implements:
+  - System.Collections.Generic.ISet{LobsterFramework.Entity}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   nameWithType.vb: EntityGroup.UnionWith(IEnumerable(Of Entity))
   fullName.vb: LobsterFramework.EntityGroup.UnionWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
   name.vb: UnionWith(IEnumerable(Of Entity))
@@ -659,6 +696,8 @@ items:
     content: public void Clear()
     content.vb: Public Sub Clear()
   overload: LobsterFramework.EntityGroup.Clear*
+  implements:
+  - System.Collections.Generic.ICollection{LobsterFramework.Entity}.Clear
 - uid: LobsterFramework.EntityGroup.Contains(LobsterFramework.Entity)
   commentId: M:LobsterFramework.EntityGroup.Contains(LobsterFramework.Entity)
   id: Contains(LobsterFramework.Entity)
@@ -691,6 +730,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Contains(item As Entity) As Boolean
   overload: LobsterFramework.EntityGroup.Contains*
+  implements:
+  - System.Collections.Generic.ICollection{LobsterFramework.Entity}.Contains(LobsterFramework.Entity)
 - uid: LobsterFramework.EntityGroup.CopyTo(LobsterFramework.Entity[],System.Int32)
   commentId: M:LobsterFramework.EntityGroup.CopyTo(LobsterFramework.Entity[],System.Int32)
   id: CopyTo(LobsterFramework.Entity[],System.Int32)
@@ -723,6 +764,8 @@ items:
       type: System.Int32
     content.vb: Public Sub CopyTo(array As Entity(), arrayIndex As Integer)
   overload: LobsterFramework.EntityGroup.CopyTo*
+  implements:
+  - System.Collections.Generic.ICollection{LobsterFramework.Entity}.CopyTo(LobsterFramework.Entity[],System.Int32)
   nameWithType.vb: EntityGroup.CopyTo(Entity(), Integer)
   fullName.vb: LobsterFramework.EntityGroup.CopyTo(LobsterFramework.Entity(), Integer)
   name.vb: CopyTo(Entity(), Integer)
@@ -758,6 +801,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Remove(item As Entity) As Boolean
   overload: LobsterFramework.EntityGroup.Remove*
+  implements:
+  - System.Collections.Generic.ICollection{LobsterFramework.Entity}.Remove(LobsterFramework.Entity)
 references:
 - uid: LobsterFramework
   commentId: N:LobsterFramework
@@ -790,6 +835,113 @@ references:
   name: ScriptableObject
   nameWithType: ScriptableObject
   fullName: UnityEngine.ScriptableObject
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  commentId: T:System.Collections.Generic.ISet{LobsterFramework.Entity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ISet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1
+  name: ISet<Entity>
+  nameWithType: ISet<Entity>
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>
+  nameWithType.vb: ISet(Of Entity)
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity)
+  name.vb: ISet(Of Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1
+    name: ISet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1
+    name: ISet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+- uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  commentId: T:System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<Entity>
+  nameWithType: ICollection<Entity>
+  fullName: System.Collections.Generic.ICollection<LobsterFramework.Entity>
+  nameWithType.vb: ICollection(Of Entity)
+  fullName.vb: System.Collections.Generic.ICollection(Of LobsterFramework.Entity)
+  name.vb: ICollection(Of Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
+  commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Entity>
+  nameWithType: IEnumerable<Entity>
+  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.Entity>
+  nameWithType.vb: IEnumerable(Of Entity)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity)
+  name.vb: IEnumerable(Of Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -2473,6 +2625,144 @@ references:
   name: hideFlags
   nameWithType: Object.hideFlags
   fullName: UnityEngine.Object.hideFlags
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -2486,6 +2776,154 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
+- uid: System.Collections.Generic.ISet`1
+  commentId: T:System.Collections.Generic.ISet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1
+  name: ISet<T>
+  nameWithType: ISet<T>
+  fullName: System.Collections.Generic.ISet<T>
+  nameWithType.vb: ISet(Of T)
+  fullName.vb: System.Collections.Generic.ISet(Of T)
+  name.vb: ISet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1
+    name: ISet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1
+    name: ISet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: UnityEngine.Object.Instantiate``1(``0)
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
   isExternal: true
@@ -2791,6 +3229,16 @@ references:
   name: Count
   nameWithType: EntityGroup.Count
   fullName: LobsterFramework.EntityGroup.Count
+- uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Count
+  commentId: P:System.Collections.Generic.ICollection{LobsterFramework.Entity}.Count
+  parent: System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ICollection`1.Count
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.count
+  name: Count
+  nameWithType: ICollection<Entity>.Count
+  fullName: System.Collections.Generic.ICollection<LobsterFramework.Entity>.Count
+  nameWithType.vb: ICollection(Of Entity).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of LobsterFramework.Entity).Count
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -2802,12 +3250,31 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: System.Collections.Generic.ICollection`1.Count
+  commentId: P:System.Collections.Generic.ICollection`1.Count
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.count
+  name: Count
+  nameWithType: ICollection<T>.Count
+  fullName: System.Collections.Generic.ICollection<T>.Count
+  nameWithType.vb: ICollection(Of T).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Count
 - uid: LobsterFramework.EntityGroup.IsReadOnly*
   commentId: Overload:LobsterFramework.EntityGroup.IsReadOnly
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.IsReadOnly
   name: IsReadOnly
   nameWithType: EntityGroup.IsReadOnly
   fullName: LobsterFramework.EntityGroup.IsReadOnly
+- uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection{LobsterFramework.Entity}.IsReadOnly
+  parent: System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ICollection`1.IsReadOnly
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.isreadonly
+  name: IsReadOnly
+  nameWithType: ICollection<Entity>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<LobsterFramework.Entity>.IsReadOnly
+  nameWithType.vb: ICollection(Of Entity).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of LobsterFramework.Entity).IsReadOnly
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -2819,12 +3286,45 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: System.Collections.Generic.ICollection`1.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
 - uid: LobsterFramework.EntityGroup.GetEnumerator*
   commentId: Overload:LobsterFramework.EntityGroup.GetEnumerator
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.GetEnumerator
   name: GetEnumerator
   nameWithType: EntityGroup.GetEnumerator
   fullName: LobsterFramework.EntityGroup.GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{LobsterFramework.Entity}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-lobsterframework.entity-.getenumerator#system-collections-generic-ienumerable((lobsterframework-entity))-getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<Entity>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.Entity>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of Entity).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-lobsterframework.entity-.getenumerator#system-collections-generic-ienumerable((lobsterframework-entity))-getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-lobsterframework.entity-.getenumerator#system-collections-generic-ienumerable((lobsterframework-entity))-getenumerator
+  - name: (
+  - name: )
 - uid: System.Collections.Generic.IEnumerator{LobsterFramework.Entity}
   commentId: T:System.Collections.Generic.IEnumerator{LobsterFramework.Entity}
   parent: System.Collections.Generic
@@ -2858,6 +3358,29 @@ references:
     name: Entity
     href: LobsterFramework.Entity.html
   - name: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
 - uid: System.Collections.Generic.IEnumerator`1
   commentId: T:System.Collections.Generic.IEnumerator`1
   isExternal: true
@@ -2886,49 +3409,42 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: LobsterFramework.EntityGroup.Add*
   commentId: Overload:LobsterFramework.EntityGroup.Add
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.Add(LobsterFramework.Entity)
   name: Add
   nameWithType: EntityGroup.Add
   fullName: LobsterFramework.EntityGroup.Add
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.Add(LobsterFramework.Entity)
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.Add(LobsterFramework.Entity)
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.Add(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.add#system-collections-generic-iset((lobsterframework-entity))-add(lobsterframework-entity)
+  name: Add(Entity)
+  nameWithType: ISet<Entity>.Add(Entity)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.Add(LobsterFramework.Entity)
+  nameWithType.vb: ISet(Of Entity).Add(Entity)
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).Add(LobsterFramework.Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.Add(LobsterFramework.Entity)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.add#system-collections-generic-iset((lobsterframework-entity))-add(lobsterframework-entity)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.Add(LobsterFramework.Entity)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.add#system-collections-generic-iset((lobsterframework-entity))-add(lobsterframework-entity)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
 - uid: LobsterFramework.Entity
   commentId: T:LobsterFramework.Entity
   parent: LobsterFramework
@@ -2936,24 +3452,54 @@ references:
   name: Entity
   nameWithType: Entity
   fullName: LobsterFramework.Entity
+- uid: System.Collections.Generic.ISet`1.Add(`0)
+  commentId: M:System.Collections.Generic.ISet`1.Add(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.add
+  name: Add(T)
+  nameWithType: ISet<T>.Add(T)
+  fullName: System.Collections.Generic.ISet<T>.Add(T)
+  nameWithType.vb: ISet(Of T).Add(T)
+  fullName.vb: System.Collections.Generic.ISet(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.Add(`0)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.add
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.Add(`0)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.add
+  - name: (
+  - name: T
+  - name: )
 - uid: LobsterFramework.EntityGroup.ExceptWith*
   commentId: Overload:LobsterFramework.EntityGroup.ExceptWith
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: ExceptWith
   nameWithType: EntityGroup.ExceptWith
   fullName: LobsterFramework.EntityGroup.ExceptWith
-- uid: System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
-  commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.Entity}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<Entity>
-  nameWithType: IEnumerable<Entity>
-  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.Entity>
-  nameWithType.vb: IEnumerable(Of Entity)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity)
-  name.vb: IEnumerable(Of Entity)
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.exceptwith#system-collections-generic-iset((lobsterframework-entity))-exceptwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: ExceptWith(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.ExceptWith(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.ExceptWith(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).ExceptWith(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).ExceptWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: ExceptWith(IEnumerable(Of Entity))
   spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: ExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.exceptwith#system-collections-generic-iset((lobsterframework-entity))-exceptwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
@@ -2963,7 +3509,13 @@ references:
     name: Entity
     href: LobsterFramework.Entity.html
   - name: '>'
+  - name: )
   spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: ExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.exceptwith#system-collections-generic-iset((lobsterframework-entity))-exceptwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
@@ -2975,17 +3527,23 @@ references:
     name: Entity
     href: LobsterFramework.Entity.html
   - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+  - name: )
+- uid: System.Collections.Generic.ISet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.exceptwith
+  name: ExceptWith(IEnumerable<T>)
+  nameWithType: ISet<T>.ExceptWith(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.ExceptWith(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).ExceptWith(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).ExceptWith(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: ExceptWith(IEnumerable(Of T))
   spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: ExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.exceptwith
+  - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
@@ -2993,7 +3551,13 @@ references:
   - name: <
   - name: T
   - name: '>'
+  - name: )
   spec.vb:
+  - uid: System.Collections.Generic.ISet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: ExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.exceptwith
+  - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
@@ -3002,6 +3566,7 @@ references:
   - name: Of
   - name: " "
   - name: T
+  - name: )
   - name: )
 - uid: LobsterFramework.EntityGroup.IntersectWith*
   commentId: Overload:LobsterFramework.EntityGroup.IntersectWith
@@ -3009,72 +3574,986 @@ references:
   name: IntersectWith
   nameWithType: EntityGroup.IntersectWith
   fullName: LobsterFramework.EntityGroup.IntersectWith
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.intersectwith#system-collections-generic-iset((lobsterframework-entity))-intersectwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: IntersectWith(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.IntersectWith(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.IntersectWith(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).IntersectWith(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).IntersectWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: IntersectWith(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IntersectWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.intersectwith#system-collections-generic-iset((lobsterframework-entity))-intersectwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IntersectWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.intersectwith#system-collections-generic-iset((lobsterframework-entity))-intersectwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.intersectwith
+  name: IntersectWith(IEnumerable<T>)
+  nameWithType: ISet<T>.IntersectWith(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.IntersectWith(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).IntersectWith(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).IntersectWith(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: IntersectWith(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+    name: IntersectWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.intersectwith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+    name: IntersectWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.intersectwith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.IsProperSubsetOf*
   commentId: Overload:LobsterFramework.EntityGroup.IsProperSubsetOf
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: IsProperSubsetOf
   nameWithType: EntityGroup.IsProperSubsetOf
   fullName: LobsterFramework.EntityGroup.IsProperSubsetOf
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.ispropersubsetof#system-collections-generic-iset((lobsterframework-entity))-ispropersubsetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: IsProperSubsetOf(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.IsProperSubsetOf(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.IsProperSubsetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).IsProperSubsetOf(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).IsProperSubsetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: IsProperSubsetOf(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsProperSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.ispropersubsetof#system-collections-generic-iset((lobsterframework-entity))-ispropersubsetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsProperSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.ispropersubsetof#system-collections-generic-iset((lobsterframework-entity))-ispropersubsetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.ispropersubsetof
+  name: IsProperSubsetOf(IEnumerable<T>)
+  nameWithType: ISet<T>.IsProperSubsetOf(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.IsProperSubsetOf(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).IsProperSubsetOf(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).IsProperSubsetOf(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: IsProperSubsetOf(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.ispropersubsetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.ispropersubsetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.IsProperSupersetOf*
   commentId: Overload:LobsterFramework.EntityGroup.IsProperSupersetOf
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: IsProperSupersetOf
   nameWithType: EntityGroup.IsProperSupersetOf
   fullName: LobsterFramework.EntityGroup.IsProperSupersetOf
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.ispropersupersetof#system-collections-generic-iset((lobsterframework-entity))-ispropersupersetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: IsProperSupersetOf(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.IsProperSupersetOf(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.IsProperSupersetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).IsProperSupersetOf(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).IsProperSupersetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: IsProperSupersetOf(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsProperSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.ispropersupersetof#system-collections-generic-iset((lobsterframework-entity))-ispropersupersetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsProperSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.ispropersupersetof#system-collections-generic-iset((lobsterframework-entity))-ispropersupersetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.ispropersupersetof
+  name: IsProperSupersetOf(IEnumerable<T>)
+  nameWithType: ISet<T>.IsProperSupersetOf(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.IsProperSupersetOf(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).IsProperSupersetOf(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).IsProperSupersetOf(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: IsProperSupersetOf(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.ispropersupersetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.ispropersupersetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.IsSubsetOf*
   commentId: Overload:LobsterFramework.EntityGroup.IsSubsetOf
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: IsSubsetOf
   nameWithType: EntityGroup.IsSubsetOf
   fullName: LobsterFramework.EntityGroup.IsSubsetOf
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.issubsetof#system-collections-generic-iset((lobsterframework-entity))-issubsetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: IsSubsetOf(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.IsSubsetOf(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.IsSubsetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).IsSubsetOf(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).IsSubsetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: IsSubsetOf(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.issubsetof#system-collections-generic-iset((lobsterframework-entity))-issubsetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.issubsetof#system-collections-generic-iset((lobsterframework-entity))-issubsetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.issubsetof
+  name: IsSubsetOf(IEnumerable<T>)
+  nameWithType: ISet<T>.IsSubsetOf(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.IsSubsetOf(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).IsSubsetOf(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).IsSubsetOf(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: IsSubsetOf(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.issubsetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSubsetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.issubsetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.IsSupersetOf*
   commentId: Overload:LobsterFramework.EntityGroup.IsSupersetOf
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: IsSupersetOf
   nameWithType: EntityGroup.IsSupersetOf
   fullName: LobsterFramework.EntityGroup.IsSupersetOf
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.issupersetof#system-collections-generic-iset((lobsterframework-entity))-issupersetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: IsSupersetOf(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.IsSupersetOf(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.IsSupersetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).IsSupersetOf(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).IsSupersetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: IsSupersetOf(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.issupersetof#system-collections-generic-iset((lobsterframework-entity))-issupersetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: IsSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.issupersetof#system-collections-generic-iset((lobsterframework-entity))-issupersetof(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.issupersetof
+  name: IsSupersetOf(IEnumerable<T>)
+  nameWithType: ISet<T>.IsSupersetOf(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.IsSupersetOf(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).IsSupersetOf(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).IsSupersetOf(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: IsSupersetOf(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.issupersetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSupersetOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.issupersetof
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.Overlaps*
   commentId: Overload:LobsterFramework.EntityGroup.Overlaps
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: Overlaps
   nameWithType: EntityGroup.Overlaps
   fullName: LobsterFramework.EntityGroup.Overlaps
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.overlaps#system-collections-generic-iset((lobsterframework-entity))-overlaps(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: Overlaps(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.Overlaps(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.Overlaps(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).Overlaps(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).Overlaps(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: Overlaps(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: Overlaps
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.overlaps#system-collections-generic-iset((lobsterframework-entity))-overlaps(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: Overlaps
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.overlaps#system-collections-generic-iset((lobsterframework-entity))-overlaps(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.overlaps
+  name: Overlaps(IEnumerable<T>)
+  nameWithType: ISet<T>.Overlaps(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.Overlaps(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).Overlaps(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).Overlaps(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: Overlaps(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+    name: Overlaps
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.overlaps
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+    name: Overlaps
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.overlaps
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.SetEquals*
   commentId: Overload:LobsterFramework.EntityGroup.SetEquals
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: SetEquals
   nameWithType: EntityGroup.SetEquals
   fullName: LobsterFramework.EntityGroup.SetEquals
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.setequals#system-collections-generic-iset((lobsterframework-entity))-setequals(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: SetEquals(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.SetEquals(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.SetEquals(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).SetEquals(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).SetEquals(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: SetEquals(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: SetEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.setequals#system-collections-generic-iset((lobsterframework-entity))-setequals(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: SetEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.setequals#system-collections-generic-iset((lobsterframework-entity))-setequals(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.setequals
+  name: SetEquals(IEnumerable<T>)
+  nameWithType: ISet<T>.SetEquals(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.SetEquals(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).SetEquals(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).SetEquals(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: SetEquals(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+    name: SetEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.setequals
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+    name: SetEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.setequals
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.SymmetricExceptWith*
   commentId: Overload:LobsterFramework.EntityGroup.SymmetricExceptWith
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: SymmetricExceptWith
   nameWithType: EntityGroup.SymmetricExceptWith
   fullName: LobsterFramework.EntityGroup.SymmetricExceptWith
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.symmetricexceptwith#system-collections-generic-iset((lobsterframework-entity))-symmetricexceptwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: SymmetricExceptWith(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.SymmetricExceptWith(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.SymmetricExceptWith(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).SymmetricExceptWith(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).SymmetricExceptWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: SymmetricExceptWith(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: SymmetricExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.symmetricexceptwith#system-collections-generic-iset((lobsterframework-entity))-symmetricexceptwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: SymmetricExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.symmetricexceptwith#system-collections-generic-iset((lobsterframework-entity))-symmetricexceptwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.symmetricexceptwith
+  name: SymmetricExceptWith(IEnumerable<T>)
+  nameWithType: ISet<T>.SymmetricExceptWith(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.SymmetricExceptWith(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).SymmetricExceptWith(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).SymmetricExceptWith(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: SymmetricExceptWith(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: SymmetricExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.symmetricexceptwith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: SymmetricExceptWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.symmetricexceptwith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.UnionWith*
   commentId: Overload:LobsterFramework.EntityGroup.UnionWith
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
   name: UnionWith
   nameWithType: EntityGroup.UnionWith
   fullName: LobsterFramework.EntityGroup.UnionWith
+- uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  commentId: M:System.Collections.Generic.ISet{LobsterFramework.Entity}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+  parent: System.Collections.Generic.ISet{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ISet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.unionwith#system-collections-generic-iset((lobsterframework-entity))-unionwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  name: UnionWith(IEnumerable<Entity>)
+  nameWithType: ISet<Entity>.UnionWith(IEnumerable<Entity>)
+  fullName: System.Collections.Generic.ISet<LobsterFramework.Entity>.UnionWith(System.Collections.Generic.IEnumerable<LobsterFramework.Entity>)
+  nameWithType.vb: ISet(Of Entity).UnionWith(IEnumerable(Of Entity))
+  fullName.vb: System.Collections.Generic.ISet(Of LobsterFramework.Entity).UnionWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Entity))
+  name.vb: UnionWith(IEnumerable(Of Entity))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: UnionWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.unionwith#system-collections-generic-iset((lobsterframework-entity))-unionwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet{LobsterFramework.Entity}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Entity})
+    name: UnionWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-lobsterframework.entity-.unionwith#system-collections-generic-iset((lobsterframework-entity))-unionwith(system-collections-generic-ienumerable((lobsterframework-entity)))
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.ISet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:System.Collections.Generic.ISet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.unionwith
+  name: UnionWith(IEnumerable<T>)
+  nameWithType: ISet<T>.UnionWith(IEnumerable<T>)
+  fullName: System.Collections.Generic.ISet<T>.UnionWith(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISet(Of T).UnionWith(IEnumerable(Of T))
+  fullName.vb: System.Collections.Generic.ISet(Of T).UnionWith(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: UnionWith(IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ISet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+    name: UnionWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.unionwith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ISet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+    name: UnionWith
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iset-1.unionwith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: LobsterFramework.EntityGroup.Clear*
   commentId: Overload:LobsterFramework.EntityGroup.Clear
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.Clear
   name: Clear
   nameWithType: EntityGroup.Clear
   fullName: LobsterFramework.EntityGroup.Clear
+- uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Clear
+  commentId: M:System.Collections.Generic.ICollection{LobsterFramework.Entity}.Clear
+  parent: System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ICollection`1.Clear
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.clear#system-collections-generic-icollection((lobsterframework-entity))-clear
+  name: Clear()
+  nameWithType: ICollection<Entity>.Clear()
+  fullName: System.Collections.Generic.ICollection<LobsterFramework.Entity>.Clear()
+  nameWithType.vb: ICollection(Of Entity).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of LobsterFramework.Entity).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.clear#system-collections-generic-icollection((lobsterframework-entity))-clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.clear#system-collections-generic-icollection((lobsterframework-entity))-clear
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.ICollection`1.Clear
+  commentId: M:System.Collections.Generic.ICollection`1.Clear
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  name: Clear()
+  nameWithType: ICollection<T>.Clear()
+  fullName: System.Collections.Generic.ICollection<T>.Clear()
+  nameWithType.vb: ICollection(Of T).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
+  - name: (
+  - name: )
 - uid: LobsterFramework.EntityGroup.Contains*
   commentId: Overload:LobsterFramework.EntityGroup.Contains
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.Contains(LobsterFramework.Entity)
   name: Contains
   nameWithType: EntityGroup.Contains
   fullName: LobsterFramework.EntityGroup.Contains
+- uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Contains(LobsterFramework.Entity)
+  commentId: M:System.Collections.Generic.ICollection{LobsterFramework.Entity}.Contains(LobsterFramework.Entity)
+  parent: System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ICollection`1.Contains(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.contains#system-collections-generic-icollection((lobsterframework-entity))-contains(lobsterframework-entity)
+  name: Contains(Entity)
+  nameWithType: ICollection<Entity>.Contains(Entity)
+  fullName: System.Collections.Generic.ICollection<LobsterFramework.Entity>.Contains(LobsterFramework.Entity)
+  nameWithType.vb: ICollection(Of Entity).Contains(Entity)
+  fullName.vb: System.Collections.Generic.ICollection(Of LobsterFramework.Entity).Contains(LobsterFramework.Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Contains(LobsterFramework.Entity)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.contains#system-collections-generic-icollection((lobsterframework-entity))-contains(lobsterframework-entity)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Contains(LobsterFramework.Entity)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.contains#system-collections-generic-icollection((lobsterframework-entity))-contains(lobsterframework-entity)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1.Contains(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Contains(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  name: Contains(T)
+  nameWithType: ICollection<T>.Contains(T)
+  fullName: System.Collections.Generic.ICollection<T>.Contains(T)
+  nameWithType.vb: ICollection(Of T).Contains(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains
+  - name: (
+  - name: T
+  - name: )
 - uid: LobsterFramework.EntityGroup.CopyTo*
   commentId: Overload:LobsterFramework.EntityGroup.CopyTo
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.CopyTo(LobsterFramework.Entity[],System.Int32)
   name: CopyTo
   nameWithType: EntityGroup.CopyTo
   fullName: LobsterFramework.EntityGroup.CopyTo
+- uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.CopyTo(LobsterFramework.Entity[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection{LobsterFramework.Entity}.CopyTo(LobsterFramework.Entity[],System.Int32)
+  parent: System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.copyto#system-collections-generic-icollection((lobsterframework-entity))-copyto(lobsterframework-entity()-system-int32)
+  name: CopyTo(Entity[], int)
+  nameWithType: ICollection<Entity>.CopyTo(Entity[], int)
+  fullName: System.Collections.Generic.ICollection<LobsterFramework.Entity>.CopyTo(LobsterFramework.Entity[], int)
+  nameWithType.vb: ICollection(Of Entity).CopyTo(Entity(), Integer)
+  fullName.vb: System.Collections.Generic.ICollection(Of LobsterFramework.Entity).CopyTo(LobsterFramework.Entity(), Integer)
+  name.vb: CopyTo(Entity(), Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.CopyTo(LobsterFramework.Entity[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.copyto#system-collections-generic-icollection((lobsterframework-entity))-copyto(lobsterframework-entity()-system-int32)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.CopyTo(LobsterFramework.Entity[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.copyto#system-collections-generic-icollection((lobsterframework-entity))-copyto(lobsterframework-entity()-system-int32)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
 - uid: LobsterFramework.Entity[]
   isExternal: true
   href: LobsterFramework.Entity.html
@@ -3096,9 +4575,106 @@ references:
     href: LobsterFramework.Entity.html
   - name: (
   - name: )
+- uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  name: CopyTo(T[], int)
+  nameWithType: ICollection<T>.CopyTo(T[], int)
+  fullName: System.Collections.Generic.ICollection<T>.CopyTo(T[], int)
+  nameWithType.vb: ICollection(Of T).CopyTo(T(), Integer)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  - name: (
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto
+  - name: (
+  - name: T
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
 - uid: LobsterFramework.EntityGroup.Remove*
   commentId: Overload:LobsterFramework.EntityGroup.Remove
   href: LobsterFramework.EntityGroup.html#LobsterFramework.EntityGroup.Remove(LobsterFramework.Entity)
   name: Remove
   nameWithType: EntityGroup.Remove
   fullName: LobsterFramework.EntityGroup.Remove
+- uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Remove(LobsterFramework.Entity)
+  commentId: M:System.Collections.Generic.ICollection{LobsterFramework.Entity}.Remove(LobsterFramework.Entity)
+  parent: System.Collections.Generic.ICollection{LobsterFramework.Entity}
+  definition: System.Collections.Generic.ICollection`1.Remove(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.remove#system-collections-generic-icollection((lobsterframework-entity))-remove(lobsterframework-entity)
+  name: Remove(Entity)
+  nameWithType: ICollection<Entity>.Remove(Entity)
+  fullName: System.Collections.Generic.ICollection<LobsterFramework.Entity>.Remove(LobsterFramework.Entity)
+  nameWithType.vb: ICollection(Of Entity).Remove(Entity)
+  fullName.vb: System.Collections.Generic.ICollection(Of LobsterFramework.Entity).Remove(LobsterFramework.Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Remove(LobsterFramework.Entity)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.remove#system-collections-generic-icollection((lobsterframework-entity))-remove(lobsterframework-entity)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection{LobsterFramework.Entity}.Remove(LobsterFramework.Entity)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-lobsterframework.entity-.remove#system-collections-generic-icollection((lobsterframework-entity))-remove(lobsterframework-entity)
+  - name: (
+  - uid: LobsterFramework.Entity
+    name: Entity
+    href: LobsterFramework.Entity.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1.Remove(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Remove(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  name: Remove(T)
+  nameWithType: ICollection<T>.Remove(T)
+  fullName: System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType.vb: ICollection(Of T).Remove(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove
+  - name: (
+  - name: T
+  - name: )

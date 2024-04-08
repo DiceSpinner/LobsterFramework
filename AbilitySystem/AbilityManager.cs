@@ -8,7 +8,7 @@ using Animancer;
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
-    /// Manages running & stopping abilities.
+    /// Manages running and stopping abilities.
     /// </summary>
     [AddComponentMenu("AbilityManager")]
     public class AbilityManager : SubLevelComponent

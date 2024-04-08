@@ -11,13 +11,13 @@ items:
   - LobsterFramework.AbilitySystem.AbilityComponentDictionary
   - LobsterFramework.AbilitySystem.AbilityConfig
   - LobsterFramework.AbilitySystem.AbilityConfigDictionary
+  - LobsterFramework.AbilitySystem.AbilityContext
   - LobsterFramework.AbilitySystem.AbilityCoroutine
-  - LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  - LobsterFramework.AbilitySystem.AbilityCoroutineContext
   - LobsterFramework.AbilitySystem.AbilityData
   - LobsterFramework.AbilitySystem.AbilityDictionary
   - LobsterFramework.AbilitySystem.AbilityExecutor
   - LobsterFramework.AbilitySystem.AbilityManager
-  - LobsterFramework.AbilitySystem.AbilityRuntime
   - LobsterFramework.AbilitySystem.AbilitySelector
   - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
   - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
@@ -29,19 +29,19 @@ items:
   - LobsterFramework.AbilitySystem.Guard.GuardAnimations
   - LobsterFramework.AbilitySystem.GuardChannel
   - LobsterFramework.AbilitySystem.GuardConfig
-  - LobsterFramework.AbilitySystem.GuardRuntime
+  - LobsterFramework.AbilitySystem.GuardContext
   - LobsterFramework.AbilitySystem.HeavyWeaponAttack
   - LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel
   - LobsterFramework.AbilitySystem.HeavyWeaponAttackConfig
-  - LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttackContext
   - LobsterFramework.AbilitySystem.LightWeaponAttack
   - LobsterFramework.AbilitySystem.LightWeaponAttackChannel
   - LobsterFramework.AbilitySystem.LightWeaponAttackConfig
-  - LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+  - LobsterFramework.AbilitySystem.LightWeaponAttackContext
   - LobsterFramework.AbilitySystem.OffhandAbility
   - LobsterFramework.AbilitySystem.OffhandAbilityChannel
   - LobsterFramework.AbilitySystem.OffhandAbilityConfig
-  - LobsterFramework.AbilitySystem.OffhandAbilityRuntime
+  - LobsterFramework.AbilitySystem.OffhandAbilityContext
   - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
   - LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
   - LobsterFramework.AbilitySystem.TargetSetting
@@ -58,7 +58,7 @@ items:
   - LobsterFramework.AbilitySystem.WeaponArt
   - LobsterFramework.AbilitySystem.WeaponArtChannel
   - LobsterFramework.AbilitySystem.WeaponArtConfig
-  - LobsterFramework.AbilitySystem.WeaponArtRuntime
+  - LobsterFramework.AbilitySystem.WeaponArtContext
   - LobsterFramework.AbilitySystem.WeaponArtSelector
   - LobsterFramework.AbilitySystem.WeaponData
   - LobsterFramework.AbilitySystem.WeaponManager
@@ -84,13 +84,13 @@ references:
   name: AbilityCoroutine
   nameWithType: AbilityCoroutine
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
-  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutineContext
+  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutineContext
   parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime.html
-  name: AbilityCoroutineRuntime
-  nameWithType: AbilityCoroutineRuntime
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineRuntime
+  href: LobsterFramework.AbilitySystem.AbilityCoroutineContext.html
+  name: AbilityCoroutineContext
+  nameWithType: AbilityCoroutineContext
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineContext
 - uid: LobsterFramework.AbilitySystem.Weapon
   commentId: T:LobsterFramework.AbilitySystem.Weapon
   parent: LobsterFramework.AbilitySystem
@@ -124,12 +124,12 @@ references:
   name: HeavyWeaponAttackChannel
   nameWithType: HeavyWeaponAttackChannel
   fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel
-- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime
-  commentId: T:LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime
-  href: LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime.html
-  name: HeavyWeaponAttackRuntime
-  nameWithType: HeavyWeaponAttackRuntime
-  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttackRuntime
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackContext
+  commentId: T:LobsterFramework.AbilitySystem.HeavyWeaponAttackContext
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttackContext.html
+  name: HeavyWeaponAttackContext
+  nameWithType: HeavyWeaponAttackContext
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttackContext
 - uid: LobsterFramework.AbilitySystem.WeaponUtility
   commentId: T:LobsterFramework.AbilitySystem.WeaponUtility
   href: LobsterFramework.AbilitySystem.WeaponUtility.html
@@ -167,12 +167,12 @@ references:
   name: OffhandAbilityChannel
   nameWithType: OffhandAbilityChannel
   fullName: LobsterFramework.AbilitySystem.OffhandAbilityChannel
-- uid: LobsterFramework.AbilitySystem.OffhandAbilityRuntime
-  commentId: T:LobsterFramework.AbilitySystem.OffhandAbilityRuntime
-  href: LobsterFramework.AbilitySystem.OffhandAbilityRuntime.html
-  name: OffhandAbilityRuntime
-  nameWithType: OffhandAbilityRuntime
-  fullName: LobsterFramework.AbilitySystem.OffhandAbilityRuntime
+- uid: LobsterFramework.AbilitySystem.OffhandAbilityContext
+  commentId: T:LobsterFramework.AbilitySystem.OffhandAbilityContext
+  href: LobsterFramework.AbilitySystem.OffhandAbilityContext.html
+  name: OffhandAbilityContext
+  nameWithType: OffhandAbilityContext
+  fullName: LobsterFramework.AbilitySystem.OffhandAbilityContext
 - uid: LobsterFramework.AbilitySystem.LightWeaponAttackConfig
   commentId: T:LobsterFramework.AbilitySystem.LightWeaponAttackConfig
   href: LobsterFramework.AbilitySystem.LightWeaponAttackConfig.html
@@ -224,12 +224,12 @@ references:
   name: WeaponArtChannel
   nameWithType: WeaponArtChannel
   fullName: LobsterFramework.AbilitySystem.WeaponArtChannel
-- uid: LobsterFramework.AbilitySystem.WeaponArtRuntime
-  commentId: T:LobsterFramework.AbilitySystem.WeaponArtRuntime
-  href: LobsterFramework.AbilitySystem.WeaponArtRuntime.html
-  name: WeaponArtRuntime
-  nameWithType: WeaponArtRuntime
-  fullName: LobsterFramework.AbilitySystem.WeaponArtRuntime
+- uid: LobsterFramework.AbilitySystem.WeaponArtContext
+  commentId: T:LobsterFramework.AbilitySystem.WeaponArtContext
+  href: LobsterFramework.AbilitySystem.WeaponArtContext.html
+  name: WeaponArtContext
+  nameWithType: WeaponArtContext
+  fullName: LobsterFramework.AbilitySystem.WeaponArtContext
 - uid: LobsterFramework.AbilitySystem.TestCoroutine
   commentId: T:LobsterFramework.AbilitySystem.TestCoroutine
   href: LobsterFramework.AbilitySystem.TestCoroutine.html
@@ -339,12 +339,12 @@ references:
   - uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations
     name: GuardAnimations
     href: LobsterFramework.AbilitySystem.Guard.GuardAnimations.html
-- uid: LobsterFramework.AbilitySystem.GuardRuntime
-  commentId: T:LobsterFramework.AbilitySystem.GuardRuntime
-  href: LobsterFramework.AbilitySystem.GuardRuntime.html
-  name: GuardRuntime
-  nameWithType: GuardRuntime
-  fullName: LobsterFramework.AbilitySystem.GuardRuntime
+- uid: LobsterFramework.AbilitySystem.GuardContext
+  commentId: T:LobsterFramework.AbilitySystem.GuardContext
+  href: LobsterFramework.AbilitySystem.GuardContext.html
+  name: GuardContext
+  nameWithType: GuardContext
+  fullName: LobsterFramework.AbilitySystem.GuardContext
 - uid: LobsterFramework.AbilitySystem.GuardChannel
   commentId: T:LobsterFramework.AbilitySystem.GuardChannel
   href: LobsterFramework.AbilitySystem.GuardChannel.html
@@ -472,12 +472,12 @@ references:
   name: LightWeaponAttackChannel
   nameWithType: LightWeaponAttackChannel
   fullName: LobsterFramework.AbilitySystem.LightWeaponAttackChannel
-- uid: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
-  commentId: T:LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
-  href: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime.html
-  name: LightWeaponAttackRuntime
-  nameWithType: LightWeaponAttackRuntime
-  fullName: LobsterFramework.AbilitySystem.LightWeaponAttackRuntime
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttackContext
+  commentId: T:LobsterFramework.AbilitySystem.LightWeaponAttackContext
+  href: LobsterFramework.AbilitySystem.LightWeaponAttackContext.html
+  name: LightWeaponAttackContext
+  nameWithType: LightWeaponAttackContext
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttackContext
 - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
   commentId: T:LobsterFramework.AbilitySystem.ComponentRequiredAttribute
   parent: LobsterFramework.AbilitySystem
@@ -492,13 +492,13 @@ references:
   name: Ability
   nameWithType: Ability
   fullName: LobsterFramework.AbilitySystem.Ability
-- uid: LobsterFramework.AbilitySystem.AbilityRuntime
-  commentId: T:LobsterFramework.AbilitySystem.AbilityRuntime
+- uid: LobsterFramework.AbilitySystem.AbilityContext
+  commentId: T:LobsterFramework.AbilitySystem.AbilityContext
   parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.AbilityRuntime.html
-  name: AbilityRuntime
-  nameWithType: AbilityRuntime
-  fullName: LobsterFramework.AbilitySystem.AbilityRuntime
+  href: LobsterFramework.AbilitySystem.AbilityContext.html
+  name: AbilityContext
+  nameWithType: AbilityContext
+  fullName: LobsterFramework.AbilitySystem.AbilityContext
 - uid: LobsterFramework.AbilitySystem.AbilityChannel
   commentId: T:LobsterFramework.AbilitySystem.AbilityChannel
   parent: LobsterFramework.AbilitySystem

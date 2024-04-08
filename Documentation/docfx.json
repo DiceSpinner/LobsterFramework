@@ -3,12 +3,10 @@
         {
             "src": [
                 {
-                    "src": "./",
+                    "src": "../../../",
                     "files": [
-                        "*.cs",
-                    ],
-                    "exclude": [
-                       
+                        "LobsterFramework.csproj",
+                        "LobsterFrameworkEditor.csproj"
                     ]
                 }
             ],

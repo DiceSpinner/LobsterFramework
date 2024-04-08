@@ -24,12 +24,13 @@ items:
   - LobsterFramework.AbilitySystem.AbilityManager.Reset
   - LobsterFramework.AbilitySystem.AbilityManager.Signal``1(System.String)
   - LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilities
+  - LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance``1(System.String)
   - LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1
-  - LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1(System.String)
   - LobsterFramework.AbilitySystem.AbilityManager.actionLock
-  - LobsterFramework.AbilitySystem.AbilityManager.onAbilityAnimation
   - LobsterFramework.AbilitySystem.AbilityManager.onAbilityEnqueue
   - LobsterFramework.AbilitySystem.AbilityManager.onAbilityFinished
+  - LobsterFramework.AbilitySystem.AbilityManager.onAnimationBegin
+  - LobsterFramework.AbilitySystem.AbilityManager.onAnimationEnd
   langs:
   - csharp
   - vb
@@ -44,14 +45,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityManager
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: >-
-    Component acts as a container and platform for different kinds of abilities and moves.
-
-    Requires ability data that defines what abilities and configurations are available to be supplied.
+  summary: Manages running and stopping abilities.
   example: []
   syntax:
     content: >-
@@ -186,6 +184,10 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   attributes:
   - type: UnityEngine.AddComponentMenu
     ctor: UnityEngine.AddComponentMenu.#ctor(System.String)
@@ -210,10 +212,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: onAbilityEnqueue
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 19
+    startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: Invoked when an ability is enqueued, the type of the ability is passed in as parameter.
+  example: []
   syntax:
     content: public Action<Type> onAbilityEnqueue
     return:
@@ -237,44 +241,75 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: onAbilityFinished
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 20
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: Invoked when an ability is terminated, the type of the ability is passed in as parameter.
+  example: []
   syntax:
     content: public Action<Type> onAbilityFinished
     return:
       type: System.Action{System.Type}
     content.vb: Public onAbilityFinished As Action(Of Type)
-- uid: LobsterFramework.AbilitySystem.AbilityManager.onAbilityAnimation
-  commentId: F:LobsterFramework.AbilitySystem.AbilityManager.onAbilityAnimation
-  id: onAbilityAnimation
+- uid: LobsterFramework.AbilitySystem.AbilityManager.onAnimationBegin
+  commentId: F:LobsterFramework.AbilitySystem.AbilityManager.onAnimationBegin
+  id: onAnimationBegin
   parent: LobsterFramework.AbilitySystem.AbilityManager
   langs:
   - csharp
   - vb
-  name: onAbilityAnimation
-  nameWithType: AbilityManager.onAbilityAnimation
-  fullName: LobsterFramework.AbilitySystem.AbilityManager.onAbilityAnimation
+  name: onAnimationBegin
+  nameWithType: AbilityManager.onAnimationBegin
+  fullName: LobsterFramework.AbilitySystem.AbilityManager.onAnimationBegin
   type: Field
   source:
     remote:
       path: AbilitySystem/AbilityManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onAbilityAnimation
+    id: onAnimationBegin
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 36
+    startLine: 40
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Send true if starting ability animation, false if ending ability animation
+  summary: Invoked when an animation of an ability is initiated.
   example: []
   syntax:
-    content: public Action<bool> onAbilityAnimation
+    content: public Action<Type> onAnimationBegin
     return:
-      type: System.Action{System.Boolean}
-    content.vb: Public onAbilityAnimation As Action(Of Boolean)
+      type: System.Action{System.Type}
+    content.vb: Public onAnimationBegin As Action(Of Type)
+- uid: LobsterFramework.AbilitySystem.AbilityManager.onAnimationEnd
+  commentId: F:LobsterFramework.AbilitySystem.AbilityManager.onAnimationEnd
+  id: onAnimationEnd
+  parent: LobsterFramework.AbilitySystem.AbilityManager
+  langs:
+  - csharp
+  - vb
+  name: onAnimationEnd
+  nameWithType: AbilityManager.onAnimationEnd
+  fullName: LobsterFramework.AbilitySystem.AbilityManager.onAnimationEnd
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/AbilityManager.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: onAnimationEnd
+    path: ../AbilitySystem/AbilityManager.cs
+    startLine: 45
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: Invoked when an animation of an ability is terminated.
+  example: []
+  syntax:
+    content: public Action<Type> onAnimationEnd
+    return:
+      type: System.Action{System.Type}
+    content.vb: Public onAnimationEnd As Action(Of Type)
 - uid: LobsterFramework.AbilitySystem.AbilityManager.actionLock
   commentId: F:LobsterFramework.AbilitySystem.AbilityManager.actionLock
   id: actionLock
@@ -293,15 +328,17 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: actionLock
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 42
+    startLine: 60
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: If this evaluates to true, all abilities are halted and no abilities can be enqueued.
+  example: []
   syntax:
-    content: public readonly Or actionLock
+    content: public readonly OrValue actionLock
     return:
-      type: LobsterFramework.Utility.Or
-    content.vb: Public ReadOnly actionLock As [Or]
+      type: LobsterFramework.Utility.OrValue
+    content.vb: Public ReadOnly actionLock As OrValue
 - uid: LobsterFramework.AbilitySystem.AbilityManager.ActionBlocked
   commentId: P:LobsterFramework.AbilitySystem.AbilityManager.ActionBlocked
   id: ActionBlocked
@@ -320,10 +357,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ActionBlocked
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 43
+    startLine: 65
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: A short cut for examining the value of actionLock
+  example: []
   syntax:
     content: public bool ActionBlocked { get; }
     parameters: []
@@ -349,7 +388,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Reset
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 143
+    startLine: 149
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -377,40 +416,40 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EnqueueAbility
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 197
+    startLine: 205
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: >-
-    Add the ability with specified type (T) and config (name) to the executing queue, return the status of this operation. <br />
+    Add an ability instance to the executing queue, return the status of this operation. <br />
 
     For this operation to be successful, the following must be satisfied: <br />
 
-    1. The entity must not be action blocked. (i.e Not affected by stun effect) <br />
+    1. The entity must not be action blocked. <br />
 
-    2. The specified ability of Type (T) as well as the config (name) must be present in the ability data.<br />
+    2. The specified ability instance must be present <br />
 
-    3. The precondition of the specified ability must be satisfied as well as the cooldown of the config if the ability uses cooldowns. <br />
+    3. The precondition of the specified ability instance must be satisfied. <br />
 
-    4. The specified ability must not be currently running or enqueued. <br />
+    4. The ability instance must not be currently running or enqueued. <br />
 
     <br />
 
-    Note that this method should only be called inside Update(), calling it elsewhere will have unpredictable results.
+    Note that this method should only be called inside Update(), calling it elsewhere will result in undefined behavior.
   example: []
   syntax:
-    content: 'public bool EnqueueAbility<T>(string configName = "default") where T : Ability'
+    content: 'public bool EnqueueAbility<T>(string instance = "default") where T : Ability'
     parameters:
-    - id: configName
+    - id: instance
       type: System.String
-      description: Name of the configuration to be enqueued
+      description: Name of the instance to be enqueued
     typeParameters:
     - id: T
-      description: Type of the Action to be enqueued
+      description: Type of the Ability to be enqueued
     return:
       type: System.Boolean
-      description: ''
-    content.vb: Public Function EnqueueAbility(Of T As Ability)(configName As String = "default") As Boolean
+      description: true if successfully enqueued the ability instance, false otherwise
+    content.vb: Public Function EnqueueAbility(Of T As Ability)(instance As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility*
   nameWithType.vb: AbilityManager.EnqueueAbility(Of T)(String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility(Of T)(String)
@@ -433,20 +472,40 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EnqueueAbility
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 217
+    startLine: 237
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: >-
+    Add an ability instance to the executing queue, return the status of this operation. <br />
+
+    For this operation to be successful, the following must be satisfied: <br />
+
+    1. The entity must not be action blocked. <br />
+
+    2. The specified ability instance must be present <br />
+
+    3. The precondition of the specified ability instance must be satisfied. <br />
+
+    4. The ability instance must not be currently running or enqueued. <br />
+
+    <br />
+
+    Note that this method should only be called inside Update(), calling it elsewhere will result in undefined behavior.
+  example: []
   syntax:
-    content: public bool EnqueueAbility(Type abilityType, string configName = "default")
+    content: public bool EnqueueAbility(Type abilityType, string instance = "default")
     parameters:
     - id: abilityType
       type: System.Type
-    - id: configName
+      description: Type of the ability to be enqueued
+    - id: instance
       type: System.String
+      description: Name of the instance to be enqueued
     return:
       type: System.Boolean
-    content.vb: Public Function EnqueueAbility(abilityType As Type, configName As String = "default") As Boolean
+      description: true if successfully enqueued the ability instance, false otherwise
+    content.vb: Public Function EnqueueAbility(abilityType As Type, instance As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility*
   nameWithType.vb: AbilityManager.EnqueueAbility(Type, String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility(System.Type, String)
@@ -469,24 +528,21 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EnqueueAbilitiesInJoint
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 245
+    startLine: 263
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: >-
-    Enqueue two abilities of different types together with the second one being guaranteed to <br />
-
-    terminate no later than the first one.
+  summary: Enqueue two abilities of different types together with the second one being guaranteed to terminate no later than the first one.
   example: []
   syntax:
-    content: 'public bool EnqueueAbilitiesInJoint<T, V>(string configName1 = "default", string configName2 = "default") where T : Ability where V : Ability'
+    content: 'public bool EnqueueAbilitiesInJoint<T, V>(string instance1 = "default", string instance2 = "default") where T : Ability where V : Ability'
     parameters:
-    - id: configName1
+    - id: instance1
       type: System.String
-      description: Name of the configuration for the first ability
-    - id: configName2
+      description: Name of the instance for the first ability
+    - id: instance2
       type: System.String
-      description: Name of the configuration for the second ability
+      description: Name of the instance for the second ability
     typeParameters:
     - id: T
       description: The type of the first ability
@@ -495,52 +551,52 @@ items:
     return:
       type: System.Boolean
       description: ''
-    content.vb: Public Function EnqueueAbilitiesInJoint(Of T As Ability, V As Ability)(configName1 As String = "default", configName2 As String = "default") As Boolean
+    content.vb: Public Function EnqueueAbilitiesInJoint(Of T As Ability, V As Ability)(instance1 As String = "default", instance2 As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbilitiesInJoint*
   nameWithType.vb: AbilityManager.EnqueueAbilitiesInJoint(Of T, V)(String, String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbilitiesInJoint(Of T, V)(String, String)
   name.vb: EnqueueAbilitiesInJoint(Of T, V)(String, String)
-- uid: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1(System.String)
-  id: SuspendAbility``1(System.String)
+- uid: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance``1(System.String)
+  commentId: M:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance``1(System.String)
+  id: SuspendAbilityInstance``1(System.String)
   parent: LobsterFramework.AbilitySystem.AbilityManager
   langs:
   - csharp
   - vb
-  name: SuspendAbility<T>(string)
-  nameWithType: AbilityManager.SuspendAbility<T>(string)
-  fullName: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility<T>(string)
+  name: SuspendAbilityInstance<T>(string)
+  nameWithType: AbilityManager.SuspendAbilityInstance<T>(string)
+  fullName: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance<T>(string)
   type: Method
   source:
     remote:
       path: AbilitySystem/AbilityManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: SuspendAbility
+    id: SuspendAbilityInstance
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 276
+    startLine: 295
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Stops the execution of the ability and returns the status of this operation
   example: []
   syntax:
-    content: 'public bool SuspendAbility<T>(string name = "default") where T : Ability'
+    content: 'public bool SuspendAbilityInstance<T>(string instance = "default") where T : Ability'
     parameters:
-    - id: name
+    - id: instance
       type: System.String
-      description: Name of the config of T to be stopped
+      description: Name of the ability instance to be stopped
     typeParameters:
     - id: T
       description: Type of the ability to be stopped
     return:
       type: System.Boolean
-      description: true if the ability with specified config name exists and is stopped, otherwise return false
-    content.vb: Public Function SuspendAbility(Of T As Ability)(name As String = "default") As Boolean
-  overload: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility*
-  nameWithType.vb: AbilityManager.SuspendAbility(Of T)(String)
-  fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility(Of T)(String)
-  name.vb: SuspendAbility(Of T)(String)
+      description: true if the ability instance exists and is stopped, otherwise return false
+    content.vb: Public Function SuspendAbilityInstance(Of T As Ability)(instance As String = "default") As Boolean
+  overload: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance*
+  nameWithType.vb: AbilityManager.SuspendAbilityInstance(Of T)(String)
+  fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance(Of T)(String)
+  name.vb: SuspendAbilityInstance(Of T)(String)
 - uid: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1
   commentId: M:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1
   id: SuspendAbility``1
@@ -559,11 +615,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendAbility
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 292
+    startLine: 309
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Stop the execution of the specified ability on all of its configs
+  summary: Stop the execution of all instances of the specified ability
   example: []
   syntax:
     content: 'public bool SuspendAbility<T>() where T : Ability'
@@ -596,11 +652,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendAbilities
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 306
+    startLine: 323
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Stops execution of all active abilities
+  summary: Stops execution of all abilities
   example: []
   syntax:
     content: public void SuspendAbilities()
@@ -624,7 +680,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetAbilityComponent
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 325
+    startLine: 338
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -661,25 +717,25 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetAbilityChannel
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 341
+    startLine: 354
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Get the ability channel of specified ability and configuration
   example: []
   syntax:
-    content: 'public AbilityChannel GetAbilityChannel<T>(string configName = "default") where T : Ability'
+    content: 'public AbilityChannel GetAbilityChannel<T>(string instance = "default") where T : Ability'
     parameters:
-    - id: configName
+    - id: instance
       type: System.String
-      description: The name of the ability configuration
+      description: The name of the ability instance
     typeParameters:
     - id: T
       description: The type of Ability this channel is associated with.
     return:
       type: LobsterFramework.AbilitySystem.AbilityChannel
       description: The channel that connects to the specified ability and configuration if it exists, otherwise return null.
-    content.vb: Public Function GetAbilityChannel(Of T As Ability)(configName As String = "default") As AbilityChannel
+    content.vb: Public Function GetAbilityChannel(Of T As Ability)(instance As String = "default") As AbilityChannel
   overload: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel*
   nameWithType.vb: AbilityManager.GetAbilityChannel(Of T)(String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel(Of T)(String)
@@ -702,28 +758,25 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityReady
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 386
+    startLine: 398
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: >-
-    Check if the action instance of type T with config is ready. <br />
-
-    If T is not present or config is not available, return false.
+  summary: Check if the specified ability instance is ready
   example: []
   syntax:
-    content: 'public bool IsAbilityReady<T>(string config = "default") where T : Ability'
+    content: 'public bool IsAbilityReady<T>(string instance = "default") where T : Ability'
     parameters:
-    - id: config
+    - id: instance
       type: System.String
-      description: Name of the config to be queried
+      description: Name of the ability instance to be queried
     typeParameters:
     - id: T
       description: Type of the Ability to be queried
     return:
       type: System.Boolean
-      description: The result of the query
-    content.vb: Public Function IsAbilityReady(Of T As Ability)(config As String = "default") As Boolean
+      description: true if the ability instance exists and is ready, false otherwise
+    content.vb: Public Function IsAbilityReady(Of T As Ability)(instance As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady*
   nameWithType.vb: AbilityManager.IsAbilityReady(Of T)(String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady(Of T)(String)
@@ -746,20 +799,25 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityReady
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 399
+    startLine: 414
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: Check if the specified ability instance is ready
+  example: []
   syntax:
-    content: public bool IsAbilityReady(Type abilityType, string config = "default")
+    content: public bool IsAbilityReady(Type abilityType, string instance = "default")
     parameters:
     - id: abilityType
       type: System.Type
-    - id: config
+      description: Type of the Ability to be queried
+    - id: instance
       type: System.String
+      description: Name of the ability instance to be queried
     return:
       type: System.Boolean
-    content.vb: Public Function IsAbilityReady(abilityType As Type, config As String = "default") As Boolean
+      description: true if the ability instance exists and is ready, false otherwise
+    content.vb: Public Function IsAbilityReady(abilityType As Type, instance As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady*
   nameWithType.vb: AbilityManager.IsAbilityReady(Type, String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady(System.Type, String)
@@ -782,25 +840,25 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityRunning
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 423
+    startLine: 434
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Check if the ability with specified config is running
   example: []
   syntax:
-    content: 'public bool IsAbilityRunning<T>(string configName = "default") where T : Ability'
+    content: 'public bool IsAbilityRunning<T>(string instance = "default") where T : Ability'
     parameters:
-    - id: configName
+    - id: instance
       type: System.String
-      description: The name of the config being queried
+      description: The name of the ability instance being queried
     typeParameters:
     - id: T
       description: The type of the ability being queried
     return:
       type: System.Boolean
-      description: true if the ability exists and is running, otherwise false
-    content.vb: Public Function IsAbilityRunning(Of T As Ability)(configName As String = "default") As Boolean
+      description: true if the ability instance exists and is running, otherwise false
+    content.vb: Public Function IsAbilityRunning(Of T As Ability)(instance As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning*
   nameWithType.vb: AbilityManager.IsAbilityRunning(Of T)(String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning(Of T)(String)
@@ -823,39 +881,40 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityRunning
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 437
+    startLine: 448
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Check if the ability with specified config is running
+  summary: Check if the specified ability instance is running
   example: []
   syntax:
     content: public bool IsAbilityRunning(Type abilityType, string configName = "default")
     parameters:
     - id: abilityType
       type: System.Type
+      description: The type of the ability being queried
     - id: configName
       type: System.String
       description: The name of the config being queried
     return:
       type: System.Boolean
-      description: true if the ability exists and is running, otherwise false
+      description: true if the ability instance exists and is running, otherwise false
     content.vb: Public Function IsAbilityRunning(abilityType As Type, configName As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning*
   nameWithType.vb: AbilityManager.IsAbilityRunning(Type, String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning(System.Type, String)
   name.vb: IsAbilityRunning(Type, String)
 - uid: LobsterFramework.AbilitySystem.AbilityManager.IsAnimating
-  commentId: M:LobsterFramework.AbilitySystem.AbilityManager.IsAnimating
+  commentId: P:LobsterFramework.AbilitySystem.AbilityManager.IsAnimating
   id: IsAnimating
   parent: LobsterFramework.AbilitySystem.AbilityManager
   langs:
   - csharp
   - vb
-  name: IsAnimating()
-  nameWithType: AbilityManager.IsAnimating()
-  fullName: LobsterFramework.AbilitySystem.AbilityManager.IsAnimating()
-  type: Method
+  name: IsAnimating
+  nameWithType: AbilityManager.IsAnimating
+  fullName: LobsterFramework.AbilitySystem.AbilityManager.IsAnimating
+  type: Property
   source:
     remote:
       path: AbilitySystem/AbilityManager.cs
@@ -863,15 +922,18 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAnimating
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 447
+    startLine: 461
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: True if a animation of an ability is currently being played, false otherwise
+  example: []
   syntax:
-    content: public bool IsAnimating()
+    content: public bool IsAnimating { get; }
+    parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Function IsAnimating() As Boolean
+    content.vb: Public ReadOnly Property IsAnimating As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.IsAnimating*
 - uid: LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities(System.Type,System.Type,System.String,System.String)
   commentId: M:LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities(System.Type,System.Type,System.String,System.String)
@@ -891,14 +953,14 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: JoinAbilities
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 462
+    startLine: 476
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Join two running abilities such that the second ability terminates no later than the primary ability.
   example: []
   syntax:
-    content: public bool JoinAbilities(Type primaryAbility, Type secondaryAbility, string config1 = "default", string config2 = "default")
+    content: public bool JoinAbilities(Type primaryAbility, Type secondaryAbility, string instance1 = "default", string instance2 = "default")
     parameters:
     - id: primaryAbility
       type: System.Type
@@ -906,16 +968,16 @@ items:
     - id: secondaryAbility
       type: System.Type
       description: The type of the secondary ability
-    - id: config1
+    - id: instance1
       type: System.String
-      description: The name of the  configuration for the primary ability
-    - id: config2
+      description: The name of the primary ability instance
+    - id: instance2
       type: System.String
-      description: The name of the  configuration for the secondary ability
+      description: The name of the secondary ability instance
     return:
       type: System.Boolean
-      description: ''
-    content.vb: Public Function JoinAbilities(primaryAbility As Type, secondaryAbility As Type, config1 As String = "default", config2 As String = "default") As Boolean
+      description: true on success, false otherwise
+    content.vb: Public Function JoinAbilities(primaryAbility As Type, secondaryAbility As Type, instance1 As String = "default", instance2 As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities*
   nameWithType.vb: AbilityManager.JoinAbilities(Type, Type, String, String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities(System.Type, System.Type, String, String)
@@ -938,21 +1000,21 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: JoinAbilities
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 480
+    startLine: 494
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Join two running abilities such that the second ability terminates no later than the primary ability.
   example: []
   syntax:
-    content: 'public bool JoinAbilities<T, V>(string config1 = "default", string config2 = "default") where T : Ability where V : Ability'
+    content: 'public bool JoinAbilities<T, V>(string instance1 = "default", string instance2 = "default") where T : Ability where V : Ability'
     parameters:
-    - id: config1
+    - id: instance1
       type: System.String
-      description: The name of the  configuration for the primary ability
-    - id: config2
+      description: The name of the primary ability instance
+    - id: instance2
       type: System.String
-      description: The name of the  configuration for the secondary ability
+      description: The name of the secondary ability instance
     typeParameters:
     - id: T
       description: The type of the primary ability
@@ -960,8 +1022,8 @@ items:
       description: The type of the secondary ability
     return:
       type: System.Boolean
-      description: ''
-    content.vb: Public Function JoinAbilities(Of T As Ability, V As Ability)(config1 As String = "default", config2 As String = "default") As Boolean
+      description: true on success, false otherwise
+    content.vb: Public Function JoinAbilities(Of T As Ability, V As Ability)(instance1 As String = "default", instance2 As String = "default") As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities*
   nameWithType.vb: AbilityManager.JoinAbilities(Of T, V)(String, String)
   fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities(Of T, V)(String, String)
@@ -984,7 +1046,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InterruptAbilityAnimation
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 532
+    startLine: 538
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1012,7 +1074,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Signal
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 546
+    startLine: 553
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1048,7 +1110,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AnimationSignal
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 559
+    startLine: 566
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1079,7 +1141,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AnimationEnd
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 572
+    startLine: 579
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -4947,6 +5009,144 @@ references:
   name: hideFlags
   nameWithType: Object.hideFlags
   fullName: UnityEngine.Object.hideFlags
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -5508,48 +5708,13 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Action{System.Boolean}
-  commentId: T:System.Action{System.Boolean}
-  parent: System
-  definition: System.Action`1
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<bool>
-  nameWithType: Action<bool>
-  fullName: System.Action<bool>
-  nameWithType.vb: Action(Of Boolean)
-  fullName.vb: System.Action(Of Boolean)
-  name.vb: Action(Of Boolean)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-- uid: LobsterFramework.Utility.Or
-  commentId: T:LobsterFramework.Utility.Or
+- uid: LobsterFramework.Utility.OrValue
+  commentId: T:LobsterFramework.Utility.OrValue
   parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.Or.html
-  name: Or
-  nameWithType: Or
-  fullName: LobsterFramework.Utility.Or
+  href: LobsterFramework.Utility.OrValue.html
+  name: OrValue
+  nameWithType: OrValue
+  fullName: LobsterFramework.Utility.OrValue
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
   href: LobsterFramework.html
@@ -5626,9 +5791,15 @@ references:
   name: EnqueueAbilitiesInJoint
   nameWithType: AbilityManager.EnqueueAbilitiesInJoint
   fullName: LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbilitiesInJoint
+- uid: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance
+  href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance``1(System.String)
+  name: SuspendAbilityInstance
+  nameWithType: AbilityManager.SuspendAbilityInstance
+  fullName: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance
 - uid: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility
-  href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1(System.String)
+  href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1
   name: SuspendAbility
   nameWithType: AbilityManager.SuspendAbility
   fullName: LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility

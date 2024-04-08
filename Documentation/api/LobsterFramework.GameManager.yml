@@ -31,7 +31,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GameManager
     path: ../GameManager.cs
-    startLine: 18
+    startLine: 17
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -158,6 +158,10 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
 - uid: LobsterFramework.GameManager.Instance
   commentId: P:LobsterFramework.GameManager.Instance
   id: Instance
@@ -176,7 +180,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Instance
     path: ../GameManager.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -205,7 +209,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UseAlternativeInput
     path: ../GameManager.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -234,7 +238,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DefaultInteractionRadius
     path: ../GameManager.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -263,7 +267,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: TARGET_FRAME_RATE
     path: ../GameManager.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -292,7 +296,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EXPIRE_ATTACK_TIME
     path: ../GameManager.cs
-    startLine: 31
+    startLine: 30
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -321,7 +325,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: POSTURE_BROKEN_DAMAGE_MODIFIER
     path: ../GameManager.cs
-    startLine: 34
+    startLine: 33
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -350,7 +354,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: POSTURE_BROKEN_DURATION
     path: ../GameManager.cs
-    startLine: 35
+    startLine: 34
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -379,7 +383,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SUPPRESS_REGEN_DURATION
     path: ../GameManager.cs
-    startLine: 36
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -408,7 +412,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GamePaused
     path: ../GameManager.cs
-    startLine: 42
+    startLine: 41
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -437,7 +441,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: onGamePaused
     path: ../GameManager.cs
-    startLine: 50
+    startLine: 49
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -464,7 +468,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Update
     path: ../GameManager.cs
-    startLine: 75
+    startLine: 74
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -490,7 +494,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ExecuteDelegate
     path: ../GameManager.cs
-    startLine: 99
+    startLine: 98
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -4274,6 +4278,144 @@ references:
   name: hideFlags
   nameWithType: Object.hideFlags
   fullName: UnityEngine.Object.hideFlags
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true

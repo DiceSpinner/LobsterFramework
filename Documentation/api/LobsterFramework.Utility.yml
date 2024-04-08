@@ -22,7 +22,7 @@ items:
   - LobsterFramework.Utility.IdDistributor
   - LobsterFramework.Utility.IntSum
   - LobsterFramework.Utility.MenuGroup`1
-  - LobsterFramework.Utility.Or
+  - LobsterFramework.Utility.OrValue
   - LobsterFramework.Utility.SerializableDictionary`2
   - LobsterFramework.Utility.SerializableHashSet`1
   - LobsterFramework.Utility.SerializableType`1
@@ -345,13 +345,13 @@ references:
   name: FloatProduct
   nameWithType: FloatProduct
   fullName: LobsterFramework.Utility.FloatProduct
-- uid: LobsterFramework.Utility.Or
-  commentId: T:LobsterFramework.Utility.Or
+- uid: LobsterFramework.Utility.OrValue
+  commentId: T:LobsterFramework.Utility.OrValue
   parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.Or.html
-  name: Or
-  nameWithType: Or
-  fullName: LobsterFramework.Utility.Or
+  href: LobsterFramework.Utility.OrValue.html
+  name: OrValue
+  nameWithType: OrValue
+  fullName: LobsterFramework.Utility.OrValue
 - uid: LobsterFramework.Utility.And
   commentId: T:LobsterFramework.Utility.And
   href: LobsterFramework.Utility.And.html

@@ -2,11 +2,11 @@
   "sitemap": {
     "fileOptions": {
       "api/*": {
-        "baseUrl": "https://dicespinner.github.io/Unity-Game/",
+        "baseUrl": "https://dicespinner.github.io/LobsterFramework/",
         "changefreq": "daily"
       }
     },
-    "baseUrl": "https://dicespinner.github.io/Unity-Game/",
+    "baseUrl": "https://dicespinner.github.io/LobsterFramework/",
     "changefreq": "weekly"
   },
   "homepages": [],
@@ -2287,6 +2287,16 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
         }
       },
       "version": ""

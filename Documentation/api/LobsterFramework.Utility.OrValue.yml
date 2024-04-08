@@ -1,0 +1,710 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.OrValue
+  commentId: T:LobsterFramework.Utility.OrValue
+  id: OrValue
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.OrValue.#ctor(System.Boolean)
+  - LobsterFramework.Utility.OrValue.ComputeValue
+  langs:
+  - csharp
+  - vb
+  name: OrValue
+  nameWithType: OrValue
+  fullName: LobsterFramework.Utility.OrValue
+  type: Class
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OrValue
+    path: ../Utility/CombinedValue.cs
+    startLine: 251
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Value is true if one effector is true, otherwise return base value
+  example: []
+  syntax:
+    content: 'public class OrValue : CombinedValue<bool>'
+    content.vb: Public Class OrValue Inherits CombinedValue(Of Boolean)
+  inheritance:
+  - System.Object
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}
+  inheritedMembers:
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.stats
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.baseValue
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.Value
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.EffectorCount
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: LobsterFramework.Utility.OrValue.#ctor(System.Boolean)
+  commentId: M:LobsterFramework.Utility.OrValue.#ctor(System.Boolean)
+  id: '#ctor(System.Boolean)'
+  parent: LobsterFramework.Utility.OrValue
+  langs:
+  - csharp
+  - vb
+  name: OrValue(bool)
+  nameWithType: OrValue.OrValue(bool)
+  fullName: LobsterFramework.Utility.OrValue.OrValue(bool)
+  type: Constructor
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../Utility/CombinedValue.cs
+    startLine: 252
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public OrValue(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+    content.vb: Public Sub New(value As Boolean)
+  overload: LobsterFramework.Utility.OrValue.#ctor*
+  nameWithType.vb: OrValue.New(Boolean)
+  fullName.vb: LobsterFramework.Utility.OrValue.New(Boolean)
+  name.vb: New(Boolean)
+- uid: LobsterFramework.Utility.OrValue.ComputeValue
+  commentId: M:LobsterFramework.Utility.OrValue.ComputeValue
+  id: ComputeValue
+  parent: LobsterFramework.Utility.OrValue
+  langs:
+  - csharp
+  - vb
+  name: ComputeValue()
+  nameWithType: OrValue.ComputeValue()
+  fullName: LobsterFramework.Utility.OrValue.ComputeValue()
+  type: Method
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: ComputeValue
+    path: ../Utility/CombinedValue.cs
+    startLine: 256
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Compute the value taking all effectors into account
+  example: []
+  syntax:
+    content: protected override bool ComputeValue()
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Protected Overrides Function ComputeValue() As Boolean
+  overridden: LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+  overload: LobsterFramework.Utility.OrValue.ComputeValue*
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  commentId: T:LobsterFramework.Utility.CombinedValue{System.Boolean}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.CombinedValue`1
+  href: LobsterFramework.Utility.CombinedValue-1.html
+  name: CombinedValue<bool>
+  nameWithType: CombinedValue<bool>
+  fullName: LobsterFramework.Utility.CombinedValue<bool>
+  nameWithType.vb: CombinedValue(Of Boolean)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean)
+  name.vb: CombinedValue(Of Boolean)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.stats
+  commentId: F:LobsterFramework.Utility.CombinedValue{System.Boolean}.stats
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.stats
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.stats
+  name: stats
+  nameWithType: CombinedValue<bool>.stats
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.stats
+  nameWithType.vb: CombinedValue(Of Boolean).stats
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).stats
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.baseValue
+  commentId: F:LobsterFramework.Utility.CombinedValue{System.Boolean}.baseValue
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.baseValue
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.baseValue
+  name: baseValue
+  nameWithType: CombinedValue<bool>.baseValue
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.baseValue
+  nameWithType.vb: CombinedValue(Of Boolean).baseValue
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).baseValue
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.Value
+  commentId: P:LobsterFramework.Utility.CombinedValue{System.Boolean}.Value
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.Value
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.Value
+  name: Value
+  nameWithType: CombinedValue<bool>.Value
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.Value
+  nameWithType.vb: CombinedValue(Of Boolean).Value
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).Value
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+  name: Compatible(bool)
+  nameWithType: CombinedValue<bool>.Compatible(bool)
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.Compatible(bool)
+  nameWithType.vb: CombinedValue(Of Boolean).Compatible(Boolean)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).Compatible(Boolean)
+  name.vb: Compatible(Boolean)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+  name: ClearEffectors()
+  nameWithType: CombinedValue<bool>.ClearEffectors()
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.ClearEffectors()
+  nameWithType.vb: CombinedValue(Of Boolean).ClearEffectors()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).ClearEffectors()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+  name: MakeEffector()
+  nameWithType: CombinedValue<bool>.MakeEffector()
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.MakeEffector()
+  nameWithType.vb: CombinedValue(Of Boolean).MakeEffector()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).MakeEffector()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.MakeEffector
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.EffectorCount
+  commentId: P:LobsterFramework.Utility.CombinedValue{System.Boolean}.EffectorCount
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.EffectorCount
+  name: EffectorCount
+  nameWithType: CombinedValue<bool>.EffectorCount
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.EffectorCount
+  nameWithType.vb: CombinedValue(Of Boolean).EffectorCount
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).EffectorCount
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.CombinedValue`1
+  commentId: T:LobsterFramework.Utility.CombinedValue`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CombinedValue-1.html
+  name: CombinedValue<T>
+  nameWithType: CombinedValue<T>
+  fullName: LobsterFramework.Utility.CombinedValue<T>
+  nameWithType.vb: CombinedValue(Of T)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T)
+  name.vb: CombinedValue(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue`1.stats
+  commentId: F:LobsterFramework.Utility.CombinedValue`1.stats
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.stats
+  name: stats
+  nameWithType: CombinedValue<T>.stats
+  fullName: LobsterFramework.Utility.CombinedValue<T>.stats
+  nameWithType.vb: CombinedValue(Of T).stats
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).stats
+- uid: LobsterFramework.Utility.CombinedValue`1.baseValue
+  commentId: F:LobsterFramework.Utility.CombinedValue`1.baseValue
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.baseValue
+  name: baseValue
+  nameWithType: CombinedValue<T>.baseValue
+  fullName: LobsterFramework.Utility.CombinedValue<T>.baseValue
+  nameWithType.vb: CombinedValue(Of T).baseValue
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).baseValue
+- uid: LobsterFramework.Utility.CombinedValue`1.Value
+  commentId: P:LobsterFramework.Utility.CombinedValue`1.Value
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Value
+  name: Value
+  nameWithType: CombinedValue<T>.Value
+  fullName: LobsterFramework.Utility.CombinedValue<T>.Value
+  nameWithType.vb: CombinedValue(Of T).Value
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).Value
+- uid: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  name: Compatible(T)
+  nameWithType: CombinedValue<T>.Compatible(T)
+  fullName: LobsterFramework.Utility.CombinedValue<T>.Compatible(T)
+  nameWithType.vb: CombinedValue(Of T).Compatible(T)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).Compatible(T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+    name: Compatible
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Compatible(`0)
+  - name: (
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  name: ClearEffectors()
+  nameWithType: CombinedValue<T>.ClearEffectors()
+  fullName: LobsterFramework.Utility.CombinedValue<T>.ClearEffectors()
+  nameWithType.vb: CombinedValue(Of T).ClearEffectors()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).ClearEffectors()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ClearEffectors
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  name: MakeEffector()
+  nameWithType: CombinedValue<T>.MakeEffector()
+  fullName: LobsterFramework.Utility.CombinedValue<T>.MakeEffector()
+  nameWithType.vb: CombinedValue(Of T).MakeEffector()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).MakeEffector()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.MakeEffector
+    name: MakeEffector
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  commentId: P:LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.EffectorCount
+  name: EffectorCount
+  nameWithType: CombinedValue<T>.EffectorCount
+  fullName: LobsterFramework.Utility.CombinedValue<T>.EffectorCount
+  nameWithType.vb: CombinedValue(Of T).EffectorCount
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).EffectorCount
+- uid: LobsterFramework.Utility.OrValue.#ctor*
+  commentId: Overload:LobsterFramework.Utility.OrValue.#ctor
+  href: LobsterFramework.Utility.OrValue.html#LobsterFramework.Utility.OrValue.#ctor(System.Boolean)
+  name: OrValue
+  nameWithType: OrValue.OrValue
+  fullName: LobsterFramework.Utility.OrValue.OrValue
+  nameWithType.vb: OrValue.New
+  fullName.vb: LobsterFramework.Utility.OrValue.New
+  name.vb: New
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+  commentId: M:LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+  name: ComputeValue()
+  nameWithType: CombinedValue<bool>.ComputeValue()
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.ComputeValue()
+  nameWithType.vb: CombinedValue(Of Boolean).ComputeValue()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).ComputeValue()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.ComputeValue
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.OrValue.ComputeValue*
+  commentId: Overload:LobsterFramework.Utility.OrValue.ComputeValue
+  href: LobsterFramework.Utility.OrValue.html#LobsterFramework.Utility.OrValue.ComputeValue
+  name: ComputeValue
+  nameWithType: OrValue.ComputeValue
+  fullName: LobsterFramework.Utility.OrValue.ComputeValue
+- uid: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  commentId: M:LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  name: ComputeValue()
+  nameWithType: CombinedValue<T>.ComputeValue()
+  fullName: LobsterFramework.Utility.CombinedValue<T>.ComputeValue()
+  nameWithType.vb: CombinedValue(Of T).ComputeValue()
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).ComputeValue()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.ComputeValue
+  - name: (
+  - name: )

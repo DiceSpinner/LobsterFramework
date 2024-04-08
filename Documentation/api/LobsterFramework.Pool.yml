@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Pool
+  commentId: N:LobsterFramework.Pool
+  id: LobsterFramework.Pool
+  children:
+  - LobsterFramework.Pool.Bullet
+  - LobsterFramework.Pool.ObjectPool
+  - LobsterFramework.Pool.TemporalObject
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.Pool
+  nameWithType: LobsterFramework.Pool
+  fullName: LobsterFramework.Pool
+  type: Namespace
+  assemblies:
+  - LobsterFramework
+references:
+- uid: LobsterFramework.Pool.Bullet
+  commentId: T:LobsterFramework.Pool.Bullet
+  href: LobsterFramework.Pool.Bullet.html
+  name: Bullet
+  nameWithType: Bullet
+  fullName: LobsterFramework.Pool.Bullet
+- uid: LobsterFramework.Pool.ObjectPool
+  commentId: T:LobsterFramework.Pool.ObjectPool
+  href: LobsterFramework.Pool.ObjectPool.html
+  name: ObjectPool
+  nameWithType: ObjectPool
+  fullName: LobsterFramework.Pool.ObjectPool
+- uid: LobsterFramework.Pool.TemporalObject
+  commentId: T:LobsterFramework.Pool.TemporalObject
+  href: LobsterFramework.Pool.TemporalObject.html
+  name: TemporalObject
+  nameWithType: TemporalObject
+  fullName: LobsterFramework.Pool.TemporalObject

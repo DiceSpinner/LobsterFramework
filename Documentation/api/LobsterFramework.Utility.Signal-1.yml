@@ -1,0 +1,538 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.Signal`1
+  commentId: T:LobsterFramework.Utility.Signal`1
+  id: Signal`1
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.Signal`1.#ctor
+  - LobsterFramework.Utility.Signal`1.#ctor(`0)
+  - LobsterFramework.Utility.Signal`1.Put(`0)
+  - LobsterFramework.Utility.Signal`1.Reset
+  - LobsterFramework.Utility.Signal`1.op_Implicit(LobsterFramework.Utility.Signal{`0})~`0
+  langs:
+  - csharp
+  - vb
+  name: Signal<T>
+  nameWithType: Signal<T>
+  fullName: LobsterFramework.Utility.Signal<T>
+  type: Class
+  source:
+    remote:
+      path: Utility/Signal.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Signal
+    path: ../Utility/Signal.cs
+    startLine: 7
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Represents a signal that can be queried for value. It will go automatically go back to default state every time after queried.
+  example: []
+  syntax:
+    content: 'public class Signal<T> where T : struct'
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Class Signal(Of T As Structure)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: Signal(Of T)
+  fullName.vb: LobsterFramework.Utility.Signal(Of T)
+  name.vb: Signal(Of T)
+- uid: LobsterFramework.Utility.Signal`1.#ctor(`0)
+  commentId: M:LobsterFramework.Utility.Signal`1.#ctor(`0)
+  id: '#ctor(`0)'
+  parent: LobsterFramework.Utility.Signal`1
+  langs:
+  - csharp
+  - vb
+  name: Signal(T)
+  nameWithType: Signal<T>.Signal(T)
+  fullName: LobsterFramework.Utility.Signal<T>.Signal(T)
+  type: Constructor
+  source:
+    remote:
+      path: Utility/Signal.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../Utility/Signal.cs
+    startLine: 12
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public Signal(T defaultValue)
+    parameters:
+    - id: defaultValue
+      type: '{T}'
+    content.vb: Public Sub New(defaultValue As T)
+  overload: LobsterFramework.Utility.Signal`1.#ctor*
+  nameWithType.vb: Signal(Of T).New(T)
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).New(T)
+  name.vb: New(T)
+- uid: LobsterFramework.Utility.Signal`1.#ctor
+  commentId: M:LobsterFramework.Utility.Signal`1.#ctor
+  id: '#ctor'
+  parent: LobsterFramework.Utility.Signal`1
+  langs:
+  - csharp
+  - vb
+  name: Signal()
+  nameWithType: Signal<T>.Signal()
+  fullName: LobsterFramework.Utility.Signal<T>.Signal()
+  type: Constructor
+  source:
+    remote:
+      path: Utility/Signal.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../Utility/Signal.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public Signal()
+    content.vb: Public Sub New()
+  overload: LobsterFramework.Utility.Signal`1.#ctor*
+  nameWithType.vb: Signal(Of T).New()
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).New()
+  name.vb: New()
+- uid: LobsterFramework.Utility.Signal`1.Put(`0)
+  commentId: M:LobsterFramework.Utility.Signal`1.Put(`0)
+  id: Put(`0)
+  parent: LobsterFramework.Utility.Signal`1
+  langs:
+  - csharp
+  - vb
+  name: Put(T)
+  nameWithType: Signal<T>.Put(T)
+  fullName: LobsterFramework.Utility.Signal<T>.Put(T)
+  type: Method
+  source:
+    remote:
+      path: Utility/Signal.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Put
+    path: ../Utility/Signal.cs
+    startLine: 15
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public void Put(T newValue)
+    parameters:
+    - id: newValue
+      type: '{T}'
+    content.vb: Public Sub Put(newValue As T)
+  overload: LobsterFramework.Utility.Signal`1.Put*
+  nameWithType.vb: Signal(Of T).Put(T)
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).Put(T)
+- uid: LobsterFramework.Utility.Signal`1.Reset
+  commentId: M:LobsterFramework.Utility.Signal`1.Reset
+  id: Reset
+  parent: LobsterFramework.Utility.Signal`1
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: Signal<T>.Reset()
+  fullName: LobsterFramework.Utility.Signal<T>.Reset()
+  type: Method
+  source:
+    remote:
+      path: Utility/Signal.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Reset
+    path: ../Utility/Signal.cs
+    startLine: 19
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset()
+  overload: LobsterFramework.Utility.Signal`1.Reset*
+  nameWithType.vb: Signal(Of T).Reset()
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).Reset()
+- uid: LobsterFramework.Utility.Signal`1.op_Implicit(LobsterFramework.Utility.Signal{`0})~`0
+  commentId: M:LobsterFramework.Utility.Signal`1.op_Implicit(LobsterFramework.Utility.Signal{`0})~`0
+  id: op_Implicit(LobsterFramework.Utility.Signal{`0})~`0
+  parent: LobsterFramework.Utility.Signal`1
+  langs:
+  - csharp
+  - vb
+  name: implicit operator T(Signal<T>)
+  nameWithType: Signal<T>.implicit operator T(Signal<T>)
+  fullName: LobsterFramework.Utility.Signal<T>.implicit operator T(LobsterFramework.Utility.Signal<T>)
+  type: Operator
+  source:
+    remote:
+      path: Utility/Signal.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: op_Implicit
+    path: ../Utility/Signal.cs
+    startLine: 21
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public static implicit operator T(Signal<T> signal)
+    parameters:
+    - id: signal
+      type: LobsterFramework.Utility.Signal`1
+    return:
+      type: '{T}'
+    content.vb: Public Shared Widening Operator CType(signal As Signal(Of T)) As T
+  overload: LobsterFramework.Utility.Signal`1.op_Implicit*
+  nameWithType.vb: Signal(Of T).CType(Signal(Of T))
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).CType(LobsterFramework.Utility.Signal(Of T))
+  name.vb: CType(Signal(Of T))
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.Signal`1.#ctor*
+  commentId: Overload:LobsterFramework.Utility.Signal`1.#ctor
+  href: LobsterFramework.Utility.Signal-1.html#LobsterFramework.Utility.Signal`1.#ctor(`0)
+  name: Signal
+  nameWithType: Signal<T>.Signal
+  fullName: LobsterFramework.Utility.Signal<T>.Signal
+  nameWithType.vb: Signal(Of T).New
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).New
+  name.vb: New
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework.Utility.Signal`1.Put*
+  commentId: Overload:LobsterFramework.Utility.Signal`1.Put
+  href: LobsterFramework.Utility.Signal-1.html#LobsterFramework.Utility.Signal`1.Put(`0)
+  name: Put
+  nameWithType: Signal<T>.Put
+  fullName: LobsterFramework.Utility.Signal<T>.Put
+  nameWithType.vb: Signal(Of T).Put
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).Put
+- uid: LobsterFramework.Utility.Signal`1.Reset*
+  commentId: Overload:LobsterFramework.Utility.Signal`1.Reset
+  href: LobsterFramework.Utility.Signal-1.html#LobsterFramework.Utility.Signal`1.Reset
+  name: Reset
+  nameWithType: Signal<T>.Reset
+  fullName: LobsterFramework.Utility.Signal<T>.Reset
+  nameWithType.vb: Signal(Of T).Reset
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).Reset
+- uid: LobsterFramework.Utility.Signal`1.op_Implicit*
+  commentId: Overload:LobsterFramework.Utility.Signal`1.op_Implicit
+  name: implicit operator
+  nameWithType: Signal<T>.implicit operator
+  fullName: LobsterFramework.Utility.Signal<T>.implicit operator
+  nameWithType.vb: Signal(Of T).CType
+  fullName.vb: LobsterFramework.Utility.Signal(Of T).CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: LobsterFramework.Utility.Signal`1
+  commentId: T:LobsterFramework.Utility.Signal`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Signal-1.html
+  name: Signal<T>
+  nameWithType: Signal<T>
+  fullName: LobsterFramework.Utility.Signal<T>
+  nameWithType.vb: Signal(Of T)
+  fullName.vb: LobsterFramework.Utility.Signal(Of T)
+  name.vb: Signal(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

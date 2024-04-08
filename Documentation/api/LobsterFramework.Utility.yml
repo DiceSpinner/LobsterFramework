@@ -1,0 +1,402 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  id: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.AbilitySet
+  - LobsterFramework.Utility.And
+  - LobsterFramework.Utility.AttributeInitializer
+  - LobsterFramework.Utility.CombinedValueEffector`1
+  - LobsterFramework.Utility.CombinedValue`1
+  - LobsterFramework.Utility.Coroutine
+  - LobsterFramework.Utility.CoroutineOption
+  - LobsterFramework.Utility.CoroutineRunner
+  - LobsterFramework.Utility.DialogueDisplayer
+  - LobsterFramework.Utility.DialogueNode
+  - LobsterFramework.Utility.DialogueObject
+  - LobsterFramework.Utility.DialogueResponse
+  - LobsterFramework.Utility.FloatProduct
+  - LobsterFramework.Utility.FloatSum
+  - LobsterFramework.Utility.GameUtility
+  - LobsterFramework.Utility.IdDistributor
+  - LobsterFramework.Utility.IntSum
+  - LobsterFramework.Utility.MenuGroup`1
+  - LobsterFramework.Utility.OrValue
+  - LobsterFramework.Utility.SerializableDictionary`2
+  - LobsterFramework.Utility.SerializableHashSet`1
+  - LobsterFramework.Utility.SerializableType`1
+  - LobsterFramework.Utility.Signal`1
+  - LobsterFramework.Utility.SortableItem`1
+  - LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  type: Namespace
+  assemblies:
+  - LobsterFramework
+references:
+- uid: LobsterFramework.Utility.AttributeInitializer
+  commentId: T:LobsterFramework.Utility.AttributeInitializer
+  href: LobsterFramework.Utility.AttributeInitializer.html
+  name: AttributeInitializer
+  nameWithType: AttributeInitializer
+  fullName: LobsterFramework.Utility.AttributeInitializer
+- uid: LobsterFramework.Utility.XList`1
+  commentId: T:LobsterFramework.Utility.XList`1
+  href: LobsterFramework.Utility.XList-1.html
+  name: XList<T>
+  nameWithType: XList<T>
+  fullName: LobsterFramework.Utility.XList<T>
+  nameWithType.vb: XList(Of T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T)
+  name.vb: XList(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.XList`1
+    name: XList
+    href: LobsterFramework.Utility.XList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.XList`1
+    name: XList
+    href: LobsterFramework.Utility.XList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.IdDistributor
+  commentId: T:LobsterFramework.Utility.IdDistributor
+  href: LobsterFramework.Utility.IdDistributor.html
+  name: IdDistributor
+  nameWithType: IdDistributor
+  fullName: LobsterFramework.Utility.IdDistributor
+- uid: LobsterFramework.Utility.DialogueNode
+  commentId: T:LobsterFramework.Utility.DialogueNode
+  href: LobsterFramework.Utility.DialogueNode.html
+  name: DialogueNode
+  nameWithType: DialogueNode
+  fullName: LobsterFramework.Utility.DialogueNode
+- uid: LobsterFramework.Utility.DialogueObject
+  commentId: T:LobsterFramework.Utility.DialogueObject
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.DialogueObject.html
+  name: DialogueObject
+  nameWithType: DialogueObject
+  fullName: LobsterFramework.Utility.DialogueObject
+- uid: LobsterFramework.Utility.SerializableHashSet`1
+  commentId: T:LobsterFramework.Utility.SerializableHashSet`1
+  href: LobsterFramework.Utility.SerializableHashSet-1.html
+  name: SerializableHashSet<TValue>
+  nameWithType: SerializableHashSet<TValue>
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>
+  nameWithType.vb: SerializableHashSet(Of TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue)
+  name.vb: SerializableHashSet(Of TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
+    href: LobsterFramework.Utility.SerializableHashSet-1.html
+  - name: <
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
+    href: LobsterFramework.Utility.SerializableHashSet-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Utility.AbilitySet
+  commentId: T:LobsterFramework.Utility.AbilitySet
+  href: LobsterFramework.Utility.AbilitySet.html
+  name: AbilitySet
+  nameWithType: AbilitySet
+  fullName: LobsterFramework.Utility.AbilitySet
+- uid: LobsterFramework.Utility.CoroutineRunner
+  commentId: T:LobsterFramework.Utility.CoroutineRunner
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineRunner.html
+  name: CoroutineRunner
+  nameWithType: CoroutineRunner
+  fullName: LobsterFramework.Utility.CoroutineRunner
+- uid: LobsterFramework.Utility.SerializableType`1
+  commentId: T:LobsterFramework.Utility.SerializableType`1
+  href: LobsterFramework.Utility.SerializableType-1.html
+  name: SerializableType<T>
+  nameWithType: SerializableType<T>
+  fullName: LobsterFramework.Utility.SerializableType<T>
+  nameWithType.vb: SerializableType(Of T)
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T)
+  name.vb: SerializableType(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.SortableItem`1
+  commentId: T:LobsterFramework.Utility.SortableItem`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.SortableItem-1.html
+  name: SortableItem<T>
+  nameWithType: SortableItem<T>
+  fullName: LobsterFramework.Utility.SortableItem<T>
+  nameWithType.vb: SortableItem(Of T)
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T)
+  name.vb: SortableItem(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SortableItem`1
+    name: SortableItem
+    href: LobsterFramework.Utility.SortableItem-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SortableItem`1
+    name: SortableItem
+    href: LobsterFramework.Utility.SortableItem-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.MenuGroup`1
+  commentId: T:LobsterFramework.Utility.MenuGroup`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.MenuGroup-1.html
+  name: MenuGroup<T>
+  nameWithType: MenuGroup<T>
+  fullName: LobsterFramework.Utility.MenuGroup<T>
+  nameWithType.vb: MenuGroup(Of T)
+  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T)
+  name.vb: MenuGroup(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.MenuGroup`1
+    name: MenuGroup
+    href: LobsterFramework.Utility.MenuGroup-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.MenuGroup`1
+    name: MenuGroup
+    href: LobsterFramework.Utility.MenuGroup-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.Signal`1
+  commentId: T:LobsterFramework.Utility.Signal`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Signal-1.html
+  name: Signal<T>
+  nameWithType: Signal<T>
+  fullName: LobsterFramework.Utility.Signal<T>
+  nameWithType.vb: Signal(Of T)
+  fullName.vb: LobsterFramework.Utility.Signal(Of T)
+  name.vb: Signal(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.Signal`1
+    name: Signal
+    href: LobsterFramework.Utility.Signal-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.GameUtility
+  commentId: T:LobsterFramework.Utility.GameUtility
+  href: LobsterFramework.Utility.GameUtility.html
+  name: GameUtility
+  nameWithType: GameUtility
+  fullName: LobsterFramework.Utility.GameUtility
+- uid: LobsterFramework.Utility.SerializableDictionary`2
+  commentId: T:LobsterFramework.Utility.SerializableDictionary`2
+  href: LobsterFramework.Utility.SerializableDictionary-2.html
+  name: SerializableDictionary<TKey, TValue>
+  nameWithType: SerializableDictionary<TKey, TValue>
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue)
+  name.vb: SerializableDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Utility.Coroutine
+  commentId: T:LobsterFramework.Utility.Coroutine
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Utility.Coroutine
+- uid: LobsterFramework.Utility.CombinedValue`1
+  commentId: T:LobsterFramework.Utility.CombinedValue`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CombinedValue-1.html
+  name: CombinedValue<T>
+  nameWithType: CombinedValue<T>
+  fullName: LobsterFramework.Utility.CombinedValue<T>
+  nameWithType.vb: CombinedValue(Of T)
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T)
+  name.vb: CombinedValue(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.Utility.CombinedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.CombinedValueEffector`1
+  commentId: T:LobsterFramework.Utility.CombinedValueEffector`1
+  href: LobsterFramework.Utility.CombinedValueEffector-1.html
+  name: CombinedValueEffector<T>
+  nameWithType: CombinedValueEffector<T>
+  fullName: LobsterFramework.Utility.CombinedValueEffector<T>
+  nameWithType.vb: CombinedValueEffector(Of T)
+  fullName.vb: LobsterFramework.Utility.CombinedValueEffector(Of T)
+  name.vb: CombinedValueEffector(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.CombinedValueEffector`1
+    name: CombinedValueEffector
+    href: LobsterFramework.Utility.CombinedValueEffector-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.CombinedValueEffector`1
+    name: CombinedValueEffector
+    href: LobsterFramework.Utility.CombinedValueEffector-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.IntSum
+  commentId: T:LobsterFramework.Utility.IntSum
+  href: LobsterFramework.Utility.IntSum.html
+  name: IntSum
+  nameWithType: IntSum
+  fullName: LobsterFramework.Utility.IntSum
+- uid: LobsterFramework.Utility.FloatSum
+  commentId: T:LobsterFramework.Utility.FloatSum
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.FloatSum.html
+  name: FloatSum
+  nameWithType: FloatSum
+  fullName: LobsterFramework.Utility.FloatSum
+- uid: LobsterFramework.Utility.FloatProduct
+  commentId: T:LobsterFramework.Utility.FloatProduct
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.FloatProduct.html
+  name: FloatProduct
+  nameWithType: FloatProduct
+  fullName: LobsterFramework.Utility.FloatProduct
+- uid: LobsterFramework.Utility.OrValue
+  commentId: T:LobsterFramework.Utility.OrValue
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.OrValue.html
+  name: OrValue
+  nameWithType: OrValue
+  fullName: LobsterFramework.Utility.OrValue
+- uid: LobsterFramework.Utility.And
+  commentId: T:LobsterFramework.Utility.And
+  href: LobsterFramework.Utility.And.html
+  name: And
+  nameWithType: And
+  fullName: LobsterFramework.Utility.And
+- uid: LobsterFramework.Utility.DialogueDisplayer
+  commentId: T:LobsterFramework.Utility.DialogueDisplayer
+  href: LobsterFramework.Utility.DialogueDisplayer.html
+  name: DialogueDisplayer
+  nameWithType: DialogueDisplayer
+  fullName: LobsterFramework.Utility.DialogueDisplayer
+- uid: LobsterFramework.Utility.DialogueResponse
+  commentId: T:LobsterFramework.Utility.DialogueResponse
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.DialogueResponse.html
+  name: DialogueResponse
+  nameWithType: DialogueResponse
+  fullName: LobsterFramework.Utility.DialogueResponse
+- uid: LobsterFramework.Utility.CoroutineOption
+  commentId: T:LobsterFramework.Utility.CoroutineOption
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.Utility.CoroutineOption
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html

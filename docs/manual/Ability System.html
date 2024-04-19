@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Ability System | LobsterFramework documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Ability System | LobsterFramework documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ability-system">Ability System</h1>
+
+<p>This article will serve as an manual to how the Ability System functions in LobsterFramework.</p>
+<h1 id="intro">Intro</h1>
+<p>Before we begin, it is necessary to clarify what kind of ability system we're dealing with here. The idea is directly taken from League of Legends, a MOBA game of 10 where each player play as a champion with a couple unique abilities. Here're some observations.</p>
+<ol>
+<li>Most abilities have cooldowns which represents the amount of time it'll take for them to be available to cast again.</li>
+<li>Some abilities can be interacted with after the initial cast.</li>
+<li>Each ability's effect is somewhat unique, but the extent of these effects (i.e. how much health is restored on a healing spell) is governed by a set of champion stats (Attack Damage, Ability Power, etc) in that is shared by all champions.</li>
+<li>Some abilities feature effects that is affected by stats/resources that only exists on certain champions.</li>
+<li>Abilities are ranked by their priorities, abilities with higher priorities are executed earlier than others.</li>
+<li>Abilities can be interrupted</li>
+</ol>
+<p>There're some other features I will not go in detail here. Overall, the design goal is for it to have the following properties:</p>
+<ul>
+<li>Ability can have unique attributes</li>
+<li>Ability can have unfixed duration at runtime</li>
+<li>Data can be shared between abilities</li>
+<li>Ability must be evaluated in a certain order to make results deterministic</li>
+<li>Ability can be interrupted</li>
+<li>Ability can be react to events</li>
+<li>Ability can be communicated with during its execution</li>
+<li>Configurable ability settings, the configuration can be saved assets and should act like other assets and be used by any entity.</li>
+<li>Editor Support: Having custom inspector that allows developers to easily configure ability settings</li>
+<li>Code-Backed &amp; Single Threaded. All abilities and the associated parts should be implemented with code. Although developers can edit abilities settings in the inspector, this system is not intended for creation of abilities inside editor.</li>
+</ul>
+<h1 id="core-classes">Core Classes</h1>
+<p>It is important to understand these classes before diving into the usages.</p>
+<h2 id="abilitymanager">AbilityManager</h2>
+<p>Attach this component to the character to enable it to cast abilities. This component takes in an <a href="#AbilityData">AbilityData</a> as input. Calls to enqueue, query, terminate, send event to and communication with abilities should only be done during the <em>Update</em> event.</p>
+<h2 id="abilityexecutor">AbilityExecutor</h2>
+<p>A singleton component to be attached to a persistent manager object. This component handles ability execution during <em>LateUpdate</em> event.</p>
+<h2 id="abilitydata">AbilityData</h2>
+<p>An asset object that defines a set of <a href="#Ability">Abilities</a> and <a href="#AbilityComponent">Ability Components</a>. Can be edited using inspector.</p>
+<h2 id="ability">Ability</h2>
+<p>An asset object that defines an ability in the Ability System. To create new abilities, you must subclass it and implement the required methods. It comes with 3 complimentary classes that you must define: <a href="#AbilityConfig">AbilityConfig</a>, <a href="#AbilityChannel">AbilityChannel</a>, <a href="#AbilityContext">AbilityContext</a>.</p>
+<h2 id="abilityconfig">AbilityConfig</h2>
+<p>An asset object that defines the setting of the ability. A new ability needs to define <strong>{#NameOfAbility}Config</strong> that inherit from this class or its parent's config class if there's one.</p>
+<h2 id="abilitychannel">AbilityChannel</h2>
+<p>Allows client code to communicate with the ability when it is being runned. A new ability needs to define <strong>{#NameOfAbility}Channel</strong> that inherit from this class or its parent's channel class if there's one. You should not define constructors with parameters for this class. For custom initialization see <strong>Ability.InitializeContext()</strong>.</p>
+<h2 id="abilitycontext">AbilityContext</h2>
+<p>Stores context variables use by the ability during its execution. A new ability needs to define <strong>{#NameOfAbility}Context</strong> that inherit from this class or its parent's context class if there's one. You should not define constructors with parameters for this class. For custom initialization see <strong>Ability.InitializeContext()</strong>.</p>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/Documentation/manual/Ability System.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      LobsterFramework documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

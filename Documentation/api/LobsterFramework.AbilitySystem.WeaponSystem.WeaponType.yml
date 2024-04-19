@@ -1,0 +1,238 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  id: WeaponType
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  children:
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Dagger
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.EmptyHand
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Firearm
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Hammer
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Stick
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Sword
+  langs:
+  - csharp
+  - vb
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  type: Enum
+  source:
+    remote:
+      path: AbilitySystem/Weapon/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: WeaponType
+    path: ../AbilitySystem/Weapon/Weapon.cs
+    startLine: 308
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum WeaponType
+    content.vb: >-
+      <Serializable>
+
+      Public Enum WeaponType
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Sword
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Sword
+  id: Sword
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Sword
+  nameWithType: WeaponType.Sword
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Sword
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Weapon/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Sword
+    path: ../AbilitySystem/Weapon/Weapon.cs
+    startLine: 311
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: Sword = 0
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Hammer
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Hammer
+  id: Hammer
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Hammer
+  nameWithType: WeaponType.Hammer
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Hammer
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Weapon/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Hammer
+    path: ../AbilitySystem/Weapon/Weapon.cs
+    startLine: 312
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: Hammer = 1
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Dagger
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Dagger
+  id: Dagger
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Dagger
+  nameWithType: WeaponType.Dagger
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Dagger
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Weapon/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Dagger
+    path: ../AbilitySystem/Weapon/Weapon.cs
+    startLine: 313
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: Dagger = 2
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Stick
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Stick
+  id: Stick
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Stick
+  nameWithType: WeaponType.Stick
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Stick
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Weapon/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Stick
+    path: ../AbilitySystem/Weapon/Weapon.cs
+    startLine: 314
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: Stick = 3
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.EmptyHand
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.EmptyHand
+  id: EmptyHand
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: EmptyHand
+  nameWithType: WeaponType.EmptyHand
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.EmptyHand
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Weapon/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: EmptyHand
+    path: ../AbilitySystem/Weapon/Weapon.cs
+    startLine: 317
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: EmptyHand = 4
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Firearm
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Firearm
+  id: Firearm
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Firearm
+  nameWithType: WeaponType.Firearm
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.Firearm
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Weapon/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Firearm
+    path: ../AbilitySystem/Weapon/Weapon.cs
+    startLine: 320
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: Firearm = 5
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+references:
+- uid: LobsterFramework.AbilitySystem.WeaponSystem
+  commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem.WeaponSystem
+  nameWithType: LobsterFramework.AbilitySystem.WeaponSystem
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem
+    name: WeaponSystem
+    href: LobsterFramework.AbilitySystem.WeaponSystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem
+    name: WeaponSystem
+    href: LobsterFramework.AbilitySystem.WeaponSystem.html
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.html
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType

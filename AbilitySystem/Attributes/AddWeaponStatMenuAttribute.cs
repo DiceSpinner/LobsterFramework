@@ -6,7 +6,7 @@ using System;
 using UnityEditor;
 #endif
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class AddWeaponStatMenuAttribute : Attribute

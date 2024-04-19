@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     public class LightWeaponAttackConfig : AbilityConfig
     {

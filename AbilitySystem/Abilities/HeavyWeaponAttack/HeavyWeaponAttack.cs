@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Animancer;
 using LobsterFramework.Utility;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [AddAbilityMenu]
     [RequireAbilityComponents(typeof(DamageModifier))]
@@ -25,11 +25,19 @@ namespace LobsterFramework.AbilitySystem
             rotate = moveControl.rotateSpeedModifier.MakeEffector();
         }
 
+        protected override void InitializeContext()
+        {
+            HeavyWeaponAttackChannel channel = (HeavyWeaponAttackChannel)Channel;
+            channel.SetConfig((HeavyWeaponAttackConfig)Config);
+        }
+
         protected override void OnCoroutineEnqueue()
         {
             HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
             context.currentWeapon = WeaponManager.Mainhand;
             context.chargeTimer = 0;
+            context.animationSignaled.Reset();
+            context.inputSignaled.Reset();
 
             AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip(context.currentWeapon.WeaponType, typeof(HeavyWeaponAttack));
 
@@ -77,8 +85,6 @@ namespace LobsterFramework.AbilitySystem
         {
             HeavyWeaponAttackContext context = (HeavyWeaponAttackContext)Context;
             UnSubscribeWeaponEvent();
-            context.animationSignaled.Reset();
-            context.inputSignaled.Reset();
             context.currentWeapon.Disable();
             move.Release();
             rotate.Release();
@@ -158,10 +164,7 @@ namespace LobsterFramework.AbilitySystem
         public float MaxChargeDamageIncrease { get { return conf.MaxChargeDamageIncrease; } }
         public float BaseDamageModifier { get { return conf.BaseDamageModifier; } }
 
-        public override void Construct()
-        {
-            conf = (HeavyWeaponAttackConfig)config;
-        }
+        public void SetConfig(HeavyWeaponAttackConfig config) { conf = config; }
     }
 
     public class HeavyWeaponAttackContext : AbilityCoroutineContext

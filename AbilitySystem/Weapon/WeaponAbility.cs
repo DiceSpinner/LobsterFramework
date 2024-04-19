@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     /// <summary>
     /// Convenient template for creating weapon abilities. Weapon abilities can only have one instance running at any given moment.
@@ -13,7 +13,7 @@ namespace LobsterFramework.AbilitySystem
         protected WeaponManager WeaponManager { get; private set; }
         protected bool IsMainhanded { get;private set; }
 
-        protected sealed override void Initialize()
+        protected sealed override void InitializeSharedReferences()
         {
             WeaponManager = abilityManager.GetComponentInBoth<WeaponManager>();
             IsMainhanded = !OffhandWeaponAbilityAttribute.IsOffhand(GetType());
@@ -37,7 +37,7 @@ namespace LobsterFramework.AbilitySystem
                     return false;
                 }
             }
-            return query != null && Running == 0 && RequireWeaponStatAttribute.HasWeaponStats(GetType(), WeaponManager) && WConditionSatisfied();
+            return query != null && InstancesRunning == 0 && RequireWeaponStatAttribute.HasWeaponStats(GetType(), WeaponManager) && WConditionSatisfied();
         }
 
         /// <summary>

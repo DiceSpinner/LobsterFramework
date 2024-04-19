@@ -20,7 +20,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CharacterStateManager
     path: ../Components/CharacterStateManager.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -199,7 +199,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: suppression
     path: ../Components/CharacterStateManager.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

@@ -5,7 +5,7 @@ using LobsterFramework.Utility;
 using LobsterFramework.Pool;
 using System;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     /// <summary>
     /// 

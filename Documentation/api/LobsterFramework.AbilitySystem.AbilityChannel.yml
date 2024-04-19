@@ -4,10 +4,7 @@ items:
   commentId: T:LobsterFramework.AbilitySystem.AbilityChannel
   id: AbilityChannel
   parent: LobsterFramework.AbilitySystem
-  children:
-  - LobsterFramework.AbilitySystem.AbilityChannel.Construct
-  - LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
-  - LobsterFramework.AbilitySystem.AbilityChannel.config
+  children: []
   langs:
   - csharp
   - vb
@@ -22,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityChannel
     path: ../AbilitySystem/Ability.cs
-    startLine: 641
+    startLine: 480
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -34,12 +31,11 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
-  - LobsterFramework.AbilitySystem.GuardChannel
-  - LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel
-  - LobsterFramework.AbilitySystem.LightWeaponAttackChannel
-  - LobsterFramework.AbilitySystem.OffhandAbilityChannel
-  - LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
-  - LobsterFramework.AbilitySystem.WeaponArtChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -48,88 +44,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
-  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
-  id: config
-  parent: LobsterFramework.AbilitySystem.AbilityChannel
-  langs:
-  - csharp
-  - vb
-  name: config
-  nameWithType: AbilityChannel.config
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: config
-    path: ../AbilitySystem/Ability.cs
-    startLine: 643
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: protected AbilityConfig config
-    return:
-      type: LobsterFramework.AbilitySystem.AbilityConfig
-    content.vb: Protected config As AbilityConfig
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
-  id: Construct(LobsterFramework.AbilitySystem.AbilityConfig)
-  parent: LobsterFramework.AbilitySystem.AbilityChannel
-  langs:
-  - csharp
-  - vb
-  name: Construct(AbilityConfig)
-  nameWithType: AbilityChannel.Construct(AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Construct
-    path: ../AbilitySystem/Ability.cs
-    startLine: 644
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public void Construct(AbilityConfig config)
-    parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.AbilityConfig
-    content.vb: Public Sub Construct(config As AbilityConfig)
-  overload: LobsterFramework.AbilitySystem.AbilityChannel.Construct*
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct
-  commentId: M:LobsterFramework.AbilitySystem.AbilityChannel.Construct
-  id: Construct
-  parent: LobsterFramework.AbilitySystem.AbilityChannel
-  langs:
-  - csharp
-  - vb
-  name: Construct()
-  nameWithType: AbilityChannel.Construct()
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Construct()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Construct
-    path: ../AbilitySystem/Ability.cs
-    startLine: 649
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public virtual void Construct()
-    content.vb: Public Overridable Sub Construct()
-  overload: LobsterFramework.AbilitySystem.AbilityChannel.Construct*
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -390,16 +304,3 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: LobsterFramework.AbilitySystem.AbilityConfig
-  commentId: T:LobsterFramework.AbilitySystem.AbilityConfig
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.AbilityConfig.html
-  name: AbilityConfig
-  nameWithType: AbilityConfig
-  fullName: LobsterFramework.AbilitySystem.AbilityConfig
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.Construct*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.Construct
-  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Construct(LobsterFramework.AbilitySystem.AbilityConfig)
-  name: Construct
-  nameWithType: AbilityChannel.Construct
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Construct

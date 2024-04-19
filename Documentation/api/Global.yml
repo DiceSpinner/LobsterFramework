@@ -4,8 +4,6 @@ items:
   id: Global
   children:
   - Global.AITrackData
-  - Global.ActionPriority
-  - Global.ActionPrioritySO
   - Global.BoolEventChannel
   - Global.ControllerData
   - Global.DescriptionBaseSO
@@ -13,8 +11,6 @@ items:
   - Global.IntEventChannel
   - Global.OrderedSet`1
   - Global.Projectile
-  - Global.RefAbilityPriority
-  - Global.RefActionPriorityDrawer
   - Global.RefBool
   - Global.RefBoolDrawer
   - Global.RefFloat
@@ -45,18 +41,6 @@ items:
   assemblies:
   - LobsterFramework
 references:
-- uid: Global.ActionPrioritySO
-  commentId: T:Global.ActionPrioritySO
-  href: ActionPrioritySO.html
-  name: ActionPrioritySO
-  nameWithType: ActionPrioritySO
-  fullName: ActionPrioritySO
-- uid: Global.ActionPriority
-  commentId: T:Global.ActionPriority
-  href: ActionPriority.html
-  name: ActionPriority
-  nameWithType: ActionPriority
-  fullName: ActionPriority
 - uid: Global.VarFloat
   commentId: T:Global.VarFloat
   href: VarFloat.html
@@ -118,12 +102,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: Global.RefAbilityPriority
-  commentId: T:Global.RefAbilityPriority
-  href: RefAbilityPriority.html
-  name: RefAbilityPriority
-  nameWithType: RefAbilityPriority
-  fullName: RefAbilityPriority
 - uid: Global.ControllerData
   commentId: T:Global.ControllerData
   href: ControllerData.html
@@ -258,12 +236,6 @@ references:
   name: VarStringDrawer
   nameWithType: VarStringDrawer
   fullName: VarStringDrawer
-- uid: Global.RefActionPriorityDrawer
-  commentId: T:Global.RefActionPriorityDrawer
-  href: RefActionPriorityDrawer.html
-  name: RefActionPriorityDrawer
-  nameWithType: RefActionPriorityDrawer
-  fullName: RefActionPriorityDrawer
 - uid: Global.VarIntDrawer
   commentId: T:Global.VarIntDrawer
   href: VarIntDrawer.html

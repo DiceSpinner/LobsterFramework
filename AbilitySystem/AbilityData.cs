@@ -1,4 +1,3 @@
-using LobsterFramework.Utility;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,44 +8,29 @@ using UnityEditor;
 
 namespace LobsterFramework.AbilitySystem
 {
+    
     [CreateAssetMenu(menuName = "Ability/AbilityData")]
+    /// <summary>
+    /// Defines the set of abilities and ability components an actor can take on. Used as input to <see cref="AbilityManager">.
+    /// </summary>
     public class AbilityData : ScriptableObject
     {
+        public const string defaultAbilityInstance = "default";
+
         [SerializeField] internal AbilityComponentDictionary components = new();
         [SerializeField] internal AbilityDictionary abilities = new();
-        internal Dictionary<string, Ability> availableAbilities = new();
-        internal bool isContext = false;
+        internal Dictionary<string, Ability> runnables = new();
 
         /// <summary>
         /// Initialize the ability context environments
         /// </summary>
-        /// <param name="abilityRunner">The component that operates on this data</param>
-        internal void Open(AbilityManager abilityRunner)
+        /// <param name="abilityManager">The component that operates on this data</param>
+        internal void Begin(AbilityManager abilityManager)
         {
-            isContext = true;
-            availableAbilities.Clear();
+            runnables.Clear();
             GameObject topLevel = default;
-            if (abilityRunner.TopLevelTransform != null) {
-                topLevel = abilityRunner.TopLevelTransform.gameObject;
-            }
-
-            foreach (string key in abilities.Keys)
-            {
-                Ability ai = abilities[key];
-
-                bool result;
-                if (topLevel == null) {
-                    result = ComponentRequiredAttribute.ComponentCheck(ai.GetType(), abilityRunner.gameObject);
-                }
-                else {
-                    result = ComponentRequiredAttribute.ComponentCheck(ai.GetType(), abilityRunner.gameObject, topLevel);
-                }
-                if (result)
-                {
-                    ai.abilityManager = abilityRunner;
-                    ai.OnOpen();
-                    availableAbilities[ai.GetType().AssemblyQualifiedName] = ai;
-                }
+            if (abilityManager.TopLevelTransform != null) {
+                topLevel = abilityManager.TopLevelTransform.gameObject;
             }
 
             foreach (string key in components.Keys)
@@ -54,16 +38,40 @@ namespace LobsterFramework.AbilitySystem
                 AbilityComponent component = components[key];
                 component.Initialize();
             }
+
+            abilityManager.components = components;
+
+            foreach (string key in abilities.Keys)
+            {
+                Ability ability = abilities[key];
+
+                bool result;
+                if (topLevel == null) {
+                    result = ComponentRequiredAttribute.ComponentCheck(abilityManager.gameObject, ability.GetType(), abilityManager.gameObject);
+                }
+                else {
+                    result = ComponentRequiredAttribute.ComponentCheck(abilityManager.gameObject, ability.GetType(), abilityManager.gameObject, topLevel);
+                }
+                if (result)
+                {
+                    ability.abilityManager = abilityManager;
+                    ability.Begin();
+                    runnables[ability.GetType().AssemblyQualifiedName] = ability;
+                }
+            }
+            
+            abilityManager.abilities = runnables;
         }
 
         /// <summary>
         /// Clean up ability context environments. This has no effect if this is an asset.
         /// </summary>
-        public void Close() {
-            if (!isContext) {
+        public void FinalizeContext() {
+            if (AssetDatabase.Contains(this)) {
+                Debug.LogWarning($"Calling {nameof(FinalizeContext)}() on asset!");
                 return;
             }
-            foreach (Ability ability in availableAbilities.Values)
+            foreach (Ability ability in runnables.Values)
             {
                 ability.OnClose();
             }
@@ -132,7 +140,6 @@ namespace LobsterFramework.AbilitySystem
             AbilityData cloned = Instantiate(this);
             cloned.CopyAbilityAsset();
             cloned.name = this.name;
-            cloned.isContext = false;
             return cloned;
         }
 
@@ -205,14 +212,14 @@ namespace LobsterFramework.AbilitySystem
         {
             if (AssetDatabase.Contains(this))
             {
-                foreach (AbilityComponent cmp in components.Values)
+                foreach (AbilityComponent component in components.Values)
                 {
-                    AssetDatabase.AddObjectToAsset(cmp, this);
+                    AssetDatabase.AddObjectToAsset(component, this);
                 }
-                foreach (Ability ai in abilities.Values)
+                foreach (Ability ability in abilities.Values)
                 {
-                    AssetDatabase.AddObjectToAsset(ai, this);
-                    ai.SaveConfigsAsAsset();
+                    AssetDatabase.AddObjectToAsset(ability, this);
+                    ability.SaveConfigsAsAsset();
                 }
             }
         }
@@ -254,14 +261,17 @@ namespace LobsterFramework.AbilitySystem
 
             if (AbilityComponentsCheck<T>())
             {
-                T ai = CreateInstance<T>();
-                abilities.Add(typeof(T).AssemblyQualifiedName, ai);
-                ai.configs = new();
-                ai.name = typeof(T).FullName;
+                T ability = CreateInstance<T>();
+                abilities.Add(typeof(T).AssemblyQualifiedName, ability);
+                ability.configs = new();
+                ability.name = typeof(T).FullName;
+
                 if (AssetDatabase.Contains(this))
                 {
-                    AssetDatabase.AddObjectToAsset(ai, this);
+                    AssetDatabase.AddObjectToAsset(ability, this);
                 }
+
+                ability.AddInstance(defaultAbilityInstance);
                 return true;
             }
             return false;
@@ -277,6 +287,7 @@ namespace LobsterFramework.AbilitySystem
             Ability ability = GetAbility<T>();
             if (ability != null)
             {
+                ability.SuspendAll();
                 abilities.Remove(typeof(T).AssemblyQualifiedName);
                 AssetDatabase.RemoveObjectFromAsset(ability);
                 DestroyImmediate(ability, true);

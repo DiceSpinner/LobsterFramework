@@ -235,7 +235,7 @@ public class ComponentRequiredAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_ComponentRequiredAttribute__ctor_System_Type___.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.ComponentRequiredAttribute.%23ctor(System.Type%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L19">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L18">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_ComponentRequiredAttribute__ctor_" data-uid="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor*"></a>
   <h4 id="LobsterFramework_AbilitySystem_ComponentRequiredAttribute__ctor_System_Type___" data-uid="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor(System.Type[])">ComponentRequiredAttribute(params Type[])</h4>
@@ -266,19 +266,19 @@ public class ComponentRequiredAttribute : Attribute</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_ComponentRequiredAttribute_ComponentCheck_System_Type_UnityEngine_GameObject___.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type%2CUnityEngine.GameObject%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_ComponentRequiredAttribute_ComponentCheck_UnityEngine_GameObject_System_Type_UnityEngine_GameObject___.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject%2CSystem.Type%2CUnityEngine.GameObject%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L40">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L39">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_ComponentRequiredAttribute_ComponentCheck_" data-uid="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_ComponentRequiredAttribute_ComponentCheck_System_Type_UnityEngine_GameObject___" data-uid="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject[])">ComponentCheck(Type, params GameObject[])</h4>
+  <h4 id="LobsterFramework_AbilitySystem_ComponentRequiredAttribute_ComponentCheck_UnityEngine_GameObject_System_Type_UnityEngine_GameObject___" data-uid="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject,System.Type,UnityEngine.GameObject[])">ComponentCheck(GameObject, Type, params GameObject[])</h4>
   <div class="markdown level1 summary"><p>Check if the action component and the gameobject satisfies the requirements of the ActionInstance defined by its attributes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool ComponentCheck(Type type, params GameObject[] objects)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool ComponentCheck(GameObject parent, Type type, params GameObject[] objects)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -290,6 +290,11 @@ public class ComponentRequiredAttribute : Attribute</code></pre>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObject</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
@@ -325,7 +330,7 @@ public class ComponentRequiredAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_ComponentRequiredAttribute_Init_System_Type_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L24">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L23">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_ComponentRequiredAttribute_Init_" data-uid="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init*"></a>
   <h4 id="LobsterFramework_AbilitySystem_ComponentRequiredAttribute_Init_System_Type_" data-uid="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)">Init(Type)</h4>
@@ -364,7 +369,7 @@ public class ComponentRequiredAttribute : Attribute</code></pre>
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_ComponentRequiredAttribute.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.ComponentRequiredAttribute%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/ComponentRequiredAttribute.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

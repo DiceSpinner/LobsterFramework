@@ -5,7 +5,7 @@ using UnityEditor;
 
 namespace LobsterFramework.Editors
 {
-    [CustomPropertyDrawer(typeof(DisableInPlayMode))]
+    [CustomPropertyDrawer(typeof(DisableEditInPlayMode))]
     public class DisableInPlayModeDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

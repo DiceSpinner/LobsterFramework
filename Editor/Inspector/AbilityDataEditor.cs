@@ -57,6 +57,7 @@ namespace LobsterFramework.Editors
             serializedObject.Update();
             AbilityData abilityData = (AbilityData)target;
 
+            #region Update AbilityData
             if (Event.current.type == EventType.Layout) {
                 if (newSelectedAbility != null) {
                     selectedAbility = newSelectedAbility;
@@ -85,6 +86,7 @@ namespace LobsterFramework.Editors
                     removedAbilityComponent = null;
                 }
             }
+            #endregion
 
             EditorGUILayout.HelpBox("Note: When editing list properties of abilities, drag reference directly to the list itself instead of its element fields, " +
             "otherwise the reference may not be saved.", MessageType.Info, true);
@@ -111,6 +113,7 @@ namespace LobsterFramework.Editors
             bool aButton = GUILayout.Button("Add", GUILayout.Width(80));
             EditorGUILayout.EndHorizontal();
 
+            #region Add Ability Component
             if (aButton) // Add action component button clicked
             {
                 addAbilityComponentRect.position = Event.current.mousePosition;
@@ -118,6 +121,7 @@ namespace LobsterFramework.Editors
                 popup.data = abilityData;
                 PopupWindow.Show(addAbilityComponentRect, popup);
             }
+            #endregion
 
             if (abilityComponents.isExpanded)
             {
@@ -127,6 +131,7 @@ namespace LobsterFramework.Editors
                 }
                 else
                 {
+                    #region Create editor for selected component
                     EditorGUILayout.Space();
                     if (selectedAbilityComponent == null)
                     {
@@ -143,7 +148,9 @@ namespace LobsterFramework.Editors
                         editor = CreateEditor(selectedAbilityComponent);
                         abilityComponentEditors.Add(type, editor);
                     }
+                    #endregion
 
+                    #region Draw Selected Ability Component Buttons
                     EditorGUILayout.BeginHorizontal();
                     GUIContent content = new();
                     bool selected;
@@ -159,12 +166,14 @@ namespace LobsterFramework.Editors
                     } 
                     GUILayout.FlexibleSpace();
                     EditorGUILayout.BeginVertical();
-                    bool clicked = EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle(), GUILayout.Width(80));
+                    bool removeClicked = EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle(), GUILayout.Width(80));
                     EditorGUILayout.EndVertical();
                     EditorGUILayout.EndHorizontal();
+                    #endregion
 
                     editor.OnInspectorGUI();
 
+                    #region SelectAbilityComponent Button Clicked
                     if (selected)
                     {
                         selectAbilityComponentRect.position = Event.current.mousePosition;
@@ -173,8 +182,9 @@ namespace LobsterFramework.Editors
                         popup.data = abilityData;
                         PopupWindow.Show(selectAbilityComponentRect, popup);
                     }
-                    
-                    if (clicked) {
+                    #endregion
+
+                    if (removeClicked) {
                         removedAbilityComponent = type;
                     }
                 }
@@ -188,10 +198,10 @@ namespace LobsterFramework.Editors
             EditorGUILayout.BeginHorizontal();
             abilities.isExpanded = EditorGUILayout.Foldout(abilities.isExpanded, "Abilities: " + abilityData.abilities.Count);
             GUILayout.FlexibleSpace();
-            bool aiButton = GUILayout.Button("Add Ability", GUILayout.Width(110));
+            bool addAbilityClicked = GUILayout.Button("Add Ability", GUILayout.Width(110));
             EditorGUILayout.EndHorizontal();
 
-            if (aiButton) // Add ability button clicked 
+            if (addAbilityClicked) // Add ability button clicked 
             {
                 addAbilityRect.position = Event.current.mousePosition;
                 AddAbilityPopup.data = abilityData;
@@ -202,7 +212,7 @@ namespace LobsterFramework.Editors
             if (abilities.isExpanded)
             {
                 EditorGUILayout.Space();
-                UnityEditor.Editor editor;
+                Editor editor;
                 if (abilityData.abilities.Count == 0)
                 {
                     EditorGUILayout.LabelField("No abilities available for display!");

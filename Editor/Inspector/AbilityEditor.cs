@@ -6,10 +6,10 @@ using LobsterFramework.AbilitySystem;
 namespace LobsterFramework.Editors
 {
     [CustomEditor(typeof(Ability), true)]
-    public class AbilityEditor : UnityEditor.Editor
+    public class AbilityEditor : Editor
     {
         private string selectedConfig;
-        private string addConfigName;
+        private string addInstanceName;
         private Editor configEditor;
 
         public override void OnInspectorGUI()
@@ -17,23 +17,27 @@ namespace LobsterFramework.Editors
             base.OnInspectorGUI();
             EditorGUI.BeginChangeCheck();
             Ability ability = (Ability)target;
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Config Name");
-            GUILayout.FlexibleSpace();
-            addConfigName = EditorGUILayout.TextField(addConfigName);
 
-            if (GUILayout.Button("Add", GUILayout.Width(100)))
+            #region Add Instance
+            EditorGUILayout.Space(10);
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("New Instance");
+            GUILayout.FlexibleSpace();
+            addInstanceName = EditorGUILayout.TextField(addInstanceName);
+
+            if (GUILayout.Button("Create", GUILayout.Width(100)))
             {
-                if (addConfigName == null)
+                if (addInstanceName == null)
                 {
-                    Debug.LogError("Field is empty!");
+                    Debug.LogWarning("Field cannot be empty!");
                 }
                 else
                 {
-                    ability.AddConfig(addConfigName);
+                    ability.AddInstance(addInstanceName);
                 }
             }
             EditorGUILayout.EndHorizontal();
+            #endregion
 
             if (ability.configs.Count > 0)
             {
@@ -43,6 +47,7 @@ namespace LobsterFramework.Editors
                 style.normal.textColor = Color.green;
                 style.hover.background = Texture2D.grayTexture;
 
+                #region Select Config
                 if (GUILayout.Button(selectedConfig, style, GUILayout.Width(100)))
                 {
                     GenericMenu menu = new GenericMenu();
@@ -66,26 +71,32 @@ namespace LobsterFramework.Editors
                 {
                     configEditor = CreateEditor(ability.configs[selectedConfig]);
                 }
+                #endregion
 
                 configEditor.OnInspectorGUI();
-                GUILayout.Space(10);
-                GUILayout.BeginHorizontal();
-                GUILayout.FlexibleSpace();
-                if (EditorUtils.Button(Color.red, "Remove Config", EditorUtils.BoldButtonStyle(), GUILayout.Width(110)))
-                {
-                    ability.RemoveConfig(selectedConfig);
-                    if (ability.configs.Count > 0)
-                    {
-                        selectedConfig = ability.configs.Last().Key;
-                    }
 
-                    DestroyImmediate(configEditor);
+                #region Remove Instance
+                if (selectedConfig != AbilityData.defaultAbilityInstance) {
+                    GUILayout.Space(10);
+                    GUILayout.BeginHorizontal();
+                    GUILayout.FlexibleSpace();
+                    if (EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle(), GUILayout.Width(80)))
+                    {
+                        ability.RemoveInstance(selectedConfig);
+                        if (ability.configs.Count > 0)
+                        {
+                            selectedConfig = ability.configs.Last().Key;
+                        }
+
+                        DestroyImmediate(configEditor);
+                    }
+                    GUILayout.EndHorizontal();
                 }
-                GUILayout.EndHorizontal();
+                #endregion
             }
             else
             {
-                EditorGUILayout.LabelField("No configs available");
+                EditorGUILayout.LabelField("No ability instances available!");
             }
 
             if (EditorGUI.EndChangeCheck())

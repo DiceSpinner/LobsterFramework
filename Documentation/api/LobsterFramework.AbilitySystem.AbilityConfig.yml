@@ -23,7 +23,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityConfig
     path: ../AbilitySystem/Ability.cs
-    startLine: 655
+    startLine: 487
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -43,13 +43,11 @@ items:
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   derivedClasses:
-  - LobsterFramework.AbilitySystem.GuardConfig
-  - LobsterFramework.AbilitySystem.HeavyWeaponAttackConfig
-  - LobsterFramework.AbilitySystem.LightWeaponAttackConfig
-  - LobsterFramework.AbilitySystem.OffhandAbilityConfig
-  - LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
-  - LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
-  - LobsterFramework.AbilitySystem.WeaponArtConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -127,7 +125,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CoolDown
     path: ../AbilitySystem/Ability.cs
-    startLine: 659
+    startLine: 491
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -156,7 +154,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UseCooldown
     path: ../AbilitySystem/Ability.cs
-    startLine: 660
+    startLine: 492
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -185,7 +183,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Validate
     path: ../AbilitySystem/Ability.cs
-    startLine: 665
+    startLine: 497
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -213,7 +211,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnValidate
     path: ../AbilitySystem/Ability.cs
-    startLine: 667
+    startLine: 499
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

@@ -37,9 +37,9 @@ namespace LobsterFramework.Editors
             Color color = GUI.color;
 
             foreach (var kwp in groups) {
-                GUI.color = StateDataEditorSetting.instance.menuColor;
+                GUI.color = StateEditorConfig.MenuColor;
                 GUILayout.Label(kwp.Key.pathName);
-                GUI.color = StateDataEditorSetting.instance.stateColor;
+                GUI.color = StateEditorConfig.StateColor;
                 foreach (State state in kwp.Value) {
                     Type type = state.GetType();
 
@@ -68,7 +68,7 @@ namespace LobsterFramework.Editors
                         editor.nextState = data.states[key];
                         editorWindow.Close();
                     }
-                    GUI.color = StateDataEditorSetting.instance.stateColor;
+                    GUI.color = StateEditorConfig.StateColor;
                 }
             }
 

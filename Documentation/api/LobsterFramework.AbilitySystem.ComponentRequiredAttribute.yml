@@ -6,7 +6,7 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor(System.Type[])
-  - LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject[])
+  - LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject,System.Type,UnityEngine.GameObject[])
   - LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)
   langs:
   - csharp
@@ -22,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ComponentRequiredAttribute
     path: ../AbilitySystem/Attributes/ComponentRequiredAttribute.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AbilitySystem/Attributes/ComponentRequiredAttribute.cs
-    startLine: 18
+    startLine: 17
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -146,7 +146,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Init
     path: ../AbilitySystem/Attributes/ComponentRequiredAttribute.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -157,16 +157,16 @@ items:
       type: System.Type
     content.vb: Public Sub Init(type As Type)
   overload: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init*
-- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject[])
-  commentId: M:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject[])
-  id: ComponentCheck(System.Type,UnityEngine.GameObject[])
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject,System.Type,UnityEngine.GameObject[])
+  commentId: M:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject,System.Type,UnityEngine.GameObject[])
+  id: ComponentCheck(UnityEngine.GameObject,System.Type,UnityEngine.GameObject[])
   parent: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
   langs:
   - csharp
   - vb
-  name: ComponentCheck(Type, params GameObject[])
-  nameWithType: ComponentRequiredAttribute.ComponentCheck(Type, params GameObject[])
-  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type, params UnityEngine.GameObject[])
+  name: ComponentCheck(GameObject, Type, params GameObject[])
+  nameWithType: ComponentRequiredAttribute.ComponentCheck(GameObject, Type, params GameObject[])
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject, System.Type, params UnityEngine.GameObject[])
   type: Method
   source:
     remote:
@@ -175,15 +175,17 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ComponentCheck
     path: ../AbilitySystem/Attributes/ComponentRequiredAttribute.cs
-    startLine: 39
+    startLine: 38
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Check if the action component and the gameobject satisfies the requirements of the ActionInstance defined by its attributes.
   example: []
   syntax:
-    content: public static bool ComponentCheck(Type type, params GameObject[] objects)
+    content: public static bool ComponentCheck(GameObject parent, Type type, params GameObject[] objects)
     parameters:
+    - id: parent
+      type: UnityEngine.GameObject
     - id: type
       type: System.Type
       description: The type of the ability to examine for requirements
@@ -193,11 +195,11 @@ items:
     return:
       type: System.Boolean
       description: Whether the gameobject satisfied the component requirements. If there's no requirement, return true. If obj is null, return false.
-    content.vb: Public Shared Function ComponentCheck(type As Type, ParamArray objects As GameObject()) As Boolean
+    content.vb: Public Shared Function ComponentCheck(parent As GameObject, type As Type, ParamArray objects As GameObject()) As Boolean
   overload: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck*
-  nameWithType.vb: ComponentRequiredAttribute.ComponentCheck(Type, ParamArray GameObject())
-  fullName.vb: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type, ParamArray UnityEngine.GameObject())
-  name.vb: ComponentCheck(Type, ParamArray GameObject())
+  nameWithType.vb: ComponentRequiredAttribute.ComponentCheck(GameObject, Type, ParamArray GameObject())
+  fullName.vb: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject, System.Type, ParamArray UnityEngine.GameObject())
+  name.vb: ComponentCheck(GameObject, Type, ParamArray GameObject())
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -2063,10 +2065,17 @@ references:
   fullName: System.Type
 - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck*
   commentId: Overload:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck
-  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html#LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject[])
+  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html#LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(UnityEngine.GameObject,System.Type,UnityEngine.GameObject[])
   name: ComponentCheck
   nameWithType: ComponentRequiredAttribute.ComponentCheck
   fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
 - uid: UnityEngine.GameObject[]
   isExternal: true
   name: GameObject[]
@@ -2098,3 +2107,9 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

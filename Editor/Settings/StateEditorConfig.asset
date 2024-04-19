@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ce87c521f2a464ebc01c8e5852fca6, type: 3}
+  m_Name: StateEditorConfig
+  m_EditorClassIdentifier: 
+  menuIcons:
+  - path: Swordman
+    icon: {fileID: 2800000, guid: c83c81f28d484764c8b68c7040328cf6, type: 3}
+  - path: Stickman
+    icon: {fileID: 2800000, guid: 1589265cac0b7d04b8d9ac7c8d53f1b7, type: 3}
+  menuColor: {r: 1, g: 0.885117, b: 0, a: 1}
+  stateColor: {r: 0, g: 0.7444444, b: 1, a: 1}

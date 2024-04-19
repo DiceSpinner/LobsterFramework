@@ -26,11 +26,11 @@ items:
   namespace: LobsterFramework.Editors
   syntax:
     content: >-
-      [CustomPropertyDrawer(typeof(DisableInPlayMode))]
+      [CustomPropertyDrawer(typeof(DisableEditInPlayMode))]
 
       public class DisableInPlayModeDrawer : PropertyDrawer
     content.vb: >-
-      <CustomPropertyDrawer(GetType(DisableInPlayMode))>
+      <CustomPropertyDrawer(GetType(DisableEditInPlayMode))>
 
       Public Class DisableInPlayModeDrawer Inherits PropertyDrawer
   inheritance:
@@ -56,7 +56,7 @@ items:
     ctor: UnityEditor.CustomPropertyDrawer.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: LobsterFramework.DisableInPlayMode
+      value: LobsterFramework.DisableEditInPlayMode
 - uid: LobsterFramework.Editors.DisableInPlayModeDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   commentId: M:LobsterFramework.Editors.DisableInPlayModeDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   id: OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)

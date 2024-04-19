@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Reflection;
 using LobsterFramework.AbilitySystem;
+using LobsterFramework.AbilitySystem.WeaponSystem;
 using LobsterFramework.Interaction;
 using LobsterFramework.AI;
 

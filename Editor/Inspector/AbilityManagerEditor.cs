@@ -50,9 +50,6 @@ namespace LobsterFramework.Editors
                     EditorGUI.indentLevel--;
                 }
                 EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Asset Name");
-                EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();

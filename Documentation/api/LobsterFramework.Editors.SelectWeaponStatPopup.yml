@@ -96,7 +96,7 @@ items:
   syntax:
     content: public WeaponData data
     return:
-      type: LobsterFramework.AbilitySystem.WeaponData
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
     content.vb: Public data As WeaponData
 - uid: LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
   commentId: M:LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
@@ -475,19 +475,19 @@ references:
   name: WeaponDataEditor
   nameWithType: WeaponDataEditor
   fullName: LobsterFramework.Editors.WeaponDataEditor
-- uid: LobsterFramework.AbilitySystem.WeaponData
-  commentId: T:LobsterFramework.AbilitySystem.WeaponData
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.WeaponData.html
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html
   name: WeaponData
   nameWithType: WeaponData
-  fullName: LobsterFramework.AbilitySystem.WeaponData
-- uid: LobsterFramework.AbilitySystem
-  commentId: N:LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
+- uid: LobsterFramework.AbilitySystem.WeaponSystem
+  commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
   href: LobsterFramework.html
-  name: LobsterFramework.AbilitySystem
-  nameWithType: LobsterFramework.AbilitySystem
-  fullName: LobsterFramework.AbilitySystem
+  name: LobsterFramework.AbilitySystem.WeaponSystem
+  nameWithType: LobsterFramework.AbilitySystem.WeaponSystem
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
@@ -496,6 +496,10 @@ references:
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
     href: LobsterFramework.AbilitySystem.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem
+    name: WeaponSystem
+    href: LobsterFramework.AbilitySystem.WeaponSystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
@@ -504,6 +508,10 @@ references:
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
     href: LobsterFramework.AbilitySystem.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem
+    name: WeaponSystem
+    href: LobsterFramework.AbilitySystem.WeaponSystem.html
 - uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
   commentId: M:UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
   parent: UnityEditor.PopupWindowContent

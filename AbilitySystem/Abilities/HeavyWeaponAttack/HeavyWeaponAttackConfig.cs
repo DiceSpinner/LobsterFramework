@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [Serializable]
     public class HeavyWeaponAttackConfig : AbilityConfig

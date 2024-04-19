@@ -93,8 +93,7 @@
     <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
     <div class="level3"><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a></div>
     <div class="level4"><span class="xref">AbilityCoroutine</span></div>
-      <div class="level5"><a class="xref" href="LobsterFramework.AbilitySystem.TestCoroutine.html">TestCoroutine</a></div>
-      <div class="level5"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html">WeaponAbility</a></div>
+      <div class="level5"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html">WeaponAbility</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -102,7 +101,7 @@
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityManager">Ability.abilityManager</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityPriority">Ability.abilityPriority</a>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ExecutionPriority">Ability.ExecutionPriority</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Instance">Ability.Instance</a>
@@ -117,22 +116,22 @@
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Context">Ability.Context</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ClearSetup">Ability.ClearSetup()</a>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_InitializeSharedReferences">Ability.InitializeSharedReferences()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_InitializeContext">Ability.InitializeContext()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_FinalizeSharedReferences">Ability.FinalizeSharedReferences()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_FinalizeContext">Ability.FinalizeContext()</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_LobsterFramework_AbilitySystem_Ability_">Ability.CompareByExecutionPriority(Ability)</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByEnqueuePriority_LobsterFramework_AbilitySystem_Ability_">Ability.CompareByEnqueuePriority(Ability)</a>
-    </div>
-    <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_StartAnimation_System_String_UnityEngine_AnimationClip_System_Single_">Ability.StartAnimation(string, AnimationClip, float)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ConditionSatisfied">Ability.ConditionSatisfied()</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Running">Ability.Running</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_SuspendInstance_System_String_">Ability.SuspendInstance(string)</a>
@@ -141,61 +140,34 @@
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_SuspendAll">Ability.SuspendAll()</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Initialize">Ability.Initialize()</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_IsExecuting_System_String_">Ability.IsExecuting(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_IsReady_System_String_">Ability.IsReady(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_Animancer_AnimancerState_">Ability.OnAnimationInterrupt(AnimancerState)</a>
-    </div>
-    <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_JoinAsSecondary__1_System_String_">Ability.JoinAsSecondary&lt;T&gt;(string)</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_JoinAsSecondary_System_Type_System_String_">Ability.JoinAsSecondary(Type, string)</a>
     </div>
     <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_InstancesRunning">Ability.InstancesRunning</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_IsRunning_System_String_">Ability.IsRunning(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_IsReady_System_String_">Ability.IsReady(string)</a>
+    </div>
+    <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_HasInstance_System_String_">Ability.HasInstance(string)</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_System_String_UnityEngine_AnimationEvent_">Ability.Signal(string, AnimationEvent)</a>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ConditionSatisfied">Ability.ConditionSatisfied()</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_System_String_">Ability.Signal(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_Int32_">Ability.Signal(string, int)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_Boolean_">Ability.Signal(string, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_System_String_System_String_">Ability.Signal(string, string)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_System_String_UnityEngine_Object_">Ability.Signal(string, Object)</a>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_Animancer_AnimancerState_">Ability.OnAnimationInterrupt(AnimancerState)</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnSignaled_UnityEngine_AnimationEvent_">Ability.OnSignaled(AnimationEvent)</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnSignaled">Ability.OnSignaled()</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnSignaled_System_Int32_">Ability.OnSignaled(int)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnSignaled_System_Boolean_">Ability.OnSignaled(bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnSignaled_System_String_">Ability.OnSignaled(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnSignaled_UnityEngine_Object_">Ability.OnSignaled(Object)</a>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.SetDirty.html">ScriptableObject.SetDirty()</a>
@@ -377,7 +349,7 @@
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_Action_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.Action*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_Action" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.Action">Action()</h4>
-  <div class="markdown level1 summary"><p>Main body of the ability execution, implement this to create different abilities!</p>
+  <div class="markdown level1 summary"><p>Called every frame while the ability instance remains in the execution queue.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -395,7 +367,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>False if the ability has finished, otherwise true</p>
+        <td><p>false if the ability has finished and should not execute further, otherwise true</p>
 </td>
       </tr>
     </tbody>
@@ -433,6 +405,24 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityEnqueue.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L15">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityEnqueue_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityEnqueue" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue">OnAbilityEnqueue()</h4>
+  <div class="markdown level1 summary"><p>Callback when the ability is added to the queue for execution</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override sealed void OnAbilityEnqueue()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnAbilityEnqueue">Ability.OnAbilityEnqueue()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityFinish.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -498,24 +488,6 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract void OnCoroutineReset()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnEnqueue.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnEnqueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L15">View Source</a>
-  </span>
-  <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnEnqueue_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnEnqueue*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnEnqueue" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnEnqueue">OnEnqueue()</h4>
-  <div class="markdown level1 summary"><p>Callback when the ability is added to the queue for execution</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override sealed void OnEnqueue()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnEnqueue">Ability.OnEnqueue()</a></div>
 
 </article>
           </div>

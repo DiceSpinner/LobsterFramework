@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [ComponentRequired(typeof(WeaponManager))]
     [AddAbilityMenu]
@@ -12,7 +12,7 @@ namespace LobsterFramework.AbilitySystem
     {
         private WeaponManager weaponWielder;
 
-        protected override void Initialize()
+        protected override void InitializeSharedReferences()
         {
             weaponWielder = abilityManager.GetComponentInBoth<WeaponManager>();
         }
@@ -26,7 +26,7 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
-        protected override void OnEnqueue()
+        protected override void OnAbilityEnqueue()
         {
             ValueTuple<Type, string> setting = weaponWielder.Mainhand.AbilitySetting;
             abilityManager.EnqueueAbility(setting.Item1, setting.Item2);

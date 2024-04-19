@@ -54,14 +54,14 @@ namespace LobsterFramework.Editors
            
 
             Color defaultColor = GUI.color;
-            GUI.color = StateDataEditorSetting.instance.menuColor;
+            GUI.color = StateEditorConfig.MenuColor;
             // Display options for sub folders
             foreach (string groupName in currentGroup.subMenus.Keys) {
                 hasContent = true;
                 GUIContent content = new();
                 content.text = groupName;
 
-                Texture2D icon = StateDataEditorSetting.instance.GetFolderIcon(currentPath + groupName);
+                Texture2D icon = StateEditorConfig.GetFolderIcon(currentPath + groupName);
                 if (icon != null) 
                 {
                     content.image = icon;
@@ -74,7 +74,7 @@ namespace LobsterFramework.Editors
             }
            
             
-            GUI.color = StateDataEditorSetting.instance.stateColor;
+            GUI.color = StateEditorConfig.StateColor;
             // Display options for current group
             foreach (Type type in currentGroup.options)
             {

@@ -139,7 +139,7 @@ items:
     ctor: UnityEditor.CustomEditor.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: LobsterFramework.AbilitySystem.WeaponAnimationData
+      value: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
 - uid: LobsterFramework.Editors.WeaponAnimationDataEditor.#ctor
   commentId: M:LobsterFramework.Editors.WeaponAnimationDataEditor.#ctor
   id: '#ctor'

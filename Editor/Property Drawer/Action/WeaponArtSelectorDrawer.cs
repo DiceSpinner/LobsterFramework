@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
+using LobsterFramework.AbilitySystem.WeaponSystem;
 using System;
 
 namespace LobsterFramework.Editors

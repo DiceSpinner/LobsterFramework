@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Animancer;
 using LobsterFramework.Utility;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [AddAbilityMenu]
     [WeaponAnimation(typeof(GuardAnimations))]
@@ -33,6 +33,8 @@ namespace LobsterFramework.AbilitySystem
             context.currentWeapon = WeaponManager.Mainhand;
             context.deflected = false;
 
+            context.animationSignaled.Reset();
+
             // Start animation
             AnimationClip deflectAnimation;
             if (leftDeflect)
@@ -53,9 +55,8 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void OnCoroutineFinish()
         {
-            GuardContext g = (GuardContext)Context;
-            g.animationSignaled.Reset();
-            g.currentWeapon.Disable();
+            GuardContext context = (GuardContext)Context;
+            context.currentWeapon.Disable();
             moveModifier.Release();
             rotateModifier.Release();
         }

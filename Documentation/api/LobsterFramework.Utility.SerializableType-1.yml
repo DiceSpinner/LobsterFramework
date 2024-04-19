@@ -41,7 +41,7 @@ items:
   - System.Object
   derivedClasses:
   - LobsterFramework.AbilitySystem.AbilitySelector
-  - LobsterFramework.AbilitySystem.WeaponArtSelector
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   implements:
   - UnityEngine.ISerializationCallbackReceiver
   inheritedMembers:

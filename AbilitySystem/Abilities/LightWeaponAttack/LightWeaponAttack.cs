@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Animancer;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [AddAbilityMenu]
     [RequireAbilityComponents(typeof(DamageModifier))]
@@ -32,6 +32,8 @@ namespace LobsterFramework.AbilitySystem
         {
             LightWeaponAttackContext context = (LightWeaponAttackContext)Context;
             context.currentWeapon = WeaponManager.Mainhand;
+            context.animationSignaled.Reset();
+            context.inputSignaled.Reset();
 
             AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip(WeaponManager.Mainhand.WeaponType, typeof(LightWeaponAttack));
             state = abilityManager.StartAnimation(this, Instance, animation, context.currentWeapon.AttackSpeed);

@@ -10,7 +10,7 @@ items:
   - LobsterFramework.ContinousCollision2D
   - LobsterFramework.Damage
   - LobsterFramework.DamageType
-  - LobsterFramework.DisableInPlayMode
+  - LobsterFramework.DisableEditInPlayMode
   - LobsterFramework.EffectProcessor
   - LobsterFramework.Entity
   - LobsterFramework.EntityGroup
@@ -23,7 +23,6 @@ items:
   - LobsterFramework.ItemEntryUI
   - LobsterFramework.LayerAttribute
   - LobsterFramework.MovementController
-  - LobsterFramework.OffhandWeaponAbilityAttribute
   - LobsterFramework.Poise
   - LobsterFramework.ReadOnlyAttribute
   - LobsterFramework.Scene
@@ -140,6 +139,13 @@ references:
   name: GameStateManager
   nameWithType: GameStateManager
   fullName: LobsterFramework.GameStateManager
+- uid: LobsterFramework.DisableEditInPlayMode
+  commentId: T:LobsterFramework.DisableEditInPlayMode
+  parent: LobsterFramework
+  href: LobsterFramework.DisableEditInPlayMode.html
+  name: DisableEditInPlayMode
+  nameWithType: DisableEditInPlayMode
+  fullName: LobsterFramework.DisableEditInPlayMode
 - uid: LobsterFramework.ReadOnlyAttribute
   commentId: T:LobsterFramework.ReadOnlyAttribute
   parent: LobsterFramework
@@ -153,12 +159,6 @@ references:
   name: EntityGroup
   nameWithType: EntityGroup
   fullName: LobsterFramework.EntityGroup
-- uid: LobsterFramework.OffhandWeaponAbilityAttribute
-  commentId: T:LobsterFramework.OffhandWeaponAbilityAttribute
-  href: LobsterFramework.OffhandWeaponAbilityAttribute.html
-  name: OffhandWeaponAbilityAttribute
-  nameWithType: OffhandWeaponAbilityAttribute
-  fullName: LobsterFramework.OffhandWeaponAbilityAttribute
 - uid: LobsterFramework.CharacterStateManager
   commentId: T:LobsterFramework.CharacterStateManager
   href: LobsterFramework.CharacterStateManager.html
@@ -200,13 +200,6 @@ references:
   name: SceneEventChannel
   nameWithType: SceneEventChannel
   fullName: LobsterFramework.SceneEventChannel
-- uid: LobsterFramework.DisableInPlayMode
-  commentId: T:LobsterFramework.DisableInPlayMode
-  parent: LobsterFramework
-  href: LobsterFramework.DisableInPlayMode.html
-  name: DisableInPlayMode
-  nameWithType: DisableInPlayMode
-  fullName: LobsterFramework.DisableInPlayMode
 - uid: LobsterFramework.FilePathAttribute
   commentId: T:LobsterFramework.FilePathAttribute
   parent: LobsterFramework

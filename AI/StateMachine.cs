@@ -13,7 +13,7 @@ namespace LobsterFramework.AI
     public class StateMachine : MonoBehaviour
     {
         [SerializeField] private AIController controller;
-        [SerializeField] internal StateData inputData;
+        [SerializeField, DisableEditInPlayMode] internal StateData inputData;
         internal StateData runtimeData;
 
         [ReadOnly]
@@ -38,11 +38,13 @@ namespace LobsterFramework.AI
 
         private void OnEnable()
         {
-            if (!inputData.Validate()) {
-                Debug.Log("Input state data is missing initial state or missing transitions.");
-                return;
+            if (runtimeData == null) {
+                if (inputData == null || !inputData.Validate()) {
+                    Debug.Log("Input state data is missing initial state or missing transitions.");
+                    return;
+                }
+                runtimeData = inputData.Clone();
             }
-            runtimeData = inputData.Clone();
             currentState = runtimeData.initialState;
             runtimeData.Initialize(this, controller);
         }
@@ -50,7 +52,6 @@ namespace LobsterFramework.AI
         private void OnDisable()
         {
             runtimeData.Close();
-            Destroy(runtimeData);
         }
 
         public void Update()

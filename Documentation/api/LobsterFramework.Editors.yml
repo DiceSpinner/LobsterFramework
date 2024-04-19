@@ -32,7 +32,7 @@ items:
   - LobsterFramework.Editors.SelectWeaponStatPopup
   - LobsterFramework.Editors.SerializedPropertyExtensions
   - LobsterFramework.Editors.StateDataEditor
-  - LobsterFramework.Editors.StateDataEditorSetting
+  - LobsterFramework.Editors.StateEditorConfig
   - LobsterFramework.Editors.WeaponAnimationDataEditor
   - LobsterFramework.Editors.WeaponArtSelectorDrawer
   - LobsterFramework.Editors.WeaponDataEditor
@@ -71,6 +71,18 @@ references:
   name: SelectAbilityPopup
   nameWithType: SelectAbilityPopup
   fullName: LobsterFramework.Editors.SelectAbilityPopup
+- uid: LobsterFramework.Editors.StateEditorConfig
+  commentId: T:LobsterFramework.Editors.StateEditorConfig
+  href: LobsterFramework.Editors.StateEditorConfig.html
+  name: StateEditorConfig
+  nameWithType: StateEditorConfig
+  fullName: LobsterFramework.Editors.StateEditorConfig
+- uid: LobsterFramework.Editors.FolderIcon
+  commentId: T:LobsterFramework.Editors.FolderIcon
+  href: LobsterFramework.Editors.FolderIcon.html
+  name: FolderIcon
+  nameWithType: FolderIcon
+  fullName: LobsterFramework.Editors.FolderIcon
 - uid: LobsterFramework.Editors.AbilityManagerEditor
   commentId: T:LobsterFramework.Editors.AbilityManagerEditor
   href: LobsterFramework.Editors.AbilityManagerEditor.html
@@ -211,18 +223,6 @@ references:
   name: AddAbilityComponentPopup
   nameWithType: AddAbilityComponentPopup
   fullName: LobsterFramework.Editors.AddAbilityComponentPopup
-- uid: LobsterFramework.Editors.StateDataEditorSetting
-  commentId: T:LobsterFramework.Editors.StateDataEditorSetting
-  href: LobsterFramework.Editors.StateDataEditorSetting.html
-  name: StateDataEditorSetting
-  nameWithType: StateDataEditorSetting
-  fullName: LobsterFramework.Editors.StateDataEditorSetting
-- uid: LobsterFramework.Editors.FolderIcon
-  commentId: T:LobsterFramework.Editors.FolderIcon
-  href: LobsterFramework.Editors.FolderIcon.html
-  name: FolderIcon
-  nameWithType: FolderIcon
-  fullName: LobsterFramework.Editors.FolderIcon
 - uid: LobsterFramework.Editors.InventoryEditor
   commentId: T:LobsterFramework.Editors.InventoryEditor
   href: LobsterFramework.Editors.InventoryEditor.html

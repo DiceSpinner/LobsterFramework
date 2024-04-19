@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Text;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -37,7 +36,7 @@ namespace LobsterFramework.AbilitySystem
         /// <param name="type">The type of the ability to examine for requirements</param>
         /// <param name="objects"> The gameobject for examination </param>
         /// <returns>Whether the gameobject satisfied the component requirements. If there's no requirement, return true. If obj is null, return false.</returns>
-        public static bool ComponentCheck(Type type, params GameObject[] objects) {
+        public static bool ComponentCheck(GameObject parent, Type type, params GameObject[] objects) {
             if (!requirement.ContainsKey(type)) {
                 return true;
             }
@@ -63,7 +62,7 @@ namespace LobsterFramework.AbilitySystem
                     debugString += component.ToString() + ", ";
                 }
                 debugString = debugString.Remove(debugString.Length - 2);
-                Debug.LogError(debugString);
+                Debug.LogError(debugString, parent);
                 return false;
             }
             

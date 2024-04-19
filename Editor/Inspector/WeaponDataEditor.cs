@@ -1,4 +1,4 @@
-using LobsterFramework.AbilitySystem;
+using LobsterFramework.AbilitySystem.WeaponSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;

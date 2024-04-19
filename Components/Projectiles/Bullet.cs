@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using LobsterFramework.AbilitySystem.WeaponSystem;
 using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.Pool

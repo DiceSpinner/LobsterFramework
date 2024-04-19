@@ -4,7 +4,7 @@ using UnityEngine;
 using LobsterFramework.Utility;
 using System;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [Serializable]
     public class WeaponArtSelector : SerializableType<Ability>

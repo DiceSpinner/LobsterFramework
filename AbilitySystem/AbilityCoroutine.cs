@@ -12,7 +12,7 @@ namespace LobsterFramework.AbilitySystem
     /// </summary>
     public abstract class AbilityCoroutine : Ability
     {
-        protected sealed override void OnEnqueue()
+        protected sealed override void OnAbilityEnqueue()
         {
             AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
             context.coroutine = context.coroutineRunner.AddCoroutine(Coroutine());

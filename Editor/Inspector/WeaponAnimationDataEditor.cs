@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using LobsterFramework.AbilitySystem.WeaponSystem;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.Utility;
 using System;
 
 

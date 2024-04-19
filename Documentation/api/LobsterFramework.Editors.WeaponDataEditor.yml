@@ -140,7 +140,7 @@ items:
     ctor: UnityEditor.CustomEditor.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: LobsterFramework.AbilitySystem.WeaponData
+      value: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
 - uid: LobsterFramework.Editors.WeaponDataEditor.selectedWeaponStat
   commentId: F:LobsterFramework.Editors.WeaponDataEditor.selectedWeaponStat
   id: selectedWeaponStat
@@ -166,7 +166,7 @@ items:
   syntax:
     content: public WeaponStat selectedWeaponStat
     return:
-      type: LobsterFramework.AbilitySystem.WeaponStat
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
     content.vb: Public selectedWeaponStat As WeaponStat
 - uid: LobsterFramework.Editors.WeaponDataEditor.OnEnable
   commentId: M:LobsterFramework.Editors.WeaponDataEditor.OnEnable
@@ -3476,19 +3476,19 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponStat
-  commentId: T:LobsterFramework.AbilitySystem.WeaponStat
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.WeaponStat.html
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html
   name: WeaponStat
   nameWithType: WeaponStat
-  fullName: LobsterFramework.AbilitySystem.WeaponStat
-- uid: LobsterFramework.AbilitySystem
-  commentId: N:LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
+- uid: LobsterFramework.AbilitySystem.WeaponSystem
+  commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
   href: LobsterFramework.html
-  name: LobsterFramework.AbilitySystem
-  nameWithType: LobsterFramework.AbilitySystem
-  fullName: LobsterFramework.AbilitySystem
+  name: LobsterFramework.AbilitySystem.WeaponSystem
+  nameWithType: LobsterFramework.AbilitySystem.WeaponSystem
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
@@ -3497,6 +3497,10 @@ references:
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
     href: LobsterFramework.AbilitySystem.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem
+    name: WeaponSystem
+    href: LobsterFramework.AbilitySystem.WeaponSystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
@@ -3505,6 +3509,10 @@ references:
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
     href: LobsterFramework.AbilitySystem.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem
+    name: WeaponSystem
+    href: LobsterFramework.AbilitySystem.WeaponSystem.html
 - uid: LobsterFramework.Editors.WeaponDataEditor.OnEnable*
   commentId: Overload:LobsterFramework.Editors.WeaponDataEditor.OnEnable
   href: LobsterFramework.Editors.WeaponDataEditor.html#LobsterFramework.Editors.WeaponDataEditor.OnEnable

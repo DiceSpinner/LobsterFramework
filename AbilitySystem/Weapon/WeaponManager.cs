@@ -4,10 +4,10 @@ using System;
 using UnityEngine;
 using Animancer;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     /// <summary>
-    /// Required for the character to use weapon abilities
+    /// Component that manages equipping and swaping weapons
     /// </summary>
     public class WeaponManager : MonoBehaviour
     {

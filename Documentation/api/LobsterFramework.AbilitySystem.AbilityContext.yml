@@ -5,11 +5,8 @@ items:
   id: AbilityContext
   parent: LobsterFramework.AbilitySystem
   children:
-  - LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  - LobsterFramework.AbilitySystem.AbilityContext.Initialize
   - LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   - LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  - LobsterFramework.AbilitySystem.AbilityContext.ability
   langs:
   - csharp
   - vb
@@ -24,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityContext
     path: ../AbilitySystem/Ability.cs
-    startLine: 618
+    startLine: 468
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -40,8 +37,8 @@ items:
   - System.Object
   derivedClasses:
   - LobsterFramework.AbilitySystem.AbilityCoroutineContext
-  - LobsterFramework.AbilitySystem.OffhandAbilityContext
-  - LobsterFramework.AbilitySystem.WeaponArtContext
+  - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -50,33 +47,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.AbilitySystem.AbilityContext.ability
-  commentId: F:LobsterFramework.AbilitySystem.AbilityContext.ability
-  id: ability
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  langs:
-  - csharp
-  - vb
-  name: ability
-  nameWithType: AbilityContext.ability
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.ability
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: ability
-    path: ../AbilitySystem/Ability.cs
-    startLine: 620
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: protected Ability ability
-    return:
-      type: LobsterFramework.AbilitySystem.Ability
-    content.vb: Protected ability As Ability
 - uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   commentId: P:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   id: IsRunning
@@ -95,7 +65,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsRunning
     path: ../AbilitySystem/Ability.cs
-    startLine: 624
+    startLine: 473
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -124,7 +94,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnCooldown
     path: ../AbilitySystem/Ability.cs
-    startLine: 625
+    startLine: 474
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -135,62 +105,6 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property OnCooldown As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown*
-- uid: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  commentId: M:LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  id: ClearSetup
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  langs:
-  - csharp
-  - vb
-  name: ClearSetup()
-  nameWithType: AbilityContext.ClearSetup()
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: ClearSetup
-    path: ../AbilitySystem/Ability.cs
-    startLine: 630
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  summary: Callback to clean up the context
-  example: []
-  syntax:
-    content: protected virtual void ClearSetup()
-    content.vb: Protected Overridable Sub ClearSetup()
-  overload: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup*
-- uid: LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  commentId: M:LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  id: Initialize
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  langs:
-  - csharp
-  - vb
-  name: Initialize()
-  nameWithType: AbilityContext.Initialize()
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.Initialize()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Initialize
-    path: ../AbilitySystem/Ability.cs
-    startLine: 635
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  summary: Callback to initialize the contex
-  example: []
-  syntax:
-    content: protected virtual void Initialize()
-    content.vb: Protected Overridable Sub Initialize()
-  overload: LobsterFramework.AbilitySystem.AbilityContext.Initialize*
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -451,13 +365,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: LobsterFramework.AbilitySystem.Ability
-  commentId: T:LobsterFramework.AbilitySystem.Ability
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.Ability.html
-  name: Ability
-  nameWithType: Ability
-  fullName: LobsterFramework.AbilitySystem.Ability
 - uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.IsRunning
@@ -481,15 +388,3 @@ references:
   name: OnCooldown
   nameWithType: AbilityContext.OnCooldown
   fullName: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-- uid: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  name: ClearSetup
-  nameWithType: AbilityContext.ClearSetup
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-- uid: LobsterFramework.AbilitySystem.AbilityContext.Initialize*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  name: Initialize
-  nameWithType: AbilityContext.Initialize
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.Initialize

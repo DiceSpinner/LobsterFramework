@@ -6,7 +6,8 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.AbilityData.Clone
-  - LobsterFramework.AbilitySystem.AbilityData.Close
+  - LobsterFramework.AbilitySystem.AbilityData.FinalizeContext
+  - LobsterFramework.AbilitySystem.AbilityData.defaultAbilityInstance
   langs:
   - csharp
   - vb
@@ -101,34 +102,61 @@ items:
     - name: menuName
       type: System.String
       value: Ability/AbilityData
-- uid: LobsterFramework.AbilitySystem.AbilityData.Close
-  commentId: M:LobsterFramework.AbilitySystem.AbilityData.Close
-  id: Close
+- uid: LobsterFramework.AbilitySystem.AbilityData.defaultAbilityInstance
+  commentId: F:LobsterFramework.AbilitySystem.AbilityData.defaultAbilityInstance
+  id: defaultAbilityInstance
   parent: LobsterFramework.AbilitySystem.AbilityData
   langs:
   - csharp
   - vb
-  name: Close()
-  nameWithType: AbilityData.Close()
-  fullName: LobsterFramework.AbilitySystem.AbilityData.Close()
+  name: defaultAbilityInstance
+  nameWithType: AbilityData.defaultAbilityInstance
+  fullName: LobsterFramework.AbilitySystem.AbilityData.defaultAbilityInstance
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/AbilityData.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: defaultAbilityInstance
+    path: ../AbilitySystem/AbilityData.cs
+    startLine: 17
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public const string defaultAbilityInstance = "default"
+    return:
+      type: System.String
+    content.vb: Public Const defaultAbilityInstance As String = "default"
+- uid: LobsterFramework.AbilitySystem.AbilityData.FinalizeContext
+  commentId: M:LobsterFramework.AbilitySystem.AbilityData.FinalizeContext
+  id: FinalizeContext
+  parent: LobsterFramework.AbilitySystem.AbilityData
+  langs:
+  - csharp
+  - vb
+  name: FinalizeContext()
+  nameWithType: AbilityData.FinalizeContext()
+  fullName: LobsterFramework.AbilitySystem.AbilityData.FinalizeContext()
   type: Method
   source:
     remote:
       path: AbilitySystem/AbilityData.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Close
+    id: FinalizeContext
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 61
+    startLine: 68
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Clean up ability context environments. This has no effect if this is an asset.
   example: []
   syntax:
-    content: public void Close()
-    content.vb: Public Sub Close()
-  overload: LobsterFramework.AbilitySystem.AbilityData.Close*
+    content: public void FinalizeContext()
+    content.vb: Public Sub FinalizeContext()
+  overload: LobsterFramework.AbilitySystem.AbilityData.FinalizeContext*
 - uid: LobsterFramework.AbilitySystem.AbilityData.Clone
   commentId: M:LobsterFramework.AbilitySystem.AbilityData.Clone
   id: Clone
@@ -147,7 +175,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Clone
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 130
+    startLine: 138
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -2280,12 +2308,23 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.AbilitySystem.AbilityData.Close*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityData.Close
-  href: LobsterFramework.AbilitySystem.AbilityData.html#LobsterFramework.AbilitySystem.AbilityData.Close
-  name: Close
-  nameWithType: AbilityData.Close
-  fullName: LobsterFramework.AbilitySystem.AbilityData.Close
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: LobsterFramework.AbilitySystem.AbilityData.FinalizeContext*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityData.FinalizeContext
+  href: LobsterFramework.AbilitySystem.AbilityData.html#LobsterFramework.AbilitySystem.AbilityData.FinalizeContext
+  name: FinalizeContext
+  nameWithType: AbilityData.FinalizeContext
+  fullName: LobsterFramework.AbilitySystem.AbilityData.FinalizeContext
 - uid: LobsterFramework.AbilitySystem.AbilityData.Clone*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityData.Clone
   href: LobsterFramework.AbilitySystem.AbilityData.html#LobsterFramework.AbilitySystem.AbilityData.Clone

@@ -13,16 +13,17 @@ namespace LobsterFramework.AbilitySystem {
     [AddComponentMenu("AbilityManager")]
     public class AbilityManager : SubLevelComponent
     {
-        #region Data
+        #region Setting
         /// <summary>
         /// The input data that defines the set of abilities the parent entity can execute
         /// </summary>
-        [SerializeField] private AbilityData inputData;
-        // The context ability data that can be inspected and edited
-        [HideInInspector]
-        [SerializeField] internal AbilityData abilityData;
-        private Dictionary<string, Ability> abilities;
-        private AbilityComponentDictionary components;
+        [SerializeField, DisableEditInPlayMode] private AbilityData inputData;
+        /// <summary>
+        /// The context ability data that can be inspected and edited
+        /// </summary>
+        [SerializeField, HideInInspector] internal AbilityData abilityData;
+        internal Dictionary<string, Ability> abilities;
+        internal AbilityComponentDictionary components;
         #endregion
 
         #region Events
@@ -80,11 +81,11 @@ namespace LobsterFramework.AbilitySystem {
 
         private void OnDisable()
         {
+            actionLock.ClearEffectors();
             SuspendAbilities();
             if (abilityData != null)
             {
-                abilityData.Close();
-                Destroy(abilityData);
+                abilityData.FinalizeContext();
             }
 
             if (entity != null)
@@ -95,20 +96,16 @@ namespace LobsterFramework.AbilitySystem {
 
         private void OnEnable()
         {
-            if (inputData == null)
+            if (abilityData == null)
             {
-                Debug.LogWarning("Ability Data is not set!", gameObject);
-                return;
+                if (inputData == null) {
+                    Debug.LogWarning("Ability Data is not set!", gameObject);
+                    return;
+                }
+                abilityData = inputData.Clone();
             }
-            abilityData = inputData.Clone();
 
-            // stats need to be set before Initializing abilities since Abilities that requires fetching AbilityStats can only get it through AbilityRunner
-            components = abilityData.components;
-            abilityData.Open(this);
-            actionLock.ClearEffectors();
-
-            // availableAbilities is only determined after running through the initialization check of AbilityData
-            abilities = abilityData.availableAbilities;
+            abilityData.Begin(this);
 
             if (entity != null)
             {
@@ -203,7 +200,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T">Type of the Ability to be enqueued</typeparam>
         /// <param name="instance">Name of the instance to be enqueued</param>
         /// <returns>true if successfully enqueued the ability instance, false otherwise</returns>
-        public bool EnqueueAbility<T>(string instance="default") where T : Ability
+        public bool EnqueueAbility<T>(string instance=AbilityData.defaultAbilityInstance) where T : Ability
         {
             if (ActionBlocked)
             {
@@ -235,7 +232,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="abilityType">Type of the ability to be enqueued</param>
         /// <param name="instance">Name of the instance to be enqueued</param>
         /// <returns>true if successfully enqueued the ability instance, false otherwise</returns>
-        public bool EnqueueAbility(Type abilityType, string instance="default") {
+        public bool EnqueueAbility(Type abilityType, string instance=AbilityData.defaultAbilityInstance) {
             if (ActionBlocked)
             {
                 return false;
@@ -261,7 +258,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="instance1"> Name of the instance for the first ability </param>
         /// <param name="instance2"> Name of the instance for the second ability </param>
         /// <returns></returns>
-        public bool EnqueueAbilitiesInJoint<T, V>(string instance1="default", string instance2="default") 
+        public bool EnqueueAbilitiesInJoint<T, V>(string instance1=AbilityData.defaultAbilityInstance, string instance2=AbilityData.defaultAbilityInstance) 
             where T : Ability 
             where V : Ability
         {
@@ -285,7 +282,6 @@ namespace LobsterFramework.AbilitySystem {
         }
         #endregion
 
-        // TODO: Fix suspend ability routine
         #region Suspend Abilities
         /// <summary>
         /// Stops the execution of the ability and returns the status of this operation
@@ -293,7 +289,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T">Type of the ability to be stopped</typeparam>
         /// <param name="instance">Name of the ability instance to be stopped</param>
         /// <returns>true if the ability instance exists and is stopped, otherwise return false</returns>
-        public bool SuspendAbilityInstance<T>(string instance = "default") where T : Ability
+        public bool SuspendAbilityInstance<T>(string instance = AbilityData.defaultAbilityInstance) where T : Ability
         {
             Ability ability = GetAbility<T>();
             if (ability != null) {
@@ -352,7 +348,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T">The type of Ability this channel is associated with.</typeparam>
         /// <param name="instance">The name of the ability instance</param>
         /// <returns> The channel that connects to the specified ability and configuration if it exists, otherwise return null. </returns>
-        public AbilityChannel GetAbilityChannel<T>(string instance="default") where T : Ability {
+        public AbilityChannel GetAbilityChannel<T>(string instance=AbilityData.defaultAbilityInstance) where T : Ability {
             T ability = GetAbility<T>();
             if (ability != null) {
                 return ability.GetAbilityChannel(instance);
@@ -396,7 +392,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T">Type of the Ability to be queried</typeparam>
         /// <param name="instance">Name of the ability instance to be queried</param>
         /// <returns>true if the ability instance exists and is ready, false otherwise</returns>
-        public bool IsAbilityReady<T>(string instance="default") where T : Ability
+        public bool IsAbilityReady<T>(string instance=AbilityData.defaultAbilityInstance) where T : Ability
         {
             string type = typeof(T).AssemblyQualifiedName;
             if (abilities.ContainsKey(type))
@@ -412,7 +408,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="abilityType">Type of the Ability to be queried</param>
         /// <param name="instance">Name of the ability instance to be queried</param>
         /// <returns>true if the ability instance exists and is ready, false otherwise</returns>
-        public bool IsAbilityReady(Type abilityType, string instance = "default")
+        public bool IsAbilityReady(Type abilityType, string instance = AbilityData.defaultAbilityInstance)
         {
             if (abilityType == null)
             {
@@ -432,12 +428,12 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T">The type of the ability being queried</typeparam>
         /// <param name="instance">The name of the ability instance being queried</param>
         /// <returns> true if the ability instance exists and is running, otherwise false </returns>
-        public bool IsAbilityRunning<T>(string instance="default") where T : Ability {
+        public bool IsAbilityRunning<T>(string instance=AbilityData.defaultAbilityInstance) where T : Ability {
             T ability = GetAbility<T>();
             if (ability == null) {
                 return false;
             }
-            return ability.IsExecuting(instance);
+            return ability.IsRunning(instance);
         }
 
         /// <summary>
@@ -446,14 +442,14 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="abilityType">The type of the ability being queried</param>
         /// <param name="configName">The name of the config being queried</param>
         /// <returns> true if the ability instance exists and is running, otherwise false </returns>
-        public bool IsAbilityRunning(Type abilityType, string configName = "default") 
+        public bool IsAbilityRunning(Type abilityType, string configName = AbilityData.defaultAbilityInstance) 
         {
             Ability ability = GetAbility(abilityType);
             if (ability == null)
             {
                 return false;
             }
-            return ability.IsExecuting(configName);
+            return ability.IsRunning(configName);
         }
 
         /// <summary>
@@ -474,7 +470,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="instance1">The name of the primary ability instance</param>
         /// <param name="instance2">The name of the secondary ability instance</param>
         /// <returns>true on success, false otherwise</returns>
-        public bool JoinAbilities(Type primaryAbility, Type secondaryAbility, string instance1="default", string instance2="default") {
+        public bool JoinAbilities(Type primaryAbility, Type secondaryAbility, string instance1=AbilityData.defaultAbilityInstance, string instance2=AbilityData.defaultAbilityInstance) {
             if (IsAbilityRunning(primaryAbility, instance1) && IsAbilityRunning(secondaryAbility, instance2)) {
                 AbilityInstance p1 = new() { ability = GetAbility(primaryAbility), configName = instance1};
                 AbilityInstance p2 = new() { ability = GetAbility(secondaryAbility), configName = instance2};
@@ -492,7 +488,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="instance1">The name of the primary ability instance</param>
         /// <param name="instance2">The name of the secondary ability instance</param>
         /// <returns>true on success, false otherwise</returns>
-        public bool JoinAbilities<T, V>(string instance1="default", string instance2="default") where T : Ability where V : Ability
+        public bool JoinAbilities<T, V>(string instance1=AbilityData.defaultAbilityInstance, string instance2=AbilityData.defaultAbilityInstance) where T : Ability where V : Ability
         {
             if (IsAbilityRunning<T>(instance1) && IsAbilityRunning<V>(instance2))
             {
@@ -507,10 +503,9 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Used by abilities to initiate animations, will interrupt any currently running animations by other abilities
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="configName"></param>
+        /// <param name="instance"></param>
         /// <param name="animation"></param>
-        internal AnimancerState StartAnimation(Ability ability, string configName, AnimationClip animation, float speed)
+        internal AnimancerState StartAnimation(Ability ability, string instance, AnimationClip animation, float speed)
         {
             if (animation == null)
             {
@@ -525,7 +520,7 @@ namespace LobsterFramework.AbilitySystem {
             {
                 animating.ability.AnimationInterrupt(animating.configName, currentState);
             }
-            animating = new(ability, configName);
+            animating = new(ability, instance);
 
             onAnimationBegin?.Invoke(ability.GetType());
             currentState = animancer.Play(animation, 0.3f / speed, FadeMode.FromStart);
@@ -551,14 +546,14 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Send a signal to the specified ability. 
         /// </summary>
-        public void Signal<T>(string configName = "default") where T : Ability
+        public void Signal<T>(string instance = AbilityData.defaultAbilityInstance) where T : Ability
         {
             Ability ability = GetAbility<T>();
             if (ability == null)
             {
                 return;
             }
-            ability.Signal(configName);
+            ability.Signal(instance);
         }
 
         /// <summary>

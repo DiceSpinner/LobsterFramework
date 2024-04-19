@@ -34,15 +34,12 @@ items:
   - System.Object
   - LobsterFramework.AbilitySystem.AbilityContext
   derivedClasses:
-  - LobsterFramework.AbilitySystem.GuardContext
-  - LobsterFramework.AbilitySystem.HeavyWeaponAttackContext
-  - LobsterFramework.AbilitySystem.LightWeaponAttackContext
+  - LobsterFramework.AbilitySystem.WeaponSystem.GuardContext
+  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext
+  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext
   inheritedMembers:
-  - LobsterFramework.AbilitySystem.AbilityContext.ability
   - LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   - LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  - LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  - LobsterFramework.AbilitySystem.AbilityContext.Initialize
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -145,13 +142,6 @@ references:
   name: AbilityContext
   nameWithType: AbilityContext
   fullName: LobsterFramework.AbilitySystem.AbilityContext
-- uid: LobsterFramework.AbilitySystem.AbilityContext.ability
-  commentId: F:LobsterFramework.AbilitySystem.AbilityContext.ability
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.ability
-  name: ability
-  nameWithType: AbilityContext.ability
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.ability
 - uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   commentId: P:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   parent: LobsterFramework.AbilitySystem.AbilityContext
@@ -166,44 +156,6 @@ references:
   name: OnCooldown
   nameWithType: AbilityContext.OnCooldown
   fullName: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-- uid: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  commentId: M:LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  name: ClearSetup()
-  nameWithType: AbilityContext.ClearSetup()
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-    name: ClearSetup
-    href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-    name: ClearSetup
-    href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.ClearSetup
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  commentId: M:LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  name: Initialize()
-  nameWithType: AbilityContext.Initialize()
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.Initialize()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityContext.Initialize
-    name: Initialize
-    href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityContext.Initialize
-    name: Initialize
-    href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.Initialize
-  - name: (
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object

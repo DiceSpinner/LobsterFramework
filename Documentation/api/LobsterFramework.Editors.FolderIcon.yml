@@ -6,7 +6,6 @@ items:
   parent: LobsterFramework.Editors
   children:
   - LobsterFramework.Editors.FolderIcon.icon
-  - LobsterFramework.Editors.FolderIcon.name
   - LobsterFramework.Editors.FolderIcon.path
   langs:
   - csharp
@@ -17,12 +16,12 @@ items:
   type: Class
   source:
     remote:
-      path: Editor/Singletons/StateDataEditorSetting.cs
+      path: Editor/Settings/StateEditorConfig.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: FolderIcon
-    path: ../Editor/Singletons/StateDataEditorSetting.cs
-    startLine: 32
+    path: ../Editor/Settings/StateEditorConfig.cs
+    startLine: 101
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -49,33 +48,6 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
-- uid: LobsterFramework.Editors.FolderIcon.name
-  commentId: F:LobsterFramework.Editors.FolderIcon.name
-  id: name
-  parent: LobsterFramework.Editors.FolderIcon
-  langs:
-  - csharp
-  - vb
-  name: name
-  nameWithType: FolderIcon.name
-  fullName: LobsterFramework.Editors.FolderIcon.name
-  type: Field
-  source:
-    remote:
-      path: Editor/Singletons/StateDataEditorSetting.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: name
-    path: ../Editor/Singletons/StateDataEditorSetting.cs
-    startLine: 35
-  assemblies:
-  - LobsterFrameworkEditor
-  namespace: LobsterFramework.Editors
-  syntax:
-    content: public string name
-    return:
-      type: System.String
-    content.vb: Public name As String
 - uid: LobsterFramework.Editors.FolderIcon.path
   commentId: F:LobsterFramework.Editors.FolderIcon.path
   id: path
@@ -89,12 +61,12 @@ items:
   type: Field
   source:
     remote:
-      path: Editor/Singletons/StateDataEditorSetting.cs
+      path: Editor/Settings/StateEditorConfig.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: path
-    path: ../Editor/Singletons/StateDataEditorSetting.cs
-    startLine: 37
+    path: ../Editor/Settings/StateEditorConfig.cs
+    startLine: 105
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -130,12 +102,12 @@ items:
   type: Field
   source:
     remote:
-      path: Editor/Singletons/StateDataEditorSetting.cs
+      path: Editor/Settings/StateEditorConfig.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: icon
-    path: ../Editor/Singletons/StateDataEditorSetting.cs
-    startLine: 38
+    path: ../Editor/Settings/StateEditorConfig.cs
+    startLine: 106
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

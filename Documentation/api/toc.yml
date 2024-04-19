@@ -3,10 +3,6 @@ items:
 - uid: Global
   name: ''
   items:
-  - uid: Global.ActionPriority
-    name: ActionPriority
-  - uid: Global.ActionPrioritySO
-    name: ActionPrioritySO
   - uid: Global.AITrackData
     name: AITrackData
   - uid: Global.BoolEventChannel
@@ -23,10 +19,6 @@ items:
     name: OrderedSet<T>
   - uid: Global.Projectile
     name: Projectile
-  - uid: Global.RefAbilityPriority
-    name: RefAbilityPriority
-  - uid: Global.RefActionPriorityDrawer
-    name: RefActionPriorityDrawer
   - uid: Global.RefBool
     name: RefBool
   - uid: Global.RefBoolDrawer
@@ -82,8 +74,8 @@ items:
     name: Damage
   - uid: LobsterFramework.DamageType
     name: DamageType
-  - uid: LobsterFramework.DisableInPlayMode
-    name: DisableInPlayMode
+  - uid: LobsterFramework.DisableEditInPlayMode
+    name: DisableEditInPlayMode
   - uid: LobsterFramework.EffectProcessor
     name: EffectProcessor
   - uid: LobsterFramework.Entity
@@ -108,8 +100,6 @@ items:
     name: LayerAttribute
   - uid: LobsterFramework.MovementController
     name: MovementController
-  - uid: LobsterFramework.OffhandWeaponAbilityAttribute
-    name: OffhandWeaponAbilityAttribute
   - uid: LobsterFramework.Poise
     name: Poise
   - uid: LobsterFramework.ReadOnlyAttribute
@@ -131,8 +121,6 @@ items:
   items:
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
-  - uid: LobsterFramework.AbilitySystem.AbilityAnimationConfig
-    name: AbilityAnimationConfig
   - uid: LobsterFramework.AbilitySystem.AbilityChannel
     name: AbilityChannel
   - uid: LobsterFramework.AbilitySystem.AbilityComponent
@@ -163,97 +151,92 @@ items:
     name: AddAbilityComponentMenuAttribute
   - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
     name: AddAbilityMenuAttribute
-  - uid: LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute
-    name: AddWeaponArtMenuAttribute
-  - uid: LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute
-    name: AddWeaponStatMenuAttribute
   - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
     name: ComponentRequiredAttribute
   - uid: LobsterFramework.AbilitySystem.DamageModifier
     name: DamageModifier
-  - uid: LobsterFramework.AbilitySystem.Guard
-    name: Guard
-  - uid: LobsterFramework.AbilitySystem.Guard.GuardAnimations
-    name: Guard.GuardAnimations
-  - uid: LobsterFramework.AbilitySystem.GuardChannel
-    name: GuardChannel
-  - uid: LobsterFramework.AbilitySystem.GuardConfig
-    name: GuardConfig
-  - uid: LobsterFramework.AbilitySystem.GuardContext
-    name: GuardContext
-  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack
-    name: HeavyWeaponAttack
-  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackChannel
-    name: HeavyWeaponAttackChannel
-  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackConfig
-    name: HeavyWeaponAttackConfig
-  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttackContext
-    name: HeavyWeaponAttackContext
-  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack
-    name: LightWeaponAttack
-  - uid: LobsterFramework.AbilitySystem.LightWeaponAttackChannel
-    name: LightWeaponAttackChannel
-  - uid: LobsterFramework.AbilitySystem.LightWeaponAttackConfig
-    name: LightWeaponAttackConfig
-  - uid: LobsterFramework.AbilitySystem.LightWeaponAttackContext
-    name: LightWeaponAttackContext
-  - uid: LobsterFramework.AbilitySystem.OffhandAbility
-    name: OffhandAbility
-  - uid: LobsterFramework.AbilitySystem.OffhandAbilityChannel
-    name: OffhandAbilityChannel
-  - uid: LobsterFramework.AbilitySystem.OffhandAbilityConfig
-    name: OffhandAbilityConfig
-  - uid: LobsterFramework.AbilitySystem.OffhandAbilityContext
-    name: OffhandAbilityContext
   - uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
     name: RequireAbilityComponentsAttribute
-  - uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
-    name: RequireWeaponStatAttribute
   - uid: LobsterFramework.AbilitySystem.TargetSetting
     name: TargetSetting
-  - uid: LobsterFramework.AbilitySystem.TestAnimationEntries
-    name: TestAnimationEntries
-  - uid: LobsterFramework.AbilitySystem.TestCoroutine
-    name: TestCoroutine
-  - uid: LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
-    name: TestCoroutine.TestCoroutineConfig
-  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility
-    name: TestWeaponAbility
-  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
-    name: TestWeaponAbility.TestWeaponAbilityConfig
-  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
-    name: TestWeaponAbility.TestWeaponAbilityPipe
-  - uid: LobsterFramework.AbilitySystem.Weapon
-    name: Weapon
-  - uid: LobsterFramework.AbilitySystem.WeaponAbility
-    name: WeaponAbility
   - uid: LobsterFramework.AbilitySystem.WeaponAnimationAttribute
     name: WeaponAnimationAttribute
-  - uid: LobsterFramework.AbilitySystem.WeaponAnimationData
+- uid: LobsterFramework.AbilitySystem.WeaponSystem
+  name: LobsterFramework.AbilitySystem.WeaponSystem
+  items:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig
+    name: AbilityAnimationConfig
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute
+    name: AddWeaponArtMenuAttribute
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
+    name: AddWeaponStatMenuAttribute
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard
+    name: Guard
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.GuardAnimations
+    name: Guard.GuardAnimations
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel
+    name: GuardChannel
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
+    name: GuardConfig
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.GuardContext
+    name: GuardContext
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack
+    name: HeavyWeaponAttack
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel
+    name: HeavyWeaponAttackChannel
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig
+    name: HeavyWeaponAttackConfig
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext
+    name: HeavyWeaponAttackContext
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack
+    name: LightWeaponAttack
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel
+    name: LightWeaponAttackChannel
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig
+    name: LightWeaponAttackConfig
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext
+    name: LightWeaponAttackContext
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
+    name: OffhandAbility
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
+    name: OffhandAbilityChannel
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig
+    name: OffhandAbilityConfig
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
+    name: OffhandAbilityContext
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
+    name: OffhandWeaponAbilityAttribute
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
+    name: RequireWeaponStatAttribute
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
+    name: Weapon
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+    name: WeaponAbility
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
     name: WeaponAnimationData
-  - uid: LobsterFramework.AbilitySystem.WeaponArt
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
     name: WeaponArt
-  - uid: LobsterFramework.AbilitySystem.WeaponArtChannel
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel
     name: WeaponArtChannel
-  - uid: LobsterFramework.AbilitySystem.WeaponArtConfig
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
     name: WeaponArtConfig
-  - uid: LobsterFramework.AbilitySystem.WeaponArtContext
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext
     name: WeaponArtContext
-  - uid: LobsterFramework.AbilitySystem.WeaponArtSelector
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
     name: WeaponArtSelector
-  - uid: LobsterFramework.AbilitySystem.WeaponData
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
     name: WeaponData
-  - uid: LobsterFramework.AbilitySystem.WeaponManager
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
     name: WeaponManager
-  - uid: LobsterFramework.AbilitySystem.WeaponStat
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
     name: WeaponStat
-  - uid: LobsterFramework.AbilitySystem.WeaponStatDictionary
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary
     name: WeaponStatDictionary
-  - uid: LobsterFramework.AbilitySystem.WeaponState
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponState
     name: WeaponState
-  - uid: LobsterFramework.AbilitySystem.WeaponType
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
     name: WeaponType
-  - uid: LobsterFramework.AbilitySystem.WeaponUtility
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
     name: WeaponUtility
 - uid: LobsterFramework.AI
   name: LobsterFramework.AI
@@ -335,8 +318,8 @@ items:
     name: SerializedPropertyExtensions
   - uid: LobsterFramework.Editors.StateDataEditor
     name: StateDataEditor
-  - uid: LobsterFramework.Editors.StateDataEditorSetting
-    name: StateDataEditorSetting
+  - uid: LobsterFramework.Editors.StateEditorConfig
+    name: StateEditorConfig
   - uid: LobsterFramework.Editors.WeaponAnimationDataEditor
     name: WeaponAnimationDataEditor
   - uid: LobsterFramework.Editors.WeaponArtSelectorDrawer

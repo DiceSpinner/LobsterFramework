@@ -58,11 +58,11 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
-  - LobsterFramework.AbilitySystem.AbilityAnimationConfig
   - LobsterFramework.AbilitySystem.AbilityComponentDictionary
   - LobsterFramework.AbilitySystem.AbilityConfigDictionary
   - LobsterFramework.AbilitySystem.AbilityDictionary
-  - LobsterFramework.AbilitySystem.WeaponStatDictionary
+  - LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary
   - LobsterFramework.AI.StateDicationary
   implements:
   - System.Collections.Generic.IDictionary{{TKey},{TValue}}

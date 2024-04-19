@@ -5,26 +5,31 @@ using System;
 using System.Reflection;
 using LobsterFramework.Utility;
 using Animancer;
+using UnityEngineInternal;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
-    /// Abilities defines the kind of actions the parent object can make. <br/>
-    /// Each subclass of Ability defines its own AbilityConfig and can be runned on multiple instances of its AbilityConfigs.
+    /// Represents an ability in the ability system. Allows multiple instances to be defined. Can be customized via <see cref="AbilityData"/> inspector.
     /// </summary>
     public abstract class Ability : ScriptableObject
     {
-        protected internal AbilityManager abilityManager;
-        public RefAbilityPriority abilityPriority;
-
-        [SerializeField] internal AbilityConfigDictionary configs = new();
+        [Tooltip("The priority in which this ability will be executed in relation with other abilities. Higher prioritied abilities will be executed first.")]
+        [field: SerializeField] internal int executionPriority;
+        [SerializeField, HideInInspector] internal AbilityConfigDictionary configs = new();
         internal Dictionary<string, AbilityChannel> channels = new();
         internal Dictionary<string, AbilityContext> contexts = new();
 
+        protected internal AbilityManager abilityManager;
         private HashSet<string> executing = new();
 
+        /// <summary>
+        /// The priority in which this ability will be executed. Higher number means it will be executed earlier.
+        /// </summary>
+        public int ExecutionPriority { get { return executionPriority; } }
         protected string Instance { get; private set; }
         protected AbilityConfig Config { get; private set; }
         protected AbilityChannel Channel { get; private set; }
@@ -32,64 +37,38 @@ namespace LobsterFramework.AbilitySystem {
 
 #if UNITY_EDITOR
         /// <summary>
-        /// Add the config with specified name to this Ability, this should only be called by editor scripts
+        /// Add an ability instance to this ability
         /// </summary>
-        /// <param name="name">The name of the config to be added</param>
-        internal bool AddConfig(string name)
-        {
-            Type type = GetType();
-            if (ComplementariesDefined())
-            {
-                if (configs.ContainsKey(name))
-                {
-                    Debug.LogError("The ability config with name '" + name + "' is already added!");
-                    return false;
-                }
-                
-                var m = (typeof(Ability)).GetMethod("AddConfigGeneric", BindingFlags.NonPublic | BindingFlags.Instance);
-                Type configType = type.Assembly.GetType(type.FullName + "Config");
-                MethodInfo method = m.MakeGenericMethod(configType);
-                method.Invoke(this, new[] { name });
-                return true;
+        /// <param name="name">Name of the ability instance</param>
+        /// <returns>true if the ability instance with specified name did not exist already and is successfully created and added, false otherwise</returns>
+        internal bool AddInstance(string name) {
+            if (configs.ContainsKey(name)) {
+                return false;
             }
-            Type t = GetBaseConfigType();
-            Type t2 = GetBaseChannelType();
-            Type t3 = GetBaseContextType();
-            Debug.LogError($"The necessary complementary classes for this ability is not defined, make sure to define {type.Name}Config / {type.Name}Pipe / {type.Name}Context and with each " +
-                $"inherit from {t.Name} / {t2.Name} / {t3.Name}");
-            return false;
-        }
-
-        private void AddConfigGeneric<T>(string name) where T : AbilityConfig 
-        {
-            Type type = GetType();
-            if (typeof(T).FullName != (type.FullName + "Config"))
-            {
-                Debug.LogError("Config of type" + typeof(T).ToString() + " cannot be added!");
-                return;
-            }
-            T config = CreateInstance<T>();
-            configs.Add(name, config);
-            config.name = this.name + "-" + name;
-            if (AssetDatabase.Contains(this))
-            {
+            AbilityConfig config = AddAbilityMenuAttribute.CreateAbilityConfig(GetType());
+            configs[name] = config;
+            if (AssetDatabase.Contains(this)) {
                 AssetDatabase.AddObjectToAsset(config, this);
             }
+            return true;
         }
 
         /// <summary>
-        /// Remove the config with specified name if present, this should only be called by editor scripts
+        /// Remove the ability instance with specified name if present, this should only be called by editor scripts
         /// </summary>
-        /// <param name="name">Name of the config to be removed</param>
-        /// <returns>The status of this operation</returns>
-        public bool RemoveConfig(string name)
+        /// <param name="name">Name of the ability instance to be removed</param>
+        /// <returns>True if ability instance exists and successfully removed it, false otherwise</returns>
+        internal bool RemoveInstance(string name)
         {
             if (!configs.ContainsKey(name))
             {
                 return false;
             }
             AbilityConfig config = configs[name];
+            SuspendInstance(name);
             configs.Remove(name);
+            contexts.Remove(name);
+            channels.Remove(name);
             DestroyImmediate(config, true);
             return true;
         }
@@ -105,152 +84,132 @@ namespace LobsterFramework.AbilitySystem {
         internal void DisplayCurrentExecutingInstances() {
             if (executing.Count > 0)
             {
-                string name = GetType().Name;
-                foreach (string configName in executing)
+                string ability = GetType().Name;
+                foreach (string instance in executing)
                 {
-                    EditorGUILayout.LabelField(name, configName);
+                    EditorGUILayout.LabelField(ability, instance);
                 }
             }
         }
 #endif
 
+        #region Startup and termination handling
         /// <summary>
-        /// Clean up ability context environments
+        /// Initialize local references, sets up ability contexts and channels.
         /// </summary>
-        protected virtual void ClearSetup() { }
+        internal void Begin()
+        {
+            SetContext(default);
+            InitializeSharedReferences();
+            Type type = GetType();
+
+            List<string> removed = new();
+            foreach (KeyValuePair<string, AbilityConfig> pair in configs)
+            {
+                AbilityConfig config = pair.Value;
+                string name = pair.Key;
+                if (config == null)
+                {
+                    removed.Add(name);
+                    continue;
+                }
+                AbilityChannel channel = AddAbilityMenuAttribute.CreateAbilityChannel(type);
+                channels[name] = channel;
+
+                AbilityContext context = AddAbilityMenuAttribute.CreateAbilityContext(type); ;
+                contexts[name] = context;
+
+                SetContext(name);
+                InitializeContext();
+            }
+            foreach (string key in removed)
+            {
+                configs.Remove(key);
+            }
+        }
+
+        /// <summary>
+        /// Callback to initialize the references shared by all ability instances
+        /// </summary>
+        protected virtual void InitializeSharedReferences() { }
+
+        /// <summary>
+        /// Callback to initialize ability context and channels
+        /// </summary>
+        protected virtual void InitializeContext() { }
 
         /// <summary>
         /// Called when ability manager is disabled
         /// </summary>
         internal void OnClose()
         {
-            
-            foreach (AbilityContext context in contexts.Values)
-            {
-                context.ClearSetup();
+            foreach (string instance in configs.Keys) {
+                SetContext(instance);
+                FinalizeContext();
             }
-            ClearSetup();
-        }
 
+            SetContext(default);
+            FinalizeSharedReferences();
+        }
+        /// <summary>
+        /// Callback to finialize the references shared by all ability instances
+        /// </summary>
+        protected virtual void FinalizeSharedReferences() { }
+
+        /// <summary>
+        /// Callback to finialize the ability context and channels
+        /// </summary>
+        protected virtual void FinalizeContext() { }
+
+        internal void ResetStatus()
+        {
+            FinalizeSharedReferences();
+            InitializeSharedReferences();
+        }
+        #endregion
+
+        #region Comparer
         // Comparer used to sort action by their priority
         public int CompareByExecutionPriority(Ability other)
         {
-            return abilityPriority.Value.executionPriority - other.abilityPriority.Value.executionPriority;
+            return executionPriority - other.executionPriority;
         }
+        #endregion
 
-        public int CompareByEnqueuePriority(Ability other)
+        #region Public Actions
+        protected void StartAnimation(string instance, AnimationClip animation, float speed = 1)
         {
-            return abilityPriority.Value.enqueuePriority - other.abilityPriority.Value.enqueuePriority;
-        }
-
-        protected void StartAnimation(string instance, AnimationClip animation, float speed = 1) { 
             abilityManager.StartAnimation(this, instance, animation, speed);
         }
 
         /// <summary>
-        /// Additionaly utility method for skill check that can be imeplemented if the ability have additional requirements, this may varies beween different configs
+        /// Suspend the execution of the specified ability instance and casuing it to finish at the current frame
         /// </summary>
-        /// <param name="config">The config being queried</param>
-        /// <returns></returns>
-        protected virtual bool ConditionSatisfied() { return true; }
-
-        /// <summary>
-        /// Enqueue the ability if its not on cooldown and conditions are satisfied.  <br/>
-        /// This method should not be directly called by external modules such as play input or AI. <br/> 
-        /// AbilityRunner.EnqueueAbility&lt;T&gt;(string configName) shoud be used instead.
-        /// </summary>
-        /// <param name="configName">Name of the config being enqueued</param>
-        /// <returns>true if successully enqueued the ability for execution, false otherwise</returns>
-        internal bool EnqueueAbility(string configName)
-        {
-            try{
-                if (IsReady(configName))
-                {
-                    Instance = configName;
-                    Config = configs[configName];
-                    Channel = channels[configName];
-                    Context = contexts[configName];
-                    Context.isRunning = true;
-                    executing.Add(configName);
-                    OnEnqueue();
-                    
-                    AbilityExecutor.EnqueueAction(new AbilityInstance(this, configName));
-                    return true;
-                }
-            }catch(Exception e)
-            {
-                Debug.LogWarning($"Ability '{GetType().FullName}' Enqueue error:", abilityManager);
-                Debug.LogException(e);
-                SuspendInstance(configName);
-            }
-            
-            return false;
-        }
-
-        /// <summary>
-        /// Execute the config with the provided name.
-        /// </summary>
-        /// <param name="configName"></param>
-        /// <returns>true if the ability will continue to execute, false otherwise</returns>
-        internal bool Execute(string configName)
+        /// <param name="instance"> Name of the configuration of the ability instance to terminate </param>
+        /// <returns> true if the configuration exists and is not running or suspended, otherwise false </returns>
+        public bool SuspendInstance(string instance)
         {
             try
             {
-                Instance = configName;
-                Config = configs[configName];
-                Channel = channels[configName];
-                Context = contexts[configName];
-                return Action();
+                SetContext(instance);
+                if (!Context.isRunning)
+                {
+                    return true;
+                }
+                Context.isRunning = false;
+                executing.Remove(instance);
+                Context.timeWhenAvailable = Time.time + Config.CoolDown;
+                OnAbilityFinish();
             }
             catch (Exception ex)
             {
-                Debug.LogWarning($"Ability '{GetType().FullName}' failed to execute with config  {configName}:\n", abilityManager);
+                Debug.LogWarning($"Ability '{GetType().FullName}' failed to finialize with instance {instance}:\n", abilityManager);
                 Debug.LogException(ex);
-                SuspendInstance(configName);
-            }
-            return false;
-        }
-
-       /// <summary>
-       /// The number of instances of this ability is running
-       /// </summary>
-        public int Running { get { return executing.Count; } }
-
-        /// <summary>
-        /// Suspend the execution of the specified ability instance and casuing it to finish at the current frame
-        /// </summary>
-        /// <param name="configName"> Name of the configuration of the ability instance to terminate </param>
-        /// <returns> true if the configuration exists and is not running or suspended, otherwise false </returns>
-        public bool SuspendInstance(string configName)
-        {
-            if (!configs.ContainsKey(configName))
-            {
                 return false;
-            }
-            AbilityContext context = contexts[configName];
-            if (!context.isRunning)
-            {
-                return true;
-            }
-            context.isRunning = false;
-            executing.Remove(configName);
-            context.timeWhenAvailable = Time.time + configs[configName].CoolDown;
-
-            try
-            {
-                Instance = configName;
-                Config = configs[configName];
-                Channel = channels[configName];
-                Context = context;
-                OnAbilityFinish();
-            }catch (Exception ex)
-            {
-                Debug.LogWarning($"Ability '{GetType().FullName}' failed to finialize with config  {configName}:\n", abilityManager);
-                Debug.LogException(ex);
             }
 
             // Update execution info for ability manager
-            abilityManager.OnAbilityFinish(new AbilityInstance(this, configName));
+            abilityManager.OnAbilityFinish(new AbilityInstance(this, instance));
             return true;
         }
 
@@ -264,119 +223,6 @@ namespace LobsterFramework.AbilitySystem {
                 SuspendInstance(name);
             }
         }
-
-        /// <summary>
-        /// Callback to initialize the ability variables
-        /// </summary>
-        protected virtual void Initialize() { }
-
-        /// <summary>
-        /// Check if the provided config is executing, this method will return false if the config is not present
-        /// </summary>
-        /// <param name="configName"> The name of the config to be examined </param>
-        /// <returns> true if the specified config is executing, otherwise false </returns>
-        public bool IsExecuting(string configName)
-        {
-            return executing.Contains(configName);
-        }
-
-        /// <summary>
-        /// Check if the speficied ability instance is ready
-        /// </summary>
-        /// <param name="instance">The name of the instance of the ability instance</param>
-        /// <returns>true if config with specified name exists and is ready, false otherwise</returns>
-        public bool IsReady(string instance)
-        {
-            if (!configs.ContainsKey(instance))
-            {
-                Debug.LogError(GetType().ToString() + " does not have config with name '" + instance + "'", this);
-                return false;
-            }
-            Config = configs[instance];
-            Channel = channels[instance];
-            Context = contexts[instance];
-            return !Context.IsRunning && (!Config.UseCooldown || !Context.OnCooldown) && ConditionSatisfied();
-        }
-
-        /// <summary>
-        /// Initialize ability context environments
-        /// </summary>
-        internal void OnOpen()
-        {
-            if (!ComplementariesDefined())
-            {
-                Debug.LogError("The ability config or channel for '" + GetType() + "' is not declared!");
-            }
-            Initialize();
-            Type type = GetType();
-            Type channelType = type.Assembly.GetType(type.FullName + "Channel");
-            Type contextType = type.Assembly.GetType(type.FullName + "Context");
-
-            List<string> removed = new();
-            foreach (KeyValuePair<string, AbilityConfig> pair in configs)
-            {
-                AbilityConfig config = pair.Value;
-                string name = pair.Key;
-                if (config == null)
-                {
-                    removed.Add(name);
-                    continue;
-                }
-                channels[name] = (AbilityChannel)Activator.CreateInstance(channelType);
-                channels[name].Construct(config);
-                
-                AbilityContext context = (AbilityContext)Activator.CreateInstance(contextType);
-                context.ability = this;
-                contexts[name] = context;
-                context.Initialize();
-            }
-            foreach (string key in removed)
-            {
-                configs.Remove(key);
-            }
-        }
-
-        // Reset, called when the parent component is resetted
-        internal void ResetStatus()
-        {
-            ClearSetup();
-            Initialize();
-        }
-
-        /// <summary>
-        /// Main body of the ability execution, implement this to create different abilities!
-        /// </summary>
-        /// <returns>False if the ability has finished, otherwise true</returns>
-        protected abstract bool Action();
-
-        /// <summary>
-        /// Callback when the ability is finished or halted.
-        /// </summary>
-        protected virtual void OnAbilityFinish() { }
-
-        /// <summary>
-        /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
-        /// Default implementation suspends the ability.
-        /// </summary>
-        protected virtual void OnAnimationInterrupt(AnimancerState state) { state.Speed = 1; SuspendInstance(Instance); }
-
-        /// <summary>
-        /// Send animation interrupt signal to the ability
-        /// </summary>
-        /// <param name="instance">Name of the ability instance</param>
-        internal void AnimationInterrupt(string instance, AnimancerState state)
-        {
-            if (!configs.ContainsKey(instance)) { return; }
-            Instance = instance;
-            Config = configs[instance];
-            Context = contexts[instance];
-            Channel = channels[instance];
-            OnAnimationInterrupt(state);
-        }
-        /// <summary>
-        /// Callback when the ability is added to the queue for execution
-        /// </summary>
-        protected virtual void OnEnqueue() { }
 
         /// <summary>
         /// Attempt to join the current running ability with another ability that is running. 
@@ -401,91 +247,132 @@ namespace LobsterFramework.AbilitySystem {
         {
             return abilityManager.JoinAbilities(abilityType, GetType(), instance, Instance);
         }
+        #endregion
 
-    # region Requirement Check
-            private Type GetBaseConfigType()
+        #region Internal Actions
+        internal void SetContext(string instance) {
+            if (instance != default)
             {
-                Type type = GetType().BaseType;
-                while (type != typeof(Ability))
+                Instance = instance;
+                Config = configs[instance];
+                Channel = channels[instance];
+                Context = contexts[instance];
+            }
+            else
+            {
+                Instance = default;
+                Config = null;
+                Channel = null;
+                Context = null;
+            }
+        }
+
+        /// <summary>
+        /// Enqueue the ability if its not on cooldown and conditions are satisfied.  <br/>
+        /// This method should not be directly called by external modules such as play input or AI. <br/> 
+        /// AbilityRunner.EnqueueAbility&lt;T&gt;(string configName) shoud be used instead.
+        /// </summary>
+        /// <param name="instance">Name of the ability instance being enqueued</param>
+        /// <returns>true if successully enqueued the ability instance for execution, false otherwise</returns>
+        internal bool EnqueueAbility(string instance)
+        {
+            try
+            {
+                if (IsReady(instance))
                 {
-                    Type t = type.Assembly.GetType(type.FullName + "Config");
-                    if (t != null && t.IsSubclassOf(typeof(AbilityConfig)))
-                    {
-                        return t;
-                    }
-                    type = type.BaseType;
+                    SetContext(instance);
+                    Context.isRunning = true;
+                    executing.Add(instance);
+                    AbilityExecutor.EnqueueAction(new AbilityInstance(this, instance));
+
+                    OnAbilityEnqueue();
+                    return true;
                 }
-                return typeof(AbilityConfig);
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"Ability '{GetType().FullName}' Enqueue error:", abilityManager);
+                Debug.LogException(e);
+                SuspendInstance(instance);
             }
 
-            private Type GetBaseChannelType()
+            return false;
+        }
+
+
+        /// <summary>
+        /// Execute the ability instance
+        /// </summary>
+        /// <param name="instanceName">Name of the ability instance to be executed</param>
+        /// <returns>true if the ability will continue to execute, false otherwise</returns>
+        internal bool Execute(string instanceName)
+        {
+            try
             {
-                Type type = GetType().BaseType;
-                while (type != typeof(Ability))
-                {
-                    Type t = type.Assembly.GetType(type.FullName + "Channel");
-                    if (t != null && t.IsSubclassOf(typeof(AbilityChannel)))
-                    {
-                        return t;
-                    }
-                    type = type.BaseType;
-                }
-                return typeof(AbilityChannel);
+                SetContext(instanceName);
+                return Action();
             }
-
-            private Type GetBaseContextType() {
-                Type type = GetType().BaseType;
-                while (type != typeof(Ability))
-                {
-                    Type t = type.Assembly.GetType(type.FullName + "Context");
-                    if (t != null && t.IsSubclassOf(typeof(AbilityContext)))
-                    {
-                        return t;
-                    }
-                    type = type.BaseType;
-                }
-                return typeof(AbilityContext);
-            }
-
-            /// <summary>
-            /// Check to see if the ability class has the pipe, config and context classes defined in the same namespace
-            /// </summary>
-            /// <returns>true if all necessities have been defined, false otherwise</returns>
-            private bool ComplementariesDefined()
+            catch (Exception ex)
             {
-                Type abilityType = GetType();
-                string typeName = abilityType.FullName + "Config";
-                string pipeName = abilityType.FullName + "Channel";
-                string contextName = abilityType.FullName + "Context";
-                Type configType = GetBaseConfigType();
-                Type channelType = GetBaseChannelType();
-                Type contextType = GetBaseContextType();
-                bool config = false;
-                bool pipe = false;
-                bool context = false;
+                Debug.LogWarning($"Ability '{GetType().FullName}' failed to execute with instance {instanceName}:\n", abilityManager);
+                Debug.LogException(ex);
+                SuspendInstance(instanceName);
+            }
+            return false;
+        }
 
-                Type[] types = abilityType.Assembly.GetTypes();
-                foreach (Type type in types)
-                {
-                    string name = type.FullName;
-                    if (name.Equals(typeName) && type.IsSubclassOf(configType))
-                    {
-                        config = true;
-                    }
-                    else if (name.Equals(pipeName) && type.IsSubclassOf(channelType))
-                    {
-                        pipe = true;
-                    } else if (name.Equals(contextName) && type.IsSubclassOf(contextType)) {
-                        context = true;
-                    }
-                    if (config && pipe && context)
-                    {
-                        return true;
-                    }
-                }
+        /// <summary>
+        /// Send animation interrupt signal to the ability
+        /// </summary>
+        /// <param name="instance">Name of the ability instance</param>
+        internal void AnimationInterrupt(string instance, AnimancerState state)
+        {
+            if (!configs.ContainsKey(instance)) { return; }
+            SetContext(instance);
+            OnAnimationInterrupt(state);
+        }
+
+        internal AbilityChannel GetAbilityChannel(string configName)
+        {
+            if (configs.ContainsKey(configName))
+            {
+                return channels[configName];
+            }
+            return default;
+        }
+        #endregion
+
+        #region Query
+        /// <summary>
+        /// The number of instances of this ability is running
+        /// </summary>
+        public int InstancesRunning { get { return executing.Count; } }
+
+        /// <summary>
+        /// Check if the ability instance is executing, this method will return false if the instance is not present
+        /// </summary>
+        /// <param name="instance"> The name of the instance to be examined </param>
+        /// <returns> true if the specified instance is executing, otherwise false </returns>
+        public bool IsRunning(string instance)
+        {
+            return executing.Contains(instance);
+        }
+
+        /// <summary>
+        /// Check if the speficied ability instance is ready
+        /// </summary>
+        /// <param name="instance">The name of the instance of the ability instance</param>
+        /// <returns>true if config with specified name exists and is ready, false otherwise</returns>
+        public bool IsReady(string instance)
+        {
+            try {
+                SetContext(instance);
+                return !Context.IsRunning && (!Config.UseCooldown || !Context.OnCooldown) && ConditionSatisfied();
+            } catch (KeyNotFoundException) {
+                Debug.LogError(GetType().ToString() + " does not have config with name '" + instance + "'", this);
                 return false;
             }
-            #endregion
+        }
 
         /// <summary>
         /// Check if the ability has specified configuration
@@ -496,119 +383,82 @@ namespace LobsterFramework.AbilitySystem {
         {
             return configs.ContainsKey(instance);
         }
+        #endregion
+
+        #region Core Ability Implementations
+        /// <summary>
+        /// Used for doing additional requirement check for running the ability.
+        /// </summary>
+        /// <returns>true if the condition for this ability has been satisfied, otherwise false</returns>
+        protected virtual bool ConditionSatisfied() { return true; }
+
+        /// <summary>
+        /// Called every frame while the ability instance remains in the execution queue.
+        /// </summary>
+        /// <returns>false if the ability has finished and should not execute further, otherwise true</returns>
+        protected abstract bool Action();
+
+        /// <summary>
+        /// Callback when the ability is added to the queue for execution
+        /// </summary>
+        protected virtual void OnAbilityEnqueue() { }
+
+        /// <summary>
+        /// Callback when the ability is finished or halted.
+        /// </summary>
+        protected virtual void OnAbilityFinish() { }
+
+        /// <summary>
+        /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
+        /// Default implementation suspends the ability.
+        /// </summary>
+        protected virtual void OnAnimationInterrupt(AnimancerState state) { state.Speed = 1; SuspendInstance(Instance); }
 
         #region Signal Handlers
         /// <summary>
-        /// Signal this ability.
+        /// Send an animation signal to this ability.
         /// </summary>
-        /// <param name="configName"></param>
-        /// <param name="animationEvent"></param>
-        public void Signal(string configName, AnimationEvent animationEvent)
+        internal void Signal(string instanceName, AnimationEvent animationEvent)
         {
-            if (configs.TryGetValue(configName, out AbilityConfig config) && contexts[configName].isRunning)
+            try
             {
-                Instance = configName;
-                Config = config;
-                Channel = channels[configName];
-                Context = contexts[configName];
-                OnSignaled(animationEvent);
+                SetContext(instanceName);
+                if (Context.isRunning)
+                {
+                    OnSignaled(animationEvent);
+                }
             }
-        }
-        public void Signal(string configName)
-        {
-            if (configs.TryGetValue(configName, out AbilityConfig config) && contexts[configName].isRunning)
-            {
-                Instance = configName;
-                Config = config;
-                Channel = channels[configName];
-                Context = contexts[configName];
-                OnSignaled();
-            }
-        }
-        public void Signal(string configName, int num)
-        {
-            if (configs.TryGetValue(configName, out AbilityConfig config) && contexts[configName].isRunning)
-            {
-                Instance = configName;
-                Config = config;
-                Channel = channels[configName];
-                Context = contexts[configName];
-                OnSignaled(num);
-            }
-        }
-        public void Signal(string configName, bool flag)
-        {
-            if (configs.TryGetValue(configName, out AbilityConfig config) && contexts[configName].isRunning)
-            {
-                Instance = configName;
-                Config = config;
-                Channel = channels[configName];
-                Context = contexts[configName];
-                OnSignaled(flag);
-            }
-        }
-        public void Signal(string configName, string text)
-        {
-            if (configs.TryGetValue(configName, out AbilityConfig config) && contexts[configName].isRunning)
-            {
-                Instance = configName;
-                Config = config;
-                Channel = channels[configName];
-                Context = contexts[configName];
-                OnSignaled(text);
-            }
-        }
-        public void Signal(string configName, UnityEngine.Object obj)
-        {
-            if (configs.TryGetValue(configName, out AbilityConfig config) && contexts[configName].isRunning)
-            {
-                Instance = configName;
-                Config = config;
-                Channel = channels[configName];
-                Context = contexts[configName];
-                OnSignaled(obj);
-            }
+            catch (KeyNotFoundException) { }
         }
 
         /// <summary>
-        /// Override this to implement signal event handler
+        /// Send a signal to this ability.
+        /// </summary>
+        internal void Signal(string instanceName)
+        {
+            try
+            {
+                SetContext(instanceName);
+                if (Context.isRunning)
+                {
+                    OnSignaled();
+                }
+            }
+            catch (KeyNotFoundException) { }
+        }
+
+        /// <summary>
+        /// Signal handler for animation event.
         /// </summary>
         protected virtual void OnSignaled(AnimationEvent animationEvent) { }
 
         /// <summary>
-        /// Override this to implement signal event handler
+        /// Signal handler for user event.
         /// </summary>
         protected virtual void OnSignaled() { }
-
-        /// <summary>
-        /// Override this to implement signal event handler
-        /// </summary>
-        protected virtual void OnSignaled(int num) { }
-
-        /// <summary>
-        /// Override this to implement signal event handler
-        /// </summary>
-        protected virtual void OnSignaled(bool flag) { }
-
-        /// <summary>
-        /// Override this to implement signal event handler
-        /// </summary>
-        protected virtual void OnSignaled(string text) { }
-
-        /// <summary>
-        /// Override this to implement signal event handler
-        /// </summary>
-        protected virtual void OnSignaled(UnityEngine.Object obj) { }
         #endregion
 
-        internal AbilityChannel GetAbilityChannel(string configName)
-        {
-            if (configs.ContainsKey(configName))
-            {
-                return channels[configName];
-            }
-            return default;
-        }
+        #endregion
     }
 
     #region Complementary classes (Must be defined for each Ability)
@@ -618,22 +468,11 @@ namespace LobsterFramework.AbilitySystem {
     /// </summary>
     public class AbilityContext
     {
-        internal protected Ability ability;
         internal bool isRunning = false;
         internal float timeWhenAvailable = 0;
         
         public bool IsRunning { get { return isRunning; } }
         public bool OnCooldown { get { return Time.time < timeWhenAvailable; } }
-
-        /// <summary>
-        /// Callback to clean up the context
-        /// </summary>
-        protected internal virtual void ClearSetup() { }
-
-        /// <summary>
-        /// Callback to initialize the contex
-        /// </summary>
-        protected internal virtual void Initialize() { }
     }
 
     /// <summary>
@@ -641,13 +480,6 @@ namespace LobsterFramework.AbilitySystem {
     /// </summary>
     public class AbilityChannel
     {
-        protected AbilityConfig config;
-        public void Construct(AbilityConfig config)
-        {
-            this.config = config;
-            Construct();
-        }
-        public virtual void Construct() { }
     }
 
     /// <summary>
@@ -697,7 +529,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         public bool IsValid() {
-            return ability.IsExecuting(configName);
+            return ability.IsRunning(configName);
         }
 
         public bool IsEmpty { get { return ability == null; } }

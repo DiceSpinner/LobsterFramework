@@ -19,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityExecutor
     path: ../AbilitySystem/AbilityExecutor.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

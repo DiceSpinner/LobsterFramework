@@ -20,7 +20,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Bullet
     path: ../Components/Projectiles/Bullet.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
@@ -181,7 +181,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Initialize
     path: ../Components/Projectiles/Bullet.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool

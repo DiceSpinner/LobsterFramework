@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
-using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     /// <summary>
     /// Mark the WeaponAbility as an offhand WeaponAbility

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [CreateAssetMenu(menuName = "Ability/Weapon Data")]
     public class WeaponData : ScriptableObject

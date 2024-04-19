@@ -1,4 +1,4 @@
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     public class OffhandAbilityConfig : AbilityConfig { } 
 }

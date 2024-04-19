@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-namespace LobsterFramework.AbilitySystem
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [AddAbilityMenu]
     [ComponentRequired(typeof(WeaponManager))]
     public class OffhandAbility : Ability
     {
         private WeaponManager weaponWielder;
-        protected override void Initialize()
+        protected override void InitializeSharedReferences()
         {
             weaponWielder = abilityManager.GetComponentInBoth<WeaponManager>();
         }
@@ -25,7 +25,7 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
-        protected override void OnEnqueue()
+        protected override void OnAbilityEnqueue()
         {
             ValueTuple<Type, string> setting = weaponWielder.Offhand.AbilitySetting;
             if (abilityManager.EnqueueAbility(setting.Item1, setting.Item2))

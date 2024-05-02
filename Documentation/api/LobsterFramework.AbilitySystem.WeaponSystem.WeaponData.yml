@@ -4,8 +4,7 @@ items:
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
   id: WeaponData
   parent: LobsterFramework.AbilitySystem.WeaponSystem
-  children:
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
+  children: []
   langs:
   - csharp
   - vb
@@ -100,34 +99,6 @@ items:
     - name: menuName
       type: System.String
       value: Ability/Weapon Data
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  id: Clone
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-  langs:
-  - csharp
-  - vb
-  name: Clone()
-  nameWithType: WeaponData.Clone()
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Weapon/WeaponData.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Clone
-    path: ../AbilitySystem/Weapon/WeaponData.cs
-    startLine: 14
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  syntax:
-    content: public WeaponData Clone()
-    return:
-      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-    content.vb: Public Function Clone() As WeaponData
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone*
 references:
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
@@ -2256,16 +2227,3 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  name: Clone
-  nameWithType: WeaponData.Clone
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html
-  name: WeaponData
-  nameWithType: WeaponData
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData

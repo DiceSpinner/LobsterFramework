@@ -28,8 +28,14 @@ items:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: 'public class DamageModifier : AbilityComponent'
-    content.vb: Public Class DamageModifier Inherits AbilityComponent
+    content: >-
+      [AddAbilityComponentMenu("LobsterFramework")]
+
+      public class DamageModifier : AbilityComponent
+    content.vb: >-
+      <AddAbilityComponentMenu("LobsterFramework")>
+
+      Public Class DamageModifier Inherits AbilityComponent
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -92,6 +98,12 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
+    ctor: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: LobsterFramework
 - uid: LobsterFramework.AbilitySystem.DamageModifier.flatDamageModification
   commentId: F:LobsterFramework.AbilitySystem.DamageModifier.flatDamageModification
   id: flatDamageModification

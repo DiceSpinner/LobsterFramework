@@ -77,7 +77,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Type
     path: ../Utility/SerializableDataStructures/SerializableType.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -108,7 +108,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAfterDeserialize
     path: ../Utility/SerializableDataStructures/SerializableType.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -140,7 +140,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnBeforeSerialize
     path: ../Utility/SerializableDataStructures/SerializableType.cs
-    startLine: 33
+    startLine: 36
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility

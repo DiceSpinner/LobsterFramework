@@ -1,18 +1,44 @@
 using LobsterFramework.AbilitySystem;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
+using LobsterFramework.Utility;
 using UnityEditor;
 using UnityEngine;
 using System;
+using System.Linq;
 
 namespace LobsterFramework.Editors
 {
     public class SelectAbilityPopup : PopupWindowContent
     {
-        public AbilityData data;
-        private Vector2 scrollPosition = Vector2.zero;
-        public AbilityDataEditor editor;
+        private AbilityData data;
+        private AbilityDataEditor editor;
+
+        private MenuTreeItemCollectionDrawer<Type> selectionDrawer;
+
+        public SelectAbilityPopup(AbilityData abilityData, AbilityDataEditor editor) { 
+            data = abilityData;
+            this.editor = editor;
+            var collection = abilityData.abilities.Values.Select((Ability item) => { return item.GetType(); }).ToArray();
+            selectionDrawer = new(collection, AddAbilityMenuAttribute.abilityMenus, DrawMenu, DrawItem);
+            selectionDrawer.SetColorOptions(AbilityEditorConfig.MenuPopupColor, AbilityEditorConfig.AbilityPopupColor);
+        }
+
+        private GUIContent content = new();
+        private void DrawItem(Type abilityType) {
+            content.text = abilityType.Name;
+            if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(abilityType, out Texture2D icon))
+            {
+                content.image = icon;
+            }
+            if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
+            {
+                editor.newSelectedAbility = data.abilities[abilityType.AssemblyQualifiedName];
+                editorWindow.Close();
+            }
+        }
+
+        private void DrawMenu(MenuTree<Type> tree) {
+            GUILayout.Label(tree.path, EditorStyles.boldLabel);
+        }
 
         public override void OnGUI(Rect rect)
         {
@@ -21,33 +47,11 @@ namespace LobsterFramework.Editors
                 EditorGUILayout.LabelField("Cannot Find AbilityData or Editor!");
                 return;
             }
-            GUILayout.BeginVertical();
-            scrollPosition = GUILayout.BeginScrollView(scrollPosition);
-            foreach (Type type in AddAbilityMenuAttribute.abilities)
-            {
-                if (type == editor.removedAbility) { 
-                    continue;
-                }
-                // Display icon in options if there's one for the ability script
-                string key = type.AssemblyQualifiedName;
-                if (!data.abilities.ContainsKey(key))
-                {
-                    continue;
-                }
-                GUIContent content = new();
-                content.text = type.Name;
-                if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(type, out Texture2D icon)) 
-                {
-                    content.image = icon;
-                }
-                if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
-                {
-                    editor.newSelectedAbility = data.abilities[key];
-                    editorWindow.Close();
-                }
-            }
-            GUILayout.EndScrollView();
-            GUILayout.EndVertical();
+            EditorGUILayout.LabelField("Select Ability", EditorUtils.CentredTitleLabelStyle);
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
+            selectionDrawer.Draw();
+            GUILayout.Space(EditorGUIUtility.singleLineHeight);
         }
     }
 }

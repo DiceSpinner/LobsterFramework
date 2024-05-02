@@ -5,7 +5,6 @@ items:
   id: StateDataEditor
   parent: LobsterFramework.Editors
   children:
-  - LobsterFramework.Editors.StateDataEditor.OnEnable
   - LobsterFramework.Editors.StateDataEditor.OnInspectorGUI
   - LobsterFramework.Editors.StateDataEditor.newInitialState
   - LobsterFramework.Editors.StateDataEditor.nextState
@@ -162,7 +161,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: selectedState
     path: ../Editor/Inspector/StateDataEditor.cs
-    startLine: 19
+    startLine: 16
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -189,7 +188,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: nextState
     path: ../Editor/Inspector/StateDataEditor.cs
-    startLine: 20
+    startLine: 17
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -216,7 +215,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: removeState
     path: ../Editor/Inspector/StateDataEditor.cs
-    startLine: 21
+    startLine: 18
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -243,7 +242,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: newInitialState
     path: ../Editor/Inspector/StateDataEditor.cs
-    startLine: 22
+    startLine: 19
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -252,32 +251,6 @@ items:
     return:
       type: LobsterFramework.AI.State
     content.vb: Public newInitialState As State
-- uid: LobsterFramework.Editors.StateDataEditor.OnEnable
-  commentId: M:LobsterFramework.Editors.StateDataEditor.OnEnable
-  id: OnEnable
-  parent: LobsterFramework.Editors.StateDataEditor
-  langs:
-  - csharp
-  - vb
-  name: OnEnable()
-  nameWithType: StateDataEditor.OnEnable()
-  fullName: LobsterFramework.Editors.StateDataEditor.OnEnable()
-  type: Method
-  source:
-    remote:
-      path: Editor/Inspector/StateDataEditor.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnEnable
-    path: ../Editor/Inspector/StateDataEditor.cs
-    startLine: 28
-  assemblies:
-  - LobsterFrameworkEditor
-  namespace: LobsterFramework.Editors
-  syntax:
-    content: public void OnEnable()
-    content.vb: Public Sub OnEnable()
-  overload: LobsterFramework.Editors.StateDataEditor.OnEnable*
 - uid: LobsterFramework.Editors.StateDataEditor.OnInspectorGUI
   commentId: M:LobsterFramework.Editors.StateDataEditor.OnInspectorGUI
   id: OnInspectorGUI
@@ -296,7 +269,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnInspectorGUI
     path: ../Editor/Inspector/StateDataEditor.cs
-    startLine: 39
+    startLine: 25
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -3597,12 +3570,6 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
-- uid: LobsterFramework.Editors.StateDataEditor.OnEnable*
-  commentId: Overload:LobsterFramework.Editors.StateDataEditor.OnEnable
-  href: LobsterFramework.Editors.StateDataEditor.html#LobsterFramework.Editors.StateDataEditor.OnEnable
-  name: OnEnable
-  nameWithType: StateDataEditor.OnEnable
-  fullName: LobsterFramework.Editors.StateDataEditor.OnEnable
 - uid: UnityEditor.Editor.OnInspectorGUI
   commentId: M:UnityEditor.Editor.OnInspectorGUI
   parent: UnityEditor.Editor

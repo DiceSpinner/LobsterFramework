@@ -23,17 +23,23 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponArt
     path: ../AbilitySystem/Abilities/WeaponArt/WeaponArt.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  summary: Use the weapon ability specified by the weapon equipped. Can be used to query the states of the weapon ability being runned.
+  example: []
   syntax:
     content: >-
       [ComponentRequired(new Type[] { typeof(WeaponManager) })]
 
+      [AddAbilityMenu("LobsterFramework")]
+
       public class WeaponArt : Ability
     content.vb: >-
       <ComponentRequired(New Type() { GetType(WeaponManager) })>
+
+      <AddAbilityMenu("LobsterFramework")>
 
       Public Class WeaponArt Inherits Ability
   inheritance:
@@ -119,6 +125,12 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+    ctor: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: LobsterFramework
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.InitializeSharedReferences
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.InitializeSharedReferences
   id: InitializeSharedReferences
@@ -137,7 +149,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializeSharedReferences
     path: ../AbilitySystem/Abilities/WeaponArt/WeaponArt.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -166,7 +178,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ConditionSatisfied
     path: ../AbilitySystem/Abilities/WeaponArt/WeaponArt.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -198,7 +210,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityEnqueue
     path: ../AbilitySystem/Abilities/WeaponArt/WeaponArt.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -227,7 +239,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Action
     path: ../AbilitySystem/Abilities/WeaponArt/WeaponArt.cs
-    startLine: 35
+    startLine: 38
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

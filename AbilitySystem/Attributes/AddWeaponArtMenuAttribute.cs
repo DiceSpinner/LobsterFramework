@@ -7,7 +7,7 @@ using UnityEngine;
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     /// <summary>
-    /// Used on Ability to add it to the options of ability selection for weapon arts.
+    /// Applied to <see cref="WeaponAbility"/> to mark it as a weapon art that can be called by <see cref="WeaponArt"/>.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class AddWeaponArtMenuAttribute : Attribute

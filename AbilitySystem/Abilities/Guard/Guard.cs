@@ -5,7 +5,7 @@ using LobsterFramework.Utility;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
-    [AddAbilityMenu]
+    [AddAbilityMenu("LobsterFramework")]
     [WeaponAnimation(typeof(GuardAnimations))]
     [ComponentRequired(typeof(WeaponManager))]
     public class Guard : WeaponAbility

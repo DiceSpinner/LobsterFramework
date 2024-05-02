@@ -5,20 +5,13 @@ items:
   id: CoroutineOption
   parent: LobsterFramework.Utility
   children:
+  - LobsterFramework.Utility.CoroutineOption.Condition(System.Func{System.Boolean})
   - LobsterFramework.Utility.CoroutineOption.Continue
-  - LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
   - LobsterFramework.Utility.CoroutineOption.Reset
-  - LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func{System.Boolean})
+  - LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
   - LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(LobsterFramework.Utility.Coroutine)
-  - LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
   - LobsterFramework.Utility.CoroutineOption.WaitForSeconds(System.Single)
   - LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds(System.Single)
-  - LobsterFramework.Utility.CoroutineOption.predicateCondition
-  - LobsterFramework.Utility.CoroutineOption.reset
-  - LobsterFramework.Utility.CoroutineOption.unscaled
-  - LobsterFramework.Utility.CoroutineOption.wait
-  - LobsterFramework.Utility.CoroutineOption.waitFor
-  - LobsterFramework.Utility.CoroutineOption.waitTime
   langs:
   - csharp
   - vb
@@ -40,10 +33,8 @@ items:
   summary: Represents options available for Coroutines, use predefined values or utility methods to create the option needed
   example: []
   syntax:
-    content: 'public struct CoroutineOption : IEquatable<CoroutineOption>'
-    content.vb: Public Structure CoroutineOption Implements IEquatable(Of CoroutineOption)
-  implements:
-  - System.IEquatable{LobsterFramework.Utility.CoroutineOption}
+    content: public struct CoroutineOption
+    content.vb: Public Structure CoroutineOption
   inheritedMembers:
   - System.ValueType.Equals(System.Object)
   - System.ValueType.GetHashCode
@@ -51,168 +42,6 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: LobsterFramework.Utility.CoroutineOption.reset
-  commentId: F:LobsterFramework.Utility.CoroutineOption.reset
-  id: reset
-  parent: LobsterFramework.Utility.CoroutineOption
-  langs:
-  - csharp
-  - vb
-  name: reset
-  nameWithType: CoroutineOption.reset
-  fullName: LobsterFramework.Utility.CoroutineOption.reset
-  type: Field
-  source:
-    remote:
-      path: Utility/Coroutine/CoroutineOption.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: reset
-    path: ../Utility/Coroutine/CoroutineOption.cs
-    startLine: 10
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Utility
-  syntax:
-    content: public bool reset
-    return:
-      type: System.Boolean
-    content.vb: Public reset As Boolean
-- uid: LobsterFramework.Utility.CoroutineOption.waitTime
-  commentId: F:LobsterFramework.Utility.CoroutineOption.waitTime
-  id: waitTime
-  parent: LobsterFramework.Utility.CoroutineOption
-  langs:
-  - csharp
-  - vb
-  name: waitTime
-  nameWithType: CoroutineOption.waitTime
-  fullName: LobsterFramework.Utility.CoroutineOption.waitTime
-  type: Field
-  source:
-    remote:
-      path: Utility/Coroutine/CoroutineOption.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: waitTime
-    path: ../Utility/Coroutine/CoroutineOption.cs
-    startLine: 11
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Utility
-  syntax:
-    content: public float waitTime
-    return:
-      type: System.Single
-    content.vb: Public waitTime As Single
-- uid: LobsterFramework.Utility.CoroutineOption.unscaled
-  commentId: F:LobsterFramework.Utility.CoroutineOption.unscaled
-  id: unscaled
-  parent: LobsterFramework.Utility.CoroutineOption
-  langs:
-  - csharp
-  - vb
-  name: unscaled
-  nameWithType: CoroutineOption.unscaled
-  fullName: LobsterFramework.Utility.CoroutineOption.unscaled
-  type: Field
-  source:
-    remote:
-      path: Utility/Coroutine/CoroutineOption.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: unscaled
-    path: ../Utility/Coroutine/CoroutineOption.cs
-    startLine: 12
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Utility
-  syntax:
-    content: public bool unscaled
-    return:
-      type: System.Boolean
-    content.vb: Public unscaled As Boolean
-- uid: LobsterFramework.Utility.CoroutineOption.waitFor
-  commentId: F:LobsterFramework.Utility.CoroutineOption.waitFor
-  id: waitFor
-  parent: LobsterFramework.Utility.CoroutineOption
-  langs:
-  - csharp
-  - vb
-  name: waitFor
-  nameWithType: CoroutineOption.waitFor
-  fullName: LobsterFramework.Utility.CoroutineOption.waitFor
-  type: Field
-  source:
-    remote:
-      path: Utility/Coroutine/CoroutineOption.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: waitFor
-    path: ../Utility/Coroutine/CoroutineOption.cs
-    startLine: 13
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Utility
-  syntax:
-    content: public IEnumerable<CoroutineOption> waitFor
-    return:
-      type: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
-    content.vb: Public waitFor As IEnumerable(Of CoroutineOption)
-- uid: LobsterFramework.Utility.CoroutineOption.predicateCondition
-  commentId: F:LobsterFramework.Utility.CoroutineOption.predicateCondition
-  id: predicateCondition
-  parent: LobsterFramework.Utility.CoroutineOption
-  langs:
-  - csharp
-  - vb
-  name: predicateCondition
-  nameWithType: CoroutineOption.predicateCondition
-  fullName: LobsterFramework.Utility.CoroutineOption.predicateCondition
-  type: Field
-  source:
-    remote:
-      path: Utility/Coroutine/CoroutineOption.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: predicateCondition
-    path: ../Utility/Coroutine/CoroutineOption.cs
-    startLine: 14
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Utility
-  syntax:
-    content: public Func<bool> predicateCondition
-    return:
-      type: System.Func{System.Boolean}
-    content.vb: Public predicateCondition As Func(Of Boolean)
-- uid: LobsterFramework.Utility.CoroutineOption.wait
-  commentId: F:LobsterFramework.Utility.CoroutineOption.wait
-  id: wait
-  parent: LobsterFramework.Utility.CoroutineOption
-  langs:
-  - csharp
-  - vb
-  name: wait
-  nameWithType: CoroutineOption.wait
-  fullName: LobsterFramework.Utility.CoroutineOption.wait
-  type: Field
-  source:
-    remote:
-      path: Utility/Coroutine/CoroutineOption.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: wait
-    path: ../Utility/Coroutine/CoroutineOption.cs
-    startLine: 15
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Utility
-  syntax:
-    content: public Coroutine wait
-    return:
-      type: LobsterFramework.Utility.Coroutine
-    content.vb: Public wait As Coroutine
 - uid: LobsterFramework.Utility.CoroutineOption.Reset
   commentId: F:LobsterFramework.Utility.CoroutineOption.Reset
   id: Reset
@@ -235,7 +64,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: The coroutine option to restart the coroutine from the beginning
+  summary: The coroutine option to restart the coroutine execution from the beginning
   example: []
   syntax:
     content: public static readonly CoroutineOption Reset
@@ -293,14 +122,14 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: Halt the execution of coroutine for the specified seconds, will be affected by Time.timeScale
+  summary: Pause the execution of coroutine for the specified seconds, will be affected by Time.timeScale
   example: []
   syntax:
     content: public static CoroutineOption WaitForSeconds(float time)
     parameters:
     - id: time
       type: System.Single
-      description: time to halt the coroutine
+      description: time to pause the coroutine
     return:
       type: LobsterFramework.Utility.CoroutineOption
       description: The CoroutineOption represents this option
@@ -331,14 +160,14 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: Halt the execution of coroutine for the specified seconds, will not be affected by Time.timeScale
+  summary: Pause the execution of coroutine for the specified seconds, will not be affected by Time.timeScale
   example: []
   syntax:
     content: public static CoroutineOption WaitForUnscaledSeconds(float time)
     parameters:
     - id: time
       type: System.Single
-      description: time to halt the coroutine
+      description: time to pause the coroutine
     return:
       type: LobsterFramework.Utility.CoroutineOption
       description: The CoroutineOption represents this option
@@ -347,23 +176,23 @@ items:
   nameWithType.vb: CoroutineOption.WaitForUnscaledSeconds(Single)
   fullName.vb: LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds(Single)
   name.vb: WaitForUnscaledSeconds(Single)
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
-  commentId: M:LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
-  id: WaitForCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
+- uid: LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
+  commentId: M:LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
+  id: SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
   parent: LobsterFramework.Utility.CoroutineOption
   langs:
   - csharp
   - vb
-  name: WaitForCoroutine(IEnumerable<CoroutineOption>)
-  nameWithType: CoroutineOption.WaitForCoroutine(IEnumerable<CoroutineOption>)
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable<LobsterFramework.Utility.CoroutineOption>)
+  name: SubCoroutine(IEnumerable<CoroutineOption>)
+  nameWithType: CoroutineOption.SubCoroutine(IEnumerable<CoroutineOption>)
+  fullName: LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable<LobsterFramework.Utility.CoroutineOption>)
   type: Method
   source:
     remote:
       path: Utility/Coroutine/CoroutineOption.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: WaitForCoroutine
+    id: SubCoroutine
     path: ../Utility/Coroutine/CoroutineOption.cs
     startLine: 50
   assemblies:
@@ -372,19 +201,19 @@ items:
   summary: Start a subcoroutine, current coroutine will not be executed until subcoroutine has finished
   example: []
   syntax:
-    content: public static CoroutineOption WaitForCoroutine(IEnumerable<CoroutineOption> coroutine)
+    content: public static CoroutineOption SubCoroutine(IEnumerable<CoroutineOption> subCoroutine)
     parameters:
-    - id: coroutine
+    - id: subCoroutine
       type: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
       description: The subcoroutine to be executed
     return:
       type: LobsterFramework.Utility.CoroutineOption
       description: The CoroutineOption represents this option
-    content.vb: Public Shared Function WaitForCoroutine(coroutine As IEnumerable(Of CoroutineOption)) As CoroutineOption
-  overload: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine*
-  nameWithType.vb: CoroutineOption.WaitForCoroutine(IEnumerable(Of CoroutineOption))
-  fullName.vb: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable(Of LobsterFramework.Utility.CoroutineOption))
-  name.vb: WaitForCoroutine(IEnumerable(Of CoroutineOption))
+    content.vb: Public Shared Function SubCoroutine(subCoroutine As IEnumerable(Of CoroutineOption)) As CoroutineOption
+  overload: LobsterFramework.Utility.CoroutineOption.SubCoroutine*
+  nameWithType.vb: CoroutineOption.SubCoroutine(IEnumerable(Of CoroutineOption))
+  fullName.vb: LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable(Of LobsterFramework.Utility.CoroutineOption))
+  name.vb: SubCoroutine(IEnumerable(Of CoroutineOption))
 - uid: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(LobsterFramework.Utility.Coroutine)
   commentId: M:LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(LobsterFramework.Utility.Coroutine)
   id: WaitForCoroutine(LobsterFramework.Utility.Coroutine)
@@ -407,45 +236,45 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: Halt the execution of coroutine until another coroutine has finished, cannot be used to wait for the current coroutine itself
+  summary: Pause the execution of coroutine until another coroutine has finished, cannot be used to wait for the current coroutine itself
   example: []
   syntax:
     content: public static CoroutineOption WaitForCoroutine(Coroutine coroutine)
     parameters:
     - id: coroutine
       type: LobsterFramework.Utility.Coroutine
-      description: The coroutine to wait for, cannot be the current coroutine itself
+      description: The coroutine to wait for, cannot be the current executing coroutine itself
     return:
       type: LobsterFramework.Utility.CoroutineOption
       description: The CoroutineOption represents this option
     content.vb: Public Shared Function WaitForCoroutine(coroutine As Coroutine) As CoroutineOption
   overload: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine*
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func{System.Boolean})
-  commentId: M:LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func{System.Boolean})
-  id: WaitForCondition(System.Func{System.Boolean})
+- uid: LobsterFramework.Utility.CoroutineOption.Condition(System.Func{System.Boolean})
+  commentId: M:LobsterFramework.Utility.CoroutineOption.Condition(System.Func{System.Boolean})
+  id: Condition(System.Func{System.Boolean})
   parent: LobsterFramework.Utility.CoroutineOption
   langs:
   - csharp
   - vb
-  name: WaitForCondition(Func<bool>)
-  nameWithType: CoroutineOption.WaitForCondition(Func<bool>)
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func<bool>)
+  name: Condition(Func<bool>)
+  nameWithType: CoroutineOption.Condition(Func<bool>)
+  fullName: LobsterFramework.Utility.CoroutineOption.Condition(System.Func<bool>)
   type: Method
   source:
     remote:
       path: Utility/Coroutine/CoroutineOption.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: WaitForCondition
+    id: Condition
     path: ../Utility/Coroutine/CoroutineOption.cs
     startLine: 71
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: Halt the execution of coroutine until the condition has been met
+  summary: Pause the execution of coroutine until the condition has been met
   example: []
   syntax:
-    content: public static CoroutineOption WaitForCondition(Func<bool> predicate)
+    content: public static CoroutineOption Condition(Func<bool> predicate)
     parameters:
     - id: predicate
       type: System.Func{System.Boolean}
@@ -453,45 +282,11 @@ items:
     return:
       type: LobsterFramework.Utility.CoroutineOption
       description: The CoroutineOption represents this option
-    content.vb: Public Shared Function WaitForCondition(predicate As Func(Of Boolean)) As CoroutineOption
-  overload: LobsterFramework.Utility.CoroutineOption.WaitForCondition*
-  nameWithType.vb: CoroutineOption.WaitForCondition(Func(Of Boolean))
-  fullName.vb: LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func(Of Boolean))
-  name.vb: WaitForCondition(Func(Of Boolean))
-- uid: LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
-  commentId: M:LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
-  id: Equals(LobsterFramework.Utility.CoroutineOption)
-  parent: LobsterFramework.Utility.CoroutineOption
-  langs:
-  - csharp
-  - vb
-  name: Equals(CoroutineOption)
-  nameWithType: CoroutineOption.Equals(CoroutineOption)
-  fullName: LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
-  type: Method
-  source:
-    remote:
-      path: Utility/Coroutine/CoroutineOption.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Equals
-    path: ../Utility/Coroutine/CoroutineOption.cs
-    startLine: 77
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Utility
-  example: []
-  syntax:
-    content: public bool Equals(CoroutineOption other)
-    parameters:
-    - id: other
-      type: LobsterFramework.Utility.CoroutineOption
-    return:
-      type: System.Boolean
-    content.vb: Public Function Equals(other As CoroutineOption) As Boolean
-  overload: LobsterFramework.Utility.CoroutineOption.Equals*
-  implements:
-  - System.IEquatable{LobsterFramework.Utility.CoroutineOption}.Equals(LobsterFramework.Utility.CoroutineOption)
+    content.vb: Public Shared Function Condition(predicate As Func(Of Boolean)) As CoroutineOption
+  overload: LobsterFramework.Utility.CoroutineOption.Condition*
+  nameWithType.vb: CoroutineOption.Condition(Func(Of Boolean))
+  fullName.vb: LobsterFramework.Utility.CoroutineOption.Condition(System.Func(Of Boolean))
+  name.vb: Condition(Func(Of Boolean))
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
@@ -515,39 +310,6 @@ references:
   - uid: LobsterFramework.Utility
     name: Utility
     href: LobsterFramework.Utility.html
-- uid: System.IEquatable{LobsterFramework.Utility.CoroutineOption}
-  commentId: T:System.IEquatable{LobsterFramework.Utility.CoroutineOption}
-  parent: System
-  definition: System.IEquatable`1
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<CoroutineOption>
-  nameWithType: IEquatable<CoroutineOption>
-  fullName: System.IEquatable<LobsterFramework.Utility.CoroutineOption>
-  nameWithType.vb: IEquatable(Of CoroutineOption)
-  fullName.vb: System.IEquatable(Of LobsterFramework.Utility.CoroutineOption)
-  name.vb: IEquatable(Of CoroutineOption)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - uid: LobsterFramework.Utility.CoroutineOption
-    name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: LobsterFramework.Utility.CoroutineOption
-    name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
-  - name: )
 - uid: System.ValueType.Equals(System.Object)
   commentId: M:System.ValueType.Equals(System.Object)
   parent: System.ValueType
@@ -739,41 +501,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.IEquatable`1
-  commentId: T:System.IEquatable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<T>
-  nameWithType: IEquatable<T>
-  fullName: System.IEquatable<T>
-  nameWithType.vb: IEquatable(Of T)
-  fullName.vb: System.IEquatable(Of T)
-  name.vb: IEquatable(Of T)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: System.ValueType
   commentId: T:System.ValueType
   parent: System
@@ -793,17 +520,26 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
+- uid: System
+  commentId: N:System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.CoroutineOption
+  commentId: T:LobsterFramework.Utility.CoroutineOption
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.Utility.CoroutineOption
+- uid: LobsterFramework.Utility.CoroutineOption.WaitForSeconds*
+  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForSeconds
+  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.WaitForSeconds(System.Single)
+  name: WaitForSeconds
+  nameWithType: CoroutineOption.WaitForSeconds
+  fullName: LobsterFramework.Utility.CoroutineOption.WaitForSeconds
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -815,6 +551,18 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds*
+  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds
+  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds(System.Single)
+  name: WaitForUnscaledSeconds
+  nameWithType: CoroutineOption.WaitForUnscaledSeconds
+  fullName: LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds
+- uid: LobsterFramework.Utility.CoroutineOption.SubCoroutine*
+  commentId: Overload:LobsterFramework.Utility.CoroutineOption.SubCoroutine
+  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
+  name: SubCoroutine
+  nameWithType: CoroutineOption.SubCoroutine
+  fullName: LobsterFramework.Utility.CoroutineOption.SubCoroutine
 - uid: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
   commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
   parent: System.Collections.Generic
@@ -913,6 +661,25 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine*
+  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForCoroutine
+  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(LobsterFramework.Utility.Coroutine)
+  name: WaitForCoroutine
+  nameWithType: CoroutineOption.WaitForCoroutine
+  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine
+- uid: LobsterFramework.Utility.Coroutine
+  commentId: T:LobsterFramework.Utility.Coroutine
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Utility.Coroutine
+- uid: LobsterFramework.Utility.CoroutineOption.Condition*
+  commentId: Overload:LobsterFramework.Utility.CoroutineOption.Condition
+  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.Condition(System.Func{System.Boolean})
+  name: Condition
+  nameWithType: CoroutineOption.Condition
+  fullName: LobsterFramework.Utility.CoroutineOption.Condition
 - uid: System.Func{System.Boolean}
   commentId: T:System.Func{System.Boolean}
   parent: System
@@ -975,103 +742,4 @@ references:
   - name: Of
   - name: " "
   - name: TResult
-  - name: )
-- uid: LobsterFramework.Utility.Coroutine
-  commentId: T:LobsterFramework.Utility.Coroutine
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.Coroutine.html
-  name: Coroutine
-  nameWithType: Coroutine
-  fullName: LobsterFramework.Utility.Coroutine
-- uid: LobsterFramework.Utility.CoroutineOption
-  commentId: T:LobsterFramework.Utility.CoroutineOption
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.CoroutineOption.html
-  name: CoroutineOption
-  nameWithType: CoroutineOption
-  fullName: LobsterFramework.Utility.CoroutineOption
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForSeconds*
-  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForSeconds
-  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.WaitForSeconds(System.Single)
-  name: WaitForSeconds
-  nameWithType: CoroutineOption.WaitForSeconds
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForSeconds
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds*
-  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds
-  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds(System.Single)
-  name: WaitForUnscaledSeconds
-  nameWithType: CoroutineOption.WaitForUnscaledSeconds
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine*
-  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForCoroutine
-  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
-  name: WaitForCoroutine
-  nameWithType: CoroutineOption.WaitForCoroutine
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForCondition*
-  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForCondition
-  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func{System.Boolean})
-  name: WaitForCondition
-  nameWithType: CoroutineOption.WaitForCondition
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCondition
-- uid: LobsterFramework.Utility.CoroutineOption.Equals*
-  commentId: Overload:LobsterFramework.Utility.CoroutineOption.Equals
-  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
-  name: Equals
-  nameWithType: CoroutineOption.Equals
-  fullName: LobsterFramework.Utility.CoroutineOption.Equals
-- uid: System.IEquatable{LobsterFramework.Utility.CoroutineOption}.Equals(LobsterFramework.Utility.CoroutineOption)
-  commentId: M:System.IEquatable{LobsterFramework.Utility.CoroutineOption}.Equals(LobsterFramework.Utility.CoroutineOption)
-  parent: System.IEquatable{LobsterFramework.Utility.CoroutineOption}
-  definition: System.IEquatable`1.Equals(`0)
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-lobsterframework.utility.coroutineoption-.equals#system-iequatable((lobsterframework-utility-coroutineoption))-equals(lobsterframework-utility-coroutineoption)
-  name: Equals(CoroutineOption)
-  nameWithType: IEquatable<CoroutineOption>.Equals(CoroutineOption)
-  fullName: System.IEquatable<LobsterFramework.Utility.CoroutineOption>.Equals(LobsterFramework.Utility.CoroutineOption)
-  nameWithType.vb: IEquatable(Of CoroutineOption).Equals(CoroutineOption)
-  fullName.vb: System.IEquatable(Of LobsterFramework.Utility.CoroutineOption).Equals(LobsterFramework.Utility.CoroutineOption)
-  spec.csharp:
-  - uid: System.IEquatable{LobsterFramework.Utility.CoroutineOption}.Equals(LobsterFramework.Utility.CoroutineOption)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-lobsterframework.utility.coroutineoption-.equals#system-iequatable((lobsterframework-utility-coroutineoption))-equals(lobsterframework-utility-coroutineoption)
-  - name: (
-  - uid: LobsterFramework.Utility.CoroutineOption
-    name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
-  - name: )
-  spec.vb:
-  - uid: System.IEquatable{LobsterFramework.Utility.CoroutineOption}.Equals(LobsterFramework.Utility.CoroutineOption)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-lobsterframework.utility.coroutineoption-.equals#system-iequatable((lobsterframework-utility-coroutineoption))-equals(lobsterframework-utility-coroutineoption)
-  - name: (
-  - uid: LobsterFramework.Utility.CoroutineOption
-    name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
-  - name: )
-- uid: System.IEquatable`1.Equals(`0)
-  commentId: M:System.IEquatable`1.Equals(`0)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
-  name: Equals(T)
-  nameWithType: IEquatable<T>.Equals(T)
-  fullName: System.IEquatable<T>.Equals(T)
-  nameWithType.vb: IEquatable(Of T).Equals(T)
-  fullName.vb: System.IEquatable(Of T).Equals(T)
-  spec.csharp:
-  - uid: System.IEquatable`1.Equals(`0)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
-  - name: (
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: System.IEquatable`1.Equals(`0)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
-  - name: (
-  - name: T
   - name: )

@@ -2,17 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using LobsterFramework.Utility;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
+    /// <summary>
+    /// Applied to <see cref="WeaponStat"/> to make it visible to editor scripts
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class AddWeaponStatMenuAttribute : Attribute
     {
+        public const string RootName = "Root";
         public static HashSet<Type> types = new HashSet<Type>();
         public static Dictionary<Type, Texture2D> icons = new();
+
+        /// <summary>
+        /// The root menu
+        /// </summary>
+        internal static MenuTree<Type> root = new(RootName);
+
+        /// <summary>
+        /// A mapping of WeaponStats with the menu they reside in.
+        /// </summary>
+        internal static Dictionary<Type, MenuTree<Type>> menus = new();
+
+        /// <summary>
+        /// The menu path that leads to the menu which this ability will be displayed in.
+        /// </summary>
+        private string menuPath;
+
+        /// <param name="menuPath">The path leading to this item in the menu</param>
+        public AddWeaponStatMenuAttribute(string menuPath = "")
+        {
+            this.menuPath = menuPath;
+        }
         public void Init(Type type)
         {
             if (type.IsSubclassOf(typeof(WeaponStat)))
@@ -39,6 +66,18 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             else
             {
                 Debug.LogError("Attempting to apply WeaponStat Attribute on invalid type: " + type.Name);
+                return;
+            }
+
+            if (menuPath == "")
+            {
+                root.options.Add(type);
+                menus[type] = root;
+            }
+            else
+            {
+                MenuTree<Type> menu = MenuTree<Type>.AddItem(root, menuPath, type);
+                menus[type] = menu;
             }
         }
     }

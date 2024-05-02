@@ -5,7 +5,7 @@ using Animancer;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
-    [AddAbilityMenu]
+    [AddAbilityMenu("LobsterFramework")]
     [RequireAbilityComponents(typeof(DamageModifier))]
     [ComponentRequired(typeof(WeaponManager))]
     public class LightWeaponAttack : WeaponAbility

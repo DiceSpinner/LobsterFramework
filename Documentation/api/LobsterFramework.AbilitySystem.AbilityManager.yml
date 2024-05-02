@@ -49,7 +49,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Manages running and stopping abilities.
+  summary: Manages running, querying, stopping and interaction with abilities. Takes in an <xref href="LobsterFramework.AbilitySystem.AbilityData" data-throw-if-not-resolved="false"></xref> as input that defines the set of abilities this actor have access to.
   example: []
   syntax:
     content: >-
@@ -1156,6 +1156,13 @@ items:
     content.vb: Public Sub AnimationEnd(animationEvent As AnimationEvent)
   overload: LobsterFramework.AbilitySystem.AbilityManager.AnimationEnd*
 references:
+- uid: LobsterFramework.AbilitySystem.AbilityData
+  commentId: T:LobsterFramework.AbilitySystem.AbilityData
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityData.html
+  name: AbilityData
+  nameWithType: AbilityData
+  fullName: LobsterFramework.AbilitySystem.AbilityData
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html

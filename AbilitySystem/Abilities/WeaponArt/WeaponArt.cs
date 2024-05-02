@@ -6,8 +6,11 @@ using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
+    /// <summary>
+    /// Use the weapon ability specified by the weapon equipped. Can be used to query the states of the weapon ability being runned.
+    /// </summary>
     [ComponentRequired(typeof(WeaponManager))]
-    [AddAbilityMenu]
+    [AddAbilityMenu("LobsterFramework")]
     public class WeaponArt : Ability
     {
         private WeaponManager weaponWielder;

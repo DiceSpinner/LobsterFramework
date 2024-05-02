@@ -1,8 +1,7 @@
-using NUnit.Framework;
+using LobsterFramework.Utility;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Reflection;
 
 #if UNITY_EDITOR
@@ -13,34 +12,54 @@ using UnityEngine;
 namespace LobsterFramework.AbilitySystem {
 
     /// <summary>
-    /// Used to add Abilities to the pool of available Abilities. This will allow the creations of these abilities inside AbilityData
+    /// Applied to <see cref="Ability"/> to make it visible to editor scripts
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class AddAbilityMenuAttribute : Attribute
     {
-        internal static HashSet<Type> abilities = new();
+        public const string RootName = "Root";
+
         internal static Dictionary<Type, Texture2D> abilityIcons = new();
 
         /// <summary>
-        /// Stores lambdas that creates and returns the AbilityContext/AbilityChannel for the corresponding ability
+        /// Stores lambdas that creates and returns the AbilityConfig /AbilityChannel/AbilityContext for the corresponding ability
         /// </summary>
         internal static Dictionary<Type, (Func<AbilityConfig>, Func<AbilityChannel>, Func<AbilityContext>)> abilityHandles = new();
 
-        public void AddAbility(Type type) {
-            if (type.IsSubclassOf(typeof(Ability)))
+        /// <summary>
+        /// The root menu
+        /// </summary>
+        internal static MenuTree<Type> root = new(RootName);
+
+        /// <summary>
+        /// A mapping of abilities with the menu they reside in.
+        /// </summary>
+        internal static Dictionary<Type, MenuTree<Type>> abilityMenus = new();
+
+        /// <summary>
+        /// The menu path that leads to the menu which this ability will be displayed in.
+        /// </summary>
+        private string menuPath;
+
+        /// <param name="menuPath">The path leading to this item in the menu</param>
+        public AddAbilityMenuAttribute(string menuPath="") {
+            this.menuPath = menuPath;   
+        }
+
+        internal void AddAbility(Type abilityType) {
+            if (abilityType.IsSubclassOf(typeof(Ability)))
             {
-                if (type.IsAbstract) {
-                    Debug.LogError($"Only concrete ability can be added as to the menu! {type.FullName}");
+                if (abilityType.IsAbstract) {
+                    Debug.LogError($"Only concrete ability can be added as to the menu! {abilityType.FullName}");
                     return;
                 }
 
-                if (!RegisterHandles(type)) {
-                    Debug.LogWarning($"Failed to register handle for {type.FullName}");
+                if (!RegisterHandles(abilityType)) {
+                    Debug.LogWarning($"Failed to register handle for {abilityType.FullName}");
                     return;
                 }
-                abilities.Add(type);
 #if UNITY_EDITOR
-                MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(type));
+                MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(abilityType));
                 try
                 {
                     SerializedObject scriptObj = new(script);
@@ -48,16 +67,26 @@ namespace LobsterFramework.AbilitySystem {
                     Texture2D texture = (Texture2D)iconProperty.objectReferenceValue;
                     if (texture != null)
                     {
-                        abilityIcons[type] = texture;
+                        abilityIcons[abilityType] = texture;
                     }
                 }catch (NullReferenceException)
                 {
-                    Debug.LogError("Null pointer exception when setting icon for script: " + type.FullName);
-                }
+                    Debug.LogError("Null pointer exception when setting icon for script: " + abilityType.FullName);
+                } 
 #endif
             }
             else {
-                Debug.LogError("The type specified for ability menu is not an ability:" + type.FullName);
+                Debug.LogError("The type specified for ability menu is not an ability:" + abilityType.FullName);
+            }
+
+            if (menuPath == "")
+            {
+                root.options.Add(abilityType);
+                abilityMenus[abilityType] = root;
+            }
+            else {
+                MenuTree<Type> menu = MenuTree<Type>.AddItem(root, menuPath, abilityType);
+                abilityMenus[abilityType] = menu;
             }
         } 
 
@@ -194,7 +223,7 @@ namespace LobsterFramework.AbilitySystem {
                 } catch (Exception e) {
                     constructorError = true;
                     Debug.LogException(e);
-                    Debug.LogError($"Ability {abilityType.FullName + "Channel"} must contain a default parameterless constructor.");
+                    Debug.LogError($"AbilityChannel {abilityType.FullName + "Channel"} must contain a default parameterless constructor.");
                 }
                 #endregion
 
@@ -209,7 +238,7 @@ namespace LobsterFramework.AbilitySystem {
                 {
                     constructorError = true;
                     Debug.LogException(e);
-                    Debug.LogError($"Ability {abilityType.FullName + "Context"} must contain a default parameterless constructor.");
+                    Debug.LogError($"AbilityContext {abilityType.FullName + "Context"} must contain a default parameterless constructor.");
                 }
                 #endregion 
 

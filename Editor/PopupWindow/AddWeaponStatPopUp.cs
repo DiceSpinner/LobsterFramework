@@ -2,56 +2,61 @@ using System;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem.WeaponSystem;
-using System.Reflection;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.Editors
 {
     public class AddWeaponStatPopup : PopupWindowContent
     {
-        public WeaponData data;
-        private Vector2 scrollPosition;
+        private WeaponData data;
+        private MenuTreeDrawer<Type> menuTreeDrawer;
+
+        public AddWeaponStatPopup(WeaponData data) {
+            this.data = data;
+            menuTreeDrawer = new(AddWeaponStatMenuAttribute.root, AddWeaponStat, DrawMenu, DrawItem);
+            menuTreeDrawer.SetEmptyNote("Option Exhausted");
+            menuTreeDrawer.SetColors(AbilityEditorConfig.MenuPopupColor, AbilityEditorConfig.ComponentPopupColor);
+        }
+
+        #region Handles
+        private void AddWeaponStat(Type weaponStatType) {
+            data.AddWeaponStat(weaponStatType);
+        }
+
+        private GUIContent content = new();
+        private GUIContent DrawItem(Type weaponStatType) {
+            if (data.weaponStats.ContainsKey(weaponStatType.AssemblyQualifiedName)) {
+                return null;
+            }
+            content.text = weaponStatType.Name;
+            if (AddWeaponStatMenuAttribute.icons.TryGetValue(weaponStatType, out Texture2D icon))
+            {
+                content.image = icon;
+            }
+            else
+            {
+                content.image = null;
+            }
+            return content;
+        }
+
+        private GUIContent DrawMenu(MenuTree<Type> menu) {
+            content.text = menu.menuName;
+            content.image = AbilityEditorConfig.GetFolderIcon(menu.path[(AddWeaponStatMenuAttribute.RootName.Length + 1)..]);
+            return content;
+        }
+        #endregion
 
         public override void OnGUI(Rect rect)
         {
+            EditorGUILayout.LabelField("Add Weapon Stats", EditorUtils.CentredTitleLabelStyle);
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
             if (data == null)
             {
                 EditorGUILayout.LabelField("Cannot Find WeaponData!");
                 return;
             }
-            GUILayout.BeginVertical();
-            GUILayout.FlexibleSpace();
-            bool hasWeaponStat = false;
-            scrollPosition = GUILayout.BeginScrollView(scrollPosition);
-            foreach (Type type in AddWeaponStatMenuAttribute.types)
-            {
-                // Display icon in options if there's one for the ability script
-                if (data.weaponStats.ContainsKey(type.AssemblyQualifiedName))
-                {
-                    continue;
-                }
-                hasWeaponStat = true;
-                GUIContent content = new();
-                content.text = type.Name;
-                if (AddWeaponStatMenuAttribute.icons.TryGetValue(type, out Texture2D icon))
-                {
-                    content.image = icon;
-                }
-                if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
-                {
-                    var m = typeof(WeaponData).GetMethod("AddWeaponStat", BindingFlags.Instance | BindingFlags.NonPublic);
-                    MethodInfo mRef = m.MakeGenericMethod(type);
-                    mRef.Invoke(data, null);
-                }
-            }
-            GUILayout.EndScrollView();
-            if (!hasWeaponStat)
-            {
-                GUIStyle color = new();
-                color.normal.textColor = Color.yellow;
-                EditorGUILayout.LabelField("No WeaponStat to add!", color);
-            }
-            GUILayout.FlexibleSpace();
-            GUILayout.EndVertical();
+            menuTreeDrawer.Draw();
         }
     }
 }

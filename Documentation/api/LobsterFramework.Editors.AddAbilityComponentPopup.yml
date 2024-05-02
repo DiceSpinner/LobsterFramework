@@ -5,8 +5,8 @@ items:
   id: AddAbilityComponentPopup
   parent: LobsterFramework.Editors
   children:
+  - LobsterFramework.Editors.AddAbilityComponentPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
   - LobsterFramework.Editors.AddAbilityComponentPopup.OnGUI(UnityEngine.Rect)
-  - LobsterFramework.Editors.AddAbilityComponentPopup.data
   langs:
   - csharp
   - vb
@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AddAbilityComponentPopup
     path: ../Editor/PopupWindow/AddAbilityComponentPopup.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -43,33 +43,38 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.Editors.AddAbilityComponentPopup.data
-  commentId: F:LobsterFramework.Editors.AddAbilityComponentPopup.data
-  id: data
+- uid: LobsterFramework.Editors.AddAbilityComponentPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  commentId: M:LobsterFramework.Editors.AddAbilityComponentPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  id: '#ctor(LobsterFramework.AbilitySystem.AbilityData)'
   parent: LobsterFramework.Editors.AddAbilityComponentPopup
   langs:
   - csharp
   - vb
-  name: data
-  nameWithType: AddAbilityComponentPopup.data
-  fullName: LobsterFramework.Editors.AddAbilityComponentPopup.data
-  type: Field
+  name: AddAbilityComponentPopup(AbilityData)
+  nameWithType: AddAbilityComponentPopup.AddAbilityComponentPopup(AbilityData)
+  fullName: LobsterFramework.Editors.AddAbilityComponentPopup.AddAbilityComponentPopup(LobsterFramework.AbilitySystem.AbilityData)
+  type: Constructor
   source:
     remote:
       path: Editor/PopupWindow/AddAbilityComponentPopup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: data
+    id: .ctor
     path: ../Editor/PopupWindow/AddAbilityComponentPopup.cs
-    startLine: 10
+    startLine: 14
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
   syntax:
-    content: public AbilityData data
-    return:
+    content: public AddAbilityComponentPopup(AbilityData data)
+    parameters:
+    - id: data
       type: LobsterFramework.AbilitySystem.AbilityData
-    content.vb: Public data As AbilityData
+    content.vb: Public Sub New(data As AbilityData)
+  overload: LobsterFramework.Editors.AddAbilityComponentPopup.#ctor*
+  nameWithType.vb: AddAbilityComponentPopup.New(AbilityData)
+  fullName.vb: LobsterFramework.Editors.AddAbilityComponentPopup.New(LobsterFramework.AbilitySystem.AbilityData)
+  name.vb: New(AbilityData)
 - uid: LobsterFramework.Editors.AddAbilityComponentPopup.OnGUI(UnityEngine.Rect)
   commentId: M:LobsterFramework.Editors.AddAbilityComponentPopup.OnGUI(UnityEngine.Rect)
   id: OnGUI(UnityEngine.Rect)
@@ -88,7 +93,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/PopupWindow/AddAbilityComponentPopup.cs
-    startLine: 13
+    startLine: 56
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -440,6 +445,15 @@ references:
   name: UnityEditor
   nameWithType: UnityEditor
   fullName: UnityEditor
+- uid: LobsterFramework.Editors.AddAbilityComponentPopup.#ctor*
+  commentId: Overload:LobsterFramework.Editors.AddAbilityComponentPopup.#ctor
+  href: LobsterFramework.Editors.AddAbilityComponentPopup.html#LobsterFramework.Editors.AddAbilityComponentPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  name: AddAbilityComponentPopup
+  nameWithType: AddAbilityComponentPopup.AddAbilityComponentPopup
+  fullName: LobsterFramework.Editors.AddAbilityComponentPopup.AddAbilityComponentPopup
+  nameWithType.vb: AddAbilityComponentPopup.New
+  fullName.vb: LobsterFramework.Editors.AddAbilityComponentPopup.New
+  name.vb: New
 - uid: LobsterFramework.AbilitySystem.AbilityData
   commentId: T:LobsterFramework.AbilitySystem.AbilityData
   parent: LobsterFramework.AbilitySystem

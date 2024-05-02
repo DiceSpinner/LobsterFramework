@@ -29,10 +29,14 @@ items:
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
   syntax:
     content: >-
+      [AddAbilityMenu("LobsterFramework")]
+
       [ComponentRequired(new Type[] { typeof(WeaponManager) })]
 
       public class OffhandAbility : Ability
     content.vb: >-
+      <AddAbilityMenu("LobsterFramework")>
+
       <ComponentRequired(New Type() { GetType(WeaponManager) })>
 
       Public Class OffhandAbility Inherits Ability
@@ -119,6 +123,12 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+    ctor: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: LobsterFramework
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.InitializeSharedReferences
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.InitializeSharedReferences
   id: InitializeSharedReferences

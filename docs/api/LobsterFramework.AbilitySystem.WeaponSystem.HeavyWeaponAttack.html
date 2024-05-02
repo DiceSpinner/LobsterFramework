@@ -345,7 +345,8 @@
   <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_AbilitySystem_WeaponSystem_HeavyWeaponAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RequireAbilityComponents(new Type[] { typeof(DamageModifier) })]
+    <pre><code class="lang-csharp hljs">[AddAbilityMenu(&quot;LobsterFramework&quot;)]
+[RequireAbilityComponents(new Type[] { typeof(DamageModifier) })]
 [ComponentRequired(new Type[] { typeof(WeaponManager) })]
 public class HeavyWeaponAttack : WeaponAbility</code></pre>
   </div>

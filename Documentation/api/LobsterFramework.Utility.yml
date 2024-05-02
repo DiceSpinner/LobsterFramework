@@ -21,7 +21,7 @@ items:
   - LobsterFramework.Utility.GameUtility
   - LobsterFramework.Utility.IdDistributor
   - LobsterFramework.Utility.IntSum
-  - LobsterFramework.Utility.MenuGroup`1
+  - LobsterFramework.Utility.MenuTree`1
   - LobsterFramework.Utility.OrValue
   - LobsterFramework.Utility.SerializableDictionary`2
   - LobsterFramework.Utility.SerializableHashSet`1
@@ -65,6 +65,32 @@ references:
   - uid: LobsterFramework.Utility.XList`1
     name: XList
     href: LobsterFramework.Utility.XList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.MenuTree`1
+  commentId: T:LobsterFramework.Utility.MenuTree`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.MenuTree-1.html
+  name: MenuTree<T>
+  nameWithType: MenuTree<T>
+  fullName: LobsterFramework.Utility.MenuTree<T>
+  nameWithType.vb: MenuTree(Of T)
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T)
+  name.vb: MenuTree(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.MenuTree`1
+    name: MenuTree
+    href: LobsterFramework.Utility.MenuTree-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.MenuTree`1
+    name: MenuTree
+    href: LobsterFramework.Utility.MenuTree-1.html
   - name: (
   - name: Of
   - name: " "
@@ -173,32 +199,6 @@ references:
   - uid: LobsterFramework.Utility.SortableItem`1
     name: SortableItem
     href: LobsterFramework.Utility.SortableItem-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: LobsterFramework.Utility.MenuGroup`1
-  commentId: T:LobsterFramework.Utility.MenuGroup`1
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.MenuGroup-1.html
-  name: MenuGroup<T>
-  nameWithType: MenuGroup<T>
-  fullName: LobsterFramework.Utility.MenuGroup<T>
-  nameWithType.vb: MenuGroup(Of T)
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T)
-  name.vb: MenuGroup(Of T)
-  spec.csharp:
-  - uid: LobsterFramework.Utility.MenuGroup`1
-    name: MenuGroup
-    href: LobsterFramework.Utility.MenuGroup-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: LobsterFramework.Utility.MenuGroup`1
-    name: MenuGroup
-    href: LobsterFramework.Utility.MenuGroup-1.html
   - name: (
   - name: Of
   - name: " "

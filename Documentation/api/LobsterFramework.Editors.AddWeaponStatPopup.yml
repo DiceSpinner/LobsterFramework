@@ -5,8 +5,8 @@ items:
   id: AddWeaponStatPopup
   parent: LobsterFramework.Editors
   children:
+  - LobsterFramework.Editors.AddWeaponStatPopup.#ctor(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
   - LobsterFramework.Editors.AddWeaponStatPopup.OnGUI(UnityEngine.Rect)
-  - LobsterFramework.Editors.AddWeaponStatPopup.data
   langs:
   - csharp
   - vb
@@ -43,33 +43,38 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.Editors.AddWeaponStatPopup.data
-  commentId: F:LobsterFramework.Editors.AddWeaponStatPopup.data
-  id: data
+- uid: LobsterFramework.Editors.AddWeaponStatPopup.#ctor(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  commentId: M:LobsterFramework.Editors.AddWeaponStatPopup.#ctor(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  id: '#ctor(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)'
   parent: LobsterFramework.Editors.AddWeaponStatPopup
   langs:
   - csharp
   - vb
-  name: data
-  nameWithType: AddWeaponStatPopup.data
-  fullName: LobsterFramework.Editors.AddWeaponStatPopup.data
-  type: Field
+  name: AddWeaponStatPopup(WeaponData)
+  nameWithType: AddWeaponStatPopup.AddWeaponStatPopup(WeaponData)
+  fullName: LobsterFramework.Editors.AddWeaponStatPopup.AddWeaponStatPopup(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  type: Constructor
   source:
     remote:
       path: Editor/PopupWindow/AddWeaponStatPopUp.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: data
+    id: .ctor
     path: ../Editor/PopupWindow/AddWeaponStatPopUp.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
   syntax:
-    content: public WeaponData data
-    return:
+    content: public AddWeaponStatPopup(WeaponData data)
+    parameters:
+    - id: data
       type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-    content.vb: Public data As WeaponData
+    content.vb: Public Sub New(data As WeaponData)
+  overload: LobsterFramework.Editors.AddWeaponStatPopup.#ctor*
+  nameWithType.vb: AddWeaponStatPopup.New(WeaponData)
+  fullName.vb: LobsterFramework.Editors.AddWeaponStatPopup.New(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  name.vb: New(WeaponData)
 - uid: LobsterFramework.Editors.AddWeaponStatPopup.OnGUI(UnityEngine.Rect)
   commentId: M:LobsterFramework.Editors.AddWeaponStatPopup.OnGUI(UnityEngine.Rect)
   id: OnGUI(UnityEngine.Rect)
@@ -88,7 +93,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/PopupWindow/AddWeaponStatPopUp.cs
-    startLine: 13
+    startLine: 49
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -440,6 +445,15 @@ references:
   name: UnityEditor
   nameWithType: UnityEditor
   fullName: UnityEditor
+- uid: LobsterFramework.Editors.AddWeaponStatPopup.#ctor*
+  commentId: Overload:LobsterFramework.Editors.AddWeaponStatPopup.#ctor
+  href: LobsterFramework.Editors.AddWeaponStatPopup.html#LobsterFramework.Editors.AddWeaponStatPopup.#ctor(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  name: AddWeaponStatPopup
+  nameWithType: AddWeaponStatPopup.AddWeaponStatPopup
+  fullName: LobsterFramework.Editors.AddWeaponStatPopup.AddWeaponStatPopup
+  nameWithType.vb: AddWeaponStatPopup.New
+  fullName.vb: LobsterFramework.Editors.AddWeaponStatPopup.New
+  name.vb: New
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
   parent: LobsterFramework.AbilitySystem.WeaponSystem

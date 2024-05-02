@@ -2102,6 +2102,25 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
   fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
   nameWithType: AddAbilityComponentMenuAttribute
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)
+  name: AddAbilityComponentMenuAttribute(string)
+  href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute__ctor_System_String_
+  commentId: M:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute(string)
+  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.New(String)
+  nameWithType: AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute(string)
+  nameWithType.vb: AddAbilityComponentMenuAttribute.New(String)
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor*
+  name: AddAbilityComponentMenuAttribute
+  href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute__ctor_
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute
+  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.New
+  nameWithType: AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute
+  nameWithType.vb: AddAbilityComponentMenuAttribute.New
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.icons
   name: icons
   href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_icons
@@ -2121,6 +2140,12 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init
   nameWithType: AddAbilityComponentMenuAttribute.Init
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.RootName
+  name: RootName
+  href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_RootName
+  commentId: F:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.RootName
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.RootName
+  nameWithType: AddAbilityComponentMenuAttribute.RootName
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.types
   name: types
   href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_types
@@ -2133,19 +2158,31 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   nameWithType: AddAbilityMenuAttribute
-- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
-  name: AddAbility(Type)
-  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_AddAbility_System_Type_
-  commentId: M:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
-  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)
-  nameWithType: AddAbilityMenuAttribute.AddAbility(Type)
-- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility*
-  name: AddAbility
-  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_AddAbility_
-  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
+  name: AddAbilityMenuAttribute(string)
+  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute__ctor_System_String_
+  commentId: M:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbilityMenuAttribute(string)
+  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.New(String)
+  nameWithType: AddAbilityMenuAttribute.AddAbilityMenuAttribute(string)
+  nameWithType.vb: AddAbilityMenuAttribute.New(String)
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor*
+  name: AddAbilityMenuAttribute
+  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute__ctor_
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor
   isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility
-  nameWithType: AddAbilityMenuAttribute.AddAbility
+  name.vb: New
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbilityMenuAttribute
+  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.New
+  nameWithType: AddAbilityMenuAttribute.AddAbilityMenuAttribute
+  nameWithType.vb: AddAbilityMenuAttribute.New
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName
+  name: RootName
+  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_RootName
+  commentId: F:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName
+  nameWithType: AddAbilityMenuAttribute.RootName
 - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
   name: ComponentRequiredAttribute
   href: api/LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html
@@ -2440,6 +2477,25 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
   nameWithType: AddWeaponStatMenuAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.#ctor(System.String)
+  name: AddWeaponStatMenuAttribute(string)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute__ctor_System_String_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.AddWeaponStatMenuAttribute(string)
+  fullName.vb: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.New(String)
+  nameWithType: AddWeaponStatMenuAttribute.AddWeaponStatMenuAttribute(string)
+  nameWithType.vb: AddWeaponStatMenuAttribute.New(String)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.#ctor*
+  name: AddWeaponStatMenuAttribute
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute__ctor_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.AddWeaponStatMenuAttribute
+  fullName.vb: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.New
+  nameWithType: AddWeaponStatMenuAttribute.AddWeaponStatMenuAttribute
+  nameWithType.vb: AddWeaponStatMenuAttribute.New
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.icons
   name: icons
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute_icons
@@ -2459,6 +2515,12 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.Init
   nameWithType: AddWeaponStatMenuAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.RootName
+  name: RootName
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute_RootName
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.RootName
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.RootName
+  nameWithType: AddWeaponStatMenuAttribute.RootName
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.types
   name: types
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute_types
@@ -3836,19 +3898,19 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   nameWithType: WeaponArtSelector
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  name: ConfigName
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_ConfigName
-  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  nameWithType: WeaponArtSelector.ConfigName
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName*
-  name: ConfigName
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_ConfigName_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  name: Instance
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_Instance
+  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  nameWithType: WeaponArtSelector.Instance
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance*
+  name: Instance
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_Instance_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
   isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  nameWithType: WeaponArtSelector.ConfigName
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  nameWithType: WeaponArtSelector.Instance
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.weaponType
   name: weaponType
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_weaponType
@@ -3861,19 +3923,6 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
   nameWithType: WeaponData
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  name: Clone()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponData_Clone
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone()
-  nameWithType: WeaponData.Clone()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone*
-  name: Clone
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponData_Clone_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.Clone
-  nameWithType: WeaponData.Clone
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
   name: WeaponManager
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.html
@@ -4016,19 +4065,6 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
   nameWithType: WeaponStat
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  name: Clone()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponStat_Clone
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone()
-  nameWithType: WeaponStat.Clone()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone*
-  name: Clone
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponStat_Clone_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  nameWithType: WeaponStat.Clone
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary
   name: WeaponStatDictionary
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary.html
@@ -4320,6 +4356,12 @@ references:
   fullName.vb: LobsterFramework.AI.AddStateMenuAttribute.New
   nameWithType: AddStateMenuAttribute.AddStateMenuAttribute
   nameWithType.vb: AddStateMenuAttribute.New
+- uid: LobsterFramework.AI.AddStateMenuAttribute.RootName
+  name: RootName
+  href: api/LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework_AI_AddStateMenuAttribute_RootName
+  commentId: F:LobsterFramework.AI.AddStateMenuAttribute.RootName
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.RootName
+  nameWithType: AddStateMenuAttribute.RootName
 - uid: LobsterFramework.AI.AIController
   name: AIController
   href: api/LobsterFramework.AI.AIController.html
@@ -5369,57 +5411,6 @@ references:
   commentId: F:LobsterFramework.Editors.AbilityDataEditor.removedAbilityComponent
   fullName: LobsterFramework.Editors.AbilityDataEditor.removedAbilityComponent
   nameWithType: AbilityDataEditor.removedAbilityComponent
-- uid: LobsterFramework.Editors.AbilityDrawer
-  name: AbilityDrawer
-  href: api/LobsterFramework.Editors.AbilityDrawer.html
-  commentId: T:LobsterFramework.Editors.AbilityDrawer
-  fullName: LobsterFramework.Editors.AbilityDrawer
-  nameWithType: AbilityDrawer
-- uid: LobsterFramework.Editors.AbilityDrawer.#ctor
-  name: AbilityDrawer()
-  href: api/LobsterFramework.Editors.AbilityDrawer.html#LobsterFramework_Editors_AbilityDrawer__ctor
-  commentId: M:LobsterFramework.Editors.AbilityDrawer.#ctor
-  name.vb: New()
-  fullName: LobsterFramework.Editors.AbilityDrawer.AbilityDrawer()
-  fullName.vb: LobsterFramework.Editors.AbilityDrawer.New()
-  nameWithType: AbilityDrawer.AbilityDrawer()
-  nameWithType.vb: AbilityDrawer.New()
-- uid: LobsterFramework.Editors.AbilityDrawer.#ctor*
-  name: AbilityDrawer
-  href: api/LobsterFramework.Editors.AbilityDrawer.html#LobsterFramework_Editors_AbilityDrawer__ctor_
-  commentId: Overload:LobsterFramework.Editors.AbilityDrawer.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: LobsterFramework.Editors.AbilityDrawer.AbilityDrawer
-  fullName.vb: LobsterFramework.Editors.AbilityDrawer.New
-  nameWithType: AbilityDrawer.AbilityDrawer
-  nameWithType.vb: AbilityDrawer.New
-- uid: LobsterFramework.Editors.AbilityDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
-  name: GetPropertyHeight(SerializedProperty, GUIContent)
-  href: api/LobsterFramework.Editors.AbilityDrawer.html#LobsterFramework_Editors_AbilityDrawer_GetPropertyHeight_UnityEditor_SerializedProperty_UnityEngine_GUIContent_
-  commentId: M:LobsterFramework.Editors.AbilityDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
-  fullName: LobsterFramework.Editors.AbilityDrawer.GetPropertyHeight(UnityEditor.SerializedProperty, UnityEngine.GUIContent)
-  nameWithType: AbilityDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
-- uid: LobsterFramework.Editors.AbilityDrawer.GetPropertyHeight*
-  name: GetPropertyHeight
-  href: api/LobsterFramework.Editors.AbilityDrawer.html#LobsterFramework_Editors_AbilityDrawer_GetPropertyHeight_
-  commentId: Overload:LobsterFramework.Editors.AbilityDrawer.GetPropertyHeight
-  isSpec: "True"
-  fullName: LobsterFramework.Editors.AbilityDrawer.GetPropertyHeight
-  nameWithType: AbilityDrawer.GetPropertyHeight
-- uid: LobsterFramework.Editors.AbilityDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
-  name: OnGUI(Rect, SerializedProperty, GUIContent)
-  href: api/LobsterFramework.Editors.AbilityDrawer.html#LobsterFramework_Editors_AbilityDrawer_OnGUI_UnityEngine_Rect_UnityEditor_SerializedProperty_UnityEngine_GUIContent_
-  commentId: M:LobsterFramework.Editors.AbilityDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
-  fullName: LobsterFramework.Editors.AbilityDrawer.OnGUI(UnityEngine.Rect, UnityEditor.SerializedProperty, UnityEngine.GUIContent)
-  nameWithType: AbilityDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
-- uid: LobsterFramework.Editors.AbilityDrawer.OnGUI*
-  name: OnGUI
-  href: api/LobsterFramework.Editors.AbilityDrawer.html#LobsterFramework_Editors_AbilityDrawer_OnGUI_
-  commentId: Overload:LobsterFramework.Editors.AbilityDrawer.OnGUI
-  isSpec: "True"
-  fullName: LobsterFramework.Editors.AbilityDrawer.OnGUI
-  nameWithType: AbilityDrawer.OnGUI
 - uid: LobsterFramework.Editors.AbilityEditor
   name: AbilityEditor
   href: api/LobsterFramework.Editors.AbilityEditor.html
@@ -5439,6 +5430,25 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Editors.AbilityEditor.OnInspectorGUI
   nameWithType: AbilityEditor.OnInspectorGUI
+- uid: LobsterFramework.Editors.AbilityEditorConfig
+  name: AbilityEditorConfig
+  href: api/LobsterFramework.Editors.AbilityEditorConfig.html
+  commentId: T:LobsterFramework.Editors.AbilityEditorConfig
+  fullName: LobsterFramework.Editors.AbilityEditorConfig
+  nameWithType: AbilityEditorConfig
+- uid: LobsterFramework.Editors.AbilityEditorConfig.CreateMyCustomSettingsProvider
+  name: CreateMyCustomSettingsProvider()
+  href: api/LobsterFramework.Editors.AbilityEditorConfig.html#LobsterFramework_Editors_AbilityEditorConfig_CreateMyCustomSettingsProvider
+  commentId: M:LobsterFramework.Editors.AbilityEditorConfig.CreateMyCustomSettingsProvider
+  fullName: LobsterFramework.Editors.AbilityEditorConfig.CreateMyCustomSettingsProvider()
+  nameWithType: AbilityEditorConfig.CreateMyCustomSettingsProvider()
+- uid: LobsterFramework.Editors.AbilityEditorConfig.CreateMyCustomSettingsProvider*
+  name: CreateMyCustomSettingsProvider
+  href: api/LobsterFramework.Editors.AbilityEditorConfig.html#LobsterFramework_Editors_AbilityEditorConfig_CreateMyCustomSettingsProvider_
+  commentId: Overload:LobsterFramework.Editors.AbilityEditorConfig.CreateMyCustomSettingsProvider
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.AbilityEditorConfig.CreateMyCustomSettingsProvider
+  nameWithType: AbilityEditorConfig.CreateMyCustomSettingsProvider
 - uid: LobsterFramework.Editors.AbilityManagerEditor
   name: AbilityManagerEditor
   href: api/LobsterFramework.Editors.AbilityManagerEditor.html
@@ -5502,12 +5512,25 @@ references:
   commentId: T:LobsterFramework.Editors.AddAbilityComponentPopup
   fullName: LobsterFramework.Editors.AddAbilityComponentPopup
   nameWithType: AddAbilityComponentPopup
-- uid: LobsterFramework.Editors.AddAbilityComponentPopup.data
-  name: data
-  href: api/LobsterFramework.Editors.AddAbilityComponentPopup.html#LobsterFramework_Editors_AddAbilityComponentPopup_data
-  commentId: F:LobsterFramework.Editors.AddAbilityComponentPopup.data
-  fullName: LobsterFramework.Editors.AddAbilityComponentPopup.data
-  nameWithType: AddAbilityComponentPopup.data
+- uid: LobsterFramework.Editors.AddAbilityComponentPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  name: AddAbilityComponentPopup(AbilityData)
+  href: api/LobsterFramework.Editors.AddAbilityComponentPopup.html#LobsterFramework_Editors_AddAbilityComponentPopup__ctor_LobsterFramework_AbilitySystem_AbilityData_
+  commentId: M:LobsterFramework.Editors.AddAbilityComponentPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  name.vb: New(AbilityData)
+  fullName: LobsterFramework.Editors.AddAbilityComponentPopup.AddAbilityComponentPopup(LobsterFramework.AbilitySystem.AbilityData)
+  fullName.vb: LobsterFramework.Editors.AddAbilityComponentPopup.New(LobsterFramework.AbilitySystem.AbilityData)
+  nameWithType: AddAbilityComponentPopup.AddAbilityComponentPopup(AbilityData)
+  nameWithType.vb: AddAbilityComponentPopup.New(AbilityData)
+- uid: LobsterFramework.Editors.AddAbilityComponentPopup.#ctor*
+  name: AddAbilityComponentPopup
+  href: api/LobsterFramework.Editors.AddAbilityComponentPopup.html#LobsterFramework_Editors_AddAbilityComponentPopup__ctor_
+  commentId: Overload:LobsterFramework.Editors.AddAbilityComponentPopup.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.AddAbilityComponentPopup.AddAbilityComponentPopup
+  fullName.vb: LobsterFramework.Editors.AddAbilityComponentPopup.New
+  nameWithType: AddAbilityComponentPopup.AddAbilityComponentPopup
+  nameWithType.vb: AddAbilityComponentPopup.New
 - uid: LobsterFramework.Editors.AddAbilityComponentPopup.OnGUI(UnityEngine.Rect)
   name: OnGUI(Rect)
   href: api/LobsterFramework.Editors.AddAbilityComponentPopup.html#LobsterFramework_Editors_AddAbilityComponentPopup_OnGUI_UnityEngine_Rect_
@@ -5527,12 +5550,25 @@ references:
   commentId: T:LobsterFramework.Editors.AddAbilityPopup
   fullName: LobsterFramework.Editors.AddAbilityPopup
   nameWithType: AddAbilityPopup
-- uid: LobsterFramework.Editors.AddAbilityPopup.data
-  name: data
-  href: api/LobsterFramework.Editors.AddAbilityPopup.html#LobsterFramework_Editors_AddAbilityPopup_data
-  commentId: F:LobsterFramework.Editors.AddAbilityPopup.data
-  fullName: LobsterFramework.Editors.AddAbilityPopup.data
-  nameWithType: AddAbilityPopup.data
+- uid: LobsterFramework.Editors.AddAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  name: AddAbilityPopup(AbilityData)
+  href: api/LobsterFramework.Editors.AddAbilityPopup.html#LobsterFramework_Editors_AddAbilityPopup__ctor_LobsterFramework_AbilitySystem_AbilityData_
+  commentId: M:LobsterFramework.Editors.AddAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  name.vb: New(AbilityData)
+  fullName: LobsterFramework.Editors.AddAbilityPopup.AddAbilityPopup(LobsterFramework.AbilitySystem.AbilityData)
+  fullName.vb: LobsterFramework.Editors.AddAbilityPopup.New(LobsterFramework.AbilitySystem.AbilityData)
+  nameWithType: AddAbilityPopup.AddAbilityPopup(AbilityData)
+  nameWithType.vb: AddAbilityPopup.New(AbilityData)
+- uid: LobsterFramework.Editors.AddAbilityPopup.#ctor*
+  name: AddAbilityPopup
+  href: api/LobsterFramework.Editors.AddAbilityPopup.html#LobsterFramework_Editors_AddAbilityPopup__ctor_
+  commentId: Overload:LobsterFramework.Editors.AddAbilityPopup.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.AddAbilityPopup.AddAbilityPopup
+  fullName.vb: LobsterFramework.Editors.AddAbilityPopup.New
+  nameWithType: AddAbilityPopup.AddAbilityPopup
+  nameWithType.vb: AddAbilityPopup.New
 - uid: LobsterFramework.Editors.AddAbilityPopup.OnGUI(UnityEngine.Rect)
   name: OnGUI(Rect)
   href: api/LobsterFramework.Editors.AddAbilityPopup.html#LobsterFramework_Editors_AddAbilityPopup_OnGUI_UnityEngine_Rect_
@@ -5571,12 +5607,6 @@ references:
   fullName.vb: LobsterFramework.Editors.AddStatePopup.New
   nameWithType: AddStatePopup.AddStatePopup
   nameWithType.vb: AddStatePopup.New
-- uid: LobsterFramework.Editors.AddStatePopup.data
-  name: data
-  href: api/LobsterFramework.Editors.AddStatePopup.html#LobsterFramework_Editors_AddStatePopup_data
-  commentId: F:LobsterFramework.Editors.AddStatePopup.data
-  fullName: LobsterFramework.Editors.AddStatePopup.data
-  nameWithType: AddStatePopup.data
 - uid: LobsterFramework.Editors.AddStatePopup.OnGUI(UnityEngine.Rect)
   name: OnGUI(Rect)
   href: api/LobsterFramework.Editors.AddStatePopup.html#LobsterFramework_Editors_AddStatePopup_OnGUI_UnityEngine_Rect_
@@ -5596,12 +5626,25 @@ references:
   commentId: T:LobsterFramework.Editors.AddWeaponStatPopup
   fullName: LobsterFramework.Editors.AddWeaponStatPopup
   nameWithType: AddWeaponStatPopup
-- uid: LobsterFramework.Editors.AddWeaponStatPopup.data
-  name: data
-  href: api/LobsterFramework.Editors.AddWeaponStatPopup.html#LobsterFramework_Editors_AddWeaponStatPopup_data
-  commentId: F:LobsterFramework.Editors.AddWeaponStatPopup.data
-  fullName: LobsterFramework.Editors.AddWeaponStatPopup.data
-  nameWithType: AddWeaponStatPopup.data
+- uid: LobsterFramework.Editors.AddWeaponStatPopup.#ctor(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  name: AddWeaponStatPopup(WeaponData)
+  href: api/LobsterFramework.Editors.AddWeaponStatPopup.html#LobsterFramework_Editors_AddWeaponStatPopup__ctor_LobsterFramework_AbilitySystem_WeaponSystem_WeaponData_
+  commentId: M:LobsterFramework.Editors.AddWeaponStatPopup.#ctor(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  name.vb: New(WeaponData)
+  fullName: LobsterFramework.Editors.AddWeaponStatPopup.AddWeaponStatPopup(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  fullName.vb: LobsterFramework.Editors.AddWeaponStatPopup.New(LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  nameWithType: AddWeaponStatPopup.AddWeaponStatPopup(WeaponData)
+  nameWithType.vb: AddWeaponStatPopup.New(WeaponData)
+- uid: LobsterFramework.Editors.AddWeaponStatPopup.#ctor*
+  name: AddWeaponStatPopup
+  href: api/LobsterFramework.Editors.AddWeaponStatPopup.html#LobsterFramework_Editors_AddWeaponStatPopup__ctor_
+  commentId: Overload:LobsterFramework.Editors.AddWeaponStatPopup.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.AddWeaponStatPopup.AddWeaponStatPopup
+  fullName.vb: LobsterFramework.Editors.AddWeaponStatPopup.New
+  nameWithType: AddWeaponStatPopup.AddWeaponStatPopup
+  nameWithType.vb: AddWeaponStatPopup.New
 - uid: LobsterFramework.Editors.AddWeaponStatPopup.OnGUI(UnityEngine.Rect)
   name: OnGUI(Rect)
   href: api/LobsterFramework.Editors.AddWeaponStatPopup.html#LobsterFramework_Editors_AddWeaponStatPopup_OnGUI_UnityEngine_Rect_
@@ -5641,16 +5684,9 @@ references:
   fullName: LobsterFramework.Editors.EditorUtils
   nameWithType: EditorUtils
 - uid: LobsterFramework.Editors.EditorUtils.BoldButtonStyle
-  name: BoldButtonStyle()
-  href: api/LobsterFramework.Editors.EditorUtils.html#LobsterFramework_Editors_EditorUtils_BoldButtonStyle
-  commentId: M:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
-  fullName: LobsterFramework.Editors.EditorUtils.BoldButtonStyle()
-  nameWithType: EditorUtils.BoldButtonStyle()
-- uid: LobsterFramework.Editors.EditorUtils.BoldButtonStyle*
   name: BoldButtonStyle
-  href: api/LobsterFramework.Editors.EditorUtils.html#LobsterFramework_Editors_EditorUtils_BoldButtonStyle_
-  commentId: Overload:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
-  isSpec: "True"
+  href: api/LobsterFramework.Editors.EditorUtils.html#LobsterFramework_Editors_EditorUtils_BoldButtonStyle
+  commentId: F:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
   fullName: LobsterFramework.Editors.EditorUtils.BoldButtonStyle
   nameWithType: EditorUtils.BoldButtonStyle
 - uid: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUILayoutOption[])
@@ -5696,6 +5732,25 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Editors.EditorUtils.Button
   nameWithType: EditorUtils.Button
+- uid: LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
+  name: CentredTitleLabelStyle
+  href: api/LobsterFramework.Editors.EditorUtils.html#LobsterFramework_Editors_EditorUtils_CentredTitleLabelStyle
+  commentId: F:LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
+  fullName: LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
+  nameWithType: EditorUtils.CentredTitleLabelStyle
+- uid: LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  name: DrawSubProperties(SerializedProperty)
+  href: api/LobsterFramework.Editors.EditorUtils.html#LobsterFramework_Editors_EditorUtils_DrawSubProperties_UnityEditor_SerializedProperty_
+  commentId: M:LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  fullName: LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  nameWithType: EditorUtils.DrawSubProperties(SerializedProperty)
+- uid: LobsterFramework.Editors.EditorUtils.DrawSubProperties*
+  name: DrawSubProperties
+  href: api/LobsterFramework.Editors.EditorUtils.html#LobsterFramework_Editors_EditorUtils_DrawSubProperties_
+  commentId: Overload:LobsterFramework.Editors.EditorUtils.DrawSubProperties
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.EditorUtils.DrawSubProperties
+  nameWithType: EditorUtils.DrawSubProperties
 - uid: LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture(System.Int32,System.Int32,UnityEngine.Color)
   name: MakeBackgroundTexture(int, int, Color)
   href: api/LobsterFramework.Editors.EditorUtils.html#LobsterFramework_Editors_EditorUtils_MakeBackgroundTexture_System_Int32_System_Int32_UnityEngine_Color_
@@ -5879,6 +5934,165 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Editors.LayerAttributeDrawer.OnGUI
   nameWithType: LayerAttributeDrawer.OnGUI
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1
+  name: MenuTreeDrawer<T>
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html
+  commentId: T:LobsterFramework.Editors.MenuTreeDrawer`1
+  name.vb: MenuTreeDrawer(Of T)
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T)
+  nameWithType: MenuTreeDrawer<T>
+  nameWithType.vb: MenuTreeDrawer(Of T)
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.Utility.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
+  name: MenuTreeDrawer(MenuTree<T>, Action<T>, Func<MenuTree<T>, GUIContent>, Func<T, GUIContent>)
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1__ctor_LobsterFramework_Utility_MenuTree__0__System_Action__0__System_Func_LobsterFramework_Utility_MenuTree__0__UnityEngine_GUIContent__System_Func__0_UnityEngine_GUIContent__
+  commentId: M:LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.Utility.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
+  name.vb: New(MenuTree(Of T), Action(Of T), Func(Of MenuTree(Of T), GUIContent), Func(Of T, GUIContent))
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.MenuTreeDrawer(LobsterFramework.Utility.MenuTree<T>, System.Action<T>, System.Func<LobsterFramework.Utility.MenuTree<T>, UnityEngine.GUIContent>, System.Func<T, UnityEngine.GUIContent>)
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).New(LobsterFramework.Utility.MenuTree(Of T), System.Action(Of T), System.Func(Of LobsterFramework.Utility.MenuTree(Of T), UnityEngine.GUIContent), System.Func(Of T, UnityEngine.GUIContent))
+  nameWithType: MenuTreeDrawer<T>.MenuTreeDrawer(MenuTree<T>, Action<T>, Func<MenuTree<T>, GUIContent>, Func<T, GUIContent>)
+  nameWithType.vb: MenuTreeDrawer(Of T).New(MenuTree(Of T), Action(Of T), Func(Of MenuTree(Of T), GUIContent), Func(Of T, GUIContent))
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.#ctor*
+  name: MenuTreeDrawer
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1__ctor_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeDrawer`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.MenuTreeDrawer
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).New
+  nameWithType: MenuTreeDrawer<T>.MenuTreeDrawer
+  nameWithType.vb: MenuTreeDrawer(Of T).New
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.Draw
+  name: Draw()
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1_Draw
+  commentId: M:LobsterFramework.Editors.MenuTreeDrawer`1.Draw
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.Draw()
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).Draw()
+  nameWithType: MenuTreeDrawer<T>.Draw()
+  nameWithType.vb: MenuTreeDrawer(Of T).Draw()
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.Draw*
+  name: Draw
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1_Draw_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeDrawer`1.Draw
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.Draw
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).Draw
+  nameWithType: MenuTreeDrawer<T>.Draw
+  nameWithType.vb: MenuTreeDrawer(Of T).Draw
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.SetColors(UnityEngine.Color,UnityEngine.Color)
+  name: SetColors(Color, Color)
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1_SetColors_UnityEngine_Color_UnityEngine_Color_
+  commentId: M:LobsterFramework.Editors.MenuTreeDrawer`1.SetColors(UnityEngine.Color,UnityEngine.Color)
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.SetColors(UnityEngine.Color, UnityEngine.Color)
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).SetColors(UnityEngine.Color, UnityEngine.Color)
+  nameWithType: MenuTreeDrawer<T>.SetColors(Color, Color)
+  nameWithType.vb: MenuTreeDrawer(Of T).SetColors(Color, Color)
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.SetColors*
+  name: SetColors
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1_SetColors_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeDrawer`1.SetColors
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.SetColors
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).SetColors
+  nameWithType: MenuTreeDrawer<T>.SetColors
+  nameWithType.vb: MenuTreeDrawer(Of T).SetColors
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.SetEmptyNote(System.String)
+  name: SetEmptyNote(string)
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1_SetEmptyNote_System_String_
+  commentId: M:LobsterFramework.Editors.MenuTreeDrawer`1.SetEmptyNote(System.String)
+  name.vb: SetEmptyNote(String)
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.SetEmptyNote(string)
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).SetEmptyNote(String)
+  nameWithType: MenuTreeDrawer<T>.SetEmptyNote(string)
+  nameWithType.vb: MenuTreeDrawer(Of T).SetEmptyNote(String)
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.SetEmptyNote*
+  name: SetEmptyNote
+  href: api/LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework_Editors_MenuTreeDrawer_1_SetEmptyNote_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeDrawer`1.SetEmptyNote
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.SetEmptyNote
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).SetEmptyNote
+  nameWithType: MenuTreeDrawer<T>.SetEmptyNote
+  nameWithType.vb: MenuTreeDrawer(Of T).SetEmptyNote
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
+  name: MenuTreeItemCollectionDrawer<T>
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html
+  commentId: T:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
+  name.vb: MenuTreeItemCollectionDrawer(Of T)
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T)
+  nameWithType: MenuTreeItemCollectionDrawer<T>
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T)
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Action{LobsterFramework.Utility.MenuTree{`0}},System.Action{`0})
+  name: MenuTreeItemCollectionDrawer(ICollection<T>, Dictionary<T, MenuTree<T>>, Action<MenuTree<T>>, Action<T>)
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1__ctor_System_Collections_Generic_ICollection__0__System_Collections_Generic_Dictionary__0_LobsterFramework_Utility_MenuTree__0___System_Action_LobsterFramework_Utility_MenuTree__0___System_Action__0__
+  commentId: M:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Action{LobsterFramework.Utility.MenuTree{`0}},System.Action{`0})
+  name.vb: New(ICollection(Of T), Dictionary(Of T, MenuTree(Of T)), Action(Of MenuTree(Of T)), Action(Of T))
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer(System.Collections.Generic.ICollection<T>, System.Collections.Generic.Dictionary<T, LobsterFramework.Utility.MenuTree<T>>, System.Action<LobsterFramework.Utility.MenuTree<T>>, System.Action<T>)
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).New(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.Dictionary(Of T, LobsterFramework.Utility.MenuTree(Of T)), System.Action(Of LobsterFramework.Utility.MenuTree(Of T)), System.Action(Of T))
+  nameWithType: MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer(ICollection<T>, Dictionary<T, MenuTree<T>>, Action<MenuTree<T>>, Action<T>)
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).New(ICollection(Of T), Dictionary(Of T, MenuTree(Of T)), Action(Of MenuTree(Of T)), Action(Of T))
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor*
+  name: MenuTreeItemCollectionDrawer
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1__ctor_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).New
+  nameWithType: MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).New
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.Draw
+  name: Draw()
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1_Draw
+  commentId: M:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.Draw
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.Draw()
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).Draw()
+  nameWithType: MenuTreeItemCollectionDrawer<T>.Draw()
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).Draw()
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.Draw*
+  name: Draw
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1_Draw_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.Draw
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.Draw
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).Draw
+  nameWithType: MenuTreeItemCollectionDrawer<T>.Draw
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).Draw
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.SetColorOptions(UnityEngine.Color,UnityEngine.Color)
+  name: SetColorOptions(Color, Color)
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1_SetColorOptions_UnityEngine_Color_UnityEngine_Color_
+  commentId: M:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.SetColorOptions(UnityEngine.Color,UnityEngine.Color)
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.SetColorOptions(UnityEngine.Color, UnityEngine.Color)
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).SetColorOptions(UnityEngine.Color, UnityEngine.Color)
+  nameWithType: MenuTreeItemCollectionDrawer<T>.SetColorOptions(Color, Color)
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).SetColorOptions(Color, Color)
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.SetColorOptions*
+  name: SetColorOptions
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1_SetColorOptions_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.SetColorOptions
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.SetColorOptions
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).SetColorOptions
+  nameWithType: MenuTreeItemCollectionDrawer<T>.SetColorOptions
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).SetColorOptions
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.UpdateGroups
+  name: UpdateGroups()
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1_UpdateGroups
+  commentId: M:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.UpdateGroups
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.UpdateGroups()
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).UpdateGroups()
+  nameWithType: MenuTreeItemCollectionDrawer<T>.UpdateGroups()
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).UpdateGroups()
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.UpdateGroups*
+  name: UpdateGroups
+  href: api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework_Editors_MenuTreeItemCollectionDrawer_1_UpdateGroups_
+  commentId: Overload:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.UpdateGroups
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.UpdateGroups
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).UpdateGroups
+  nameWithType: MenuTreeItemCollectionDrawer<T>.UpdateGroups
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).UpdateGroups
 - uid: LobsterFramework.Editors.MovementControllerEditor
   name: MovementControllerEditor
   href: api/LobsterFramework.Editors.MovementControllerEditor.html
@@ -5942,18 +6156,25 @@ references:
   commentId: T:LobsterFramework.Editors.SelectAbilityComponentPopup
   fullName: LobsterFramework.Editors.SelectAbilityComponentPopup
   nameWithType: SelectAbilityComponentPopup
-- uid: LobsterFramework.Editors.SelectAbilityComponentPopup.data
-  name: data
-  href: api/LobsterFramework.Editors.SelectAbilityComponentPopup.html#LobsterFramework_Editors_SelectAbilityComponentPopup_data
-  commentId: F:LobsterFramework.Editors.SelectAbilityComponentPopup.data
-  fullName: LobsterFramework.Editors.SelectAbilityComponentPopup.data
-  nameWithType: SelectAbilityComponentPopup.data
-- uid: LobsterFramework.Editors.SelectAbilityComponentPopup.editor
-  name: editor
-  href: api/LobsterFramework.Editors.SelectAbilityComponentPopup.html#LobsterFramework_Editors_SelectAbilityComponentPopup_editor
-  commentId: F:LobsterFramework.Editors.SelectAbilityComponentPopup.editor
-  fullName: LobsterFramework.Editors.SelectAbilityComponentPopup.editor
-  nameWithType: SelectAbilityComponentPopup.editor
+- uid: LobsterFramework.Editors.SelectAbilityComponentPopup.#ctor(LobsterFramework.Editors.AbilityDataEditor,LobsterFramework.AbilitySystem.AbilityData)
+  name: SelectAbilityComponentPopup(AbilityDataEditor, AbilityData)
+  href: api/LobsterFramework.Editors.SelectAbilityComponentPopup.html#LobsterFramework_Editors_SelectAbilityComponentPopup__ctor_LobsterFramework_Editors_AbilityDataEditor_LobsterFramework_AbilitySystem_AbilityData_
+  commentId: M:LobsterFramework.Editors.SelectAbilityComponentPopup.#ctor(LobsterFramework.Editors.AbilityDataEditor,LobsterFramework.AbilitySystem.AbilityData)
+  name.vb: New(AbilityDataEditor, AbilityData)
+  fullName: LobsterFramework.Editors.SelectAbilityComponentPopup.SelectAbilityComponentPopup(LobsterFramework.Editors.AbilityDataEditor, LobsterFramework.AbilitySystem.AbilityData)
+  fullName.vb: LobsterFramework.Editors.SelectAbilityComponentPopup.New(LobsterFramework.Editors.AbilityDataEditor, LobsterFramework.AbilitySystem.AbilityData)
+  nameWithType: SelectAbilityComponentPopup.SelectAbilityComponentPopup(AbilityDataEditor, AbilityData)
+  nameWithType.vb: SelectAbilityComponentPopup.New(AbilityDataEditor, AbilityData)
+- uid: LobsterFramework.Editors.SelectAbilityComponentPopup.#ctor*
+  name: SelectAbilityComponentPopup
+  href: api/LobsterFramework.Editors.SelectAbilityComponentPopup.html#LobsterFramework_Editors_SelectAbilityComponentPopup__ctor_
+  commentId: Overload:LobsterFramework.Editors.SelectAbilityComponentPopup.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.SelectAbilityComponentPopup.SelectAbilityComponentPopup
+  fullName.vb: LobsterFramework.Editors.SelectAbilityComponentPopup.New
+  nameWithType: SelectAbilityComponentPopup.SelectAbilityComponentPopup
+  nameWithType.vb: SelectAbilityComponentPopup.New
 - uid: LobsterFramework.Editors.SelectAbilityComponentPopup.OnGUI(UnityEngine.Rect)
   name: OnGUI(Rect)
   href: api/LobsterFramework.Editors.SelectAbilityComponentPopup.html#LobsterFramework_Editors_SelectAbilityComponentPopup_OnGUI_UnityEngine_Rect_
@@ -5973,18 +6194,25 @@ references:
   commentId: T:LobsterFramework.Editors.SelectAbilityPopup
   fullName: LobsterFramework.Editors.SelectAbilityPopup
   nameWithType: SelectAbilityPopup
-- uid: LobsterFramework.Editors.SelectAbilityPopup.data
-  name: data
-  href: api/LobsterFramework.Editors.SelectAbilityPopup.html#LobsterFramework_Editors_SelectAbilityPopup_data
-  commentId: F:LobsterFramework.Editors.SelectAbilityPopup.data
-  fullName: LobsterFramework.Editors.SelectAbilityPopup.data
-  nameWithType: SelectAbilityPopup.data
-- uid: LobsterFramework.Editors.SelectAbilityPopup.editor
-  name: editor
-  href: api/LobsterFramework.Editors.SelectAbilityPopup.html#LobsterFramework_Editors_SelectAbilityPopup_editor
-  commentId: F:LobsterFramework.Editors.SelectAbilityPopup.editor
-  fullName: LobsterFramework.Editors.SelectAbilityPopup.editor
-  nameWithType: SelectAbilityPopup.editor
+- uid: LobsterFramework.Editors.SelectAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData,LobsterFramework.Editors.AbilityDataEditor)
+  name: SelectAbilityPopup(AbilityData, AbilityDataEditor)
+  href: api/LobsterFramework.Editors.SelectAbilityPopup.html#LobsterFramework_Editors_SelectAbilityPopup__ctor_LobsterFramework_AbilitySystem_AbilityData_LobsterFramework_Editors_AbilityDataEditor_
+  commentId: M:LobsterFramework.Editors.SelectAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData,LobsterFramework.Editors.AbilityDataEditor)
+  name.vb: New(AbilityData, AbilityDataEditor)
+  fullName: LobsterFramework.Editors.SelectAbilityPopup.SelectAbilityPopup(LobsterFramework.AbilitySystem.AbilityData, LobsterFramework.Editors.AbilityDataEditor)
+  fullName.vb: LobsterFramework.Editors.SelectAbilityPopup.New(LobsterFramework.AbilitySystem.AbilityData, LobsterFramework.Editors.AbilityDataEditor)
+  nameWithType: SelectAbilityPopup.SelectAbilityPopup(AbilityData, AbilityDataEditor)
+  nameWithType.vb: SelectAbilityPopup.New(AbilityData, AbilityDataEditor)
+- uid: LobsterFramework.Editors.SelectAbilityPopup.#ctor*
+  name: SelectAbilityPopup
+  href: api/LobsterFramework.Editors.SelectAbilityPopup.html#LobsterFramework_Editors_SelectAbilityPopup__ctor_
+  commentId: Overload:LobsterFramework.Editors.SelectAbilityPopup.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.SelectAbilityPopup.SelectAbilityPopup
+  fullName.vb: LobsterFramework.Editors.SelectAbilityPopup.New
+  nameWithType: SelectAbilityPopup.SelectAbilityPopup
+  nameWithType.vb: SelectAbilityPopup.New
 - uid: LobsterFramework.Editors.SelectAbilityPopup.OnGUI(UnityEngine.Rect)
   name: OnGUI(Rect)
   href: api/LobsterFramework.Editors.SelectAbilityPopup.html#LobsterFramework_Editors_SelectAbilityPopup_OnGUI_UnityEngine_Rect_
@@ -6042,18 +6270,25 @@ references:
   commentId: T:LobsterFramework.Editors.SelectWeaponStatPopup
   fullName: LobsterFramework.Editors.SelectWeaponStatPopup
   nameWithType: SelectWeaponStatPopup
-- uid: LobsterFramework.Editors.SelectWeaponStatPopup.data
-  name: data
-  href: api/LobsterFramework.Editors.SelectWeaponStatPopup.html#LobsterFramework_Editors_SelectWeaponStatPopup_data
-  commentId: F:LobsterFramework.Editors.SelectWeaponStatPopup.data
-  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.data
-  nameWithType: SelectWeaponStatPopup.data
-- uid: LobsterFramework.Editors.SelectWeaponStatPopup.editor
-  name: editor
-  href: api/LobsterFramework.Editors.SelectWeaponStatPopup.html#LobsterFramework_Editors_SelectWeaponStatPopup_editor
-  commentId: F:LobsterFramework.Editors.SelectWeaponStatPopup.editor
-  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.editor
-  nameWithType: SelectWeaponStatPopup.editor
+- uid: LobsterFramework.Editors.SelectWeaponStatPopup.#ctor(LobsterFramework.Editors.WeaponDataEditor,LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  name: SelectWeaponStatPopup(WeaponDataEditor, WeaponData)
+  href: api/LobsterFramework.Editors.SelectWeaponStatPopup.html#LobsterFramework_Editors_SelectWeaponStatPopup__ctor_LobsterFramework_Editors_WeaponDataEditor_LobsterFramework_AbilitySystem_WeaponSystem_WeaponData_
+  commentId: M:LobsterFramework.Editors.SelectWeaponStatPopup.#ctor(LobsterFramework.Editors.WeaponDataEditor,LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  name.vb: New(WeaponDataEditor, WeaponData)
+  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.SelectWeaponStatPopup(LobsterFramework.Editors.WeaponDataEditor, LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  fullName.vb: LobsterFramework.Editors.SelectWeaponStatPopup.New(LobsterFramework.Editors.WeaponDataEditor, LobsterFramework.AbilitySystem.WeaponSystem.WeaponData)
+  nameWithType: SelectWeaponStatPopup.SelectWeaponStatPopup(WeaponDataEditor, WeaponData)
+  nameWithType.vb: SelectWeaponStatPopup.New(WeaponDataEditor, WeaponData)
+- uid: LobsterFramework.Editors.SelectWeaponStatPopup.#ctor*
+  name: SelectWeaponStatPopup
+  href: api/LobsterFramework.Editors.SelectWeaponStatPopup.html#LobsterFramework_Editors_SelectWeaponStatPopup__ctor_
+  commentId: Overload:LobsterFramework.Editors.SelectWeaponStatPopup.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.SelectWeaponStatPopup
+  fullName.vb: LobsterFramework.Editors.SelectWeaponStatPopup.New
+  nameWithType: SelectWeaponStatPopup.SelectWeaponStatPopup
+  nameWithType.vb: SelectWeaponStatPopup.New
 - uid: LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
   name: OnGUI(Rect)
   href: api/LobsterFramework.Editors.SelectWeaponStatPopup.html#LobsterFramework_Editors_SelectWeaponStatPopup_OnGUI_UnityEngine_Rect_
@@ -6245,19 +6480,6 @@ references:
   commentId: F:LobsterFramework.Editors.StateDataEditor.nextState
   fullName: LobsterFramework.Editors.StateDataEditor.nextState
   nameWithType: StateDataEditor.nextState
-- uid: LobsterFramework.Editors.StateDataEditor.OnEnable
-  name: OnEnable()
-  href: api/LobsterFramework.Editors.StateDataEditor.html#LobsterFramework_Editors_StateDataEditor_OnEnable
-  commentId: M:LobsterFramework.Editors.StateDataEditor.OnEnable
-  fullName: LobsterFramework.Editors.StateDataEditor.OnEnable()
-  nameWithType: StateDataEditor.OnEnable()
-- uid: LobsterFramework.Editors.StateDataEditor.OnEnable*
-  name: OnEnable
-  href: api/LobsterFramework.Editors.StateDataEditor.html#LobsterFramework_Editors_StateDataEditor_OnEnable_
-  commentId: Overload:LobsterFramework.Editors.StateDataEditor.OnEnable
-  isSpec: "True"
-  fullName: LobsterFramework.Editors.StateDataEditor.OnEnable
-  nameWithType: StateDataEditor.OnEnable
 - uid: LobsterFramework.Editors.StateDataEditor.OnInspectorGUI
   name: OnInspectorGUI()
   href: api/LobsterFramework.Editors.StateDataEditor.html#LobsterFramework_Editors_StateDataEditor_OnInspectorGUI
@@ -6397,19 +6619,6 @@ references:
   commentId: T:LobsterFramework.Editors.WeaponDataEditor
   fullName: LobsterFramework.Editors.WeaponDataEditor
   nameWithType: WeaponDataEditor
-- uid: LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  name: OnEnable()
-  href: api/LobsterFramework.Editors.WeaponDataEditor.html#LobsterFramework_Editors_WeaponDataEditor_OnEnable
-  commentId: M:LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  fullName: LobsterFramework.Editors.WeaponDataEditor.OnEnable()
-  nameWithType: WeaponDataEditor.OnEnable()
-- uid: LobsterFramework.Editors.WeaponDataEditor.OnEnable*
-  name: OnEnable
-  href: api/LobsterFramework.Editors.WeaponDataEditor.html#LobsterFramework_Editors_WeaponDataEditor_OnEnable_
-  commentId: Overload:LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  isSpec: "True"
-  fullName: LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  nameWithType: WeaponDataEditor.OnEnable
 - uid: LobsterFramework.Editors.WeaponDataEditor.OnInspectorGUI
   name: OnInspectorGUI()
   href: api/LobsterFramework.Editors.WeaponDataEditor.html#LobsterFramework_Editors_WeaponDataEditor_OnInspectorGUI
@@ -7209,22 +7418,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.GameManager.DefaultInteractionRadius
   nameWithType: GameManager.DefaultInteractionRadius
-- uid: LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
-  name: ExecuteDelegate(UnityAction, float)
-  href: api/LobsterFramework.GameManager.html#LobsterFramework_GameManager_ExecuteDelegate_UnityEngine_Events_UnityAction_System_Single_
-  commentId: M:LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
-  name.vb: ExecuteDelegate(UnityAction, Single)
-  fullName: LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction, float)
-  fullName.vb: LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction, Single)
-  nameWithType: GameManager.ExecuteDelegate(UnityAction, float)
-  nameWithType.vb: GameManager.ExecuteDelegate(UnityAction, Single)
-- uid: LobsterFramework.GameManager.ExecuteDelegate*
-  name: ExecuteDelegate
-  href: api/LobsterFramework.GameManager.html#LobsterFramework_GameManager_ExecuteDelegate_
-  commentId: Overload:LobsterFramework.GameManager.ExecuteDelegate
-  isSpec: "True"
-  fullName: LobsterFramework.GameManager.ExecuteDelegate
-  nameWithType: GameManager.ExecuteDelegate
 - uid: LobsterFramework.GameManager.EXPIRE_ATTACK_TIME
   name: EXPIRE_ATTACK_TIME
   href: api/LobsterFramework.GameManager.html#LobsterFramework_GameManager_EXPIRE_ATTACK_TIME
@@ -7322,19 +7515,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.GameManager.TARGET_FRAME_RATE
   nameWithType: GameManager.TARGET_FRAME_RATE
-- uid: LobsterFramework.GameManager.Update
-  name: Update()
-  href: api/LobsterFramework.GameManager.html#LobsterFramework_GameManager_Update
-  commentId: M:LobsterFramework.GameManager.Update
-  fullName: LobsterFramework.GameManager.Update()
-  nameWithType: GameManager.Update()
-- uid: LobsterFramework.GameManager.Update*
-  name: Update
-  href: api/LobsterFramework.GameManager.html#LobsterFramework_GameManager_Update_
-  commentId: Overload:LobsterFramework.GameManager.Update
-  isSpec: "True"
-  fullName: LobsterFramework.GameManager.Update
-  nameWithType: GameManager.Update
 - uid: LobsterFramework.GameManager.UseAlternativeInput
   name: UseAlternativeInput
   href: api/LobsterFramework.GameManager.html#LobsterFramework_GameManager_UseAlternativeInput
@@ -9128,12 +9308,12 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Utility.Coroutine.IsFinished
   nameWithType: Coroutine.IsFinished
-- uid: LobsterFramework.Utility.Coroutine.onReset
-  name: onReset
-  href: api/LobsterFramework.Utility.Coroutine.html#LobsterFramework_Utility_Coroutine_onReset
-  commentId: F:LobsterFramework.Utility.Coroutine.onReset
-  fullName: LobsterFramework.Utility.Coroutine.onReset
-  nameWithType: Coroutine.onReset
+- uid: LobsterFramework.Utility.Coroutine.OnReset
+  name: OnReset
+  href: api/LobsterFramework.Utility.Coroutine.html#LobsterFramework_Utility_Coroutine_OnReset
+  commentId: E:LobsterFramework.Utility.Coroutine.OnReset
+  fullName: LobsterFramework.Utility.Coroutine.OnReset
+  nameWithType: Coroutine.OnReset
 - uid: LobsterFramework.Utility.Coroutine.Stop
   name: Stop()
   href: api/LobsterFramework.Utility.Coroutine.html#LobsterFramework_Utility_Coroutine_Stop
@@ -9153,92 +9333,56 @@ references:
   commentId: T:LobsterFramework.Utility.CoroutineOption
   fullName: LobsterFramework.Utility.CoroutineOption
   nameWithType: CoroutineOption
+- uid: LobsterFramework.Utility.CoroutineOption.Condition(System.Func{System.Boolean})
+  name: Condition(Func<bool>)
+  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Condition_System_Func_System_Boolean__
+  commentId: M:LobsterFramework.Utility.CoroutineOption.Condition(System.Func{System.Boolean})
+  name.vb: Condition(Func(Of Boolean))
+  fullName: LobsterFramework.Utility.CoroutineOption.Condition(System.Func<bool>)
+  fullName.vb: LobsterFramework.Utility.CoroutineOption.Condition(System.Func(Of Boolean))
+  nameWithType: CoroutineOption.Condition(Func<bool>)
+  nameWithType.vb: CoroutineOption.Condition(Func(Of Boolean))
+- uid: LobsterFramework.Utility.CoroutineOption.Condition*
+  name: Condition
+  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Condition_
+  commentId: Overload:LobsterFramework.Utility.CoroutineOption.Condition
+  isSpec: "True"
+  fullName: LobsterFramework.Utility.CoroutineOption.Condition
+  nameWithType: CoroutineOption.Condition
 - uid: LobsterFramework.Utility.CoroutineOption.Continue
   name: Continue
   href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Continue
   commentId: F:LobsterFramework.Utility.CoroutineOption.Continue
   fullName: LobsterFramework.Utility.CoroutineOption.Continue
   nameWithType: CoroutineOption.Continue
-- uid: LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
-  name: Equals(CoroutineOption)
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Equals_LobsterFramework_Utility_CoroutineOption_
-  commentId: M:LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
-  fullName: LobsterFramework.Utility.CoroutineOption.Equals(LobsterFramework.Utility.CoroutineOption)
-  nameWithType: CoroutineOption.Equals(CoroutineOption)
-- uid: LobsterFramework.Utility.CoroutineOption.Equals*
-  name: Equals
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Equals_
-  commentId: Overload:LobsterFramework.Utility.CoroutineOption.Equals
-  isSpec: "True"
-  fullName: LobsterFramework.Utility.CoroutineOption.Equals
-  nameWithType: CoroutineOption.Equals
-- uid: LobsterFramework.Utility.CoroutineOption.predicateCondition
-  name: predicateCondition
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_predicateCondition
-  commentId: F:LobsterFramework.Utility.CoroutineOption.predicateCondition
-  fullName: LobsterFramework.Utility.CoroutineOption.predicateCondition
-  nameWithType: CoroutineOption.predicateCondition
-- uid: LobsterFramework.Utility.CoroutineOption.reset
-  name: reset
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_reset
-  commentId: F:LobsterFramework.Utility.CoroutineOption.reset
-  fullName: LobsterFramework.Utility.CoroutineOption.reset
-  nameWithType: CoroutineOption.reset
 - uid: LobsterFramework.Utility.CoroutineOption.Reset
   name: Reset
   href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Reset
   commentId: F:LobsterFramework.Utility.CoroutineOption.Reset
   fullName: LobsterFramework.Utility.CoroutineOption.Reset
   nameWithType: CoroutineOption.Reset
-- uid: LobsterFramework.Utility.CoroutineOption.unscaled
-  name: unscaled
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_unscaled
-  commentId: F:LobsterFramework.Utility.CoroutineOption.unscaled
-  fullName: LobsterFramework.Utility.CoroutineOption.unscaled
-  nameWithType: CoroutineOption.unscaled
-- uid: LobsterFramework.Utility.CoroutineOption.wait
-  name: wait
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_wait
-  commentId: F:LobsterFramework.Utility.CoroutineOption.wait
-  fullName: LobsterFramework.Utility.CoroutineOption.wait
-  nameWithType: CoroutineOption.wait
-- uid: LobsterFramework.Utility.CoroutineOption.waitFor
-  name: waitFor
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_waitFor
-  commentId: F:LobsterFramework.Utility.CoroutineOption.waitFor
-  fullName: LobsterFramework.Utility.CoroutineOption.waitFor
-  nameWithType: CoroutineOption.waitFor
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func{System.Boolean})
-  name: WaitForCondition(Func<bool>)
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_WaitForCondition_System_Func_System_Boolean__
-  commentId: M:LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func{System.Boolean})
-  name.vb: WaitForCondition(Func(Of Boolean))
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func<bool>)
-  fullName.vb: LobsterFramework.Utility.CoroutineOption.WaitForCondition(System.Func(Of Boolean))
-  nameWithType: CoroutineOption.WaitForCondition(Func<bool>)
-  nameWithType.vb: CoroutineOption.WaitForCondition(Func(Of Boolean))
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForCondition*
-  name: WaitForCondition
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_WaitForCondition_
-  commentId: Overload:LobsterFramework.Utility.CoroutineOption.WaitForCondition
+- uid: LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
+  name: SubCoroutine(IEnumerable<CoroutineOption>)
+  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_SubCoroutine_System_Collections_Generic_IEnumerable_LobsterFramework_Utility_CoroutineOption__
+  commentId: M:LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
+  name.vb: SubCoroutine(IEnumerable(Of CoroutineOption))
+  fullName: LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable<LobsterFramework.Utility.CoroutineOption>)
+  fullName.vb: LobsterFramework.Utility.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable(Of LobsterFramework.Utility.CoroutineOption))
+  nameWithType: CoroutineOption.SubCoroutine(IEnumerable<CoroutineOption>)
+  nameWithType.vb: CoroutineOption.SubCoroutine(IEnumerable(Of CoroutineOption))
+- uid: LobsterFramework.Utility.CoroutineOption.SubCoroutine*
+  name: SubCoroutine
+  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_SubCoroutine_
+  commentId: Overload:LobsterFramework.Utility.CoroutineOption.SubCoroutine
   isSpec: "True"
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCondition
-  nameWithType: CoroutineOption.WaitForCondition
+  fullName: LobsterFramework.Utility.CoroutineOption.SubCoroutine
+  nameWithType: CoroutineOption.SubCoroutine
 - uid: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(LobsterFramework.Utility.Coroutine)
   name: WaitForCoroutine(Coroutine)
   href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_WaitForCoroutine_LobsterFramework_Utility_Coroutine_
   commentId: M:LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(LobsterFramework.Utility.Coroutine)
   fullName: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(LobsterFramework.Utility.Coroutine)
   nameWithType: CoroutineOption.WaitForCoroutine(Coroutine)
-- uid: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
-  name: WaitForCoroutine(IEnumerable<CoroutineOption>)
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_WaitForCoroutine_System_Collections_Generic_IEnumerable_LobsterFramework_Utility_CoroutineOption__
-  commentId: M:LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
-  name.vb: WaitForCoroutine(IEnumerable(Of CoroutineOption))
-  fullName: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable<LobsterFramework.Utility.CoroutineOption>)
-  fullName.vb: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerable(Of LobsterFramework.Utility.CoroutineOption))
-  nameWithType: CoroutineOption.WaitForCoroutine(IEnumerable<CoroutineOption>)
-  nameWithType.vb: CoroutineOption.WaitForCoroutine(IEnumerable(Of CoroutineOption))
 - uid: LobsterFramework.Utility.CoroutineOption.WaitForCoroutine*
   name: WaitForCoroutine
   href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_WaitForCoroutine_
@@ -9278,12 +9422,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Utility.CoroutineOption.WaitForUnscaledSeconds
   nameWithType: CoroutineOption.WaitForUnscaledSeconds
-- uid: LobsterFramework.Utility.CoroutineOption.waitTime
-  name: waitTime
-  href: api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_waitTime
-  commentId: F:LobsterFramework.Utility.CoroutineOption.waitTime
-  fullName: LobsterFramework.Utility.CoroutineOption.waitTime
-  nameWithType: CoroutineOption.waitTime
 - uid: LobsterFramework.Utility.CoroutineRunner
   name: CoroutineRunner
   href: api/LobsterFramework.Utility.CoroutineRunner.html
@@ -9880,92 +10018,128 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Utility.IntSum.ComputeValue
   nameWithType: IntSum.ComputeValue
-- uid: LobsterFramework.Utility.MenuGroup`1
-  name: MenuGroup<T>
-  href: api/LobsterFramework.Utility.MenuGroup-1.html
-  commentId: T:LobsterFramework.Utility.MenuGroup`1
-  name.vb: MenuGroup(Of T)
-  fullName: LobsterFramework.Utility.MenuGroup<T>
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T)
-  nameWithType: MenuGroup<T>
-  nameWithType.vb: MenuGroup(Of T)
-- uid: LobsterFramework.Utility.MenuGroup`1.#ctor(System.String)
-  name: MenuGroup(string)
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1__ctor_System_String_
-  commentId: M:LobsterFramework.Utility.MenuGroup`1.#ctor(System.String)
+- uid: LobsterFramework.Utility.MenuTree`1
+  name: MenuTree<T>
+  href: api/LobsterFramework.Utility.MenuTree-1.html
+  commentId: T:LobsterFramework.Utility.MenuTree`1
+  name.vb: MenuTree(Of T)
+  fullName: LobsterFramework.Utility.MenuTree<T>
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T)
+  nameWithType: MenuTree<T>
+  nameWithType.vb: MenuTree(Of T)
+- uid: LobsterFramework.Utility.MenuTree`1.#ctor(System.String)
+  name: MenuTree(string)
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1__ctor_System_String_
+  commentId: M:LobsterFramework.Utility.MenuTree`1.#ctor(System.String)
   name.vb: New(String)
-  fullName: LobsterFramework.Utility.MenuGroup<T>.MenuGroup(string)
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).New(String)
-  nameWithType: MenuGroup<T>.MenuGroup(string)
-  nameWithType.vb: MenuGroup(Of T).New(String)
-- uid: LobsterFramework.Utility.MenuGroup`1.#ctor*
-  name: MenuGroup
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1__ctor_
-  commentId: Overload:LobsterFramework.Utility.MenuGroup`1.#ctor
+  fullName: LobsterFramework.Utility.MenuTree<T>.MenuTree(string)
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).New(String)
+  nameWithType: MenuTree<T>.MenuTree(string)
+  nameWithType.vb: MenuTree(Of T).New(String)
+- uid: LobsterFramework.Utility.MenuTree`1.#ctor*
+  name: MenuTree
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1__ctor_
+  commentId: Overload:LobsterFramework.Utility.MenuTree`1.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: LobsterFramework.Utility.MenuGroup<T>.MenuGroup
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).New
-  nameWithType: MenuGroup<T>.MenuGroup
-  nameWithType.vb: MenuGroup(Of T).New
-- uid: LobsterFramework.Utility.MenuGroup`1.AddChild(LobsterFramework.Utility.MenuGroup{`0})
-  name: AddChild(MenuGroup<T>)
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1_AddChild_LobsterFramework_Utility_MenuGroup__0__
-  commentId: M:LobsterFramework.Utility.MenuGroup`1.AddChild(LobsterFramework.Utility.MenuGroup{`0})
-  name.vb: AddChild(MenuGroup(Of T))
-  fullName: LobsterFramework.Utility.MenuGroup<T>.AddChild(LobsterFramework.Utility.MenuGroup<T>)
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).AddChild(LobsterFramework.Utility.MenuGroup(Of T))
-  nameWithType: MenuGroup<T>.AddChild(MenuGroup<T>)
-  nameWithType.vb: MenuGroup(Of T).AddChild(MenuGroup(Of T))
-- uid: LobsterFramework.Utility.MenuGroup`1.AddChild*
+  fullName: LobsterFramework.Utility.MenuTree<T>.MenuTree
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).New
+  nameWithType: MenuTree<T>.MenuTree
+  nameWithType.vb: MenuTree(Of T).New
+- uid: LobsterFramework.Utility.MenuTree`1.AddChild(LobsterFramework.Utility.MenuTree{`0})
+  name: AddChild(MenuTree<T>)
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_AddChild_LobsterFramework_Utility_MenuTree__0__
+  commentId: M:LobsterFramework.Utility.MenuTree`1.AddChild(LobsterFramework.Utility.MenuTree{`0})
+  name.vb: AddChild(MenuTree(Of T))
+  fullName: LobsterFramework.Utility.MenuTree<T>.AddChild(LobsterFramework.Utility.MenuTree<T>)
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).AddChild(LobsterFramework.Utility.MenuTree(Of T))
+  nameWithType: MenuTree<T>.AddChild(MenuTree<T>)
+  nameWithType.vb: MenuTree(Of T).AddChild(MenuTree(Of T))
+- uid: LobsterFramework.Utility.MenuTree`1.AddChild*
   name: AddChild
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1_AddChild_
-  commentId: Overload:LobsterFramework.Utility.MenuGroup`1.AddChild
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_AddChild_
+  commentId: Overload:LobsterFramework.Utility.MenuTree`1.AddChild
   isSpec: "True"
-  fullName: LobsterFramework.Utility.MenuGroup<T>.AddChild
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).AddChild
-  nameWithType: MenuGroup<T>.AddChild
-  nameWithType.vb: MenuGroup(Of T).AddChild
-- uid: LobsterFramework.Utility.MenuGroup`1.menuName
+  fullName: LobsterFramework.Utility.MenuTree<T>.AddChild
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).AddChild
+  nameWithType: MenuTree<T>.AddChild
+  nameWithType.vb: MenuTree(Of T).AddChild
+- uid: LobsterFramework.Utility.MenuTree`1.AddItem(LobsterFramework.Utility.MenuTree{`0},System.String,`0)
+  name: AddItem(MenuTree<T>, string, T)
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_AddItem_LobsterFramework_Utility_MenuTree__0__System_String__0_
+  commentId: M:LobsterFramework.Utility.MenuTree`1.AddItem(LobsterFramework.Utility.MenuTree{`0},System.String,`0)
+  name.vb: AddItem(MenuTree(Of T), String, T)
+  fullName: LobsterFramework.Utility.MenuTree<T>.AddItem(LobsterFramework.Utility.MenuTree<T>, string, T)
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).AddItem(LobsterFramework.Utility.MenuTree(Of T), String, T)
+  nameWithType: MenuTree<T>.AddItem(MenuTree<T>, string, T)
+  nameWithType.vb: MenuTree(Of T).AddItem(MenuTree(Of T), String, T)
+- uid: LobsterFramework.Utility.MenuTree`1.AddItem*
+  name: AddItem
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_AddItem_
+  commentId: Overload:LobsterFramework.Utility.MenuTree`1.AddItem
+  isSpec: "True"
+  fullName: LobsterFramework.Utility.MenuTree<T>.AddItem
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).AddItem
+  nameWithType: MenuTree<T>.AddItem
+  nameWithType.vb: MenuTree(Of T).AddItem
+- uid: LobsterFramework.Utility.MenuTree`1.IsAncestor(LobsterFramework.Utility.MenuTree{`0})
+  name: IsAncestor(MenuTree<T>)
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_IsAncestor_LobsterFramework_Utility_MenuTree__0__
+  commentId: M:LobsterFramework.Utility.MenuTree`1.IsAncestor(LobsterFramework.Utility.MenuTree{`0})
+  name.vb: IsAncestor(MenuTree(Of T))
+  fullName: LobsterFramework.Utility.MenuTree<T>.IsAncestor(LobsterFramework.Utility.MenuTree<T>)
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).IsAncestor(LobsterFramework.Utility.MenuTree(Of T))
+  nameWithType: MenuTree<T>.IsAncestor(MenuTree<T>)
+  nameWithType.vb: MenuTree(Of T).IsAncestor(MenuTree(Of T))
+- uid: LobsterFramework.Utility.MenuTree`1.IsAncestor*
+  name: IsAncestor
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_IsAncestor_
+  commentId: Overload:LobsterFramework.Utility.MenuTree`1.IsAncestor
+  isSpec: "True"
+  fullName: LobsterFramework.Utility.MenuTree<T>.IsAncestor
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).IsAncestor
+  nameWithType: MenuTree<T>.IsAncestor
+  nameWithType.vb: MenuTree(Of T).IsAncestor
+- uid: LobsterFramework.Utility.MenuTree`1.menuName
   name: menuName
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1_menuName
-  commentId: F:LobsterFramework.Utility.MenuGroup`1.menuName
-  fullName: LobsterFramework.Utility.MenuGroup<T>.menuName
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).menuName
-  nameWithType: MenuGroup<T>.menuName
-  nameWithType.vb: MenuGroup(Of T).menuName
-- uid: LobsterFramework.Utility.MenuGroup`1.options
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_menuName
+  commentId: F:LobsterFramework.Utility.MenuTree`1.menuName
+  fullName: LobsterFramework.Utility.MenuTree<T>.menuName
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).menuName
+  nameWithType: MenuTree<T>.menuName
+  nameWithType.vb: MenuTree(Of T).menuName
+- uid: LobsterFramework.Utility.MenuTree`1.options
   name: options
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1_options
-  commentId: F:LobsterFramework.Utility.MenuGroup`1.options
-  fullName: LobsterFramework.Utility.MenuGroup<T>.options
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).options
-  nameWithType: MenuGroup<T>.options
-  nameWithType.vb: MenuGroup(Of T).options
-- uid: LobsterFramework.Utility.MenuGroup`1.parentMenu
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_options
+  commentId: F:LobsterFramework.Utility.MenuTree`1.options
+  fullName: LobsterFramework.Utility.MenuTree<T>.options
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).options
+  nameWithType: MenuTree<T>.options
+  nameWithType.vb: MenuTree(Of T).options
+- uid: LobsterFramework.Utility.MenuTree`1.parentMenu
   name: parentMenu
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1_parentMenu
-  commentId: F:LobsterFramework.Utility.MenuGroup`1.parentMenu
-  fullName: LobsterFramework.Utility.MenuGroup<T>.parentMenu
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).parentMenu
-  nameWithType: MenuGroup<T>.parentMenu
-  nameWithType.vb: MenuGroup(Of T).parentMenu
-- uid: LobsterFramework.Utility.MenuGroup`1.pathName
-  name: pathName
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1_pathName
-  commentId: F:LobsterFramework.Utility.MenuGroup`1.pathName
-  fullName: LobsterFramework.Utility.MenuGroup<T>.pathName
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).pathName
-  nameWithType: MenuGroup<T>.pathName
-  nameWithType.vb: MenuGroup(Of T).pathName
-- uid: LobsterFramework.Utility.MenuGroup`1.subMenus
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_parentMenu
+  commentId: F:LobsterFramework.Utility.MenuTree`1.parentMenu
+  fullName: LobsterFramework.Utility.MenuTree<T>.parentMenu
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).parentMenu
+  nameWithType: MenuTree<T>.parentMenu
+  nameWithType.vb: MenuTree(Of T).parentMenu
+- uid: LobsterFramework.Utility.MenuTree`1.path
+  name: path
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_path
+  commentId: F:LobsterFramework.Utility.MenuTree`1.path
+  fullName: LobsterFramework.Utility.MenuTree<T>.path
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).path
+  nameWithType: MenuTree<T>.path
+  nameWithType.vb: MenuTree(Of T).path
+- uid: LobsterFramework.Utility.MenuTree`1.subMenus
   name: subMenus
-  href: api/LobsterFramework.Utility.MenuGroup-1.html#LobsterFramework_Utility_MenuGroup_1_subMenus
-  commentId: F:LobsterFramework.Utility.MenuGroup`1.subMenus
-  fullName: LobsterFramework.Utility.MenuGroup<T>.subMenus
-  fullName.vb: LobsterFramework.Utility.MenuGroup(Of T).subMenus
-  nameWithType: MenuGroup<T>.subMenus
-  nameWithType.vb: MenuGroup(Of T).subMenus
+  href: api/LobsterFramework.Utility.MenuTree-1.html#LobsterFramework_Utility_MenuTree_1_subMenus
+  commentId: F:LobsterFramework.Utility.MenuTree`1.subMenus
+  fullName: LobsterFramework.Utility.MenuTree<T>.subMenus
+  fullName.vb: LobsterFramework.Utility.MenuTree(Of T).subMenus
+  nameWithType: MenuTree<T>.subMenus
+  nameWithType.vb: MenuTree(Of T).subMenus
 - uid: LobsterFramework.Utility.OrValue
   name: OrValue
   href: api/LobsterFramework.Utility.OrValue.html

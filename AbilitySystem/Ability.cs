@@ -5,7 +5,6 @@ using System;
 using System.Reflection;
 using LobsterFramework.Utility;
 using Animancer;
-using UnityEngineInternal;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -24,7 +23,7 @@ namespace LobsterFramework.AbilitySystem {
         internal Dictionary<string, AbilityContext> contexts = new();
 
         protected internal AbilityManager abilityManager;
-        private HashSet<string> executing = new();
+        private HashSet<string> runningInstances = new();
 
         /// <summary>
         /// The priority in which this ability will be executed. Higher number means it will be executed earlier.
@@ -37,19 +36,17 @@ namespace LobsterFramework.AbilitySystem {
 
 #if UNITY_EDITOR
         /// <summary>
-        /// Add an ability instance to this ability
+        /// Add an ability instance to this ability.
         /// </summary>
         /// <param name="name">Name of the ability instance</param>
         /// <returns>true if the ability instance with specified name did not exist already and is successfully created and added, false otherwise</returns>
         internal bool AddInstance(string name) {
-            if (configs.ContainsKey(name)) {
+            if (configs.ContainsKey(name) || !AssetDatabase.Contains(this)) {
                 return false;
             }
             AbilityConfig config = AddAbilityMenuAttribute.CreateAbilityConfig(GetType());
             configs[name] = config;
-            if (AssetDatabase.Contains(this)) {
-                AssetDatabase.AddObjectToAsset(config, this);
-            }
+            AssetDatabase.AddObjectToAsset(config, this);
             return true;
         }
 
@@ -60,15 +57,12 @@ namespace LobsterFramework.AbilitySystem {
         /// <returns>True if ability instance exists and successfully removed it, false otherwise</returns>
         internal bool RemoveInstance(string name)
         {
-            if (!configs.ContainsKey(name))
+            if (!configs.ContainsKey(name) || !AssetDatabase.Contains(this))
             {
                 return false;
             }
             AbilityConfig config = configs[name];
-            SuspendInstance(name);
             configs.Remove(name);
-            contexts.Remove(name);
-            channels.Remove(name);
             DestroyImmediate(config, true);
             return true;
         }
@@ -82,10 +76,10 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         internal void DisplayCurrentExecutingInstances() {
-            if (executing.Count > 0)
+            if (runningInstances.Count > 0)
             {
                 string ability = GetType().Name;
-                foreach (string instance in executing)
+                foreach (string instance in runningInstances)
                 {
                     EditorGUILayout.LabelField(ability, instance);
                 }
@@ -197,7 +191,7 @@ namespace LobsterFramework.AbilitySystem {
                     return true;
                 }
                 Context.isRunning = false;
-                executing.Remove(instance);
+                runningInstances.Remove(instance);
                 Context.timeWhenAvailable = Time.time + Config.CoolDown;
                 OnAbilityFinish();
             }
@@ -282,7 +276,7 @@ namespace LobsterFramework.AbilitySystem {
                 {
                     SetContext(instance);
                     Context.isRunning = true;
-                    executing.Add(instance);
+                    runningInstances.Add(instance);
                     AbilityExecutor.EnqueueAction(new AbilityInstance(this, instance));
 
                     OnAbilityEnqueue();
@@ -346,7 +340,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// The number of instances of this ability is running
         /// </summary>
-        public int InstancesRunning { get { return executing.Count; } }
+        public int InstancesRunning { get { return runningInstances.Count; } }
 
         /// <summary>
         /// Check if the ability instance is executing, this method will return false if the instance is not present
@@ -355,7 +349,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <returns> true if the specified instance is executing, otherwise false </returns>
         public bool IsRunning(string instance)
         {
-            return executing.Contains(instance);
+            return runningInstances.Contains(instance);
         }
 
         /// <summary>

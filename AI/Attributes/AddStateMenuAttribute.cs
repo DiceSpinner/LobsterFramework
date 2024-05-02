@@ -10,21 +10,22 @@ using UnityEditor;
 namespace LobsterFramework.AI
 {
     /// <summary>
-    /// Make this state visible to the editor script. Pass in path string to specify the menus groups that leads to this state.
+    /// Applied to <see cref="State"/> to make it visible to editor scripts.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     
     public class AddStateMenuAttribute : Attribute
     {
+        public const string RootName = "Root";
         /// <summary>
         /// The root menu group
         /// </summary>
-        internal static MenuGroup<Type> main = new("Main");
+        internal static MenuTree<Type> main = new(RootName);
 
         /// <summary>
         /// A mapping of states with their menu groups
         /// </summary>
-        internal static Dictionary<Type, MenuGroup<Type>> stateMenus = new();
+        internal static Dictionary<Type, MenuTree<Type>> stateMenus = new();
 
         /// <summary>
         /// A mapping of states with their script icons
@@ -33,6 +34,7 @@ namespace LobsterFramework.AI
 
         private string menuName;
 
+        /// <param name="menuPath">The path leading to this item in the menu</param>
         public AddStateMenuAttribute(string menuPath = "") {
             this.menuName = menuPath;
         }
@@ -49,18 +51,8 @@ namespace LobsterFramework.AI
             }
             else
             {
-                string[] path = menuName.Split('/');
-                MenuGroup<Type> currentGroup = main;
-                foreach (string folder in path) {
-                    if (!currentGroup.subMenus.ContainsKey(folder))
-                    {
-                        MenuGroup<Type> group = new(folder);
-                        currentGroup.AddChild(group);
-                    }
-                    currentGroup = currentGroup.subMenus[folder];
-                }
-                currentGroup.options.Add(type);
-                stateMenus[type] = currentGroup;
+                MenuTree<Type> menu = MenuTree<Type>.AddItem(main, menuName, type);
+                stateMenus[type] = menu;
 
                 // Store state script icon if there's any
 #if UNITY_EDITOR

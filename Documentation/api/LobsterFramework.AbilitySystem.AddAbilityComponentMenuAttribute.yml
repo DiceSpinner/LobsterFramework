@@ -5,7 +5,9 @@ items:
   id: AddAbilityComponentMenuAttribute
   parent: LobsterFramework.AbilitySystem
   children:
+  - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)
   - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init(System.Type)
+  - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.RootName
   - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.icons
   - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.types
   langs:
@@ -22,10 +24,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AddAbilityComponentMenuAttribute
     path: ../AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
-    startLine: 10
+    startLine: 15
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: Applied to <xref href="LobsterFramework.AbilitySystem.AbilityComponent" data-throw-if-not-resolved="false"></xref> to make it visible to editor scripts
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
@@ -94,6 +98,33 @@ items:
     - name: Inherited
       type: System.Boolean
       value: false
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.RootName
+  commentId: F:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.RootName
+  id: RootName
+  parent: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: RootName
+  nameWithType: AddAbilityComponentMenuAttribute.RootName
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.RootName
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: RootName
+    path: ../AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
+    startLine: 18
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public const string RootName = "Root"
+    return:
+      type: System.String
+    content.vb: Public Const RootName As String = "Root"
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.types
   commentId: F:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.types
   id: types
@@ -112,7 +143,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: types
     path: ../AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
-    startLine: 13
+    startLine: 19
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -139,7 +170,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: icons
     path: ../AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
-    startLine: 14
+    startLine: 20
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -148,6 +179,40 @@ items:
     return:
       type: System.Collections.Generic.Dictionary{System.Type,UnityEngine.Texture2D}
     content.vb: Public Shared icons As Dictionary(Of Type, Texture2D)
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)
+  commentId: M:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: AddAbilityComponentMenuAttribute(string)
+  nameWithType: AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute(string)
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute(string)
+  type: Constructor
+  source:
+    remote:
+      path: AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: .ctor
+    path: ../AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
+    startLine: 38
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  example: []
+  syntax:
+    content: public AddAbilityComponentMenuAttribute(string menuPath = "")
+    parameters:
+    - id: menuPath
+      type: System.String
+      description: The path leading to this item in the menu
+    content.vb: Public Sub New(menuPath As String = "")
+  overload: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor*
+  nameWithType.vb: AddAbilityComponentMenuAttribute.New(String)
+  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.New(String)
+  name.vb: New(String)
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init(System.Type)
   commentId: M:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init(System.Type)
   id: Init(System.Type)
@@ -166,18 +231,25 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Init
     path: ../AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs
-    startLine: 15
+    startLine: 43
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: public void Init(Type type)
+    content: public void Init(Type componentType)
     parameters:
-    - id: type
+    - id: componentType
       type: System.Type
-    content.vb: Public Sub Init(type As Type)
+    content.vb: Public Sub Init(componentType As Type)
   overload: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init*
 references:
+- uid: LobsterFramework.AbilitySystem.AbilityComponent
+  commentId: T:LobsterFramework.AbilitySystem.AbilityComponent
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityComponent.html
+  name: AbilityComponent
+  nameWithType: AbilityComponent
+  fullName: LobsterFramework.AbilitySystem.AbilityComponent
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html
@@ -1994,6 +2066,17 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.Collections.Generic.HashSet{System.Type}
   commentId: T:System.Collections.Generic.HashSet{System.Type}
   parent: System.Collections.Generic
@@ -2173,6 +2256,15 @@ references:
   - name: " "
   - name: TValue
   - name: )
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor
+  href: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)
+  name: AddAbilityComponentMenuAttribute
+  nameWithType: AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.AddAbilityComponentMenuAttribute
+  nameWithType.vb: AddAbilityComponentMenuAttribute.New
+  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.New
+  name.vb: New
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init*
   commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init
   href: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init(System.Type)

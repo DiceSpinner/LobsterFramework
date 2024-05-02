@@ -58,6 +58,7 @@ references:
   fullName: LobsterFramework.AbilitySystem.AbilityData
 - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  parent: LobsterFramework.AbilitySystem
   href: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html
   name: AddAbilityMenuAttribute
   nameWithType: AddAbilityMenuAttribute
@@ -104,6 +105,7 @@ references:
   fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
+  parent: LobsterFramework.AbilitySystem
   href: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html
   name: AddAbilityComponentMenuAttribute
   nameWithType: AddAbilityComponentMenuAttribute

@@ -1103,20 +1103,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Editors.AbilityDrawer.yml",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityEditor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Editors.AbilityDrawer.html"
+          "relative_path": "api/LobsterFramework.Editors.AbilityEditor.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Editors.AbilityEditor.yml",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilityEditorConfig.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Editors.AbilityEditor.html"
+          "relative_path": "api/LobsterFramework.Editors.AbilityEditorConfig.html"
         }
       },
       "version": ""
@@ -1267,6 +1267,26 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Editors.LayerAttributeDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.MenuTreeDrawer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.MenuTreeDrawer-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html"
         }
       },
       "version": ""
@@ -2093,10 +2113,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.MenuGroup-1.yml",
+      "source_relative_path": "api/LobsterFramework.Utility.MenuTree-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.MenuGroup-1.html"
+          "relative_path": "api/LobsterFramework.Utility.MenuTree-1.html"
         }
       },
       "version": ""

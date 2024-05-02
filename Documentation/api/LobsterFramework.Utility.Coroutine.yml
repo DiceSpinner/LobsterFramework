@@ -7,8 +7,8 @@ items:
   children:
   - LobsterFramework.Utility.Coroutine.#ctor(LobsterFramework.Utility.CoroutineRunner,System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})
   - LobsterFramework.Utility.Coroutine.IsFinished
+  - LobsterFramework.Utility.Coroutine.OnReset
   - LobsterFramework.Utility.Coroutine.Stop
-  - LobsterFramework.Utility.Coroutine.onReset
   langs:
   - csharp
   - vb
@@ -42,33 +42,33 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.Utility.Coroutine.onReset
-  commentId: F:LobsterFramework.Utility.Coroutine.onReset
-  id: onReset
+- uid: LobsterFramework.Utility.Coroutine.OnReset
+  commentId: E:LobsterFramework.Utility.Coroutine.OnReset
+  id: OnReset
   parent: LobsterFramework.Utility.Coroutine
   langs:
   - csharp
   - vb
-  name: onReset
-  nameWithType: Coroutine.onReset
-  fullName: LobsterFramework.Utility.Coroutine.onReset
-  type: Field
+  name: OnReset
+  nameWithType: Coroutine.OnReset
+  fullName: LobsterFramework.Utility.Coroutine.OnReset
+  type: Event
   source:
     remote:
       path: Utility/Coroutine/Coroutine.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onReset
+    id: OnReset
     path: ../Utility/Coroutine/Coroutine.cs
     startLine: 19
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
-    content: public Action onReset
+    content: public event Action OnReset
     return:
       type: System.Action
-    content.vb: Public onReset As Action
+    content.vb: Public Event OnReset As Action
 - uid: LobsterFramework.Utility.Coroutine.IsFinished
   commentId: P:LobsterFramework.Utility.Coroutine.IsFinished
   id: IsFinished
@@ -152,7 +152,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Stop
     path: ../Utility/Coroutine/Coroutine.cs
-    startLine: 113
+    startLine: 139
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility

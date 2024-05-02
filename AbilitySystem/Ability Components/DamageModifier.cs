@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem
 {
-    [AddAbilityComponentMenu]
+    [AddAbilityComponentMenu("LobsterFramework")]
     public class DamageModifier : AbilityComponent
     {
         [NonSerialized] public readonly FloatSum flatDamageModification = new(0, false, true);

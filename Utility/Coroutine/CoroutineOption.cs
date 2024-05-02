@@ -6,17 +6,17 @@ namespace LobsterFramework.Utility
     /// <summary>
     /// Represents options available for Coroutines, use predefined values or utility methods to create the option needed
     /// </summary>
-    public struct CoroutineOption : IEquatable<CoroutineOption>
+    public struct CoroutineOption
     {
-        public bool reset;
-        public float waitTime;
-        public bool unscaled;
-        public IEnumerable<CoroutineOption> waitFor;
-        public Func<bool> predicateCondition;
-        public Coroutine wait;
+        internal bool reset;
+        internal float waitTime;
+        internal bool isUnscaledTime;
+        internal IEnumerable<CoroutineOption> subCoroutine;
+        internal Func<bool> predicateCondition;
+        internal Coroutine coroutineToWait;
 
         /// <summary>
-        /// The coroutine option to restart the coroutine from the beginning
+        /// The coroutine option to restart the coroutine execution from the beginning
         /// </summary>
         public static readonly CoroutineOption Reset = new CoroutineOption { reset = true };
         /// <summary>
@@ -25,9 +25,9 @@ namespace LobsterFramework.Utility
         public static readonly CoroutineOption Continue = new CoroutineOption {};
 
         /// <summary>
-        /// Halt the execution of coroutine for the specified seconds, will be affected by Time.timeScale
+        /// Pause the execution of coroutine for the specified seconds, will be affected by Time.timeScale
         /// </summary>
-        /// <param name="time">time to halt the coroutine</param>
+        /// <param name="time">time to pause the coroutine</param>
         /// <returns>The CoroutineOption represents this option</returns>
         public static CoroutineOption WaitForSeconds(float time)
         {
@@ -35,50 +35,44 @@ namespace LobsterFramework.Utility
         }
 
         /// <summary>
-        /// Halt the execution of coroutine for the specified seconds, will not be affected by Time.timeScale
+        /// Pause the execution of coroutine for the specified seconds, will not be affected by Time.timeScale
         /// </summary>
-        /// <param name="time">time to halt the coroutine</param>
+        /// <param name="time">time to pause the coroutine</param>
         /// <returns>The CoroutineOption represents this option</returns>
         public static CoroutineOption WaitForUnscaledSeconds(float time) {
-            return new CoroutineOption() { unscaled = true, waitTime = time };
+            return new CoroutineOption() { isUnscaledTime = true, waitTime = time };
         }
 
         /// <summary>
         /// Start a subcoroutine, current coroutine will not be executed until subcoroutine has finished
         /// </summary>
-        /// <param name="coroutine">The subcoroutine to be executed</param>
+        /// <param name="subCoroutine">The subcoroutine to be executed</param>
         /// <returns>The CoroutineOption represents this option</returns>
-        public static CoroutineOption WaitForCoroutine(IEnumerable<CoroutineOption> coroutine) {
-            CoroutineOption option = new() { waitFor = coroutine};
+        public static CoroutineOption SubCoroutine(IEnumerable<CoroutineOption> subCoroutine) {
+            CoroutineOption option = new() { subCoroutine = subCoroutine};
             return option;
         }
 
         /// <summary>
-        /// Halt the execution of coroutine until another coroutine has finished, cannot be used to wait for the current coroutine itself
+        /// Pause the execution of coroutine until another coroutine has finished, cannot be used to wait for the current coroutine itself
         /// </summary>
-        /// <param name="coroutine">The coroutine to wait for, cannot be the current coroutine itself</param>
+        /// <param name="coroutine">The coroutine to wait for, cannot be the current executing coroutine itself</param>
         /// <returns>The CoroutineOption represents this option</returns>
         public static CoroutineOption WaitForCoroutine(Coroutine coroutine)
         {
-            CoroutineOption option = new() { wait = coroutine};
+            CoroutineOption option = new() { coroutineToWait = coroutine};
             return option;
         }
 
         /// <summary>
-        /// Halt the execution of coroutine until the condition has been met
+        /// Pause the execution of coroutine until the condition has been met
         /// </summary>
         /// <param name="predicate">The condition to test for</param>
         /// <returns>The CoroutineOption represents this option</returns>
-        public static CoroutineOption WaitForCondition(Func<bool> predicate)
+        public static CoroutineOption Condition(Func<bool> predicate)
         {
             CoroutineOption option = new(){ predicateCondition = predicate };
             return option;
-        }
-
-        public bool Equals(CoroutineOption other)
-        {
-            return wait == other.wait && reset == other.reset && predicateCondition == other.predicateCondition && 
-                waitFor == other.waitFor && waitTime == other.waitTime && unscaled == other.unscaled;
         }
     }
 }

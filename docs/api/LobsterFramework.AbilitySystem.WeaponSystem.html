@@ -90,10 +90,11 @@ Classes
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig.html">AbilityAnimationConfig</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute.html">AddWeaponArtMenuAttribute</a></h4>
-      <section><p>Used on Ability to add it to the options of ability selection for weapon arts.</p>
+      <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html">WeaponAbility</a> to mark it as a weapon art that can be called by <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html">WeaponArt</a>.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html">AddWeaponStatMenuAttribute</a></h4>
-      <section></section>
+      <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html">WeaponStat</a> to make it visible to editor scripts</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.Guard.html">Guard</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel.html">GuardChannel</a></h4>
@@ -140,7 +141,8 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData.html">WeaponAnimationData</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html">WeaponArt</a></h4>
-      <section></section>
+      <section><p>Use the weapon ability specified by the weapon equipped. Can be used to query the states of the weapon ability being runned.</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel.html">WeaponArtChannel</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig.html">WeaponArtConfig</a></h4>
@@ -155,7 +157,8 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
       <section><p>Component that manages equipping and swaping weapons</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html">WeaponStat</a></h4>
-      <section></section>
+      <section><p>Stat of the weapon. A weapon is allowed to have multiple weapon stats of different types. These stats may be queried by weapon abilities.</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary.html">WeaponStatDictionary</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility.html">WeaponUtility</a></h4>

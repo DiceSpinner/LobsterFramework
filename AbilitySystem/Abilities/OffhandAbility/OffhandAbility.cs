@@ -5,7 +5,7 @@ using System;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
-    [AddAbilityMenu]
+    [AddAbilityMenu("LobsterFramework")]
     [ComponentRequired(typeof(WeaponManager))]
     public class OffhandAbility : Ability
     {

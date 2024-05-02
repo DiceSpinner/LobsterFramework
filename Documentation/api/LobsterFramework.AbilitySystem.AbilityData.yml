@@ -22,10 +22,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityData
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: Defines the set of abilities and ability components an actor can take on. Used as input to <xref href="LobsterFramework.AbilitySystem.AbilityManager" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: >-
       [CreateAssetMenu(menuName = "Ability/AbilityData")]
@@ -120,7 +122,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: defaultAbilityInstance
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -147,7 +149,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: FinalizeContext
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 68
+    startLine: 67
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -175,7 +177,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Clone
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 138
+    startLine: 137
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -189,6 +191,13 @@ items:
     content.vb: Public Function Clone() As AbilityData
   overload: LobsterFramework.AbilitySystem.AbilityData.Clone*
 references:
+- uid: LobsterFramework.AbilitySystem.AbilityManager
+  commentId: T:LobsterFramework.AbilitySystem.AbilityManager
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityManager.html
+  name: AbilityManager
+  nameWithType: AbilityManager
+  fullName: LobsterFramework.AbilitySystem.AbilityManager
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html

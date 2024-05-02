@@ -266,10 +266,10 @@ items:
     name: AbilityConfigEditor
   - uid: LobsterFramework.Editors.AbilityDataEditor
     name: AbilityDataEditor
-  - uid: LobsterFramework.Editors.AbilityDrawer
-    name: AbilityDrawer
   - uid: LobsterFramework.Editors.AbilityEditor
     name: AbilityEditor
+  - uid: LobsterFramework.Editors.AbilityEditorConfig
+    name: AbilityEditorConfig
   - uid: LobsterFramework.Editors.AbilityManagerEditor
     name: AbilityManagerEditor
   - uid: LobsterFramework.Editors.AbilitySelectorDrawer
@@ -300,6 +300,10 @@ items:
     name: InventoryEditor
   - uid: LobsterFramework.Editors.LayerAttributeDrawer
     name: LayerAttributeDrawer
+  - uid: LobsterFramework.Editors.MenuTreeDrawer`1
+    name: MenuTreeDrawer<T>
+  - uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
+    name: MenuTreeItemCollectionDrawer<T>
   - uid: LobsterFramework.Editors.MovementControllerEditor
     name: MovementControllerEditor
   - uid: LobsterFramework.Editors.PoiseEditor
@@ -425,8 +429,8 @@ items:
     name: IdDistributor
   - uid: LobsterFramework.Utility.IntSum
     name: IntSum
-  - uid: LobsterFramework.Utility.MenuGroup`1
-    name: MenuGroup<T>
+  - uid: LobsterFramework.Utility.MenuTree`1
+    name: MenuTree<T>
   - uid: LobsterFramework.Utility.OrValue
     name: OrValue
   - uid: LobsterFramework.Utility.SerializableDictionary`2

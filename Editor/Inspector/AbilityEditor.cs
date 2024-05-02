@@ -17,26 +17,29 @@ namespace LobsterFramework.Editors
             base.OnInspectorGUI();
             EditorGUI.BeginChangeCheck();
             Ability ability = (Ability)target;
+            bool isAsset = AssetDatabase.Contains(ability);
 
             #region Add Instance
-            EditorGUILayout.Space(10);
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("New Instance");
-            GUILayout.FlexibleSpace();
-            addInstanceName = EditorGUILayout.TextField(addInstanceName);
+            if (isAsset) {
+                EditorGUILayout.Space(10);
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("New Instance");
+                GUILayout.FlexibleSpace();
+                addInstanceName = EditorGUILayout.TextField(addInstanceName);
 
-            if (GUILayout.Button("Create", GUILayout.Width(100)))
-            {
-                if (addInstanceName == null)
+                if (GUILayout.Button("Create", GUILayout.Width(80)))
                 {
-                    Debug.LogWarning("Field cannot be empty!");
+                    if (addInstanceName == null)
+                    {
+                        Debug.LogWarning("Field cannot be empty!");
+                    }
+                    else
+                    {
+                        ability.AddInstance(addInstanceName);
+                    }
                 }
-                else
-                {
-                    ability.AddInstance(addInstanceName);
-                }
+                EditorGUILayout.EndHorizontal();
             }
-            EditorGUILayout.EndHorizontal();
             #endregion
 
             if (ability.configs.Count > 0)
@@ -47,7 +50,7 @@ namespace LobsterFramework.Editors
                 style.normal.textColor = Color.green;
                 style.hover.background = Texture2D.grayTexture;
 
-                #region Select Config
+                #region Select Instance
                 if (GUILayout.Button(selectedConfig, style, GUILayout.Width(100)))
                 {
                     GenericMenu menu = new GenericMenu();
@@ -76,11 +79,11 @@ namespace LobsterFramework.Editors
                 configEditor.OnInspectorGUI();
 
                 #region Remove Instance
-                if (selectedConfig != AbilityData.defaultAbilityInstance) {
+                if (isAsset &&  selectedConfig != AbilityData.defaultAbilityInstance) {
                     GUILayout.Space(10);
                     GUILayout.BeginHorizontal();
                     GUILayout.FlexibleSpace();
-                    if (EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle(), GUILayout.Width(80)))
+                    if (EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle, GUILayout.Width(80)))
                     {
                         ability.RemoveInstance(selectedConfig);
                         if (ability.configs.Count > 0)

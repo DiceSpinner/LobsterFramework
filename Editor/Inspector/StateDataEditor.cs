@@ -13,9 +13,6 @@ namespace LobsterFramework.Editors
     {
         private Dictionary<Type, Editor> stateEditors = new();
 
-        private GUIStyle normalStateStyle = new();
-        private GUIStyle initialStateStyle = new();
-
         #region Editor Status
         public State selectedState = null; // State to display
         public State nextState = null; // State to be switched to nex time editor is updated
@@ -25,17 +22,6 @@ namespace LobsterFramework.Editors
 
         private Rect addStateRect;
         private Rect selectStateRect;
-
-        public void OnEnable()
-        {
-            normalStateStyle.fontStyle = FontStyle.Bold;
-            normalStateStyle.normal.textColor = Color.cyan;
-            normalStateStyle.hover.background = Texture2D.grayTexture;
-
-            initialStateStyle.fontStyle = FontStyle.Bold;
-            initialStateStyle.normal.textColor = Color.green;
-            initialStateStyle.hover.background = Texture2D.grayTexture;
-        }
 
         public override void OnInspectorGUI()
         {
@@ -72,9 +58,8 @@ namespace LobsterFramework.Editors
 
         private void DrawStates(StateData stateData)
         {
-            SerializedProperty states = serializedObject.FindProperty("states");
             EditorGUILayout.BeginHorizontal();
-            states.isExpanded = EditorGUILayout.Foldout(states.isExpanded, "States: " + stateData.states.Values.Count);
+            EditorGUILayout.LabelField("States: " + stateData.states.Values.Count, EditorStyles.boldLabel);
             GUILayout.FlexibleSpace();
             bool addBtnClicked = GUILayout.Button("Add State", GUILayout.Width(100));
             EditorGUILayout.EndHorizontal();
@@ -86,23 +71,20 @@ namespace LobsterFramework.Editors
                 PopupWindow.Show(addStateRect, popup);
             }
 
-            if (states.isExpanded)
+            if (stateData.states.Count == 0)
             {
-                if (stateData.states.Count == 0)
+                EditorGUILayout.LabelField("No states available for display!");
+            }
+            else
+            {
+                EditorGUILayout.Space();
+                if (selectedState == null)
                 {
-                    EditorGUILayout.LabelField("No states available for display!");
+                    selectedState = stateData.states.First().Value;
                 }
-                else
-                {
-                    EditorGUILayout.Space();
-                    if (selectedState == null)
-                    {
-                        selectedState = stateData.states.First().Value;
-                    }
-                    DrawSelectedStateHeader(stateData);
-                    DrawState(stateData, selectedState);
-                    DrawTransition(stateData, selectedState);
-                }
+                DrawSelectedStateHeader(stateData);
+                DrawState(stateData, selectedState);
+                DrawTransition(stateData, selectedState);
             }
         }
 
@@ -112,29 +94,29 @@ namespace LobsterFramework.Editors
             EditorGUILayout.BeginHorizontal();
             GUIContent content = new();
             GUIStyle style;
-            bool selected;
+            bool selectButtonClicked;
             if (stateData.initialState == selectedState)
             {
                 content.text = $"{stateType.Name} (Initial State)";
-                style = initialStateStyle;
+                style = StateEditorConfig.InitialStateStyle;
             }
             else {
                 content.text = stateType.Name;
-                style = normalStateStyle;
+                style = StateEditorConfig.StateStyle;
             }
             content.tooltip = stateType.FullName;
             
             if (AddStateMenuAttribute.icons.TryGetValue(stateType, out Texture2D icon))
             {
                 content.image = icon;
-                selected = GUILayout.Button(content, style, GUILayout.Height(40));
+                selectButtonClicked = GUILayout.Button(content, style, GUILayout.Height(40));
             }
             else
             {
-                selected = GUILayout.Button(content, style);
+                selectButtonClicked = GUILayout.Button(content, style);
             }
 
-            if (selected) // Open popup window to do state selection
+            if (selectButtonClicked) // Open popup window to do state selection
             {
                 selectStateRect.position = Event.current.mousePosition;
                 SelectStatePopup popup = new SelectStatePopup(this, stateData);
@@ -144,17 +126,18 @@ namespace LobsterFramework.Editors
             GUILayout.FlexibleSpace();
 
             // Draw remove state button
-            EditorGUILayout.BeginVertical();
-            GUILayout.FlexibleSpace();
-            bool rmvClicked = EditorUtils.Button(Color.red, "Remove State", GUILayout.Width(100));
-            GUILayout.FlexibleSpace();
-            EditorGUILayout.EndVertical();
+            if (stateData.initialState != selectedState) {
+                EditorGUILayout.BeginVertical();
+                GUILayout.FlexibleSpace();
+                if (EditorUtils.Button(Color.green, "Set As Initial State", GUILayout.Width(120))) {
+                    newInitialState = selectedState;
+                }
+                GUILayout.FlexibleSpace();
+                EditorGUILayout.EndVertical();
+            }
+            
 
             EditorGUILayout.EndHorizontal();
-
-            if (rmvClicked) {
-                removeState = stateType;
-            }
         }
 
         private void DrawState(StateData stateData, State stateToDraw) {
@@ -174,16 +157,15 @@ namespace LobsterFramework.Editors
             }
 
             editor.OnInspectorGUI();
-            if (stateData.initialState != stateToDraw)
+
+            GUILayout.Space(EditorGUIUtility.singleLineHeight);
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            if (EditorUtils.Button(Color.red, "Remove State", GUILayout.Width(100)))
             {
-                EditorGUILayout.BeginHorizontal();
-                GUILayout.FlexibleSpace();
-                if (EditorUtils.Button(Color.green, "Set As Initial State", GUILayout.Width(120)))
-                {
-                    newInitialState = stateToDraw;
-                }
-                EditorGUILayout.EndHorizontal();
+                removeState = stateToDraw.GetType();
             }
+            EditorGUILayout.EndHorizontal();
         }
 
         private void DrawTransition(StateData stateData, State stateToDraw) {
@@ -218,11 +200,11 @@ namespace LobsterFramework.Editors
                    
                     if (stateData.states.ContainsKey(transitionType.AssemblyQualifiedName))
                     {
-                        Color color = Color.yellow;
+                        Color color = StateEditorConfig.StateStyle.normal.textColor; ;
                         state = stateData.states[transitionType.AssemblyQualifiedName];
                         if (stateData.initialState == state) {
                             label.text += " (Initial State)";   
-                            color = Color.green;
+                            color = StateEditorConfig.InitialStateStyle.normal.textColor;
                         } 
 
                         Color before = GUI.color;
@@ -231,7 +213,7 @@ namespace LobsterFramework.Editors
                         GUI.color = before;
                        
 
-                        if (GUILayout.Button("View", GUILayout.Width(120)))
+                        if (EditorUtils.Button(Color.yellow, "View", GUILayout.Width(100)))
                         {
                             nextState = state;
                         }

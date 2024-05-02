@@ -1,6 +1,6 @@
-using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -12,36 +12,30 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     {
         [SerializeField] internal WeaponStatDictionary weaponStats;
 
-        public WeaponData Clone() {
-            WeaponData data = CreateInstance<WeaponData>();
-            data.weaponStats = new();
-            foreach (KeyValuePair<string, WeaponStat> kwp in weaponStats) {
-                data.weaponStats.Add(kwp.Key, kwp.Value.Clone());
-            }
-            return data;
-        }
-
 #if UNITY_EDITOR
         /// <summary>
-        /// Called by editor scritps, add WeaponStat of type T to the set of available WeaponStats if not already present, return the status of the operation. <br/>
+        /// Called by editor scritps, add <see cref="WeaponStat"/> of given type to the set of available WeaponStats if not already present
         /// </summary>
-        /// <typeparam name="T">Type of the WeaponStat to be added</typeparam>
-        /// <returns>true if successfully added the WeaponStat, otherwise false</returns>
-        internal bool AddWeaponStat<T>() where T : WeaponStat
+        /// <param name="type">The type of the <see cref="WeaponStat"/> to be created</param>
+        internal void AddWeaponStat(Type type)
         {
-            string str = typeof(T).AssemblyQualifiedName;
+            if (!type.IsSubclassOf(typeof(WeaponStat))) {
+                Debug.LogError($"Type {type.FullName} is not a valid WeaponStat");
+                return;
+            }
+
+            string str = type.AssemblyQualifiedName;
             if (weaponStats.ContainsKey(str))
             {
-                return false;
+                return;
             }
-            T instance = CreateInstance<T>();
+            WeaponStat instance = (WeaponStat)CreateInstance(type);
             weaponStats[str] = instance;
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(instance, this);
                 AssetDatabase.SaveAssets();
             }
-            return true;
         }
 
         private T GetWeaponStat<T>() where T : WeaponStat

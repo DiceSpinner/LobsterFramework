@@ -5,7 +5,7 @@ items:
   id: WeaponArtSelector
   parent: LobsterFramework.AbilitySystem.WeaponSystem
   children:
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.weaponType
   langs:
   - csharp
@@ -81,35 +81,35 @@ items:
     return:
       type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
     content.vb: Public weaponType As WeaponType
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  id: ConfigName
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  id: Instance
   parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   langs:
   - csharp
   - vb
-  name: ConfigName
-  nameWithType: WeaponArtSelector.ConfigName
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
+  name: Instance
+  nameWithType: WeaponArtSelector.Instance
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
   type: Property
   source:
     remote:
       path: AbilitySystem/Weapon/WeaponArtSelector.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: ConfigName
+    id: Instance
     path: ../AbilitySystem/Weapon/WeaponArtSelector.cs
     startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
   syntax:
-    content: public string ConfigName { get; }
+    content: public string Instance { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public ReadOnly Property ConfigName As String
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName*
+    content.vb: Public ReadOnly Property Instance As String
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance*
 references:
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
@@ -578,12 +578,12 @@ references:
   name: WeaponType
   nameWithType: WeaponType
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
-  name: ConfigName
-  nameWithType: WeaponArtSelector.ConfigName
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.ConfigName
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
+  name: Instance
+  nameWithType: WeaponArtSelector.Instance
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
 - uid: System.String
   commentId: T:System.String
   parent: System

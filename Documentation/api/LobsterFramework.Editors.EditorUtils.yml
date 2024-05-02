@@ -10,6 +10,8 @@ items:
   - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
   - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])
   - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  - LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
+  - LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
   - LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture(System.Int32,System.Int32,UnityEngine.Color)
   - LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
   langs:
@@ -26,7 +28,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EditorUtils
     path: ../Editor/EditorUtils.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -61,7 +63,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -101,7 +103,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -139,7 +141,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -179,7 +181,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -200,16 +202,16 @@ items:
   fullName.vb: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, String, ParamArray UnityEngine.GUILayoutOption())
   name.vb: Button(Color, String, ParamArray GUILayoutOption())
 - uid: LobsterFramework.Editors.EditorUtils.BoldButtonStyle
-  commentId: M:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+  commentId: F:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
   id: BoldButtonStyle
   parent: LobsterFramework.Editors.EditorUtils
   langs:
   - csharp
   - vb
-  name: BoldButtonStyle()
-  nameWithType: EditorUtils.BoldButtonStyle()
-  fullName: LobsterFramework.Editors.EditorUtils.BoldButtonStyle()
-  type: Method
+  name: BoldButtonStyle
+  nameWithType: EditorUtils.BoldButtonStyle
+  fullName: LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+  type: Field
   source:
     remote:
       path: Editor/EditorUtils.cs
@@ -217,16 +219,42 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: BoldButtonStyle
     path: ../Editor/EditorUtils.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
   syntax:
-    content: public static GUIStyle BoldButtonStyle()
+    content: public static GUIStyle BoldButtonStyle
     return:
       type: UnityEngine.GUIStyle
-    content.vb: Public Shared Function BoldButtonStyle() As GUIStyle
-  overload: LobsterFramework.Editors.EditorUtils.BoldButtonStyle*
+    content.vb: Public Shared BoldButtonStyle As GUIStyle
+- uid: LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
+  commentId: F:LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
+  id: CentredTitleLabelStyle
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: CentredTitleLabelStyle
+  nameWithType: EditorUtils.CentredTitleLabelStyle
+  fullName: LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
+  type: Field
+  source:
+    remote:
+      path: Editor/EditorUtils.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: CentredTitleLabelStyle
+    path: ../Editor/EditorUtils.cs
+    startLine: 50
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static GUIStyle CentredTitleLabelStyle
+    return:
+      type: UnityEngine.GUIStyle
+    content.vb: Public Shared CentredTitleLabelStyle As GUIStyle
 - uid: LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
   commentId: M:LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
   id: SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
@@ -245,24 +273,58 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetPropertyPointer
     path: ../Editor/EditorUtils.cs
-    startLine: 55
+    startLine: 59
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
+  summary: ''
+  example: []
   syntax:
     content: public static bool SetPropertyPointer(SerializedProperty property, string name)
     parameters:
     - id: property
       type: UnityEditor.SerializedProperty
+      description: ''
     - id: name
       type: System.String
+      description: ''
     return:
       type: System.Boolean
+      description: ''
     content.vb: Public Shared Function SetPropertyPointer([property] As SerializedProperty, name As String) As Boolean
   overload: LobsterFramework.Editors.EditorUtils.SetPropertyPointer*
   nameWithType.vb: EditorUtils.SetPropertyPointer(SerializedProperty, String)
   fullName.vb: LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty, String)
   name.vb: SetPropertyPointer(SerializedProperty, String)
+- uid: LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  commentId: M:LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  id: DrawSubProperties(UnityEditor.SerializedProperty)
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: DrawSubProperties(SerializedProperty)
+  nameWithType: EditorUtils.DrawSubProperties(SerializedProperty)
+  fullName: LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: Editor/EditorUtils.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: DrawSubProperties
+    path: ../Editor/EditorUtils.cs
+    startLine: 69
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static void DrawSubProperties(SerializedProperty property)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+    content.vb: Public Shared Sub DrawSubProperties([property] As SerializedProperty)
+  overload: LobsterFramework.Editors.EditorUtils.DrawSubProperties*
 - uid: LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture(System.Int32,System.Int32,UnityEngine.Color)
   commentId: M:LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture(System.Int32,System.Int32,UnityEngine.Color)
   id: MakeBackgroundTexture(System.Int32,System.Int32,UnityEngine.Color)
@@ -281,7 +343,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: MakeBackgroundTexture
     path: ../Editor/EditorUtils.cs
-    startLine: 64
+    startLine: 83
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -636,12 +698,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: LobsterFramework.Editors.EditorUtils.BoldButtonStyle*
-  commentId: Overload:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
-  href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.BoldButtonStyle
-  name: BoldButtonStyle
-  nameWithType: EditorUtils.BoldButtonStyle
-  fullName: LobsterFramework.Editors.EditorUtils.BoldButtonStyle
 - uid: LobsterFramework.Editors.EditorUtils.SetPropertyPointer*
   commentId: Overload:LobsterFramework.Editors.EditorUtils.SetPropertyPointer
   href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
@@ -661,6 +717,12 @@ references:
   name: UnityEditor
   nameWithType: UnityEditor
   fullName: UnityEditor
+- uid: LobsterFramework.Editors.EditorUtils.DrawSubProperties*
+  commentId: Overload:LobsterFramework.Editors.EditorUtils.DrawSubProperties
+  href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  name: DrawSubProperties
+  nameWithType: EditorUtils.DrawSubProperties
+  fullName: LobsterFramework.Editors.EditorUtils.DrawSubProperties
 - uid: LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture*
   commentId: Overload:LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture
   href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture(System.Int32,System.Int32,UnityEngine.Color)

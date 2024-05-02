@@ -6,6 +6,7 @@ items:
   parent: LobsterFramework.AI
   children:
   - LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
+  - LobsterFramework.AI.AddStateMenuAttribute.RootName
   langs:
   - csharp
   - vb
@@ -24,7 +25,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
-  summary: Make this state visible to the editor script. Pass in path string to specify the menus groups that leads to this state.
+  summary: Applied to <xref href="LobsterFramework.AI.State" data-throw-if-not-resolved="false"></xref> to make it visible to editor scripts.
   example: []
   syntax:
     content: >-
@@ -94,6 +95,33 @@ items:
     - name: Inherited
       type: System.Boolean
       value: false
+- uid: LobsterFramework.AI.AddStateMenuAttribute.RootName
+  commentId: F:LobsterFramework.AI.AddStateMenuAttribute.RootName
+  id: RootName
+  parent: LobsterFramework.AI.AddStateMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: RootName
+  nameWithType: AddStateMenuAttribute.RootName
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.RootName
+  type: Field
+  source:
+    remote:
+      path: AI/Attributes/AddStateMenuAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: RootName
+    path: ../AI/Attributes/AddStateMenuAttribute.cs
+    startLine: 18
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public const string RootName = "Root"
+    return:
+      type: System.String
+    content.vb: Public Const RootName As String = "Root"
 - uid: LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
   commentId: M:LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -112,21 +140,30 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AI/Attributes/AddStateMenuAttribute.cs
-    startLine: 35
+    startLine: 37
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
+  example: []
   syntax:
     content: public AddStateMenuAttribute(string menuPath = "")
     parameters:
     - id: menuPath
       type: System.String
+      description: The path leading to this item in the menu
     content.vb: Public Sub New(menuPath As String = "")
   overload: LobsterFramework.AI.AddStateMenuAttribute.#ctor*
   nameWithType.vb: AddStateMenuAttribute.New(String)
   fullName.vb: LobsterFramework.AI.AddStateMenuAttribute.New(String)
   name.vb: New(String)
 references:
+- uid: LobsterFramework.AI.State
+  commentId: T:LobsterFramework.AI.State
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.State.html
+  name: State
+  nameWithType: State
+  fullName: LobsterFramework.AI.State
 - uid: LobsterFramework.AI
   commentId: N:LobsterFramework.AI
   href: LobsterFramework.html
@@ -1943,15 +1980,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: LobsterFramework.AI.AddStateMenuAttribute.#ctor*
-  commentId: Overload:LobsterFramework.AI.AddStateMenuAttribute.#ctor
-  href: LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
-  name: AddStateMenuAttribute
-  nameWithType: AddStateMenuAttribute.AddStateMenuAttribute
-  fullName: LobsterFramework.AI.AddStateMenuAttribute.AddStateMenuAttribute
-  nameWithType.vb: AddStateMenuAttribute.New
-  fullName.vb: LobsterFramework.AI.AddStateMenuAttribute.New
-  name.vb: New
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1963,3 +1991,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: LobsterFramework.AI.AddStateMenuAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AI.AddStateMenuAttribute.#ctor
+  href: LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)
+  name: AddStateMenuAttribute
+  nameWithType: AddStateMenuAttribute.AddStateMenuAttribute
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.AddStateMenuAttribute
+  nameWithType.vb: AddStateMenuAttribute.New
+  fullName.vb: LobsterFramework.AI.AddStateMenuAttribute.New
+  name.vb: New

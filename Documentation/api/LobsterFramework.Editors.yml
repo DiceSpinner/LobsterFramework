@@ -6,8 +6,8 @@ items:
   children:
   - LobsterFramework.Editors.AbilityConfigEditor
   - LobsterFramework.Editors.AbilityDataEditor
-  - LobsterFramework.Editors.AbilityDrawer
   - LobsterFramework.Editors.AbilityEditor
+  - LobsterFramework.Editors.AbilityEditorConfig
   - LobsterFramework.Editors.AbilityManagerEditor
   - LobsterFramework.Editors.AbilitySelectorDrawer
   - LobsterFramework.Editors.AddAbilityComponentPopup
@@ -23,6 +23,8 @@ items:
   - LobsterFramework.Editors.FolderPathAttriibuteDrawer
   - LobsterFramework.Editors.InventoryEditor
   - LobsterFramework.Editors.LayerAttributeDrawer
+  - LobsterFramework.Editors.MenuTreeDrawer`1
+  - LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
   - LobsterFramework.Editors.MovementControllerEditor
   - LobsterFramework.Editors.PoiseEditor
   - LobsterFramework.Editors.ReadOnlyAttributeDrawer
@@ -65,6 +67,31 @@ references:
   name: MovementControllerEditor
   nameWithType: MovementControllerEditor
   fullName: LobsterFramework.Editors.MovementControllerEditor
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
+  commentId: T:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
+  href: LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html
+  name: MenuTreeItemCollectionDrawer<T>
+  nameWithType: MenuTreeItemCollectionDrawer<T>
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T)
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T)
+  name.vb: MenuTreeItemCollectionDrawer(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
+    name: MenuTreeItemCollectionDrawer
+    href: LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
+    name: MenuTreeItemCollectionDrawer
+    href: LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: LobsterFramework.Editors.SelectAbilityPopup
   commentId: T:LobsterFramework.Editors.SelectAbilityPopup
   href: LobsterFramework.Editors.SelectAbilityPopup.html
@@ -108,12 +135,43 @@ references:
   name: AbilityDataEditor
   nameWithType: AbilityDataEditor
   fullName: LobsterFramework.Editors.AbilityDataEditor
+- uid: LobsterFramework.Editors.AbilityEditorConfig
+  commentId: T:LobsterFramework.Editors.AbilityEditorConfig
+  href: LobsterFramework.Editors.AbilityEditorConfig.html
+  name: AbilityEditorConfig
+  nameWithType: AbilityEditorConfig
+  fullName: LobsterFramework.Editors.AbilityEditorConfig
 - uid: LobsterFramework.Editors.ReadOnlyAttributeDrawer
   commentId: T:LobsterFramework.Editors.ReadOnlyAttributeDrawer
   href: LobsterFramework.Editors.ReadOnlyAttributeDrawer.html
   name: ReadOnlyAttributeDrawer
   nameWithType: ReadOnlyAttributeDrawer
   fullName: LobsterFramework.Editors.ReadOnlyAttributeDrawer
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1
+  commentId: T:LobsterFramework.Editors.MenuTreeDrawer`1
+  href: LobsterFramework.Editors.MenuTreeDrawer-1.html
+  name: MenuTreeDrawer<T>
+  nameWithType: MenuTreeDrawer<T>
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>
+  nameWithType.vb: MenuTreeDrawer(Of T)
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T)
+  name.vb: MenuTreeDrawer(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Editors.MenuTreeDrawer`1
+    name: MenuTreeDrawer
+    href: LobsterFramework.Editors.MenuTreeDrawer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Editors.MenuTreeDrawer`1
+    name: MenuTreeDrawer
+    href: LobsterFramework.Editors.MenuTreeDrawer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: LobsterFramework.Editors.FilePathAttributeDrawer
   commentId: T:LobsterFramework.Editors.FilePathAttributeDrawer
   href: LobsterFramework.Editors.FilePathAttributeDrawer.html
@@ -144,18 +202,6 @@ references:
   name: AddStatePopup
   nameWithType: AddStatePopup
   fullName: LobsterFramework.Editors.AddStatePopup
-- uid: LobsterFramework.Editors.AbilitySelectorDrawer
-  commentId: T:LobsterFramework.Editors.AbilitySelectorDrawer
-  href: LobsterFramework.Editors.AbilitySelectorDrawer.html
-  name: AbilitySelectorDrawer
-  nameWithType: AbilitySelectorDrawer
-  fullName: LobsterFramework.Editors.AbilitySelectorDrawer
-- uid: LobsterFramework.Editors.WeaponArtSelectorDrawer
-  commentId: T:LobsterFramework.Editors.WeaponArtSelectorDrawer
-  href: LobsterFramework.Editors.WeaponArtSelectorDrawer.html
-  name: WeaponArtSelectorDrawer
-  nameWithType: WeaponArtSelectorDrawer
-  fullName: LobsterFramework.Editors.WeaponArtSelectorDrawer
 - uid: LobsterFramework.Editors.AbilityEditor
   commentId: T:LobsterFramework.Editors.AbilityEditor
   href: LobsterFramework.Editors.AbilityEditor.html
@@ -174,12 +220,6 @@ references:
   name: WeaponAnimationDataEditor
   nameWithType: WeaponAnimationDataEditor
   fullName: LobsterFramework.Editors.WeaponAnimationDataEditor
-- uid: LobsterFramework.Editors.AbilityDrawer
-  commentId: T:LobsterFramework.Editors.AbilityDrawer
-  href: LobsterFramework.Editors.AbilityDrawer.html
-  name: AbilityDrawer
-  nameWithType: AbilityDrawer
-  fullName: LobsterFramework.Editors.AbilityDrawer
 - uid: LobsterFramework.Editors.EffectProcessorEditor
   commentId: T:LobsterFramework.Editors.EffectProcessorEditor
   href: LobsterFramework.Editors.EffectProcessorEditor.html
@@ -223,6 +263,12 @@ references:
   name: AddAbilityComponentPopup
   nameWithType: AddAbilityComponentPopup
   fullName: LobsterFramework.Editors.AddAbilityComponentPopup
+- uid: LobsterFramework.Editors.WeaponArtSelectorDrawer
+  commentId: T:LobsterFramework.Editors.WeaponArtSelectorDrawer
+  href: LobsterFramework.Editors.WeaponArtSelectorDrawer.html
+  name: WeaponArtSelectorDrawer
+  nameWithType: WeaponArtSelectorDrawer
+  fullName: LobsterFramework.Editors.WeaponArtSelectorDrawer
 - uid: LobsterFramework.Editors.InventoryEditor
   commentId: T:LobsterFramework.Editors.InventoryEditor
   href: LobsterFramework.Editors.InventoryEditor.html
@@ -241,6 +287,12 @@ references:
   name: EntityEditor
   nameWithType: EntityEditor
   fullName: LobsterFramework.Editors.EntityEditor
+- uid: LobsterFramework.Editors.AbilitySelectorDrawer
+  commentId: T:LobsterFramework.Editors.AbilitySelectorDrawer
+  href: LobsterFramework.Editors.AbilitySelectorDrawer.html
+  name: AbilitySelectorDrawer
+  nameWithType: AbilitySelectorDrawer
+  fullName: LobsterFramework.Editors.AbilitySelectorDrawer
 - uid: LobsterFramework.Editors.StateDataEditor
   commentId: T:LobsterFramework.Editors.StateDataEditor
   parent: LobsterFramework.Editors

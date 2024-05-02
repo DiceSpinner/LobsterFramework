@@ -83,7 +83,8 @@
 
   <h1 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt" class="text-break">Class WeaponArt
 </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Use the weapon ability specified by the weapon equipped. Can be used to query the states of the weapon ability being runned.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -332,6 +333,7 @@
   <h5 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ComponentRequired(new Type[] { typeof(WeaponManager) })]
+[AddAbilityMenu(&quot;LobsterFramework&quot;)]
 public class WeaponArt : Ability</code></pre>
   </div>
   <h3 id="methods">Methods
@@ -341,7 +343,7 @@ public class WeaponArt : Ability</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_Action.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.Action%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L36">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L39">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_Action_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.Action*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_Action" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.Action">Action()</h4>
@@ -375,7 +377,7 @@ public class WeaponArt : Ability</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_ConditionSatisfied.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.ConditionSatisfied%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L20">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L23">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_ConditionSatisfied_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.ConditionSatisfied*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_ConditionSatisfied" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.ConditionSatisfied">ConditionSatisfied()</h4>
@@ -409,7 +411,7 @@ public class WeaponArt : Ability</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_InitializeSharedReferences.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.InitializeSharedReferences%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L15">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L18">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_InitializeSharedReferences_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.InitializeSharedReferences*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_InitializeSharedReferences" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.InitializeSharedReferences">InitializeSharedReferences()</h4>
@@ -427,7 +429,7 @@ public class WeaponArt : Ability</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_OnAbilityEnqueue.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.OnAbilityEnqueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L29">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L32">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_OnAbilityEnqueue_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.OnAbilityEnqueue*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt_OnAbilityEnqueue" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.OnAbilityEnqueue">OnAbilityEnqueue()</h4>
@@ -452,7 +454,7 @@ public class WeaponArt : Ability</code></pre>
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponArt.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Abilities/WeaponArt/WeaponArt.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

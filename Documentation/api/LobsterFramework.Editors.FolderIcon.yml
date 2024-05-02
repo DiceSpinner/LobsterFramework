@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: FolderIcon
     path: ../Editor/Settings/StateEditorConfig.cs
-    startLine: 101
+    startLine: 98
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -66,7 +66,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: path
     path: ../Editor/Settings/StateEditorConfig.cs
-    startLine: 105
+    startLine: 102
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -107,7 +107,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: icon
     path: ../Editor/Settings/StateEditorConfig.cs
-    startLine: 106
+    startLine: 103
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

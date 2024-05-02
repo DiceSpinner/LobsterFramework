@@ -114,21 +114,23 @@ Inheritors of this class must have name 'Ability_Subclass_Name'Context.</p>
       <section><p>AbilityConfig of coroutines, subclass configs need to inherit from this to properly work</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityData.html">AbilityData</a></h4>
-      <section></section>
+      <section><p>Defines the set of abilities and ability components an actor can take on. Used as input to <a class="xref" href="LobsterFramework.AbilitySystem.AbilityManager.html">AbilityManager</a>.</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityDictionary.html">AbilityDictionary</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityExecutor.html">AbilityExecutor</a></h4>
       <section><p>Carries out ability instance execution according to the priorities of the abilities. Singleton class.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityManager.html">AbilityManager</a></h4>
-      <section><p>Manages running and stopping abilities.</p>
+      <section><p>Manages running, querying, stopping and interaction with abilities. Takes in an <a class="xref" href="LobsterFramework.AbilitySystem.AbilityData.html">AbilityData</a> as input that defines the set of abilities this actor have access to.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilitySelector.html">AbilitySelector</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html">AddAbilityComponentMenuAttribute</a></h4>
-      <section></section>
+      <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html">AbilityComponent</a> to make it visible to editor scripts</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html">AddAbilityMenuAttribute</a></h4>
-      <section><p>Used to add Abilities to the pool of available Abilities. This will allow the creations of these abilities inside AbilityData</p>
+      <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a> to make it visible to editor scripts</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html">ComponentRequiredAttribute</a></h4>
       <section><p>Mark this ability as requiring the specified components on the parent gameobject to run</p>

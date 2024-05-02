@@ -15,9 +15,9 @@ namespace LobsterFramework.Utility
         private IEnumerator<CoroutineOption> enumerator;
         private Coroutine waitFor; // The child coroutine to wait for
         private Func<bool> conditionSatisfied;
-        private bool unscaled; // Whether to use unscaled time
+        private bool useUnsacaledWaitTime; // Whether to use unscaled time
         private float awakeTime; // The time this coroutine should continue executing
-        public Action onReset;
+        public event Action OnReset;
 
         /// <summary>
         /// True if the coroutine is finished, false otherwise
@@ -39,7 +39,7 @@ namespace LobsterFramework.Utility
             if (IsFinished) { return false; }
 
             // Check for wait time
-            if (unscaled)
+            if (useUnsacaledWaitTime)
             {
                 if (Time.unscaledTime < awakeTime) {
                     return true;
@@ -75,35 +75,61 @@ namespace LobsterFramework.Utility
 
             bool next = enumerator.MoveNext();
             CoroutineOption option = enumerator.Current;
+
+            // Stop ability if the coroutine has reached its end
             if (!next)
             {
                 IsFinished = true;
                 return false;
             }
-            if (!option.Equals(CoroutineOption.Continue))
+
+            // Handle coroutine options returned by the coroutine
+
+            // Reset the coroutine
+            if (option.reset)
             {
-                if (option.reset)
+                enumerator = coroutine.GetEnumerator();
+                OnReset?.Invoke();
+                return true;
+            }
+
+            // Wait for seconds
+            if (option.waitTime > 0)
+            {
+                useUnsacaledWaitTime = option.isUnscaledTime;
+                if (useUnsacaledWaitTime)
                 {
-                    enumerator = coroutine.GetEnumerator();
-                    onReset?.Invoke();
+                    awakeTime = Time.unscaledTime + option.waitTime;
                     return true;
                 }
+                awakeTime = Time.time + option.waitTime;
+                return true;
+            }
 
-                // Wait for coroutines or condition
-                if (option.waitTime > 0)
-                {
-                    awakeTime = Time.time + option.waitTime;
-                    unscaled = option.unscaled;
+            // Start a new coroutine and wait for it to finish
+            if (option.subCoroutine != null) {
+                waitFor = runner.AddCoroutine(option.subCoroutine);
+                return true;
+            }
+
+            // Wait for existing coroutine
+            if (option.coroutineToWait != null) { // Cannot wait for self
+                if (option.coroutineToWait == this) {
+                    Debug.LogException(new Exception("The coroutine cannot wait for itself!"));
+                    return false;
                 }
-                else if (option.waitFor != null) {
-                    waitFor = runner.AddCoroutine(option.waitFor);
-                } 
-                else if (option.wait != null && option.wait != this) { // Cannot wait for self
-                    waitFor = option.wait;
-                } 
-                else if (option.predicateCondition != null) {
-                    conditionSatisfied = option.predicateCondition;
+                if (option.coroutineToWait.waitFor == this) {
+                    Debug.LogException(new Exception("Dead lock detected!"));
+                    return false;
                 }
+                waitFor = option.coroutineToWait;
+                return true;
+            } 
+
+            // Set up predicate handler and wait for the condition to be satisfied
+            if (option.predicateCondition != null) {
+                conditionSatisfied = option.predicateCondition;
+                return true;
             }
             return true;
         }

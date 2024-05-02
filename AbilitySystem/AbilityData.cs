@@ -8,11 +8,10 @@ using UnityEditor;
 
 namespace LobsterFramework.AbilitySystem
 {
-    
-    [CreateAssetMenu(menuName = "Ability/AbilityData")]
     /// <summary>
-    /// Defines the set of abilities and ability components an actor can take on. Used as input to <see cref="AbilityManager">.
+    /// Defines the set of abilities and ability components an actor can take on. Used as input to <see cref="AbilityManager"/>.
     /// </summary>
+    [CreateAssetMenu(menuName = "Ability/AbilityData")]
     public class AbilityData : ScriptableObject
     {
         public const string defaultAbilityInstance = "default";
@@ -168,7 +167,7 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         /// <typeparam name="T"> Type of the Ability to be queried </typeparam>
         /// <returns>The result of the query</returns>
-        internal bool AbilityComponentsCheck<T>() where T : Ability
+        internal bool VerifyComponentRequirements<T>() where T : Ability
         {
             Type type = typeof(T);
             bool f1 = true;
@@ -208,7 +207,7 @@ namespace LobsterFramework.AbilitySystem
         /// <summary>
         /// Save data as assets by adding them to the AssetDataBase
         /// </summary>
-        public void SaveContentsAsAsset()
+        public void SaveAsAsset()
         {
             if (AssetDatabase.Contains(this))
             {
@@ -259,7 +258,7 @@ namespace LobsterFramework.AbilitySystem
                 return false;
             }
 
-            if (AbilityComponentsCheck<T>())
+            if (VerifyComponentRequirements<T>())
             {
                 T ability = CreateInstance<T>();
                 abilities.Add(typeof(T).AssemblyQualifiedName, ability);
@@ -287,7 +286,6 @@ namespace LobsterFramework.AbilitySystem
             Ability ability = GetAbility<T>();
             if (ability != null)
             {
-                ability.SuspendAll();
                 abilities.Remove(typeof(T).AssemblyQualifiedName);
                 AssetDatabase.RemoveObjectFromAsset(ability);
                 DestroyImmediate(ability, true);

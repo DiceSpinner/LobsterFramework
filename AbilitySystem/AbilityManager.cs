@@ -8,7 +8,7 @@ using Animancer;
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
-    /// Manages running and stopping abilities.
+    /// Manages running, querying, stopping and interaction with abilities. Takes in an <see cref="AbilityData"/> as input that defines the set of abilities this actor have access to.
     /// </summary>
     [AddComponentMenu("AbilityManager")]
     public class AbilityManager : SubLevelComponent
@@ -596,7 +596,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Only to be called inside play mode in the editor! Save the current ability data as an asset with specified assetName to the default path.
         /// </summary>
         /// <param name="assetName">Name of the asset to be saved</param>
-        public void SaveRuntimeData(string path)
+        public void Save(string path)
         {
             if (path.StartsWith(Application.dataPath))
             {
@@ -612,7 +612,7 @@ namespace LobsterFramework.AbilitySystem {
             {
                 AbilityData cloned = abilityData.Clone(); 
                 AssetDatabase.CreateAsset(cloned, path);
-                cloned.SaveContentsAsAsset();
+                cloned.SaveAsAsset();
                 inputData = cloned;
             }
         }

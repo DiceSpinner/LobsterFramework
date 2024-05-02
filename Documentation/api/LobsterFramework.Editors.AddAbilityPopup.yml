@@ -5,8 +5,8 @@ items:
   id: AddAbilityPopup
   parent: LobsterFramework.Editors
   children:
+  - LobsterFramework.Editors.AddAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
   - LobsterFramework.Editors.AddAbilityPopup.OnGUI(UnityEngine.Rect)
-  - LobsterFramework.Editors.AddAbilityPopup.data
   langs:
   - csharp
   - vb
@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AddAbilityPopup
     path: ../Editor/PopupWindow/AddAbilityPopup.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -43,33 +43,38 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.Editors.AddAbilityPopup.data
-  commentId: F:LobsterFramework.Editors.AddAbilityPopup.data
-  id: data
+- uid: LobsterFramework.Editors.AddAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  commentId: M:LobsterFramework.Editors.AddAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  id: '#ctor(LobsterFramework.AbilitySystem.AbilityData)'
   parent: LobsterFramework.Editors.AddAbilityPopup
   langs:
   - csharp
   - vb
-  name: data
-  nameWithType: AddAbilityPopup.data
-  fullName: LobsterFramework.Editors.AddAbilityPopup.data
-  type: Field
+  name: AddAbilityPopup(AbilityData)
+  nameWithType: AddAbilityPopup.AddAbilityPopup(AbilityData)
+  fullName: LobsterFramework.Editors.AddAbilityPopup.AddAbilityPopup(LobsterFramework.AbilitySystem.AbilityData)
+  type: Constructor
   source:
     remote:
       path: Editor/PopupWindow/AddAbilityPopup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: data
+    id: .ctor
     path: ../Editor/PopupWindow/AddAbilityPopup.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
   syntax:
-    content: public static AbilityData data
-    return:
+    content: public AddAbilityPopup(AbilityData abilityData)
+    parameters:
+    - id: abilityData
       type: LobsterFramework.AbilitySystem.AbilityData
-    content.vb: Public Shared data As AbilityData
+    content.vb: Public Sub New(abilityData As AbilityData)
+  overload: LobsterFramework.Editors.AddAbilityPopup.#ctor*
+  nameWithType.vb: AddAbilityPopup.New(AbilityData)
+  fullName.vb: LobsterFramework.Editors.AddAbilityPopup.New(LobsterFramework.AbilitySystem.AbilityData)
+  name.vb: New(AbilityData)
 - uid: LobsterFramework.Editors.AddAbilityPopup.OnGUI(UnityEngine.Rect)
   commentId: M:LobsterFramework.Editors.AddAbilityPopup.OnGUI(UnityEngine.Rect)
   id: OnGUI(UnityEngine.Rect)
@@ -88,7 +93,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/PopupWindow/AddAbilityPopup.cs
-    startLine: 15
+    startLine: 53
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -440,6 +445,15 @@ references:
   name: UnityEditor
   nameWithType: UnityEditor
   fullName: UnityEditor
+- uid: LobsterFramework.Editors.AddAbilityPopup.#ctor*
+  commentId: Overload:LobsterFramework.Editors.AddAbilityPopup.#ctor
+  href: LobsterFramework.Editors.AddAbilityPopup.html#LobsterFramework.Editors.AddAbilityPopup.#ctor(LobsterFramework.AbilitySystem.AbilityData)
+  name: AddAbilityPopup
+  nameWithType: AddAbilityPopup.AddAbilityPopup
+  fullName: LobsterFramework.Editors.AddAbilityPopup.AddAbilityPopup
+  nameWithType.vb: AddAbilityPopup.New
+  fullName.vb: LobsterFramework.Editors.AddAbilityPopup.New
+  name.vb: New
 - uid: LobsterFramework.AbilitySystem.AbilityData
   commentId: T:LobsterFramework.AbilitySystem.AbilityData
   parent: LobsterFramework.AbilitySystem

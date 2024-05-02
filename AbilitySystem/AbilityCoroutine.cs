@@ -16,7 +16,7 @@ namespace LobsterFramework.AbilitySystem
         {
             AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
             context.coroutine = context.coroutineRunner.AddCoroutine(Coroutine());
-            context.coroutine.onReset += OnCoroutineReset;
+            context.coroutine.OnReset += OnCoroutineReset;
             OnCoroutineEnqueue();
         }
 
@@ -28,6 +28,7 @@ namespace LobsterFramework.AbilitySystem
         protected sealed override void OnAbilityFinish() {
             AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
             context.coroutine.Stop();
+            context.coroutine.OnReset -= OnCoroutineReset;
             OnCoroutineFinish();
         }
 

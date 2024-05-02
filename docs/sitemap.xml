@@ -2,1333 +2,1345 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.AITrackData.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.BoolEventChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.ControllerData.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.DescriptionBaseSO.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.FloatEventChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.IntEventChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.OrderedSet-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.Projectile.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefBool.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefBoolDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefFloat.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefFloatDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefInt.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefIntDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefString.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.RefStringDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.SerializableLinkedList-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.StringEventChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarBool.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarBoolDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarFloat.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarFloatDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.Variable-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarInt.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarIntDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarString.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VarStringDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.VoidEventChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/Global.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.Ability.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityComponent.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityComponentDictionary.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityConfigDictionary.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityContext.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityCoroutine.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityCoroutineContext.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityData.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityDictionary.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityExecutor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilityManager.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AbilitySelector.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.DamageModifier.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.TargetSetting.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponAnimationAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.GuardAnimations.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.GuardContext.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponState.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.WeaponSystem.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AbilitySystem.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.AddStateMenuAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.AIController.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.AIPathFinder.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.AIUtility.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.State.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.StateData.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.StateDicationary.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.StateMachine.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.StateTransitionAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AI.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.AnimationClipArray.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.CharacterStateManager.CharacterState.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.CharacterStateManager.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.ContinousCollision2D.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Damage.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.DamageType.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.DisableEditInPlayMode.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AbilityConfigEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AbilityDataEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AbilityDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AbilityEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AbilityEditorConfig.html</loc>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AbilityManagerEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AbilitySelectorDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AddAbilityComponentPopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AddAbilityPopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AddStatePopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.AddWeaponStatPopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.DisableInPlayModeDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.EditorUtils.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.EffectProcessorEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.EntityEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.FilePathAttributeDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.FolderIcon.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.FolderPathAttriibuteDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.InventoryEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.LayerAttributeDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.MenuTreeDrawer-1.html</loc>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html</loc>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.MovementControllerEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.PoiseEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.ReadOnlyAttributeDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.SelectAbilityComponentPopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.SelectAbilityPopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.SelectStatePopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.SelectWeaponStatPopup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.SerializedPropertyExtensions.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.StateDataEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.StateEditorConfig.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.WeaponAnimationDataEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.WeaponArtSelectorDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.WeaponDataEditor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.XListPropertyDrawer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Editors.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.EffectProcessor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Effects.Effect.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Effects.SilentEffect.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Effects.StunEffect.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Effects.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Entity.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.EntityGroup.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.FilePathAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.FolderPathAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.GameManager.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.GameStateManager.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.CollectableItem.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.GeneralInteractor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.HealthPotion.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.IConsumable.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.IEquipable.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.IInteractable.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.InteractabilityCheckerAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.InteractionHandlerAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.InteractionPrompt.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.InteractionType.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.Interactor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.Inventory.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.InventoryItem.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.Item.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.ItemType.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.RegisterInteractorAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.SimpleItem.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Interaction.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.IntroMenu.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.InventoryUtil.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.ItemEntryUI.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.LayerAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.MovementController.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Poise.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Pool.Bullet.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Pool.ObjectPool.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Pool.TemporalObject.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Pool.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.ReadOnlyAttribute.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Scene.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.SceneEventChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.SceneLoader.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.SerializableArray-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.SimpleCollision2D.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.SubLevelComponent.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.UI.InventoryUI.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.UI.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.AbilitySet.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.And.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.AttributeInitializer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.CombinedValue-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.CombinedValueEffector-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.Coroutine.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.CoroutineOption.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.CoroutineRunner.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.DialogueDisplayer.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.DialogueNode.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.DialogueObject.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.DialogueResponse.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.EventChannels.EntityEventChannel.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.EventChannels.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.FloatProduct.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.FloatSum.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.GameUtility.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.IdDistributor.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.IntSum.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.MenuGroup-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.MenuTree-1.html</loc>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.OrValue.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.SerializableDictionary-2.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.SerializableHashSet-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.SerializableType-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.Signal-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.SortableItem-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.XList-1.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.Utility.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/api/LobsterFramework.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/index.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/manual/AbilitySystem.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/manual/coniunctis.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/manual/etiam.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dicespinner.github.io/LobsterFramework/manual/Intro.html</loc>
-    <lastmod>2024-04-19T03:45:24-04:00</lastmod>
+    <lastmod>2024-05-02T06:21:28-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

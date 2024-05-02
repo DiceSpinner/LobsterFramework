@@ -4,8 +4,7 @@ items:
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
   id: WeaponStat
   parent: LobsterFramework.AbilitySystem.WeaponSystem
-  children:
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
+  children: []
   langs:
   - csharp
   - vb
@@ -20,13 +19,15 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponStat
     path: ../AbilitySystem/Weapon/WeaponStat.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  summary: Stat of the weapon. A weapon is allowed to have multiple weapon stats of different types. These stats may be queried by weapon abilities.
+  example: []
   syntax:
-    content: 'public class WeaponStat : ScriptableObject'
-    content.vb: Public Class WeaponStat Inherits ScriptableObject
+    content: 'public abstract class WeaponStat : ScriptableObject'
+    content.vb: Public MustInherit Class WeaponStat Inherits ScriptableObject
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -86,34 +87,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  id: Clone
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
-  langs:
-  - csharp
-  - vb
-  name: Clone()
-  nameWithType: WeaponStat.Clone()
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Weapon/WeaponStat.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Clone
-    path: ../AbilitySystem/Weapon/WeaponStat.cs
-    startLine: 8
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  syntax:
-    content: public WeaponStat Clone()
-    return:
-      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
-    content.vb: Public Function Clone() As WeaponStat
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone*
 references:
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
@@ -2242,16 +2215,3 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-  name: Clone
-  nameWithType: WeaponStat.Clone
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.Clone
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html
-  name: WeaponStat
-  nameWithType: WeaponStat
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat

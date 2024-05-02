@@ -27,7 +27,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Used on Ability to add it to the options of ability selection for weapon arts.
+  summary: Applied to <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility" data-throw-if-not-resolved="false"></xref> to mark it as a weapon art that can be called by <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: >-
@@ -229,6 +229,19 @@ items:
     content.vb: Public Sub Init(type As Type)
   overload: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute.Init*
 references:
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html
+  name: WeaponAbility
+  nameWithType: WeaponAbility
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html
+  name: WeaponArt
+  nameWithType: WeaponArt
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
   href: LobsterFramework.html

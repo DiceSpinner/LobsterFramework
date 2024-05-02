@@ -5,8 +5,8 @@ using UnityEngine.Events;
 using LobsterFramework.Utility;
 using System;
 using System.Runtime.CompilerServices;
-[assembly: InternalsVisibleTo("LobsterFrameworkEditor")]
 
+[assembly: InternalsVisibleTo("LobsterFrameworkEditor")] 
 namespace LobsterFramework
 {
     public enum Scene
@@ -34,8 +34,6 @@ namespace LobsterFramework
         [field: SerializeField] public float POSTURE_BROKEN_DAMAGE_MODIFIER { get; private set; }
         [field: SerializeField] public float POSTURE_BROKEN_DURATION { get; private set; }
         [field: SerializeField] public float SUPPRESS_REGEN_DURATION { get; private set; }
-
-        private Dictionary<UnityAction, float> delegates;
 
         #region Inquiries
         private static bool gamePaused;
@@ -68,49 +66,11 @@ namespace LobsterFramework
             Application.targetFrameRate = TARGET_FRAME_RATE;
             QualitySettings.vSyncCount = 0;
             exitChannel.OnEventRaised += ExitGame;
-            delegates = new();
             GamePaused = false;
         }
 
-        public void Update()
-        {
-            List<UnityAction> remove = new();
-            List<UnityAction> keys = new(delegates.Keys);
-            foreach (UnityAction ac in keys)
-            {
-                delegates[ac] -= Time.deltaTime;
-                if (delegates[ac] <= 0)
-                {
-                    ac.Invoke();
-                    remove.Add(ac);
-                }
-            }
-            foreach (UnityAction ac in remove)
-            {
-                delegates.Remove(ac);
-            }
-        }
-
-        /// <summary>
-        /// Execute UnityAction after specified seconds of delay in the Update Loop. If delay is set to 0, action will be executed on next frame
-        /// </summary>
-        /// <param name="action">Action to be executed</param>
-        /// <param name="timeDelay"></param>
-        public static void ExecuteDelegate(UnityAction action, float timeDelay)
-        {
-            if (timeDelay < 0)
-            {
-                timeDelay = 0;
-            }
-            instance.delegates[action] = timeDelay;
-        }
-
-        private void LateUpdate()
-        {
-        }
-
         private void ExitGame()
-        {
+        { 
             Application.Quit();
             Debug.Log("Exit!");
         }
@@ -123,10 +83,20 @@ namespace LobsterFramework
 #endif
         private static void OnInitScript()
         {
-            // Initialize custom attributes
-            foreach (Assembly assembly in System.AppDomain.CurrentDomain.GetAssemblies())
+            Assembly frameworkAssembly = typeof(GameManager).Assembly;
+            AttributeInitializer.Initialize(frameworkAssembly);
+
+            AssemblyName assemblyName = frameworkAssembly.GetName();
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
-                AttributeInitializer.Initialize(assembly);
+                AssemblyName[] references = assembly.GetReferencedAssemblies();
+                foreach (AssemblyName reference in references) {
+                    if (reference.Name == assemblyName.Name) {
+                        AttributeInitializer.Initialize(assembly);
+                        // Debug.Log($"Assembly {assembly.GetName().Name} use of LobsterFramework detected!"); 
+                        break;
+                    }
+                }
             }
         }
     }

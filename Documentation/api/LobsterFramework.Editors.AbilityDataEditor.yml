@@ -162,7 +162,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: newSelectedAbility
     path: ../Editor/Inspector/AbilityDataEditor.cs
-    startLine: 25
+    startLine: 22
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -189,7 +189,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: newSelectedAbilityComponent
     path: ../Editor/Inspector/AbilityDataEditor.cs
-    startLine: 26
+    startLine: 23
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -216,7 +216,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: removedAbility
     path: ../Editor/Inspector/AbilityDataEditor.cs
-    startLine: 33
+    startLine: 30
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -243,7 +243,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: removedAbilityComponent
     path: ../Editor/Inspector/AbilityDataEditor.cs
-    startLine: 34
+    startLine: 31
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -270,7 +270,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnEnable
     path: ../Editor/Inspector/AbilityDataEditor.cs
-    startLine: 36
+    startLine: 33
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -296,7 +296,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnInspectorGUI
     path: ../Editor/Inspector/AbilityDataEditor.cs
-    startLine: 54
+    startLine: 41
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

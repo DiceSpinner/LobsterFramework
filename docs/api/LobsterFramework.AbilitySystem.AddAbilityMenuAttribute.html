@@ -83,7 +83,7 @@
 
   <h1 id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute" class="text-break">Class AddAbilityMenuAttribute
 </h1>
-  <div class="markdown level0 summary"><p>Used to add Abilities to the pool of available Abilities. This will allow the creations of these abilities inside AbilityData</p>
+  <div class="markdown level0 summary"><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a> to make it visible to editor scripts</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -228,22 +228,22 @@
     <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 public class AddAbilityMenuAttribute : Attribute</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_AddAbility_System_Type_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityMenuAttribute__ctor_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityMenuAttribute.cs/#L29">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityMenuAttribute.cs/#L45">View Source</a>
   </span>
-  <a id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_AddAbility_" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_AddAbility_System_Type_" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbility(System.Type)">AddAbility(Type)</h4>
+  <a id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute__ctor_" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute__ctor_System_String_" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)">AddAbilityMenuAttribute(string)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddAbility(Type type)</code></pre>
+    <pre><code class="lang-csharp hljs">public AddAbilityMenuAttribute(string menuPath = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -256,8 +256,40 @@ public class AddAbilityMenuAttribute : Attribute</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">type</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">menuPath</span></td>
+        <td><p>The path leading to this item in the menu</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_RootName.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityMenuAttribute.cs/#L20">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_RootName" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName">RootName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RootName = &quot;Root&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -274,7 +306,7 @@ public class AddAbilityMenuAttribute : Attribute</code></pre>
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityMenuAttribute.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityMenuAttribute%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityMenuAttribute.cs/#L18" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityMenuAttribute.cs/#L17" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

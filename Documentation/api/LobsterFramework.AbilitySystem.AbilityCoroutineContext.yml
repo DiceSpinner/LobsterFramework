@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityCoroutineContext
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 58
+    startLine: 59
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: coroutineRunner
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -92,7 +92,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: coroutine
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 61
+    startLine: 62
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

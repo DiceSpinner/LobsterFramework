@@ -53,7 +53,6 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         [Header("Special Move")]  
         [SerializeField] private WeaponData weaponData;
         [SerializeField] private WeaponArtSelector abilitySelector;
-        private WeaponData data;
         private WeaponStatDictionary weaponStats;
 
         internal WeaponManager weaponManager;
@@ -68,7 +67,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         public string Name { get { return weaponName; } }
         public WeaponType WeaponType { get { return weaponType; } }
 
-        public ValueTuple<Type, string> AbilitySetting { get { return ValueTuple.Create(abilitySelector.Type, abilitySelector.ConfigName); } }
+        public ValueTuple<Type, string> AbilitySetting { get { return ValueTuple.Create(abilitySelector.Type, abilitySelector.Instance); } }
         public float Weight { get { return weight; } }
         public float Sharpness { get { return sharpness; } }
         public float AttackSpeed { get {  return attackSpeed; } }
@@ -118,8 +117,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             hitted = new();
             if (weaponData != null)
             {
-                data = weaponData.Clone();
-                weaponStats = data.weaponStats;
+                weaponStats = weaponData.weaponStats;
             }
         }
 

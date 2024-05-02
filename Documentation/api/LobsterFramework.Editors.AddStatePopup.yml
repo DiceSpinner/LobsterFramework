@@ -7,7 +7,6 @@ items:
   children:
   - LobsterFramework.Editors.AddStatePopup.#ctor(LobsterFramework.AI.StateData)
   - LobsterFramework.Editors.AddStatePopup.OnGUI(UnityEngine.Rect)
-  - LobsterFramework.Editors.AddStatePopup.data
   langs:
   - csharp
   - vb
@@ -22,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AddStatePopup
     path: ../Editor/PopupWindow/AddStatePopup.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -44,33 +43,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.Editors.AddStatePopup.data
-  commentId: F:LobsterFramework.Editors.AddStatePopup.data
-  id: data
-  parent: LobsterFramework.Editors.AddStatePopup
-  langs:
-  - csharp
-  - vb
-  name: data
-  nameWithType: AddStatePopup.data
-  fullName: LobsterFramework.Editors.AddStatePopup.data
-  type: Field
-  source:
-    remote:
-      path: Editor/PopupWindow/AddStatePopup.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: data
-    path: ../Editor/PopupWindow/AddStatePopup.cs
-    startLine: 11
-  assemblies:
-  - LobsterFrameworkEditor
-  namespace: LobsterFramework.Editors
-  syntax:
-    content: public StateData data
-    return:
-      type: LobsterFramework.AI.StateData
-    content.vb: Public data As StateData
 - uid: LobsterFramework.Editors.AddStatePopup.#ctor(LobsterFramework.AI.StateData)
   commentId: M:LobsterFramework.Editors.AddStatePopup.#ctor(LobsterFramework.AI.StateData)
   id: '#ctor(LobsterFramework.AI.StateData)'
@@ -89,7 +61,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../Editor/PopupWindow/AddStatePopup.cs
-    startLine: 17
+    startLine: 13
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -121,7 +93,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/PopupWindow/AddStatePopup.cs
-    startLine: 21
+    startLine: 49
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -473,6 +445,15 @@ references:
   name: UnityEditor
   nameWithType: UnityEditor
   fullName: UnityEditor
+- uid: LobsterFramework.Editors.AddStatePopup.#ctor*
+  commentId: Overload:LobsterFramework.Editors.AddStatePopup.#ctor
+  href: LobsterFramework.Editors.AddStatePopup.html#LobsterFramework.Editors.AddStatePopup.#ctor(LobsterFramework.AI.StateData)
+  name: AddStatePopup
+  nameWithType: AddStatePopup.AddStatePopup
+  fullName: LobsterFramework.Editors.AddStatePopup.AddStatePopup
+  nameWithType.vb: AddStatePopup.New
+  fullName.vb: LobsterFramework.Editors.AddStatePopup.New
+  name.vb: New
 - uid: LobsterFramework.AI.StateData
   commentId: T:LobsterFramework.AI.StateData
   parent: LobsterFramework.AI
@@ -502,15 +483,6 @@ references:
   - uid: LobsterFramework.AI
     name: AI
     href: LobsterFramework.AI.html
-- uid: LobsterFramework.Editors.AddStatePopup.#ctor*
-  commentId: Overload:LobsterFramework.Editors.AddStatePopup.#ctor
-  href: LobsterFramework.Editors.AddStatePopup.html#LobsterFramework.Editors.AddStatePopup.#ctor(LobsterFramework.AI.StateData)
-  name: AddStatePopup
-  nameWithType: AddStatePopup.AddStatePopup
-  fullName: LobsterFramework.Editors.AddStatePopup.AddStatePopup
-  nameWithType.vb: AddStatePopup.New
-  fullName.vb: LobsterFramework.Editors.AddStatePopup.New
-  name.vb: New
 - uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
   commentId: M:UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
   parent: UnityEditor.PopupWindowContent

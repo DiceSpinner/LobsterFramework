@@ -18,17 +18,14 @@ namespace LobsterFramework.Editors
         private readonly GUIStyle style1 = new();
         private readonly GUIStyle style2 = new();
 
-        private readonly GUIStyle selectAbilityStyle = new();
-        private readonly GUIStyle selectAbilityComponentStyle = new();
-
-        private Ability selectedAbility = null;
+        internal Ability selectedAbility = null;
         private AbilityComponent selectedAbilityComponent = null;
         public Ability newSelectedAbility = null;
         public AbilityComponent newSelectedAbilityComponent = null;
 
         private Rect addAbilityRect;
         private Rect selectAbilityRect;
-        private Rect addAbilityComponentRect;
+        private Rect addComponentRect;
         private Rect selectAbilityComponentRect;
 
         public Type removedAbility = null;
@@ -40,32 +37,34 @@ namespace LobsterFramework.Editors
             style1.fontStyle = FontStyle.Bold;
             style2.normal.textColor = Color.yellow;
             style2.fontStyle = FontStyle.Bold;
-
-            selectAbilityStyle.fontStyle = FontStyle.Bold;
-            selectAbilityStyle.alignment = TextAnchor.MiddleLeft;
-            selectAbilityStyle.normal.textColor = Color.yellow;
-            selectAbilityStyle.hover.background = Texture2D.grayTexture;
-
-            selectAbilityComponentStyle.fontStyle = FontStyle.Bold;
-            selectAbilityComponentStyle.normal.textColor = Color.cyan;
-            selectAbilityComponentStyle.alignment = TextAnchor.MiddleLeft;
-            selectAbilityComponentStyle.hover.background = Texture2D.grayTexture;
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
             AbilityData abilityData = (AbilityData)target;
+            bool isAsset = AssetDatabase.Contains(abilityData);
 
             #region Update AbilityData
             if (Event.current.type == EventType.Layout) {
-                if (newSelectedAbility != null) {
+                if (newSelectedAbility != null)
+                {
                     selectedAbility = newSelectedAbility;
                     newSelectedAbility = null;
                 }
+                else if (selectedAbility == null && abilityData.abilities.Count > 0)
+                {
+                    selectedAbility = abilityData.abilities.First().Value;
+                }
+
+
                 if (newSelectedAbilityComponent != null) {
                     selectedAbilityComponent = newSelectedAbilityComponent;
                     newSelectedAbilityComponent = null;
+                }
+                else if (selectedAbilityComponent == null && abilityData.components.Count > 0)
+                {
+                    selectedAbilityComponent = abilityData.components.First().Value;
                 }
 
                 if (removedAbility != null) {
@@ -88,16 +87,13 @@ namespace LobsterFramework.Editors
             }
             #endregion
 
-            EditorGUILayout.HelpBox("Note: When editing list properties of abilities, drag reference directly to the list itself instead of its element fields, " +
-            "otherwise the reference may not be saved.", MessageType.Info, true);
-
             EditorGUI.BeginChangeCheck();
 
-            DrawAbilityComponents(abilityData);
+            DrawAbilityComponents(abilityData, isAsset);
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
             EditorGUILayout.Space();
-            DrawAbilities(abilityData);
+            DrawAbilities(abilityData, isAsset);
 
             if (EditorGUI.EndChangeCheck())
             {
@@ -105,176 +101,171 @@ namespace LobsterFramework.Editors
             }
         }
 
-        private void DrawAbilityComponents(AbilityData abilityData) {
-            SerializedProperty abilityComponents = serializedObject.FindProperty("components");
+        private void DrawAbilityComponents(AbilityData abilityData, bool isAsset) {
             EditorGUILayout.BeginHorizontal();
-            abilityComponents.isExpanded = EditorGUILayout.Foldout(abilityComponents.isExpanded, "Ability Components: " + abilityData.components.Values.Count);
+            EditorGUILayout.LabelField("Ability Components: " + abilityData.components.Values.Count, EditorStyles.boldLabel);
             GUILayout.FlexibleSpace();
-            bool aButton = GUILayout.Button("Add", GUILayout.Width(80));
+            bool addComponentClicked = false;
+
+            // Add/Remove components at runtime is not allowed
+            if (isAsset) {
+                addComponentClicked = GUILayout.Button("Add", GUILayout.Width(80));
+            }
             EditorGUILayout.EndHorizontal();
 
             #region Add Ability Component
-            if (aButton) // Add action component button clicked
+            if (addComponentClicked) // Add ability button clicked
             {
-                addAbilityComponentRect.position = Event.current.mousePosition;
-                AddAbilityComponentPopup popup = new();
-                popup.data = abilityData;
-                PopupWindow.Show(addAbilityComponentRect, popup);
+                addComponentRect.position = Event.current.mousePosition;
+                AddAbilityComponentPopup popup = new(abilityData);
+                PopupWindow.Show(addComponentRect, popup);
             }
             #endregion
 
-            if (abilityComponents.isExpanded)
+            if (abilityData.components.Count == 0)
             {
-                if (abilityData.components.Count == 0)
-                {
-                    EditorGUILayout.LabelField("No ability components available for display!");
-                }
-                else
-                {
-                    #region Create editor for selected component
-                    EditorGUILayout.Space();
-                    if (selectedAbilityComponent == null)
-                    {
-                        selectedAbilityComponent = abilityData.components.First().Value;
-                    }
-                    Editor editor;
-                    Type type = selectedAbilityComponent.GetType();
-                    if (abilityComponentEditors.TryGetValue(type, out Editor componentsEditor))
-                    {
-                        editor = componentsEditor;
-                    }
-                    else
-                    {
-                        editor = CreateEditor(selectedAbilityComponent);
-                        abilityComponentEditors.Add(type, editor);
-                    }
-                    #endregion
-
-                    #region Draw Selected Ability Component Buttons
-                    EditorGUILayout.BeginHorizontal();
-                    GUIContent content = new();
-                    bool selected;
-                    content.text = selectedAbilityComponent.GetType().Name;
-                    if (AddAbilityComponentMenuAttribute.icons.TryGetValue(type, out Texture2D icon))
-                    {
-                        content.image = icon;
-                        selected = GUILayout.Button(content, selectAbilityComponentStyle, GUILayout.Height(40));
-                    }
-                    else
-                    {
-                        selected = GUILayout.Button(content, selectAbilityComponentStyle);
-                    } 
-                    GUILayout.FlexibleSpace();
-                    EditorGUILayout.BeginVertical();
-                    bool removeClicked = EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle(), GUILayout.Width(80));
-                    EditorGUILayout.EndVertical();
-                    EditorGUILayout.EndHorizontal();
-                    #endregion
-
-                    editor.OnInspectorGUI();
-
-                    #region SelectAbilityComponent Button Clicked
-                    if (selected)
-                    {
-                        selectAbilityComponentRect.position = Event.current.mousePosition;
-                        SelectAbilityComponentPopup popup = new SelectAbilityComponentPopup();
-                        popup.editor = this;
-                        popup.data = abilityData;
-                        PopupWindow.Show(selectAbilityComponentRect, popup);
-                    }
-                    #endregion
-
-                    if (removeClicked) {
-                        removedAbilityComponent = type;
-                    }
-                }
+                EditorGUILayout.LabelField("No ability components available for display!");
+                return;
             }
+            if (selectedAbilityComponent == null) {
+                return;
+            }
+
+            #region Create editor for selected component
+            EditorGUILayout.Space();
+            Editor editor;
+            Type type = selectedAbilityComponent.GetType();
+            if (abilityComponentEditors.TryGetValue(type, out Editor componentEditor))
+            {
+                editor = componentEditor;
+            }
+            else
+            {
+                editor = CreateEditor(selectedAbilityComponent);
+                abilityComponentEditors.Add(type, editor);
+            }
+            #endregion
+
+            #region Draw Selected Ability Component Buttons
+            EditorGUILayout.BeginHorizontal();
+            GUIContent content = new();
+            bool selectAbilityComponentClicked;
+            content.text = selectedAbilityComponent.GetType().Name;
+            if (AddAbilityComponentMenuAttribute.icons.TryGetValue(type, out Texture2D icon))
+            {
+                content.image = icon;
+                selectAbilityComponentClicked = GUILayout.Button(content, AbilityEditorConfig.ComponentSelectionStyle, GUILayout.Height(40));
+            }
+            else
+            {
+                selectAbilityComponentClicked = GUILayout.Button(content, AbilityEditorConfig.ComponentSelectionStyle);
+            } 
+            GUILayout.FlexibleSpace();
+
+            if (isAsset) {
+                EditorGUILayout.BeginVertical();
+                GUILayout.FlexibleSpace();
+                if (EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle, GUILayout.Width(80))) {
+                    removedAbilityComponent = type;
+                }
+                GUILayout.FlexibleSpace();
+                EditorGUILayout.EndVertical();
+            }
+                    
+            EditorGUILayout.EndHorizontal();
+            #endregion
+
+            editor.OnInspectorGUI();
+
+            #region SelectAbilityComponent Button Clicked
+            if (selectAbilityComponentClicked)
+            {
+                selectAbilityComponentRect.position = Event.current.mousePosition;
+                SelectAbilityComponentPopup popup = new SelectAbilityComponentPopup(this, abilityData);
+                PopupWindow.Show(selectAbilityComponentRect, popup);
+            }
+            #endregion
         }
 
-        private void DrawAbilities(AbilityData abilityData) {
+        private void DrawAbilities(AbilityData abilityData, bool isAsset) {
             // Draw Ability Section
-            SerializedProperty abilities = serializedObject.FindProperty("abilities");
-
             EditorGUILayout.BeginHorizontal();
-            abilities.isExpanded = EditorGUILayout.Foldout(abilities.isExpanded, "Abilities: " + abilityData.abilities.Count);
+            EditorGUILayout.LabelField("Abilities: " + abilityData.abilities.Count, EditorStyles.boldLabel);
             GUILayout.FlexibleSpace();
-            bool addAbilityClicked = GUILayout.Button("Add Ability", GUILayout.Width(110));
+            bool addAbilityClicked = false;
+            if (isAsset) {
+                addAbilityClicked = GUILayout.Button("Add Ability", GUILayout.Width(110));
+            }
             EditorGUILayout.EndHorizontal();
 
-            if (addAbilityClicked) // Add ability button clicked 
+            if (addAbilityClicked)
             {
                 addAbilityRect.position = Event.current.mousePosition;
-                AddAbilityPopup.data = abilityData;
-                AddAbilityPopup popup = new AddAbilityPopup();
+                AddAbilityPopup popup = new AddAbilityPopup(abilityData);
                 PopupWindow.Show(addAbilityRect, popup);
             }
 
-            if (abilities.isExpanded)
+            EditorGUILayout.Space();
+            Editor editor;
+            if (abilityData.abilities.Count == 0)
             {
-                EditorGUILayout.Space();
-                Editor editor;
-                if (abilityData.abilities.Count == 0)
-                {
-                    EditorGUILayout.LabelField("No abilities available for display!");
-                }
-                else
-                {
-                    if (selectedAbility == null)
-                    {
-                        selectedAbility = abilityData.abilities.First().Value;
-                    }
-
-                    Type abilityType = selectedAbility.GetType();
-                    if (!abilityEditors.ContainsKey(abilityType))
-                    {
-                        editor = CreateEditor(selectedAbility);
-                        abilityEditors.Add(abilityType, editor);
-                    }
-                    else
-                    {
-                        editor = abilityEditors[abilityType];
-                    }
-
-                    #region DrawAbilityEditorSection
-                    EditorGUILayout.BeginHorizontal();
-
-                    GUIContent content = new();
-                    bool selected;
-                    content.text = selectedAbility.GetType().Name;
-                    if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(abilityType, out Texture2D icon))
-                    {
-                        content.image = icon;
-                        selected = GUILayout.Button(content, selectAbilityStyle, GUILayout.Height(40));
-                    }
-                    else
-                    {
-                        selected = GUILayout.Button(content, selectAbilityStyle);
-                    }
-                    GUILayout.FlexibleSpace();
-                    EditorGUILayout.BeginVertical();
-                    bool clicked = EditorUtils.Button(Color.red, "Remove Ability", EditorUtils.BoldButtonStyle(), GUILayout.Width(110));
-                    EditorGUILayout.EndVertical();
-                    EditorGUILayout.EndHorizontal();
-
-                    editor.OnInspectorGUI();
-
-                    if (selected)
-                    {
-                        selectAbilityRect.position = Event.current.mousePosition;
-                        SelectAbilityPopup popup = new SelectAbilityPopup();
-                        popup.editor = this;
-                        popup.data = abilityData;
-                        PopupWindow.Show(selectAbilityRect, popup);
-                    }
-
-                    if (clicked)
-                    {
-                        removedAbility = abilityType;
-                    }
-                    GUILayout.FlexibleSpace();
-                }
-                #endregion
+                EditorGUILayout.LabelField("No abilities available for display!");
+                return; 
             }
+            if (selectedAbility == null) {
+                return;
+            }
+
+            Type abilityType = selectedAbility.GetType();
+            if (!abilityEditors.ContainsKey(abilityType))
+            {
+                editor = CreateEditor(selectedAbility);
+                abilityEditors.Add(abilityType, editor);
+            }
+            else
+            {
+                editor = abilityEditors[abilityType];
+            }
+
+            #region DrawAbilityEditorSection
+
+            EditorGUILayout.BeginHorizontal();
+            GUIContent content = new();
+            content.text = selectedAbility.GetType().Name;
+            bool selectClicked;
+            if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(abilityType, out Texture2D icon))
+            {
+                content.image = icon;
+                selectClicked = GUILayout.Button(content, AbilityEditorConfig.AbilitySelectionStyle, GUILayout.Height(40));
+            }
+            else
+            {
+                selectClicked = GUILayout.Button(content, AbilityEditorConfig.AbilitySelectionStyle);
+            }
+
+            if (isAsset)
+            {
+                GUILayout.Space(EditorGUIUtility.singleLineHeight);
+                GUILayout.FlexibleSpace();
+                GUILayout.BeginVertical();
+                GUILayout.FlexibleSpace();
+                if (EditorUtils.Button(Color.red, "Remove Ability", EditorUtils.BoldButtonStyle, GUILayout.Width(110)))
+                {
+                    removedAbility = abilityType;
+                }
+                GUILayout.FlexibleSpace();
+                GUILayout.EndVertical();
+            }
+            EditorGUILayout.EndHorizontal();
+            editor.OnInspectorGUI();
+
+            if (selectClicked)
+            {
+                selectAbilityRect.position = Event.current.mousePosition;
+                SelectAbilityPopup popup = new SelectAbilityPopup(abilityData, this);
+                PopupWindow.Show(selectAbilityRect, popup);
+            }
+            #endregion
         }
 
         private void OnDestroy()

@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SelectStatePopup
     path: ../Editor/PopupWindow/SelectStatePopup.cs
-    startLine: 12
+    startLine: 10
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../Editor/PopupWindow/SelectStatePopup.cs
-    startLine: 19
+    startLine: 16
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -95,7 +95,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/PopupWindow/SelectStatePopup.cs
-    startLine: 25
+    startLine: 54
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

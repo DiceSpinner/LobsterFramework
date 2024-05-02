@@ -7,14 +7,12 @@ items:
   children:
   - LobsterFramework.GameManager.DefaultInteractionRadius
   - LobsterFramework.GameManager.EXPIRE_ATTACK_TIME
-  - LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
   - LobsterFramework.GameManager.GamePaused
   - LobsterFramework.GameManager.Instance
   - LobsterFramework.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
   - LobsterFramework.GameManager.POSTURE_BROKEN_DURATION
   - LobsterFramework.GameManager.SUPPRESS_REGEN_DURATION
   - LobsterFramework.GameManager.TARGET_FRAME_RATE
-  - LobsterFramework.GameManager.Update
   - LobsterFramework.GameManager.UseAlternativeInput
   - LobsterFramework.GameManager.onGamePaused
   langs:
@@ -412,7 +410,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GamePaused
     path: ../GameManager.cs
-    startLine: 41
+    startLine: 39
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -441,7 +439,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: onGamePaused
     path: ../GameManager.cs
-    startLine: 49
+    startLine: 47
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -450,70 +448,6 @@ items:
     return:
       type: System.Action{System.Boolean}
     content.vb: Public Shared onGamePaused As Action(Of Boolean)
-- uid: LobsterFramework.GameManager.Update
-  commentId: M:LobsterFramework.GameManager.Update
-  id: Update
-  parent: LobsterFramework.GameManager
-  langs:
-  - csharp
-  - vb
-  name: Update()
-  nameWithType: GameManager.Update()
-  fullName: LobsterFramework.GameManager.Update()
-  type: Method
-  source:
-    remote:
-      path: GameManager.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Update
-    path: ../GameManager.cs
-    startLine: 74
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework
-  syntax:
-    content: public void Update()
-    content.vb: Public Sub Update()
-  overload: LobsterFramework.GameManager.Update*
-- uid: LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
-  commentId: M:LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
-  id: ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
-  parent: LobsterFramework.GameManager
-  langs:
-  - csharp
-  - vb
-  name: ExecuteDelegate(UnityAction, float)
-  nameWithType: GameManager.ExecuteDelegate(UnityAction, float)
-  fullName: LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction, float)
-  type: Method
-  source:
-    remote:
-      path: GameManager.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: ExecuteDelegate
-    path: ../GameManager.cs
-    startLine: 98
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework
-  summary: Execute UnityAction after specified seconds of delay in the Update Loop. If delay is set to 0, action will be executed on next frame
-  example: []
-  syntax:
-    content: public static void ExecuteDelegate(UnityAction action, float timeDelay)
-    parameters:
-    - id: action
-      type: UnityEngine.Events.UnityAction
-      description: Action to be executed
-    - id: timeDelay
-      type: System.Single
-      description: ''
-    content.vb: Public Shared Sub ExecuteDelegate(action As UnityAction, timeDelay As Single)
-  overload: LobsterFramework.GameManager.ExecuteDelegate*
-  nameWithType.vb: GameManager.ExecuteDelegate(UnityAction, Single)
-  fullName.vb: LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction, Single)
-  name.vb: ExecuteDelegate(UnityAction, Single)
 references:
 - uid: LobsterFramework
   commentId: N:LobsterFramework
@@ -5065,44 +4999,3 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: LobsterFramework.GameManager.Update*
-  commentId: Overload:LobsterFramework.GameManager.Update
-  href: LobsterFramework.GameManager.html#LobsterFramework.GameManager.Update
-  name: Update
-  nameWithType: GameManager.Update
-  fullName: LobsterFramework.GameManager.Update
-- uid: LobsterFramework.GameManager.ExecuteDelegate*
-  commentId: Overload:LobsterFramework.GameManager.ExecuteDelegate
-  href: LobsterFramework.GameManager.html#LobsterFramework.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
-  name: ExecuteDelegate
-  nameWithType: GameManager.ExecuteDelegate
-  fullName: LobsterFramework.GameManager.ExecuteDelegate
-- uid: UnityEngine.Events.UnityAction
-  commentId: T:UnityEngine.Events.UnityAction
-  parent: UnityEngine.Events
-  isExternal: true
-  name: UnityAction
-  nameWithType: UnityAction
-  fullName: UnityEngine.Events.UnityAction
-- uid: UnityEngine.Events
-  commentId: N:UnityEngine.Events
-  isExternal: true
-  name: UnityEngine.Events
-  nameWithType: UnityEngine.Events
-  fullName: UnityEngine.Events
-  spec.csharp:
-  - uid: UnityEngine
-    name: UnityEngine
-    isExternal: true
-  - name: .
-  - uid: UnityEngine.Events
-    name: Events
-    isExternal: true
-  spec.vb:
-  - uid: UnityEngine
-    name: UnityEngine
-    isExternal: true
-  - name: .
-  - uid: UnityEngine.Events
-    name: Events
-    isExternal: true

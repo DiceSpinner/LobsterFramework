@@ -55,7 +55,7 @@ namespace LobsterFramework.Interaction
                 Debug.LogError("Interaction handler of " + interactorType.Name + " for " + attribute.interactableType.Name + " has bad signature!");
                 return;
             }
-            MethodInfo conversion = typeof(InteractionHandlerAttribute).GetMethod("ConvertMethod", BindingFlags.NonPublic | BindingFlags.Static);
+            MethodInfo conversion = typeof(InteractionHandlerAttribute).GetMethod(nameof(ConvertMethod), BindingFlags.NonPublic | BindingFlags.Static);
             MethodInfo converted = conversion.MakeGenericMethod(interactorType, attribute.interactableType);
             handlers[(attribute.interactableType, attribute.interactionType)] = (Func<string>)converted.Invoke(null, new object[] {method});
             interactionHandlers[interactorType] = handlers;

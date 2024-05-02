@@ -8,7 +8,10 @@ namespace LobsterFramework.Utility
     [Serializable]
     public class SerializableType<T> : ISerializationCallbackReceiver
     {
-        [SerializeField] private string qualifieldTypeName;
+        /// <summary>
+        /// Returns Type.AssemblyQualifiedName of the serialized type value
+        /// </summary>
+        [SerializeField] internal string typeName;
         private Type type;
 
         public Type Type
@@ -26,18 +29,16 @@ namespace LobsterFramework.Utility
 
         public void OnAfterDeserialize()
         {
-            if (qualifieldTypeName != default) {
-                Type = Type.GetType(qualifieldTypeName);
+            if (typeName != default) {
+                Type = Type.GetType(typeName);
             }
         }
 
         public void OnBeforeSerialize()
         {
             if (type != null) {
-                qualifieldTypeName = type.AssemblyQualifiedName;
+                typeName = type.AssemblyQualifiedName;
             }
         }
-
-
     }
 }

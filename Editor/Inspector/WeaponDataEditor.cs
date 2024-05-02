@@ -13,19 +13,10 @@ namespace LobsterFramework.Editors
     {
         private Dictionary<Type, Editor> weaponStatsEditors = new();
 
-        private GUIStyle selectWeaponStatStyle = new();
-
         public WeaponStat selectedWeaponStat = null;
 
         private Rect addWeaponStatRect;
         private Rect selectWeaponStatRect;
-
-        public void OnEnable()
-        {
-            selectWeaponStatStyle.fontStyle = FontStyle.Bold;
-            selectWeaponStatStyle.normal.textColor = Color.cyan;
-            selectWeaponStatStyle.hover.background = Texture2D.grayTexture;
-        }
 
         public override void OnInspectorGUI()
         {
@@ -55,8 +46,7 @@ namespace LobsterFramework.Editors
 
             if (aButton) // Add action component button clicked
             {
-                AddWeaponStatPopup popup = new();
-                popup.data = weaponData;
+                AddWeaponStatPopup popup = new(weaponData);
                 PopupWindow.Show(addWeaponStatRect, popup);
             }
 
@@ -92,18 +82,16 @@ namespace LobsterFramework.Editors
                     if (AddWeaponStatMenuAttribute.icons.TryGetValue(type, out Texture2D icon))
                     {
                         content.image = icon;
-                        selected = GUILayout.Button(content, selectWeaponStatStyle, GUILayout.Height(40));
+                        selected = GUILayout.Button(content, AbilityEditorConfig.ComponentSelectionStyle, GUILayout.Height(40));
                     }
                     else
                     {
-                        selected = GUILayout.Button(content, selectWeaponStatStyle);
+                        selected = GUILayout.Button(content, AbilityEditorConfig.ComponentSelectionStyle);
                     }
 
                     if (selected)
                     {
-                        SelectWeaponStatPopup popup = new SelectWeaponStatPopup();
-                        popup.editor = this;
-                        popup.data = weaponData;
+                        SelectWeaponStatPopup popup = new SelectWeaponStatPopup(this, weaponData);
                         PopupWindow.Show(selectWeaponStatRect, popup);
                     }
 

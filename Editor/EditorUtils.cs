@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.Editors
 {
@@ -45,14 +46,17 @@ namespace LobsterFramework.Editors
         }
         #endregion
 
-        public static GUIStyle BoldButtonStyle()
-        {
-            GUIStyle style = new(GUI.skin.button);
-            style.fontStyle = FontStyle.Bold;
-            style.fontSize = 12;
-            return style;
-        }
+        public static GUIStyle BoldButtonStyle = new(GUI.skin.button) { fontStyle = FontStyle.Bold, fontSize = 12 };
 
+        public static GUIStyle CentredTitleLabelStyle = new(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 14 };
+
+        #region SerializedProperty
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="property"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static bool SetPropertyPointer(SerializedProperty property, string name) {
             property.Reset();
             while (property.name != name) {
@@ -62,6 +66,21 @@ namespace LobsterFramework.Editors
             }
             return true;
         }
+
+        public static void DrawSubProperties(SerializedProperty property) {
+            property.NextVisible(true);
+            do
+            {
+                if (property.displayName != "Script")
+                {
+                    EditorGUILayout.PropertyField(property);
+                }
+            }
+            while (property.NextVisible(false));
+        }
+
+        #endregion
+
         public static Texture2D MakeBackgroundTexture(int width, int height, Color color)
         {
             Color[] pixels = new Color[width * height];

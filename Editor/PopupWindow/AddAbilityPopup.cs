@@ -5,54 +5,63 @@ using UnityEditor;
 using LobsterFramework.AbilitySystem;
 using System;
 using System.Reflection;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.Editors
 {
     public class AddAbilityPopup : PopupWindowContent
     {
-        public static AbilityData data;
-        private Vector2 scrollPosition = Vector2.zero;
+        private AbilityData data;
+        private MenuTreeDrawer<Type> menuTreeDrawer;
+
+        public AddAbilityPopup(AbilityData abilityData) {
+            data = abilityData;
+            menuTreeDrawer = new(AddAbilityMenuAttribute.root, AddAbility, DrawMenu, DrawOption);
+            menuTreeDrawer.SetColors(AbilityEditorConfig.MenuPopupColor, AbilityEditorConfig.AbilityPopupColor);
+            menuTreeDrawer.SetEmptyNote("Option Exhausted");
+        }
+
+        #region Handles for menu drawer
+        private void AddAbility(Type type) {
+            var m = typeof(AbilityData).GetMethod(nameof(AbilityData.AddAbility), BindingFlags.Instance | BindingFlags.NonPublic);
+            MethodInfo mRef = m.MakeGenericMethod(type);
+            mRef.Invoke(data, null);
+        }
+
+        private GUIContent content = new();
+        private GUIContent DrawMenu(MenuTree<Type> node) {
+            content.text = node.menuName;
+            content.image = AbilityEditorConfig.GetFolderIcon(node.path[(AddAbilityMenuAttribute.RootName.Length + 1)..]);
+            return content;
+        }
+
+        private GUIContent DrawOption(Type type) {
+            if (data.abilities.ContainsKey(type.AssemblyQualifiedName)) {
+                return null;
+            }
+            content.text = type.Name;
+            if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(type, out Texture2D icon))
+            {
+                content.image = icon;
+            }
+            else { 
+                content.image = null;
+            }
+            return content;
+        }
+        #endregion
 
         public override void OnGUI(Rect rect)
         {
-            if(data == null)
+            EditorGUILayout.LabelField("Add Abilities", EditorUtils.CentredTitleLabelStyle);
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            if (data == null)
             {
                 EditorGUILayout.LabelField("Cannot Find AbilityData!");
                 return;
             }
-            GUILayout.BeginVertical();
-            GUILayout.FlexibleSpace();
-            bool hasAbility = false;
-            scrollPosition = GUILayout.BeginScrollView(scrollPosition);
-            foreach (Type type in AddAbilityMenuAttribute.abilities)
-            {
-                // Display icon in options if there's one for the ability script
-                if (data.abilities.ContainsKey(type.AssemblyQualifiedName))
-                {
-                    continue;
-                }
-                hasAbility = true;
-                GUIContent content = new();
-                content.text = type.Name;
-                if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(type, out Texture2D icon))
-                {
-                    content.image = icon;
-                }
-                if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
-                {
-                    var m = typeof(AbilityData).GetMethod("AddAbility", BindingFlags.Instance | BindingFlags.NonPublic);
-                    MethodInfo mRef = m.MakeGenericMethod(type);
-                    mRef.Invoke(data, null);
-                }
-            }
-            GUILayout.EndScrollView();
-            if (!hasAbility) {
-                GUIStyle color = new();
-                color.normal.textColor = Color.yellow;
-                EditorGUILayout.LabelField("No Abilitys to add!", color);
-            }
-            GUILayout.FlexibleSpace();
-            GUILayout.EndVertical();
+            menuTreeDrawer.Draw();
+            GUILayout.Space(EditorGUIUtility.singleLineHeight);
         }
     }
 }

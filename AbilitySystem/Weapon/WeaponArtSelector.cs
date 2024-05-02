@@ -10,7 +10,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     public class WeaponArtSelector : SerializableType<Ability>
     {
         public WeaponType weaponType;
-        [SerializeField] private string configName;
-        public string ConfigName { get { return configName; } }
+        [SerializeField] internal string instance=AbilityData.defaultAbilityInstance;
+        public string Instance { get { return instance; } }
     }
 }

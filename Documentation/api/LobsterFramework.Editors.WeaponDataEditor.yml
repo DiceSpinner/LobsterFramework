@@ -5,7 +5,6 @@ items:
   id: WeaponDataEditor
   parent: LobsterFramework.Editors
   children:
-  - LobsterFramework.Editors.WeaponDataEditor.OnEnable
   - LobsterFramework.Editors.WeaponDataEditor.OnInspectorGUI
   - LobsterFramework.Editors.WeaponDataEditor.selectedWeaponStat
   langs:
@@ -159,7 +158,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: selectedWeaponStat
     path: ../Editor/Inspector/WeaponDataEditor.cs
-    startLine: 17
+    startLine: 15
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -168,32 +167,6 @@ items:
     return:
       type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
     content.vb: Public selectedWeaponStat As WeaponStat
-- uid: LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  commentId: M:LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  id: OnEnable
-  parent: LobsterFramework.Editors.WeaponDataEditor
-  langs:
-  - csharp
-  - vb
-  name: OnEnable()
-  nameWithType: WeaponDataEditor.OnEnable()
-  fullName: LobsterFramework.Editors.WeaponDataEditor.OnEnable()
-  type: Method
-  source:
-    remote:
-      path: Editor/Inspector/WeaponDataEditor.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnEnable
-    path: ../Editor/Inspector/WeaponDataEditor.cs
-    startLine: 22
-  assemblies:
-  - LobsterFrameworkEditor
-  namespace: LobsterFramework.Editors
-  syntax:
-    content: public void OnEnable()
-    content.vb: Public Sub OnEnable()
-  overload: LobsterFramework.Editors.WeaponDataEditor.OnEnable*
 - uid: LobsterFramework.Editors.WeaponDataEditor.OnInspectorGUI
   commentId: M:LobsterFramework.Editors.WeaponDataEditor.OnInspectorGUI
   id: OnInspectorGUI
@@ -212,7 +185,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnInspectorGUI
     path: ../Editor/Inspector/WeaponDataEditor.cs
-    startLine: 29
+    startLine: 20
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -3513,12 +3486,6 @@ references:
   - uid: LobsterFramework.AbilitySystem.WeaponSystem
     name: WeaponSystem
     href: LobsterFramework.AbilitySystem.WeaponSystem.html
-- uid: LobsterFramework.Editors.WeaponDataEditor.OnEnable*
-  commentId: Overload:LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  href: LobsterFramework.Editors.WeaponDataEditor.html#LobsterFramework.Editors.WeaponDataEditor.OnEnable
-  name: OnEnable
-  nameWithType: WeaponDataEditor.OnEnable
-  fullName: LobsterFramework.Editors.WeaponDataEditor.OnEnable
 - uid: UnityEditor.Editor.OnInspectorGUI
   commentId: M:UnityEditor.Editor.OnInspectorGUI
   parent: UnityEditor.Editor

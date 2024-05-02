@@ -58,15 +58,7 @@ namespace LobsterFramework.Editors {
                 {
                     var settings = GetSerializedSettings();
                     var property = settings.GetIterator();
-                    property.NextVisible(true) ;
-                    do
-                    {
-                        if (property.displayName != "Script")
-                        {
-                            EditorGUILayout.PropertyField(property);
-                        }
-                    }
-                    while (property.NextVisible(false));
+                    EditorUtils.DrawSubProperties(property);
                     
                     settings.ApplyModifiedProperties();
                 },
@@ -80,8 +72,10 @@ namespace LobsterFramework.Editors {
         #endregion
 
         [SerializeField] private List<FolderIcon> menuIcons;
-        [SerializeField] internal Color menuColor;
-        [SerializeField] internal Color stateColor;
+        [SerializeField] internal Color menuPopupColor;
+        [SerializeField] internal Color statePopupColor;
+        [SerializeField] internal GUIStyle stateStyle;
+        [SerializeField] internal GUIStyle initialStateStyle;
 
         internal static Texture2D GetFolderIcon(string path)
         {
@@ -95,8 +89,11 @@ namespace LobsterFramework.Editors {
             return null;
         }
 
-        internal static Color MenuColor { get { return Instance.menuColor; } }
-        internal static Color StateColor { get { return Instance.stateColor; } }
+        internal static Color MenuPopupColor { get { return Instance.menuPopupColor; } }
+        internal static Color StatePopupColor { get { return Instance.statePopupColor; } }
+
+        internal static GUIStyle StateStyle { get { return Instance.stateStyle; } }
+        internal static GUIStyle InitialStateStyle { get { return Instance.initialStateStyle; }  }
     }
 
     [Serializable]

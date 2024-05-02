@@ -9,9 +9,9 @@ using LobsterFramework.AbilitySystem;
 namespace LobsterFramework.Editors
 {
     [CustomEditor(typeof(AbilityManager))]
-    public class AbilityManagerEditor : UnityEditor.Editor
+    public class AbilityManagerEditor : Editor
     {
-        private UnityEditor.Editor editor;
+        private Editor editor;
         private bool editData = false;
 
         public override void OnInspectorGUI()
@@ -19,7 +19,7 @@ namespace LobsterFramework.Editors
             base.OnInspectorGUI();
             AbilityManager abilityManager = (AbilityManager)target;
             EditorGUI.BeginChangeCheck();
-            SerializedProperty abilityData = serializedObject.FindProperty("abilityData");
+            SerializedProperty abilityData = serializedObject.FindProperty(nameof(abilityManager.abilityData));
             if (!editData)
             {
                 EditorGUILayout.BeginHorizontal();
@@ -55,13 +55,13 @@ namespace LobsterFramework.Editors
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Save", GUILayout.Width(80)))
                 {
-                    abilityManager.SaveRuntimeData(""); 
+                    abilityManager.Save(""); 
                 }
 
                 if (GUILayout.Button("Save As", GUILayout.Width(80)))
                 {
                     string path = EditorUtility.SaveFilePanel("Select Saving Path", Application.dataPath, abilityManager.abilityData.name, "asset");
-                    if (path != null) { abilityManager.SaveRuntimeData(path); } 
+                    if (path != null) { abilityManager.Save(path); } 
                     GUIUtility.ExitGUI();
                 }
                 GUILayout.FlexibleSpace();

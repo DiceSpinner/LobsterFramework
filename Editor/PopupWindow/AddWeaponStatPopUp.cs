@@ -42,7 +42,7 @@ namespace LobsterFramework.Editors
 
         private GUIContent DrawMenu(MenuTree<Type> menu) {
             content.text = menu.menuName;
-            content.image = AbilityEditorConfig.GetFolderIcon(menu.path[(AddWeaponStatMenuAttribute.RootName.Length + 1)..]);
+            content.image = AbilityEditorConfig.GetFolderIcon(menu.path[(Constants.MenuRootName.Length + 1)..]);
             return content;
         }
         #endregion

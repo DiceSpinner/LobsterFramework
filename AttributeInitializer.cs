@@ -6,27 +6,73 @@ using LobsterFramework.AbilitySystem.WeaponSystem;
 using LobsterFramework.Interaction;
 using LobsterFramework.AI;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
-    /// Initializes all of the custom attributes of LobsterFramework for all assemblies
+    /// Initializes all of the custom attributes of LobsterFramework for all assemblies that reference it.
     /// </summary>
     public class AttributeInitializer
     {
-        public static void Initialize(Assembly assembly)
+        /// <summary>
+        /// Flag to indicate whether attribute initialization is completed.
+        /// </summary>
+        public static bool Finished = false;
+
+        public static event Action OnInitializationComplete;
+
+#if UNITY_EDITOR
+        [UnityEditor.Callbacks.DidReloadScripts(Constants.AttributeInitOrder)]
+#else
+        [RuntimeInitializeOnLoadMethod(Constants.AttributeInitOrder)]
+#endif
+        private static void InitializeAttributes()
+        {
+            if (Finished) {
+                return;
+            }
+            Assembly frameworkAssembly = typeof(Setting).Assembly;
+            InitializeAssemblyAttributes(frameworkAssembly);
+
+            AssemblyName assemblyName = frameworkAssembly.GetName();
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                AssemblyName[] references = assembly.GetReferencedAssemblies();
+                foreach (AssemblyName reference in references)
+                {
+                    if (reference.Name == assemblyName.Name)
+                    {
+                        InitializeAssemblyAttributes(assembly);
+                        // Debug.Log($"Assembly {assembly.GetName().Name} use of LobsterFramework detected!"); 
+                        break;
+                    }
+                }
+            }
+            Finished = true;
+            try
+            {
+                OnInitializationComplete?.Invoke();
+            }catch (Exception ex)
+            {
+                Debug.LogException(ex);
+            }
+            OnInitializationComplete = null;
+        }
+        private static void InitializeAssemblyAttributes(Assembly assembly)
         {
             Type[] types = assembly.GetTypes();
 
             // AbilitySystem
             AddAbilityMenu(types);
-            AddAbilityStatMenu(types);
+            AddAbilityComponentMenu(types);
             AddComponentRequirement(types); 
             AddAbilityStatRequirement(types);
+
+            // Weapon System
             AddWeaponStatMenu(types);
             AddWeaponArtMenu(types);
             AddWeaponStatRequirement(types);
-            AddOffhandAbilitySpec(types);
             AddWeaponDataEntries(types);
+            MarkOffhandAbilities(types);
 
             // Interaction
             AddInteractions(types);
@@ -41,19 +87,29 @@ namespace LobsterFramework.Utility
             foreach (Type type in types)
             {
                 AddAbilityMenuAttribute info = type.GetCustomAttribute<AddAbilityMenuAttribute>();
-                if (info != null) {
-                    info.AddAbility(type);
+                try
+                {
+                    info?.AddAbility(type);
+                }catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }
 
-        private static void AddAbilityStatMenu(Type[] types) {
+        private static void AddAbilityComponentMenu(Type[] types) {
             foreach (Type type in types)
             {
                 AddAbilityComponentMenuAttribute info = type.GetCustomAttribute<AddAbilityComponentMenuAttribute>();
-                if (info != null)
+                try
                 {
-                    info.Init(type);
+                    info?.Init(type);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }
@@ -61,10 +117,16 @@ namespace LobsterFramework.Utility
         private static void AddComponentRequirement(Type[] types) {
             foreach (Type type in types)
             {
-                ComponentRequiredAttribute info = type.GetCustomAttribute<ComponentRequiredAttribute>(true);
-                if (info != null)
-                {
-                    info.Init(type);
+                foreach (var info in type.GetCustomAttributes<RequireComponentReferenceAttribute>(true)) {
+                    try
+                    {
+                        info?.Init(type);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogWarning($"Exception occured while initializing attribute!");
+                        Debug.LogException(ex);
+                    }
                 }
             }
         }
@@ -72,7 +134,31 @@ namespace LobsterFramework.Utility
             foreach (Type type in types)
             {
                 foreach (RequireAbilityComponentsAttribute info in type.GetCustomAttributes<RequireAbilityComponentsAttribute>(true)) {
-                    info.Init(type);
+                    try
+                    {
+                        info?.Init(type);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogWarning($"Exception occured while initializing attribute!");
+                        Debug.LogException(ex);
+                    }
+                }
+            }
+        }
+
+        private static void MarkOffhandAbilities(Type[] types) {
+            foreach (Type type in types)
+            {
+                OffhandWeaponAbilityAttribute info = type.GetCustomAttribute<OffhandWeaponAbilityAttribute>(true);
+                try
+                {
+                    info?.Init(type);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }
@@ -82,7 +168,15 @@ namespace LobsterFramework.Utility
             {
                 foreach (AddWeaponStatMenuAttribute info in type.GetCustomAttributes<AddWeaponStatMenuAttribute>())
                 {
-                    info.Init(type);
+                    try
+                    {
+                        info?.Init(type);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogWarning($"Exception occured while initializing attribute!");
+                        Debug.LogException(ex);
+                    }
                 }
             }
         }
@@ -90,9 +184,15 @@ namespace LobsterFramework.Utility
         private static void AddWeaponArtMenu(Type[] types) {
             foreach (Type type in types)
             {
-                foreach (AddWeaponArtMenuAttribute info in type.GetCustomAttributes<AddWeaponArtMenuAttribute>())
+                var info = type.GetCustomAttribute<WeaponArtAttribute>();
+                try
                 {
-                    info.Init(type);
+                    info?.Init(type);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }
@@ -102,7 +202,15 @@ namespace LobsterFramework.Utility
             {
                 foreach (RequireWeaponStatAttribute info in type.GetCustomAttributes<RequireWeaponStatAttribute>())
                 {
-                    info.Init(type);
+                    try
+                    {
+                        info?.Init(type);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogWarning($"Exception occured while initializing attribute!");
+                        Debug.LogException(ex);
+                    }
                 }
             }
         }
@@ -111,19 +219,14 @@ namespace LobsterFramework.Utility
             foreach (Type type in types)
             {
                 RegisterInteractorAttribute info = type.GetCustomAttribute<RegisterInteractorAttribute>();
-                if (info != null)
+                try
                 {
-                    info.Init(type);
+                    info?.Init(type);
                 }
-            }
-        }
-
-        private static void AddOffhandAbilitySpec(Type[] types) {
-            foreach (Type type in types) {
-                OffhandWeaponAbilityAttribute info = type.GetCustomAttribute<OffhandWeaponAbilityAttribute>();
-                if (info != null)
+                catch (Exception ex)
                 {
-                    info.Init(type);
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }
@@ -133,9 +236,25 @@ namespace LobsterFramework.Utility
             foreach (Type type in types)
             {
                 WeaponAnimationAttribute info = type.GetCustomAttribute<WeaponAnimationAttribute>();
-                if (info != null)
+                try
                 {
-                    info.Init(type);
+                    info?.Init(type);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
+                }
+
+                WeaponAnimationAddonAttribute setting = type.GetCustomAttribute<WeaponAnimationAddonAttribute>();
+                try
+                {
+                    setting?.Init(type);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }
@@ -145,9 +264,14 @@ namespace LobsterFramework.Utility
             foreach (Type type in types)
             {
                 AddStateMenuAttribute info = type.GetCustomAttribute<AddStateMenuAttribute>();
-                if (info != null)
+                try
                 {
-                    info.Init(type);
+                    info?.Init(type);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }
@@ -157,9 +281,14 @@ namespace LobsterFramework.Utility
             foreach (Type type in types)
             {
                 StateTransitionAttribute info = type.GetCustomAttribute<StateTransitionAttribute>();
-                if (info != null)
+                try
                 {
-                    info.Init(type);
+                    info?.Init(type);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"Exception occured while initializing attribute!");
+                    Debug.LogException(ex);
                 }
             }
         }

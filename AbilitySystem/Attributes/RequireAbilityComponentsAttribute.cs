@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -11,17 +12,17 @@ namespace LobsterFramework.AbilitySystem
     [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
     public class RequireAbilityComponentsAttribute : Attribute
     {
-        public static Dictionary<Type, HashSet<Type>> requirement = new();
-        public static Dictionary<Type, HashSet<Type>> rev_requirement = new();
+        internal static Dictionary<Type, HashSet<Type>> requirement = new();
+        internal static Dictionary<Type, HashSet<Type>> rev_requirement = new();
 
         private Type[] abilityComponents;
 
-        public RequireAbilityComponentsAttribute(params Type[] abilityComponents)
+        public RequireAbilityComponentsAttribute( params Type[] abilityComponents)
         {
             this.abilityComponents = abilityComponents;
         }
 
-        public void Init(Type ability) {
+        internal void Init(Type ability) {
             if (!ability.IsSubclassOf(typeof(Ability)))
             {
                 Debug.LogError("Type:" + ability.ToString() + " is not an Ability!");
@@ -34,6 +35,9 @@ namespace LobsterFramework.AbilitySystem
             
             foreach (Type t in abilityComponents)
             {
+                if (t == null) {
+                    continue;
+                }
                 if (!t.IsSubclassOf(typeof(AbilityComponent)))
                 {
                     Debug.LogError("Cannot apply require AbilityComponent of type:" + t.ToString() + " to " + ability.ToString());

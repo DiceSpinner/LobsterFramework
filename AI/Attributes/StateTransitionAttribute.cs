@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace LobsterFramework.AI
 {
@@ -15,7 +16,7 @@ namespace LobsterFramework.AI
 
         private Type[] transitions;
 
-        public StateTransitionAttribute(params Type[] transitions) {
+        public StateTransitionAttribute( params Type[] transitions) {
             this.transitions = transitions;
         }
 
@@ -25,9 +26,6 @@ namespace LobsterFramework.AI
                 return;
             }
 
-            if (transitions == null) {
-                return;
-            }
             transitionTable[state] = new();
             foreach (Type t in transitions) {
                 if (!t.IsSubclassOf(typeof(State))) {

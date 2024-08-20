@@ -9,21 +9,21 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     /// <summary>
     /// Use the weapon ability specified by the weapon equipped. Can be used to query the states of the weapon ability being runned.
     /// </summary>
-    [ComponentRequired(typeof(WeaponManager))]
-    [AddAbilityMenu("LobsterFramework")]
-    public class WeaponArt : Ability
+    [RequireComponentReference(typeof(WeaponManager))]
+    [AddAbilityMenu(Constants.Framework)] 
+    public sealed class WeaponArt : Ability
     {
-        private WeaponManager weaponWielder;
+        private WeaponManager weaponManager;
 
         protected override void InitializeSharedReferences()
         {
-            weaponWielder = abilityManager.GetComponentInBoth<WeaponManager>();
+            weaponManager = GetComponentReference<WeaponManager>();
         }
 
         protected override bool ConditionSatisfied()
         {
-            if (weaponWielder.Mainhand != null) {
-                ValueTuple<Type, string> setting = weaponWielder.Mainhand.AbilitySetting;
+            if (weaponManager.Mainhand != null) {
+                ValueTuple<Type, string> setting = weaponManager.Mainhand.AbilitySetting;
                 return abilityManager.IsAbilityReady(setting.Item1, setting.Item2);
             }
             return false;
@@ -31,9 +31,15 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
         protected override void OnAbilityEnqueue()
         {
-            ValueTuple<Type, string> setting = weaponWielder.Mainhand.AbilitySetting;
-            abilityManager.EnqueueAbility(setting.Item1, setting.Item2);
-            JoinAsSecondary(setting.Item1, setting.Item2);
+            (Type abilityType, string instance) = weaponManager.Mainhand.AbilitySetting;
+            abilityManager.EnqueueAbility(abilityType, instance);
+            JoinAsSecondary(abilityType, instance);
+        }
+
+        protected override void OnAbilityFinish()
+        {
+           (Type abilityType, string instance) = weaponManager.Mainhand.AbilitySetting;
+            abilityManager.SuspendAbilityInstance(abilityType, instance);
         }
 
         protected override bool Action()

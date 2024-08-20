@@ -48,7 +48,7 @@ namespace LobsterFramework.Editors
 
         private GUIContent DrawMenu(MenuTree<Type> tree) {
             content.text = tree.menuName;
-            content.image = AbilityEditorConfig.GetFolderIcon(tree.path[(AddAbilityComponentMenuAttribute.RootName.Length + 1)..]);
+            content.image = AbilityEditorConfig.GetFolderIcon(tree.path[(Constants.MenuRootName.Length + 1)..]);
             return content;
         }
 

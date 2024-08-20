@@ -79,7 +79,7 @@ namespace LobsterFramework.Editors
                 configEditor.OnInspectorGUI();
 
                 #region Remove Instance
-                if (isAsset &&  selectedConfig != AbilityData.defaultAbilityInstance) {
+                if (isAsset &&  selectedConfig != Ability.DefaultAbilityInstance) {
                     GUILayout.Space(10);
                     GUILayout.BeginHorizontal();
                     GUILayout.FlexibleSpace();

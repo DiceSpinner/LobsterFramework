@@ -36,7 +36,7 @@ namespace LobsterFramework.Editors
                 content.image = null;
             }
 
-            if (stateType == data.initialState.GetType())
+            if (data.initialState != null && stateType == data.initialState.GetType())
             {
                 GUI.color = Color.green;
                 content.text = $"{stateType.Name} (Initial State)";

@@ -10,15 +10,24 @@ namespace LobsterFramework.AI
     public abstract class State : ScriptableObject
     {
         [HideInInspector]
-        internal protected AIController controller;
-        [HideInInspector]
         internal protected StateMachine stateMachine;
+
+        /// <summary>
+        /// Attempts to get the reference of the specified component type from <see cref="StateMachine"/>. 
+        /// The type of the reference should be one of the required types applied via <see cref="RequireComponentReferenceAttribute"/> on this state class.
+        /// </summary>
+        /// <typeparam name="T">The type of the component looking for</typeparam>
+        /// <param name="index">The index to the list of components of the type specified. Use of type safe enum is strongly recommended.</param>
+        /// <returns>The component reference stored in <see cref="StateMachine"/> if it exists, otherwise null</returns>
+        /// <remarks>This is a shorthand call for <see cref="ReferenceProvider.GetComponentReference{T}(Type, int)"/> via <see cref="stateMachine"/></remarks>
+        protected T GetComponentReference<T>(int index=0) where T : Component {
+            return stateMachine.GetComponentReference<T>(GetType(), index);
+        }
 
         /// <summary>
         /// Callback to do context environment initialization
         /// </summary>
-        /// <param name="obj">The gameobject where StateMachine is attached to.</param>
-        internal protected abstract void InitializeFields(GameObject obj);
+        internal protected abstract void InitializeFields();
 
         /// <summary>
         /// Callback to clean up context environment

@@ -15,8 +15,12 @@ namespace LobsterFramework.Utility
         protected Dictionary<int, T> stats = new();
         protected T baseValue;
         private T value;
-        internal Action onEffectorCleared;
-        internal Action<T> onValueChanged;
+        internal event Action OnEffectorCleared;
+
+        /// <summary>
+        /// Invoked when the combined valus is changed, using the new value as the argument
+        /// </summary>
+        public event Action<T> OnValueChanged;
 
         public static implicit operator T(CombinedValue<T> value) { return value.Value; }
 
@@ -49,7 +53,7 @@ namespace LobsterFramework.Utility
             T prevValue = value;
             value = ComputeValue();
             if (!prevValue.Equals(value)) {
-                onValueChanged?.Invoke(value);
+                OnValueChanged?.Invoke(value);
             }
             return id;
         }
@@ -59,7 +63,7 @@ namespace LobsterFramework.Utility
                 value = ComputeValue();
                 if (!prevValue.Equals(value))
                 {
-                    onValueChanged?.Invoke(value);
+                    OnValueChanged?.Invoke(value);
                 }
                 
                 distributor.RecycleID(id);
@@ -88,13 +92,12 @@ namespace LobsterFramework.Utility
                 distributor.RecycleID(id);
             }
             stats.Clear();
-            onEffectorCleared?.Invoke();
+            OnEffectorCleared?.Invoke();
         }
 
         /// <summary>
-        /// Returns a BufferedValueAccessor that manages setting and removing the effector
+        /// Returns a CombinedValueEffector that can influence this value
         /// </summary>
-        /// <returns> A BufferedValueAccessor that manages setting and removing the effector </returns>
         public CombinedValueEffector<T> MakeEffector() {
             return new(this);
         }
@@ -118,12 +121,12 @@ namespace LobsterFramework.Utility
         internal CombinedValueEffector(CombinedValue<T> stat)
         {
             this.stat = stat;
-            stat.onEffectorCleared += Release;
+            stat.OnEffectorCleared += Release;
         }
 
         ~CombinedValueEffector() {
             if (stat != null) {
-                stat.onEffectorCleared -= Release;
+                stat.OnEffectorCleared -= Release;
             }
         }
 

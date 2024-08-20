@@ -5,24 +5,25 @@ using LobsterFramework.Utility;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
-    [AddAbilityMenu("LobsterFramework")]
+    [AddAbilityMenu(Constants.Framework)]
+    [WeaponArt(BlackList = true)]
     [WeaponAnimation(typeof(GuardAnimations))]
-    [ComponentRequired(typeof(WeaponManager))]
-    public class Guard : WeaponAbility
+    [RequireComponentReference(typeof(MovementController))]
+    public sealed class Guard : WeaponAbility
     {
         private MovementController moveControl;
         private CombinedValueEffector<float> moveModifier;
         private CombinedValueEffector<float> rotateModifier;
         private bool leftDeflect = false;
 
-        protected override void Init()
+        protected override void InitWeaponAbilityReferences()
         {
             moveControl = WeaponManager.Wielder.GetComponent<MovementController>();
             moveModifier = moveControl.moveSpeedModifier.MakeEffector();
             rotateModifier = moveControl.rotateSpeedModifier.MakeEffector();
         }
 
-        protected override bool WConditionSatisfied()
+        protected override bool WeaponAbilityReady()
         {
             return WeaponManager.Mainhand.state == WeaponState.Idle;
         }
@@ -38,17 +39,17 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             // Start animation
             AnimationClip deflectAnimation;
             if (leftDeflect)
-            {
-                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip(context.currentWeapon.WeaponType, GetType(), (int)GuardAnimations.DeflectLeft);
+            { 
+                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip<Guard>(context.currentWeapon.WeaponType, (int)GuardAnimations.DeflectLeft);
             }
             else {
-                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip(context.currentWeapon.WeaponType, GetType(), (int)GuardAnimations.DeflectRight);
+                deflectAnimation = WeaponManager.AnimationData.GetAbilityClip<Guard>(context.currentWeapon.WeaponType, (int)GuardAnimations.DeflectRight);
             }
             leftDeflect = !leftDeflect;
             context.animancerState = abilityManager.StartAnimation(this, Instance, deflectAnimation, context.currentWeapon.DefenseSpeed);
 
             // Movement constraints
-            context.currentWeapon.onWeaponDeflect += OnDeflect;
+            context.currentWeapon.OnWeaponDeflect += OnDeflect;
             moveModifier.Apply(context.currentWeapon.GMoveSpeedModifier);
             rotateModifier.Apply(context.currentWeapon.GRotationSpeedModifier);
         }

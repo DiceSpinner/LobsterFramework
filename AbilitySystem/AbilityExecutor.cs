@@ -14,8 +14,8 @@ namespace LobsterFramework.AbilitySystem{
          * Actions with low priorities will be executed first to allow further execution of higher priority actions to override/modify their 
          * effects.
          */
-        private List<AbilityInstance> abilityQueue = new();
-
+        private readonly List<AbilityInstance> abilityQueue = new();
+         
         private void Awake()
         {
             if (_instance == null)
@@ -46,7 +46,7 @@ namespace LobsterFramework.AbilitySystem{
                     continue;
                 }
 
-                if (!instance.ability.Execute(instance.configName))
+                if (!instance.ability.Execute(instance.name))
                 {
                     abilityQueue.RemoveAt(i);
                     instance.StopAbility();

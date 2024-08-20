@@ -15,9 +15,9 @@ namespace LobsterFramework.Utility
         private IEnumerator<CoroutineOption> enumerator;
         private Coroutine waitFor; // The child coroutine to wait for
         private Func<bool> conditionSatisfied;
-        private bool useUnsacaledWaitTime; // Whether to use unscaled time
+        private bool useUnsacaledWaitTime; // Whether to use unscaled time (ignore Time.scale effect)
         private float awakeTime; // The time this coroutine should continue executing
-        public event Action OnReset;
+        public event Action OnReset; // Called when this coroutine is reset
 
         /// <summary>
         /// True if the coroutine is finished, false otherwise
@@ -50,7 +50,7 @@ namespace LobsterFramework.Utility
                 return true;
             }
 
-            // Check for wait coroutines
+            // Wait for the other coroutine to finish
             if (waitFor != null)
             {
                 if (!waitFor.IsFinished)
@@ -62,7 +62,7 @@ namespace LobsterFramework.Utility
                 }
             }
 
-            // Check for wait Condition
+            // Check for wait condition function
             if (conditionSatisfied != null) {
                 if (!conditionSatisfied.Invoke())
                 {
@@ -80,6 +80,7 @@ namespace LobsterFramework.Utility
             if (!next)
             {
                 IsFinished = true;
+                enumerator.Dispose();
                 return false;
             }
 
@@ -88,6 +89,7 @@ namespace LobsterFramework.Utility
             // Reset the coroutine
             if (option.reset)
             {
+                enumerator.Dispose();
                 enumerator = coroutine.GetEnumerator();
                 OnReset?.Invoke();
                 return true;
@@ -116,10 +118,12 @@ namespace LobsterFramework.Utility
             if (option.coroutineToWait != null) { // Cannot wait for self
                 if (option.coroutineToWait == this) {
                     Debug.LogException(new Exception("The coroutine cannot wait for itself!"));
+                    enumerator.Dispose();
                     return false;
                 }
                 if (option.coroutineToWait.waitFor == this) {
                     Debug.LogException(new Exception("Dead lock detected!"));
+                    enumerator.Dispose();
                     return false;
                 }
                 waitFor = option.coroutineToWait;
@@ -138,6 +142,7 @@ namespace LobsterFramework.Utility
         /// Mark coroutine as stopped, it will not be executed further
         /// </summary>
         public void Stop() {
+            enumerator.Dispose();
             IsFinished = true;
         }
     }

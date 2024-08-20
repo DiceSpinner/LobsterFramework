@@ -10,9 +10,8 @@ using UnityEditor;
 
 namespace LobsterFramework.AI
 {
-    public class StateMachine : MonoBehaviour
+    public class StateMachine : ReferenceProvider
     {
-        [SerializeField] private AIController controller;
         [SerializeField, DisableEditInPlayMode] internal StateData inputData;
         internal StateData runtimeData;
 
@@ -45,13 +44,29 @@ namespace LobsterFramework.AI
                 }
                 runtimeData = inputData.Clone();
             }
+            Bind(runtimeData);
             currentState = runtimeData.initialState;
-            runtimeData.Initialize(this, controller);
+            runtimeData.Initialize(this);
         }
 
         private void OnDisable()
         {
             runtimeData.Close();
+            Bind(inputData);
+        }
+
+        private new void OnValidate()
+        {
+            if (AttributeInitializer.Finished)
+            {
+                Bind(inputData);
+            }
+            else
+            {
+                void lambda() { Bind(inputData); }
+                AttributeInitializer.OnInitializationComplete -= lambda;
+                AttributeInitializer.OnInitializationComplete += lambda;
+            }
         }
 
         public void Update()

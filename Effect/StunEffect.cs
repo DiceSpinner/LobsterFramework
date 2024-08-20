@@ -25,7 +25,7 @@ namespace LobsterFramework.Effects
             
             abilityRunner = processor.GetComponentInBoth<AbilityManager>();
             if (abilityRunner != null) {
-                abilityLock = abilityRunner.actionLock.MakeEffector();
+                abilityLock = abilityRunner.ActionBlocked.MakeEffector();
                 abilityLock.Apply(true);
             }
         }

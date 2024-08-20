@@ -9,11 +9,12 @@ using LobsterFramework.AbilitySystem;
 namespace LobsterFramework.Editors
 {
     [CustomEditor(typeof(AbilityManager))]
-    public class AbilityManagerEditor : Editor
+    public class AbilityManagerEditor : ReferenceProviderEditor
     {
         private Editor editor;
         private bool editData = false;
 
+        private static GUIContent label = new("Action Blocked", "Flag to indicate whether the character is able to perform actions.");
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
@@ -32,7 +33,13 @@ namespace LobsterFramework.Editors
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
             }
-            EditorGUILayout.LabelField("Is Blocked", abilityManager.ActionBlocked + "");
+            if (EditorApplication.isPlaying) {
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField(label);
+                EditorGUILayout.LabelField(abilityManager.ActionBlocked + "");
+                EditorGUILayout.EndHorizontal();
+            }
+
             abilityManager.DisplayCurrentExecutingAbilitiesInEditor();
 
             if (editData)

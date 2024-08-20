@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,30 +9,18 @@ namespace LobsterFramework
 	/// </summary>
 	public class SceneLoader : MonoBehaviour
 	{
-		[SerializeField] private SceneEventChannel loadChannel;
-		[SerializeField] private SceneEventChannel unloadChannel;
 		[SerializeField] List<string> scenesToLoad;
 
         private void Awake()
         {
-            loadChannel.OnEventRaised += LoadScene;
-            unloadChannel.OnEventRaised += UnloadScene;
-			foreach (string scene in scenesToLoad)
-			{
-				if (!SceneManager.GetSceneByName(scene).isLoaded) {
-                    SceneManager.LoadScene(scene, LoadSceneMode.Additive);
-                }
+			HashSet<string> items = new HashSet<string>(scenesToLoad);
+			for (int i = 0;i < SceneManager.sceneCount;i++) {
+				Scene scene = SceneManager.GetSceneAt(i);
+				items.Remove(scene.name);
+			}
+			foreach(string item in items) { 
+				SceneManager.LoadScene(item, LoadSceneMode.Additive);
 			}
         }
-
-		private void LoadScene(Scene scene)
-		{
-			SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Additive);
-		}
-
-		private void UnloadScene(Scene scene)
-		{
-			SceneManager.UnloadSceneAsync(scene.ToString());
-		}
 	}
 }

@@ -1,6 +1,10 @@
 using LobsterFramework.Utility;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
+using LobsterFramework.AbilitySystem;
+
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -12,7 +16,7 @@ namespace LobsterFramework.AI
     /// Represents the state information used by the state machine.
     /// </summary>
     [CreateAssetMenu(menuName = "StateMachine/StateData")]
-    public class StateData : ScriptableObject
+    public class StateData : ReferenceRequester
     {
         [SerializeField] internal StateDicationary states = new();
         [SerializeField] internal State initialState;
@@ -98,11 +102,10 @@ namespace LobsterFramework.AI
             return true;
         }
 
-        internal void Initialize(StateMachine machine, AIController controller) {
+        internal void Initialize(StateMachine machine) {
             foreach (State state in states.Values) {
                 state.stateMachine = machine;
-                state.controller = controller;
-                state.InitializeFields(machine.gameObject);
+                state.InitializeFields();
             }
         }
 
@@ -110,6 +113,17 @@ namespace LobsterFramework.AI
             foreach (State state in states.Values)
             {
                 state.Close();
+            }
+        }
+
+        public override IEnumerator<Type> GetRequests()
+        {
+            foreach (State state in states.Values) {
+                Type type = state.GetType();
+                if (RequireComponentReferenceAttribute.Requirement.ContainsKey(type))
+                {
+                    yield return type;
+                }
             }
         }
     }

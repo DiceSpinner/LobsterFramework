@@ -220,6 +220,7 @@ namespace LobsterFramework.Editors
                     }
                     else
                     {
+                        label.text += " (Missing)";
                         Color before = GUI.color;
                         GUI.color = Color.red;
                         EditorGUILayout.LabelField(label, EditorStyles.boldLabel);

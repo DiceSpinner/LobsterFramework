@@ -17,9 +17,8 @@ namespace LobsterFramework.AbilitySystem {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class AddAbilityMenuAttribute : Attribute
     {
-        public const string RootName = "Root";
-
         internal static Dictionary<Type, Texture2D> abilityIcons = new();
+        internal static Dictionary<Type, GUIContent> abilityDisplayEntries = new();
 
         /// <summary>
         /// Stores lambdas that creates and returns the AbilityConfig /AbilityChannel/AbilityContext for the corresponding ability
@@ -29,7 +28,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// The root menu
         /// </summary>
-        internal static MenuTree<Type> root = new(RootName);
+        internal static MenuTree<Type> root = new(Constants.MenuRootName);
 
         /// <summary>
         /// A mapping of abilities with the menu they reside in.
@@ -49,8 +48,8 @@ namespace LobsterFramework.AbilitySystem {
         internal void AddAbility(Type abilityType) {
             if (abilityType.IsSubclassOf(typeof(Ability)))
             {
-                if (abilityType.IsAbstract) {
-                    Debug.LogError($"Only concrete ability can be added as to the menu! {abilityType.FullName}");
+                if (!abilityType.IsSealed) {
+                    Debug.LogError($"{abilityType.FullName} must be sealed!");
                     return;
                 }
 
@@ -59,6 +58,9 @@ namespace LobsterFramework.AbilitySystem {
                     return;
                 }
 #if UNITY_EDITOR
+                GUIContent content = new(abilityType.Name);
+                abilityDisplayEntries[abilityType] = content;
+
                 MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(abilityType));
                 try
                 {
@@ -68,6 +70,7 @@ namespace LobsterFramework.AbilitySystem {
                     if (texture != null)
                     {
                         abilityIcons[abilityType] = texture;
+                        content.image = texture;
                     }
                 }catch (NullReferenceException)
                 {

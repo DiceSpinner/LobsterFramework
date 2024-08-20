@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.Utility;
@@ -96,6 +97,28 @@ namespace LobsterFramework.Editors
             backgroundTexture.Apply();
 
             return backgroundTexture;
+        }
+
+        private static Dictionary<Type, Texture2D> scriptIcons = new();
+        public static Texture2D GetScriptIcon(Type type) {
+            if (!type.IsSubclassOf(typeof(ScriptableObject)))
+            {
+                Debug.LogWarning($"Cannot read script icon for {type.FullName}. It is not a ScriptableObject.");
+                return null;
+            }
+            if (scriptIcons.TryGetValue(type, out Texture2D value)) {
+                return value;
+            }
+
+            MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(type));
+            SerializedObject scriptObj = new(script);
+            SerializedProperty iconProperty = scriptObj.FindProperty("m_Icon");
+            Texture2D texture = (Texture2D)iconProperty.objectReferenceValue;
+            if (texture != null)
+            {
+                scriptIcons[type] = texture;
+            }
+            return texture;
         }
     }
 }

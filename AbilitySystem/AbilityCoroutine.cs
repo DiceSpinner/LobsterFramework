@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Pipes;
-using System.Threading;
-using UnityEngine;
 using LobsterFramework.Utility;
 
 namespace LobsterFramework.AbilitySystem
@@ -21,7 +18,7 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Callback when the ability is enqueued, replaces OnEnqueue
+        /// Callback when the ability is enqueued, replaces <see cref="OnAbilityEnqueue"/>
         /// </summary>
         protected abstract void OnCoroutineEnqueue();
 
@@ -32,6 +29,9 @@ namespace LobsterFramework.AbilitySystem
             OnCoroutineFinish();
         }
 
+        /// <summary>
+        /// Callback when the ability is finished, replaces <see cref="OnAbilityFinish"/>
+        /// </summary>
         protected virtual void OnCoroutineFinish() { }
 
         protected override sealed bool Action()
@@ -42,7 +42,7 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Calleback for when the coroutine is reset to the start position
+        /// Calleback when <see cref="CoroutineOption.Reset"/> is yielded by <see cref="Coroutine"/>
         /// </summary>
         protected abstract void OnCoroutineReset();
 
@@ -59,7 +59,7 @@ namespace LobsterFramework.AbilitySystem
     /// </summary>
     public class AbilityCoroutineContext : AbilityContext
     {
-        public CoroutineRunner coroutineRunner = new();
-        public Utility.Coroutine coroutine;
+        internal CoroutineRunner coroutineRunner = new();
+        internal Coroutine coroutine;
     }
 }

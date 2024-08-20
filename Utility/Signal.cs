@@ -2,7 +2,7 @@
 namespace LobsterFramework.Utility
 {
     /// <summary>
-    /// Represents a signal that can be queried for value. It will go automatically go back to default state every time after queried.
+    /// Represents a signal that can be queried for value. It will automatically go back to default state every time the value is queried.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Signal<T> where T : struct

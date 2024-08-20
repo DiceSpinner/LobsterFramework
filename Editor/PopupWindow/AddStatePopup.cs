@@ -22,7 +22,7 @@ namespace LobsterFramework.Editors
         private GUIContent content = new();
         private GUIContent DrawNode(MenuTree<Type> node) {
             content.text = node.menuName;
-            content.image = StateEditorConfig.GetFolderIcon(node.path[(AddStateMenuAttribute.RootName.Length + 1)..]);
+            content.image = StateEditorConfig.GetFolderIcon(node.path[(Constants.MenuRootName.Length + 1)..]);
             return content;
         }
         private GUIContent DrawOption(Type stateType) {

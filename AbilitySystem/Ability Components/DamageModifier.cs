@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityComponentMenu("LobsterFramework")]
-    public class DamageModifier : AbilityComponent
+    public sealed class DamageModifier : AbilityComponent
     {
         [NonSerialized] public readonly FloatSum flatDamageModification = new(0, false, true);
         [NonSerialized] public readonly FloatProduct percentageDamageModifcation = new(1, true);

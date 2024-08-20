@@ -5,21 +5,21 @@ using System;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
-    [AddAbilityMenu("LobsterFramework")]
-    [ComponentRequired(typeof(WeaponManager))]
-    public class OffhandAbility : Ability
+    [AddAbilityMenu(Constants.Framework)]
+    [RequireComponentReference(typeof(WeaponManager))]
+    public sealed class OffhandAbility : Ability
     {
-        private WeaponManager weaponWielder;
+        private WeaponManager weaponManager;
         protected override void InitializeSharedReferences()
         {
-            weaponWielder = abilityManager.GetComponentInBoth<WeaponManager>();
+            weaponManager = GetComponentReference<WeaponManager>();
         }
 
         protected override bool ConditionSatisfied()
         {
-            if (weaponWielder.Offhand != null && (weaponWielder.Mainhand == null || !weaponWielder.Mainhand.DoubleHanded))
+            if (weaponManager.Offhand != null && (weaponManager.Mainhand == null || !weaponManager.Mainhand.DoubleHanded))
             {
-                ValueTuple<Type, string> setting = weaponWielder.Offhand.AbilitySetting;
+                ValueTuple<Type, string> setting = weaponManager.Offhand.AbilitySetting;
                 return abilityManager.IsAbilityReady(setting.Item1, setting.Item2);
             }
             return false;
@@ -27,14 +27,20 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
         protected override void OnAbilityEnqueue()
         {
-            ValueTuple<Type, string> setting = weaponWielder.Offhand.AbilitySetting;
-            if (abilityManager.EnqueueAbility(setting.Item1, setting.Item2))
+            (Type abilityType, string instance) = weaponManager.Offhand.AbilitySetting;
+            if (abilityManager.EnqueueAbility(abilityType, instance))
             {
-                JoinAsSecondary(setting.Item1, setting.Item2);
+                JoinAsSecondary(abilityType, instance);
             }
             else {
                 SuspendInstance(Instance);
             }
+        }
+
+        protected override void OnAbilityFinish()
+        {
+            (Type abilityType, string instance) = weaponManager.Offhand.AbilitySetting;
+             abilityManager.SuspendAbilityInstance(abilityType, instance);
         }
 
         protected override bool Action()

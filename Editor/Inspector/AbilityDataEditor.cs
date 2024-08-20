@@ -43,7 +43,7 @@ namespace LobsterFramework.Editors
         {
             serializedObject.Update();
             AbilityData abilityData = (AbilityData)target;
-            bool isAsset = AssetDatabase.Contains(abilityData);
+            bool isAsset = EditorUtility.IsPersistent(abilityData);
 
             #region Update AbilityData
             if (Event.current.type == EventType.Layout) {
@@ -68,7 +68,7 @@ namespace LobsterFramework.Editors
                 }
 
                 if (removedAbility != null) {
-                    var m = typeof(AbilityData).GetMethod("RemoveAbility", BindingFlags.Instance | BindingFlags.NonPublic);
+                    var m = typeof(AbilityData).GetMethod(nameof(AbilityData.RemoveAbility), BindingFlags.Instance | BindingFlags.NonPublic);
                     MethodInfo removed = m.MakeGenericMethod(removedAbility);
                     DestroyImmediate(abilityEditors[removedAbility]);
                     abilityEditors.Remove(removedAbility);
@@ -77,7 +77,7 @@ namespace LobsterFramework.Editors
                 }
 
                 if (removedAbilityComponent != null) {
-                    var m = typeof(AbilityData).GetMethod("RemoveAbilityComponent", BindingFlags.Instance | BindingFlags.NonPublic);
+                    var m = typeof(AbilityData).GetMethod(nameof(AbilityData.RemoveAbilityComponent), BindingFlags.Instance | BindingFlags.NonPublic);
                     MethodInfo removed = m.MakeGenericMethod(selectedAbilityComponent.GetType());
                     DestroyImmediate(abilityComponentEditors[removedAbilityComponent]);
                     abilityComponentEditors.Remove(removedAbilityComponent);

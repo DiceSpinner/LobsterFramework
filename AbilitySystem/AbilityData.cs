@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEditor.Playables;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -12,13 +14,21 @@ namespace LobsterFramework.AbilitySystem
     /// Defines the set of abilities and ability components an actor can take on. Used as input to <see cref="AbilityManager"/>.
     /// </summary>
     [CreateAssetMenu(menuName = "Ability/AbilityData")]
-    public class AbilityData : ScriptableObject
+    public class AbilityData : ReferenceRequester
     {
-        public const string defaultAbilityInstance = "default";
-
         [SerializeField] internal AbilityComponentDictionary components = new();
         [SerializeField] internal AbilityDictionary abilities = new();
         internal Dictionary<string, Ability> runnables = new();
+
+        public override IEnumerator<Type> GetRequests()
+        {
+            foreach (Ability ability in abilities.Values) {
+                Type type = ability.GetType();
+                if (RequireComponentReferenceAttribute.Requirement.ContainsKey(type)) {
+                    yield return type;
+                }
+            }
+        }
 
         /// <summary>
         /// Initialize the ability context environments
@@ -27,15 +37,15 @@ namespace LobsterFramework.AbilitySystem
         internal void Begin(AbilityManager abilityManager)
         {
             runnables.Clear();
-            GameObject topLevel = default;
-            if (abilityManager.TopLevelTransform != null) {
-                topLevel = abilityManager.TopLevelTransform.gameObject;
-            }
 
             foreach (string key in components.Keys)
             {
                 AbilityComponent component = components[key];
-                component.Initialize();
+                try { component.Initialize(); }catch (Exception e)
+                {
+                    Debug.LogWarning($"Error occured when initializing ability component {component.GetType().FullName} !");
+                    Debug.LogException(e);
+                }
             }
 
             abilityManager.components = components;
@@ -44,18 +54,17 @@ namespace LobsterFramework.AbilitySystem
             {
                 Ability ability = abilities[key];
 
-                bool result;
-                if (topLevel == null) {
-                    result = ComponentRequiredAttribute.ComponentCheck(abilityManager.gameObject, ability.GetType(), abilityManager.gameObject);
-                }
-                else {
-                    result = ComponentRequiredAttribute.ComponentCheck(abilityManager.gameObject, ability.GetType(), abilityManager.gameObject, topLevel);
-                }
-                if (result)
+                if (abilityManager.IsRequirementSatisfied(ability.GetType()))
                 {
                     ability.abilityManager = abilityManager;
-                    ability.Begin();
-                    runnables[ability.GetType().AssemblyQualifiedName] = ability;
+                    try {
+                        ability.Begin();
+                        runnables[ability.GetType().AssemblyQualifiedName] = ability;
+                    }catch (Exception ex)
+                    {
+                        Debug.LogWarning($"Error occured when initializing ability {ability.GetType().FullName} !");
+                        Debug.LogException(ex);
+                    }
                 }
             }
             
@@ -72,12 +81,21 @@ namespace LobsterFramework.AbilitySystem
             }
             foreach (Ability ability in runnables.Values)
             {
-                ability.OnClose();
+                try{ ability.OnClose(); }catch(Exception e)
+                {
+                    Debug.LogWarning($"Error occured when finalizing context for ability {ability.GetType().FullName} !");
+                    Debug.LogException(e);
+                }
             }
 
             foreach (AbilityComponent cmp in components.Values)
             {
-                cmp.OnClose();
+                try { cmp.OnClose(); }
+                catch (Exception e)
+                {
+                    Debug.LogWarning($"Error occured when finalizing context for ability component {cmp.GetType().FullName} !");
+                    Debug.LogException(e);
+                }
             }
         }
 
@@ -270,7 +288,8 @@ namespace LobsterFramework.AbilitySystem
                     AssetDatabase.AddObjectToAsset(ability, this);
                 }
 
-                ability.AddInstance(defaultAbilityInstance);
+                ability.AddInstance(Ability.DefaultAbilityInstance);
+                RaiseRequirementAddedEvent(typeof(T));
                 return true;
             }
             return false;
@@ -289,6 +308,7 @@ namespace LobsterFramework.AbilitySystem
                 abilities.Remove(typeof(T).AssemblyQualifiedName);
                 AssetDatabase.RemoveObjectFromAsset(ability);
                 DestroyImmediate(ability, true);
+                RaiseRequirementRemovedEvent(typeof(T));
                 return true;
             }
             return false;

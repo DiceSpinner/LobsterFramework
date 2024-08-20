@@ -7,6 +7,10 @@ using UnityEngine;
 
 namespace LobsterFramework
 {
+    /// <summary>
+    /// A wrapper class of an array of serializable objects.
+    /// </summary>
+    /// <typeparam name="T">The type of serializable object to be stored in the array</typeparam>
     public class SerializableArray<T> : IList<T>, IEnumerable<T>, ICollection<T>
     {
         [SerializeField] protected T[] items;

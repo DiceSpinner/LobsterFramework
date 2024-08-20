@@ -15,7 +15,7 @@ namespace LobsterFramework.Effects
             ar = processor.GetComponentInBoth<AbilityManager>();
             
             if (ar != null) {
-                valueAccessor = ar.actionLock.MakeEffector();
+                valueAccessor = ar.ActionBlocked.MakeEffector();
                 valueAccessor.Apply(true);
             }
         }

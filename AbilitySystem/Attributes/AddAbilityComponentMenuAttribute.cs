@@ -16,14 +16,14 @@ namespace LobsterFramework.AbilitySystem
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class AddAbilityComponentMenuAttribute : Attribute
     {
-        public const string RootName = "Root";
+        
         public static HashSet<Type> types = new HashSet<Type>();
         public static Dictionary<Type, Texture2D> icons = new();
 
         /// <summary>
         /// The root menu
         /// </summary>
-        internal static MenuTree<Type> root = new(RootName);
+        internal static MenuTree<Type> root = new(Constants.MenuRootName);
 
         /// <summary>
         /// A mapping of abilities with the menu they reside in.
@@ -44,6 +44,10 @@ namespace LobsterFramework.AbilitySystem
         public void Init(Type componentType) {
             if (componentType.IsSubclassOf(typeof(AbilityComponent))) 
             {
+                if (!componentType.IsSealed) {
+                    Debug.LogError($"{componentType.FullName} must be sealed!");
+                    return;
+                }
                 types.Add(componentType);
 #if UNITY_EDITOR
                 MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(componentType));
@@ -65,7 +69,7 @@ namespace LobsterFramework.AbilitySystem
             }
             else
             {
-                Debug.LogError($"Type {componentType.FullName} is not a valid AbilityComponent.");
+                Debug.LogError($"Type {componentType.FullName} is not a valid {nameof(AbilityComponent)}.");
                 return;
             }
 

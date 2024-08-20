@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Reflection;
 using LobsterFramework.Utility;
 using Animancer;
 
@@ -16,6 +15,8 @@ namespace LobsterFramework.AbilitySystem {
     /// </summary>
     public abstract class Ability : ScriptableObject
     {
+        public const string DefaultAbilityInstance = "default";
+
         [Tooltip("The priority in which this ability will be executed in relation with other abilities. Higher prioritied abilities will be executed first.")]
         [field: SerializeField] internal int executionPriority;
         [SerializeField, HideInInspector] internal AbilityConfigDictionary configs = new();
@@ -170,10 +171,22 @@ namespace LobsterFramework.AbilitySystem {
         }
         #endregion
 
-        #region Public Actions
-        protected void StartAnimation(string instance, AnimationClip animation, float speed = 1)
+        #region Actions
+        protected AnimancerState StartAnimation(AnimationClip animation, float speed = 1)
         {
-            abilityManager.StartAnimation(this, instance, animation, speed);
+            return abilityManager.StartAnimation(this, Instance, animation, speed);
+        }
+
+        /// <summary>
+        /// Attempts to get the reference of the specified component type from <see cref="AbilityManager"/>. 
+        /// The type of the reference should be one of the required types applied via <see cref="RequireComponentReferenceAttribute"/> on this ability class.
+        /// </summary>
+        /// <typeparam name="T">The type of the component looking for</typeparam>
+        /// <param name="index">The index to the list of components of the type specified. Use of type safe enum is strongly recommended.</param>
+        /// <returns>The component reference stored in <see cref="AbilityManager"/> if it exists, otherwise null</returns>
+        /// <remarks>This is a shorthand call for <see cref="ReferenceProvider.GetComponentReference{T}(Type, int)"/> via <see cref="abilityManager"/></remarks>
+        protected T GetComponentReference<T>(int index=0) where T : Component {
+            return abilityManager.GetComponentReference<T>(GetType(), index);
         }
 
         /// <summary>
@@ -272,9 +285,8 @@ namespace LobsterFramework.AbilitySystem {
         {
             try
             {
-                if (IsReady(instance))
+                if (IsReady(instance)) // SetContext() called here
                 {
-                    SetContext(instance);
                     Context.isRunning = true;
                     runningInstances.Add(instance);
                     AbilityExecutor.EnqueueAction(new AbilityInstance(this, instance));
@@ -457,8 +469,8 @@ namespace LobsterFramework.AbilitySystem {
 
     #region Complementary classes (Must be defined for each Ability)
     /// <summary>
-    ///  The runtime context of an ability instance. Not accessible from outside.
-    ///  Inheritors of this class must have name 'Ability_Subclass_Name'Context.
+    ///  The runtime context of the ability. Not accessible from outside.
+    ///  When creating a new ability, you must also declare a class named "AbilityName"Context in the same namespace where "AbilityName" is the name of the ability you're creating.
     /// </summary>
     public class AbilityContext
     {
@@ -470,14 +482,16 @@ namespace LobsterFramework.AbilitySystem {
     }
 
     /// <summary>
-    /// Communication channel of an ability Instance. Can be used to control ability behaviors at runtime.
+    /// Communication channel of the ability. Can be used to control ability behaviors at runtime.
+    /// When creating a new ability, you must also declare a class named "AbilityName"Channel in the same namespace where "AbilityName" is the name of the ability you're creating.
     /// </summary>
     public class AbilityChannel
     {
     }
 
     /// <summary>
-    /// The configuration of an ability instance
+    /// The configuration of the ability. Will appear in the ability inspector. "
+    /// When creating a new ability, you must also declare a class named "AbilityName"Config in the same namespace where "AbilityName" is the name of the ability you're creating.
     /// </summary>
     [Serializable]
     public class AbilityConfig : ScriptableObject {
@@ -505,28 +519,28 @@ namespace LobsterFramework.AbilitySystem {
 
     #region Other Structs
     /// <summary>
-    /// Represents an instance of ability to be executed by ActionOverseer
+    /// Represents an instance of ability to be executed by <see cref="AbilityExecutor"></see>
     /// </summary>
-    internal struct AbilityInstance
+    internal readonly struct AbilityInstance
     {
-        public string configName;
-        public Ability ability;
-        public AbilityInstance(Ability ability, string configName)
+        public readonly string name;
+        public readonly Ability ability;
+        public AbilityInstance(Ability ability, string name)
         {
             this.ability = ability;
-            this.configName = configName;
+            this.name = name;
         }
 
         public bool StopAbility()
         {
-            return ability.SuspendInstance(configName);
+            return ability.SuspendInstance(name);
         }
 
         public bool IsValid() {
-            return ability.IsRunning(configName);
+            return ability.IsRunning(name);
         }
 
-        public bool IsEmpty { get { return ability == null; } }
+        public bool IsNullAbility { get { return ability == null; } }
     }
 
     [Serializable]

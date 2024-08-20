@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using LobsterFramework.Utility;
+using System.Diagnostics.CodeAnalysis;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -16,11 +18,10 @@ namespace LobsterFramework.AI
     
     public class AddStateMenuAttribute : Attribute
     {
-        public const string RootName = "Root";
         /// <summary>
         /// The root menu group
         /// </summary>
-        internal static MenuTree<Type> main = new(RootName);
+        internal static MenuTree<Type> main = new(Constants.MenuRootName);
 
         /// <summary>
         /// A mapping of states with their menu groups
@@ -35,13 +36,18 @@ namespace LobsterFramework.AI
         private string menuName;
 
         /// <param name="menuPath">The path leading to this item in the menu</param>
-        public AddStateMenuAttribute(string menuPath = "") {
+        public AddStateMenuAttribute( string menuPath = "") {
             this.menuName = menuPath;
         }
 
         internal void Init(Type type) {
             if (!type.IsSubclassOf(typeof(State))) {
                 Debug.LogWarning($"Type {type.Name} is not a valid state type!");
+                return;
+            }
+            if (!type.IsSealed)
+            { 
+                Debug.LogError($"{type.FullName} must be sealed!");
                 return;
             }
             if (menuName == "")

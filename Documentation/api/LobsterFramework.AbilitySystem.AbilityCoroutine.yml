@@ -26,7 +26,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityCoroutine
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 12
+    startLine: 9
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -43,6 +43,7 @@ items:
   derivedClasses:
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
   inheritedMembers:
+  - LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
   - LobsterFramework.AbilitySystem.Ability.abilityManager
   - LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   - LobsterFramework.AbilitySystem.Ability.Instance
@@ -54,7 +55,9 @@ items:
   - LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
   - LobsterFramework.AbilitySystem.Ability.FinalizeContext
   - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+  - LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
+  - LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  - LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
   - LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
   - LobsterFramework.AbilitySystem.Ability.SuspendAll
   - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
@@ -139,11 +142,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityEnqueue
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 14
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Callback when the ability is added to the queue for execution
+  summary: Called when the ability is added to the queue for execution
   example: []
   syntax:
     content: protected override sealed void OnAbilityEnqueue()
@@ -168,11 +171,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnCoroutineEnqueue
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 25
+    startLine: 22
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Callback when the ability is enqueued, replaces OnEnqueue
+  summary: Called when the ability is enqueued, replaces <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected abstract void OnCoroutineEnqueue()
@@ -196,11 +199,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityFinish
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 27
+    startLine: 24
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Callback when the ability is finished or halted.
+  summary: Called when the ability is finished or halted.
   example: []
   syntax:
     content: protected override sealed void OnAbilityFinish()
@@ -229,6 +232,8 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: Called when the ability is finished, replaces <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
     content: protected virtual void OnCoroutineFinish()
     content.vb: Protected Overridable Sub OnCoroutineFinish()
@@ -287,7 +292,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Calleback for when the coroutine is reset to the start position
+  summary: Calleback when <xref href="LobsterFramework.Utility.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected abstract void OnCoroutineReset()
@@ -379,8 +384,15 @@ references:
   name: Ability
   nameWithType: Ability
   fullName: LobsterFramework.AbilitySystem.Ability
+- uid: LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  commentId: F:LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  name: DefaultAbilityInstance
+  nameWithType: Ability.DefaultAbilityInstance
+  fullName: LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
 - uid: LobsterFramework.AbilitySystem.Ability.abilityManager
-  commentId: F:LobsterFramework.AbilitySystem.Ability.abilityManager
+  commentId: P:LobsterFramework.AbilitySystem.Ability.abilityManager
   parent: LobsterFramework.AbilitySystem.Ability
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityManager
   name: abilityManager
@@ -522,28 +534,22 @@ references:
     name: Ability
     href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+- uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  name: StartAnimation(string, AnimationClip, float)
-  nameWithType: Ability.StartAnimation(string, AnimationClip, float)
-  fullName: LobsterFramework.AbilitySystem.Ability.StartAnimation(string, UnityEngine.AnimationClip, float)
-  nameWithType.vb: Ability.StartAnimation(String, AnimationClip, Single)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.StartAnimation(String, UnityEngine.AnimationClip, Single)
-  name.vb: StartAnimation(String, AnimationClip, Single)
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
+  name: StartAnimation(AnimationClip, float)
+  nameWithType: Ability.StartAnimation(AnimationClip, float)
+  fullName: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip, float)
+  nameWithType.vb: Ability.StartAnimation(AnimationClip, Single)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip, Single)
+  name.vb: StartAnimation(AnimationClip, Single)
   spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
     name: StartAnimation
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
   - uid: UnityEngine.AnimationClip
     name: AnimationClip
     isExternal: true
@@ -555,16 +561,10 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
     name: StartAnimation
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
   - uid: UnityEngine.AnimationClip
     name: AnimationClip
     isExternal: true
@@ -574,6 +574,75 @@ references:
     name: Single
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  parent: LobsterFramework.AbilitySystem.Ability
+  isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  name: GetComponentReference<T>(int)
+  nameWithType: Ability.GetComponentReference<T>(int)
+  fullName: LobsterFramework.AbilitySystem.Ability.GetComponentReference<T>(int)
+  nameWithType.vb: Ability.GetComponentReference(Of T)(Integer)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.GetComponentReference(Of T)(Integer)
+  name.vb: GetComponentReference(Of T)(Integer)
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+    name: GetComponentReference
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+    name: GetComponentReference
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  commentId: M:LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  name: GetAbilityComponent<T>()
+  nameWithType: Ability.GetAbilityComponent<T>()
+  fullName: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent<T>()
+  nameWithType.vb: Ability.GetAbilityComponent(Of T)()
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent(Of T)()
+  name.vb: GetAbilityComponent(Of T)()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+    name: GetAbilityComponent
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+    name: GetAbilityComponent
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
@@ -2991,12 +3060,38 @@ references:
   name: OnAbilityEnqueue
   nameWithType: AbilityCoroutine.OnAbilityEnqueue
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+  name: OnAbilityEnqueue()
+  nameWithType: AbilityCoroutine.OnAbilityEnqueue()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+    name: OnAbilityEnqueue
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+    name: OnAbilityEnqueue
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
   href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
   name: OnCoroutineEnqueue
   nameWithType: AbilityCoroutine.OnCoroutineEnqueue
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine
+  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutine
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html
+  name: AbilityCoroutine
+  nameWithType: AbilityCoroutine
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine
 - uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
   parent: LobsterFramework.AbilitySystem.Ability
@@ -3022,6 +3117,25 @@ references:
   name: OnAbilityFinish
   nameWithType: AbilityCoroutine.OnAbilityFinish
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+  name: OnAbilityFinish()
+  nameWithType: AbilityCoroutine.OnAbilityFinish()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+    name: OnAbilityFinish
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+    name: OnAbilityFinish
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
   href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
@@ -3064,6 +3178,31 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: LobsterFramework.Utility.CoroutineOption.Reset
+  commentId: F:LobsterFramework.Utility.CoroutineOption.Reset
+  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.Reset
+  name: Reset
+  nameWithType: CoroutineOption.Reset
+  fullName: LobsterFramework.Utility.CoroutineOption.Reset
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  name: Coroutine()
+  nameWithType: AbilityCoroutine.Coroutine()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+    name: Coroutine
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+    name: Coroutine
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset

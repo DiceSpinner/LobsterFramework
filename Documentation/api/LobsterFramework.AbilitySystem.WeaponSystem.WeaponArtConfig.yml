@@ -35,7 +35,6 @@ items:
   - LobsterFramework.AbilitySystem.AbilityConfig.CoolDown
   - LobsterFramework.AbilitySystem.AbilityConfig.UseCooldown
   - LobsterFramework.AbilitySystem.AbilityConfig.Validate
-  - LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -184,25 +183,6 @@ references:
   - uid: LobsterFramework.AbilitySystem.AbilityConfig.Validate
     name: Validate
     href: LobsterFramework.AbilitySystem.AbilityConfig.html#LobsterFramework.AbilitySystem.AbilityConfig.Validate
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  commentId: M:LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  parent: LobsterFramework.AbilitySystem.AbilityConfig
-  href: LobsterFramework.AbilitySystem.AbilityConfig.html#LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  name: OnValidate()
-  nameWithType: AbilityConfig.OnValidate()
-  fullName: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-    name: OnValidate
-    href: LobsterFramework.AbilitySystem.AbilityConfig.html#LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-    name: OnValidate
-    href: LobsterFramework.AbilitySystem.AbilityConfig.html#LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
   - name: (
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty

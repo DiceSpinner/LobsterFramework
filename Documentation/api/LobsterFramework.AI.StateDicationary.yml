@@ -19,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: StateDicationary
     path: ../AI/StateData.cs
-    startLine: 116
+    startLine: 130
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI

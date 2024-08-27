@@ -7,10 +7,10 @@ items:
   children:
   - LobsterFramework.Editors.AbilityDataEditor.OnEnable
   - LobsterFramework.Editors.AbilityDataEditor.OnInspectorGUI
+  - LobsterFramework.Editors.AbilityDataEditor.abilityToRemove
+  - LobsterFramework.Editors.AbilityDataEditor.componentToRemove
   - LobsterFramework.Editors.AbilityDataEditor.newSelectedAbility
   - LobsterFramework.Editors.AbilityDataEditor.newSelectedAbilityComponent
-  - LobsterFramework.Editors.AbilityDataEditor.removedAbility
-  - LobsterFramework.Editors.AbilityDataEditor.removedAbilityComponent
   langs:
   - csharp
   - vb
@@ -198,60 +198,60 @@ items:
     return:
       type: LobsterFramework.AbilitySystem.AbilityComponent
     content.vb: Public newSelectedAbilityComponent As AbilityComponent
-- uid: LobsterFramework.Editors.AbilityDataEditor.removedAbility
-  commentId: F:LobsterFramework.Editors.AbilityDataEditor.removedAbility
-  id: removedAbility
+- uid: LobsterFramework.Editors.AbilityDataEditor.abilityToRemove
+  commentId: F:LobsterFramework.Editors.AbilityDataEditor.abilityToRemove
+  id: abilityToRemove
   parent: LobsterFramework.Editors.AbilityDataEditor
   langs:
   - csharp
   - vb
-  name: removedAbility
-  nameWithType: AbilityDataEditor.removedAbility
-  fullName: LobsterFramework.Editors.AbilityDataEditor.removedAbility
+  name: abilityToRemove
+  nameWithType: AbilityDataEditor.abilityToRemove
+  fullName: LobsterFramework.Editors.AbilityDataEditor.abilityToRemove
   type: Field
   source:
     remote:
       path: Editor/Inspector/AbilityDataEditor.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: removedAbility
+    id: abilityToRemove
     path: ../Editor/Inspector/AbilityDataEditor.cs
     startLine: 30
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
   syntax:
-    content: public Type removedAbility
+    content: public Type abilityToRemove
     return:
       type: System.Type
-    content.vb: Public removedAbility As Type
-- uid: LobsterFramework.Editors.AbilityDataEditor.removedAbilityComponent
-  commentId: F:LobsterFramework.Editors.AbilityDataEditor.removedAbilityComponent
-  id: removedAbilityComponent
+    content.vb: Public abilityToRemove As Type
+- uid: LobsterFramework.Editors.AbilityDataEditor.componentToRemove
+  commentId: F:LobsterFramework.Editors.AbilityDataEditor.componentToRemove
+  id: componentToRemove
   parent: LobsterFramework.Editors.AbilityDataEditor
   langs:
   - csharp
   - vb
-  name: removedAbilityComponent
-  nameWithType: AbilityDataEditor.removedAbilityComponent
-  fullName: LobsterFramework.Editors.AbilityDataEditor.removedAbilityComponent
+  name: componentToRemove
+  nameWithType: AbilityDataEditor.componentToRemove
+  fullName: LobsterFramework.Editors.AbilityDataEditor.componentToRemove
   type: Field
   source:
     remote:
       path: Editor/Inspector/AbilityDataEditor.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: removedAbilityComponent
+    id: componentToRemove
     path: ../Editor/Inspector/AbilityDataEditor.cs
     startLine: 31
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
   syntax:
-    content: public Type removedAbilityComponent
+    content: public Type componentToRemove
     return:
       type: System.Type
-    content.vb: Public removedAbilityComponent As Type
+    content.vb: Public componentToRemove As Type
 - uid: LobsterFramework.Editors.AbilityDataEditor.OnEnable
   commentId: M:LobsterFramework.Editors.AbilityDataEditor.OnEnable
   id: OnEnable

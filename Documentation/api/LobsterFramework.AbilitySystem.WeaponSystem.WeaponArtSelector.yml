@@ -6,7 +6,7 @@ items:
   parent: LobsterFramework.AbilitySystem.WeaponSystem
   children:
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.weaponType
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType
   langs:
   - csharp
   - vb
@@ -16,11 +16,11 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponArtSelector.cs
+      path: AbilitySystem/Weapon System/WeaponArtSelector.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponArtSelector
-    path: ../AbilitySystem/Weapon/WeaponArtSelector.cs
+    path: ../AbilitySystem/Weapon System/WeaponArtSelector.cs
     startLine: 8
   assemblies:
   - LobsterFramework
@@ -54,33 +54,6 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.weaponType
-  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.weaponType
-  id: weaponType
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
-  langs:
-  - csharp
-  - vb
-  name: weaponType
-  nameWithType: WeaponArtSelector.weaponType
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.weaponType
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Weapon/WeaponArtSelector.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: weaponType
-    path: ../AbilitySystem/Weapon/WeaponArtSelector.cs
-    startLine: 11
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  syntax:
-    content: public WeaponType weaponType
-    return:
-      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
-    content.vb: Public weaponType As WeaponType
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
   commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
   id: Instance
@@ -94,11 +67,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponArtSelector.cs
+      path: AbilitySystem/Weapon System/WeaponArtSelector.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Instance
-    path: ../AbilitySystem/Weapon/WeaponArtSelector.cs
+    path: ../AbilitySystem/Weapon System/WeaponArtSelector.cs
     startLine: 13
   assemblies:
   - LobsterFramework
@@ -110,6 +83,35 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property Instance As String
   overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance*
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType
+  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType
+  id: WeaponType
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
+  langs:
+  - csharp
+  - vb
+  name: WeaponType
+  nameWithType: WeaponArtSelector.WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Weapon System/WeaponArtSelector.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: WeaponType
+    path: ../AbilitySystem/Weapon System/WeaponArtSelector.cs
+    startLine: 14
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: public WeaponType WeaponType { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+    content.vb: Public ReadOnly Property WeaponType As WeaponType
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType*
 references:
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
@@ -571,13 +573,6 @@ references:
     href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
   - name: (
   - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.html
-  name: WeaponType
-  nameWithType: WeaponType
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance*
   commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
   href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
@@ -595,3 +590,16 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType
+  name: WeaponType
+  nameWithType: WeaponArtSelector.WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType.html
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponType

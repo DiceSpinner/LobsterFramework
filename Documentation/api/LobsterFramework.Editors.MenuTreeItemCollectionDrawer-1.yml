@@ -5,7 +5,7 @@ items:
   id: MenuTreeItemCollectionDrawer`1
   parent: LobsterFramework.Editors
   children:
-  - LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Action{LobsterFramework.Utility.MenuTree{`0}},System.Action{`0})
+  - LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent},System.Action{`0})
   - LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.Draw
   - LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.SetColorOptions(UnityEngine.Color,UnityEngine.Color)
   - LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.UpdateGroups
@@ -48,16 +48,16 @@ items:
   nameWithType.vb: MenuTreeItemCollectionDrawer(Of T)
   fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T)
   name.vb: MenuTreeItemCollectionDrawer(Of T)
-- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Action{LobsterFramework.Utility.MenuTree{`0}},System.Action{`0})
-  commentId: M:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Action{LobsterFramework.Utility.MenuTree{`0}},System.Action{`0})
-  id: '#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Action{LobsterFramework.Utility.MenuTree{`0}},System.Action{`0})'
+- uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent},System.Action{`0})
+  commentId: M:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent},System.Action{`0})
+  id: '#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent},System.Action{`0})'
   parent: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1
   langs:
   - csharp
   - vb
-  name: MenuTreeItemCollectionDrawer(ICollection<T>, Dictionary<T, MenuTree<T>>, Action<MenuTree<T>>, Action<T>)
-  nameWithType: MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer(ICollection<T>, Dictionary<T, MenuTree<T>>, Action<MenuTree<T>>, Action<T>)
-  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer(System.Collections.Generic.ICollection<T>, System.Collections.Generic.Dictionary<T, LobsterFramework.Utility.MenuTree<T>>, System.Action<LobsterFramework.Utility.MenuTree<T>>, System.Action<T>)
+  name: MenuTreeItemCollectionDrawer(ICollection<T>, Dictionary<T, MenuTree<T>>, Func<MenuTree<T>, GUIContent>, Func<T, GUIContent>, Action<T>)
+  nameWithType: MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer(ICollection<T>, Dictionary<T, MenuTree<T>>, Func<MenuTree<T>, GUIContent>, Func<T, GUIContent>, Action<T>)
+  fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer(System.Collections.Generic.ICollection<T>, System.Collections.Generic.Dictionary<T, LobsterFramework.Utility.MenuTree<T>>, System.Func<LobsterFramework.Utility.MenuTree<T>, UnityEngine.GUIContent>, System.Func<T, UnityEngine.GUIContent>, System.Action<T>)
   type: Constructor
   source:
     remote:
@@ -66,26 +66,28 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../Editor/MenuTree/MenuTreeItemCollectionDrawer.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
   syntax:
-    content: public MenuTreeItemCollectionDrawer(ICollection<T> items, Dictionary<T, MenuTree<T>> mapping, Action<MenuTree<T>> menuHandle, Action<T> itemHandle)
+    content: public MenuTreeItemCollectionDrawer(ICollection<T> items, Dictionary<T, MenuTree<T>> mapping, Func<MenuTree<T>, GUIContent> menuHandle, Func<T, GUIContent> itemHandle, Action<T> optionHandle)
     parameters:
     - id: items
       type: System.Collections.Generic.ICollection{{T}}
     - id: mapping
       type: System.Collections.Generic.Dictionary{{T},LobsterFramework.Utility.MenuTree{{T}}}
     - id: menuHandle
-      type: System.Action{LobsterFramework.Utility.MenuTree{{T}}}
+      type: System.Func{LobsterFramework.Utility.MenuTree{{T}},UnityEngine.GUIContent}
     - id: itemHandle
+      type: System.Func{{T},UnityEngine.GUIContent}
+    - id: optionHandle
       type: System.Action{{T}}
-    content.vb: Public Sub New(items As ICollection(Of T), mapping As Dictionary(Of T, MenuTree(Of T)), menuHandle As Action(Of MenuTree(Of T)), itemHandle As Action(Of T))
+    content.vb: Public Sub New(items As ICollection(Of T), mapping As Dictionary(Of T, MenuTree(Of T)), menuHandle As Func(Of MenuTree(Of T), GUIContent), itemHandle As Func(Of T, GUIContent), optionHandle As Action(Of T))
   overload: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor*
-  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).New(ICollection(Of T), Dictionary(Of T, MenuTree(Of T)), Action(Of MenuTree(Of T)), Action(Of T))
-  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).New(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.Dictionary(Of T, LobsterFramework.Utility.MenuTree(Of T)), System.Action(Of LobsterFramework.Utility.MenuTree(Of T)), System.Action(Of T))
-  name.vb: New(ICollection(Of T), Dictionary(Of T, MenuTree(Of T)), Action(Of MenuTree(Of T)), Action(Of T))
+  nameWithType.vb: MenuTreeItemCollectionDrawer(Of T).New(ICollection(Of T), Dictionary(Of T, MenuTree(Of T)), Func(Of MenuTree(Of T), GUIContent), Func(Of T, GUIContent), Action(Of T))
+  fullName.vb: LobsterFramework.Editors.MenuTreeItemCollectionDrawer(Of T).New(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.Dictionary(Of T, LobsterFramework.Utility.MenuTree(Of T)), System.Func(Of LobsterFramework.Utility.MenuTree(Of T), UnityEngine.GUIContent), System.Func(Of T, UnityEngine.GUIContent), System.Action(Of T))
+  name.vb: New(ICollection(Of T), Dictionary(Of T, MenuTree(Of T)), Func(Of MenuTree(Of T), GUIContent), Func(Of T, GUIContent), Action(Of T))
 - uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.SetColorOptions(UnityEngine.Color,UnityEngine.Color)
   commentId: M:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.SetColorOptions(UnityEngine.Color,UnityEngine.Color)
   id: SetColorOptions(UnityEngine.Color,UnityEngine.Color)
@@ -104,7 +106,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetColorOptions
     path: ../Editor/MenuTree/MenuTreeItemCollectionDrawer.cs
-    startLine: 33
+    startLine: 35
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -137,7 +139,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UpdateGroups
     path: ../Editor/MenuTree/MenuTreeItemCollectionDrawer.cs
-    startLine: 38
+    startLine: 40
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -165,7 +167,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Draw
     path: ../Editor/MenuTree/MenuTreeItemCollectionDrawer.cs
-    startLine: 59
+    startLine: 61
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -485,7 +487,7 @@ references:
   fullName: System
 - uid: LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor*
   commentId: Overload:LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor
-  href: LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Action{LobsterFramework.Utility.MenuTree{`0}},System.Action{`0})
+  href: LobsterFramework.Editors.MenuTreeItemCollectionDrawer-1.html#LobsterFramework.Editors.MenuTreeItemCollectionDrawer`1.#ctor(System.Collections.Generic.ICollection{`0},System.Collections.Generic.Dictionary{`0,LobsterFramework.Utility.MenuTree{`0}},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent},System.Action{`0})
   name: MenuTreeItemCollectionDrawer
   nameWithType: MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer
   fullName: LobsterFramework.Editors.MenuTreeItemCollectionDrawer<T>.MenuTreeItemCollectionDrawer
@@ -566,34 +568,39 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: System.Action{LobsterFramework.Utility.MenuTree{{T}}}
-  commentId: T:System.Action{LobsterFramework.Utility.MenuTree{`0}}
+- uid: System.Func{LobsterFramework.Utility.MenuTree{{T}},UnityEngine.GUIContent}
+  commentId: T:System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent}
   parent: System
-  definition: System.Action`1
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<MenuTree<T>>
-  nameWithType: Action<MenuTree<T>>
-  fullName: System.Action<LobsterFramework.Utility.MenuTree<T>>
-  nameWithType.vb: Action(Of MenuTree(Of T))
-  fullName.vb: System.Action(Of LobsterFramework.Utility.MenuTree(Of T))
-  name.vb: Action(Of MenuTree(Of T))
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<MenuTree<T>, GUIContent>
+  nameWithType: Func<MenuTree<T>, GUIContent>
+  fullName: System.Func<LobsterFramework.Utility.MenuTree<T>, UnityEngine.GUIContent>
+  nameWithType.vb: Func(Of MenuTree(Of T), GUIContent)
+  fullName.vb: System.Func(Of LobsterFramework.Utility.MenuTree(Of T), UnityEngine.GUIContent)
+  name.vb: Func(Of MenuTree(Of T), GUIContent)
   spec.csharp:
-  - uid: System.Action`1
-    name: Action
+  - uid: System.Func`2
+    name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
   - uid: LobsterFramework.Utility.MenuTree`1
     name: MenuTree
   - name: <
   - name: T
   - name: '>'
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
   - name: '>'
   spec.vb:
-  - uid: System.Action`1
-    name: Action
+  - uid: System.Func`2
+    name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: (
   - name: Of
   - name: " "
@@ -604,6 +611,50 @@ references:
   - name: " "
   - name: T
   - name: )
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: )
+- uid: System.Func{{T},UnityEngine.GUIContent}
+  commentId: T:System.Func{`0,UnityEngine.GUIContent}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, GUIContent>
+  nameWithType: Func<T, GUIContent>
+  fullName: System.Func<T, UnityEngine.GUIContent>
+  nameWithType.vb: Func(Of T, GUIContent)
+  fullName.vb: System.Func(Of T, UnityEngine.GUIContent)
+  name.vb: Func(Of T, GUIContent)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
   - name: )
 - uid: System.Action{{T}}
   commentId: T:System.Action{`0}
@@ -732,6 +783,40 @@ references:
   - name: ','
   - name: " "
   - name: TValue
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
   - name: )
 - uid: System.Action`1
   commentId: T:System.Action`1

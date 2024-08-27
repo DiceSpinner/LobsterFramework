@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GuardAnimations
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 125
+    startLine: 126
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -46,7 +46,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DeflectLeft
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 126
+    startLine: 127
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -72,7 +72,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DeflectRight
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 127
+    startLine: 128
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

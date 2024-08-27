@@ -34,11 +34,11 @@ items:
   type: Class
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EntityGroup
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 7
   assemblies:
   - LobsterFramework
@@ -137,11 +137,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnEntityAdded
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 11
   assemblies:
   - LobsterFramework
@@ -164,11 +164,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnEntityRemoved
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 12
   assemblies:
   - LobsterFramework
@@ -191,11 +191,11 @@ items:
   type: Property
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Count
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 14
   assemblies:
   - LobsterFramework
@@ -223,11 +223,11 @@ items:
   type: Property
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsReadOnly
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 16
   assemblies:
   - LobsterFramework
@@ -255,11 +255,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetEnumerator
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 18
   assemblies:
   - LobsterFramework
@@ -286,11 +286,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Add
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 28
   assemblies:
   - LobsterFramework
@@ -320,11 +320,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ExceptWith
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 37
   assemblies:
   - LobsterFramework
@@ -355,11 +355,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IntersectWith
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 42
   assemblies:
   - LobsterFramework
@@ -390,11 +390,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsProperSubsetOf
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 47
   assemblies:
   - LobsterFramework
@@ -427,11 +427,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsProperSupersetOf
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 52
   assemblies:
   - LobsterFramework
@@ -464,11 +464,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsSubsetOf
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 57
   assemblies:
   - LobsterFramework
@@ -501,11 +501,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsSupersetOf
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 62
   assemblies:
   - LobsterFramework
@@ -538,11 +538,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Overlaps
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 67
   assemblies:
   - LobsterFramework
@@ -575,11 +575,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetEquals
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 72
   assemblies:
   - LobsterFramework
@@ -612,11 +612,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SymmetricExceptWith
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 77
   assemblies:
   - LobsterFramework
@@ -647,11 +647,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UnionWith
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 82
   assemblies:
   - LobsterFramework
@@ -682,11 +682,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Clear
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 92
   assemblies:
   - LobsterFramework
@@ -711,11 +711,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Contains
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 101
   assemblies:
   - LobsterFramework
@@ -745,11 +745,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CopyTo
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 106
   assemblies:
   - LobsterFramework
@@ -782,11 +782,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/EntityGroup.cs
+      path: Entity/EntityGroup.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Remove
-    path: ../Components/EntityGroup.cs
+    path: ../Entity/EntityGroup.cs
     startLine: 111
   assemblies:
   - LobsterFramework

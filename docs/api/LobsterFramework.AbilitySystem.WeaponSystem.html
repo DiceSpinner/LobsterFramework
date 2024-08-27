@@ -87,14 +87,28 @@
     <h3 id="classes">
 Classes
 </h3>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig.html">AbilityAnimationConfig</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute.html">AddWeaponArtMenuAttribute</a></h4>
-      <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html">WeaponAbility</a> to mark it as a weapon art that can be called by <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html">WeaponArt</a>.</p>
-</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html">AddWeaponStatMenuAttribute</a></h4>
       <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html">WeaponStat</a> to make it visible to editor scripts</p>
 </section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.Attack.html">Attack</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel.html">AttackChannel</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig.html">AttackConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AttackContext.html">AttackContext</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData.html">CharacterWeaponAnimationData</a></h4>
+      <section><p>Animations and other important data for weapon abilities.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html">ChargedAttack</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.html">ChargedAttackChannel</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.html">ChargedAttackConfig</a></h4>
+      <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext.html">ChargedAttackContext</a></h4>
+      <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.Guard.html">Guard</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel.html">GuardChannel</a></h4>
@@ -102,22 +116,6 @@ Classes
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig.html">GuardConfig</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.GuardContext.html">GuardContext</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack.html">HeavyWeaponAttack</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel.html">HeavyWeaponAttackChannel</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig.html">HeavyWeaponAttackConfig</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext.html">HeavyWeaponAttackContext</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack.html">LightWeaponAttack</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel.html">LightWeaponAttackChannel</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig.html">LightWeaponAttackConfig</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext.html">LightWeaponAttackContext</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.html">OffhandAbility</a></h4>
       <section></section>
@@ -135,13 +133,18 @@ Classes
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html">Weapon</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html">WeaponAbility</a></h4>
-      <section><p>Convenient template for creating weapon abilities. Weapon abilities can only have one instance running at any given moment.
-Inheriting from this will provide automatic weapon stats, state, compatibility check when attempting to enqueue the ability.</p>
-</section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData.html">WeaponAnimationData</a></h4>
       <section></section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.html">WeaponAnimationAddonAttribute</a></h4>
+      <section><p>Register a ScriptableObject as the addon data asset for your <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html">WeaponAbility</a>. It will appear inside the <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData.html">CharacterWeaponAnimationData</a> inspector.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.html">WeaponAnimationAttribute</a></h4>
+      <section><p>Indicate the weapon ability has an array of animations.</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html">WeaponArt</a></h4>
       <section><p>Use the weapon ability specified by the weapon equipped. Can be used to query the states of the weapon ability being runned.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.html">WeaponArtAttribute</a></h4>
+      <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html">WeaponAbility</a> to mark it as a weapon art that can be called by <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html">WeaponArt</a>.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel.html">WeaponArtChannel</a></h4>
       <section></section>
@@ -159,8 +162,6 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html">WeaponStat</a></h4>
       <section><p>Stat of the weapon. A weapon is allowed to have multiple weapon stats of different types. These stats may be queried by weapon abilities.</p>
 </section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary.html">WeaponStatDictionary</a></h4>
-      <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility.html">WeaponUtility</a></h4>
       <section></section>
     <h3 id="enums">

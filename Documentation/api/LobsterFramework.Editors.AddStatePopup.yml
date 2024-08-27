@@ -93,7 +93,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/PopupWindow/AddStatePopup.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

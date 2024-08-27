@@ -19,12 +19,12 @@ items:
   type: Enum
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponState
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 321
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 318
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -44,12 +44,12 @@ items:
   type: Field
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Attacking
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 322
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 319
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -70,12 +70,12 @@ items:
   type: Field
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Guarding
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 323
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 320
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -96,12 +96,12 @@ items:
   type: Field
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Deflecting
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 324
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 321
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -122,12 +122,12 @@ items:
   type: Field
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Occupied
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 325
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 322
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -148,12 +148,12 @@ items:
   type: Field
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Idle
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 326
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 323
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

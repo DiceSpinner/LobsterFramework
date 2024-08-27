@@ -6,6 +6,7 @@ items:
   parent: LobsterFramework.AI
   children:
   - LobsterFramework.AI.StateData.Clone
+  - LobsterFramework.AI.StateData.GetRequestingTypes
   langs:
   - csharp
   - vb
@@ -20,26 +21,32 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: StateData
     path: ../AI/StateData.cs
-    startLine: 13
+    startLine: 17
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
-  summary: Represents the state information used by the state machine.
+  summary: Defines the set of AI states and the AI can be in. This data is used by <xref href="LobsterFramework.AI.StateMachine" data-throw-if-not-resolved="false"></xref> at runtime.
   example: []
   syntax:
     content: >-
       [CreateAssetMenu(menuName = "StateMachine/StateData")]
 
-      public class StateData : ScriptableObject
+      public class StateData : ReferenceRequester, IEnumerable<Type>, IEnumerable
     content.vb: >-
       <CreateAssetMenu(menuName:="StateMachine/StateData")>
 
-      Public Class StateData Inherits ScriptableObject
+      Public Class StateData Inherits ReferenceRequester Implements IEnumerable(Of Type), IEnumerable
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
+  - LobsterFramework.ReferenceRequester
+  implements:
+  - System.Collections.Generic.IEnumerable{System.Type}
+  - System.Collections.IEnumerable
   inheritedMembers:
+  - LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+  - LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -120,7 +127,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Clone
     path: ../AI/StateData.cs
-    startLine: 68
+    startLine: 72
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -133,7 +140,46 @@ items:
       description: The copied state data that contains a copy of all states
     content.vb: Public Function Clone() As StateData
   overload: LobsterFramework.AI.StateData.Clone*
+- uid: LobsterFramework.AI.StateData.GetRequestingTypes
+  commentId: M:LobsterFramework.AI.StateData.GetRequestingTypes
+  id: GetRequestingTypes
+  parent: LobsterFramework.AI.StateData
+  langs:
+  - csharp
+  - vb
+  name: GetRequestingTypes()
+  nameWithType: StateData.GetRequestingTypes()
+  fullName: LobsterFramework.AI.StateData.GetRequestingTypes()
+  type: Method
+  source:
+    remote:
+      path: AI/StateData.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: GetRequestingTypes
+    path: ../AI/StateData.cs
+    startLine: 118
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  summary: Implement this to expose the set of types with <xref href="LobsterFramework.RequireComponentReferenceAttribute" data-throw-if-not-resolved="false"></xref> applied within the data container,
+  example: []
+  syntax:
+    content: public override IEnumerator<Type> GetRequestingTypes()
+    return:
+      type: System.Collections.Generic.IEnumerator{System.Type}
+      description: The set of requester types this data container has
+    content.vb: Public Overrides Function GetRequestingTypes() As IEnumerator(Of Type)
+  overridden: LobsterFramework.ReferenceRequester.GetRequestingTypes
+  overload: LobsterFramework.AI.StateData.GetRequestingTypes*
 references:
+- uid: LobsterFramework.AI.StateMachine
+  commentId: T:LobsterFramework.AI.StateMachine
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.StateMachine.html
+  name: StateMachine
+  nameWithType: StateMachine
+  fullName: LobsterFramework.AI.StateMachine
 - uid: LobsterFramework.AI
   commentId: N:LobsterFramework.AI
   href: LobsterFramework.html
@@ -181,6 +227,112 @@ references:
   name: ScriptableObject
   nameWithType: ScriptableObject
   fullName: UnityEngine.ScriptableObject
+- uid: LobsterFramework.ReferenceRequester
+  commentId: T:LobsterFramework.ReferenceRequester
+  parent: LobsterFramework
+  href: LobsterFramework.ReferenceRequester.html
+  name: ReferenceRequester
+  nameWithType: ReferenceRequester
+  fullName: LobsterFramework.ReferenceRequester
+- uid: System.Collections.Generic.IEnumerable{System.Type}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: System.Collections.Generic.IEnumerable<System.Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+  commentId: M:LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+  parent: LobsterFramework.ReferenceRequester
+  isExternal: true
+  href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+  name: RaiseRequirementAddedEvent(Type)
+  nameWithType: ReferenceRequester.RaiseRequirementAddedEvent(Type)
+  fullName: LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+  spec.csharp:
+  - uid: LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+    name: RaiseRequirementAddedEvent
+    href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+    name: RaiseRequirementAddedEvent
+    href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.RaiseRequirementAddedEvent(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+  commentId: M:LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+  parent: LobsterFramework.ReferenceRequester
+  isExternal: true
+  href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+  name: RaiseRequirementRemovedEvent(Type)
+  nameWithType: ReferenceRequester.RaiseRequirementRemovedEvent(Type)
+  fullName: LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+  spec.csharp:
+  - uid: LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+    name: RaiseRequirementRemovedEvent
+    href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+    name: RaiseRequirementRemovedEvent
+    href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.RaiseRequirementRemovedEvent(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -2015,6 +2167,104 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: UnityEngine.Object.Instantiate``1(``0)
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
   isExternal: true
@@ -2266,3 +2516,98 @@ references:
   name: StateData
   nameWithType: StateData
   fullName: LobsterFramework.AI.StateData
+- uid: LobsterFramework.RequireComponentReferenceAttribute
+  commentId: T:LobsterFramework.RequireComponentReferenceAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.RequireComponentReferenceAttribute.html
+  name: RequireComponentReferenceAttribute
+  nameWithType: RequireComponentReferenceAttribute
+  fullName: LobsterFramework.RequireComponentReferenceAttribute
+- uid: LobsterFramework.ReferenceRequester.GetRequestingTypes
+  commentId: M:LobsterFramework.ReferenceRequester.GetRequestingTypes
+  parent: LobsterFramework.ReferenceRequester
+  href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.GetRequestingTypes
+  name: GetRequestingTypes()
+  nameWithType: ReferenceRequester.GetRequestingTypes()
+  fullName: LobsterFramework.ReferenceRequester.GetRequestingTypes()
+  spec.csharp:
+  - uid: LobsterFramework.ReferenceRequester.GetRequestingTypes
+    name: GetRequestingTypes
+    href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.GetRequestingTypes
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.ReferenceRequester.GetRequestingTypes
+    name: GetRequestingTypes
+    href: LobsterFramework.ReferenceRequester.html#LobsterFramework.ReferenceRequester.GetRequestingTypes
+  - name: (
+  - name: )
+- uid: LobsterFramework.AI.StateData.GetRequestingTypes*
+  commentId: Overload:LobsterFramework.AI.StateData.GetRequestingTypes
+  href: LobsterFramework.AI.StateData.html#LobsterFramework.AI.StateData.GetRequestingTypes
+  name: GetRequestingTypes
+  nameWithType: StateData.GetRequestingTypes
+  fullName: LobsterFramework.AI.StateData.GetRequestingTypes
+- uid: System.Collections.Generic.IEnumerator{System.Type}
+  commentId: T:System.Collections.Generic.IEnumerator{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<Type>
+  nameWithType: IEnumerator<Type>
+  fullName: System.Collections.Generic.IEnumerator<System.Type>
+  nameWithType.vb: IEnumerator(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of System.Type)
+  name.vb: IEnumerator(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

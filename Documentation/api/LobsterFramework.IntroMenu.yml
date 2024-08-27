@@ -4,8 +4,7 @@ items:
   commentId: T:LobsterFramework.IntroMenu
   id: IntroMenu
   parent: LobsterFramework
-  children:
-  - LobsterFramework.IntroMenu.PlayGame
+  children: []
   langs:
   - csharp
   - vb
@@ -151,32 +150,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: LobsterFramework.IntroMenu.PlayGame
-  commentId: M:LobsterFramework.IntroMenu.PlayGame
-  id: PlayGame
-  parent: LobsterFramework.IntroMenu
-  langs:
-  - csharp
-  - vb
-  name: PlayGame()
-  nameWithType: IntroMenu.PlayGame()
-  fullName: LobsterFramework.IntroMenu.PlayGame()
-  type: Method
-  source:
-    remote:
-      path: UI/IntroMenu.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: PlayGame
-    path: ../UI/IntroMenu.cs
-    startLine: 13
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework
-  syntax:
-    content: public void PlayGame()
-    content.vb: Public Sub PlayGame()
-  overload: LobsterFramework.IntroMenu.PlayGame*
 references:
 - uid: LobsterFramework
   commentId: N:LobsterFramework
@@ -4571,9 +4544,3 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.IntroMenu.PlayGame*
-  commentId: Overload:LobsterFramework.IntroMenu.PlayGame
-  href: LobsterFramework.IntroMenu.html#LobsterFramework.IntroMenu.PlayGame
-  name: PlayGame
-  nameWithType: IntroMenu.PlayGame
-  fullName: LobsterFramework.IntroMenu.PlayGame

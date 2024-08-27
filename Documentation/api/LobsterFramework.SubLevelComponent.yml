@@ -38,7 +38,6 @@ items:
   - UnityEngine.Behaviour
   - UnityEngine.MonoBehaviour
   derivedClasses:
-  - LobsterFramework.AbilitySystem.AbilityManager
   - LobsterFramework.EffectProcessor
   inheritedMembers:
   - UnityEngine.MonoBehaviour.IsInvoking

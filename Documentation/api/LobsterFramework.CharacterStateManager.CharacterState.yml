@@ -20,12 +20,12 @@ items:
   type: Enum
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CharacterState
-    path: ../Components/CharacterStateManager.cs
-    startLine: 200
+    path: ../Entity/CharacterStateManager.cs
+    startLine: 204
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -50,12 +50,12 @@ items:
   type: Field
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PostureBroken
-    path: ../Components/CharacterStateManager.cs
-    startLine: 202
+    path: ../Entity/CharacterStateManager.cs
+    startLine: 206
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -76,12 +76,12 @@ items:
   type: Field
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PoiseBroken
-    path: ../Components/CharacterStateManager.cs
-    startLine: 203
+    path: ../Entity/CharacterStateManager.cs
+    startLine: 207
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -102,12 +102,12 @@ items:
   type: Field
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Suppressed
-    path: ../Components/CharacterStateManager.cs
-    startLine: 204
+    path: ../Entity/CharacterStateManager.cs
+    startLine: 208
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -128,12 +128,12 @@ items:
   type: Field
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Dashing
-    path: ../Components/CharacterStateManager.cs
-    startLine: 205
+    path: ../Entity/CharacterStateManager.cs
+    startLine: 209
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -154,12 +154,12 @@ items:
   type: Field
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityCasting
-    path: ../Components/CharacterStateManager.cs
-    startLine: 206
+    path: ../Entity/CharacterStateManager.cs
+    startLine: 210
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -180,12 +180,12 @@ items:
   type: Field
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Normal
-    path: ../Components/CharacterStateManager.cs
-    startLine: 207
+    path: ../Entity/CharacterStateManager.cs
+    startLine: 211
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

@@ -5,19 +5,21 @@ items:
   id: LobsterFramework
   children:
   - LobsterFramework.AnimationClipArray
+  - LobsterFramework.AttackSetting
+  - LobsterFramework.AttributeInitializer
   - LobsterFramework.CharacterStateManager
   - LobsterFramework.CharacterStateManager.CharacterState
   - LobsterFramework.ContinousCollision2D
   - LobsterFramework.Damage
   - LobsterFramework.DamageType
   - LobsterFramework.DisableEditInPlayMode
+  - LobsterFramework.DisplayNameAttribute
   - LobsterFramework.EffectProcessor
   - LobsterFramework.Entity
   - LobsterFramework.EntityGroup
+  - LobsterFramework.FieldDescriptionAttribute
   - LobsterFramework.FilePathAttribute
   - LobsterFramework.FolderPathAttribute
-  - LobsterFramework.GameManager
-  - LobsterFramework.GameStateManager
   - LobsterFramework.IntroMenu
   - LobsterFramework.InventoryUtil
   - LobsterFramework.ItemEntryUI
@@ -25,11 +27,15 @@ items:
   - LobsterFramework.MovementController
   - LobsterFramework.Poise
   - LobsterFramework.ReadOnlyAttribute
-  - LobsterFramework.Scene
-  - LobsterFramework.SceneEventChannel
+  - LobsterFramework.ReferenceProvider
+  - LobsterFramework.ReferenceRequester
+  - LobsterFramework.RequireComponentReferenceAttribute
+  - LobsterFramework.RequirementDescription
   - LobsterFramework.SceneLoader
   - LobsterFramework.SerializableArray`1
+  - LobsterFramework.Setting
   - LobsterFramework.SimpleCollision2D
+  - LobsterFramework.Singleton
   - LobsterFramework.SubLevelComponent
   langs:
   - csharp
@@ -94,12 +100,45 @@ references:
   name: MovementController
   nameWithType: MovementController
   fullName: LobsterFramework.MovementController
+- uid: LobsterFramework.AttributeInitializer
+  commentId: T:LobsterFramework.AttributeInitializer
+  href: LobsterFramework.AttributeInitializer.html
+  name: AttributeInitializer
+  nameWithType: AttributeInitializer
+  fullName: LobsterFramework.AttributeInitializer
+- uid: LobsterFramework.DisplayNameAttribute
+  commentId: T:LobsterFramework.DisplayNameAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.DisplayNameAttribute.html
+  name: DisplayNameAttribute
+  nameWithType: DisplayNameAttribute
+  fullName: LobsterFramework.DisplayNameAttribute
+- uid: LobsterFramework.ReferenceProvider
+  commentId: T:LobsterFramework.ReferenceProvider
+  parent: LobsterFramework
+  href: LobsterFramework.ReferenceProvider.html
+  name: ReferenceProvider
+  nameWithType: ReferenceProvider
+  fullName: LobsterFramework.ReferenceProvider
 - uid: LobsterFramework.ItemEntryUI
   commentId: T:LobsterFramework.ItemEntryUI
   href: LobsterFramework.ItemEntryUI.html
   name: ItemEntryUI
   nameWithType: ItemEntryUI
   fullName: LobsterFramework.ItemEntryUI
+- uid: LobsterFramework.Singleton
+  commentId: T:LobsterFramework.Singleton
+  href: LobsterFramework.Singleton.html
+  name: Singleton
+  nameWithType: Singleton
+  fullName: LobsterFramework.Singleton
+- uid: LobsterFramework.Poise
+  commentId: T:LobsterFramework.Poise
+  parent: LobsterFramework
+  href: LobsterFramework.Poise.html
+  name: Poise
+  nameWithType: Poise
+  fullName: LobsterFramework.Poise
 - uid: LobsterFramework.ContinousCollision2D
   commentId: T:LobsterFramework.ContinousCollision2D
   href: LobsterFramework.ContinousCollision2D.html
@@ -119,46 +158,6 @@ references:
   name: IntroMenu
   nameWithType: IntroMenu
   fullName: LobsterFramework.IntroMenu
-- uid: LobsterFramework.Poise
-  commentId: T:LobsterFramework.Poise
-  parent: LobsterFramework
-  href: LobsterFramework.Poise.html
-  name: Poise
-  nameWithType: Poise
-  fullName: LobsterFramework.Poise
-- uid: LobsterFramework.LayerAttribute
-  commentId: T:LobsterFramework.LayerAttribute
-  parent: LobsterFramework
-  href: LobsterFramework.LayerAttribute.html
-  name: LayerAttribute
-  nameWithType: LayerAttribute
-  fullName: LobsterFramework.LayerAttribute
-- uid: LobsterFramework.GameStateManager
-  commentId: T:LobsterFramework.GameStateManager
-  href: LobsterFramework.GameStateManager.html
-  name: GameStateManager
-  nameWithType: GameStateManager
-  fullName: LobsterFramework.GameStateManager
-- uid: LobsterFramework.DisableEditInPlayMode
-  commentId: T:LobsterFramework.DisableEditInPlayMode
-  parent: LobsterFramework
-  href: LobsterFramework.DisableEditInPlayMode.html
-  name: DisableEditInPlayMode
-  nameWithType: DisableEditInPlayMode
-  fullName: LobsterFramework.DisableEditInPlayMode
-- uid: LobsterFramework.ReadOnlyAttribute
-  commentId: T:LobsterFramework.ReadOnlyAttribute
-  parent: LobsterFramework
-  href: LobsterFramework.ReadOnlyAttribute.html
-  name: ReadOnlyAttribute
-  nameWithType: ReadOnlyAttribute
-  fullName: LobsterFramework.ReadOnlyAttribute
-- uid: LobsterFramework.EntityGroup
-  commentId: T:LobsterFramework.EntityGroup
-  href: LobsterFramework.EntityGroup.html
-  name: EntityGroup
-  nameWithType: EntityGroup
-  fullName: LobsterFramework.EntityGroup
 - uid: LobsterFramework.CharacterStateManager
   commentId: T:LobsterFramework.CharacterStateManager
   href: LobsterFramework.CharacterStateManager.html
@@ -188,45 +187,64 @@ references:
   - uid: LobsterFramework.CharacterStateManager.CharacterState
     name: CharacterState
     href: LobsterFramework.CharacterStateManager.CharacterState.html
+- uid: LobsterFramework.AttackSetting
+  commentId: T:LobsterFramework.AttackSetting
+  href: LobsterFramework.AttackSetting.html
+  name: AttackSetting
+  nameWithType: AttackSetting
+  fullName: LobsterFramework.AttackSetting
+- uid: LobsterFramework.LayerAttribute
+  commentId: T:LobsterFramework.LayerAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.LayerAttribute.html
+  name: LayerAttribute
+  nameWithType: LayerAttribute
+  fullName: LobsterFramework.LayerAttribute
+- uid: LobsterFramework.EntityGroup
+  commentId: T:LobsterFramework.EntityGroup
+  href: LobsterFramework.EntityGroup.html
+  name: EntityGroup
+  nameWithType: EntityGroup
+  fullName: LobsterFramework.EntityGroup
+- uid: LobsterFramework.DisableEditInPlayMode
+  commentId: T:LobsterFramework.DisableEditInPlayMode
+  parent: LobsterFramework
+  href: LobsterFramework.DisableEditInPlayMode.html
+  name: DisableEditInPlayMode
+  nameWithType: DisableEditInPlayMode
+  fullName: LobsterFramework.DisableEditInPlayMode
+- uid: LobsterFramework.ReadOnlyAttribute
+  commentId: T:LobsterFramework.ReadOnlyAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.ReadOnlyAttribute.html
+  name: ReadOnlyAttribute
+  nameWithType: ReadOnlyAttribute
+  fullName: LobsterFramework.ReadOnlyAttribute
+- uid: LobsterFramework.FieldDescriptionAttribute
+  commentId: T:LobsterFramework.FieldDescriptionAttribute
+  href: LobsterFramework.FieldDescriptionAttribute.html
+  name: FieldDescriptionAttribute
+  nameWithType: FieldDescriptionAttribute
+  fullName: LobsterFramework.FieldDescriptionAttribute
 - uid: LobsterFramework.SceneLoader
   commentId: T:LobsterFramework.SceneLoader
   href: LobsterFramework.SceneLoader.html
   name: SceneLoader
   nameWithType: SceneLoader
   fullName: LobsterFramework.SceneLoader
-- uid: LobsterFramework.SceneEventChannel
-  commentId: T:LobsterFramework.SceneEventChannel
-  href: LobsterFramework.SceneEventChannel.html
-  name: SceneEventChannel
-  nameWithType: SceneEventChannel
-  fullName: LobsterFramework.SceneEventChannel
-- uid: LobsterFramework.FilePathAttribute
-  commentId: T:LobsterFramework.FilePathAttribute
+- uid: LobsterFramework.RequireComponentReferenceAttribute
+  commentId: T:LobsterFramework.RequireComponentReferenceAttribute
   parent: LobsterFramework
-  href: LobsterFramework.FilePathAttribute.html
-  name: FilePathAttribute
-  nameWithType: FilePathAttribute
-  fullName: LobsterFramework.FilePathAttribute
-- uid: LobsterFramework.Scene
-  commentId: T:LobsterFramework.Scene
-  parent: LobsterFramework
-  href: LobsterFramework.Scene.html
-  name: Scene
-  nameWithType: Scene
-  fullName: LobsterFramework.Scene
-- uid: LobsterFramework.GameManager
-  commentId: T:LobsterFramework.GameManager
-  parent: LobsterFramework
-  href: LobsterFramework.GameManager.html
-  name: GameManager
-  nameWithType: GameManager
-  fullName: LobsterFramework.GameManager
-- uid: LobsterFramework.InventoryUtil
-  commentId: T:LobsterFramework.InventoryUtil
-  href: LobsterFramework.InventoryUtil.html
-  name: InventoryUtil
-  nameWithType: InventoryUtil
-  fullName: LobsterFramework.InventoryUtil
+  href: LobsterFramework.RequireComponentReferenceAttribute.html
+  name: RequireComponentReferenceAttribute
+  nameWithType: RequireComponentReferenceAttribute
+  fullName: LobsterFramework.RequireComponentReferenceAttribute
+- uid: LobsterFramework.RequirementDescription
+  commentId: T:LobsterFramework.RequirementDescription
+  href: LobsterFramework.RequirementDescription.html
+  name: RequirementDescription
+  nameWithType: RequirementDescription
+  fullName: LobsterFramework.RequirementDescription
 - uid: LobsterFramework.Entity
   commentId: T:LobsterFramework.Entity
   parent: LobsterFramework
@@ -248,6 +266,33 @@ references:
   name: Damage
   nameWithType: Damage
   fullName: LobsterFramework.Damage
+- uid: LobsterFramework.ReferenceRequester
+  commentId: T:LobsterFramework.ReferenceRequester
+  parent: LobsterFramework
+  href: LobsterFramework.ReferenceRequester.html
+  name: ReferenceRequester
+  nameWithType: ReferenceRequester
+  fullName: LobsterFramework.ReferenceRequester
+- uid: LobsterFramework.Setting
+  commentId: T:LobsterFramework.Setting
+  parent: LobsterFramework
+  href: LobsterFramework.Setting.html
+  name: Setting
+  nameWithType: Setting
+  fullName: LobsterFramework.Setting
+- uid: LobsterFramework.FilePathAttribute
+  commentId: T:LobsterFramework.FilePathAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.FilePathAttribute.html
+  name: FilePathAttribute
+  nameWithType: FilePathAttribute
+  fullName: LobsterFramework.FilePathAttribute
+- uid: LobsterFramework.InventoryUtil
+  commentId: T:LobsterFramework.InventoryUtil
+  href: LobsterFramework.InventoryUtil.html
+  name: InventoryUtil
+  nameWithType: InventoryUtil
+  fullName: LobsterFramework.InventoryUtil
 - uid: LobsterFramework.SubLevelComponent
   commentId: T:LobsterFramework.SubLevelComponent
   parent: LobsterFramework

@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OrValue
     path: ../Utility/CombinedValue.cs
-    startLine: 251
+    startLine: 254
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -36,6 +36,7 @@ items:
   inheritedMembers:
   - LobsterFramework.Utility.CombinedValue{System.Boolean}.stats
   - LobsterFramework.Utility.CombinedValue{System.Boolean}.baseValue
+  - LobsterFramework.Utility.CombinedValue{System.Boolean}.OnValueChanged
   - LobsterFramework.Utility.CombinedValue{System.Boolean}.Value
   - LobsterFramework.Utility.CombinedValue{System.Boolean}.Compatible(System.Boolean)
   - LobsterFramework.Utility.CombinedValue{System.Boolean}.ClearEffectors
@@ -66,7 +67,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../Utility/CombinedValue.cs
-    startLine: 252
+    startLine: 255
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -98,7 +99,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ComputeValue
     path: ../Utility/CombinedValue.cs
-    startLine: 256
+    startLine: 259
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -199,6 +200,16 @@ references:
   fullName: LobsterFramework.Utility.CombinedValue<bool>.baseValue
   nameWithType.vb: CombinedValue(Of Boolean).baseValue
   fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).baseValue
+- uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.OnValueChanged
+  commentId: E:LobsterFramework.Utility.CombinedValue{System.Boolean}.OnValueChanged
+  parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
+  definition: LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  href: LobsterFramework.Utility.CombinedValue{System.Boolean}.html#LobsterFramework.Utility.CombinedValue{System.Boolean}.OnValueChanged
+  name: OnValueChanged
+  nameWithType: CombinedValue<bool>.OnValueChanged
+  fullName: LobsterFramework.Utility.CombinedValue<bool>.OnValueChanged
+  nameWithType.vb: CombinedValue(Of Boolean).OnValueChanged
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Boolean).OnValueChanged
 - uid: LobsterFramework.Utility.CombinedValue{System.Boolean}.Value
   commentId: P:LobsterFramework.Utility.CombinedValue{System.Boolean}.Value
   parent: LobsterFramework.Utility.CombinedValue{System.Boolean}
@@ -562,6 +573,14 @@ references:
   fullName: LobsterFramework.Utility.CombinedValue<T>.baseValue
   nameWithType.vb: CombinedValue(Of T).baseValue
   fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).baseValue
+- uid: LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  commentId: E:LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  name: OnValueChanged
+  nameWithType: CombinedValue<T>.OnValueChanged
+  fullName: LobsterFramework.Utility.CombinedValue<T>.OnValueChanged
+  nameWithType.vb: CombinedValue(Of T).OnValueChanged
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).OnValueChanged
 - uid: LobsterFramework.Utility.CombinedValue`1.Value
   commentId: P:LobsterFramework.Utility.CombinedValue`1.Value
   href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Value

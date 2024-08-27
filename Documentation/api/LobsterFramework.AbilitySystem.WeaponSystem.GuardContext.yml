@@ -24,7 +24,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GuardContext
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 131
+    startLine: 132
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -36,8 +36,6 @@ items:
   - LobsterFramework.AbilitySystem.AbilityContext
   - LobsterFramework.AbilitySystem.AbilityCoroutineContext
   inheritedMembers:
-  - LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-  - LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
   - LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   - LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
   - System.Object.Equals(System.Object)
@@ -65,7 +63,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: animationSignaled
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 132
+    startLine: 133
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -92,7 +90,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: currentWeapon
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 133
+    startLine: 134
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -119,7 +117,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: animancerState
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 134
+    startLine: 135
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -146,7 +144,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: deflected
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 135
+    startLine: 136
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -173,7 +171,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: deflectOver
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 136
+    startLine: 137
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -238,20 +236,6 @@ references:
   name: AbilityCoroutineContext
   nameWithType: AbilityCoroutineContext
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutineContext
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutineContext
-  href: LobsterFramework.AbilitySystem.AbilityCoroutineContext.html#LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-  name: coroutineRunner
-  nameWithType: AbilityCoroutineContext.coroutineRunner
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
-  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutineContext
-  href: LobsterFramework.AbilitySystem.AbilityCoroutineContext.html#LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
-  name: coroutine
-  nameWithType: AbilityCoroutineContext.coroutine
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
 - uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   commentId: P:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   parent: LobsterFramework.AbilitySystem.AbilityContext

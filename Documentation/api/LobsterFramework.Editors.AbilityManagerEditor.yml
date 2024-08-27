@@ -28,17 +28,19 @@ items:
     content: >-
       [CustomEditor(typeof(AbilityManager))]
 
-      public class AbilityManagerEditor : Editor
+      public class AbilityManagerEditor : ReferenceProviderEditor
     content.vb: >-
       <CustomEditor(GetType(AbilityManager))>
 
-      Public Class AbilityManagerEditor Inherits Editor
+      Public Class AbilityManagerEditor Inherits ReferenceProviderEditor
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - UnityEditor.Editor
+  - LobsterFramework.Editors.ReferenceProviderEditor
   inheritedMembers:
+  - LobsterFramework.Editors.ReferenceProviderEditor.referenceFieldsExpanded
   - UnityEditor.Editor.SaveChanges
   - UnityEditor.Editor.DiscardChanges
   - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
@@ -157,16 +159,16 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnInspectorGUI
     path: ../Editor/Inspector/AbilityManagerEditor.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
-  summary: <p>Implement this function to make a custom inspector.</p>
+  summary: Draws out other fields and the reference assignment section underneath.
   example: []
   syntax:
     content: public override void OnInspectorGUI()
     content.vb: Public Overrides Sub OnInspectorGUI()
-  overridden: UnityEditor.Editor.OnInspectorGUI
+  overridden: LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
   overload: LobsterFramework.Editors.AbilityManagerEditor.OnInspectorGUI*
 references:
 - uid: LobsterFramework.Editors
@@ -223,6 +225,20 @@ references:
   name: Editor
   nameWithType: Editor
   fullName: UnityEditor.Editor
+- uid: LobsterFramework.Editors.ReferenceProviderEditor
+  commentId: T:LobsterFramework.Editors.ReferenceProviderEditor
+  parent: LobsterFramework.Editors
+  href: LobsterFramework.Editors.ReferenceProviderEditor.html
+  name: ReferenceProviderEditor
+  nameWithType: ReferenceProviderEditor
+  fullName: LobsterFramework.Editors.ReferenceProviderEditor
+- uid: LobsterFramework.Editors.ReferenceProviderEditor.referenceFieldsExpanded
+  commentId: F:LobsterFramework.Editors.ReferenceProviderEditor.referenceFieldsExpanded
+  parent: LobsterFramework.Editors.ReferenceProviderEditor
+  href: LobsterFramework.Editors.ReferenceProviderEditor.html#LobsterFramework.Editors.ReferenceProviderEditor.referenceFieldsExpanded
+  name: referenceFieldsExpanded
+  nameWithType: ReferenceProviderEditor.referenceFieldsExpanded
+  fullName: LobsterFramework.Editors.ReferenceProviderEditor.referenceFieldsExpanded
 - uid: UnityEditor.Editor.SaveChanges
   commentId: M:UnityEditor.Editor.SaveChanges
   parent: UnityEditor.Editor
@@ -3421,23 +3437,23 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: UnityEditor.Editor.OnInspectorGUI
-  commentId: M:UnityEditor.Editor.OnInspectorGUI
-  parent: UnityEditor.Editor
-  isExternal: true
+- uid: LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
+  commentId: M:LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
+  parent: LobsterFramework.Editors.ReferenceProviderEditor
+  href: LobsterFramework.Editors.ReferenceProviderEditor.html#LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
   name: OnInspectorGUI()
-  nameWithType: Editor.OnInspectorGUI()
-  fullName: UnityEditor.Editor.OnInspectorGUI()
+  nameWithType: ReferenceProviderEditor.OnInspectorGUI()
+  fullName: LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI()
   spec.csharp:
-  - uid: UnityEditor.Editor.OnInspectorGUI
+  - uid: LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
     name: OnInspectorGUI
-    isExternal: true
+    href: LobsterFramework.Editors.ReferenceProviderEditor.html#LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
   - name: (
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.OnInspectorGUI
+  - uid: LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
     name: OnInspectorGUI
-    isExternal: true
+    href: LobsterFramework.Editors.ReferenceProviderEditor.html#LobsterFramework.Editors.ReferenceProviderEditor.OnInspectorGUI
   - name: (
   - name: )
 - uid: LobsterFramework.Editors.AbilityManagerEditor.OnInspectorGUI*

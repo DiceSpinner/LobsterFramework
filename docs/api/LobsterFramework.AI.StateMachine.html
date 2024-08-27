@@ -83,7 +83,8 @@
 
   <h1 id="LobsterFramework_AI_StateMachine" data-uid="LobsterFramework.AI.StateMachine" class="text-break">Class StateMachine
 </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Manages and runs <a class="xref" href="LobsterFramework.AI.State.html">State</a>. Takes in <a class="xref" href="LobsterFramework.AI.StateData.html">StateData</a> as input.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -92,10 +93,29 @@
     <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a></div>
     <div class="level3"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Behaviour.html">Behaviour</a></div>
     <div class="level4"><a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
-    <div class="level5"><span class="xref">StateMachine</span></div>
+    <div class="level5"><a class="xref" href="LobsterFramework.ReferenceProvider.html">ReferenceProvider</a></div>
+    <div class="level6"><span class="xref">StateMachine</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_OnValidate">ReferenceProvider.OnValidate()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_OnDestroy">ReferenceProvider.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_Bind_LobsterFramework_ReferenceRequester_">ReferenceProvider.Bind(ReferenceRequester)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_UnBind">ReferenceProvider.UnBind()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_IsRequirementSatisfied_System_Type_">ReferenceProvider.IsRequirementSatisfied(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_GetComponentReference__1_System_Type_System_Int32_">ReferenceProvider.GetComponentReference&lt;T&gt;(Type, int)</a>
+    </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.IsInvoking.html">MonoBehaviour.IsInvoking()</a>
     </div>
@@ -452,39 +472,8 @@
   <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_AI_StateMachine_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StateMachine : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class StateMachine : ReferenceProvider</code></pre>
   </div>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AI_StateMachine_coroutineRunner.md&amp;value=---%0Auid%3A%20LobsterFramework.AI.StateMachine.coroutineRunner%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L25">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_AI_StateMachine_coroutineRunner" data-uid="LobsterFramework.AI.StateMachine.coroutineRunner">coroutineRunner</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly CoroutineRunner coroutineRunner</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="LobsterFramework.Utility.CoroutineRunner.html">CoroutineRunner</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
@@ -492,7 +481,7 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AI_StateMachine_CurrentState.md&amp;value=---%0Auid%3A%20LobsterFramework.AI.StateMachine.CurrentState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L33">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L35">View Source</a>
   </span>
   <a id="LobsterFramework_AI_StateMachine_CurrentState_" data-uid="LobsterFramework.AI.StateMachine.CurrentState*"></a>
   <h4 id="LobsterFramework_AI_StateMachine_CurrentState" data-uid="LobsterFramework.AI.StateMachine.CurrentState">CurrentState</h4>
@@ -524,7 +513,7 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AI_StateMachine_RunCoroutine_System_Collections_Generic_IEnumerable_LobsterFramework_Utility_CoroutineOption__.md&amp;value=---%0Auid%3A%20LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerable%7BLobsterFramework.Utility.CoroutineOption%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L28">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L30">View Source</a>
   </span>
   <a id="LobsterFramework_AI_StateMachine_RunCoroutine_" data-uid="LobsterFramework.AI.StateMachine.RunCoroutine*"></a>
   <h4 id="LobsterFramework_AI_StateMachine_RunCoroutine_System_Collections_Generic_IEnumerable_LobsterFramework_Utility_CoroutineOption__" data-uid="LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption})">RunCoroutine(IEnumerable&lt;CoroutineOption&gt;)</h4>
@@ -571,7 +560,7 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AI_StateMachine_Update.md&amp;value=---%0Auid%3A%20LobsterFramework.AI.StateMachine.Update%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L57">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L75">View Source</a>
   </span>
   <a id="LobsterFramework_AI_StateMachine_Update_" data-uid="LobsterFramework.AI.StateMachine.Update*"></a>
   <h4 id="LobsterFramework_AI_StateMachine_Update" data-uid="LobsterFramework.AI.StateMachine.Update">Update()</h4>
@@ -593,7 +582,7 @@
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AI_StateMachine.md&amp;value=---%0Auid%3A%20LobsterFramework.AI.StateMachine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AI/StateMachine.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -93,19 +93,28 @@
     <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a></div>
     <div class="level3"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Behaviour.html">Behaviour</a></div>
     <div class="level4"><a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
-    <div class="level5"><a class="xref" href="LobsterFramework.SubLevelComponent.html">SubLevelComponent</a></div>
+    <div class="level5"><a class="xref" href="LobsterFramework.ReferenceProvider.html">ReferenceProvider</a></div>
     <div class="level6"><span class="xref">AbilityManager</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="LobsterFramework.SubLevelComponent.html#LobsterFramework_SubLevelComponent_TopLevelTransform">SubLevelComponent.TopLevelTransform</a>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_OnValidate">ReferenceProvider.OnValidate()</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.SubLevelComponent.html#LobsterFramework_SubLevelComponent_GetTopLevelComponent__1">SubLevelComponent.GetTopLevelComponent&lt;T&gt;()</a>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_OnDestroy">ReferenceProvider.OnDestroy()</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.SubLevelComponent.html#LobsterFramework_SubLevelComponent_GetComponentInBoth__1">SubLevelComponent.GetComponentInBoth&lt;T&gt;()</a>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_Bind_LobsterFramework_ReferenceRequester_">ReferenceProvider.Bind(ReferenceRequester)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_UnBind">ReferenceProvider.UnBind()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_IsRequirementSatisfied_System_Type_">ReferenceProvider.IsRequirementSatisfied(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.ReferenceProvider.html#LobsterFramework_ReferenceProvider_GetComponentReference__1_System_Type_System_Int32_">ReferenceProvider.GetComponentReference&lt;T&gt;(Type, int)</a>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.IsInvoking.html">MonoBehaviour.IsInvoking()</a>
@@ -464,24 +473,30 @@
   <h5 id="LobsterFramework_AbilitySystem_AbilityManager_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;AbilityManager&quot;)]
-public class AbilityManager : SubLevelComponent</code></pre>
+public class AbilityManager : ReferenceProvider</code></pre>
   </div>
+  <h5 id="LobsterFramework_AbilitySystem_AbilityManager_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>All inqueries and ability manipulations should be done before the LateUpdate event. Doing it during the LateUpdate event could result in race conditions and other undefined behaviors.
+At runtime, the input <a class="xref" href="LobsterFramework.AbilitySystem.AbilityData.html">AbilityData</a> is duplicated so any modifications done to the original asset will not be reflected. However, the data used at runtime can be edited via the custom inspector of this component and saved as asset.
+When a new asset derived from the runtime data is saved to the disk, the input data reference will be redirected to that instead.
+The custom inspector does not allow adding or removing ability configurations to avoid breaking the running abilities.</p>
+</div>
   <h3 id="fields">Fields
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_actionLock.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.actionLock%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_ActionBlocked.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.ActionBlocked%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L62">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L70">View Source</a>
   </span>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_actionLock" data-uid="LobsterFramework.AbilitySystem.AbilityManager.actionLock">actionLock</h4>
+  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_ActionBlocked" data-uid="LobsterFramework.AbilitySystem.AbilityManager.ActionBlocked">ActionBlocked</h4>
   <div class="markdown level1 summary"><p>If this evaluates to true, all abilities are halted and no abilities can be enqueued.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly OrValue actionLock</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly OrValue ActionBlocked</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -498,165 +513,14 @@ public class AbilityManager : SubLevelComponent</code></pre>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_onAbilityEnqueue.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.onAbilityEnqueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L33">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_onAbilityEnqueue" data-uid="LobsterFramework.AbilitySystem.AbilityManager.onAbilityEnqueue">onAbilityEnqueue</h4>
-  <div class="markdown level1 summary"><p>Invoked when an ability is enqueued, the type of the ability is passed in as parameter.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;Type&gt; onAbilityEnqueue</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_onAbilityFinished.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.onAbilityFinished%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L37">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_onAbilityFinished" data-uid="LobsterFramework.AbilitySystem.AbilityManager.onAbilityFinished">onAbilityFinished</h4>
-  <div class="markdown level1 summary"><p>Invoked when an ability is terminated, the type of the ability is passed in as parameter.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;Type&gt; onAbilityFinished</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_onAnimationBegin.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.onAnimationBegin%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L42">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_onAnimationBegin" data-uid="LobsterFramework.AbilitySystem.AbilityManager.onAnimationBegin">onAnimationBegin</h4>
-  <div class="markdown level1 summary"><p>Invoked when an animation of an ability is initiated.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;Type&gt; onAnimationBegin</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_onAnimationEnd.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.onAnimationEnd%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L47">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_onAnimationEnd" data-uid="LobsterFramework.AbilitySystem.AbilityManager.onAnimationEnd">onAnimationEnd</h4>
-  <div class="markdown level1 summary"><p>Invoked when an animation of an ability is terminated.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;Type&gt; onAnimationEnd</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
 </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_ActionBlocked.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.ActionBlocked%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L67">View Source</a>
-  </span>
-  <a id="LobsterFramework_AbilitySystem_AbilityManager_ActionBlocked_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.ActionBlocked*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_ActionBlocked" data-uid="LobsterFramework.AbilitySystem.AbilityManager.ActionBlocked">ActionBlocked</h4>
-  <div class="markdown level1 summary"><p>A short cut for examining the value of actionLock</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ActionBlocked { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_IsAnimating.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.IsAnimating%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L458">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L413">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_IsAnimating_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAnimating*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_IsAnimating" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAnimating">IsAnimating</h4>
@@ -689,7 +553,7 @@ public class AbilityManager : SubLevelComponent</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_AnimationEnd_UnityEngine_AnimationEvent_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.AnimationEnd(UnityEngine.AnimationEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L575">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L527">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_AnimationEnd_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.AnimationEnd*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_AnimationEnd_UnityEngine_AnimationEvent_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.AnimationEnd(UnityEngine.AnimationEvent)">AnimationEnd(AnimationEvent)</h4>
@@ -723,7 +587,7 @@ public class AbilityManager : SubLevelComponent</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_AnimationSignal_UnityEngine_AnimationEvent_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.AnimationSignal(UnityEngine.AnimationEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L562">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L514">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_AnimationSignal_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.AnimationSignal*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_AnimationSignal_UnityEngine_AnimationEvent_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.AnimationSignal(UnityEngine.AnimationEvent)">AnimationSignal(AnimationEvent)</h4>
@@ -756,7 +620,7 @@ public class AbilityManager : SubLevelComponent</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbilitiesInJoint__2_System_String_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbilitiesInJoint%60%602(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L261">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L229">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbilitiesInJoint_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbilitiesInJoint*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbilitiesInJoint__2_System_String_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbilitiesInJoint``2(System.String,System.String)">EnqueueAbilitiesInJoint&lt;T, V&gt;(string, string)</h4>
@@ -832,7 +696,7 @@ public class AbilityManager : SubLevelComponent</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbility_System_Type_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility(System.Type%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L235">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L206">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbility_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbility_System_Type_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility(System.Type,System.String)">EnqueueAbility(Type, string)</h4>
@@ -897,7 +761,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbility__1_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L203">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L176">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbility_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbility__1_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility``1(System.String)">EnqueueAbility&lt;T&gt;(string)</h4>
@@ -972,7 +836,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_GetAbilityChannel__1_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L351">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L336">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_GetAbilityChannel_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_GetAbilityChannel__1_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)">GetAbilityChannel&lt;T&gt;(string)</h4>
@@ -1038,7 +902,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_GetAbilityComponent__1.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent%60%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L335">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L320">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_GetAbilityComponent_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_GetAbilityComponent__1" data-uid="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1">GetAbilityComponent&lt;T&gt;()</h4>
@@ -1086,7 +950,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_InterruptAbilityAnimation.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.InterruptAbilityAnimation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L534">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L489">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_InterruptAbilityAnimation_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.InterruptAbilityAnimation*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_InterruptAbilityAnimation" data-uid="LobsterFramework.AbilitySystem.AbilityManager.InterruptAbilityAnimation">InterruptAbilityAnimation()</h4>
@@ -1102,7 +966,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_IsAbilityReady_System_Type_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady(System.Type%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L411">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L366">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityReady_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityReady_System_Type_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady(System.Type,System.String)">IsAbilityReady(Type, string)</h4>
@@ -1158,7 +1022,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_IsAbilityReady__1_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L395">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L351">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityReady_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityReady__1_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady``1(System.String)">IsAbilityReady&lt;T&gt;(string)</h4>
@@ -1224,7 +1088,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_IsAbilityRunning_System_Type_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning(System.Type%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L445">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L398">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityRunning_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityRunning_System_Type_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning(System.Type,System.String)">IsAbilityRunning(Type, string)</h4>
@@ -1233,7 +1097,7 @@ Note that this method should only be called inside Update(), calling it elsewher
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsAbilityRunning(Type abilityType, string configName = &quot;default&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsAbilityRunning(Type abilityType, string instance = &quot;default&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1253,8 +1117,8 @@ Note that this method should only be called inside Update(), calling it elsewher
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">configName</span></td>
-        <td><p>The name of the config being queried</p>
+        <td><span class="parametername">instance</span></td>
+        <td><p>The name of the ability instance being queried</p>
 </td>
       </tr>
     </tbody>
@@ -1280,7 +1144,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_IsAbilityRunning__1_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L431">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L385">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityRunning_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_IsAbilityRunning__1_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning``1(System.String)">IsAbilityRunning&lt;T&gt;(string)</h4>
@@ -1346,7 +1210,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_JoinAbilities_System_Type_System_Type_System_String_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities(System.Type%2CSystem.Type%2CSystem.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L473">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L428">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_JoinAbilities_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_JoinAbilities_System_Type_System_Type_System_String_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities(System.Type,System.Type,System.String,System.String)">JoinAbilities(Type, Type, string, string)</h4>
@@ -1414,7 +1278,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_JoinAbilities__2_System_String_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities%60%602(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L491">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L446">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_JoinAbilities_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_JoinAbilities__2_System_String_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.JoinAbilities``2(System.String,System.String)">JoinAbilities&lt;T, V&gt;(string, string)</h4>
@@ -1491,7 +1355,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_Reset.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.Reset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L147">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L143">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_Reset_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.Reset*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_Reset" data-uid="LobsterFramework.AbilitySystem.AbilityManager.Reset">Reset()</h4>
@@ -1507,7 +1371,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_Signal__1_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.Signal%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L549">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L504">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_Signal_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.Signal*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_Signal__1_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.Signal``1(System.String)">Signal&lt;T&gt;(string)</h4>
@@ -1555,7 +1419,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilities.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilities%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L320">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L305">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilities_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilities*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilities" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilities">SuspendAbilities()</h4>
@@ -1568,10 +1432,66 @@ Note that this method should only be called inside Update(), calling it elsewher
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilityInstance_System_Type_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance(System.Type%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L276">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilityInstance_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilityInstance_System_Type_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance(System.Type,System.String)">SuspendAbilityInstance(Type, string)</h4>
+  <div class="markdown level1 summary"><p>Stops the execution of the ability and returns the status of this operation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuspendAbilityInstance(Type abilityType, string instance = &quot;default&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">abilityType</span></td>
+        <td><p>Type of the ability to be stopped</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">instance</span></td>
+        <td><p>Name of the ability instance to be stopped</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the ability instance exists and is stopped, otherwise return false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilityInstance__1_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L292">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L261">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilityInstance_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbilityInstance__1_System_String_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance``1(System.String)">SuspendAbilityInstance&lt;T&gt;(string)</h4>
@@ -1637,7 +1557,7 @@ Note that this method should only be called inside Update(), calling it elsewher
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_SuspendAbility__1.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility%60%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L306">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L293">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbility_" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityManager_SuspendAbility__1" data-uid="LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1">SuspendAbility&lt;T&gt;()</h4>
@@ -1680,6 +1600,128 @@ Note that this method should only be called inside Update(), calling it elsewher
       </tr>
     </tbody>
   </table>
+  <h3 id="events">Events
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_OnAbilityEnqueued.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.OnAbilityEnqueued%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L41">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_OnAbilityEnqueued" data-uid="LobsterFramework.AbilitySystem.AbilityManager.OnAbilityEnqueued">OnAbilityEnqueued</h4>
+  <div class="markdown level1 summary"><p>Invoked when an ability is enqueued, the type of the ability is passed in as parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Type&gt; OnAbilityEnqueued</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_OnAbilityFinished.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.OnAbilityFinished%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L45">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_OnAbilityFinished" data-uid="LobsterFramework.AbilitySystem.AbilityManager.OnAbilityFinished">OnAbilityFinished</h4>
+  <div class="markdown level1 summary"><p>Invoked when an ability is terminated, the type of the ability is passed in as parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Type&gt; OnAbilityFinished</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_OnAnimationBegin.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.OnAnimationBegin%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L50">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_OnAnimationBegin" data-uid="LobsterFramework.AbilitySystem.AbilityManager.OnAnimationBegin">OnAnimationBegin</h4>
+  <div class="markdown level1 summary"><p>Invoked when an animation of an ability is initiated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Type&gt; OnAnimationBegin</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager_OnAnimationEnd.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager.OnAnimationEnd%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L55">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_AbilitySystem_AbilityManager_OnAnimationEnd" data-uid="LobsterFramework.AbilitySystem.AbilityManager.OnAnimationEnd">OnAnimationEnd</h4>
+  <div class="markdown level1 summary"><p>Invoked when an animation of an ability is terminated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Type&gt; OnAnimationEnd</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -1692,7 +1734,7 @@ Note that this method should only be called inside Update(), calling it elsewher
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityManager.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityManager.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -6,9 +6,9 @@ items:
   children:
   - LobsterFramework.Utility.AbilitySet
   - LobsterFramework.Utility.And
-  - LobsterFramework.Utility.AttributeInitializer
   - LobsterFramework.Utility.CombinedValueEffector`1
   - LobsterFramework.Utility.CombinedValue`1
+  - LobsterFramework.Utility.ComponentList
   - LobsterFramework.Utility.Coroutine
   - LobsterFramework.Utility.CoroutineOption
   - LobsterFramework.Utility.CoroutineRunner
@@ -16,6 +16,7 @@ items:
   - LobsterFramework.Utility.DialogueNode
   - LobsterFramework.Utility.DialogueObject
   - LobsterFramework.Utility.DialogueResponse
+  - LobsterFramework.Utility.EnumCache
   - LobsterFramework.Utility.FloatProduct
   - LobsterFramework.Utility.FloatSum
   - LobsterFramework.Utility.GameUtility
@@ -25,9 +26,12 @@ items:
   - LobsterFramework.Utility.OrValue
   - LobsterFramework.Utility.SerializableDictionary`2
   - LobsterFramework.Utility.SerializableHashSet`1
+  - LobsterFramework.Utility.SerializableList`1
+  - LobsterFramework.Utility.SerializableType
   - LobsterFramework.Utility.SerializableType`1
   - LobsterFramework.Utility.Signal`1
   - LobsterFramework.Utility.SortableItem`1
+  - LobsterFramework.Utility.TypeCache
   - LobsterFramework.Utility.XList`1
   langs:
   - csharp
@@ -39,12 +43,6 @@ items:
   assemblies:
   - LobsterFramework
 references:
-- uid: LobsterFramework.Utility.AttributeInitializer
-  commentId: T:LobsterFramework.Utility.AttributeInitializer
-  href: LobsterFramework.Utility.AttributeInitializer.html
-  name: AttributeInitializer
-  nameWithType: AttributeInitializer
-  fullName: LobsterFramework.Utility.AttributeInitializer
 - uid: LobsterFramework.Utility.XList`1
   commentId: T:LobsterFramework.Utility.XList`1
   href: LobsterFramework.Utility.XList-1.html
@@ -96,6 +94,37 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: LobsterFramework.Utility.SerializableList`1
+  commentId: T:LobsterFramework.Utility.SerializableList`1
+  href: LobsterFramework.Utility.SerializableList-1.html
+  name: SerializableList<T>
+  nameWithType: SerializableList<T>
+  fullName: LobsterFramework.Utility.SerializableList<T>
+  nameWithType.vb: SerializableList(Of T)
+  fullName.vb: LobsterFramework.Utility.SerializableList(Of T)
+  name.vb: SerializableList(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableList`1
+    name: SerializableList
+    href: LobsterFramework.Utility.SerializableList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableList`1
+    name: SerializableList
+    href: LobsterFramework.Utility.SerializableList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.ComponentList
+  commentId: T:LobsterFramework.Utility.ComponentList
+  href: LobsterFramework.Utility.ComponentList.html
+  name: ComponentList
+  nameWithType: ComponentList
+  fullName: LobsterFramework.Utility.ComponentList
 - uid: LobsterFramework.Utility.IdDistributor
   commentId: T:LobsterFramework.Utility.IdDistributor
   href: LobsterFramework.Utility.IdDistributor.html
@@ -178,6 +207,12 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: LobsterFramework.Utility.SerializableType
+  commentId: T:LobsterFramework.Utility.SerializableType
+  href: LobsterFramework.Utility.SerializableType.html
+  name: SerializableType
+  nameWithType: SerializableType
+  fullName: LobsterFramework.Utility.SerializableType
 - uid: LobsterFramework.Utility.SortableItem`1
   commentId: T:LobsterFramework.Utility.SortableItem`1
   parent: LobsterFramework.Utility
@@ -204,6 +239,12 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: LobsterFramework.Utility.EnumCache
+  commentId: T:LobsterFramework.Utility.EnumCache
+  href: LobsterFramework.Utility.EnumCache.html
+  name: EnumCache
+  nameWithType: EnumCache
+  fullName: LobsterFramework.Utility.EnumCache
 - uid: LobsterFramework.Utility.Signal`1
   commentId: T:LobsterFramework.Utility.Signal`1
   parent: LobsterFramework.Utility
@@ -364,6 +405,12 @@ references:
   name: DialogueDisplayer
   nameWithType: DialogueDisplayer
   fullName: LobsterFramework.Utility.DialogueDisplayer
+- uid: LobsterFramework.Utility.TypeCache
+  commentId: T:LobsterFramework.Utility.TypeCache
+  href: LobsterFramework.Utility.TypeCache.html
+  name: TypeCache
+  nameWithType: TypeCache
+  fullName: LobsterFramework.Utility.TypeCache
 - uid: LobsterFramework.Utility.DialogueResponse
   commentId: T:LobsterFramework.Utility.DialogueResponse
   parent: LobsterFramework.Utility

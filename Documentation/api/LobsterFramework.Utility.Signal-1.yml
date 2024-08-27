@@ -28,7 +28,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: Represents a signal that can be queried for value. It will go automatically go back to default state every time after queried.
+  summary: Represents a signal that can be queried for value. It will automatically go back to default state every time the value is queried.
   example: []
   syntax:
     content: 'public class Signal<T> where T : struct'

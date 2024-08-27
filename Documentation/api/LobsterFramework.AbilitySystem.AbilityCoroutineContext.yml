@@ -4,9 +4,7 @@ items:
   commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutineContext
   id: AbilityCoroutineContext
   parent: LobsterFramework.AbilitySystem
-  children:
-  - LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
-  - LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
+  children: []
   langs:
   - csharp
   - vb
@@ -34,9 +32,9 @@ items:
   - System.Object
   - LobsterFramework.AbilitySystem.AbilityContext
   derivedClasses:
+  - LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext
   - LobsterFramework.AbilitySystem.WeaponSystem.GuardContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext
   inheritedMembers:
   - LobsterFramework.AbilitySystem.AbilityContext.IsRunning
   - LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
@@ -47,60 +45,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-  id: coroutineRunner
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutineContext
-  langs:
-  - csharp
-  - vb
-  name: coroutineRunner
-  nameWithType: AbilityCoroutineContext.coroutineRunner
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutineRunner
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/AbilityCoroutine.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: coroutineRunner
-    path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 61
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public CoroutineRunner coroutineRunner
-    return:
-      type: LobsterFramework.Utility.CoroutineRunner
-    content.vb: Public coroutineRunner As CoroutineRunner
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
-  commentId: F:LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
-  id: coroutine
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutineContext
-  langs:
-  - csharp
-  - vb
-  name: coroutine
-  nameWithType: AbilityCoroutineContext.coroutine
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutineContext.coroutine
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/AbilityCoroutine.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: coroutine
-    path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 62
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public Coroutine coroutine
-    return:
-      type: LobsterFramework.Utility.Coroutine
-    content.vb: Public coroutine As Coroutine
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -382,39 +326,3 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: LobsterFramework.Utility.CoroutineRunner
-  commentId: T:LobsterFramework.Utility.CoroutineRunner
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.CoroutineRunner.html
-  name: CoroutineRunner
-  nameWithType: CoroutineRunner
-  fullName: LobsterFramework.Utility.CoroutineRunner
-- uid: LobsterFramework.Utility
-  commentId: N:LobsterFramework.Utility
-  href: LobsterFramework.html
-  name: LobsterFramework.Utility
-  nameWithType: LobsterFramework.Utility
-  fullName: LobsterFramework.Utility
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-- uid: LobsterFramework.Utility.Coroutine
-  commentId: T:LobsterFramework.Utility.Coroutine
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.Coroutine.html
-  name: Coroutine
-  nameWithType: Coroutine
-  fullName: LobsterFramework.Utility.Coroutine

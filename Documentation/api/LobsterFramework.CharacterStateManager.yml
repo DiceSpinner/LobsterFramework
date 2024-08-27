@@ -15,11 +15,11 @@ items:
   type: Class
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CharacterStateManager
-    path: ../Components/CharacterStateManager.cs
+    path: ../Entity/CharacterStateManager.cs
     startLine: 10
   assemblies:
   - LobsterFramework
@@ -194,11 +194,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/CharacterStateManager.cs
+      path: Entity/CharacterStateManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: suppression
-    path: ../Components/CharacterStateManager.cs
+    path: ../Entity/CharacterStateManager.cs
     startLine: 34
   assemblies:
   - LobsterFramework

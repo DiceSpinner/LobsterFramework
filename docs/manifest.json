@@ -313,16 +313,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AI.AIController.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AI.AIController.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AI.AIPathFinder.yml",
       "output": {
         ".html": {
@@ -573,16 +563,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.ComponentRequiredAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.DamageModifier.yml",
       "output": {
         ".html": {
@@ -613,40 +593,100 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponAnimationAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponAnimationAttribute.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext.html"
         }
       },
       "version": ""
@@ -697,86 +737,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.GuardContext.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext.html"
         }
       },
       "version": ""
@@ -863,10 +823,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData.yml",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData.html"
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.html"
         }
       },
       "version": ""
@@ -877,6 +847,16 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.html"
         }
       },
       "version": ""
@@ -953,16 +933,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponState.yml",
       "output": {
         ".html": {
@@ -1023,6 +993,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AttackSetting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AttackSetting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AttributeInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AttributeInitializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.CharacterStateManager.CharacterState.yml",
       "output": {
         ".html": {
@@ -1077,6 +1067,16 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.DisableEditInPlayMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DisplayNameAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DisplayNameAttribute.html"
         }
       },
       "version": ""
@@ -1183,10 +1183,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.CharacterWeaponAnimationDataEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.CharacterWeaponAnimationDataEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Editors.DisableInPlayModeDrawer.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Editors.DisableInPlayModeDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.DisplayNameAttributeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.DisplayNameAttributeDrawer.html"
         }
       },
       "version": ""
@@ -1323,6 +1343,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.ReferenceProviderEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.ReferenceProviderEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Editors.SelectAbilityComponentPopup.yml",
       "output": {
         ".html": {
@@ -1387,16 +1417,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Editors.StateEditorConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Editors.WeaponAnimationDataEditor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Editors.WeaponAnimationDataEditor.html"
         }
       },
       "version": ""
@@ -1513,6 +1533,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.FieldDescriptionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.FieldDescriptionAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.FilePathAttribute.yml",
       "output": {
         ".html": {
@@ -1527,26 +1557,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.FolderPathAttribute.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.GameManager.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.GameManager.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.GameStateManager.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.GameStateManager.html"
         }
       },
       "version": ""
@@ -1843,20 +1853,40 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Scene.yml",
+      "source_relative_path": "api/LobsterFramework.ReferenceProvider.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Scene.html"
+          "relative_path": "api/LobsterFramework.ReferenceProvider.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.SceneEventChannel.yml",
+      "source_relative_path": "api/LobsterFramework.ReferenceRequester.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.SceneEventChannel.html"
+          "relative_path": "api/LobsterFramework.ReferenceRequester.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.RequireComponentReferenceAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.RequireComponentReferenceAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.RequirementDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.RequirementDescription.html"
         }
       },
       "version": ""
@@ -1883,10 +1913,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Setting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Setting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.SimpleCollision2D.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.SimpleCollision2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Singleton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Singleton.html"
         }
       },
       "version": ""
@@ -1943,16 +1993,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.AttributeInitializer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.AttributeInitializer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Utility.CombinedValue-1.yml",
       "output": {
         ".html": {
@@ -1967,6 +2007,16 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Utility.CombinedValueEffector-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.ComponentList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.ComponentList.html"
         }
       },
       "version": ""
@@ -2037,6 +2087,16 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Utility.DialogueResponse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.EnumCache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.EnumCache.html"
         }
       },
       "version": ""
@@ -2153,10 +2213,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.SerializableList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.SerializableList-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Utility.SerializableType-1.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Utility.SerializableType-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.SerializableType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.SerializableType.html"
         }
       },
       "version": ""
@@ -2177,6 +2257,16 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Utility.SortableItem-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Utility.TypeCache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Utility.TypeCache.html"
         }
       },
       "version": ""

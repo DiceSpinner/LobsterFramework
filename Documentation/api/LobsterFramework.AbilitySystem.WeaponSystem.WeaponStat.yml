@@ -14,11 +14,11 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponStat.cs
+      path: AbilitySystem/Weapon System/WeaponStat.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponStat
-    path: ../AbilitySystem/Weapon/WeaponStat.cs
+    path: ../AbilitySystem/Weapon System/WeaponStat.cs
     startLine: 7
   assemblies:
   - LobsterFramework

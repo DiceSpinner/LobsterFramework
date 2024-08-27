@@ -6,8 +6,7 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-  - LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  - LobsterFramework.AbilitySystem.AbilityComponent.Update
+  - LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive
   langs:
   - csharp
   - vb
@@ -114,68 +113,40 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Initialize the component
+  summary: Initialize the component, called when the <xref href="LobsterFramework.AbilitySystem.AbilityData" data-throw-if-not-resolved="false"></xref> becomes active
   example: []
   syntax:
     content: protected virtual void Initialize()
     content.vb: Protected Overridable Sub Initialize()
   overload: LobsterFramework.AbilitySystem.AbilityComponent.Initialize*
-- uid: LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  commentId: M:LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  id: OnClose
+- uid: LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive
+  commentId: M:LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive
+  id: OnBecomeInactive
   parent: LobsterFramework.AbilitySystem.AbilityComponent
   langs:
   - csharp
   - vb
-  name: OnClose()
-  nameWithType: AbilityComponent.OnClose()
-  fullName: LobsterFramework.AbilitySystem.AbilityComponent.OnClose()
+  name: OnBecomeInactive()
+  nameWithType: AbilityComponent.OnBecomeInactive()
+  fullName: LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive()
   type: Method
   source:
     remote:
       path: AbilitySystem/AbilityComponent.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnClose
+    id: OnBecomeInactive
     path: ../AbilitySystem/AbilityComponent.cs
     startLine: 19
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Callback before disabled
+  summary: Called before the <xref href="LobsterFramework.AbilitySystem.AbilityData" data-throw-if-not-resolved="false"></xref> becomes inactive
   example: []
   syntax:
-    content: protected virtual void OnClose()
-    content.vb: Protected Overridable Sub OnClose()
-  overload: LobsterFramework.AbilitySystem.AbilityComponent.OnClose*
-- uid: LobsterFramework.AbilitySystem.AbilityComponent.Update
-  commentId: M:LobsterFramework.AbilitySystem.AbilityComponent.Update
-  id: Update
-  parent: LobsterFramework.AbilitySystem.AbilityComponent
-  langs:
-  - csharp
-  - vb
-  name: Update()
-  nameWithType: AbilityComponent.Update()
-  fullName: LobsterFramework.AbilitySystem.AbilityComponent.Update()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/AbilityComponent.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Update
-    path: ../AbilitySystem/AbilityComponent.cs
-    startLine: 24
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  summary: Callback to update internal state on each frame during the regular unity update cycle
-  example: []
-  syntax:
-    content: protected virtual void Update()
-    content.vb: Protected Overridable Sub Update()
-  overload: LobsterFramework.AbilitySystem.AbilityComponent.Update*
+    content: protected virtual void OnBecomeInactive()
+    content.vb: Protected Overridable Sub OnBecomeInactive()
+  overload: LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive*
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -2296,21 +2267,22 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: LobsterFramework.AbilitySystem.AbilityData
+  commentId: T:LobsterFramework.AbilitySystem.AbilityData
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityData.html
+  name: AbilityData
+  nameWithType: AbilityData
+  fullName: LobsterFramework.AbilitySystem.AbilityData
 - uid: LobsterFramework.AbilitySystem.AbilityComponent.Initialize*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityComponent.Initialize
   href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Initialize
   name: Initialize
   nameWithType: AbilityComponent.Initialize
   fullName: LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-- uid: LobsterFramework.AbilitySystem.AbilityComponent.OnClose*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  name: OnClose
-  nameWithType: AbilityComponent.OnClose
-  fullName: LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-- uid: LobsterFramework.AbilitySystem.AbilityComponent.Update*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityComponent.Update
-  href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Update
-  name: Update
-  nameWithType: AbilityComponent.Update
-  fullName: LobsterFramework.AbilitySystem.AbilityComponent.Update
+- uid: LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive
+  href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive
+  name: OnBecomeInactive
+  nameWithType: AbilityComponent.OnBecomeInactive
+  fullName: LobsterFramework.AbilitySystem.AbilityComponent.OnBecomeInactive

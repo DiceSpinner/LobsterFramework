@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AnimationClipArray
     path: ../Utility/SerializableDataStructures/SerializableArray.cs
-    startLine: 71
+    startLine: 75
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Implicit
     path: ../Utility/SerializableDataStructures/SerializableArray.cs
-    startLine: 73
+    startLine: 77
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -119,7 +119,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Implicit
     path: ../Utility/SerializableDataStructures/SerializableArray.cs
-    startLine: 74
+    startLine: 78
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

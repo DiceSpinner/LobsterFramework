@@ -14,7 +14,9 @@ items:
   - LobsterFramework.Editors.AddAbilityPopup
   - LobsterFramework.Editors.AddStatePopup
   - LobsterFramework.Editors.AddWeaponStatPopup
+  - LobsterFramework.Editors.CharacterWeaponAnimationDataEditor
   - LobsterFramework.Editors.DisableInPlayModeDrawer
+  - LobsterFramework.Editors.DisplayNameAttributeDrawer
   - LobsterFramework.Editors.EditorUtils
   - LobsterFramework.Editors.EffectProcessorEditor
   - LobsterFramework.Editors.EntityEditor
@@ -28,6 +30,7 @@ items:
   - LobsterFramework.Editors.MovementControllerEditor
   - LobsterFramework.Editors.PoiseEditor
   - LobsterFramework.Editors.ReadOnlyAttributeDrawer
+  - LobsterFramework.Editors.ReferenceProviderEditor
   - LobsterFramework.Editors.SelectAbilityComponentPopup
   - LobsterFramework.Editors.SelectAbilityPopup
   - LobsterFramework.Editors.SelectStatePopup
@@ -35,7 +38,6 @@ items:
   - LobsterFramework.Editors.SerializedPropertyExtensions
   - LobsterFramework.Editors.StateDataEditor
   - LobsterFramework.Editors.StateEditorConfig
-  - LobsterFramework.Editors.WeaponAnimationDataEditor
   - LobsterFramework.Editors.WeaponArtSelectorDrawer
   - LobsterFramework.Editors.WeaponDataEditor
   - LobsterFramework.Editors.XListPropertyDrawer
@@ -122,6 +124,12 @@ references:
   name: SelectWeaponStatPopup
   nameWithType: SelectWeaponStatPopup
   fullName: LobsterFramework.Editors.SelectWeaponStatPopup
+- uid: LobsterFramework.Editors.CharacterWeaponAnimationDataEditor
+  commentId: T:LobsterFramework.Editors.CharacterWeaponAnimationDataEditor
+  href: LobsterFramework.Editors.CharacterWeaponAnimationDataEditor.html
+  name: CharacterWeaponAnimationDataEditor
+  nameWithType: CharacterWeaponAnimationDataEditor
+  fullName: LobsterFramework.Editors.CharacterWeaponAnimationDataEditor
 - uid: LobsterFramework.Editors.EditorUtils
   commentId: T:LobsterFramework.Editors.EditorUtils
   href: LobsterFramework.Editors.EditorUtils.html
@@ -214,12 +222,6 @@ references:
   name: SelectAbilityComponentPopup
   nameWithType: SelectAbilityComponentPopup
   fullName: LobsterFramework.Editors.SelectAbilityComponentPopup
-- uid: LobsterFramework.Editors.WeaponAnimationDataEditor
-  commentId: T:LobsterFramework.Editors.WeaponAnimationDataEditor
-  href: LobsterFramework.Editors.WeaponAnimationDataEditor.html
-  name: WeaponAnimationDataEditor
-  nameWithType: WeaponAnimationDataEditor
-  fullName: LobsterFramework.Editors.WeaponAnimationDataEditor
 - uid: LobsterFramework.Editors.EffectProcessorEditor
   commentId: T:LobsterFramework.Editors.EffectProcessorEditor
   href: LobsterFramework.Editors.EffectProcessorEditor.html
@@ -239,6 +241,12 @@ references:
   name: WeaponDataEditor
   nameWithType: WeaponDataEditor
   fullName: LobsterFramework.Editors.WeaponDataEditor
+- uid: LobsterFramework.Editors.DisplayNameAttributeDrawer
+  commentId: T:LobsterFramework.Editors.DisplayNameAttributeDrawer
+  href: LobsterFramework.Editors.DisplayNameAttributeDrawer.html
+  name: DisplayNameAttributeDrawer
+  nameWithType: DisplayNameAttributeDrawer
+  fullName: LobsterFramework.Editors.DisplayNameAttributeDrawer
 - uid: LobsterFramework.Editors.AddAbilityPopup
   commentId: T:LobsterFramework.Editors.AddAbilityPopup
   href: LobsterFramework.Editors.AddAbilityPopup.html
@@ -263,6 +271,13 @@ references:
   name: AddAbilityComponentPopup
   nameWithType: AddAbilityComponentPopup
   fullName: LobsterFramework.Editors.AddAbilityComponentPopup
+- uid: LobsterFramework.Editors.ReferenceProviderEditor
+  commentId: T:LobsterFramework.Editors.ReferenceProviderEditor
+  parent: LobsterFramework.Editors
+  href: LobsterFramework.Editors.ReferenceProviderEditor.html
+  name: ReferenceProviderEditor
+  nameWithType: ReferenceProviderEditor
+  fullName: LobsterFramework.Editors.ReferenceProviderEditor
 - uid: LobsterFramework.Editors.WeaponArtSelectorDrawer
   commentId: T:LobsterFramework.Editors.WeaponArtSelectorDrawer
   href: LobsterFramework.Editors.WeaponArtSelectorDrawer.html

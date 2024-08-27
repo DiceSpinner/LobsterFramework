@@ -83,9 +83,7 @@
 
   <h1 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility" class="text-break">Class WeaponAbility
 </h1>
-  <div class="markdown level0 summary"><p>Convenient template for creating weapon abilities. Weapon abilities can only have one instance running at any given moment.
-Inheriting from this will provide automatic weapon stats, state, compatibility check when attempting to enqueue the ability.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -95,9 +93,9 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
     <div class="level3"><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a></div>
     <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html">AbilityCoroutine</a></div>
     <div class="level5"><span class="xref">WeaponAbility</span></div>
+      <div class="level6"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.Attack.html">Attack</a></div>
+      <div class="level6"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html">ChargedAttack</a></div>
       <div class="level6"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.Guard.html">Guard</a></div>
-      <div class="level6"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack.html">HeavyWeaponAttack</a></div>
-      <div class="level6"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack.html">LightWeaponAttack</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -121,6 +119,9 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine">AbilityCoroutine.Coroutine()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_DefaultAbilityInstance">Ability.DefaultAbilityInstance</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityManager">Ability.abilityManager</a>
@@ -153,7 +154,13 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_LobsterFramework_AbilitySystem_Ability_">Ability.CompareByExecutionPriority(Ability)</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_StartAnimation_System_String_UnityEngine_AnimationClip_System_Single_">Ability.StartAnimation(string, AnimationClip, float)</a>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_StartAnimation_UnityEngine_AnimationClip_System_Single_">Ability.StartAnimation(AnimationClip, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_GetComponentReference__1_System_Int32_">Ability.GetComponentReference&lt;T&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_GetAbilityComponent__1">Ability.GetAbilityComponent&lt;T&gt;()</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_SuspendInstance_System_String_">Ability.SuspendInstance(string)</a>
@@ -355,7 +362,8 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
   <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class WeaponAbility : AbilityCoroutine</code></pre>
+    <pre><code class="lang-csharp hljs">[RequireComponentReference(typeof(WeaponManager))]
+public abstract class WeaponAbility : AbilityCoroutine</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
@@ -364,7 +372,7 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_IsMainhanded.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.IsMainhanded%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon/WeaponAbility.cs/#L14">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/WeaponAbility.cs/#L11">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_IsMainhanded_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.IsMainhanded*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_IsMainhanded" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.IsMainhanded">IsMainhanded</h4>
@@ -394,7 +402,7 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WeaponManager.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon/WeaponAbility.cs/#L13">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/WeaponAbility.cs/#L10">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WeaponManager_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponManager*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WeaponManager" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponManager">WeaponManager</h4>
@@ -426,7 +434,7 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_ConditionSatisfied.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon/WeaponAbility.cs/#L28">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/WeaponAbility.cs/#L25">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_ConditionSatisfied_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_ConditionSatisfied" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied">ConditionSatisfied()</h4>
@@ -457,30 +465,30 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
   <div><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ConditionSatisfied">Ability.ConditionSatisfied()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_Init.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InitWeaponAbilityReferences.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon/WeaponAbility.cs/#L26">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/WeaponAbility.cs/#L23">View Source</a>
   </span>
-  <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_Init_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_Init" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init">Init()</h4>
+  <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InitWeaponAbilityReferences_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InitWeaponAbilityReferences" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences">InitWeaponAbilityReferences()</h4>
   <div class="markdown level1 summary"><p>Use this to implement custom initialization routines</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void Init()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void InitWeaponAbilityReferences()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InitializeSharedReferences.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon/WeaponAbility.cs/#L16">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/WeaponAbility.cs/#L13">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InitializeSharedReferences_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InitializeSharedReferences" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences">InitializeSharedReferences()</h4>
-  <div class="markdown level1 summary"><p>Callback to initialize the references shared by all ability instances</p>
+  <div class="markdown level1 summary"><p>Called to initialize the references shared by all ability instances</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -491,19 +499,19 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
   <div><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_InitializeSharedReferences">Ability.InitializeSharedReferences()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WConditionSatisfied.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WeaponAbilityReady.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon/WeaponAbility.cs/#L47">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/WeaponAbility.cs/#L44">View Source</a>
   </span>
-  <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WConditionSatisfied_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WConditionSatisfied" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied">WConditionSatisfied()</h4>
+  <a id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WeaponAbilityReady_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WeaponAbilityReady" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady">WeaponAbilityReady()</h4>
   <div class="markdown level1 summary"><p>Use this to implement custom weapon ability rules</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual bool WConditionSatisfied()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual bool WeaponAbilityReady()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -533,7 +541,7 @@ Inheriting from this will provide automatic weapon stats, state, compatibility c
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon/WeaponAbility.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/WeaponAbility.cs/#L3" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

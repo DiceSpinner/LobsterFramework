@@ -83,7 +83,8 @@
 
   <h1 id="LobsterFramework_AbilitySystem_AbilityConfig" data-uid="LobsterFramework.AbilitySystem.AbilityConfig" class="text-break">Class AbilityConfig
 </h1>
-  <div class="markdown level0 summary"><p>The configuration of an ability instance</p>
+  <div class="markdown level0 summary"><p>The configuration of the ability that will appear in the ability inspector.
+When creating a new ability, you must also declare a class named &quot;AbilityName&quot;Config in the same namespace where &quot;AbilityName&quot; is the name of the ability you're creating.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -92,9 +93,9 @@
     <div class="level1"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
     <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
     <div class="level3"><span class="xref">AbilityConfig</span></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig.html">AttackConfig</a></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.html">ChargedAttackConfig</a></div>
       <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig.html">GuardConfig</a></div>
-      <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig.html">HeavyWeaponAttackConfig</a></div>
-      <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig.html">LightWeaponAttackConfig</a></div>
       <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig.html">OffhandAbilityConfig</a></div>
       <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig.html">WeaponArtConfig</a></div>
   </div>
@@ -277,7 +278,7 @@ public class AbilityConfig : ScriptableObject</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityConfig_CoolDown.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityConfig.CoolDown%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L486">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L529">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityConfig_CoolDown_" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.CoolDown*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityConfig_CoolDown" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.CoolDown">CoolDown</h4>
@@ -307,7 +308,7 @@ public class AbilityConfig : ScriptableObject</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityConfig_UseCooldown.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityConfig.UseCooldown%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L487">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L530">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityConfig_UseCooldown_" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.UseCooldown*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityConfig_UseCooldown" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.UseCooldown">UseCooldown</h4>
@@ -336,25 +337,10 @@ public class AbilityConfig : ScriptableObject</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityConfig_OnValidate.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityConfig.OnValidate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L494">View Source</a>
-  </span>
-  <a id="LobsterFramework_AbilitySystem_AbilityConfig_OnValidate_" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.OnValidate*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_AbilityConfig_OnValidate" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.OnValidate">OnValidate()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnValidate()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityConfig_Validate.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityConfig.Validate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L492">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L535">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityConfig_Validate_" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.Validate*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityConfig_Validate" data-uid="LobsterFramework.AbilitySystem.AbilityConfig.Validate">Validate()</h4>
@@ -377,7 +363,7 @@ public class AbilityConfig : ScriptableObject</code></pre>
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityConfig.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityConfig%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L482" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability.cs/#L525" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -24,12 +24,12 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponManager
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 11
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -175,12 +175,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Mainhand
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 48
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 49
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -204,12 +204,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Mainhand2
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 49
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 50
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -233,12 +233,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Offhand
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 50
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 51
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -262,12 +262,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Offhand2
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 51
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 52
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -291,12 +291,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Wielder
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 53
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 54
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -320,21 +320,21 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AnimationData
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 54
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 55
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
   syntax:
-    content: public WeaponAnimationData AnimationData { get; }
+    content: public CharacterWeaponAnimationData AnimationData { get; }
     parameters: []
     return:
-      type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
-    content.vb: Public ReadOnly Property AnimationData As WeaponAnimationData
+      type: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
+    content.vb: Public ReadOnly Property AnimationData As CharacterWeaponAnimationData
   overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.AnimationData*
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.SwitchMainHand
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.SwitchMainHand
@@ -349,12 +349,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SwitchMainHand
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 178
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 179
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -375,12 +375,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SwitchOffHand
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 206
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 207
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -401,12 +401,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PlayWeaponAnimation
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 224
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 225
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -427,12 +427,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponManager.cs
+      path: AbilitySystem/Weapon System/WeaponManager.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PlayTransitionAnimation
-    path: ../AbilitySystem/Weapon/WeaponManager.cs
-    startLine: 238
+    path: ../AbilitySystem/Weapon System/WeaponManager.cs
+    startLine: 239
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -4914,13 +4914,13 @@ references:
   name: AnimationData
   nameWithType: WeaponManager.AnimationData
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.AnimationData
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
   parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData.html
-  name: WeaponAnimationData
-  nameWithType: WeaponAnimationData
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
+  href: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData.html
+  name: CharacterWeaponAnimationData
+  nameWithType: CharacterWeaponAnimationData
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.SwitchMainHand*
   commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.SwitchMainHand
   href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.SwitchMainHand

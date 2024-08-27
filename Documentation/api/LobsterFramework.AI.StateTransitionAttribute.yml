@@ -20,7 +20,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: StateTransitionAttribute
     path: ../AI/Attributes/StateTransitionAttribute.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AI/Attributes/StateTransitionAttribute.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI

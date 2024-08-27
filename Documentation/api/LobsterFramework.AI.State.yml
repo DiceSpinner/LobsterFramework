@@ -5,12 +5,12 @@ items:
   id: State
   parent: LobsterFramework.AI
   children:
-  - LobsterFramework.AI.State.Close
-  - LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)
+  - LobsterFramework.AI.State.GetComponentReference``1(System.Int32)
+  - LobsterFramework.AI.State.InitializeFields
+  - LobsterFramework.AI.State.OnBecomeInactive
   - LobsterFramework.AI.State.OnEnter
   - LobsterFramework.AI.State.OnExit
   - LobsterFramework.AI.State.Tick
-  - LobsterFramework.AI.State.controller
   - LobsterFramework.AI.State.stateMachine
   langs:
   - csharp
@@ -26,11 +26,15 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: State
     path: ../AI/State.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
-  summary: A state that can be runned in the StateMachine. Can be added to and edited inside StateData.
+  summary: >-
+    A state that can be runned in the <xref href="LobsterFramework.AI.StateMachine" data-throw-if-not-resolved="false"></xref>. Can be added to and edited inside <xref href="LobsterFramework.AI.StateData" data-throw-if-not-resolved="false"></xref>. <br />
+
+
+    Use <xref href="LobsterFramework.AI.AddStateMenuAttribute" data-throw-if-not-resolved="false"></xref> and <xref href="LobsterFramework.AI.StateTransitionAttribute" data-throw-if-not-resolved="false"></xref> to define transitions for the state and make it visible to the editor scritps to allow editing in the custom inspector of <xref href="LobsterFramework.AI.StateData" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: 'public abstract class State : ScriptableObject'
@@ -94,43 +98,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: LobsterFramework.AI.State.controller
-  commentId: F:LobsterFramework.AI.State.controller
-  id: controller
-  parent: LobsterFramework.AI.State
-  langs:
-  - csharp
-  - vb
-  name: controller
-  nameWithType: State.controller
-  fullName: LobsterFramework.AI.State.controller
-  type: Field
-  source:
-    remote:
-      path: AI/State.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: controller
-    path: ../AI/State.cs
-    startLine: 12
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AI
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      protected AIController controller
-    return:
-      type: LobsterFramework.AI.AIController
-    content.vb: >-
-      <HideInInspector>
-
-      Protected controller As AIController
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
 - uid: LobsterFramework.AI.State.stateMachine
   commentId: F:LobsterFramework.AI.State.stateMachine
   id: stateMachine
@@ -168,16 +135,61 @@ items:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
     arguments: []
-- uid: LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)
-  commentId: M:LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)
-  id: InitializeFields(UnityEngine.GameObject)
+- uid: LobsterFramework.AI.State.GetComponentReference``1(System.Int32)
+  commentId: M:LobsterFramework.AI.State.GetComponentReference``1(System.Int32)
+  id: GetComponentReference``1(System.Int32)
   parent: LobsterFramework.AI.State
   langs:
   - csharp
   - vb
-  name: InitializeFields(GameObject)
-  nameWithType: State.InitializeFields(GameObject)
-  fullName: LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)
+  name: GetComponentReference<T>(int)
+  nameWithType: State.GetComponentReference<T>(int)
+  fullName: LobsterFramework.AI.State.GetComponentReference<T>(int)
+  type: Method
+  source:
+    remote:
+      path: AI/State.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: GetComponentReference
+    path: ../AI/State.cs
+    startLine: 24
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  summary: >-
+    Attempts to get the reference of the specified component type from <xref href="LobsterFramework.AI.StateMachine" data-throw-if-not-resolved="false"></xref>. 
+
+    The type of the reference should be one of the required types applied via <xref href="LobsterFramework.RequireComponentReferenceAttribute" data-throw-if-not-resolved="false"></xref> on this state class.
+  remarks: This is a shorthand call for <xref href="LobsterFramework.ReferenceProvider.GetComponentReference%60%601(System.Type%2cSystem.Int32)" data-throw-if-not-resolved="false"></xref> via <xref href="LobsterFramework.AI.State.stateMachine" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: 'protected T GetComponentReference<T>(int index = 0) where T : Component'
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The index to the list of components of the type specified. Use of type safe enum is strongly recommended.
+    typeParameters:
+    - id: T
+      description: The type of the component looking for
+    return:
+      type: '{T}'
+      description: The component reference stored in <xref href="LobsterFramework.AI.StateMachine" data-throw-if-not-resolved="false"></xref> if it exists, otherwise null
+    content.vb: Protected Function GetComponentReference(Of T As Component)(index As Integer = 0) As T
+  overload: LobsterFramework.AI.State.GetComponentReference*
+  nameWithType.vb: State.GetComponentReference(Of T)(Integer)
+  fullName.vb: LobsterFramework.AI.State.GetComponentReference(Of T)(Integer)
+  name.vb: GetComponentReference(Of T)(Integer)
+- uid: LobsterFramework.AI.State.InitializeFields
+  commentId: M:LobsterFramework.AI.State.InitializeFields
+  id: InitializeFields
+  parent: LobsterFramework.AI.State
+  langs:
+  - csharp
+  - vb
+  name: InitializeFields()
+  nameWithType: State.InitializeFields()
+  fullName: LobsterFramework.AI.State.InitializeFields()
   type: Method
   source:
     remote:
@@ -186,48 +198,44 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializeFields
     path: ../AI/State.cs
-    startLine: 20
+    startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
-  summary: Callback to do context environment initialization
+  summary: Called to initialize references and perform setups
   example: []
   syntax:
-    content: protected abstract void InitializeFields(GameObject obj)
-    parameters:
-    - id: obj
-      type: UnityEngine.GameObject
-      description: The gameobject where StateMachine is attached to.
-    content.vb: Protected MustOverride Sub InitializeFields(obj As GameObject)
+    content: protected abstract void InitializeFields()
+    content.vb: Protected MustOverride Sub InitializeFields()
   overload: LobsterFramework.AI.State.InitializeFields*
-- uid: LobsterFramework.AI.State.Close
-  commentId: M:LobsterFramework.AI.State.Close
-  id: Close
+- uid: LobsterFramework.AI.State.OnBecomeInactive
+  commentId: M:LobsterFramework.AI.State.OnBecomeInactive
+  id: OnBecomeInactive
   parent: LobsterFramework.AI.State
   langs:
   - csharp
   - vb
-  name: Close()
-  nameWithType: State.Close()
-  fullName: LobsterFramework.AI.State.Close()
+  name: OnBecomeInactive()
+  nameWithType: State.OnBecomeInactive()
+  fullName: LobsterFramework.AI.State.OnBecomeInactive()
   type: Method
   source:
     remote:
       path: AI/State.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Close
+    id: OnBecomeInactive
     path: ../AI/State.cs
-    startLine: 25
+    startLine: 36
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
-  summary: Callback to clean up context environment
+  summary: Called to perform clean up operations
   example: []
   syntax:
-    content: protected abstract void Close()
-    content.vb: Protected MustOverride Sub Close()
-  overload: LobsterFramework.AI.State.Close*
+    content: protected abstract void OnBecomeInactive()
+    content.vb: Protected MustOverride Sub OnBecomeInactive()
+  overload: LobsterFramework.AI.State.OnBecomeInactive*
 - uid: LobsterFramework.AI.State.OnExit
   commentId: M:LobsterFramework.AI.State.OnExit
   id: OnExit
@@ -246,11 +254,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnExit
     path: ../AI/State.cs
-    startLine: 30
+    startLine: 41
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
-  summary: Callback when the state is exiting
+  summary: Called when the exiting the state
   example: []
   syntax:
     content: protected abstract void OnExit()
@@ -274,11 +282,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnEnter
     path: ../AI/State.cs
-    startLine: 35
+    startLine: 46
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
-  summary: Callback when entering the state
+  summary: Called when entering the state
   example: []
   syntax:
     content: protected abstract void OnEnter()
@@ -302,7 +310,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Tick
     path: ../AI/State.cs
-    startLine: 41
+    startLine: 52
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -316,6 +324,32 @@ items:
     content.vb: Protected MustOverride Function Tick() As Type
   overload: LobsterFramework.AI.State.Tick*
 references:
+- uid: LobsterFramework.AI.StateMachine
+  commentId: T:LobsterFramework.AI.StateMachine
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.StateMachine.html
+  name: StateMachine
+  nameWithType: StateMachine
+  fullName: LobsterFramework.AI.StateMachine
+- uid: LobsterFramework.AI.StateData
+  commentId: T:LobsterFramework.AI.StateData
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.StateData.html
+  name: StateData
+  nameWithType: StateData
+  fullName: LobsterFramework.AI.StateData
+- uid: LobsterFramework.AI.AddStateMenuAttribute
+  commentId: T:LobsterFramework.AI.AddStateMenuAttribute
+  href: LobsterFramework.AI.AddStateMenuAttribute.html
+  name: AddStateMenuAttribute
+  nameWithType: AddStateMenuAttribute
+  fullName: LobsterFramework.AI.AddStateMenuAttribute
+- uid: LobsterFramework.AI.StateTransitionAttribute
+  commentId: T:LobsterFramework.AI.StateTransitionAttribute
+  href: LobsterFramework.AI.StateTransitionAttribute.html
+  name: StateTransitionAttribute
+  nameWithType: StateTransitionAttribute
+  fullName: LobsterFramework.AI.StateTransitionAttribute
 - uid: LobsterFramework.AI
   commentId: N:LobsterFramework.AI
   href: LobsterFramework.html
@@ -2435,39 +2469,122 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.AI.AIController
-  commentId: T:LobsterFramework.AI.AIController
-  parent: LobsterFramework.AI
-  href: LobsterFramework.AI.AIController.html
-  name: AIController
-  nameWithType: AIController
-  fullName: LobsterFramework.AI.AIController
-- uid: LobsterFramework.AI.StateMachine
-  commentId: T:LobsterFramework.AI.StateMachine
-  parent: LobsterFramework.AI
-  href: LobsterFramework.AI.StateMachine.html
-  name: StateMachine
-  nameWithType: StateMachine
-  fullName: LobsterFramework.AI.StateMachine
+- uid: LobsterFramework.RequireComponentReferenceAttribute
+  commentId: T:LobsterFramework.RequireComponentReferenceAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.RequireComponentReferenceAttribute.html
+  name: RequireComponentReferenceAttribute
+  nameWithType: RequireComponentReferenceAttribute
+  fullName: LobsterFramework.RequireComponentReferenceAttribute
+- uid: LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)
+  commentId: M:LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)
+  parent: LobsterFramework.ReferenceProvider
+  isExternal: true
+  href: LobsterFramework.ReferenceProvider.html#LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)
+  name: GetComponentReference<T>(Type, int)
+  nameWithType: ReferenceProvider.GetComponentReference<T>(Type, int)
+  fullName: LobsterFramework.ReferenceProvider.GetComponentReference<T>(System.Type, int)
+  nameWithType.vb: ReferenceProvider.GetComponentReference(Of T)(Type, Integer)
+  fullName.vb: LobsterFramework.ReferenceProvider.GetComponentReference(Of T)(System.Type, Integer)
+  name.vb: GetComponentReference(Of T)(Type, Integer)
+  spec.csharp:
+  - uid: LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)
+    name: GetComponentReference
+    href: LobsterFramework.ReferenceProvider.html#LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)
+    name: GetComponentReference
+    href: LobsterFramework.ReferenceProvider.html#LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.AI.State.stateMachine
+  commentId: F:LobsterFramework.AI.State.stateMachine
+  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.stateMachine
+  name: stateMachine
+  nameWithType: State.stateMachine
+  fullName: LobsterFramework.AI.State.stateMachine
+- uid: LobsterFramework.AI.State.GetComponentReference*
+  commentId: Overload:LobsterFramework.AI.State.GetComponentReference
+  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.GetComponentReference``1(System.Int32)
+  name: GetComponentReference
+  nameWithType: State.GetComponentReference
+  fullName: LobsterFramework.AI.State.GetComponentReference
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: LobsterFramework.ReferenceProvider
+  commentId: T:LobsterFramework.ReferenceProvider
+  parent: LobsterFramework
+  href: LobsterFramework.ReferenceProvider.html
+  name: ReferenceProvider
+  nameWithType: ReferenceProvider
+  fullName: LobsterFramework.ReferenceProvider
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
 - uid: LobsterFramework.AI.State.InitializeFields*
   commentId: Overload:LobsterFramework.AI.State.InitializeFields
-  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)
+  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.InitializeFields
   name: InitializeFields
   nameWithType: State.InitializeFields
   fullName: LobsterFramework.AI.State.InitializeFields
-- uid: UnityEngine.GameObject
-  commentId: T:UnityEngine.GameObject
-  parent: UnityEngine
-  isExternal: true
-  name: GameObject
-  nameWithType: GameObject
-  fullName: UnityEngine.GameObject
-- uid: LobsterFramework.AI.State.Close*
-  commentId: Overload:LobsterFramework.AI.State.Close
-  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.Close
-  name: Close
-  nameWithType: State.Close
-  fullName: LobsterFramework.AI.State.Close
+- uid: LobsterFramework.AI.State.OnBecomeInactive*
+  commentId: Overload:LobsterFramework.AI.State.OnBecomeInactive
+  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.OnBecomeInactive
+  name: OnBecomeInactive
+  nameWithType: State.OnBecomeInactive
+  fullName: LobsterFramework.AI.State.OnBecomeInactive
 - uid: LobsterFramework.AI.State.OnExit*
   commentId: Overload:LobsterFramework.AI.State.OnExit
   href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.OnExit

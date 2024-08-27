@@ -7,7 +7,6 @@ items:
   children:
   - LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.#ctor(System.String)
   - LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.Init(System.Type)
-  - LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.RootName
   - LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.icons
   - LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.types
   langs:
@@ -19,12 +18,12 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AddWeaponStatMenuAttribute
-    path: ../AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
-    startLine: 15
+    path: ../AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
+    startLine: 17
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -98,33 +97,6 @@ items:
     - name: Inherited
       type: System.Boolean
       value: false
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.RootName
-  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.RootName
-  id: RootName
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
-  langs:
-  - csharp
-  - vb
-  name: RootName
-  nameWithType: AddWeaponStatMenuAttribute.RootName
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.RootName
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: RootName
-    path: ../AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
-    startLine: 18
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  syntax:
-    content: public const string RootName = "Root"
-    return:
-      type: System.String
-    content.vb: Public Const RootName As String = "Root"
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.types
   commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.types
   id: types
@@ -138,12 +110,12 @@ items:
   type: Field
   source:
     remote:
-      path: AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: types
-    path: ../AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
-    startLine: 19
+    path: ../AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
+    startLine: 20
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -165,12 +137,12 @@ items:
   type: Field
   source:
     remote:
-      path: AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: icons
-    path: ../AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
-    startLine: 20
+    path: ../AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
+    startLine: 21
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -192,12 +164,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
-    path: ../AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
-    startLine: 38
+    path: ../AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
+    startLine: 39
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -226,12 +198,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Init
-    path: ../AbilitySystem/Attributes/AddWeaponStatMenuAttribute.cs
-    startLine: 42
+    path: ../AbilitySystem/Weapon System/Attributes/AddWeaponStatMenuAttribute.cs
+    startLine: 43
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -2074,17 +2046,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.Collections.Generic.HashSet{System.Type}
   commentId: T:System.Collections.Generic.HashSet{System.Type}
   parent: System.Collections.Generic
@@ -2273,6 +2234,17 @@ references:
   nameWithType.vb: AddWeaponStatMenuAttribute.New
   fullName.vb: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.New
   name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.Init*
   commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.Init
   href: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.Init(System.Type)

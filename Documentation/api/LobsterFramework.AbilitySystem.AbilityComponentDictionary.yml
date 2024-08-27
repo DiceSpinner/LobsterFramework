@@ -19,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityComponentDictionary
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 621
+    startLine: 573
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

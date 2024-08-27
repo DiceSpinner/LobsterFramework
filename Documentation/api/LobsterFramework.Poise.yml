@@ -20,11 +20,11 @@ items:
   type: Class
   source:
     remote:
-      path: Components/Poise.cs
+      path: Entity/Poise.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Poise
-    path: ../Components/Poise.cs
+    path: ../Entity/Poise.cs
     startLine: 6
   assemblies:
   - LobsterFramework
@@ -181,11 +181,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/Poise.cs
+      path: Entity/Poise.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: onPoiseStatusChange
-    path: ../Components/Poise.cs
+    path: ../Entity/Poise.cs
     startLine: 16
   assemblies:
   - LobsterFramework
@@ -210,11 +210,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/Poise.cs
+      path: Entity/Poise.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: hyperarmor
-    path: ../Components/Poise.cs
+    path: ../Entity/Poise.cs
     startLine: 17
   assemblies:
   - LobsterFramework
@@ -237,11 +237,11 @@ items:
   type: Property
   source:
     remote:
-      path: Components/Poise.cs
+      path: Entity/Poise.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PoiseBroken
-    path: ../Components/Poise.cs
+    path: ../Entity/Poise.cs
     startLine: 24
   assemblies:
   - LobsterFramework
@@ -266,11 +266,11 @@ items:
   type: Property
   source:
     remote:
-      path: Components/Poise.cs
+      path: Entity/Poise.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: MaxPoise
-    path: ../Components/Poise.cs
+    path: ../Entity/Poise.cs
     startLine: 25
   assemblies:
   - LobsterFramework
@@ -295,11 +295,11 @@ items:
   type: Property
   source:
     remote:
-      path: Components/Poise.cs
+      path: Entity/Poise.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PoiseValue
-    path: ../Components/Poise.cs
+    path: ../Entity/Poise.cs
     startLine: 26
   assemblies:
   - LobsterFramework
@@ -324,11 +324,11 @@ items:
   type: Property
   source:
     remote:
-      path: Components/Poise.cs
+      path: Entity/Poise.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HyperArmored
-    path: ../Components/Poise.cs
+    path: ../Entity/Poise.cs
     startLine: 27
   assemblies:
   - LobsterFramework

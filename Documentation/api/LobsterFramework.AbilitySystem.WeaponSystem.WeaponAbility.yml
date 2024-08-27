@@ -6,10 +6,10 @@ items:
   parent: LobsterFramework.AbilitySystem.WeaponSystem
   children:
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.IsMainhanded
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponManager
   langs:
   - csharp
@@ -20,23 +20,24 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponAbility.cs
+      path: AbilitySystem/Weapon System/WeaponAbility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponAbility
-    path: ../AbilitySystem/Weapon/WeaponAbility.cs
-    startLine: 10
+    path: ../AbilitySystem/Weapon System/WeaponAbility.cs
+    startLine: 2
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: >-
-    Convenient template for creating weapon abilities. Weapon abilities can only have one instance running at any given moment.
-
-    Inheriting from this will provide automatic weapon stats, state, compatibility check when attempting to enqueue the ability.
-  example: []
   syntax:
-    content: 'public abstract class WeaponAbility : AbilityCoroutine'
-    content.vb: Public MustInherit Class WeaponAbility Inherits AbilityCoroutine
+    content: >-
+      [RequireComponentReference(typeof(WeaponManager))]
+
+      public abstract class WeaponAbility : AbilityCoroutine
+    content.vb: >-
+      <RequireComponentReference(GetType(WeaponManager))>
+
+      Public MustInherit Class WeaponAbility Inherits AbilityCoroutine
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -44,9 +45,9 @@ items:
   - LobsterFramework.AbilitySystem.Ability
   - LobsterFramework.AbilitySystem.AbilityCoroutine
   derivedClasses:
+  - LobsterFramework.AbilitySystem.WeaponSystem.Attack
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack
   inheritedMembers:
   - LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
   - LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
@@ -55,6 +56,7 @@ items:
   - LobsterFramework.AbilitySystem.AbilityCoroutine.Action
   - LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   - LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  - LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
   - LobsterFramework.AbilitySystem.Ability.abilityManager
   - LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   - LobsterFramework.AbilitySystem.Ability.Instance
@@ -65,7 +67,9 @@ items:
   - LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
   - LobsterFramework.AbilitySystem.Ability.FinalizeContext
   - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+  - LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
+  - LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  - LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
   - LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
   - LobsterFramework.AbilitySystem.Ability.SuspendAll
   - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
@@ -131,6 +135,12 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: LobsterFramework.RequireComponentReferenceAttribute
+    ctor: LobsterFramework.RequireComponentReferenceAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponManager
   commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponManager
   id: WeaponManager
@@ -144,12 +154,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponAbility.cs
+      path: AbilitySystem/Weapon System/WeaponAbility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponManager
-    path: ../AbilitySystem/Weapon/WeaponAbility.cs
-    startLine: 12
+    path: ../AbilitySystem/Weapon System/WeaponAbility.cs
+    startLine: 9
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -173,12 +183,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponAbility.cs
+      path: AbilitySystem/Weapon System/WeaponAbility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsMainhanded
-    path: ../AbilitySystem/Weapon/WeaponAbility.cs
-    startLine: 13
+    path: ../AbilitySystem/Weapon System/WeaponAbility.cs
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -202,50 +212,50 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponAbility.cs
+      path: AbilitySystem/Weapon System/WeaponAbility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializeSharedReferences
-    path: ../AbilitySystem/Weapon/WeaponAbility.cs
-    startLine: 15
+    path: ../AbilitySystem/Weapon System/WeaponAbility.cs
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Callback to initialize the references shared by all ability instances
+  summary: Called to initialize the references shared by all ability instances
   example: []
   syntax:
     content: protected override sealed void InitializeSharedReferences()
     content.vb: Protected NotOverridable Overrides Sub InitializeSharedReferences()
   overridden: LobsterFramework.AbilitySystem.Ability.InitializeSharedReferences
   overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences*
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init
-  id: Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
+  id: InitWeaponAbilityReferences
   parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
   langs:
   - csharp
   - vb
-  name: Init()
-  nameWithType: WeaponAbility.Init()
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init()
+  name: InitWeaponAbilityReferences()
+  nameWithType: WeaponAbility.InitWeaponAbilityReferences()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences()
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponAbility.cs
+      path: AbilitySystem/Weapon System/WeaponAbility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Init
-    path: ../AbilitySystem/Weapon/WeaponAbility.cs
-    startLine: 25
+    id: InitWeaponAbilityReferences
+    path: ../AbilitySystem/Weapon System/WeaponAbility.cs
+    startLine: 22
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
   summary: Use this to implement custom initialization routines
   example: []
   syntax:
-    content: protected virtual void Init()
-    content.vb: Protected Overridable Sub Init()
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init*
+    content: protected virtual void InitWeaponAbilityReferences()
+    content.vb: Protected Overridable Sub InitWeaponAbilityReferences()
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences*
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
   id: ConditionSatisfied
@@ -259,12 +269,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponAbility.cs
+      path: AbilitySystem/Weapon System/WeaponAbility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ConditionSatisfied
-    path: ../AbilitySystem/Weapon/WeaponAbility.cs
-    startLine: 27
+    path: ../AbilitySystem/Weapon System/WeaponAbility.cs
+    startLine: 24
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -278,37 +288,37 @@ items:
     content.vb: Protected NotOverridable Overrides Function ConditionSatisfied() As Boolean
   overridden: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied*
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied
-  id: WConditionSatisfied
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  id: WeaponAbilityReady
   parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
   langs:
   - csharp
   - vb
-  name: WConditionSatisfied()
-  nameWithType: WeaponAbility.WConditionSatisfied()
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied()
+  name: WeaponAbilityReady()
+  nameWithType: WeaponAbility.WeaponAbilityReady()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady()
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/WeaponAbility.cs
+      path: AbilitySystem/Weapon System/WeaponAbility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: WConditionSatisfied
-    path: ../AbilitySystem/Weapon/WeaponAbility.cs
-    startLine: 46
+    id: WeaponAbilityReady
+    path: ../AbilitySystem/Weapon System/WeaponAbility.cs
+    startLine: 43
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
   summary: Use this to implement custom weapon ability rules
   example: []
   syntax:
-    content: protected virtual bool WConditionSatisfied()
+    content: protected virtual bool WeaponAbilityReady()
     return:
       type: System.Boolean
       description: true if the ability is ready, otherwise false
-    content.vb: Protected Overridable Function WConditionSatisfied() As Boolean
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied*
+    content.vb: Protected Overridable Function WeaponAbilityReady() As Boolean
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady*
 references:
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
@@ -512,8 +522,15 @@ references:
     href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   - name: (
   - name: )
+- uid: LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  commentId: F:LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  name: DefaultAbilityInstance
+  nameWithType: Ability.DefaultAbilityInstance
+  fullName: LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
 - uid: LobsterFramework.AbilitySystem.Ability.abilityManager
-  commentId: F:LobsterFramework.AbilitySystem.Ability.abilityManager
+  commentId: P:LobsterFramework.AbilitySystem.Ability.abilityManager
   parent: LobsterFramework.AbilitySystem.Ability
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityManager
   name: abilityManager
@@ -636,28 +653,22 @@ references:
     name: Ability
     href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+- uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  name: StartAnimation(string, AnimationClip, float)
-  nameWithType: Ability.StartAnimation(string, AnimationClip, float)
-  fullName: LobsterFramework.AbilitySystem.Ability.StartAnimation(string, UnityEngine.AnimationClip, float)
-  nameWithType.vb: Ability.StartAnimation(String, AnimationClip, Single)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.StartAnimation(String, UnityEngine.AnimationClip, Single)
-  name.vb: StartAnimation(String, AnimationClip, Single)
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
+  name: StartAnimation(AnimationClip, float)
+  nameWithType: Ability.StartAnimation(AnimationClip, float)
+  fullName: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip, float)
+  nameWithType.vb: Ability.StartAnimation(AnimationClip, Single)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip, Single)
+  name.vb: StartAnimation(AnimationClip, Single)
   spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
     name: StartAnimation
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
   - uid: UnityEngine.AnimationClip
     name: AnimationClip
     isExternal: true
@@ -669,16 +680,10 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
     name: StartAnimation
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
   - uid: UnityEngine.AnimationClip
     name: AnimationClip
     isExternal: true
@@ -688,6 +693,75 @@ references:
     name: Single
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  parent: LobsterFramework.AbilitySystem.Ability
+  isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  name: GetComponentReference<T>(int)
+  nameWithType: Ability.GetComponentReference<T>(int)
+  fullName: LobsterFramework.AbilitySystem.Ability.GetComponentReference<T>(int)
+  nameWithType.vb: Ability.GetComponentReference(Of T)(Integer)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.GetComponentReference(Of T)(Integer)
+  name.vb: GetComponentReference(Of T)(Integer)
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+    name: GetComponentReference
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+    name: GetComponentReference
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  commentId: M:LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  name: GetAbilityComponent<T>()
+  nameWithType: Ability.GetAbilityComponent<T>()
+  fullName: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent<T>()
+  nameWithType.vb: Ability.GetAbilityComponent(Of T)()
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent(Of T)()
+  name.vb: GetAbilityComponent(Of T)()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+    name: GetAbilityComponent
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+    name: GetAbilityComponent
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
@@ -3138,12 +3212,12 @@ references:
   name: InitializeSharedReferences
   nameWithType: WeaponAbility.InitializeSharedReferences
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init
-  name: Init
-  nameWithType: WeaponAbility.Init
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
+  name: InitWeaponAbilityReferences
+  nameWithType: WeaponAbility.InitWeaponAbilityReferences
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
 - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   commentId: M:LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   parent: LobsterFramework.AbilitySystem.Ability
@@ -3169,9 +3243,9 @@ references:
   name: ConditionSatisfied
   nameWithType: WeaponAbility.ConditionSatisfied
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied
-  name: WConditionSatisfied
-  nameWithType: WeaponAbility.WConditionSatisfied
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WConditionSatisfied
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  name: WeaponAbilityReady
+  nameWithType: WeaponAbility.WeaponAbilityReady
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady

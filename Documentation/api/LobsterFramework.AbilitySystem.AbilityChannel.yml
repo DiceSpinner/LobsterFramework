@@ -19,11 +19,14 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityChannel
     path: ../AbilitySystem/Ability.cs
-    startLine: 474
+    startLine: 516
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Communication channel of an ability Instance. Can be used to control ability behaviors at runtime.
+  summary: >-
+    Communication channel of the ability. Can be used to control ability behaviors at runtime.
+
+    When creating a new ability, you must also declare a class named "AbilityName"Channel in the same namespace where "AbilityName" is the name of the ability you're creating.
   example: []
   syntax:
     content: public class AbilityChannel
@@ -31,9 +34,9 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel
   - LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel
   inheritedMembers:

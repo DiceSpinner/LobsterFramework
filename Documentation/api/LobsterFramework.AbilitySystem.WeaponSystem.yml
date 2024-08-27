@@ -4,22 +4,21 @@ items:
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
   id: LobsterFramework.AbilitySystem.WeaponSystem
   children:
-  - LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig
-  - LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute
   - LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
+  - LobsterFramework.AbilitySystem.WeaponSystem.Attack
+  - LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
+  - LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard.GuardAnimations
   - LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel
   - LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
   - LobsterFramework.AbilitySystem.WeaponSystem.GuardContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig
@@ -28,8 +27,10 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
+  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext
@@ -37,7 +38,6 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponState
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponType
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
@@ -51,6 +51,75 @@ items:
   assemblies:
   - LobsterFramework
 references:
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html
+  name: WeaponStat
+  nameWithType: WeaponStat
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html
+  name: WeaponData
+  nameWithType: WeaponData
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
+  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.html
+  name: OffhandWeaponAbilityAttribute
+  nameWithType: OffhandWeaponAbilityAttribute
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.html
+  name: ChargedAttackConfig
+  nameWithType: ChargedAttackConfig
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.Attack
+  href: LobsterFramework.AbilitySystem.WeaponSystem.Attack.html
+  name: Attack
+  nameWithType: Attack
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel
+  href: LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel.html
+  name: AttackChannel
+  nameWithType: AttackChannel
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
+  href: LobsterFramework.AbilitySystem.WeaponSystem.AttackContext.html
+  name: AttackContext
+  nameWithType: AttackContext
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility.html
+  name: WeaponUtility
+  nameWithType: WeaponUtility
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
+  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.html
+  name: OffhandAbility
+  nameWithType: OffhandAbility
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
+  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel.html
+  name: OffhandAbilityChannel
+  nameWithType: OffhandAbilityChannel
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
+  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext.html
+  name: OffhandAbilityContext
+  nameWithType: OffhandAbilityContext
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.Weapon
   parent: LobsterFramework.AbilitySystem.WeaponSystem
@@ -72,80 +141,25 @@ references:
   name: WeaponState
   nameWithType: WeaponState
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponState
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack
-  href: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack.html
-  name: HeavyWeaponAttack
-  nameWithType: HeavyWeaponAttack
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttack
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel
-  href: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel.html
-  name: HeavyWeaponAttackChannel
-  nameWithType: HeavyWeaponAttackChannel
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackChannel
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext
-  href: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext.html
-  name: HeavyWeaponAttackContext
-  nameWithType: HeavyWeaponAttackContext
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackContext
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility.html
-  name: WeaponUtility
-  nameWithType: WeaponUtility
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
-  href: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html
-  name: AddWeaponStatMenuAttribute
-  nameWithType: AddWeaponStatMenuAttribute
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
-  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.html
-  name: OffhandAbility
-  nameWithType: OffhandAbility
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
-  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel.html
-  name: OffhandAbilityChannel
-  nameWithType: OffhandAbilityChannel
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
-  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext.html
-  name: OffhandAbilityContext
-  nameWithType: OffhandAbilityContext
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig
-  href: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig.html
-  name: LightWeaponAttackConfig
-  nameWithType: LightWeaponAttackConfig
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute
   parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html
-  name: WeaponArtSelector
-  nameWithType: WeaponArtSelector
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html
-  name: WeaponAbility
-  nameWithType: WeaponAbility
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.html
+  name: WeaponAnimationAttribute
+  nameWithType: WeaponAnimationAttribute
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
   href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig.html
   name: WeaponArtConfig
   nameWithType: WeaponArtConfig
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
+  href: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html
+  name: AddWeaponStatMenuAttribute
+  nameWithType: AddWeaponStatMenuAttribute
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
   href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html
@@ -164,57 +178,25 @@ references:
   name: WeaponArtContext
   nameWithType: WeaponArtContext
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
-  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.html
-  name: OffhandWeaponAbilityAttribute
-  nameWithType: OffhandWeaponAbilityAttribute
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
   href: LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig.html
   name: GuardConfig
   nameWithType: GuardConfig
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute
-  href: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute.html
-  name: AddWeaponArtMenuAttribute
-  nameWithType: AddWeaponArtMenuAttribute
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponArtMenuAttribute
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
+  href: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html
+  name: RequireWeaponStatAttribute
+  nameWithType: RequireWeaponStatAttribute
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
   parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData.html
-  name: WeaponAnimationData
-  nameWithType: WeaponAnimationData
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationData
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary.html
-  name: WeaponStatDictionary
-  nameWithType: WeaponStatDictionary
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStatDictionary
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig
-  href: LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig.html
-  name: AbilityAnimationConfig
-  nameWithType: AbilityAnimationConfig
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AbilityAnimationConfig
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig.html
-  name: HeavyWeaponAttackConfig
-  nameWithType: HeavyWeaponAttackConfig
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html
-  name: WeaponStat
-  nameWithType: WeaponStat
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html
+  name: WeaponAbility
+  nameWithType: WeaponAbility
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.Guard
   href: LobsterFramework.AbilitySystem.WeaponSystem.Guard.html
@@ -262,6 +244,57 @@ references:
   name: OffhandAbilityConfig
   nameWithType: OffhandAbilityConfig
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData.html
+  name: CharacterWeaponAnimationData
+  nameWithType: CharacterWeaponAnimationData
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.html
+  name: WeaponAnimationAddonAttribute
+  nameWithType: WeaponAnimationAddonAttribute
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html
+  name: WeaponArtSelector
+  nameWithType: WeaponArtSelector
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.html
+  name: WeaponArtAttribute
+  nameWithType: WeaponArtAttribute
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig
+  href: LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig.html
+  name: AttackConfig
+  nameWithType: AttackConfig
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack
+  href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html
+  name: ChargedAttack
+  nameWithType: ChargedAttack
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel
+  href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.html
+  name: ChargedAttackChannel
+  nameWithType: ChargedAttackChannel
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext
+  href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext.html
+  name: ChargedAttackContext
+  nameWithType: ChargedAttackContext
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
   parent: LobsterFramework.AbilitySystem.WeaponSystem
@@ -269,37 +302,6 @@ references:
   name: WeaponManager
   nameWithType: WeaponManager
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData.html
-  name: WeaponData
-  nameWithType: WeaponData
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
-  href: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html
-  name: RequireWeaponStatAttribute
-  nameWithType: RequireWeaponStatAttribute
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack
-  href: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack.html
-  name: LightWeaponAttack
-  nameWithType: LightWeaponAttack
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttack
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel
-  href: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel.html
-  name: LightWeaponAttackChannel
-  nameWithType: LightWeaponAttackChannel
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackChannel
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext
-  href: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext.html
-  name: LightWeaponAttackContext
-  nameWithType: LightWeaponAttackContext
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackContext
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
   href: LobsterFramework.html

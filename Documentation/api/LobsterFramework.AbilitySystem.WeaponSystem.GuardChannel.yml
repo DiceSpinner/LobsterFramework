@@ -19,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GuardChannel
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
-    startLine: 139
+    startLine: 140
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

@@ -152,7 +152,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Stop
     path: ../Utility/Coroutine/Coroutine.cs
-    startLine: 139
+    startLine: 143
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility

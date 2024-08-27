@@ -17,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: RequireWeaponStatAttribute
-    path: ../AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 6
+    path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 7
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -107,12 +107,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
-    path: ../AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 12
+    path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -139,12 +139,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Init
-    path: ../AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 25
+    path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 29
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -168,12 +168,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasWeaponStats
-    path: ../AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 40
+    path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 44
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

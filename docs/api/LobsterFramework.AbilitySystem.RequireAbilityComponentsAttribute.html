@@ -83,7 +83,7 @@
 
   <h1 id="LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute" data-uid="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute" class="text-break">Class RequireAbilityComponentsAttribute
 </h1>
-  <div class="markdown level0 summary"><p>Marks this ability as requiring specified AbilityComponents to run</p>
+  <div class="markdown level0 summary"><p>Marks this ability as requiring specified <a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html">AbilityComponent</a> to run</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -235,7 +235,7 @@ public class RequireAbilityComponentsAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute__ctor_System_Type___.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.%23ctor(System.Type%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs/#L19">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs/#L26">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute__ctor_" data-uid="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor*"></a>
   <h4 id="LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute__ctor_System_Type___" data-uid="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor(System.Type[])">RequireAbilityComponentsAttribute(params Type[])</h4>
@@ -258,100 +258,6 @@ public class RequireAbilityComponentsAttribute : Attribute</code></pre>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>[]</td>
         <td><span class="parametername">abilityComponents</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_requirement.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.requirement%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs/#L14">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_requirement" data-uid="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.requirement">requirement</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Dictionary&lt;Type, HashSet&lt;Type&gt;&gt; requirement</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_rev_requirement.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.rev_requirement%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs/#L15">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_rev_requirement" data-uid="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.rev_requirement">rev_requirement</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Dictionary&lt;Type, HashSet&lt;Type&gt;&gt; rev_requirement</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_Init_System_Type_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs/#L24">View Source</a>
-  </span>
-  <a id="LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_Init_" data-uid="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_Init_System_Type_" data-uid="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)">Init(Type)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Init(Type ability)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">ability</span></td>
         <td></td>
       </tr>
     </tbody>

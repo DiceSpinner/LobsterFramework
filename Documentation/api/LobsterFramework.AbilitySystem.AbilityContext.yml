@@ -21,14 +21,14 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityContext
     path: ../AbilitySystem/Ability.cs
-    startLine: 462
+    startLine: 503
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: >-
-    The runtime context of an ability instance. Not accessible from outside.
+    The runtime context of the ability. Not accessible from outside.
 
-    Inheritors of this class must have name 'Ability_Subclass_Name'Context.
+    When creating a new ability, you must also declare a class named "AbilityName"Context in the same namespace where "AbilityName" is the name of the ability you're creating.
   example: []
   syntax:
     content: public class AbilityContext
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsRunning
     path: ../AbilitySystem/Ability.cs
-    startLine: 467
+    startLine: 508
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -94,7 +94,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnCooldown
     path: ../AbilitySystem/Ability.cs
-    startLine: 468
+    startLine: 509
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

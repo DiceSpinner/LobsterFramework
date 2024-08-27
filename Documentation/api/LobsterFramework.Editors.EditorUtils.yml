@@ -12,6 +12,7 @@ items:
   - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
   - LobsterFramework.Editors.EditorUtils.CentredTitleLabelStyle
   - LobsterFramework.Editors.EditorUtils.DrawSubProperties(UnityEditor.SerializedProperty)
+  - LobsterFramework.Editors.EditorUtils.GetScriptIcon(System.Type)
   - LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture(System.Int32,System.Int32,UnityEngine.Color)
   - LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
   langs:
@@ -28,7 +29,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EditorUtils
     path: ../Editor/EditorUtils.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -63,7 +64,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -103,7 +104,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -141,7 +142,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -181,7 +182,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Button
     path: ../Editor/EditorUtils.cs
-    startLine: 38
+    startLine: 39
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -219,7 +220,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: BoldButtonStyle
     path: ../Editor/EditorUtils.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -246,7 +247,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CentredTitleLabelStyle
     path: ../Editor/EditorUtils.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -273,7 +274,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetPropertyPointer
     path: ../Editor/EditorUtils.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -314,7 +315,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DrawSubProperties
     path: ../Editor/EditorUtils.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -343,7 +344,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: MakeBackgroundTexture
     path: ../Editor/EditorUtils.cs
-    startLine: 83
+    startLine: 84
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -363,6 +364,37 @@ items:
   nameWithType.vb: EditorUtils.MakeBackgroundTexture(Integer, Integer, Color)
   fullName.vb: LobsterFramework.Editors.EditorUtils.MakeBackgroundTexture(Integer, Integer, UnityEngine.Color)
   name.vb: MakeBackgroundTexture(Integer, Integer, Color)
+- uid: LobsterFramework.Editors.EditorUtils.GetScriptIcon(System.Type)
+  commentId: M:LobsterFramework.Editors.EditorUtils.GetScriptIcon(System.Type)
+  id: GetScriptIcon(System.Type)
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: GetScriptIcon(Type)
+  nameWithType: EditorUtils.GetScriptIcon(Type)
+  fullName: LobsterFramework.Editors.EditorUtils.GetScriptIcon(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Editor/EditorUtils.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: GetScriptIcon
+    path: ../Editor/EditorUtils.cs
+    startLine: 102
+  assemblies:
+  - LobsterFrameworkEditor
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static Texture2D GetScriptIcon(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    return:
+      type: UnityEngine.Texture2D
+    content.vb: Public Shared Function GetScriptIcon(type As Type) As Texture2D
+  overload: LobsterFramework.Editors.EditorUtils.GetScriptIcon*
 references:
 - uid: LobsterFramework.Editors
   commentId: N:LobsterFramework.Editors
@@ -747,3 +779,17 @@ references:
   name: Texture2D
   nameWithType: Texture2D
   fullName: UnityEngine.Texture2D
+- uid: LobsterFramework.Editors.EditorUtils.GetScriptIcon*
+  commentId: Overload:LobsterFramework.Editors.EditorUtils.GetScriptIcon
+  href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.GetScriptIcon(System.Type)
+  name: GetScriptIcon
+  nameWithType: EditorUtils.GetScriptIcon
+  fullName: LobsterFramework.Editors.EditorUtils.GetScriptIcon
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

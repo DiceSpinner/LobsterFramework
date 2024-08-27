@@ -96,12 +96,6 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework_AbilitySystem_AbilityComponent_Initialize">AbilityComponent.Initialize()</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework_AbilitySystem_AbilityComponent_OnClose">AbilityComponent.OnClose()</a>
-    </div>
-    <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.SetDirty.html">ScriptableObject.SetDirty()</a>
     </div>
     <div>
@@ -258,9 +252,6 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
   </div>
@@ -269,7 +260,7 @@
   <h5 id="LobsterFramework_AbilitySystem_DamageModifier_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AddAbilityComponentMenu(&quot;LobsterFramework&quot;)]
-public class DamageModifier : AbilityComponent</code></pre>
+public sealed class DamageModifier : AbilityComponent</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -340,7 +331,7 @@ public readonly FloatProduct percentageDamageModifcation</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_DamageModifier_ModifyDamage_LobsterFramework_Damage_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage(LobsterFramework.Damage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability Components/DamageModifier.cs/#L19">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability Components/DamageModifier.cs/#L13">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_DamageModifier_ModifyDamage_" data-uid="LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage*"></a>
   <h4 id="LobsterFramework_AbilitySystem_DamageModifier_ModifyDamage_LobsterFramework_Damage_" data-uid="LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage(LobsterFramework.Damage)">ModifyDamage(Damage)</h4>
@@ -382,24 +373,6 @@ public readonly FloatProduct percentageDamageModifcation</code></pre>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_DamageModifier_Update.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.DamageModifier.Update%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Ability Components/DamageModifier.cs/#L29">View Source</a>
-  </span>
-  <a id="LobsterFramework_AbilitySystem_DamageModifier_Update_" data-uid="LobsterFramework.AbilitySystem.DamageModifier.Update*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_DamageModifier_Update" data-uid="LobsterFramework.AbilitySystem.DamageModifier.Update">Update()</h4>
-  <div class="markdown level1 summary"><p>Callback to update internal state on each frame during the regular unity update cycle</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Update()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework_AbilitySystem_AbilityComponent_Update">AbilityComponent.Update()</a></div>
 
 </article>
           </div>

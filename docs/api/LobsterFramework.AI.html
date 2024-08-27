@@ -87,8 +87,6 @@
     <h3 id="classes">
 Classes
 </h3>
-      <h4><a class="xref" href="LobsterFramework.AI.AIController.html">AIController</a></h4>
-      <section></section>
       <h4><a class="xref" href="LobsterFramework.AI.AIPathFinder.html">AIPathFinder</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AI.AIUtility.html">AIUtility</a></h4>
@@ -97,15 +95,17 @@ Classes
       <section><p>Applied to <a class="xref" href="LobsterFramework.AI.State.html">State</a> to make it visible to editor scripts.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AI.State.html">State</a></h4>
-      <section><p>A state that can be runned in the StateMachine. Can be added to and edited inside StateData.</p>
+      <section><p>A state that can be runned in the <a class="xref" href="LobsterFramework.AI.StateMachine.html">StateMachine</a>. Can be added to and edited inside <a class="xref" href="LobsterFramework.AI.StateData.html">StateData</a>. <br></p>
+<p>Use <a class="xref" href="LobsterFramework.AI.AddStateMenuAttribute.html">AddStateMenuAttribute</a> and <a class="xref" href="LobsterFramework.AI.StateTransitionAttribute.html">StateTransitionAttribute</a> to define transitions for the state and make it visible to the editor scritps to allow editing in the custom inspector of <a class="xref" href="LobsterFramework.AI.StateData.html">StateData</a></p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AI.StateData.html">StateData</a></h4>
-      <section><p>Represents the state information used by the state machine.</p>
+      <section><p>Defines the set of AI states and the AI can be in. This data is used by <a class="xref" href="LobsterFramework.AI.StateMachine.html">StateMachine</a> at runtime.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AI.StateDicationary.html">StateDicationary</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AI.StateMachine.html">StateMachine</a></h4>
-      <section></section>
+      <section><p>Manages and runs <a class="xref" href="LobsterFramework.AI.State.html">State</a>. Takes in <a class="xref" href="LobsterFramework.AI.StateData.html">StateData</a> as input.</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.AI.StateTransitionAttribute.html">StateTransitionAttribute</a></h4>
       <section><p>Marks the transitions of this state. The state data will be verified against the list of transition states provided here.</p>
 </section>

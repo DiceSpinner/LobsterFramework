@@ -25,7 +25,10 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.LMoveSpeedModifier
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.LRotationSpeedModifier
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Name
+  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnEntityHit
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnHitDamage
+  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponDeflect
+  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponHit
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Pause
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.PostureDamageReduction
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.SetOnHitDamage(LobsterFramework.Damage)
@@ -34,9 +37,6 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Tail
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.WeaponType
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Weight
-  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onEntityHit
-  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponDeflect
-  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponHit
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
   langs:
   - csharp
@@ -47,12 +47,12 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Weapon
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 12
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -197,87 +197,87 @@ items:
     arguments:
     - type: System.Type
       value: UnityEngine.Collider2D
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onEntityHit
-  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onEntityHit
-  id: onEntityHit
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnEntityHit
+  commentId: E:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnEntityHit
+  id: OnEntityHit
   parent: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
   langs:
   - csharp
   - vb
-  name: onEntityHit
-  nameWithType: Weapon.onEntityHit
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onEntityHit
-  type: Field
+  name: OnEntityHit
+  nameWithType: Weapon.OnEntityHit
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnEntityHit
+  type: Event
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onEntityHit
-    path: ../AbilitySystem/Weapon/Weapon.cs
+    id: OnEntityHit
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 57
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: public event Action<Entity> OnEntityHit
+    return:
+      type: System.Action{LobsterFramework.Entity}
+    content.vb: Public Event OnEntityHit As Action(Of Entity)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponHit
+  commentId: E:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponHit
+  id: OnWeaponHit
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
+  langs:
+  - csharp
+  - vb
+  name: OnWeaponHit
+  nameWithType: Weapon.OnWeaponHit
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponHit
+  type: Event
+  source:
+    remote:
+      path: AbilitySystem/Weapon System/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnWeaponHit
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 58
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: public event Action<Weapon> OnWeaponHit
+    return:
+      type: System.Action{LobsterFramework.AbilitySystem.WeaponSystem.Weapon}
+    content.vb: Public Event OnWeaponHit As Action(Of Weapon)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponDeflect
+  commentId: E:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponDeflect
+  id: OnWeaponDeflect
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
+  langs:
+  - csharp
+  - vb
+  name: OnWeaponDeflect
+  nameWithType: Weapon.OnWeaponDeflect
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.OnWeaponDeflect
+  type: Event
+  source:
+    remote:
+      path: AbilitySystem/Weapon System/Weapon.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnWeaponDeflect
+    path: ../AbilitySystem/Weapon System/Weapon.cs
     startLine: 59
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
   syntax:
-    content: public Action<Entity> onEntityHit
-    return:
-      type: System.Action{LobsterFramework.Entity}
-    content.vb: Public onEntityHit As Action(Of Entity)
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponHit
-  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponHit
-  id: onWeaponHit
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
-  langs:
-  - csharp
-  - vb
-  name: onWeaponHit
-  nameWithType: Weapon.onWeaponHit
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponHit
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Weapon/Weapon.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onWeaponHit
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 60
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  syntax:
-    content: public Action<Weapon> onWeaponHit
-    return:
-      type: System.Action{LobsterFramework.AbilitySystem.WeaponSystem.Weapon}
-    content.vb: Public onWeaponHit As Action(Of Weapon)
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponDeflect
-  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponDeflect
-  id: onWeaponDeflect
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
-  langs:
-  - csharp
-  - vb
-  name: onWeaponDeflect
-  nameWithType: Weapon.onWeaponDeflect
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.onWeaponDeflect
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Weapon/Weapon.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onWeaponDeflect
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 61
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  syntax:
-    content: public Action onWeaponDeflect
+    content: public event Action OnWeaponDeflect
     return:
       type: System.Action
-    content.vb: Public onWeaponDeflect As Action
+    content.vb: Public Event OnWeaponDeflect As Action
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Name
   commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Name
   id: Name
@@ -291,12 +291,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Name
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 66
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 68
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -320,12 +320,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponType
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 67
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 69
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -349,12 +349,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilitySetting
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 69
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 71
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -378,12 +378,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Weight
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 70
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 72
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -407,12 +407,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Sharpness
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 71
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 73
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -436,12 +436,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AttackSpeed
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 72
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 74
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -465,12 +465,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DefenseSpeed
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 74
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 76
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -494,12 +494,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DoubleHanded
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 76
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 78
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -523,12 +523,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ClashSpark
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 78
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 80
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -552,12 +552,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnHitDamage
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 80
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 82
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -581,12 +581,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Head
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 82
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 84
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -610,12 +610,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Tail
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 83
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 85
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -639,12 +639,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HealthDamageReduction
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 86
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 88
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -668,12 +668,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PostureDamageReduction
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 87
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 89
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -697,12 +697,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GMoveSpeedModifier
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 88
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 90
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -726,12 +726,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GRotationSpeedModifier
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 89
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 91
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -755,12 +755,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: LMoveSpeedModifier
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 93
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 95
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -784,12 +784,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: LRotationSpeedModifier
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 94
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 96
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -813,12 +813,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HMoveSpeedModifier
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 98
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 100
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -842,12 +842,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HRotationSpeedModifier
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 99
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 101
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -871,12 +871,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Entity
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 102
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 104
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -900,12 +900,12 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: state
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 107
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 109
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -929,12 +929,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetOnHitDamage
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 124
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 126
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -963,12 +963,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetOnHitDamage
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 127
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 129
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -992,12 +992,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Enable
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 142
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 144
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1024,12 +1024,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Disable
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 149
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 151
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1052,12 +1052,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Pause
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 159
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 161
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1080,12 +1080,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetWeaponStat
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 173
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 175
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1117,12 +1117,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasWeaponStat
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 188
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 190
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1154,12 +1154,12 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon/Weapon.cs
+      path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasWeaponStat
-    path: ../AbilitySystem/Weapon/Weapon.cs
-    startLine: 198
+    path: ../AbilitySystem/Weapon System/Weapon.cs
+    startLine: 200
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

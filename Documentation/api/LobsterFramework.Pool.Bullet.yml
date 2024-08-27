@@ -15,11 +15,11 @@ items:
   type: Class
   source:
     remote:
-      path: Components/Projectiles/Bullet.cs
+      path: Entity/Projectiles/Bullet.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Bullet
-    path: ../Components/Projectiles/Bullet.cs
+    path: ../Entity/Projectiles/Bullet.cs
     startLine: 7
   assemblies:
   - LobsterFramework
@@ -176,11 +176,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/Projectiles/Bullet.cs
+      path: Entity/Projectiles/Bullet.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Initialize
-    path: ../Components/Projectiles/Bullet.cs
+    path: ../Entity/Projectiles/Bullet.cs
     startLine: 36
   assemblies:
   - LobsterFramework

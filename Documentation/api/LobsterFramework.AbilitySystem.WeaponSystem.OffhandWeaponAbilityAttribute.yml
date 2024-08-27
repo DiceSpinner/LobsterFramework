@@ -16,11 +16,11 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/OffhandAbilityAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OffhandWeaponAbilityAttribute
-    path: ../AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    path: ../AbilitySystem/Weapon System/Attributes/OffhandAbilityAttribute.cs
     startLine: 9
   assemblies:
   - LobsterFramework
@@ -105,11 +105,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/OffhandAbilityAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsOffhand
-    path: ../AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    path: ../AbilitySystem/Weapon System/Attributes/OffhandAbilityAttribute.cs
     startLine: 14
   assemblies:
   - LobsterFramework
@@ -136,11 +136,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+      path: AbilitySystem/Weapon System/Attributes/OffhandAbilityAttribute.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Init
-    path: ../AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    path: ../AbilitySystem/Weapon System/Attributes/OffhandAbilityAttribute.cs
     startLine: 19
   assemblies:
   - LobsterFramework

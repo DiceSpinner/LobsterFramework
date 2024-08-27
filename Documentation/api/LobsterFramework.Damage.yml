@@ -26,11 +26,11 @@ items:
   type: Struct
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Damage
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 282
   assemblies:
   - LobsterFramework
@@ -66,11 +66,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: health
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 286
   assemblies:
   - LobsterFramework
@@ -93,11 +93,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: posture
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 287
   assemblies:
   - LobsterFramework
@@ -120,11 +120,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: source
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 288
   assemblies:
   - LobsterFramework
@@ -147,11 +147,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: type
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 289
   assemblies:
   - LobsterFramework
@@ -174,11 +174,11 @@ items:
   type: Field
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: none
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 291
   assemblies:
   - LobsterFramework
@@ -201,11 +201,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Equals
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 293
   assemblies:
   - LobsterFramework
@@ -237,11 +237,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetHashCode
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 298
   assemblies:
   - LobsterFramework
@@ -267,11 +267,11 @@ items:
   type: Operator
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Addition
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 303
   assemblies:
   - LobsterFramework
@@ -303,11 +303,11 @@ items:
   type: Operator
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Multiply
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 308
   assemblies:
   - LobsterFramework
@@ -339,11 +339,11 @@ items:
   type: Operator
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Multiply
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 313
   assemblies:
   - LobsterFramework
@@ -375,11 +375,11 @@ items:
   type: Operator
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Equality
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 317
   assemblies:
   - LobsterFramework
@@ -411,11 +411,11 @@ items:
   type: Operator
   source:
     remote:
-      path: Components/Entity.cs
+      path: Entity/Entity.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Inequality
-    path: ../Components/Entity.cs
+    path: ../Entity/Entity.cs
     startLine: 320
   assemblies:
   - LobsterFramework

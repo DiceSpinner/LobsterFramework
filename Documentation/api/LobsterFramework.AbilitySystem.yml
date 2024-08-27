@@ -20,11 +20,9 @@ items:
   - LobsterFramework.AbilitySystem.AbilitySelector
   - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
   - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
-  - LobsterFramework.AbilitySystem.ComponentRequiredAttribute
   - LobsterFramework.AbilitySystem.DamageModifier
   - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
   - LobsterFramework.AbilitySystem.TargetSetting
-  - LobsterFramework.AbilitySystem.WeaponAnimationAttribute
   langs:
   - csharp
   - vb
@@ -110,13 +108,6 @@ references:
   name: AddAbilityComponentMenuAttribute
   nameWithType: AddAbilityComponentMenuAttribute
   fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
-- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
-  commentId: T:LobsterFramework.AbilitySystem.ComponentRequiredAttribute
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html
-  name: ComponentRequiredAttribute
-  nameWithType: ComponentRequiredAttribute
-  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
 - uid: LobsterFramework.AbilitySystem.Ability
   commentId: T:LobsterFramework.AbilitySystem.Ability
   parent: LobsterFramework.AbilitySystem
@@ -164,13 +155,6 @@ references:
   name: AbilityComponent
   nameWithType: AbilityComponent
   fullName: LobsterFramework.AbilitySystem.AbilityComponent
-- uid: LobsterFramework.AbilitySystem.WeaponAnimationAttribute
-  commentId: T:LobsterFramework.AbilitySystem.WeaponAnimationAttribute
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.WeaponAnimationAttribute.html
-  name: WeaponAnimationAttribute
-  nameWithType: WeaponAnimationAttribute
-  fullName: LobsterFramework.AbilitySystem.WeaponAnimationAttribute
 - uid: LobsterFramework.AbilitySystem.DamageModifier
   commentId: T:LobsterFramework.AbilitySystem.DamageModifier
   parent: LobsterFramework.AbilitySystem

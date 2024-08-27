@@ -11,6 +11,7 @@ items:
   - LobsterFramework.Utility.CombinedValue`1.ComputeValue
   - LobsterFramework.Utility.CombinedValue`1.EffectorCount
   - LobsterFramework.Utility.CombinedValue`1.MakeEffector
+  - LobsterFramework.Utility.CombinedValue`1.OnValueChanged
   - LobsterFramework.Utility.CombinedValue`1.Value
   - LobsterFramework.Utility.CombinedValue`1.baseValue
   - LobsterFramework.Utility.CombinedValue`1.op_Implicit(LobsterFramework.Utility.CombinedValue{`0})~`0
@@ -118,6 +119,37 @@ items:
     content.vb: Protected baseValue As T
   nameWithType.vb: CombinedValue(Of T).baseValue
   fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).baseValue
+- uid: LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  commentId: E:LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  id: OnValueChanged
+  parent: LobsterFramework.Utility.CombinedValue`1
+  langs:
+  - csharp
+  - vb
+  name: OnValueChanged
+  nameWithType: CombinedValue<T>.OnValueChanged
+  fullName: LobsterFramework.Utility.CombinedValue<T>.OnValueChanged
+  type: Event
+  source:
+    remote:
+      path: Utility/CombinedValue.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnValueChanged
+    path: ../Utility/CombinedValue.cs
+    startLine: 22
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Invoked when the combined valus is changed, using the new value as the argument
+  example: []
+  syntax:
+    content: public event Action<T> OnValueChanged
+    return:
+      type: System.Action{{T}}
+    content.vb: Public Event OnValueChanged As Action(Of T)
+  nameWithType.vb: CombinedValue(Of T).OnValueChanged
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).OnValueChanged
 - uid: LobsterFramework.Utility.CombinedValue`1.op_Implicit(LobsterFramework.Utility.CombinedValue{`0})~`0
   commentId: M:LobsterFramework.Utility.CombinedValue`1.op_Implicit(LobsterFramework.Utility.CombinedValue{`0})~`0
   id: op_Implicit(LobsterFramework.Utility.CombinedValue{`0})~`0
@@ -136,7 +168,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: op_Implicit
     path: ../Utility/CombinedValue.cs
-    startLine: 20
+    startLine: 24
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -170,7 +202,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../Utility/CombinedValue.cs
-    startLine: 26
+    startLine: 30
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -205,7 +237,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Value
     path: ../Utility/CombinedValue.cs
-    startLine: 31
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -238,7 +270,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Compatible
     path: ../Utility/CombinedValue.cs
-    startLine: 40
+    startLine: 44
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -275,7 +307,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ClearEffectors
     path: ../Utility/CombinedValue.cs
-    startLine: 85
+    startLine: 89
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -305,17 +337,16 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: MakeEffector
     path: ../Utility/CombinedValue.cs
-    startLine: 97
+    startLine: 100
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: Returns a BufferedValueAccessor that manages setting and removing the effector
+  summary: Returns a CombinedValueEffector that can influence this value
   example: []
   syntax:
     content: public CombinedValueEffector<T> MakeEffector()
     return:
       type: LobsterFramework.Utility.CombinedValueEffector{{T}}
-      description: A BufferedValueAccessor that manages setting and removing the effector
     content.vb: Public Function MakeEffector() As CombinedValueEffector(Of T)
   overload: LobsterFramework.Utility.CombinedValue`1.MakeEffector*
   nameWithType.vb: CombinedValue(Of T).MakeEffector()
@@ -338,7 +369,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EffectorCount
     path: ../Utility/CombinedValue.cs
-    startLine: 104
+    startLine: 107
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -371,7 +402,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ComputeValue
     path: ../Utility/CombinedValue.cs
-    startLine: 110
+    startLine: 113
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -768,6 +799,63 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.Action{{T}}
+  commentId: T:System.Action{`0}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: LobsterFramework.Utility.CombinedValue`1.op_Implicit*
   commentId: Overload:LobsterFramework.Utility.CombinedValue`1.op_Implicit
   name: implicit operator

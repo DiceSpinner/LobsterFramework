@@ -71,12 +71,6 @@ references:
   name: AITrackData
   nameWithType: AITrackData
   fullName: AITrackData
-- uid: Global.Projectile
-  commentId: T:Global.Projectile
-  href: Projectile.html
-  name: Projectile
-  nameWithType: Projectile
-  fullName: Projectile
 - uid: Global.OrderedSet`1
   commentId: T:Global.OrderedSet`1
   href: OrderedSet-1.html
@@ -114,6 +108,12 @@ references:
   name: IntEventChannel
   nameWithType: IntEventChannel
   fullName: IntEventChannel
+- uid: Global.Projectile
+  commentId: T:Global.Projectile
+  href: Projectile.html
+  name: Projectile
+  nameWithType: Projectile
+  fullName: Projectile
 - uid: Global.RefBool
   commentId: T:Global.RefBool
   href: RefBool.html

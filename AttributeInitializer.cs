@@ -23,7 +23,7 @@ namespace LobsterFramework
 #if UNITY_EDITOR
         [UnityEditor.Callbacks.DidReloadScripts(Constants.AttributeInitOrder)]
 #else
-        [RuntimeInitializeOnLoadMethod(Constants.AttributeInitOrder)]
+        [RuntimeInitializeOnLoadMethod()]
 #endif
         private static void InitializeAttributes()
         {

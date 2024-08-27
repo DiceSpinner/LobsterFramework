@@ -91,7 +91,8 @@ Classes
       <section><p>Represents an ability in the ability system. Allows multiple instances to be defined. Can be customized via <a class="xref" href="LobsterFramework.AbilitySystem.AbilityData.html">AbilityData</a> inspector.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityChannel.html">AbilityChannel</a></h4>
-      <section><p>Communication channel of an ability Instance. Can be used to control ability behaviors at runtime.</p>
+      <section><p>Communication channel of the ability. Can be used to control ability behaviors at runtime.
+When creating a new ability, you must also declare a class named &quot;AbilityName&quot;Channel in the same namespace where &quot;AbilityName&quot; is the name of the ability you're creating.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html">AbilityComponent</a></h4>
       <section><p>Components that can be attached to ability data objects to run additional logic and host shared data across all abilities</p>
@@ -99,13 +100,14 @@ Classes
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponentDictionary.html">AbilityComponentDictionary</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityConfig.html">AbilityConfig</a></h4>
-      <section><p>The configuration of an ability instance</p>
+      <section><p>The configuration of the ability that will appear in the ability inspector.
+When creating a new ability, you must also declare a class named &quot;AbilityName&quot;Config in the same namespace where &quot;AbilityName&quot; is the name of the ability you're creating.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityConfigDictionary.html">AbilityConfigDictionary</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityContext.html">AbilityContext</a></h4>
-      <section><p>The runtime context of an ability instance. Not accessible from outside.
-Inheritors of this class must have name 'Ability_Subclass_Name'Context.</p>
+      <section><p>The runtime context of the ability. Not accessible from outside.
+When creating a new ability, you must also declare a class named &quot;AbilityName&quot;Context in the same namespace where &quot;AbilityName&quot; is the name of the ability you're creating.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html">AbilityCoroutine</a></h4>
       <section><p>Abilities that must be continously runned across multiple frames</p>
@@ -132,17 +134,12 @@ Inheritors of this class must have name 'Ability_Subclass_Name'Context.</p>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html">AddAbilityMenuAttribute</a></h4>
       <section><p>Applied to <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a> to make it visible to editor scripts</p>
 </section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html">ComponentRequiredAttribute</a></h4>
-      <section><p>Mark this ability as requiring the specified components on the parent gameobject to run</p>
-</section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.DamageModifier.html">DamageModifier</a></h4>
       <section></section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html">RequireAbilityComponentsAttribute</a></h4>
-      <section><p>Marks this ability as requiring specified AbilityComponents to run</p>
+      <section><p>Marks this ability as requiring specified <a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html">AbilityComponent</a> to run</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.TargetSetting.html">TargetSetting</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAnimationAttribute.html">WeaponAnimationAttribute</a></h4>
       <section></section>
 
 

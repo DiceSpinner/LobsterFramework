@@ -6,7 +6,6 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.AbilityConfig.CoolDown
-  - LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
   - LobsterFramework.AbilitySystem.AbilityConfig.UseCooldown
   - LobsterFramework.AbilitySystem.AbilityConfig.Validate
   langs:
@@ -23,11 +22,14 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityConfig
     path: ../AbilitySystem/Ability.cs
-    startLine: 481
+    startLine: 524
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: The configuration of an ability instance
+  summary: >-
+    The configuration of the ability that will appear in the ability inspector.
+
+    When creating a new ability, you must also declare a class named "AbilityName"Config in the same namespace where "AbilityName" is the name of the ability you're creating.
   example: []
   syntax:
     content: >-
@@ -43,9 +45,9 @@ items:
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   derivedClasses:
+  - LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig
+  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
   - LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
-  - LobsterFramework.AbilitySystem.WeaponSystem.HeavyWeaponAttackConfig
-  - LobsterFramework.AbilitySystem.WeaponSystem.LightWeaponAttackConfig
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
   inheritedMembers:
@@ -125,7 +127,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CoolDown
     path: ../AbilitySystem/Ability.cs
-    startLine: 485
+    startLine: 528
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -154,7 +156,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UseCooldown
     path: ../AbilitySystem/Ability.cs
-    startLine: 486
+    startLine: 529
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -183,7 +185,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Validate
     path: ../AbilitySystem/Ability.cs
-    startLine: 491
+    startLine: 534
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -193,32 +195,6 @@ items:
     content: protected virtual void Validate()
     content.vb: Protected Overridable Sub Validate()
   overload: LobsterFramework.AbilitySystem.AbilityConfig.Validate*
-- uid: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  commentId: M:LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  id: OnValidate
-  parent: LobsterFramework.AbilitySystem.AbilityConfig
-  langs:
-  - csharp
-  - vb
-  name: OnValidate()
-  nameWithType: AbilityConfig.OnValidate()
-  fullName: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnValidate
-    path: ../AbilitySystem/Ability.cs
-    startLine: 493
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: protected void OnValidate()
-    content.vb: Protected Sub OnValidate()
-  overload: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate*
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -2379,9 +2355,3 @@ references:
   name: Validate
   nameWithType: AbilityConfig.Validate
   fullName: LobsterFramework.AbilitySystem.AbilityConfig.Validate
-- uid: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  href: LobsterFramework.AbilitySystem.AbilityConfig.html#LobsterFramework.AbilitySystem.AbilityConfig.OnValidate
-  name: OnValidate
-  nameWithType: AbilityConfig.OnValidate
-  fullName: LobsterFramework.AbilitySystem.AbilityConfig.OnValidate

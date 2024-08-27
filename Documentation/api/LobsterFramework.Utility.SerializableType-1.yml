@@ -22,10 +22,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SerializableType
     path: ../Utility/SerializableDataStructures/SerializableType.cs
-    startLine: 7
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
+  summary: A type object that can be serialized and deserialized by Unity.
+  example: []
   syntax:
     content: >-
       [Serializable]
@@ -33,6 +35,7 @@ items:
       public class SerializableType<T> : ISerializationCallbackReceiver
     typeParameters:
     - id: T
+      description: Constraint to the value of this type object, only types that equals this type parameter or inherits from it can be stored in this object.
     content.vb: >-
       <Serializable>
 
@@ -77,7 +80,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Type
     path: ../Utility/SerializableDataStructures/SerializableType.cs
-    startLine: 16
+    startLine: 20
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -108,7 +111,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAfterDeserialize
     path: ../Utility/SerializableDataStructures/SerializableType.cs
-    startLine: 29
+    startLine: 33
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -140,7 +143,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnBeforeSerialize
     path: ../Utility/SerializableDataStructures/SerializableType.cs
-    startLine: 36
+    startLine: 40
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility

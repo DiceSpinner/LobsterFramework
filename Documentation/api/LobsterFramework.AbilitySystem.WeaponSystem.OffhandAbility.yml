@@ -9,6 +9,7 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.ConditionSatisfied
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.InitializeSharedReferences
   - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityEnqueue
+  - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish
   langs:
   - csharp
   - vb
@@ -31,44 +32,28 @@ items:
     content: >-
       [AddAbilityMenu("LobsterFramework")]
 
-      [ComponentRequired(new Type[] { typeof(WeaponManager) })]
+      [RequireComponentReference(typeof(WeaponManager))]
 
-      public class OffhandAbility : Ability
+      public sealed class OffhandAbility : Ability
     content.vb: >-
       <AddAbilityMenu("LobsterFramework")>
 
-      <ComponentRequired(New Type() { GetType(WeaponManager) })>
+      <RequireComponentReference(GetType(WeaponManager))>
 
-      Public Class OffhandAbility Inherits Ability
+      Public NotInheritable Class OffhandAbility Inherits Ability
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - LobsterFramework.AbilitySystem.Ability
   inheritedMembers:
-  - LobsterFramework.AbilitySystem.Ability.abilityManager
+  - LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
   - LobsterFramework.AbilitySystem.Ability.ExecutionPriority
-  - LobsterFramework.AbilitySystem.Ability.Instance
-  - LobsterFramework.AbilitySystem.Ability.Config
-  - LobsterFramework.AbilitySystem.Ability.Channel
-  - LobsterFramework.AbilitySystem.Ability.Context
-  - LobsterFramework.AbilitySystem.Ability.InitializeContext
-  - LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-  - LobsterFramework.AbilitySystem.Ability.FinalizeContext
   - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  - LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-  - LobsterFramework.AbilitySystem.Ability.SuspendAll
-  - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-  - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
   - LobsterFramework.AbilitySystem.Ability.InstancesRunning
   - LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - LobsterFramework.AbilitySystem.Ability.HasInstance(System.String)
-  - LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-  - LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-  - LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-  - LobsterFramework.AbilitySystem.Ability.OnSignaled
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -121,7 +106,6 @@ items:
   - UnityEngine.Object.hideFlags
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   attributes:
   - type: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
@@ -129,6 +113,11 @@ items:
     arguments:
     - type: System.String
       value: LobsterFramework
+  - type: LobsterFramework.RequireComponentReferenceAttribute
+    ctor: LobsterFramework.RequireComponentReferenceAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.InitializeSharedReferences
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.InitializeSharedReferences
   id: InitializeSharedReferences
@@ -151,7 +140,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Callback to initialize the references shared by all ability instances
+  summary: Called to initialize the references shared by all ability instances
   example: []
   syntax:
     content: protected override void InitializeSharedReferences()
@@ -212,13 +201,42 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Callback when the ability is added to the queue for execution
+  summary: Called when the ability is added to the queue for execution
   example: []
   syntax:
     content: protected override void OnAbilityEnqueue()
     content.vb: Protected Overrides Sub OnAbilityEnqueue()
   overridden: LobsterFramework.AbilitySystem.Ability.OnAbilityEnqueue
   overload: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityEnqueue*
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish
+  id: OnAbilityFinish
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
+  langs:
+  - csharp
+  - vb
+  name: OnAbilityFinish()
+  nameWithType: OffhandAbility.OnAbilityFinish()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish()
+  type: Method
+  source:
+    remote:
+      path: AbilitySystem/Abilities/OffhandAbility/OffhandAbility.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnAbilityFinish
+    path: ../AbilitySystem/Abilities/OffhandAbility/OffhandAbility.cs
+    startLine: 39
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  summary: Called when the ability is finished or halted.
+  example: []
+  syntax:
+    content: protected override void OnAbilityFinish()
+    content.vb: Protected Overrides Sub OnAbilityFinish()
+  overridden: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish*
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.Action
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.Action
   id: Action
@@ -237,7 +255,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Action
     path: ../AbilitySystem/Abilities/OffhandAbility/OffhandAbility.cs
-    startLine: 39
+    startLine: 45
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -314,13 +332,13 @@ references:
   name: Ability
   nameWithType: Ability
   fullName: LobsterFramework.AbilitySystem.Ability
-- uid: LobsterFramework.AbilitySystem.Ability.abilityManager
-  commentId: F:LobsterFramework.AbilitySystem.Ability.abilityManager
+- uid: LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  commentId: F:LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
   parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityManager
-  name: abilityManager
-  nameWithType: Ability.abilityManager
-  fullName: LobsterFramework.AbilitySystem.Ability.abilityManager
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
+  name: DefaultAbilityInstance
+  nameWithType: Ability.DefaultAbilityInstance
+  fullName: LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
 - uid: LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   commentId: P:LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   parent: LobsterFramework.AbilitySystem.Ability
@@ -328,91 +346,6 @@ references:
   name: ExecutionPriority
   nameWithType: Ability.ExecutionPriority
   fullName: LobsterFramework.AbilitySystem.Ability.ExecutionPriority
-- uid: LobsterFramework.AbilitySystem.Ability.Instance
-  commentId: P:LobsterFramework.AbilitySystem.Ability.Instance
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Instance
-  name: Instance
-  nameWithType: Ability.Instance
-  fullName: LobsterFramework.AbilitySystem.Ability.Instance
-- uid: LobsterFramework.AbilitySystem.Ability.Config
-  commentId: P:LobsterFramework.AbilitySystem.Ability.Config
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Config
-  name: Config
-  nameWithType: Ability.Config
-  fullName: LobsterFramework.AbilitySystem.Ability.Config
-- uid: LobsterFramework.AbilitySystem.Ability.Channel
-  commentId: P:LobsterFramework.AbilitySystem.Ability.Channel
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Channel
-  name: Channel
-  nameWithType: Ability.Channel
-  fullName: LobsterFramework.AbilitySystem.Ability.Channel
-- uid: LobsterFramework.AbilitySystem.Ability.Context
-  commentId: P:LobsterFramework.AbilitySystem.Ability.Context
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Context
-  name: Context
-  nameWithType: Ability.Context
-  fullName: LobsterFramework.AbilitySystem.Ability.Context
-- uid: LobsterFramework.AbilitySystem.Ability.InitializeContext
-  commentId: M:LobsterFramework.AbilitySystem.Ability.InitializeContext
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InitializeContext
-  name: InitializeContext()
-  nameWithType: Ability.InitializeContext()
-  fullName: LobsterFramework.AbilitySystem.Ability.InitializeContext()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.InitializeContext
-    name: InitializeContext
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InitializeContext
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.InitializeContext
-    name: InitializeContext
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InitializeContext
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-  commentId: M:LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-  name: FinalizeSharedReferences()
-  nameWithType: Ability.FinalizeSharedReferences()
-  fullName: LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-    name: FinalizeSharedReferences
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-    name: FinalizeSharedReferences
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.FinalizeContext
-  commentId: M:LobsterFramework.AbilitySystem.Ability.FinalizeContext
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.FinalizeContext
-  name: FinalizeContext()
-  nameWithType: Ability.FinalizeContext()
-  fullName: LobsterFramework.AbilitySystem.Ability.FinalizeContext()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.FinalizeContext
-    name: FinalizeContext
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.FinalizeContext
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.FinalizeContext
-    name: FinalizeContext
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.FinalizeContext
-  - name: (
-  - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   parent: LobsterFramework.AbilitySystem.Ability
@@ -437,191 +370,6 @@ references:
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
     href: LobsterFramework.AbilitySystem.Ability.html
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  parent: LobsterFramework.AbilitySystem.Ability
-  isExternal: true
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  name: StartAnimation(string, AnimationClip, float)
-  nameWithType: Ability.StartAnimation(string, AnimationClip, float)
-  fullName: LobsterFramework.AbilitySystem.Ability.StartAnimation(string, UnityEngine.AnimationClip, float)
-  nameWithType.vb: Ability.StartAnimation(String, AnimationClip, Single)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.StartAnimation(String, UnityEngine.AnimationClip, Single)
-  name.vb: StartAnimation(String, AnimationClip, Single)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-    name: StartAnimation
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.AnimationClip
-    name: AnimationClip
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: float
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-    name: StartAnimation
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(System.String,UnityEngine.AnimationClip,System.Single)
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.AnimationClip
-    name: AnimationClip
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: Single
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-  parent: LobsterFramework.AbilitySystem.Ability
-  isExternal: true
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-  name: SuspendInstance(string)
-  nameWithType: Ability.SuspendInstance(string)
-  fullName: LobsterFramework.AbilitySystem.Ability.SuspendInstance(string)
-  nameWithType.vb: Ability.SuspendInstance(String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.SuspendInstance(String)
-  name.vb: SuspendInstance(String)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-    name: SuspendInstance
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-    name: SuspendInstance
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.SuspendAll
-  commentId: M:LobsterFramework.AbilitySystem.Ability.SuspendAll
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SuspendAll
-  name: SuspendAll()
-  nameWithType: Ability.SuspendAll()
-  fullName: LobsterFramework.AbilitySystem.Ability.SuspendAll()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.SuspendAll
-    name: SuspendAll
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SuspendAll
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.SuspendAll
-    name: SuspendAll
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SuspendAll
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-  parent: LobsterFramework.AbilitySystem.Ability
-  isExternal: true
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-  name: JoinAsSecondary<T>(string)
-  nameWithType: Ability.JoinAsSecondary<T>(string)
-  fullName: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary<T>(string)
-  nameWithType.vb: Ability.JoinAsSecondary(Of T)(String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(Of T)(String)
-  name.vb: JoinAsSecondary(Of T)(String)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-    name: JoinAsSecondary
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-    name: JoinAsSecondary
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-  parent: LobsterFramework.AbilitySystem.Ability
-  isExternal: true
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-  name: JoinAsSecondary(Type, string)
-  nameWithType: Ability.JoinAsSecondary(Type, string)
-  fullName: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type, string)
-  nameWithType.vb: Ability.JoinAsSecondary(Type, String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type, String)
-  name.vb: JoinAsSecondary(Type, String)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-    name: JoinAsSecondary
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-    name: JoinAsSecondary
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning
   commentId: P:LobsterFramework.AbilitySystem.Ability.InstancesRunning
@@ -722,93 +470,6 @@ references:
     name: String
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-  name: OnAbilityFinish()
-  nameWithType: Ability.OnAbilityFinish()
-  fullName: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-    name: OnAbilityFinish
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-    name: OnAbilityFinish
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-  name: OnAnimationInterrupt(AnimancerState)
-  nameWithType: Ability.OnAnimationInterrupt(AnimancerState)
-  fullName: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-    name: OnAnimationInterrupt
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-  - name: (
-  - uid: Animancer.AnimancerState
-    name: AnimancerState
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-    name: OnAnimationInterrupt
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
-  - name: (
-  - uid: Animancer.AnimancerState
-    name: AnimancerState
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-  parent: LobsterFramework.AbilitySystem.Ability
-  isExternal: true
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-  name: OnSignaled(AnimationEvent)
-  nameWithType: Ability.OnSignaled(AnimationEvent)
-  fullName: LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-    name: OnSignaled
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-  - name: (
-  - uid: UnityEngine.AnimationEvent
-    name: AnimationEvent
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-    name: OnSignaled
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled(UnityEngine.AnimationEvent)
-  - name: (
-  - uid: UnityEngine.AnimationEvent
-    name: AnimationEvent
-    isExternal: true
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.OnSignaled
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnSignaled
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled
-  name: OnSignaled()
-  nameWithType: Ability.OnSignaled()
-  fullName: LobsterFramework.AbilitySystem.Ability.OnSignaled()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnSignaled
-    name: OnSignaled
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnSignaled
-    name: OnSignaled
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled
-  - name: (
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
@@ -2562,30 +2223,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -2990,6 +2627,31 @@ references:
   name: OnAbilityEnqueue
   nameWithType: OffhandAbility.OnAbilityEnqueue
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+  parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+  name: OnAbilityFinish()
+  nameWithType: Ability.OnAbilityFinish()
+  fullName: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+    name: OnAbilityFinish
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+    name: OnAbilityFinish
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish
+  href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish
+  name: OnAbilityFinish
+  nameWithType: OffhandAbility.OnAbilityFinish
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.OnAbilityFinish
 - uid: LobsterFramework.AbilitySystem.Ability.Action
   commentId: M:LobsterFramework.AbilitySystem.Ability.Action
   parent: LobsterFramework.AbilitySystem.Ability

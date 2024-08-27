@@ -22,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: FloatSum
     path: ../Utility/CombinedValue.cs
-    startLine: 186
+    startLine: 189
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -37,6 +37,7 @@ items:
   inheritedMembers:
   - LobsterFramework.Utility.CombinedValue{System.Single}.stats
   - LobsterFramework.Utility.CombinedValue{System.Single}.baseValue
+  - LobsterFramework.Utility.CombinedValue{System.Single}.OnValueChanged
   - LobsterFramework.Utility.CombinedValue{System.Single}.Value
   - LobsterFramework.Utility.CombinedValue{System.Single}.ClearEffectors
   - LobsterFramework.Utility.CombinedValue{System.Single}.MakeEffector
@@ -66,7 +67,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../Utility/CombinedValue.cs
-    startLine: 190
+    startLine: 193
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -102,7 +103,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Compatible
     path: ../Utility/CombinedValue.cs
-    startLine: 196
+    startLine: 199
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -141,7 +142,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ComputeValue
     path: ../Utility/CombinedValue.cs
-    startLine: 204
+    startLine: 207
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -242,6 +243,16 @@ references:
   fullName: LobsterFramework.Utility.CombinedValue<float>.baseValue
   nameWithType.vb: CombinedValue(Of Single).baseValue
   fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).baseValue
+- uid: LobsterFramework.Utility.CombinedValue{System.Single}.OnValueChanged
+  commentId: E:LobsterFramework.Utility.CombinedValue{System.Single}.OnValueChanged
+  parent: LobsterFramework.Utility.CombinedValue{System.Single}
+  definition: LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  href: LobsterFramework.Utility.CombinedValue{System.Single}.html#LobsterFramework.Utility.CombinedValue{System.Single}.OnValueChanged
+  name: OnValueChanged
+  nameWithType: CombinedValue<float>.OnValueChanged
+  fullName: LobsterFramework.Utility.CombinedValue<float>.OnValueChanged
+  nameWithType.vb: CombinedValue(Of Single).OnValueChanged
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of Single).OnValueChanged
 - uid: LobsterFramework.Utility.CombinedValue{System.Single}.Value
   commentId: P:LobsterFramework.Utility.CombinedValue{System.Single}.Value
   parent: LobsterFramework.Utility.CombinedValue{System.Single}
@@ -574,6 +585,14 @@ references:
   fullName: LobsterFramework.Utility.CombinedValue<T>.baseValue
   nameWithType.vb: CombinedValue(Of T).baseValue
   fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).baseValue
+- uid: LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  commentId: E:LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.OnValueChanged
+  name: OnValueChanged
+  nameWithType: CombinedValue<T>.OnValueChanged
+  fullName: LobsterFramework.Utility.CombinedValue<T>.OnValueChanged
+  nameWithType.vb: CombinedValue(Of T).OnValueChanged
+  fullName.vb: LobsterFramework.Utility.CombinedValue(Of T).OnValueChanged
 - uid: LobsterFramework.Utility.CombinedValue`1.Value
   commentId: P:LobsterFramework.Utility.CombinedValue`1.Value
   href: LobsterFramework.Utility.CombinedValue-1.html#LobsterFramework.Utility.CombinedValue`1.Value

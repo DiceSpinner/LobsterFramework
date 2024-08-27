@@ -6,7 +6,6 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
-  - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName
   langs:
   - csharp
   - vb
@@ -95,33 +94,6 @@ items:
     - name: Inherited
       type: System.Boolean
       value: false
-- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName
-  commentId: F:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName
-  id: RootName
-  parent: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
-  langs:
-  - csharp
-  - vb
-  name: RootName
-  nameWithType: AddAbilityMenuAttribute.RootName
-  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.RootName
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: RootName
-    path: ../AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
-    startLine: 19
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public const string RootName = "Root"
-    return:
-      type: System.String
-    content.vb: Public Const RootName As String = "Root"
 - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
   commentId: M:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -140,7 +112,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AbilitySystem/Attributes/AddAbilityMenuAttribute.cs
-    startLine: 44
+    startLine: 43
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1980,6 +1952,15 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor
+  href: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
+  name: AddAbilityMenuAttribute
+  nameWithType: AddAbilityMenuAttribute.AddAbilityMenuAttribute
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbilityMenuAttribute
+  nameWithType.vb: AddAbilityMenuAttribute.New
+  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.New
+  name.vb: New
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1991,12 +1972,3 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor*
-  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor
-  href: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.#ctor(System.String)
-  name: AddAbilityMenuAttribute
-  nameWithType: AddAbilityMenuAttribute.AddAbilityMenuAttribute
-  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.AddAbilityMenuAttribute
-  nameWithType.vb: AddAbilityMenuAttribute.New
-  fullName.vb: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.New
-  name.vb: New

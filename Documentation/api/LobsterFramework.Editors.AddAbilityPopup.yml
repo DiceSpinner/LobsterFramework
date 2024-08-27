@@ -93,7 +93,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/PopupWindow/AddAbilityPopup.cs
-    startLine: 53
+    startLine: 52
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

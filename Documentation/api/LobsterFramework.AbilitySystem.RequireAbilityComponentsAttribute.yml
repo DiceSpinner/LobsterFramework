@@ -6,9 +6,6 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor(System.Type[])
-  - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
-  - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.requirement
-  - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.rev_requirement
   langs:
   - csharp
   - vb
@@ -27,7 +24,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Marks this ability as requiring specified AbilityComponents to run
+  summary: Marks this ability as requiring specified <xref href="LobsterFramework.AbilitySystem.AbilityComponent" data-throw-if-not-resolved="false"></xref> to run
   example: []
   syntax:
     content: >-
@@ -97,60 +94,6 @@ items:
     - name: AllowMultiple
       type: System.Boolean
       value: true
-- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.requirement
-  commentId: F:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.requirement
-  id: requirement
-  parent: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
-  langs:
-  - csharp
-  - vb
-  name: requirement
-  nameWithType: RequireAbilityComponentsAttribute.requirement
-  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.requirement
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: requirement
-    path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-    startLine: 13
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public static Dictionary<Type, HashSet<Type>> requirement
-    return:
-      type: System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.HashSet{System.Type}}
-    content.vb: Public Shared requirement As Dictionary(Of Type, HashSet(Of Type))
-- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.rev_requirement
-  commentId: F:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.rev_requirement
-  id: rev_requirement
-  parent: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
-  langs:
-  - csharp
-  - vb
-  name: rev_requirement
-  nameWithType: RequireAbilityComponentsAttribute.rev_requirement
-  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.rev_requirement
-  type: Field
-  source:
-    remote:
-      path: AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: rev_requirement
-    path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-    startLine: 14
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public static Dictionary<Type, HashSet<Type>> rev_requirement
-    return:
-      type: System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.HashSet{System.Type}}
-    content.vb: Public Shared rev_requirement As Dictionary(Of Type, HashSet(Of Type))
 - uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor(System.Type[])
   commentId: M:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor(System.Type[])
   id: '#ctor(System.Type[])'
@@ -169,7 +112,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-    startLine: 18
+    startLine: 25
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -183,36 +126,14 @@ items:
   nameWithType.vb: RequireAbilityComponentsAttribute.New(ParamArray Type())
   fullName.vb: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.New(ParamArray System.Type())
   name.vb: New(ParamArray Type())
-- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
-  commentId: M:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
-  id: Init(System.Type)
-  parent: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
-  langs:
-  - csharp
-  - vb
-  name: Init(Type)
-  nameWithType: RequireAbilityComponentsAttribute.Init(Type)
-  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Init
-    path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-    startLine: 23
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public void Init(Type ability)
-    parameters:
-    - id: ability
-      type: System.Type
-    content.vb: Public Sub Init(ability As Type)
-  overload: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init*
 references:
+- uid: LobsterFramework.AbilitySystem.AbilityComponent
+  commentId: T:LobsterFramework.AbilitySystem.AbilityComponent
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityComponent.html
+  name: AbilityComponent
+  nameWithType: AbilityComponent
+  fullName: LobsterFramework.AbilitySystem.AbilityComponent
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html
@@ -2029,138 +1950,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.HashSet{System.Type}}
-  commentId: T:System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.HashSet{System.Type}}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<Type, HashSet<Type>>
-  nameWithType: Dictionary<Type, HashSet<Type>>
-  fullName: System.Collections.Generic.Dictionary<System.Type, System.Collections.Generic.HashSet<System.Type>>
-  nameWithType.vb: Dictionary(Of Type, HashSet(Of Type))
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.Collections.Generic.HashSet(Of System.Type))
-  name.vb: Dictionary(Of Type, HashSet(Of Type))
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.HashSet`1
-    name: HashSet
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
-  - name: <
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.HashSet`1
-    name: HashSet
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  - name: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor*
   commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor
   href: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor(System.Type[])
@@ -2193,17 +1982,3 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
   - name: )
-- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init*
-  commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init
-  href: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
-  name: Init
-  nameWithType: RequireAbilityComponentsAttribute.Init
-  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: Type
-  nameWithType: Type
-  fullName: System.Type

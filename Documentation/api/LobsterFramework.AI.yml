@@ -4,7 +4,6 @@ items:
   commentId: N:LobsterFramework.AI
   id: LobsterFramework.AI
   children:
-  - LobsterFramework.AI.AIController
   - LobsterFramework.AI.AIPathFinder
   - LobsterFramework.AI.AIUtility
   - LobsterFramework.AI.AddStateMenuAttribute
@@ -67,13 +66,6 @@ references:
   name: StateMachine
   nameWithType: StateMachine
   fullName: LobsterFramework.AI.StateMachine
-- uid: LobsterFramework.AI.AIController
-  commentId: T:LobsterFramework.AI.AIController
-  parent: LobsterFramework.AI
-  href: LobsterFramework.AI.AIController.html
-  name: AIController
-  nameWithType: AIController
-  fullName: LobsterFramework.AI.AIController
 - uid: LobsterFramework.AI.State
   commentId: T:LobsterFramework.AI.State
   parent: LobsterFramework.AI

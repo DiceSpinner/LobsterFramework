@@ -19,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponArtChannel
     path: ../AbilitySystem/Abilities/WeaponArt/WeaponArt.cs
-    startLine: 44
+    startLine: 46
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

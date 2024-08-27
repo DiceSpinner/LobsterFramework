@@ -6,7 +6,6 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage(LobsterFramework.Damage)
-  - LobsterFramework.AbilitySystem.DamageModifier.Update
   - LobsterFramework.AbilitySystem.DamageModifier.flatDamageModification
   - LobsterFramework.AbilitySystem.DamageModifier.percentageDamageModifcation
   langs:
@@ -31,19 +30,17 @@ items:
     content: >-
       [AddAbilityComponentMenu("LobsterFramework")]
 
-      public class DamageModifier : AbilityComponent
+      public sealed class DamageModifier : AbilityComponent
     content.vb: >-
       <AddAbilityComponentMenu("LobsterFramework")>
 
-      Public Class DamageModifier Inherits AbilityComponent
+      Public NotInheritable Class DamageModifier Inherits AbilityComponent
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - LobsterFramework.AbilitySystem.AbilityComponent
   inheritedMembers:
-  - LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-  - LobsterFramework.AbilitySystem.AbilityComponent.OnClose
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -96,7 +93,6 @@ items:
   - UnityEngine.Object.hideFlags
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   attributes:
   - type: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
@@ -196,7 +192,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ModifyDamage
     path: ../AbilitySystem/Ability Components/DamageModifier.cs
-    startLine: 18
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -209,35 +205,6 @@ items:
       type: LobsterFramework.Damage
     content.vb: Public Function ModifyDamage(damage As Damage) As Damage
   overload: LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage*
-- uid: LobsterFramework.AbilitySystem.DamageModifier.Update
-  commentId: M:LobsterFramework.AbilitySystem.DamageModifier.Update
-  id: Update
-  parent: LobsterFramework.AbilitySystem.DamageModifier
-  langs:
-  - csharp
-  - vb
-  name: Update()
-  nameWithType: DamageModifier.Update()
-  fullName: LobsterFramework.AbilitySystem.DamageModifier.Update()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Ability Components/DamageModifier.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Update
-    path: ../AbilitySystem/Ability Components/DamageModifier.cs
-    startLine: 28
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  summary: Callback to update internal state on each frame during the regular unity update cycle
-  example: []
-  syntax:
-    content: protected override void Update()
-    content.vb: Protected Overrides Sub Update()
-  overridden: LobsterFramework.AbilitySystem.AbilityComponent.Update
-  overload: LobsterFramework.AbilitySystem.DamageModifier.Update*
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -293,44 +260,6 @@ references:
   name: AbilityComponent
   nameWithType: AbilityComponent
   fullName: LobsterFramework.AbilitySystem.AbilityComponent
-- uid: LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-  commentId: M:LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-  parent: LobsterFramework.AbilitySystem.AbilityComponent
-  href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-  name: Initialize()
-  nameWithType: AbilityComponent.Initialize()
-  fullName: LobsterFramework.AbilitySystem.AbilityComponent.Initialize()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-    name: Initialize
-    href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-    name: Initialize
-    href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Initialize
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  commentId: M:LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  parent: LobsterFramework.AbilitySystem.AbilityComponent
-  href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  name: OnClose()
-  nameWithType: AbilityComponent.OnClose()
-  fullName: LobsterFramework.AbilitySystem.AbilityComponent.OnClose()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-    name: OnClose
-    href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-    name: OnClose
-    href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.OnClose
-  - name: (
-  - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -2083,30 +2012,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -2458,28 +2363,3 @@ references:
   name: LobsterFramework
   nameWithType: LobsterFramework
   fullName: LobsterFramework
-- uid: LobsterFramework.AbilitySystem.AbilityComponent.Update
-  commentId: M:LobsterFramework.AbilitySystem.AbilityComponent.Update
-  parent: LobsterFramework.AbilitySystem.AbilityComponent
-  href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Update
-  name: Update()
-  nameWithType: AbilityComponent.Update()
-  fullName: LobsterFramework.AbilitySystem.AbilityComponent.Update()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityComponent.Update
-    name: Update
-    href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Update
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityComponent.Update
-    name: Update
-    href: LobsterFramework.AbilitySystem.AbilityComponent.html#LobsterFramework.AbilitySystem.AbilityComponent.Update
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.DamageModifier.Update*
-  commentId: Overload:LobsterFramework.AbilitySystem.DamageModifier.Update
-  href: LobsterFramework.AbilitySystem.DamageModifier.html#LobsterFramework.AbilitySystem.DamageModifier.Update
-  name: Update
-  nameWithType: DamageModifier.Update
-  fullName: LobsterFramework.AbilitySystem.DamageModifier.Update

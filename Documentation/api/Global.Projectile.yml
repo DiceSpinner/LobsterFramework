@@ -15,11 +15,11 @@ items:
   type: Class
   source:
     remote:
-      path: Components/Projectiles/Projectile.cs
+      path: Entity/Projectiles/Projectile.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Projectile
-    path: ../Components/Projectiles/Projectile.cs
+    path: ../Entity/Projectiles/Projectile.cs
     startLine: 4
   assemblies:
   - LobsterFramework
@@ -185,11 +185,11 @@ items:
   type: Method
   source:
     remote:
-      path: Components/Projectiles/Projectile.cs
+      path: Entity/Projectiles/Projectile.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Activate
-    path: ../Components/Projectiles/Projectile.cs
+    path: ../Entity/Projectiles/Projectile.cs
     startLine: 19
   assemblies:
   - LobsterFramework

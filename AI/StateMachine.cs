@@ -10,6 +10,9 @@ using UnityEditor;
 
 namespace LobsterFramework.AI
 {
+    /// <summary>
+    /// Manages and runs <see cref="State"/>. Takes in <see cref="StateData"/> as input.
+    /// </summary>
     public class StateMachine : ReferenceProvider
     {
         [SerializeField, DisableEditInPlayMode] internal StateData inputData;
@@ -21,7 +24,7 @@ namespace LobsterFramework.AI
         [SerializeField] internal string statePath;    
 
         #region Coroutine
-        public readonly CoroutineRunner coroutineRunner = new();
+        private readonly CoroutineRunner coroutineRunner = new();
         private Type switchingTo = null;
 
         public Utility.Coroutine RunCoroutine(IEnumerable<CoroutineOption> coroutine) {
@@ -46,12 +49,12 @@ namespace LobsterFramework.AI
             }
             Bind(runtimeData);
             currentState = runtimeData.initialState;
-            runtimeData.Initialize(this);
+            runtimeData.Activate(this);
         }
 
         private void OnDisable()
         {
-            runtimeData.Close();
+            runtimeData.Deactivate();
             Bind(inputData);
         }
 

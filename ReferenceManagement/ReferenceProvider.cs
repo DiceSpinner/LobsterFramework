@@ -72,38 +72,38 @@ namespace LobsterFramework
         private HashSet<string> storedKeys = new();
         private void ValidateFields() {
             // Make sure space for storing required component references is available
-            foreach (var requesterType in bindedRequester)
+            foreach (var typeRequesting in bindedRequester)
             {
-                // Remove requster type entries that are not needed
-                if (!RequireComponentReferenceAttribute.Requirement.ContainsKey(requesterType))
+                // Remove type requesting entries that are not needed
+                if (!RequireComponentReferenceAttribute.Requirement.ContainsKey(typeRequesting))
                 {
-                    referenceMapping.Remove(requesterType.AssemblyQualifiedName); 
+                    referenceMapping.Remove(typeRequesting.AssemblyQualifiedName); 
                     continue;
                 }
-                storedKeys.Add(requesterType.AssemblyQualifiedName);
+                storedKeys.Add(typeRequesting.AssemblyQualifiedName);
 
-                // Add in requester type entry that is missing
-                if (!referenceMapping.ContainsKey(requesterType.AssemblyQualifiedName))
+                // Add in type requesting entry that is missing
+                if (!referenceMapping.ContainsKey(typeRequesting.AssemblyQualifiedName))
                 {
-                    referenceMapping.Add(requesterType.AssemblyQualifiedName, new());
+                    referenceMapping.Add(typeRequesting.AssemblyQualifiedName, new());
                 }
 
                 // Remove required type entry that is invalid after recompilation (Type name changed, removed, etc)
-                var requiredTypeCollection = referenceMapping[requesterType.AssemblyQualifiedName];
-                foreach (string requiredTypeName in referenceMapping[requesterType.AssemblyQualifiedName].Keys.ToList())
+                var requiredTypeCollection = referenceMapping[typeRequesting.AssemblyQualifiedName];
+                foreach (string requiredTypeName in referenceMapping[typeRequesting.AssemblyQualifiedName].Keys.ToList())
                 {
                     Type requiredType = TypeCache.GetTypeByName(requiredTypeName);
                     if (requiredType == null) {
                         requiredTypeCollection.Remove(requiredTypeName); continue;
                     }
 
-                    if (!RequireComponentReferenceAttribute.Requirement[requesterType].ContainsKey(requiredType)) {
+                    if (!RequireComponentReferenceAttribute.Requirement[typeRequesting].ContainsKey(requiredType)) {
                         requiredTypeCollection.Remove(requiredTypeName); continue;
                     }
                 }
 
                 // Add in required type entry that is missing 
-                foreach (Type requriedType in RequireComponentReferenceAttribute.Requirement[requesterType].Keys) {
+                foreach (Type requriedType in RequireComponentReferenceAttribute.Requirement[typeRequesting].Keys) {
                     if (!requiredTypeCollection.ContainsKey(requriedType.AssemblyQualifiedName)) {
                         requiredTypeCollection.Add(requriedType.AssemblyQualifiedName, new());
                     }
@@ -114,7 +114,7 @@ namespace LobsterFramework
                         requiredTypeCollection[requriedType.AssemblyQualifiedName] = referenceCollection;
                     }
 
-                    int numRequired = RequireComponentReferenceAttribute.Requirement[requesterType][requriedType].Count;
+                    int numRequired = RequireComponentReferenceAttribute.Requirement[typeRequesting][requriedType].Count;
 
                     int numDiff = numRequired - referenceCollection.Count;
                     // Add in more fields to match the number of fields required by the type
@@ -143,7 +143,11 @@ namespace LobsterFramework
 
             storedKeys.Clear();
         }
-        public void QuickFillFields() {
+
+        /// <summary>
+        /// Quickly fill the required references using the current gameobject
+        /// </summary>
+        internal void QuickFillFields() {
             foreach (var item in referenceMapping.Values) {
                 foreach (var kwp in item) {
                     var lst = kwp.Value;
@@ -157,12 +161,15 @@ namespace LobsterFramework
             }
         }
         private void OnRequirementAdded(Type requesterType) {
-            try {
-                referenceMapping[requesterType.AssemblyQualifiedName] = new();
-                foreach (Type requestedType in RequireComponentReferenceAttribute.Requirement[requesterType].Keys) {
-                    referenceMapping[requesterType.AssemblyQualifiedName][requestedType.AssemblyQualifiedName] = null;
+            var requirement = RequireComponentReferenceAttribute.Requirement[requesterType];
+            referenceMapping.Add(requesterType.AssemblyQualifiedName, new());
+            foreach (Type requestedType in requirement.Keys) {
+                ComponentList lst = new();
+                referenceMapping[requesterType.AssemblyQualifiedName].Add(requestedType.AssemblyQualifiedName, lst);
+                for (int i = 0;i < requirement[requestedType].Count;i++) {
+                    lst.Add(null);
                 }
-            }catch(KeyNotFoundException) { Debug.LogWarning($"No requirement is listed for type {requesterType.FullName} !"); }
+            }
         }
 
         private void OnRequirementRemoved(Type requesterType)
@@ -173,26 +180,26 @@ namespace LobsterFramework
         /// <summary>
         /// Check if the binded requester's requirements has been satisfied. Meaning all required fields must be non-null.
         /// </summary>
-        /// <param name="requesterType">The type of the data within the binded data container requesting component references to check for</param>
+        /// <param name="typeRequesting">The type of the data within the binded data container requesting component references to check for</param>
         /// <returns>true if all required references are present, false otherwise</returns>
-        public bool IsRequirementSatisfied(Type requesterType) {
+        public bool IsRequirementSatisfied(Type typeRequesting) {
             try
             {
-                foreach (var lst in referenceMapping[requesterType.AssemblyQualifiedName].Values)
+                foreach (var lst in referenceMapping[typeRequesting.AssemblyQualifiedName].Values)
                 {
                     foreach (var item in lst) {
                         if (item == null)
                         {
-                            Debug.LogWarning($"Type {requesterType.FullName}'s component reference requirements are not completely satisfied!", gameObject);
+                            Debug.LogWarning($"Type {typeRequesting.FullName}'s component reference requirements are not completely satisfied!", gameObject);
                             return false;
                         }
                     }
                 }
                 return true;
             }
-            catch (KeyNotFoundException)
+            catch (KeyNotFoundException) // This type is not requesting references
             {
-                return false;
+                return true;
             }
         }
 

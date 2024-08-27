@@ -63,9 +63,9 @@ namespace LobsterFramework.Editors {
         #endregion
 
         [SerializeField] private List<FolderIcon> menuIcons;
-        [SerializeField] internal Color menuPopupColor;
-        [SerializeField] internal Color abilityPopupColor;
-        [SerializeField] internal Color componentPopupColor;
+        [SerializeField] internal Color menuPopupColor = Color.yellow;
+        [SerializeField] internal Color abilityPopupColor = Color.white;
+        [SerializeField] internal Color componentPopupColor = Color.white;
         [SerializeField] internal GUIStyle abilitySelectionStyle;
         [SerializeField] internal GUIStyle componentSelectionStyle;
 

@@ -73,7 +73,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_FontSize: 12
     m_FontStyle: 1
     m_Alignment: 3
     m_WordWrap: 0
@@ -81,9 +81,9 @@ MonoBehaviour:
     m_TextClipping: 0
     m_ImagePosition: 0
     m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
+    m_FixedWidth: 150
+    m_FixedHeight: 40
+    m_StretchWidth: 0
     m_StretchHeight: 0
   componentSelectionStyle:
     m_Name: 
@@ -148,7 +148,7 @@ MonoBehaviour:
     m_TextClipping: 0
     m_ImagePosition: 0
     m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
+    m_FixedWidth: 150
+    m_FixedHeight: 40
+    m_StretchWidth: 0
     m_StretchHeight: 0

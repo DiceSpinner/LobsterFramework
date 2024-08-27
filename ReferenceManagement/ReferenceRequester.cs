@@ -21,26 +21,31 @@ namespace LobsterFramework
         internal event Action<Type> OnRequirementRemoved;
 
         protected void RaiseRequirementAddedEvent(Type type) {
-            OnRequirementAdded?.Invoke(type);
+            if (RequireComponentReferenceAttribute.Requirement.ContainsKey(type)) 
+            {
+                OnRequirementAdded?.Invoke(type);
+            }
         }
-        protected void RaiseRequirementRemovedEvent(Type type) { 
-            OnRequirementRemoved?.Invoke(type);
+        protected void RaiseRequirementRemovedEvent(Type type) {
+            if (RequireComponentReferenceAttribute.Requirement.ContainsKey(type)) { 
+                OnRequirementRemoved?.Invoke(type);
+            }
         }
 
         /// <summary>
         /// Implement this to expose the set of types with <see cref="RequireComponentReferenceAttribute"/> applied within the data container,
         /// </summary>
         /// <returns>The set of requester types this data container has</returns>
-        public abstract IEnumerator<Type> GetRequests();
+        public abstract IEnumerator<Type> GetRequestingTypes();
 
         IEnumerator<Type> IEnumerable<Type>.GetEnumerator()
         {
-            return GetRequests();
+            return GetRequestingTypes();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetRequests();
+            return GetRequestingTypes();
         }
     }
 }

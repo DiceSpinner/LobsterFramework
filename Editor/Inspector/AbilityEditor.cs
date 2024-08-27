@@ -8,16 +8,52 @@ namespace LobsterFramework.Editors
     [CustomEditor(typeof(Ability), true)]
     public class AbilityEditor : Editor
     {
+        private string newSelection;
+        private bool removeSelection;
         private string selectedConfig;
-        private string addInstanceName;
+        private string inputName;
+        private string newInstance;
         private Editor configEditor;
 
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            EditorGUI.BeginChangeCheck();
             Ability ability = (Ability)target;
             bool isAsset = AssetDatabase.Contains(ability);
+
+            if (Event.current.type == EventType.Layout) {
+                if (newSelection != default) {
+                    selectedConfig = newSelection;
+                    DestroyImmediate(configEditor);
+                    newSelection = default;
+                }
+
+                if (newInstance != default) {
+                    ability.AddInstance(newInstance);
+                    newInstance = default;
+                }
+
+                if (removeSelection) {
+                    ability.RemoveInstance(selectedConfig);
+                    if (ability.configs.Count > 0) {
+                        selectedConfig = ability.configs.Last().Key;
+                    }
+                    removeSelection = false;
+                    DestroyImmediate(configEditor);
+                }
+
+                if (ability.configs.Count > 0) {
+                    if (selectedConfig == default)
+                    {
+                        selectedConfig = ability.configs.First().Key;
+                    }
+
+                    if (configEditor == null)
+                    {
+                        configEditor = CreateEditor(ability.configs[selectedConfig]);
+                    }
+                }
+            }
 
             #region Add Instance
             if (isAsset) {
@@ -25,17 +61,17 @@ namespace LobsterFramework.Editors
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField("New Instance");
                 GUILayout.FlexibleSpace();
-                addInstanceName = EditorGUILayout.TextField(addInstanceName);
+                inputName = EditorGUILayout.TextField(inputName);
 
                 if (GUILayout.Button("Create", GUILayout.Width(80)))
                 {
-                    if (addInstanceName == null)
+                    if (inputName == null)
                     {
                         Debug.LogWarning("Field cannot be empty!");
                     }
                     else
                     {
-                        ability.AddInstance(addInstanceName);
+                        newInstance = inputName;
                     }
                 }
                 EditorGUILayout.EndHorizontal();
@@ -59,40 +95,28 @@ namespace LobsterFramework.Editors
                         menu.AddItem(new GUIContent(configName), false,
                             () =>
                             {
-                                selectedConfig = configName;
-                                if (configEditor != null) { DestroyImmediate(configEditor); }
+                                newSelection = configName;
                             });
                     }
                     menu.ShowAsContext();
-                }
-
-                if (selectedConfig == default)
-                {
-                    selectedConfig = ability.configs.First().Key;
-                }
-                if (configEditor == null) 
-                {
-                    configEditor = CreateEditor(ability.configs[selectedConfig]);
                 }
                 #endregion
 
                 configEditor.OnInspectorGUI();
 
                 #region Remove Instance
-                if (isAsset &&  selectedConfig != Ability.DefaultAbilityInstance) {
+                if (isAsset) {
                     GUILayout.Space(10);
                     GUILayout.BeginHorizontal();
                     GUILayout.FlexibleSpace();
+                    if (selectedConfig == Ability.DefaultAbilityInstance) {
+                        GUI.enabled = false;
+                    }
                     if (EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle, GUILayout.Width(80)))
                     {
-                        ability.RemoveInstance(selectedConfig);
-                        if (ability.configs.Count > 0)
-                        {
-                            selectedConfig = ability.configs.Last().Key;
-                        }
-
-                        DestroyImmediate(configEditor);
+                        removeSelection = true;
                     }
+                    GUI.enabled = true;
                     GUILayout.EndHorizontal();
                 }
                 #endregion
@@ -101,10 +125,12 @@ namespace LobsterFramework.Editors
             {
                 EditorGUILayout.LabelField("No ability instances available!");
             }
-
-            if (EditorGUI.EndChangeCheck())
+        }
+        private void OnDestroy()
+        {
+            if (configEditor != null)
             {
-                serializedObject.ApplyModifiedProperties();
+                DestroyImmediate(configEditor);
             }
         }
     }

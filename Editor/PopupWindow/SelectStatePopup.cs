@@ -18,16 +18,18 @@ namespace LobsterFramework.Editors
             this.editor = editor;
             this.data = data;
 
-            selectionDrawer = new(data.states.Values.Select((State state)=>{ return state.GetType(); }).ToList(), AddStateMenuAttribute.stateMenus, DrawMenu, DrawItem);
+            selectionDrawer = new(data.states.Values.Select((State state)=>{ return state.GetType(); }).ToList(), AddStateMenuAttribute.stateMenus, DrawMenu, DrawItem, SelectState);
             selectionDrawer.SetColorOptions(StateEditorConfig.MenuPopupColor, StateEditorConfig.StatePopupColor);
         }
 
-        private void DrawMenu(MenuTree<Type> tree) {
-            GUILayout.Label(tree.path, EditorStyles.boldLabel);
+        private GUIContent treeContent = new();
+        private GUIContent DrawMenu(MenuTree<Type> tree) {
+            treeContent.text = tree.path;
+            return treeContent;
         }
 
         private GUIContent content = new();
-        private void DrawItem(Type stateType) {
+        private GUIContent DrawItem(Type stateType) {
             if (AddStateMenuAttribute.icons.TryGetValue(stateType, out Texture2D icon))
             {
                 content.image = icon;
@@ -35,6 +37,7 @@ namespace LobsterFramework.Editors
             else { 
                 content.image = null;
             }
+            content.tooltip = stateType.FullName;
 
             if (data.initialState != null && stateType == data.initialState.GetType())
             {
@@ -44,12 +47,12 @@ namespace LobsterFramework.Editors
             else {
                 content.text = stateType.Name;
             }
+            return content;
+        }
 
-            if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
-            {
-                editor.nextState = data.states[stateType.AssemblyQualifiedName];
-                editorWindow.Close();
-            }
+        private void SelectState(Type stateType) {
+            editor.nextState = data.states[stateType.AssemblyQualifiedName];
+            editorWindow.Close();
         }
 
         public override void OnGUI(Rect rect)

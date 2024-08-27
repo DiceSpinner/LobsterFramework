@@ -19,26 +19,31 @@ namespace LobsterFramework.Editors
             this.editor = editor;
             this.data = data;
             var collection = data.components.Values.Select((AbilityComponent cmp) => { return cmp.GetType(); }).ToList();
-            selectionDrawer = new(collection, AddAbilityComponentMenuAttribute.componentMenus, DrawNode, DrawItem);
+            selectionDrawer = new(collection, AddAbilityComponentMenuAttribute.componentMenus, DrawNode, DrawItem, SelectAbilityComponent);
             selectionDrawer.SetColorOptions(AbilityEditorConfig.MenuPopupColor, AbilityEditorConfig.ComponentPopupColor);
         }
 
-        private GUIContent content = new();
-        private void DrawNode(MenuTree<Type> tree) {
-            GUILayout.Label(tree.path, EditorStyles.boldLabel);
+        private GUIContent treeContent = new();
+        private GUIContent DrawNode(MenuTree<Type> tree) {
+            treeContent.text = tree.path;
+            return treeContent;
         }
 
-        private void DrawItem(Type componentType) {
+        private GUIContent content = new();
+        private GUIContent DrawItem(Type componentType) {
             content.text = componentType.Name;
+            content.tooltip = componentType.FullName;
             if (AddAbilityComponentMenuAttribute.icons.TryGetValue(componentType, out Texture2D icon))
             {
                 content.image = icon;
             }
-            if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
-            {
-                editor.newSelectedAbilityComponent = data.components[componentType.AssemblyQualifiedName];
-                editorWindow.Close();
-            }
+            return content;
+        }
+
+        private void SelectAbilityComponent(Type componentType)
+        {
+            editor.newSelectedAbilityComponent = data.components[componentType.AssemblyQualifiedName];
+            editorWindow.Close();
         }
 
         public override void OnGUI(Rect rect)

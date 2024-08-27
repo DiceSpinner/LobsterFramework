@@ -35,7 +35,7 @@ namespace LobsterFramework.AbilitySystem{
         private void LateUpdate()
         {
             abilityQueue.Sort((AbilityInstance a1, AbilityInstance a2) => {
-                return a2.ability.CompareByExecutionPriority(a1.ability);
+                return a1.ability.CompareByExecutionPriority(a2.ability);
             });
 
             for (int i = abilityQueue.Count - 1; i >= 0; i--)

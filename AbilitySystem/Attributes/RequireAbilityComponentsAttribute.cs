@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Diagnostics.CodeAnalysis;
 
 namespace LobsterFramework.AbilitySystem
 {
     /// <summary>
-    /// Marks this ability as requiring specified AbilityComponents to run
+    /// Marks this ability as requiring specified <see cref="AbilityComponent"/> to run
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
     public class RequireAbilityComponentsAttribute : Attribute
     {
-        internal static Dictionary<Type, HashSet<Type>> requirement = new();
-        internal static Dictionary<Type, HashSet<Type>> rev_requirement = new();
+        /// <summary>
+        /// Key: <see cref="Ability"/> Type, Value: The set of <see cref="AbilityComponent"/> types required by this ability. 
+        /// </summary>
+        internal static Dictionary<Type, HashSet<Type>> Requirement = new();
+
+        /// <summary>
+        /// Key: <see cref="AbilityComponent"/> Type, Value: The set of <see cref="Ability"/> types relies on this ability component. 
+        /// </summary>
+        internal static Dictionary<Type, HashSet<Type>> ReverseRequirement = new();
 
         private Type[] abilityComponents;
 
@@ -28,28 +34,34 @@ namespace LobsterFramework.AbilitySystem
                 Debug.LogError("Type:" + ability.ToString() + " is not an Ability!");
                 return;
             }
-            if (!requirement.ContainsKey(ability))
+            if (abilityComponents == null) {
+                Debug.LogWarning($"Passing null argument to {nameof(RequireAbilityComponentsAttribute)} when being applied to {ability.FullName}! The attribute will be discarded!");
+                return;
+            }
+
+            if (!Requirement.ContainsKey(ability))
             {
-                requirement[ability] = new HashSet<Type>();
+                Requirement[ability] = new HashSet<Type>();
             }
             
+
             foreach (Type t in abilityComponents)
             {
                 if (t == null) {
                     continue;
                 }
-                if (!t.IsSubclassOf(typeof(AbilityComponent)))
+                if (!t.IsSubclassOf(typeof(AbilityComponent)) && t.IsSealed)
                 {
-                    Debug.LogError("Cannot apply require AbilityComponent of type:" + t.ToString() + " to " + ability.ToString());
-                    return;
+                    Debug.LogWarning($"Cannot apply the requirement of{nameof(AbilityComponent)} of type: + {t.FullName} to {ability.FullName}");
+                    continue;
                 }
-                requirement[ability].Add(t);
+                Requirement[ability].Add(t);
 
-                if (!rev_requirement.ContainsKey(t))
+                if (!ReverseRequirement.ContainsKey(t))
                 {
-                    rev_requirement[t] = new HashSet<Type>();
+                    ReverseRequirement[t] = new HashSet<Type>();
                 }
-                rev_requirement[t].Add(ability);
+                ReverseRequirement[t].Add(ability);
             }
         }
     }

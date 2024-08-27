@@ -18,7 +18,7 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Callback when the ability is enqueued, replaces <see cref="OnAbilityEnqueue"/>
+        /// Called when the ability is enqueued, replaces <see cref="OnAbilityEnqueue"/>
         /// </summary>
         protected abstract void OnCoroutineEnqueue();
 
@@ -30,7 +30,7 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Callback when the ability is finished, replaces <see cref="OnAbilityFinish"/>
+        /// Called when the ability is finished, replaces <see cref="OnAbilityFinish"/>
         /// </summary>
         protected virtual void OnCoroutineFinish() { }
 

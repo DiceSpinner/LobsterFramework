@@ -18,21 +18,32 @@ namespace LobsterFramework.AbilitySystem {
         public const string DefaultAbilityInstance = "default";
 
         [Tooltip("The priority in which this ability will be executed in relation with other abilities. Higher prioritied abilities will be executed first.")]
-        [field: SerializeField] internal int executionPriority;
+        [SerializeField] internal int executionPriority;
         [SerializeField, HideInInspector] internal AbilityConfigDictionary configs = new();
         internal Dictionary<string, AbilityChannel> channels = new();
         internal Dictionary<string, AbilityContext> contexts = new();
 
-        protected internal AbilityManager abilityManager;
+        internal protected AbilityManager abilityManager { get; internal set; }
         private HashSet<string> runningInstances = new();
 
         /// <summary>
-        /// The priority in which this ability will be executed. Higher number means it will be executed earlier.
+        /// The priority in which this ability will be executed. Higher number means earlier execution in relation to other abilities.
         /// </summary>
         public int ExecutionPriority { get { return executionPriority; } }
         protected string Instance { get; private set; }
+        /// <summary>
+        /// The configuration of the currently executing ability instance
+        /// </summary>
         protected AbilityConfig Config { get; private set; }
+
+        /// <summary>
+        /// The communication channel with client code of the currently executing ability instance
+        /// </summary>
         protected AbilityChannel Channel { get; private set; }
+
+        /// <summary>
+        /// The runtime context object of the currently executing ability instance
+        /// </summary>
         protected AbilityContext Context { get; private set; }
 
 #if UNITY_EDITOR
@@ -42,12 +53,14 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="name">Name of the ability instance</param>
         /// <returns>true if the ability instance with specified name did not exist already and is successfully created and added, false otherwise</returns>
         internal bool AddInstance(string name) {
-            if (configs.ContainsKey(name) || !AssetDatabase.Contains(this)) {
+            if (configs.ContainsKey(name)) {
                 return false;
             }
             AbilityConfig config = AddAbilityMenuAttribute.CreateAbilityConfig(GetType());
             configs[name] = config;
-            AssetDatabase.AddObjectToAsset(config, this);
+            if (EditorUtility.IsPersistent(this)) {
+                AssetDatabase.AddObjectToAsset(config, this);
+            }
             return true;
         }
 
@@ -68,6 +81,11 @@ namespace LobsterFramework.AbilitySystem {
             return true;
         }
 
+        internal void RemoveAllInstances() { 
+            foreach(var item in configs.Values) { DestroyImmediate(item, true); }
+            configs.Clear();
+        }
+
         internal void SaveConfigsAsAsset()
         {
             foreach (AbilityConfig config in configs.Values)
@@ -86,13 +104,14 @@ namespace LobsterFramework.AbilitySystem {
                 }
             }
         }
+
 #endif
 
         #region Startup and termination handling
         /// <summary>
         /// Initialize local references, sets up ability contexts and channels.
         /// </summary>
-        internal void Begin()
+        internal void Activate()
         {
             SetContext(default);
             InitializeSharedReferences();
@@ -124,19 +143,19 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Callback to initialize the references shared by all ability instances
+        /// Called to initialize the references shared by all ability instances
         /// </summary>
         protected virtual void InitializeSharedReferences() { }
 
         /// <summary>
-        /// Callback to initialize ability context and channels
+        /// Called to initialize ability context and channels
         /// </summary>
         protected virtual void InitializeContext() { }
 
         /// <summary>
-        /// Called when ability manager is disabled
+        /// Called when <see cref="AbilityData"/> becomes inactive, this happens when <see cref="AbilityManager"/> is disabled.
         /// </summary>
-        internal void OnClose()
+        internal void OnBecomeInactive()
         {
             foreach (string instance in configs.Keys) {
                 SetContext(instance);
@@ -147,12 +166,12 @@ namespace LobsterFramework.AbilitySystem {
             FinalizeSharedReferences();
         }
         /// <summary>
-        /// Callback to finialize the references shared by all ability instances
+        /// Called to finialize the references shared by all ability instances
         /// </summary>
         protected virtual void FinalizeSharedReferences() { }
 
         /// <summary>
-        /// Callback to finialize the ability context and channels
+        /// Called to finialize the ability context and channels
         /// </summary>
         protected virtual void FinalizeContext() { }
 
@@ -190,11 +209,21 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Suspend the execution of the specified ability instance and casuing it to finish at the current frame
+        /// Attempts to get the reference of the specified <see cref="AbilityComponent"/> stored in the same <see cref="AbilityData"/>
+        /// </summary>
+        /// <typeparam name="T">The type of the <see cref="AbilityComponent"/> being asked for</typeparam>
+        /// <returns>The reference to the <see cref="AbilityComponent"/> if exists</returns>
+        /// <remarks>This is a shorthand call for <see cref="AbilityManager.GetAbilityComponent{T}"/> via <see cref="abilityManager"/></remarks>
+        protected T GetAbilityComponent<T>() where T : AbilityComponent { 
+            return abilityManager.GetAbilityComponent<T>();
+        }
+
+        /// <summary>
+        /// Suspend the execution of the specified ability instance and causing it to finish at the current frame
         /// </summary>
         /// <param name="instance"> Name of the configuration of the ability instance to terminate </param>
         /// <returns> true if the configuration exists and is not running or suspended, otherwise false </returns>
-        public bool SuspendInstance(string instance)
+        internal protected bool SuspendInstance(string instance)
         {
             try
             {
@@ -221,9 +250,9 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Suspend the execution of all configs
+        /// Suspend the execution of all running instances of this ability
         /// </summary>
-        public void SuspendAll()
+        internal protected void SuspendAll()
         {
             foreach (string name in configs.Keys)
             {
@@ -405,17 +434,17 @@ namespace LobsterFramework.AbilitySystem {
         protected abstract bool Action();
 
         /// <summary>
-        /// Callback when the ability is added to the queue for execution
+        /// Called when the ability is added to the queue for execution
         /// </summary>
         protected virtual void OnAbilityEnqueue() { }
 
         /// <summary>
-        /// Callback when the ability is finished or halted.
+        /// Called when the ability is finished or halted.
         /// </summary>
         protected virtual void OnAbilityFinish() { }
 
         /// <summary>
-        /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
+        /// Called when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
         /// Default implementation suspends the ability.
         /// </summary>
         protected virtual void OnAnimationInterrupt(AnimancerState state) { state.Speed = 1; SuspendInstance(Instance); }
@@ -490,7 +519,7 @@ namespace LobsterFramework.AbilitySystem {
     }
 
     /// <summary>
-    /// The configuration of the ability. Will appear in the ability inspector. "
+    /// The configuration of the ability that will appear in the ability inspector.
     /// When creating a new ability, you must also declare a class named "AbilityName"Config in the same namespace where "AbilityName" is the name of the ability you're creating.
     /// </summary>
     [Serializable]
@@ -505,13 +534,14 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         protected virtual void Validate() { }
 
-        protected void OnValidate()
+        private void OnValidate()
         {
             if (cooldown < 0)
             {
                 Debug.LogWarning("Cooldown cannot be less than 0!", this);
                 cooldown = 0;
             }
+
             Validate();
         }
     }

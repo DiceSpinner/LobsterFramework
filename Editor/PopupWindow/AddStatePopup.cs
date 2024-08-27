@@ -13,14 +13,14 @@ namespace LobsterFramework.Editors
 
         public AddStatePopup(StateData data) {
             this.data = data;
-            menuTreeDrawer = new(AddStateMenuAttribute.main, AddState, DrawNode, DrawOption);
+            menuTreeDrawer = new(AddStateMenuAttribute.main, AddState, DrawMenu, DrawOption);
             menuTreeDrawer.SetColors(StateEditorConfig.MenuPopupColor, StateEditorConfig.StatePopupColor);
             menuTreeDrawer.SetEmptyNote("Option Exhausted");
         }
 
         #region Handles for MenuTreeDrawer
         private GUIContent content = new();
-        private GUIContent DrawNode(MenuTree<Type> node) {
+        private GUIContent DrawMenu(MenuTree<Type> node) {
             content.text = node.menuName;
             content.image = StateEditorConfig.GetFolderIcon(node.path[(Constants.MenuRootName.Length + 1)..]);
             return content;
@@ -39,6 +39,7 @@ namespace LobsterFramework.Editors
             else {
                 content.image = null;
             }
+            content.tooltip = stateType.FullName;
             return content;
         }
 

@@ -13,8 +13,9 @@ namespace LobsterFramework.Editors {
     {
         private IEnumerable<T> itemsToDraw;
         private Dictionary<T, MenuTree<T>> treeMap;
-        private Action<MenuTree<T>> guiMenuHandle;
-        private Action<T> guiItemHandle;
+        private Func<MenuTree<T>, GUIContent> guiMenuHandle;
+        private Func<T, GUIContent> guiItemHandle;
+        private Action<T> optionHandle;
         private Vector2 scrollPosition;
 
         private Dictionary<MenuTree<T>, List<T>> groups = new();
@@ -23,11 +24,12 @@ namespace LobsterFramework.Editors {
         private Color menuColor;
         private Color itemColor;
 
-        public MenuTreeItemCollectionDrawer(ICollection<T> items, Dictionary<T, MenuTree<T>> mapping, Action<MenuTree<T>> menuHandle, Action<T> itemHandle) { 
+        public MenuTreeItemCollectionDrawer(ICollection<T> items, Dictionary<T, MenuTree<T>> mapping, Func<MenuTree<T>, GUIContent> menuHandle, Func<T, GUIContent> itemHandle, Action<T> optionHandle) { 
             itemsToDraw = items;
             treeMap = mapping;
             guiMenuHandle = menuHandle;
             guiItemHandle = itemHandle;
+            this.optionHandle = optionHandle;
             UpdateGroups();
         }
 
@@ -64,20 +66,27 @@ namespace LobsterFramework.Editors {
 
             foreach (var group in groups) {
                 GUI.color = menuColor;
-                guiMenuHandle(group.Key);
+                GUILayout.Label(guiMenuHandle(group.Key), EditorStyles.boldLabel);
                 foreach (var item in group.Value) {
                     GUI.color = itemColor;
-                    guiItemHandle(item);
+                    var content = guiItemHandle(item);
+                    if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
+                    {
+                        optionHandle(item);
+                    }
                 }
             }
 
             if (ungroupedItems.Count > 0) {
                 GUI.color = menuColor;
-                EditorGUILayout.LabelField("Unlabeled");
+                EditorGUILayout.LabelField("No Label");
                 foreach (var item in ungroupedItems)
                 {
                     GUI.color = itemColor;
-                    guiItemHandle(item);
+                    GUIContent content = guiItemHandle(item);
+                    if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180))) {
+                        optionHandle(item);
+                    }
                 }
             }
 

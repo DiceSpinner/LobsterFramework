@@ -37,6 +37,7 @@ namespace LobsterFramework.Editors
             {
                 content.image = null;
             }
+            content.tooltip = weaponStatType.FullName;
             return content;
         }
 

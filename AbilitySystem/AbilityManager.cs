@@ -12,8 +12,8 @@ namespace LobsterFramework.AbilitySystem {
     /// </summary>
     /// 
     /// <remarks>
-    /// All inqueries and ability manipulations should be done during the Update event. Doing it during the LateUpdate event could result in race conditions and other undefined behaviors.
-    /// At runtime, the input AbilityData is duplicated so any modifications done to the original asset will not be reflected. However, the data used at runtime can be edited via the custom inspector of this component and saved as asset.
+    /// All inqueries and ability manipulations should be done before the LateUpdate event. Doing it during the LateUpdate event could result in race conditions and other undefined behaviors.
+    /// At runtime, the input <see cref="AbilityData"/> is duplicated so any modifications done to the original asset will not be reflected. However, the data used at runtime can be edited via the custom inspector of this component and saved as asset.
     /// When a new asset derived from the runtime data is saved to the disk, the <see cref="inputData"/> reference will be redirected to that instead.
     /// The custom inspector does not allow adding or removing ability configurations to avoid breaking the running abilities.
     /// </remarks>
@@ -117,15 +117,7 @@ namespace LobsterFramework.AbilitySystem {
                 abilityData = inputData.Clone();
             }
            Bind(abilityData);
-            abilityData.Begin(this);
-        }
-
-        private void Update()
-        {
-            foreach (AbilityComponent component in components.Values)
-            {
-                component.Update();
-            }
+            abilityData.Activate(this);
         }
 
         internal void OnAbilityFinish(AbilityInstance instance) {

@@ -23,9 +23,7 @@ namespace LobsterFramework.Editors
         #region Handles
         private void AddAbilityComponent(Type componentType)
         {
-            var m = typeof(AbilityData).GetMethod(nameof(AbilityData.AddAbilityComponent), BindingFlags.Instance | BindingFlags.NonPublic);
-            MethodInfo mRef = m.MakeGenericMethod(componentType);
-            mRef.Invoke(data, null);
+            data.AddAbilityComponent(componentType);
         }
 
         private GUIContent content = new();
@@ -43,6 +41,7 @@ namespace LobsterFramework.Editors
             else {
                 content.image = null;
             }
+            content.tooltip = componentType.FullName;
             return content;
         }
 

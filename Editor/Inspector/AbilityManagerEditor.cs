@@ -21,41 +21,34 @@ namespace LobsterFramework.Editors
             AbilityManager abilityManager = (AbilityManager)target;
             EditorGUI.BeginChangeCheck();
             SerializedProperty abilityData = serializedObject.FindProperty(nameof(abilityManager.abilityData));
+            if (EditorApplication.isPlaying)
+            {
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField(label);
+                EditorGUILayout.LabelField(abilityManager.ActionBlocked.Value + "");
+                EditorGUILayout.EndHorizontal();
+            }
             if (!editData)
             {
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();
-                if (Application.isPlaying && GUILayout.Button("Edit Ability Data", GUILayout.Width(150)))
+                if (Application.isPlaying && abilityData.objectReferenceValue != null && GUILayout.Button("Edit Ability Data", GUILayout.Width(150)))
                 {
                     editData = true;
-                    editor = null;
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
             }
-            if (EditorApplication.isPlaying) {
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField(label);
-                EditorGUILayout.LabelField(abilityManager.ActionBlocked + "");
-                EditorGUILayout.EndHorizontal();
-            }
-
             abilityManager.DisplayCurrentExecutingAbilitiesInEditor();
 
             if (editData)
             {
                 EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-                abilityData.isExpanded = EditorGUILayout.Foldout(abilityData.isExpanded, "Ability Data");
-                if (abilityData.isExpanded && abilityData.objectReferenceValue != null)
+                if (editor == null)
                 {
-                    EditorGUI.indentLevel++;
-                    if (editor == null)
-                    {
-                        editor = CreateEditor(abilityData.objectReferenceValue);
-                    }
-                    editor.OnInspectorGUI();
-                    EditorGUI.indentLevel--;
+                    editor = CreateEditor(abilityData.objectReferenceValue);
                 }
+                editor.OnInspectorGUI();
                 EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
                 EditorGUILayout.BeginHorizontal();
@@ -73,12 +66,18 @@ namespace LobsterFramework.Editors
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
-
-                
             }
             if (EditorGUI.EndChangeCheck())
             {
                 serializedObject.ApplyModifiedProperties();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (editor != null)
+            {
+                DestroyImmediate(editor);
             }
         }
     }

@@ -20,16 +20,18 @@ namespace LobsterFramework.Editors
             this.editor = editor;
             this.data = data;
             var collection = data.weaponStats.Values.Select((WeaponStat stat) => { return stat.GetType(); }).ToArray();
-            selectionDrawer = new(collection, AddWeaponStatMenuAttribute.menus, DrawMenu, DrawItem);
+            selectionDrawer = new(collection, AddWeaponStatMenuAttribute.menus, DrawMenu, DrawItem, SelectWeaponStat);
             selectionDrawer.SetColorOptions(AbilityEditorConfig.MenuPopupColor, AbilityEditorConfig.ComponentPopupColor);
         }
 
-        private GUIContent content = new();
-        private void DrawMenu(MenuTree<Type> menu) {
-            GUILayout.Label(menu.path, EditorStyles.boldLabel);
+        private GUIContent treeContent = new();
+        private GUIContent DrawMenu(MenuTree<Type> menu) {
+            treeContent.text = menu.path;
+            return treeContent;
         }
 
-        private void DrawItem(Type weaponStatType) {
+        private GUIContent content = new();
+        private GUIContent DrawItem(Type weaponStatType) {
             content.text = weaponStatType.Name;
             if (AddWeaponStatMenuAttribute.icons.TryGetValue(weaponStatType, out Texture2D icon))
             {
@@ -38,11 +40,14 @@ namespace LobsterFramework.Editors
             else {
                 content.image = icon;
             }
-            if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
-            {
-                editor.selectedWeaponStat = data.weaponStats[weaponStatType.AssemblyQualifiedName];
-                editorWindow.Close();
-            }
+            content.tooltip = weaponStatType.FullName;
+            return content;
+        }
+
+        private void SelectWeaponStat(Type weaponStatType)
+        {
+            editor.selectedWeaponStat = data.weaponStats[weaponStatType.AssemblyQualifiedName];
+            editorWindow.Close();
         }
 
         public override void OnGUI(Rect rect)

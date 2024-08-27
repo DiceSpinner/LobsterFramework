@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
 using System;
-using Codice.CM.Common;
 using LobsterFramework.Utility;
 using System.Reflection;
 
@@ -12,7 +10,7 @@ namespace LobsterFramework
     /// <summary>
     /// Indicates this class requires a reference to the specified <see cref="Component"/> to function, this attribute will be inherited by subclasses.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)] 
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public class RequireComponentReferenceAttribute : Attribute
     {
         private static Dictionary<Type, Dictionary<Type, List<RequirementDescription>>> requirement = new();
@@ -25,7 +23,7 @@ namespace LobsterFramework
         /// </summary>
         public static ReadOnlyDictionary<Type, Dictionary<Type, List<RequirementDescription>>> Requirement = new(requirement);
 
-        
+
         public RequireComponentReferenceAttribute(Type requiredType)
         {
             if (requiredType == null) {
@@ -59,7 +57,7 @@ namespace LobsterFramework
             };
         }
 
-        public RequireComponentReferenceAttribute( Type requiredType, string fieldName,  string description)
+        public RequireComponentReferenceAttribute(Type requiredType, string fieldName, string description)
         {
             if (requiredType == null)
             {
@@ -76,7 +74,7 @@ namespace LobsterFramework
             };
         }
 
-        public RequireComponentReferenceAttribute( Type requiredType, Type enumList) {
+        public RequireComponentReferenceAttribute(Type requiredType, Type enumList) {
             if (requiredType == null)
             {
                 return;
@@ -101,6 +99,27 @@ namespace LobsterFramework
                     fieldName = description.Name;
                 }
                 components.Add((requiredType, fieldDescription, fieldName));
+            }
+        }
+        public RequireComponentReferenceAttribute(Type requiredType, int numOfFields)
+        {
+            if (requiredType == null)
+            {
+                return;
+            }
+            if (!requiredType.IsSubclassOf(typeof(Component)))
+            {
+                Debug.LogWarning($"{requiredType.FullName} is not a component type!");
+                return;
+            }
+            if (numOfFields <= 0 ) {
+                Debug.LogWarning($"Number of fields should be a positive integer: {requiredType.FullName}");
+                numOfFields = 1;
+            }
+
+            components = new();
+            for (int i = 0;i < numOfFields;i++) {
+                components.Add((requiredType, default, default));
             }
         }
 

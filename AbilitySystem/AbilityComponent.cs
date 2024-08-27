@@ -10,23 +10,18 @@ namespace LobsterFramework.AbilitySystem
     public abstract class AbilityComponent : ScriptableObject
     {
         /// <summary>
-        /// Initialize the component
+        /// Initialize the component, called when the <see cref="AbilityData"/> becomes active
         /// </summary>
         internal protected virtual void Initialize() { }
 
         /// <summary>
-        /// Callback before disabled
+        /// Called before the <see cref="AbilityData"/> becomes inactive
         /// </summary>
-        internal protected virtual void OnClose() { }
-
-        /// <summary>
-        /// Callback to update internal state on each frame during the regular unity update cycle
-        /// </summary>
-        internal protected virtual void Update() { }
+        internal protected virtual void OnBecomeInactive() { }
 
         internal void Reset()
         {
-            OnClose();
+            OnBecomeInactive();
             Initialize();
         }
     }

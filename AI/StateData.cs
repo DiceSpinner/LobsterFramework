@@ -13,7 +13,7 @@ using UnityEditor;
 namespace LobsterFramework.AI
 {
     /// <summary>
-    /// Represents the state information used by the state machine.
+    /// Defines the set of AI states and the AI can be in. This data is used by <see cref="StateMachine"/> at runtime.
     /// </summary>
     [CreateAssetMenu(menuName = "StateMachine/StateData")]
     public class StateData : ReferenceRequester
@@ -102,21 +102,21 @@ namespace LobsterFramework.AI
             return true;
         }
 
-        internal void Initialize(StateMachine machine) {
+        internal void Activate(StateMachine machine) {
             foreach (State state in states.Values) {
                 state.stateMachine = machine;
                 state.InitializeFields();
             }
         }
 
-        internal void Close() {
+        internal void Deactivate() {
             foreach (State state in states.Values)
             {
-                state.Close();
+                state.OnBecomeInactive();
             }
         }
 
-        public override IEnumerator<Type> GetRequests()
+        public override IEnumerator<Type> GetRequestingTypes()
         {
             foreach (State state in states.Values) {
                 Type type = state.GetType();

@@ -23,9 +23,7 @@ namespace LobsterFramework.Editors
 
         #region Handles for menu drawer
         private void AddAbility(Type type) {
-            var m = typeof(AbilityData).GetMethod(nameof(AbilityData.AddAbility), BindingFlags.Instance | BindingFlags.NonPublic);
-            MethodInfo mRef = m.MakeGenericMethod(type);
-            mRef.Invoke(data, null);
+            data.AddAbility(type);
         }
 
         private GUIContent content = new();
@@ -47,6 +45,7 @@ namespace LobsterFramework.Editors
             else { 
                 content.image = null;
             }
+            content.tooltip = type.FullName;
             return content;
         }
         #endregion

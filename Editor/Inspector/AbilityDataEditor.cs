@@ -28,8 +28,8 @@ namespace LobsterFramework.Editors
         private Rect addComponentRect;
         private Rect selectAbilityComponentRect;
 
-        public Type removedAbility = null;
-        public Type removedAbilityComponent = null;
+        public Type abilityToRemove = null;
+        public Type componentToRemove = null;
 
         public void OnEnable()
         {
@@ -67,22 +67,18 @@ namespace LobsterFramework.Editors
                     selectedAbilityComponent = abilityData.components.First().Value;
                 }
 
-                if (removedAbility != null) {
-                    var m = typeof(AbilityData).GetMethod(nameof(AbilityData.RemoveAbility), BindingFlags.Instance | BindingFlags.NonPublic);
-                    MethodInfo removed = m.MakeGenericMethod(removedAbility);
-                    DestroyImmediate(abilityEditors[removedAbility]);
-                    abilityEditors.Remove(removedAbility);
-                    removed.Invoke(abilityData, null);
-                    removedAbility = null;
+                if (abilityToRemove != null) {
+                    DestroyImmediate(abilityEditors[abilityToRemove]);
+                    abilityEditors.Remove(abilityToRemove);
+                    abilityData.RemoveAbility(abilityToRemove);
+                    abilityToRemove = null;
                 }
 
-                if (removedAbilityComponent != null) {
-                    var m = typeof(AbilityData).GetMethod(nameof(AbilityData.RemoveAbilityComponent), BindingFlags.Instance | BindingFlags.NonPublic);
-                    MethodInfo removed = m.MakeGenericMethod(selectedAbilityComponent.GetType());
-                    DestroyImmediate(abilityComponentEditors[removedAbilityComponent]);
-                    abilityComponentEditors.Remove(removedAbilityComponent);
-                    removed.Invoke(abilityData, null);
-                    removedAbilityComponent = null;
+                if (componentToRemove != null) {
+                    DestroyImmediate(abilityComponentEditors[componentToRemove]);
+                    abilityComponentEditors.Remove(componentToRemove);
+                    abilityData.RemoveAbilityComponent(componentToRemove);
+                    componentToRemove = null;
                 }
             }
             #endregion
@@ -150,23 +146,20 @@ namespace LobsterFramework.Editors
             EditorGUILayout.BeginHorizontal();
             GUIContent content = new();
             bool selectAbilityComponentClicked;
-            content.text = selectedAbilityComponent.GetType().Name;
+            content.text = ObjectNames.NicifyVariableName(selectedAbilityComponent.GetType().Name);
+            content.tooltip = selectedAbilityComponent.GetType().FullName;
             if (AddAbilityComponentMenuAttribute.icons.TryGetValue(type, out Texture2D icon))
             {
                 content.image = icon;
-                selectAbilityComponentClicked = GUILayout.Button(content, AbilityEditorConfig.ComponentSelectionStyle, GUILayout.Height(40));
             }
-            else
-            {
-                selectAbilityComponentClicked = GUILayout.Button(content, AbilityEditorConfig.ComponentSelectionStyle);
-            } 
+            selectAbilityComponentClicked = GUILayout.Button(content, AbilityEditorConfig.ComponentSelectionStyle);
             GUILayout.FlexibleSpace();
 
             if (isAsset) {
                 EditorGUILayout.BeginVertical();
                 GUILayout.FlexibleSpace();
                 if (EditorUtils.Button(Color.red, "Remove", EditorUtils.BoldButtonStyle, GUILayout.Width(80))) {
-                    removedAbilityComponent = type;
+                    componentToRemove = type;
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndVertical();
@@ -231,7 +224,8 @@ namespace LobsterFramework.Editors
 
             EditorGUILayout.BeginHorizontal();
             GUIContent content = new();
-            content.text = selectedAbility.GetType().Name;
+            content.text = ObjectNames.NicifyVariableName(selectedAbility.GetType().Name);
+            content.tooltip = selectedAbility.GetType().FullName;
             bool selectClicked;
             if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(abilityType, out Texture2D icon))
             {
@@ -251,7 +245,7 @@ namespace LobsterFramework.Editors
                 GUILayout.FlexibleSpace();
                 if (EditorUtils.Button(Color.red, "Remove Ability", EditorUtils.BoldButtonStyle, GUILayout.Width(110)))
                 {
-                    removedAbility = abilityType;
+                    abilityToRemove = abilityType;
                 }
                 GUILayout.FlexibleSpace();
                 GUILayout.EndVertical();

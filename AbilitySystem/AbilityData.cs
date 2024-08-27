@@ -20,7 +20,7 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] internal AbilityDictionary abilities = new();
         internal Dictionary<string, Ability> runnables = new();
 
-        public override IEnumerator<Type> GetRequests()
+        public override IEnumerator<Type> GetRequestingTypes()
         {
             foreach (Ability ability in abilities.Values) {
                 Type type = ability.GetType();
@@ -34,7 +34,7 @@ namespace LobsterFramework.AbilitySystem
         /// Initialize the ability context environments
         /// </summary>
         /// <param name="abilityManager">The component that operates on this data</param>
-        internal void Begin(AbilityManager abilityManager)
+        internal void Activate(AbilityManager abilityManager)
         {
             runnables.Clear();
 
@@ -54,11 +54,11 @@ namespace LobsterFramework.AbilitySystem
             {
                 Ability ability = abilities[key];
 
-                if (abilityManager.IsRequirementSatisfied(ability.GetType()))
+                if (VerifyComponentRequirements(ability.GetType()) && abilityManager.IsRequirementSatisfied(ability.GetType()))
                 {
                     ability.abilityManager = abilityManager;
                     try {
-                        ability.Begin();
+                        ability.Activate();
                         runnables[ability.GetType().AssemblyQualifiedName] = ability;
                     }catch (Exception ex)
                     {
@@ -72,16 +72,12 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Clean up ability context environments. This has no effect if this is an asset.
+        /// Clean up ability context environments.
         /// </summary>
-        public void FinalizeContext() {
-            if (AssetDatabase.Contains(this)) {
-                Debug.LogWarning($"Calling {nameof(FinalizeContext)}() on asset!");
-                return;
-            }
+        internal void FinalizeContext() {
             foreach (Ability ability in runnables.Values)
             {
-                try{ ability.OnClose(); }catch(Exception e)
+                try{ ability.OnBecomeInactive(); }catch(Exception e)
                 {
                     Debug.LogWarning($"Error occured when finalizing context for ability {ability.GetType().FullName} !");
                     Debug.LogException(e);
@@ -90,7 +86,7 @@ namespace LobsterFramework.AbilitySystem
 
             foreach (AbilityComponent cmp in components.Values)
             {
-                try { cmp.OnClose(); }
+                try { cmp.OnBecomeInactive(); }
                 catch (Exception e)
                 {
                     Debug.LogWarning($"Error occured when finalizing context for ability component {cmp.GetType().FullName} !");
@@ -102,7 +98,7 @@ namespace LobsterFramework.AbilitySystem
         /// <summary>
         /// Deep copy of action datas. Call this method after duplicate the AbilityData to ensure all of its contents are properly duplicated.
         /// </summary>
-        private void CopyAbilityAsset()
+        private void DeepCopySubAssets()
         { 
             List<Ability> abilities = new();
             foreach (var kwp in this.abilities)
@@ -155,42 +151,20 @@ namespace LobsterFramework.AbilitySystem
         /// <returns>A copy of the ability data</returns>
         public AbilityData Clone() { 
             AbilityData cloned = Instantiate(this);
-            cloned.CopyAbilityAsset();
+            cloned.DeepCopySubAssets();
             cloned.name = this.name;
             return cloned;
         }
 
-        private T GetAbility<T>() where T : Ability
-        {
-            string type = typeof(T).AssemblyQualifiedName;
-            if (abilities.TryGetValue(type, out Ability ability))
-            {
-                return (T)ability;
-            }
-            return default;
-        }
-
-        private T GetAbilityComponent<T>() where T : AbilityComponent
-        {
-            string type = typeof(T).AssemblyQualifiedName;
-            if (components.TryGetValue(type, out AbilityComponent stat))
-            {
-                return (T)stat;
-            }
-            return default;
-        }
-
         /// <summary>
-        /// Check if requirements for AbilityComponents by Ability T are satisfied
+        /// Check if requirements for AbilityComponents by the spefified ability type are satisfied
         /// </summary>
-        /// <typeparam name="T"> Type of the Ability to be queried </typeparam>
         /// <returns>The result of the query</returns>
-        internal bool VerifyComponentRequirements<T>() where T : Ability
+        internal bool VerifyComponentRequirements(Type typeToVerify)
         {
-            Type type = typeof(T);
             bool f1 = true;
 
-            if (RequireAbilityComponentsAttribute.requirement.TryGetValue(type, out var ts))
+            if (RequireAbilityComponentsAttribute.Requirement.TryGetValue(typeToVerify, out var ts))
             {
                 List<Type> lst1 = new List<Type>();
                 foreach (Type t in ts)
@@ -207,14 +181,14 @@ namespace LobsterFramework.AbilitySystem
                 }
 
                 StringBuilder sb = new StringBuilder();
-                sb.Append("Missing AbilityComponents: ");
+                sb.Append($"Ability {typeToVerify.FullName} missing required AbilityComponents: ");
                 foreach (Type t in lst1)
                 {
                     sb.Append(t.Name);
                     sb.Append(", ");
                 }
                 sb.Remove(sb.Length - 2, 2);
-                Debug.LogError(sb.ToString());
+                Debug.LogError(sb.ToString(), this);
                 return false;
             }
 
@@ -222,6 +196,27 @@ namespace LobsterFramework.AbilitySystem
         }
 
 #if UNITY_EDITOR
+        /// <summary>
+        /// Add required <see cref="AbilityComponent"/> if missing after recompilation
+        /// </summary>
+        private void OnValidate()
+        {
+            foreach (var ability in abilities.Values)
+            {
+                if (RequireAbilityComponentsAttribute.Requirement.TryGetValue(ability.GetType(), out var set))
+                {
+                    foreach (Type componentType in set)
+                    {
+                        if (!components.ContainsKey(componentType.AssemblyQualifiedName))
+                        {
+                            Debug.Log($"Added missing required component of type {componentType.FullName}.", this);
+                            AddAbilityComponent(componentType);
+                        }
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Save data as assets by adding them to the AssetDataBase
         /// </summary>
@@ -243,45 +238,41 @@ namespace LobsterFramework.AbilitySystem
 
 
         /// <summary>
-        /// Called by editor scritps, add AbilityComponent of type T to the set of available AbilityComponents if not already present, return the status of the operation. <br/>
+        /// Called by editor scritps, add <see cref="AbilityComponent"/> of specified type to the set of available <see cref="AbilityComponent"/> if not already present
         /// </summary>
-        /// <typeparam name="T">Type of the AbilityComponent to be added</typeparam>
         /// <returns>true if successfully added AbilityComponent, false otherwise</returns>
-        internal bool AddAbilityComponent<T>() where T : AbilityComponent
+        internal void AddAbilityComponent(Type typeToAdd)
         {
-            string str = typeof(T).AssemblyQualifiedName;
+            string str = typeToAdd.AssemblyQualifiedName;
             if (components.ContainsKey(str))
             {
-                return false;
+                return;
             }
-            T instance = CreateInstance<T>();
-            components[str] = instance;
+            var instance = CreateInstance(typeToAdd);
+            components[str] = (AbilityComponent)instance;
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(instance, this);
             }
-            return true;
         }
 
 
         /// <summary>
-        /// Called by editor scritps, add Ability of type T to the set of available Abilities if not already present, return the status of the operation. <br/>
+        /// Called by editor scritps, add Ability of specified type to the set of available <see cref="Ability"/> if not already present
         /// </summary>
-        /// <typeparam name="T">Type of the Abilityto be added</typeparam>
-        /// <returns>true if successfully added Ability, false otherwise</returns>
-        internal bool AddAbility<T>() where T : Ability
+        internal void AddAbility(Type typeToAdd)
         {
-            if (GetAbility<T>() != default)
+            if (typeToAdd == null || abilities.ContainsKey(typeToAdd.AssemblyQualifiedName))
             {
-                return false;
+                return;
             }
 
-            if (VerifyComponentRequirements<T>())
+            if (VerifyComponentRequirements(typeToAdd))
             {
-                T ability = CreateInstance<T>();
-                abilities.Add(typeof(T).AssemblyQualifiedName, ability);
+                Ability ability = (Ability)CreateInstance(typeToAdd);
+                abilities.Add(typeToAdd.AssemblyQualifiedName, ability);
                 ability.configs = new();
-                ability.name = typeof(T).FullName;
+                ability.name = typeToAdd.FullName;
 
                 if (AssetDatabase.Contains(this))
                 {
@@ -289,42 +280,43 @@ namespace LobsterFramework.AbilitySystem
                 }
 
                 ability.AddInstance(Ability.DefaultAbilityInstance);
-                RaiseRequirementAddedEvent(typeof(T));
-                return true;
+                RaiseRequirementAddedEvent(typeToAdd);
             }
-            return false;
         }
 
         /// <summary>
-        /// Called by editor script only! Remove the ability of specified type. If the ability is an asset it will be destroyed.
+        /// Called by editor script only! Remove the <see cref="Ability"/> of specified type. If the ability is an asset it will be destroyed.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        internal bool RemoveAbility<T>() where T : Ability
+        /// <returns>true if successfully removed, otherwise false</returns>
+        internal void RemoveAbility(Type typeToRemove)
         {
-            Ability ability = GetAbility<T>();
-            if (ability != null)
-            {
-                abilities.Remove(typeof(T).AssemblyQualifiedName);
-                AssetDatabase.RemoveObjectFromAsset(ability);
-                DestroyImmediate(ability, true);
-                RaiseRequirementRemovedEvent(typeof(T));
-                return true;
+            if (typeToRemove == null) {
+                return;
             }
-            return false;
+            if (abilities.TryGetValue(typeToRemove.AssemblyQualifiedName, out var ability))
+            {
+                abilities.Remove(typeToRemove.AssemblyQualifiedName);
+                AssetDatabase.RemoveObjectFromAsset(ability);
+                ability.RemoveAllInstances();
+                DestroyImmediate(ability, true);
+                RaiseRequirementRemovedEvent(typeToRemove);
+            }
         }
 
-        internal bool RemoveAbilityComponent<T>() where T : AbilityComponent
+        /// <summary>
+        /// Remove <see cref="AbilityComponent"/> of specified type, this operation will stop if there's at least 1 <see cref="Ability"/> instance relying on the specified <see cref="AbilityComponent"/>
+        /// </summary>
+        internal void RemoveAbilityComponent(Type typeToRemove)
         {
-            string str = typeof(T).AssemblyQualifiedName;
+            string str = typeToRemove.AssemblyQualifiedName;
             if (components.ContainsKey(str))
             {
-                if (RequireAbilityComponentsAttribute.rev_requirement.ContainsKey(typeof(T)))
+                if (RequireAbilityComponentsAttribute.ReverseRequirement.ContainsKey(typeToRemove))
                 {
                     StringBuilder sb = new();
-                    sb.Append("Cannot remove AbilityComponent: " + typeof(T).FullName + ", since the following abilities requires it: ");
+                    sb.Append($"Cannot remove AbilityComponent: {typeToRemove.FullName}, since the following abilities requires it: ");
                     bool flag = false;
-                    foreach (Type t in RequireAbilityComponentsAttribute.rev_requirement[typeof(T)])
+                    foreach (Type t in RequireAbilityComponentsAttribute.ReverseRequirement[typeToRemove])
                     {
                         if (abilities.ContainsKey(t.AssemblyQualifiedName))
                         {
@@ -337,19 +329,16 @@ namespace LobsterFramework.AbilitySystem
                     {
                         sb.Remove(sb.Length - 2, 2);
                         Debug.LogError(sb.ToString());
-                        return false;
+                        return;
                     }
                 }
             }
-            T cmp = GetAbilityComponent<T>();
-            if (cmp != null)
+            if (components.TryGetValue(typeToRemove.AssemblyQualifiedName, out var cmp))
             {
                 components.Remove(str);
                 AssetDatabase.RemoveObjectFromAsset(cmp);
                 DestroyImmediate(cmp, true);
-                return true;
             }
-            return false;
         }
 #endif
     }

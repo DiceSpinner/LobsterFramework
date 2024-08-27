@@ -18,26 +18,30 @@ namespace LobsterFramework.Editors
             data = abilityData;
             this.editor = editor;
             var collection = abilityData.abilities.Values.Select((Ability item) => { return item.GetType(); }).ToArray();
-            selectionDrawer = new(collection, AddAbilityMenuAttribute.abilityMenus, DrawMenu, DrawItem);
+            selectionDrawer = new(collection, AddAbilityMenuAttribute.abilityMenus, DrawMenu, DrawItem, SelectAbility);
             selectionDrawer.SetColorOptions(AbilityEditorConfig.MenuPopupColor, AbilityEditorConfig.AbilityPopupColor);
         }
 
         private GUIContent content = new();
-        private void DrawItem(Type abilityType) {
+        private GUIContent DrawItem(Type abilityType) {
             content.text = abilityType.Name;
+            content.tooltip = abilityType.FullName;
             if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(abilityType, out Texture2D icon))
             {
-                content.image = icon;
+                content.image = icon; 
             }
-            if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
-            {
-                editor.newSelectedAbility = data.abilities[abilityType.AssemblyQualifiedName];
-                editorWindow.Close();
-            }
+            return content;
         }
 
-        private void DrawMenu(MenuTree<Type> tree) {
-            GUILayout.Label(tree.path, EditorStyles.boldLabel);
+        private void SelectAbility(Type abilityType) {
+            editor.newSelectedAbility = data.abilities[abilityType.AssemblyQualifiedName];
+            editorWindow.Close();
+        }
+
+        GUIContent treeGUI = new();
+        private GUIContent DrawMenu(MenuTree<Type> tree) {
+            treeGUI.text = tree.path;
+            return treeGUI;
         }
 
         public override void OnGUI(Rect rect)

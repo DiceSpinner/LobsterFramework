@@ -5,7 +5,9 @@ using UnityEngine;
 namespace LobsterFramework.AI
 {
     /// <summary>
-    /// A state that can be runned in the StateMachine. Can be added to and edited inside StateData.
+    /// A state that can be runned in the <see cref="StateMachine"/>. Can be added to and edited inside <see cref="StateData"/>. <br/>
+    /// 
+    /// Use <see cref="AddStateMenuAttribute"/> and <see cref="StateTransitionAttribute"/> to define transitions for the state and make it visible to the editor scritps to allow editing in the custom inspector of <see cref="StateData"/>
     /// </summary>
     public abstract class State : ScriptableObject
     {
@@ -25,22 +27,22 @@ namespace LobsterFramework.AI
         }
 
         /// <summary>
-        /// Callback to do context environment initialization
+        /// Called to initialize references and perform setups
         /// </summary>
         internal protected abstract void InitializeFields();
 
         /// <summary>
-        /// Callback to clean up context environment
+        /// Called to perform clean up operations
         /// </summary>
-        internal protected abstract void Close();
+        internal protected abstract void OnBecomeInactive();
 
         /// <summary>
-        /// Callback when the state is exiting
+        /// Called when the exiting the state
         /// </summary>
         internal protected abstract void OnExit();
 
         /// <summary>
-        /// Callback when entering the state
+        /// Called when entering the state
         /// </summary>
         internal protected abstract void OnEnter();
 

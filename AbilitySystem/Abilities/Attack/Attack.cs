@@ -146,10 +146,4 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         public Signal<bool> animationSignaled = new();
         public Signal<bool> inputSignaled = new();
     }
-
-    public class Test : ScriptableObject {
-        public int a;
-        public int b;
-        public string c;
-    }
 }

@@ -2323,6 +2323,286 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "resources/example1-add-abilitymanager.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-add-abilitymanager.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-add-abilitymanager.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-add-abilitymanager.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-add-circleattack.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-add-circleattack.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-add-circleattack.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-add-circleattack.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-addcontrol.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-addcontrol.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-addcontrol.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-addcontrol.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-begin.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-begin.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-begin.png.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-begin.png.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-circleattack-config1-inspector.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-circleattack-config1-inspector.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-circleattack-config1-inspector.png.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-circleattack-config1-inspector.png.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-run.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-run.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example1-run.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example1-run.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-add-component-reference.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-add-component-reference.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-add-component-reference.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-add-component-reference.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-addconfig.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-addconfig.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-addconfig.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-addconfig.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-result.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-result.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-result.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-result.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-scene.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-scene.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example2-scene.png.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example2-scene.png.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-add-ability.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-add-ability.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-add-ability.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-add-ability.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-add-component.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-add-component.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-add-component.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-add-component.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-add-sweepattack.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-add-sweepattack.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-add-sweepattack.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-add-sweepattack.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-remove-component.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-remove-component.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example3-remove-component.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example3-remove-component.gif.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "resources/lobster_swipe.gif",
       "output": {
         "resource": {

@@ -78,48 +78,539 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="ability-system">Ability System</h1>
 
-<p>This article will serve as an manual to how the Ability System functions in LobsterFramework.</p>
+<p>This page will serve as an manual to how the Ability System functions in LobsterFramework.</p>
+<h1 id="contents">Contents</h1>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#basics">Basics</a>
+<ul>
+<li><a href="#example-1">Example 1</a>
+<ul>
+<li><a href="#ability-manager--ability-data">Ability Manager &amp; Ability Data</a></li>
+<li><a href="#defining-abilities--editing-properties">Defining Abilities &amp; Editing Properties</a></li>
+<li><a href="#invoke-ability">Invoke Ability</a></li>
+</ul>
+</li>
+<li><a href="#example-2">Example 2</a>
+<ul>
+<li><a href="#ability-instance---config-channel--context">Ability Instance - Config, Channel &amp; Context</a></li>
+<li><a href="#acquire-component-reference">Acquire Component Reference</a></li>
+<li><a href="#initialization--finalization-routines">Initialization &amp; Finalization Routines</a></li>
+</ul>
+</li>
+<li><a href="#example-3">Example 3</a>
+<ul>
+<li><a href="#edit-multiple-abilities-in-the-inspector">Edit Multiple Abilities In The Inspector</a></li>
+<li><a href="#ability-component">Ability Component</a></li>
+<li><a href="#enforce-the-requirement">Enforce the Requirement</a></li>
+</ul>
+</li>
+<li><a href="#example-4">Example 4</a>
+<ul>
+<li><a href="#ability-condition">Ability Condition</a></li>
+<li><a href="#prepare--reset-ability-context">Prepare &amp; Reset Ability Context</a></li>
+<li><a href="#interrupt--stop-ability">Interrupt &amp; Stop Ability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#coroutine">Coroutine</a></li>
+<li><a href="#glossary">Glossary</a></li>
+</ul>
 <h1 id="intro">Intro</h1>
 <p>Before we begin, it is necessary to clarify what kind of ability system we're dealing with here. The idea is directly taken from League of Legends, a MOBA game of 10 where each player play as a champion with a couple unique abilities. Here're some observations.</p>
 <ol>
 <li>Most abilities have cooldowns which represents the amount of time it'll take for them to be available to cast again.</li>
 <li>Some abilities can be interacted with after the initial cast.</li>
-<li>Each ability's effect is somewhat unique, but the extent of these effects (i.e. how much health is restored on a healing spell) is governed by a set of champion stats (Attack Damage, Ability Power, etc) in that is shared by all champions.</li>
+<li>Each ability's effect is somewhat unique, but the extent of these effects (i.e. how much health is restored on a healing spell) is governed by a set of champion stats (Attack Damage, Ability Power, etc) that is shared by all champions.</li>
 <li>Some abilities feature effects that is affected by stats/resources that only exists on certain champions.</li>
-<li>Abilities are ranked by their priorities, abilities with higher priorities are executed earlier than others.</li>
 <li>Abilities can be interrupted</li>
+<li>Abilities have priorities. When 2 champions each cast a unique ability that is able to cancel the other champion's ability cast on each other, the outcome is the ability with higher priority goes through and cancels the other.</li>
+<li>Some abilities can be toggled on/off</li>
 </ol>
-<p>There're some other features I will not go in detail here. Overall, the design goal is for it to have the following properties:</p>
+<p>There're some other features I will not go in detail here. Overall, based on these observations, the design goal is for it to have the following properties:</p>
 <ul>
 <li>Ability can have unique attributes</li>
 <li>Ability can have unfixed duration at runtime</li>
 <li>Data can be shared between abilities</li>
-<li>Ability must be evaluated in a certain order to make results deterministic</li>
+<li>Ability can be evaluated in a certain order to avoid race condition</li>
 <li>Ability can be interrupted</li>
-<li>Ability can be react to events</li>
-<li>Ability can be communicated with during its execution</li>
+<li>Ability can react to events</li>
+<li>Ability can receive input and produce output while running</li>
 <li>Configurable ability settings, the configuration can be saved assets and should act like other assets and be used by any entity.</li>
 <li>Editor Support: Having custom inspector that allows developers to easily configure ability settings</li>
-<li>Code-Backed &amp; Single Threaded. All abilities and the associated parts should be implemented with code. Although developers can edit abilities settings in the inspector, this system is not intended for creation of abilities inside editor.</li>
+<li>Code-Backed &amp; Single Threaded. All abilities and the associated parts should be implemented with code. Although developers can edit abilities settings in the inspector, this system is not intended for creation of abilities inside unity editor.</li>
 </ul>
-<h1 id="core-classes">Core Classes</h1>
-<p>It is important to understand these classes before diving into the usages.</p>
+<h1 id="basics">Basics</h1>
+<p>The following examples will demonstrate how to use the ability system in your project.</p>
+<h2 id="example-1">Example 1</h2>
+<h3 id="ability-manager--ability-data">Ability Manager &amp; Ability Data</h3>
+<p>Start in a simple scene with our character.<br>
+<img src="../resources/example1-begin.png" alt="example1-begin">
+We want our character to cast abilities, to do that, we'll add the <a href="#abilitymanager">AbilityManager</a> component. This component requires an <a href="#abilitydata">AbilityData</a> as input, which defines the set of abilities our character will have access to.
+<img src="../resources/example1-add-abilitymanager.gif" alt="example1-add-abilitymanager"></p>
+<h3 id="defining-abilities--editing-properties">Defining Abilities &amp; Editing Properties</h3>
+<p>Now that there's not much going on as we haven't defined our abilities yet! Let's start with this simple definition of <code>CircleAttack</code>.</p>
+<pre><code>using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+[AddAbilityMenu]
+public sealed class CircleAttack : Ability
+{
+    protected override bool Action()
+    {
+        Debug.Log(&quot;Attack!&quot;);
+        /* Code to deal damage to the enemy */
+        return false; 
+    }
+}
+public class CircleAttackConfig : AbilityConfig { }
+public class CircleAttackChannel : AbilityChannel { }
+public class CircleAttackContext : AbilityContext { }
+</code></pre>
+<p>Defining an ability is really simple! The only thing we are required to do is implement <code>Ability.Action()</code> method. This method will be called during ability invokation, which occurs during the <code>LateUpdate()</code> unity event, and will continously be called every frame until the method returns false. Currently our ability immediately terminates after dealing damage to the enemy.</p>
+<p>Make sure the <code>[AddAbilityMenu]</code> attribute is applied and the bottom 3 classes match the names letter by letter in the example. The former makes the ability definition visible to the ability system and it will then use reflection to search for and validate the definition of these 3 supplementary classes. We'll talk about those later in other examples. We should now be able to see the option to add this ability to the <code>data</code> asset we created moments ago when we open the editor. Also, the ability system requires all abilities that are instantiable to be <code>sealed</code> for safety concerns.
+<img src="../resources/example1-add-circleattack.gif" alt="example1-add-circleattack">
+Here inside the inspector we can edit ability settings. Currently the only thing we can edit is the cooldown and execution priorities of the ability. The former determines the frequency the ability can be casted and the latter dictates the order of invokation of this ability during the <code>LateUpdate()</code> Unity event. The higher the priority, the earlier the ability will be executed in relation to other abilities. We can also define our own properties of the ability that can be edited in the inspector. Take a look a the extended definition of <code>CircleAttackConfig</code>:</p>
+<pre><code>using LobsterFramework.AbilitySystem;
+
+public class CircleAttackConfig : AbilityConfig {
+    public int AttackDamage;
+}
+</code></pre>
+<p><img src="../resources/example1-circleattack-config1-inspector.png" alt="example1-circleattack-config1-inspector">
+The newly added field <code>AttackDamage</code> can now be edited inside the inspector. Note that we have moved <code>CircleAttackConfig</code> out as a separate file from <code>CircleAttack.cs</code> since unity has trouble displaying editor for multiple classes defined in the same file and will throw warnings.</p>
+<p>To access the newly added data field from <code>CircleAttack</code>, we need to use the variable <code>Ability.Config</code>:</p>
+<pre><code>using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+[AddAbilityMenu]
+public sealed class CircleAttack : Ability
+{
+    protected override bool Action()
+    {
+        CircleAttackConfig config = Config as CircleAttackConfig;
+        Debug.Log($&quot;Attack for damage {config.AttackDamage}!&quot;);
+        /* Code to deal damage to the enemy */
+        return false; 
+    }
+}
+
+public class CircleAttackChannel : AbilityChannel { }
+public class CircleAttackContext : AbilityContext { }
+</code></pre>
+<h3 id="invoke-ability">Invoke Ability</h3>
+<p>Time to put it all together! We are going to cast this ability through the <code>AbilityManager</code> component we just added to our character. Let's create a simple player controller component and map it with mouse left click using the unity input system.</p>
+<pre><code>using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+public class PlayerControl : MonoBehaviour
+{
+    [SerializeField] private AbilityManager abilityManager;
+    public void Attack() { 
+        abilityManager.EnqueueAbility&lt;CircleAttack&gt;();
+    }
+}
+</code></pre>
+<p><img src="../resources/example1-addcontrol.gif" alt="example1-addControl">
+When we enter playmode and spam left clicks, we can see the output of the ability on the console. Additionally, we can use <code>AbilityManager</code> inspector to edit ability data in real time. The changes won't get saved to the disk unless the <code>Save</code> button is clicked. You can also use <code>Save As</code> button to store a copy of the <code>AbilityData</code> somewhere else.
+<img src="../resources/example1-run.gif" alt="example1-run"></p>
+<h2 id="example-2">Example 2</h2>
+<h3 id="ability-instance---config-channel--context">Ability Instance - Config, Channel &amp; Context</h3>
+<p>In some cases we want our character to be able to cast the same ability with different settings in 1 play session, such as shooting different bullets from the weapon, or throwing out punches with different strength. We would need to define an ability for each variation that has the same behavior but only differs in parameters, which is not ideal. Here we introduce the concept of <em>ability instance</em> to help us solve this issue.</p>
+<p>An ability is allowed to have multiple instances running at the same time. The number of instances allowed for each ability is equal to the number of configurations defined for the ability. It consists of a <a href="#abilityconfig">configuration of the ability</a>, a <a href="#abilitychannel">communication channel</a> that allows for sending input and reading output from the ability while it's executing and a <a href="#abilitycontext">context object</a> that holds all of the temporary variables during its execution. These directly corresponds to <code>Ability.Config</code>, <code>Ability.Channel</code> and <code>Ability.Context</code> variables that we have access during ability callbacks. At runtime, we can choose any ability instance we have created to run, or multiple of them when necessary as they're independant from each other. Let's take a look how things are put together in action! Continuing from our last example, we have this simple scene setup:
+<img src="../resources/example2-scene.png" alt="example2-scene">
+In case you're wondering, you can assign icon to your ability script to have it displayed in the inspector for visual clarity. Here we have a particle system attached to our character, we will use it to draw particle effect as our ability effect. We want to be able to choose from 2 different colors to draw the particle effect in play mode. The <a href="#abilitydata">AbilityData</a> editor allows us to create &amp; edit configurations for ability instances. We will start by creating a new configuration for our ability:
+<img src="../resources/example2-addconfig.gif" alt="example2-addconfig">
+Now that we have 2 configurations for our ability, it is important to know how to invoke each of them. We'll modify our player control script as follows:</p>
+<pre><code>using LobsterFramework.AbilitySystem;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerControl : MonoBehaviour
+{
+    [SerializeField] private AbilityManager abilityManager;
+    public void Attack1(InputAction.CallbackContext context) {
+        if (context.started) {
+            abilityManager.EnqueueAbility&lt;CircleAttack&gt;(&quot;default&quot;);
+        }
+    }
+
+    public void Attack2(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            abilityManager.EnqueueAbility&lt;CircleAttack&gt;(&quot;instance2&quot;);
+        }
+    }
+}
+</code></pre>
+<p><code>AbilityManager.EnqueueAbility&lt;T&gt;(string)</code> takes in a string parameter as the identifier to the ability configuration you wish to cast the ability with. By default it is 'default' when called without arguments for convenience. Here we have finished the setup of wiring player input mouse left key to <code>Attack1()</code> and mouse right key to <code>Attack2()</code>. Since we want them to differ in the color of the particles being played out, we will add another property to <code>CircleAttackConfig</code>.</p>
+<pre><code>using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+public class CircleAttackConfig : AbilityConfig {
+    public int AttackDamage;
+    public Color color; 
+}
+</code></pre>
+<h3 id="acquire-component-reference">Acquire Component Reference</h3>
+<p>Now we will need the reference to the particle system component attached to the character. Since we're asking for references to scene object, we cannot serialize them on an asset object. The simpliest way would be to use <code>Component.GetComponent()</code> on <code>Ability.abilityManager</code> as they're on the same game object. However this may not always be the case and this appoach would fail when the component is located elsewhere. Instead, we will use <code>RequireComponentReferenceAttribute</code> to achieve this goal:</p>
+<pre><code>using LobsterFramework;
+using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+[AddAbilityMenu]
+[RequireComponentReference(typeof(ParticleSystem))]
+public sealed class CircleAttack : Ability
+{
+    protected override bool Action()
+    {
+        CircleAttackConfig config = Config as CircleAttackConfig;
+        Debug.Log($&quot;Attack for damage {config.AttackDamage}!&quot;);
+        /* Code to deal damage to the enemy */
+        return false; 
+    }
+}
+
+public class CircleAttackChannel : AbilityChannel { }
+public class CircleAttackContext : AbilityContext { }
+</code></pre>
+<p>The <code>AbilityManager</code> and <code>AbilityData</code> inherits from <code>ReferenceProvider</code> and <code>ReferenceRequester</code>, therefore it is able to utilize editor support for abilities with <code>RequireComponentReferenceAttribute</code>.
+<img src="../resources/example2-add-component-reference.gif" alt="example2-component-reference">
+Note that once we apply this attribute the ability system will check if the field is null when entering the play mode. If the any of the required field is null for this ability a warning will be thrown and it may not be casted at runtime. Now we are prepared to modify <code>CircleAttack</code> to change the color of the particle system and play the particle effect. To access this reference, use <code>Ability.GetComponentReference&lt;T&gt;()</code>:</p>
+<pre><code>using LobsterFramework;
+using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+[AddAbilityMenu]
+[RequireComponentReference(typeof(ParticleSystem))]
+public sealed class CircleAttack : Ability
+{
+    private ParticleSystem particleSystem;
+    protected override void InitializeSharedReferences()
+    {
+        particleSystem = GetComponentReference&lt;ParticleSystem&gt;();
+    }
+
+    protected override bool Action()
+    {
+        CircleAttackConfig config = Config as CircleAttackConfig;
+        var main = particleSystem.main;
+        main.startColor = config.color;
+        particleSystem.Play();
+        Debug.Log($&quot;Attack for damage {config.AttackDamage}!&quot;);
+        /* Code to deal damage to the enemy */
+        return false; 
+    }
+}
+
+public class CircleAttackChannel : AbilityChannel { }
+public class CircleAttackContext : AbilityContext { }
+</code></pre>
+<h3 id="initialization--finalization-routines">Initialization &amp; Finalization Routines</h3>
+<p>Since the component reference is shared among all ability instances, we can declare it as a property inside <code>CircleAttack</code> directly. <code>Ability.InitializeSharedReferences()</code> provides a routine for us to initialize any of these references when the <a href="#abilitymanager">ability manager</a> is enabled. Conversly, we also have <code>Ability.FinializeSharedReferences()</code> to allow for any clean up operations such as unsubscribing from events. For temporary fields that are specific to each ability instance defined in <a href="#abilitycontext">ability context</a> requiring initialization, we have <code>Ability.InitializeContext()</code> and <code>Ability.FinalizeContext()</code> for this purpose. Here's the result when we run the game:
+<img src="../resources/example2-result.gif" alt="example2-result"></p>
+<h2 id="example-3">Example 3</h2>
+<h3 id="edit-multiple-abilities-in-the-inspector">Edit Multiple Abilities In The Inspector</h3>
+<p>We need to define another ability for this part of the demonstration. Continuing from our last example, let us define <code>SweepAttack</code> that does almost exactly the same thing as <code>CircleAttack</code> to keep things simple:</p>
+<pre><code>// SweepAttack.cs
+using LobsterFramework;
+using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+[AddAbilityMenu(&quot;Example&quot;)]
+[RequireComponentReference(typeof(ParticleSystem), &quot;Particle VFX&quot;, &quot;The particle vfx that will be played when the ability is invoked&quot;)]
+public sealed class SweepAttack : Ability
+{
+    private ParticleSystem particleSystem;
+    protected override void InitializeSharedReferences()
+    {
+        particleSystem = GetComponentReference&lt;ParticleSystem&gt;();
+    }
+
+    protected override bool Action()
+    {
+        SweepAttackConfig config = Config as SweepAttackConfig;
+        var main = particleSystem.main;
+        main.startColor = config.color;
+        particleSystem.Play();
+        Debug.Log($&quot;Sweep Attack: {config.AttackDamage}!&quot;);
+        /* Code to deal sweep damage to the enemy */
+        return false;
+    }
+}
+
+public class SweepAttackChannel : AbilityChannel { }
+public class SweepAttackContext : AbilityContext { }
+</code></pre>
+<pre><code>// SweepAttackConfig.cs
+using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+public class SweepAttackConfig : AbilityConfig
+{
+    public int AttackDamage;
+    public Color Color;
+}
+</code></pre>
+<p><img src="../resources/example3-add-sweepattack.gif" alt="example3-add-sweepattack">
+The above demonstrates how multiple abilities can be edited using the inspector. Note that you can pass multiple arguments to the <code>RequireComponentReferenceAttribtue</code> to customize the name and tooltip of the exposed property fields.</p>
+<h3 id="ability-component">Ability Component</h3>
+<p>As previously stated in the design goals, abilities should be able to have access to a shared resource. A simple way to implment this is by adding a property that stores the reference to a shared data object to each ability. However, this approach can fail if any of the reference is forgotten to be assigned and manually doing these assignments is cumbersome and error prone. We will see later on how editor support can help with alleviating this problem. In <code>LobsterFramework</code>, the sharing of resources between <a href="#ability">abilities</a> is implemented via <a href="#ability-component">AbilityComponent</a>.</p>
+<p>In the previous step, we defined <code>SweepAttack</code> and its config <code>SweepAttackConfig</code> the same as <code>CircleAttack</code> and <code>CircleAttackConfig</code>. Now suppose we want these 2 abilities' damage to be affected by the same data asset, we can do this by defining <code>ChampionStat</code> as follows:</p>
+<pre><code>using LobsterFramework.AbilitySystem;
+
+[AddAbilityComponentMenu(&quot;Example&quot;)]
+public sealed class ChampionStat : AbilityComponent
+{
+    public int AttackDamage;
+}
+</code></pre>
+<p><img src="../resources/example3-add-component.gif" alt="example3-add-component">
+And we remove the field <code>AttackDamage</code> from both <code>CircleAttackConfig</code> and <code>SweepAttackConfig</code> as they're no longer needed. To access <code>ChampionStat</code>, use <code>Ability.GetAbilityComponent</code>:</p>
+<pre><code>// CircleAttack.cs
+using LobsterFramework;
+using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+[AddAbilityMenu(&quot;Example&quot;)]
+[RequireComponentReference(typeof(ParticleSystem))]
+public sealed class CircleAttack : Ability
+{
+    private ParticleSystem particleSystem;
+    private ChampionStat stat;
+    protected override void InitializeSharedReferences()
+    {
+        particleSystem = GetComponentReference&lt;ParticleSystem&gt;();
+        stat = GetAbilityComponent&lt;ChampionStat&gt;();
+    }
+
+    protected override bool Action()
+    {
+        CircleAttackConfig config = Config as CircleAttackConfig;
+        var main = particleSystem.main;
+        main.startColor = config.Color;
+        particleSystem.Play();
+        Debug.Log($&quot;Circle Attack: {stat.AttackDamage}!&quot;);
+        /* Code to deal damage to the enemy */
+        return false; 
+    }
+}
+
+public class CircleAttackChannel : AbilityChannel { }
+public class CircleAttackContext : AbilityContext { }
+</code></pre>
+<h3 id="enforce-the-requirement">Enforce the Requirement</h3>
+<p>The ability system features <code>RequireAbilityComponentAttribute</code> to allow the custom inspector to help developers to enforces the <code>AbilityComponent</code> requirements by abilities. When attempting to remove an <code>AbilityComponent</code> from <code>AbilityData</code>, the editor script will check the number of abilities relying on it. The operation will only be carried out once the script has verified that number is 0, otherwise an error will be displayed in the console, indicating which abilities depend on it:</p>
+<pre><code>// CircleAttack.cs
+using LobsterFramework;
+using LobsterFramework.AbilitySystem;
+using UnityEngine;
+
+[AddAbilityMenu(&quot;Example&quot;)]
+[RequireComponentReference(typeof(ParticleSystem))]
+[RequireAbilityComponent(typeof(ChampionStat))]
+public sealed class CircleAttack : Ability
+{
+    /*...*/
+}
+</code></pre>
+<p><img src="../resources/example3-remove-component.gif" alt="example3-remove-component">
+Conversely, when attempting to add an ability when its requirements are not satisfied, an error will be displayed:
+<img src="../resources/example3-add-ability.gif" alt="example3-add-ability">
+If new requirements have been added for the ability, the validation process will automatically add the missing ability components and display warning on the console. This is displayed as warning to notify the developer of any potential asset corruption.</p>
+<h2 id="example-4">Example 4</h2>
+<h3 id="ability-condition">Ability Condition</h3>
+<p>The ability system has built in support for verifying ability cooldowns. However, developers are allowed to make their own customized rules about when the ability can be executed. Here's an example of using <code>Ability.ConditionSatisfied()</code> to implement <code>Fireball</code>:</p>
+<pre><code>// Fireball.cs
+[AddAbilityMenu]
+[RequireComponentReference(typeof(Mana))]
+public sealed class Fireball : Ability {
+    private Mana manaComponent;
+
+    protected override void InitializeSharedReferences(){
+        manaComponent = GetComponentReference&lt;Mana&gt;();
+    }
+
+    protected override bool ConditionSatisfied(){
+        // Only allowed to cast fireball if the mana cost can be satisfied
+        FireballConfig config = Config as FireballConfig;
+        return manaComponent.mana &gt;= config.cost;
+    }
+
+    protected override bool Action(){
+        /* Code to control fireball */
+    }
+}
+</code></pre>
+<pre><code>// FireballConfig.cs
+public class FireballConfig : AbilityConfig{
+    public int cost;
+}
+</code></pre>
+<pre><code>// Mana.cs
+public class Mana : Monobehavior {
+    public int mana;
+}
+</code></pre>
+<h3 id="prepare--reset-ability-context">Prepare &amp; Reset Ability Context</h3>
+<p>Sometimes there are actions you want to perform once before and after the ability execution, like playing ability animation and deduct the cost of the ability. These can be done by overriding <code>Ability.OnAbilityEnqueue</code> and <code>Ability.OnAbilityFinish</code>:</p>
+<pre><code>// Fireball.cs
+[AddAbilityMenu]
+[RequireComponentReference(typeof(Mana))]
+public sealed class Fireball : Ability {
+    private Mana manaComponent;
+
+    protected override void InitializeSharedReferences(){
+        manaComponent = GetComponentReference&lt;Mana&gt;();
+    }
+
+    protected override bool ConditionSatisfied(){
+        // Only allowed to cast fireball if the mana cost can be satisfied
+        FireballConfig config = Config as FireballConfig;
+        return manaComponent.mana &gt;= config.cost;
+    }
+
+    protected override void OnAbilityEnqueue(){
+        FireballConfig config = Config as FireballConfig;
+        manaComponent.mana -= config.cost;
+        /* Code to play control fireball animation */
+    }
+
+    protected override bool Action(){
+        /* Code to control fireball */
+    }
+
+    protected override void OnAbilityFinish(){
+        /* Code to switch to walk animation */
+    }
+}
+</code></pre>
+<h3 id="signal-ability">Signal Ability</h3>
+<p>Oftentimes we want to make use of animation events to make sure the game logic is synchronized with the animation, for this use case, use <code>AbilityManager.Signal(AnimationEvent)</code> and implement <code>Ability.OnSignaled(AnimationEvent)</code>. Additionally, you can also use parameterless <code>AbilityManager.Signal&lt;T&gt;()</code> and implement <code>Ability.OnSignaled()</code> to implement signals issued by code. Continue using the example, the <code>Fireball</code> will be more powerful when we signal it:</p>
+<pre><code>// Fireball.cs
+[AddAbilityMenu]
+[RequireComponentReference(typeof(Mana))]
+public sealed class Fireball : Ability {
+    private Mana manaComponent;
+
+    protected override void InitializeSharedReferences(){
+        manaComponent = GetComponentReference&lt;Mana&gt;();
+    }
+
+    protected override bool ConditionSatisfied(){
+        // Only allowed to cast fireball if the mana cost can be satisfied
+        FireballConfig config = Config as FireballConfig;
+        return manaComponent.mana &gt;= config.cost;
+    }
+
+    protected override void OnAbilityEnqueue(){
+        FireballConfig config = Config as FireballConfig;
+        manaComponent.mana -= config.cost;
+        /* Code to play control fireball animation */
+    }
+
+    protected override bool Action(){
+        FireballContext context = Context as FireballContext;
+        if(context.isEmpowered){
+            /* Code to make fireball bigger if not already */
+        }
+
+        /* Code to control fireball */
+    }
+
+    protected override void OnSignaled(AnimationEvent){
+        FireballContext context = Context as FireballContext;
+        context.isEmpowered = true;
+    }
+
+    protected override void OnAbilityFinish(){
+        FireballContext context = Context as FireballContext;
+        context.isEmpowered = false;
+
+        /* Code to switch to walk animation */
+    }
+}
+
+public class FireballContext : AbilityContext {
+    bool isEmpowered;
+}
+</code></pre>
+<h3 id="interrupt--stop-ability">Interrupt &amp; Stop Ability</h3>
+<p>To stop the execution of an ability instance, use <code>AbilityManager.SuspendAbilityInstance&lt;T&gt;(string)</code> or <code>Ability.SuspendInstance(string)</code> while in the <a href="#context-methods">context methods</a>.
+To stop the execution of all instances of an ability, use <code>AbilityManager.SuspendAbility&lt;T&gt;()</code> or <code>Ability.SuspendAll()</code> while in the <a href="#context-methods">context methods</a>.
+To stop the execution of all abilities, use <code>AbilityManager.SuspendAbilities()</code>.</p>
+<p>The effect will take place immediately, <code>Ability.OnAbilityFinished()</code> will be called and the query of the status of the ability instance will indicate the ability instance is no longer running. The following example script demonstrate how <code>Fireball</code> can be interrupted by characeter movement:</p>
+<pre><code>public class PlayerControl : MonoBehavior {
+    [SerializeField] private AbilityManager abilityManager;
+    public void Move(Vector 3 direction){
+        abilityManager.SuspendAbilityInstance&lt;Fireball&gt;();
+        /* In this context the following also works: 
+                abilityManager.SuspendAbility&lt;Fireball&gt;() 
+                abilityManager.SuspendAbilities()
+        */
+
+        /* Code to move in the specified direction */
+    }
+}
+</code></pre>
+<h1 id="coroutine">Coroutine</h1>
+<h1 id="glossary">Glossary</h1>
 <h2 id="abilitymanager">AbilityManager</h2>
-<p>Attach this component to the character to enable it to cast abilities. This component takes in an <a href="#abilitydata">AbilityData</a> as input. Calls to enqueue, query, terminate, send event to and communication with abilities should only be done during the <em>Update</em> event.</p>
-<h2 id="abilityexecutor">AbilityExecutor</h2>
-<p>A singleton component to be attached to a persistent manager object. This component handles ability execution during <em>LateUpdate</em> event.</p>
+<p>Attach this component to the character to enable it to cast abilities. This component takes in an <a href="#abilitydata">AbilityData</a> as input. Calls to enqueue, query, terminate, send event to and communication with abilities can only be done through this component during the <code>Update()</code> unity event.</p>
 <h2 id="abilitydata">AbilityData</h2>
-<p>An asset object that defines a set of <a href="#ability">Abilities</a> and <a href="#abilitycomponent">Ability Components</a>. Can be edited using inspector.</p>
+<p>An asset object that defines a set of <a href="#ability">Abilities</a> and <a href="#abilitycomponent">Ability Components</a>. Client code should not interact with objects of this type directly. Can be edited using inspector.</p>
 <h2 id="abilitycomponent">AbilityComponent</h2>
-<p>An asset object that defines a resource shared by all abilities.</p>
+<p>An asset object that defines a resource shared by all abilities. References can be obtained via <code>AbilityManager.GetAbilityComponent&lt;T&gt;()</code>.</p>
 <h2 id="ability">Ability</h2>
-<p>An asset object that defines an ability in the Ability System. To create new abilities, you must subclass it and implement the required methods. It comes with 3 complimentary classes that you must define: <a href="#abilityconfig">AbilityConfig</a>, <a href="#abilitychannel">AbilityChannel</a>, <a href="#abilitycontext">AbilityContext</a>.</p>
+<p>An asset object that defines an ability in the Ability System. Client code should not directly interact with ability objects. To create new abilities, you must subclass it and implement the <a href="#mandatory">required methods</a>. It comes with 3 complimentary classes that you must define: <a href="#abilityconfig">AbilityConfig</a>, <a href="#abilitychannel">AbilityChannel</a>, <a href="#abilitycontext">AbilityContext</a>.</p>
+<h3 id="mandatory">Mandatory:</h3>
+<p>The following must be implemented</p>
+<ul>
+<li><code>bool Action()</code></li>
+</ul>
+<h3 id="optional">Optional:</h3>
+<p>The following can be overriden but are not required to do so</p>
+<ul>
+<li><code>void InitializeSharedReferences()</code></li>
+<li><code>void FinalizeSharedReferences()</code></li>
+<li><code>void InitializeContext()</code></li>
+<li><code>void FinalizeContext()</code></li>
+<li><code>bool ConditionSatisfied()</code></li>
+<li><code>void OnAbilityEnqueue()</code></li>
+<li><code>void OnAbilityFinish()</code></li>
+<li><code>void OnSignaled(AnimationEvent)</code></li>
+<li><code>void OnSignaled()</code></li>
+</ul>
+<h3 id="context-methods">Context Methods:</h3>
+<p>These methods have access to variables (not null): <code>Ability.Config</code>, <code>AbilityChannel</code> and <code>AbilityContext</code></p>
+<ul>
+<li><code>bool Action()</code></li>
+<li><code>void InitializeContext()</code></li>
+<li><code>void FinalizeContext()</code></li>
+<li><code>bool ConditionSatisfied()</code></li>
+<li><code>void OnAbilityEnqueue()</code></li>
+<li><code>void OnAbilityFinish()</code></li>
+<li><code>void OnSignaled(AnimationEvent)</code></li>
+<li><code>void OnSignaled()</code></li>
+</ul>
+<h3 id="actions">Actions:</h3>
+<ul>
+<li><code>T GetComponentReference&lt;T&gt;()</code></li>
+<li><code>T GetAbilityComponent&lt;T&gt;()</code></li>
+<li><code>AnimancerState StartAnimation(AnimationClip, float)</code></li>
+<li><code>bool SuspendInstance(string)</code></li>
+<li><code>void SuspendAll()</code></li>
+<li><code>bool JoinAsSecondary&lt;T&gt;(string)</code></li>
+<li><code>bool JoinAsSecondary(Type, string)</code></li>
+</ul>
 <h2 id="abilityconfig">AbilityConfig</h2>
-<p>An asset object that defines the setting of the ability. A new ability needs to define <strong>{#NameOfAbility}Config</strong> that inherit from this class or its parent's config class if there's one.</p>
+<p>An asset object that defines the setting of the ability. Only accessible while in the <a href="#context-methods">context methods</a>. A new ability needs to define <strong>{#NameOfAbility}Config</strong> that inherit from this class or its parent's config class if there's one.</p>
 <h2 id="abilitychannel">AbilityChannel</h2>
-<p>Allows client code to communicate with the ability when it is being runned. A new ability needs to define <strong>{#NameOfAbility}Channel</strong> that inherit from this class or its parent's channel class if there's one. You should not define constructors with parameters for this class. For custom initialization see <strong>Ability.InitializeContext()</strong>.</p>
+<p>Allows client code to communicate with the ability when it is being runned. Accessible via <code>AbilityManager.GetAbilityChannel&lt;T&gt;()</code> where <code>T</code> is the type of the ability this channel type belongs and while in the <a href="#context-methods">context methods</a> . A new ability needs to define <strong>{#NameOfAbility}Channel</strong> that inherit from this class or its parent's channel class if there's one. Do not define constructors for this class as the system uses reflection to call the default parameterless constructor. For custom initialization see <code>Ability.InitializeContext()</code>.</p>
 <h2 id="abilitycontext">AbilityContext</h2>
-<p>Stores context variables use by the ability during its execution. A new ability needs to define <strong>{#NameOfAbility}Context</strong> that inherit from this class or its parent's context class if there's one. You should not define constructors with parameters for this class. For custom initialization see <strong>Ability.InitializeContext()</strong>.</p>
+<p>Stores context variables use by the ability during its execution. Only accessible while in the <a href="#context-methods">context methods</a>. A new ability needs to define <strong>{#NameOfAbility}Context</strong> that inherit from this class or its parent's context class if there's one. Do not define constructors for this class as the system uses reflection to call the default parameterless constructor. For custom initialization see <code>Ability.InitializeContext()</code>.</p>
 </article>
           </div>
 

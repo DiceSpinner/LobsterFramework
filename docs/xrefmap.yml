@@ -4,36 +4,6 @@ references:
 - uid: Global
   name: ''
   href: api/Global.html
-- uid: Global.AITrackData
-  name: AITrackData
-  href: api/Global.AITrackData.html
-  commentId: T:Global.AITrackData
-  fullName: AITrackData
-  nameWithType: AITrackData
-- uid: Global.AITrackData.chaseDistance
-  name: chaseDistance
-  href: api/Global.AITrackData.html#Global_AITrackData_chaseDistance
-  commentId: F:Global.AITrackData.chaseDistance
-  fullName: AITrackData.chaseDistance
-  nameWithType: AITrackData.chaseDistance
-- uid: Global.AITrackData.engageDistance
-  name: engageDistance
-  href: api/Global.AITrackData.html#Global_AITrackData_engageDistance
-  commentId: F:Global.AITrackData.engageDistance
-  fullName: AITrackData.engageDistance
-  nameWithType: AITrackData.engageDistance
-- uid: Global.AITrackData.keepDistance
-  name: keepDistance
-  href: api/Global.AITrackData.html#Global_AITrackData_keepDistance
-  commentId: F:Global.AITrackData.keepDistance
-  fullName: AITrackData.keepDistance
-  nameWithType: AITrackData.keepDistance
-- uid: Global.AITrackData.sightRange
-  name: sightRange
-  href: api/Global.AITrackData.html#Global_AITrackData_sightRange
-  commentId: F:Global.AITrackData.sightRange
-  fullName: AITrackData.sightRange
-  nameWithType: AITrackData.sightRange
 - uid: Global.BoolEventChannel
   name: BoolEventChannel
   href: api/Global.BoolEventChannel.html
@@ -62,12 +32,6 @@ references:
   isSpec: "True"
   fullName: BoolEventChannel.RaiseEvent
   nameWithType: BoolEventChannel.RaiseEvent
-- uid: Global.ControllerData
-  name: ControllerData
-  href: api/Global.ControllerData.html
-  commentId: T:Global.ControllerData
-  fullName: ControllerData
-  nameWithType: ControllerData
 - uid: Global.DescriptionBaseSO
   name: DescriptionBaseSO
   href: api/Global.DescriptionBaseSO.html
@@ -8901,12 +8865,6 @@ references:
   commentId: N:LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
-- uid: LobsterFramework.Utility.AbilitySet
-  name: AbilitySet
-  href: api/LobsterFramework.Utility.AbilitySet.html
-  commentId: T:LobsterFramework.Utility.AbilitySet
-  fullName: LobsterFramework.Utility.AbilitySet
-  nameWithType: AbilitySet
 - uid: LobsterFramework.Utility.And
   name: And
   href: api/LobsterFramework.Utility.And.html

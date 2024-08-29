@@ -23,30 +23,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.AITrackData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.AITrackData.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.BoolEventChannel.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.BoolEventChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.ControllerData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.ControllerData.html"
         }
       },
       "version": ""
@@ -1967,16 +1947,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.UI.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.AbilitySet.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.AbilitySet.html"
         }
       },
       "version": ""

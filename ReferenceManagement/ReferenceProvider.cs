@@ -17,14 +17,18 @@ namespace LobsterFramework
         [ReadOnly]
         [SerializeField] private ReferenceRequester bindedRequester;
 
-        /**
-         * Unity Events here are marked as protected to grant child class access.
-         */
         #region Unity Events
+        /// <summary>
+        /// Validate and hook up listeners with the data container requesting component references
+        /// </summary>
         protected void OnValidate()
         {
             Bind(bindedRequester);
         }
+
+        /// <summary>
+        /// Unbind with the data container requesting component references
+        /// </summary>
         protected void OnDestroy()
         {
             UnBind();
@@ -35,7 +39,7 @@ namespace LobsterFramework
         /// Bind the data container with the reference provider to update the set of fields required to store the references required by the data container.
         /// The required references of any previous binded data container different from the currently binded one will be lost.
         /// This component will listen to changes made to the data container and react accordingly.
-        /// This method should be called in the "OnValidate" message to ensure the listeners are properly hooked up
+        /// This method should always be called in the "OnValidate" message to ensure the listeners are properly hooked up
         /// </summary>
         /// <param name="referenceRequester">The data container requesting component references to be binded with</param>
         protected void Bind(ReferenceRequester referenceRequester) {

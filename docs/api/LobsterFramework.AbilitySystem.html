@@ -92,7 +92,8 @@ Classes
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityChannel.html">AbilityChannel</a></h4>
       <section><p>Communication channel of the ability. Can be used to control ability behaviors at runtime.
-When creating a new ability, you must also declare a class named &quot;AbilityName&quot;Channel in the same namespace where &quot;AbilityName&quot; is the name of the ability you're creating.</p>
+When creating a new ability, you must also declare a class named &quot;AbilityName&quot;Channel in the same namespace where &quot;AbilityName&quot; is the name of the ability you're creating.
+Can be accessed via <a class="xref" href="LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework_AbilitySystem_AbilityManager_GetAbilityComponent__1">GetAbilityComponent&lt;T&gt;()</a></p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityComponent.html">AbilityComponent</a></h4>
       <section><p>Components that can be attached to ability data objects to run additional logic and host shared data across all abilities</p>
@@ -113,7 +114,7 @@ When creating a new ability, you must also declare a class named &quot;AbilityNa
       <section><p>Abilities that must be continously runned across multiple frames</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutineContext.html">AbilityCoroutineContext</a></h4>
-      <section><p>AbilityConfig of coroutines, subclass configs need to inherit from this to properly work</p>
+      <section><p>Running context of coroutine abilities, subclass contexts need to inherit from this.</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.AbilitySystem.AbilityData.html">AbilityData</a></h4>
       <section><p>Defines the set of abilities and ability components an actor can take on. Used as input to <a class="xref" href="LobsterFramework.AbilitySystem.AbilityManager.html">AbilityManager</a>.</p>

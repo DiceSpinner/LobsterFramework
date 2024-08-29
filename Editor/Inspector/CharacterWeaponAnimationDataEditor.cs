@@ -44,10 +44,9 @@ namespace LobsterFramework.Editors
             var item = (AnimationClip)EditorGUILayout.ObjectField("Move", data.movementAnimations[selected], typeof(AnimationClip), false);
             if (EditorGUI.EndChangeCheck()) {
                 Undo.RegisterCompleteObjectUndo(target, "Modify weapon moving animation entry");
+                EditorUtility.SetDirty(target);
                 data.movementAnimations[selected] = item;
             }
-
-            serializedObject.ApplyModifiedProperties();
         }
          
         private void DisplayAbilityAnimationEntries(AbilityAnimationDictionary setting, Type abilityType) {
@@ -57,6 +56,7 @@ namespace LobsterFramework.Editors
                 EditorGUI.BeginChangeCheck();
                 var item = (AnimationClip)EditorGUILayout.ObjectField(abilityType.Name, clips[0], typeof(AnimationClip), false);
                 if (EditorGUI.EndChangeCheck()) {
+                    EditorUtility.SetDirty(target);
                     Undo.RegisterCompleteObjectUndo(target, "Modify weapon ability animation entry");
                     clips[0] = item;
                 }
@@ -70,6 +70,7 @@ namespace LobsterFramework.Editors
                     var item = (AnimationClip)EditorGUILayout.ObjectField(enums[i], clips[i], typeof(AnimationClip), false);
                     if (EditorGUI.EndChangeCheck())
                     {
+                        EditorUtility.SetDirty(target);
                         Undo.RegisterCompleteObjectUndo(target, "Modify weapon ability animation entry");
                         clips[i] = item;
                     }

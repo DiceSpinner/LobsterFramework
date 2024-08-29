@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using LobsterFramework.Utility;
 
@@ -9,6 +8,9 @@ namespace LobsterFramework.AbilitySystem
     /// </summary>
     public abstract class AbilityCoroutine : Ability
     {
+        /// <summary>
+        /// Replaced by <see cref="OnCoroutineEnqueue"/>
+        /// </summary>
         protected sealed override void OnAbilityEnqueue()
         {
             AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
@@ -22,6 +24,9 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         protected abstract void OnCoroutineEnqueue();
 
+        /// <summary>
+        /// Replaced by <see cref="OnCoroutineFinish"/>
+        /// </summary>
         protected sealed override void OnAbilityFinish() {
             AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
             context.coroutine.Stop();
@@ -34,6 +39,10 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         protected virtual void OnCoroutineFinish() { }
 
+        /// <summary>
+        /// Replaced by <see cref="Coroutine"/>
+        /// </summary>
+        /// <returns></returns>
         protected override sealed bool Action()
         {
             AbilityCoroutineContext context = (AbilityCoroutineContext)Context;
@@ -42,20 +51,20 @@ namespace LobsterFramework.AbilitySystem
         }
 
         /// <summary>
-        /// Calleback when <see cref="CoroutineOption.Reset"/> is yielded by <see cref="Coroutine"/>
+        /// Called when <see cref="CoroutineOption.Reset"/> is yielded by <see cref="Coroutine"/>
         /// </summary>
         protected abstract void OnCoroutineReset();
 
         /// <summary>
-        /// The body of the ability execution, replaces Action method
+        /// The body of the ability execution, replaces <see cref="Action"/> method
         /// </summary>
         /// <param name="config">The ability configuration to execute on</param>
-        /// <returns></returns>
+        /// <returns>A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <see cref="CoroutineOption"/></returns>
         protected abstract IEnumerable<CoroutineOption> Coroutine();
     }
 
     /// <summary>
-    /// AbilityConfig of coroutines, subclass configs need to inherit from this to properly work
+    /// Running context of coroutine abilities, subclass contexts need to inherit from this.
     /// </summary>
     public class AbilityCoroutineContext : AbilityContext
     {

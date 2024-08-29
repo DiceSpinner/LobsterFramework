@@ -234,7 +234,7 @@ public class RequireWeaponStatAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute__ctor_System_Type___.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.%23ctor(System.Type%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs/#L14">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs/#L21">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute__ctor_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.#ctor*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute__ctor_System_Type___" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.#ctor(System.Type[])">RequireWeaponStatAttribute(params Type[])</h4>
@@ -261,69 +261,48 @@ public class RequireWeaponStatAttribute : Attribute</code></pre>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
+  <h3 id="fields">Fields
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_HasWeaponStats_System_Type_LobsterFramework_AbilitySystem_WeaponSystem_WeaponManager_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type%2CLobsterFramework.AbilitySystem.WeaponSystem.WeaponManager)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Requirements.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs/#L45">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs/#L19">View Source</a>
   </span>
-  <a id="LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_HasWeaponStats_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_HasWeaponStats_System_Type_LobsterFramework_AbilitySystem_WeaponSystem_WeaponManager_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager)">HasWeaponStats(Type, WeaponManager)</h4>
-  <div class="markdown level1 summary"><p>Check to see if the weapon contains all the WeaponStats required by the ability</p>
+  <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Requirements" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements">Requirements</h4>
+  <div class="markdown level1 summary"><p>Stores the required <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html">WeaponStat</a> for each <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html">WeaponAbility</a>
+<br>
+Key: Type of the weapon ability, Value: A set of <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat.html">WeaponStat</a> types required by this ability</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool HasWeaponStats(Type abilityType, WeaponManager weaponWielder)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ReadOnlyDictionary&lt;Type, HashSet&lt;Type&gt;&gt; Requirements</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">abilityType</span></td>
-        <td><p>The type of the ability being queried</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager.html">WeaponManager</a></td>
-        <td><span class="parametername">weaponWielder</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlydictionary-2">ReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if the weapon contains all of the required stats, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+  <h3 id="methods">Methods
+</h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Init_System_Type_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs/#L30">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs/#L37">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Init_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Init_System_Type_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)">Init(Type)</h4>

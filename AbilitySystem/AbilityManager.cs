@@ -471,7 +471,7 @@ namespace LobsterFramework.AbilitySystem {
             {
                 speed = 1;
             }
-            if (!animating.IsNullAbility)
+            if (!animating.IsNullAbility && !animating.Equals(new AbilityInstance(ability, instance)))
             {
                 animating.ability.AnimationInterrupt(animating.name, currentState);
             }

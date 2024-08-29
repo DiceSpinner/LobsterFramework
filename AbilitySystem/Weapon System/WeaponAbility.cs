@@ -1,3 +1,5 @@
+using System;
+
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [RequireComponentReference(typeof(WeaponManager))]
@@ -18,27 +20,43 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         }
 
         /// <summary>
-        /// Use this to implement custom initialization routines
+        /// Replaces <see cref="InitializeSharedReferences"/>
         /// </summary>
         protected virtual void InitWeaponAbilityReferences() { }
+
+        /// <summary>
+        /// Replaced by <see cref="WeaponAbilityReady"/>
+        /// </summary>
+        /// <returns></returns>
 
         protected sealed override bool ConditionSatisfied()
         {
             Weapon query;
             if (IsMainhanded) {
                 query = WeaponManager.Mainhand;
-            }
-            else {
-                query = WeaponManager.Offhand;
-                if (WeaponManager.Mainhand != null && WeaponManager.Mainhand.state != WeaponState.Idle) {
+                if (query.State != WeaponState.Idle) {
                     return false;
                 }
             }
-            return query != null && InstancesRunning == 0 && RequireWeaponStatAttribute.HasWeaponStats(GetType(), WeaponManager) && WeaponAbilityReady();
+            else {
+                query = WeaponManager.Offhand;
+                if (WeaponManager.Mainhand != null && WeaponManager.Mainhand.State != WeaponState.Idle) {
+                    return false;
+                }
+            }
+            if (RequireWeaponStatAttribute.Requirements.TryGetValue(GetType(), out var set)) {
+                foreach (Type statType in set) {
+                    if (!query.HasWeaponStat(statType)) {
+                        return false;
+                    }
+                }
+            }
+
+            return query != null && InstancesRunning == 0 && WeaponAbilityReady();
         }
 
         /// <summary>
-        /// Use this to implement custom weapon ability rules
+        /// Use this to implement custom weapon ability rules, replaces <see cref="ConditionSatisfied"/>
         /// </summary>
         /// <returns>true if the ability is ready, otherwise false</returns>
         protected virtual bool WeaponAbilityReady() { return true; } 

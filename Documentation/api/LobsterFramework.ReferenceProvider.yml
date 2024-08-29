@@ -183,6 +183,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
+  summary: Validate and hook up listeners with the data container requesting component references
   example: []
   syntax:
     content: protected void OnValidate()
@@ -206,10 +207,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnDestroy
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
+  summary: Unbind with the data container requesting component references
+  example: []
   syntax:
     content: protected void OnDestroy()
     content.vb: Protected Sub OnDestroy()
@@ -232,7 +235,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Bind
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 40
+    startLine: 44
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -243,7 +246,7 @@ items:
 
     This component will listen to changes made to the data container and react accordingly.
 
-    This method should be called in the "OnValidate" message to ensure the listeners are properly hooked up
+    This method should always be called in the "OnValidate" message to ensure the listeners are properly hooked up
   example: []
   syntax:
     content: protected void Bind(ReferenceRequester referenceRequester)
@@ -271,7 +274,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UnBind
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 63
+    startLine: 67
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -297,7 +300,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsRequirementSatisfied
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 184
+    startLine: 188
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -332,7 +335,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetComponentReference
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 211
+    startLine: 215
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

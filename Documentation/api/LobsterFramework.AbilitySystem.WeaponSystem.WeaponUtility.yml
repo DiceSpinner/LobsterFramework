@@ -27,11 +27,11 @@ items:
   type: Class
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponUtility
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 4
   assemblies:
   - LobsterFramework
@@ -176,11 +176,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HDSharpness
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 28
   assemblies:
   - LobsterFramework
@@ -205,11 +205,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HDWeight
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 29
   assemblies:
   - LobsterFramework
@@ -234,11 +234,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PDSharpness
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 30
   assemblies:
   - LobsterFramework
@@ -263,11 +263,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PDWeight
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 31
   assemblies:
   - LobsterFramework
@@ -292,11 +292,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PostureDeflect
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 32
   assemblies:
   - LobsterFramework
@@ -321,11 +321,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PDamageOnDeflect
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 33
   assemblies:
   - LobsterFramework
@@ -350,11 +350,11 @@ items:
   type: Property
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: KnockbackAdjustment
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 34
   assemblies:
   - LobsterFramework
@@ -379,11 +379,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponDamage
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 36
   assemblies:
   - LobsterFramework
@@ -417,11 +417,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponDamage
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 49
   assemblies:
   - LobsterFramework
@@ -455,11 +455,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GuardDamage
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 62
   assemblies:
   - LobsterFramework
@@ -493,11 +493,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GuardDamage
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 77
   assemblies:
   - LobsterFramework
@@ -531,11 +531,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ComputeDamage
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 95
   assemblies:
   - LobsterFramework
@@ -569,11 +569,11 @@ items:
   type: Method
   source:
     remote:
-      path: AbilitySystem/Weapon System/WeaponUtility.cs
+      path: AbilitySystem/Weapon System/Setting/WeaponUtility.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ComputeGuardDamage
-    path: ../AbilitySystem/Weapon System/WeaponUtility.cs
+    path: ../AbilitySystem/Weapon System/Setting/WeaponUtility.cs
     startLine: 105
   assemblies:
   - LobsterFramework

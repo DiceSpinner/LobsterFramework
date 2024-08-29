@@ -96,12 +96,6 @@ references:
   name: AttackContext
   nameWithType: AttackContext
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
-  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility.html
-  name: WeaponUtility
-  nameWithType: WeaponUtility
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
   href: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.html
@@ -257,6 +251,12 @@ references:
   name: WeaponAnimationAddonAttribute
   nameWithType: WeaponAnimationAddonAttribute
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility.html
+  name: WeaponUtility
+  nameWithType: WeaponUtility
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponUtility
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   parent: LobsterFramework.AbilitySystem.WeaponSystem

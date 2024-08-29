@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
@@ -10,6 +10,13 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     {
         private static Dictionary<Type, HashSet<Type>> typeRequirements = new();
         private List<Type> weaponStatTypes;
+
+        /// <summary>
+        /// Stores the required <see cref="WeaponStat"/> for each <see cref="WeaponAbility"/>
+        /// <br/>
+        /// Key: Type of the weapon ability, Value: A set of <see cref="WeaponStat"/> types required by this ability
+        /// </summary>
+        public static ReadOnlyDictionary<Type, HashSet<Type>> Requirements = new(typeRequirements);
 
         public RequireWeaponStatAttribute( params Type[] weaponStats) {
             weaponStatTypes = new();
@@ -34,43 +41,6 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             foreach (Type t in weaponStatTypes) {
                 typeRequirements[type].Add(t);
             }
-        }
-
-        /// <summary>
-        /// Check to see if the weapon contains all the WeaponStats required by the ability
-        /// </summary>
-        /// <param name="abilityType">The type of the ability being queried</param>
-        /// <param name="weapon">The weapon being queried</param>
-        /// <returns>True if the weapon contains all of the required stats, otherwise false</returns>
-        public static bool HasWeaponStats(Type abilityType, WeaponManager weaponWielder) {
-            if (!abilityType.IsSubclassOf(typeof(WeaponAbility))) {
-                Debug.LogWarning("The ability type being queried is not a WeaponAbility!");
-                return false;
-            }
-            if (weaponWielder == null) {
-                return false;
-            }
-
-            if (typeRequirements.TryGetValue(abilityType, out var requirement)) {
-                Weapon querying;
-                if (OffhandWeaponAbilityAttribute.IsOffhand(abilityType)) {
-                    querying = weaponWielder.Offhand;
-                }
-                else {
-                    querying = weaponWielder.Mainhand;
-                }
-                if (querying == null)
-                {
-                    return false;
-                }
-
-                foreach (Type type in requirement) {
-                    if (!querying.HasWeaponStat(type)) {
-                        return false;
-                    }
-                }
-            }
-            return true;
         }
     }
 }

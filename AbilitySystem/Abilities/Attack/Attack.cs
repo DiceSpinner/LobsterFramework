@@ -95,7 +95,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         protected override void OnSignaled()
         {
             AttackContext context = (AttackContext)Context;
-            if (context.currentWeapon.state != WeaponState.Attacking) {
+            if (context.currentWeapon.State != WeaponState.Attacking) {
                 context.inputSignaled.Put(true);
             }
         }

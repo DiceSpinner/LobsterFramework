@@ -3110,19 +3110,6 @@ references:
   fullName.vb: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.New
   nameWithType: RequireWeaponStatAttribute.RequireWeaponStatAttribute
   nameWithType.vb: RequireWeaponStatAttribute.New
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager)
-  name: HasWeaponStats(Type, WeaponManager)
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_HasWeaponStats_System_Type_LobsterFramework_AbilitySystem_WeaponSystem_WeaponManager_
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager)
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type, LobsterFramework.AbilitySystem.WeaponSystem.WeaponManager)
-  nameWithType: RequireWeaponStatAttribute.HasWeaponStats(Type, WeaponManager)
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats*
-  name: HasWeaponStats
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_HasWeaponStats_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.HasWeaponStats
-  nameWithType: RequireWeaponStatAttribute.HasWeaponStats
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)
   name: Init(Type)
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Init_System_Type_
@@ -3136,6 +3123,12 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init
   nameWithType: RequireWeaponStatAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements
+  name: Requirements
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Requirements
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements
+  nameWithType: RequireWeaponStatAttribute.Requirements
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
   name: Weapon
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html
@@ -3493,19 +3486,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Sharpness
   nameWithType: Weapon.Sharpness
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  name: state
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html#LobsterFramework_AbilitySystem_WeaponSystem_Weapon_state
-  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  nameWithType: Weapon.state
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state*
-  name: state
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html#LobsterFramework_AbilitySystem_WeaponSystem_Weapon_state_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  name: State
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html#LobsterFramework_AbilitySystem_WeaponSystem_Weapon_State
+  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  nameWithType: Weapon.State
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State*
+  name: State
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html#LobsterFramework_AbilitySystem_WeaponSystem_Weapon_State_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
   isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  nameWithType: Weapon.state
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  nameWithType: Weapon.State
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Tail
   name: Tail
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html#LobsterFramework_AbilitySystem_WeaponSystem_Weapon_Tail

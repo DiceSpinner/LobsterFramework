@@ -299,7 +299,7 @@ public sealed class Guard : WeaponAbility</code></pre>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_Coroutine_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_Coroutine" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine">Coroutine()</h4>
-  <div class="markdown level1 summary"><p>The body of the ability execution, replaces Action method</p>
+  <div class="markdown level1 summary"><p>The body of the ability execution, replaces <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Action">Action()</a> method</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -317,7 +317,8 @@ public sealed class Guard : WeaponAbility</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="LobsterFramework.Utility.CoroutineOption.html">CoroutineOption</a>&gt;</td>
-        <td></td>
+        <td><p>A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <a class="xref" href="LobsterFramework.Utility.CoroutineOption.html">CoroutineOption</a></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -332,7 +333,7 @@ public sealed class Guard : WeaponAbility</code></pre>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_InitWeaponAbilityReferences_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.InitWeaponAbilityReferences*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_InitWeaponAbilityReferences" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.InitWeaponAbilityReferences">InitWeaponAbilityReferences()</h4>
-  <div class="markdown level1 summary"><p>Use this to implement custom initialization routines</p>
+  <div class="markdown level1 summary"><p>Replaces <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InitializeSharedReferences">InitializeSharedReferences()</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -386,7 +387,7 @@ public sealed class Guard : WeaponAbility</code></pre>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnCoroutineReset_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineReset*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnCoroutineReset" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineReset">OnCoroutineReset()</h4>
-  <div class="markdown level1 summary"><p>Calleback when <a class="xref" href="LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Reset">Reset</a> is yielded by <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine">Coroutine()</a></p>
+  <div class="markdown level1 summary"><p>Called when <a class="xref" href="LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Reset">Reset</a> is yielded by <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine">Coroutine()</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -457,7 +458,7 @@ public sealed class Guard : WeaponAbility</code></pre>
   </span>
   <a id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_WeaponAbilityReady_" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.WeaponAbilityReady*"></a>
   <h4 id="LobsterFramework_AbilitySystem_WeaponSystem_Guard_WeaponAbilityReady" data-uid="LobsterFramework.AbilitySystem.WeaponSystem.Guard.WeaponAbilityReady">WeaponAbilityReady()</h4>
-  <div class="markdown level1 summary"><p>Use this to implement custom weapon ability rules</p>
+  <div class="markdown level1 summary"><p>Use this to implement custom weapon ability rules, replaces <a class="xref" href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_ConditionSatisfied">ConditionSatisfied()</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>

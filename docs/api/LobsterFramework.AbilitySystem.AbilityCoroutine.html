@@ -354,11 +354,11 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_Action.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.Action%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L37">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L46">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_Action_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.Action*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_Action" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.Action">Action()</h4>
-  <div class="markdown level1 summary"><p>Called every frame while the ability instance remains in the execution queue.</p>
+  <div class="markdown level1 summary"><p>Replaced by <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine">Coroutine()</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -376,8 +376,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>false if the ability has finished and should not execute further, otherwise true</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -388,11 +387,11 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L54">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L63">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine">Coroutine()</h4>
-  <div class="markdown level1 summary"><p>The body of the ability execution, replaces Action method</p>
+  <div class="markdown level1 summary"><p>The body of the ability execution, replaces <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Action">Action()</a> method</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -410,7 +409,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="LobsterFramework.Utility.CoroutineOption.html">CoroutineOption</a>&gt;</td>
-        <td></td>
+        <td><p>A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <a class="xref" href="LobsterFramework.Utility.CoroutineOption.html">CoroutineOption</a></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -419,11 +419,11 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityEnqueue.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L12">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L14">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityEnqueue_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityEnqueue" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue">OnAbilityEnqueue()</h4>
-  <div class="markdown level1 summary"><p>Called when the ability is added to the queue for execution</p>
+  <div class="markdown level1 summary"><p>Replaced by <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineEnqueue">OnCoroutineEnqueue()</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -437,11 +437,11 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityFinish.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L25">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L30">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityFinish_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnAbilityFinish" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish">OnAbilityFinish()</h4>
-  <div class="markdown level1 summary"><p>Called when the ability is finished or halted.</p>
+  <div class="markdown level1 summary"><p>Replaced by <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineFinish">OnCoroutineFinish()</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -455,7 +455,7 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineEnqueue.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L23">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L25">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineEnqueue_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineEnqueue" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue">OnCoroutineEnqueue()</h4>
@@ -471,7 +471,7 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineFinish.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L35">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L40">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineFinish_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineFinish" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish">OnCoroutineFinish()</h4>
@@ -487,11 +487,11 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineReset.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L47">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L56">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineReset_" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineReset" data-uid="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset">OnCoroutineReset()</h4>
-  <div class="markdown level1 summary"><p>Calleback when <a class="xref" href="LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Reset">Reset</a> is yielded by <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine">Coroutine()</a></p>
+  <div class="markdown level1 summary"><p>Called when <a class="xref" href="LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Reset">Reset</a> is yielded by <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine">Coroutine()</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -510,7 +510,7 @@
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AbilityCoroutine.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AbilityCoroutine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/AbilityCoroutine.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

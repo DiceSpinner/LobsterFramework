@@ -19,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityChannel
     path: ../AbilitySystem/Ability.cs
-    startLine: 516
+    startLine: 521
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -27,6 +27,8 @@ items:
     Communication channel of the ability. Can be used to control ability behaviors at runtime.
 
     When creating a new ability, you must also declare a class named "AbilityName"Channel in the same namespace where "AbilityName" is the name of the ability you're creating.
+
+    Can be accessed via <xref href="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent%60%601" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: public class AbilityChannel
@@ -48,6 +50,35 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
 references:
+- uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+  commentId: M:LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+  href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+  name: GetAbilityComponent<T>()
+  nameWithType: AbilityManager.GetAbilityComponent<T>()
+  fullName: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent<T>()
+  nameWithType.vb: AbilityManager.GetAbilityComponent(Of T)()
+  fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent(Of T)()
+  name.vb: GetAbilityComponent(Of T)()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+    name: GetAbilityComponent
+    href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+    name: GetAbilityComponent
+    href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html

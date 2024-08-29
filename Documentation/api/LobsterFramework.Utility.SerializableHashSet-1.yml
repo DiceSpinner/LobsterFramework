@@ -42,7 +42,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SerializableHashSet
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 7
+    startLine: 6
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -59,8 +59,6 @@ items:
       Public Class SerializableHashSet(Of TValue) Implements ISet(Of TValue), ICollection(Of TValue), IEnumerable(Of TValue), IEnumerable, ISerializationCallbackReceiver
   inheritance:
   - System.Object
-  derivedClasses:
-  - LobsterFramework.Utility.AbilitySet
   implements:
   - System.Collections.Generic.ISet{{TValue}}
   - System.Collections.Generic.ICollection{{TValue}}
@@ -100,7 +98,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: m_HashSet
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -129,7 +127,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: values
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -168,7 +166,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Count
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -202,7 +200,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsReadOnly
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -236,7 +234,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Add
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -272,7 +270,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Clear
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -303,7 +301,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Contains
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 27
+    startLine: 26
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -339,7 +337,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CopyTo
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 32
+    startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -376,7 +374,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ExceptWith
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 37
+    startLine: 36
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -411,7 +409,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetEnumerator
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 42
+    startLine: 41
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -444,7 +442,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IntersectWith
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 47
+    startLine: 46
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -479,7 +477,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsProperSubsetOf
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 52
+    startLine: 51
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -516,7 +514,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsProperSupersetOf
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 57
+    startLine: 56
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -553,7 +551,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsSubsetOf
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 62
+    startLine: 61
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -590,7 +588,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsSupersetOf
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 67
+    startLine: 66
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -627,7 +625,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAfterDeserialize
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 72
+    startLine: 71
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -659,7 +657,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnBeforeSerialize
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 82
+    startLine: 81
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -691,7 +689,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Overlaps
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 91
+    startLine: 90
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -728,7 +726,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Remove
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 96
+    startLine: 95
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -764,7 +762,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetEquals
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 101
+    startLine: 100
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -801,7 +799,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SymmetricExceptWith
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 106
+    startLine: 105
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -836,7 +834,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UnionWith
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 111
+    startLine: 110
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -871,7 +869,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetValueInList
     path: ../Utility/SerializableDataStructures/SerializableHashSet.cs
-    startLine: 126
+    startLine: 125
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility

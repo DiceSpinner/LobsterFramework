@@ -178,7 +178,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         }
 
         public void SwitchMainHand() {
-            if (Mainhand != null && Mainhand.state == WeaponState.Idle)
+            if (Mainhand != null && Mainhand.State == WeaponState.Idle)
             {
                 if (Mainhand2 != null)
                 {
@@ -207,7 +207,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
         public void SwitchOffHand()
         {
-            if (Offhand != null && Offhand.state == WeaponState.Idle)
+            if (Offhand != null && Offhand.State == WeaponState.Idle)
             {
                 if (Offhand2 != null)
                 {

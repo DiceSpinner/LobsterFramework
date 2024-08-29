@@ -25,7 +25,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
         protected override bool WeaponAbilityReady()
         {
-            return WeaponManager.Mainhand.state == WeaponState.Idle;
+            return WeaponManager.Mainhand.State == WeaponState.Idle;
         }
 
         protected override void OnCoroutineEnqueue()
@@ -79,9 +79,9 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             // Wait for deflect, if deflect period has passed then wait for Guard cancel
             while (!context.deflected)
             {
-                if (context.currentWeapon.state == WeaponState.Deflecting && Time.time >= context.deflectOver)
+                if (context.currentWeapon.State == WeaponState.Deflecting && Time.time >= context.deflectOver)
                 {
-                    context.currentWeapon.state = WeaponState.Guarding;
+                    context.currentWeapon.State = WeaponState.Guarding;
                 }
                 yield return CoroutineOption.Continue;
             }
@@ -93,7 +93,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             {
                 yield return CoroutineOption.Continue;
             }
-            context.currentWeapon.state = WeaponState.Guarding;
+            context.currentWeapon.State = WeaponState.Guarding;
             context.animancerState.IsPlaying = false;
             context.animancerState.Time = currentClipTime;
 

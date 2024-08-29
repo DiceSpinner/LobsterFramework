@@ -25,7 +25,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponAbility
     path: ../AbilitySystem/Weapon System/WeaponAbility.cs
-    startLine: 2
+    startLine: 4
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponManager
     path: ../AbilitySystem/Weapon System/WeaponAbility.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -188,7 +188,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsMainhanded
     path: ../AbilitySystem/Weapon System/WeaponAbility.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -217,7 +217,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializeSharedReferences
     path: ../AbilitySystem/Weapon System/WeaponAbility.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -246,11 +246,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitWeaponAbilityReferences
     path: ../AbilitySystem/Weapon System/WeaponAbility.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Use this to implement custom initialization routines
+  summary: Replaces <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected virtual void InitWeaponAbilityReferences()
@@ -274,17 +274,17 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ConditionSatisfied
     path: ../AbilitySystem/Weapon System/WeaponAbility.cs
-    startLine: 24
+    startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Used for doing additional requirement check for running the ability.
+  summary: Replaced by <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override sealed bool ConditionSatisfied()
     return:
       type: System.Boolean
-      description: true if the condition for this ability has been satisfied, otherwise false
+      description: ''
     content.vb: Protected NotOverridable Overrides Function ConditionSatisfied() As Boolean
   overridden: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   overload: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied*
@@ -306,11 +306,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponAbilityReady
     path: ../AbilitySystem/Weapon System/WeaponAbility.cs
-    startLine: 43
+    startLine: 61
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Use this to implement custom weapon ability rules
+  summary: Use this to implement custom weapon ability rules, replaces <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected virtual bool WeaponAbilityReady()
@@ -3212,12 +3212,49 @@ references:
   name: InitializeSharedReferences
   nameWithType: WeaponAbility.InitializeSharedReferences
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  name: InitializeSharedReferences()
+  nameWithType: WeaponAbility.InitializeSharedReferences()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+    name: InitializeSharedReferences
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+    name: InitializeSharedReferences
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences*
   commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
   href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
   name: InitWeaponAbilityReferences
   nameWithType: WeaponAbility.InitWeaponAbilityReferences
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  name: WeaponAbilityReady()
+  nameWithType: WeaponAbility.WeaponAbilityReady()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+    name: WeaponAbilityReady
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+    name: WeaponAbilityReady
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   commentId: M:LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   parent: LobsterFramework.AbilitySystem.Ability
@@ -3243,6 +3280,31 @@ references:
   name: ConditionSatisfied
   nameWithType: WeaponAbility.ConditionSatisfied
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  parent: LobsterFramework.AbilitySystem.WeaponSystem
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html
+  name: WeaponAbility
+  nameWithType: WeaponAbility
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  name: ConditionSatisfied()
+  nameWithType: WeaponAbility.ConditionSatisfied()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+    name: ConditionSatisfied
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+    name: ConditionSatisfied
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady*
   commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
   href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady

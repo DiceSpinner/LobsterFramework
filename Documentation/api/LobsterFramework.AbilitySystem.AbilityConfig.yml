@@ -22,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityConfig
     path: ../AbilitySystem/Ability.cs
-    startLine: 524
+    startLine: 529
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -127,7 +127,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CoolDown
     path: ../AbilitySystem/Ability.cs
-    startLine: 528
+    startLine: 533
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -156,7 +156,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UseCooldown
     path: ../AbilitySystem/Ability.cs
-    startLine: 529
+    startLine: 534
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -185,7 +185,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Validate
     path: ../AbilitySystem/Ability.cs
-    startLine: 534
+    startLine: 539
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

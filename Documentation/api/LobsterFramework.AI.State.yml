@@ -26,13 +26,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: State
     path: ../AI/State.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
   summary: >-
     A state that can be runned in the <xref href="LobsterFramework.AI.StateMachine" data-throw-if-not-resolved="false"></xref>. Can be added to and edited inside <xref href="LobsterFramework.AI.StateData" data-throw-if-not-resolved="false"></xref>. <br />
-
 
     Use <xref href="LobsterFramework.AI.AddStateMenuAttribute" data-throw-if-not-resolved="false"></xref> and <xref href="LobsterFramework.AI.StateTransitionAttribute" data-throw-if-not-resolved="false"></xref> to define transitions for the state and make it visible to the editor scritps to allow editing in the custom inspector of <xref href="LobsterFramework.AI.StateData" data-throw-if-not-resolved="false"></xref>
   example: []
@@ -116,7 +115,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: stateMachine
     path: ../AI/State.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -153,7 +152,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetComponentReference
     path: ../AI/State.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -198,7 +197,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializeFields
     path: ../AI/State.cs
-    startLine: 31
+    startLine: 30
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -226,7 +225,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnBecomeInactive
     path: ../AI/State.cs
-    startLine: 36
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -254,7 +253,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnExit
     path: ../AI/State.cs
-    startLine: 41
+    startLine: 40
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -282,7 +281,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnEnter
     path: ../AI/State.cs
-    startLine: 46
+    startLine: 45
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -310,7 +309,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Tick
     path: ../AI/State.cs
-    startLine: 52
+    startLine: 51
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI

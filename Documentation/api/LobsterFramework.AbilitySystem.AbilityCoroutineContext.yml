@@ -19,11 +19,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityCoroutineContext
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 59
+    startLine: 68
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: AbilityConfig of coroutines, subclass configs need to inherit from this to properly work
+  summary: Running context of coroutine abilities, subclass contexts need to inherit from this.
   example: []
   syntax:
     content: 'public class AbilityCoroutineContext : AbilityContext'

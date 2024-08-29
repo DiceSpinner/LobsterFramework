@@ -26,7 +26,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityCoroutine
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -142,11 +142,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityEnqueue
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Called when the ability is added to the queue for execution
+  summary: Replaced by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override sealed void OnAbilityEnqueue()
@@ -171,7 +171,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnCoroutineEnqueue
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -199,11 +199,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityFinish
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 24
+    startLine: 29
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Called when the ability is finished or halted.
+  summary: Replaced by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override sealed void OnAbilityFinish()
@@ -228,7 +228,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnCoroutineFinish
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 34
+    startLine: 39
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -256,17 +256,17 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Action
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 36
+    startLine: 45
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Called every frame while the ability instance remains in the execution queue.
+  summary: Replaced by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override sealed bool Action()
     return:
       type: System.Boolean
-      description: false if the ability has finished and should not execute further, otherwise true
+      description: ''
     content.vb: Protected NotOverridable Overrides Function Action() As Boolean
   overridden: LobsterFramework.AbilitySystem.Ability.Action
   overload: LobsterFramework.AbilitySystem.AbilityCoroutine.Action*
@@ -288,11 +288,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnCoroutineReset
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Calleback when <xref href="LobsterFramework.Utility.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
+  summary: Called when <xref href="LobsterFramework.Utility.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected abstract void OnCoroutineReset()
@@ -316,17 +316,17 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Coroutine
     path: ../AbilitySystem/AbilityCoroutine.cs
-    startLine: 53
+    startLine: 62
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: The body of the ability execution, replaces Action method
+  summary: The body of the ability execution, replaces <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Action" data-throw-if-not-resolved="false"></xref> method
   example: []
   syntax:
     content: protected abstract IEnumerable<CoroutineOption> Coroutine()
     return:
       type: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
-      description: ''
+      description: A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <xref href="LobsterFramework.Utility.CoroutineOption" data-throw-if-not-resolved="false"></xref>
     content.vb: Protected MustOverride Function Coroutine() As IEnumerable(Of CoroutineOption)
   overload: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine*
 references:
@@ -3035,6 +3035,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+  name: OnCoroutineEnqueue()
+  nameWithType: AbilityCoroutine.OnCoroutineEnqueue()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+    name: OnCoroutineEnqueue
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+    name: OnCoroutineEnqueue
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.OnAbilityEnqueue
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnAbilityEnqueue
   parent: LobsterFramework.AbilitySystem.Ability
@@ -3060,6 +3079,13 @@ references:
   name: OnAbilityEnqueue
   nameWithType: AbilityCoroutine.OnAbilityEnqueue
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine
+  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutine
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html
+  name: AbilityCoroutine
+  nameWithType: AbilityCoroutine
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
   commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
   parent: LobsterFramework.AbilitySystem.AbilityCoroutine
@@ -3085,13 +3111,25 @@ references:
   name: OnCoroutineEnqueue
   nameWithType: AbilityCoroutine.OnCoroutineEnqueue
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutine
-  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutine
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html
-  name: AbilityCoroutine
-  nameWithType: AbilityCoroutine
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+  name: OnCoroutineFinish()
+  nameWithType: AbilityCoroutine.OnCoroutineFinish()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+    name: OnCoroutineFinish
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+    name: OnCoroutineFinish
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnAbilityFinish
   parent: LobsterFramework.AbilitySystem.Ability
@@ -3142,6 +3180,25 @@ references:
   name: OnCoroutineFinish
   nameWithType: AbilityCoroutine.OnCoroutineFinish
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  name: Coroutine()
+  nameWithType: AbilityCoroutine.Coroutine()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+    name: Coroutine
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+    name: Coroutine
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.Action
   commentId: M:LobsterFramework.AbilitySystem.Ability.Action
   parent: LobsterFramework.AbilitySystem.Ability
@@ -3184,31 +3241,38 @@ references:
   name: Reset
   nameWithType: CoroutineOption.Reset
   fullName: LobsterFramework.Utility.CoroutineOption.Reset
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
-  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
-  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
-  name: Coroutine()
-  nameWithType: AbilityCoroutine.Coroutine()
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
-    name: Coroutine
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
-    name: Coroutine
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
-  - name: (
-  - name: )
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   name: OnCoroutineReset
   nameWithType: AbilityCoroutine.OnCoroutineReset
   fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  name: Action()
+  nameWithType: AbilityCoroutine.Action()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.Action()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+    name: Action
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+    name: Action
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CoroutineOption
+  commentId: T:LobsterFramework.Utility.CoroutineOption
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.Utility.CoroutineOption
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
@@ -3248,6 +3312,28 @@ references:
     name: CoroutineOption
     href: LobsterFramework.Utility.CoroutineOption.html
   - name: )
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true

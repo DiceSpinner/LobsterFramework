@@ -158,7 +158,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Use this to implement custom initialization routines
+  summary: Replaces <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override void InitWeaponAbilityReferences()
@@ -187,7 +187,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Use this to implement custom weapon ability rules
+  summary: Use this to implement custom weapon ability rules, replaces <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override bool WeaponAbilityReady()
@@ -277,13 +277,13 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: The body of the ability execution, replaces Action method
+  summary: The body of the ability execution, replaces <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Action" data-throw-if-not-resolved="false"></xref> method
   example: []
   syntax:
     content: protected override IEnumerable<CoroutineOption> Coroutine()
     return:
       type: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
-      description: ''
+      description: A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <xref href="LobsterFramework.Utility.CoroutineOption" data-throw-if-not-resolved="false"></xref>
     content.vb: Protected Overrides Function Coroutine() As IEnumerable(Of CoroutineOption)
   overridden: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   overload: LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine*
@@ -370,7 +370,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Calleback when <xref href="LobsterFramework.Utility.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
+  summary: Called when <xref href="LobsterFramework.Utility.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override void OnCoroutineReset()
@@ -2663,6 +2663,24 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  name: InitializeSharedReferences()
+  nameWithType: WeaponAbility.InitializeSharedReferences()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+    name: InitializeSharedReferences
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+    name: InitializeSharedReferences
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitializeSharedReferences
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
   parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
@@ -2688,6 +2706,24 @@ references:
   name: InitWeaponAbilityReferences
   nameWithType: Guard.InitWeaponAbilityReferences
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.InitWeaponAbilityReferences
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  name: ConditionSatisfied()
+  nameWithType: WeaponAbility.ConditionSatisfied()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+    name: ConditionSatisfied
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+    name: ConditionSatisfied
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.ConditionSatisfied
+  - name: (
+  - name: )
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
   parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
@@ -2812,6 +2848,32 @@ references:
   name: OnCoroutineFinish
   nameWithType: Guard.OnCoroutineFinish
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  name: Action()
+  nameWithType: AbilityCoroutine.Action()
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.Action()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+    name: Action
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+    name: Action
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.CoroutineOption
+  commentId: T:LobsterFramework.Utility.CoroutineOption
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.Utility.CoroutineOption
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   parent: LobsterFramework.AbilitySystem.AbilityCoroutine
@@ -2870,6 +2932,28 @@ references:
     name: CoroutineOption
     href: LobsterFramework.Utility.CoroutineOption.html
   - name: )
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true

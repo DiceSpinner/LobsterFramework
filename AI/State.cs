@@ -6,7 +6,6 @@ namespace LobsterFramework.AI
 {
     /// <summary>
     /// A state that can be runned in the <see cref="StateMachine"/>. Can be added to and edited inside <see cref="StateData"/>. <br/>
-    /// 
     /// Use <see cref="AddStateMenuAttribute"/> and <see cref="StateTransitionAttribute"/> to define transitions for the state and make it visible to the editor scritps to allow editing in the custom inspector of <see cref="StateData"/>
     /// </summary>
     public abstract class State : ScriptableObject

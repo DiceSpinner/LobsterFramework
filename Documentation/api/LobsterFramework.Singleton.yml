@@ -20,10 +20,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Singleton
     path: ../Singleton.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
+  summary: Provides access to singleton components defined by LobsterFramework
+  example: []
   syntax:
     content: public static class Singleton
     content.vb: Public Module Singleton
@@ -55,7 +57,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SingletonObject
     path: ../Singleton.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

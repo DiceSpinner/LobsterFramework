@@ -3,9 +3,7 @@ items:
 - uid: Global
   id: Global
   children:
-  - Global.AITrackData
   - Global.BoolEventChannel
-  - Global.ControllerData
   - Global.DescriptionBaseSO
   - Global.FloatEventChannel
   - Global.IntEventChannel
@@ -65,12 +63,6 @@ references:
   name: VarInt
   nameWithType: VarInt
   fullName: VarInt
-- uid: Global.AITrackData
-  commentId: T:Global.AITrackData
-  href: AITrackData.html
-  name: AITrackData
-  nameWithType: AITrackData
-  fullName: AITrackData
 - uid: Global.OrderedSet`1
   commentId: T:Global.OrderedSet`1
   href: OrderedSet-1.html
@@ -96,12 +88,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: Global.ControllerData
-  commentId: T:Global.ControllerData
-  href: ControllerData.html
-  name: ControllerData
-  nameWithType: ControllerData
-  fullName: ControllerData
 - uid: Global.IntEventChannel
   commentId: T:Global.IntEventChannel
   href: IntEventChannel.html

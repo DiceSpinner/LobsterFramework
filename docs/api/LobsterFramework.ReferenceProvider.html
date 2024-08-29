@@ -464,14 +464,14 @@
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_ReferenceProvider_Bind_LobsterFramework_ReferenceRequester_.md&amp;value=---%0Auid%3A%20LobsterFramework.ReferenceProvider.Bind(LobsterFramework.ReferenceRequester)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L41">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L45">View Source</a>
   </span>
   <a id="LobsterFramework_ReferenceProvider_Bind_" data-uid="LobsterFramework.ReferenceProvider.Bind*"></a>
   <h4 id="LobsterFramework_ReferenceProvider_Bind_LobsterFramework_ReferenceRequester_" data-uid="LobsterFramework.ReferenceProvider.Bind(LobsterFramework.ReferenceRequester)">Bind(ReferenceRequester)</h4>
   <div class="markdown level1 summary"><p>Bind the data container with the reference provider to update the set of fields required to store the references required by the data container.
 The required references of any previous binded data container different from the currently binded one will be lost.
 This component will listen to changes made to the data container and react accordingly.
-This method should be called in the &quot;OnValidate&quot; message to ensure the listeners are properly hooked up</p>
+This method should always be called in the &quot;OnValidate&quot; message to ensure the listeners are properly hooked up</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -501,7 +501,7 @@ This method should be called in the &quot;OnValidate&quot; message to ensure the
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_ReferenceProvider_GetComponentReference__1_System_Type_System_Int32_.md&amp;value=---%0Auid%3A%20LobsterFramework.ReferenceProvider.GetComponentReference%60%601(System.Type%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L212">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L216">View Source</a>
   </span>
   <a id="LobsterFramework_ReferenceProvider_GetComponentReference_" data-uid="LobsterFramework.ReferenceProvider.GetComponentReference*"></a>
   <h4 id="LobsterFramework_ReferenceProvider_GetComponentReference__1_System_Type_System_Int32_" data-uid="LobsterFramework.ReferenceProvider.GetComponentReference``1(System.Type,System.Int32)">GetComponentReference&lt;T&gt;(Type, int)</h4>
@@ -572,7 +572,7 @@ This method should be called in the &quot;OnValidate&quot; message to ensure the
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_ReferenceProvider_IsRequirementSatisfied_System_Type_.md&amp;value=---%0Auid%3A%20LobsterFramework.ReferenceProvider.IsRequirementSatisfied(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L185">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L189">View Source</a>
   </span>
   <a id="LobsterFramework_ReferenceProvider_IsRequirementSatisfied_" data-uid="LobsterFramework.ReferenceProvider.IsRequirementSatisfied*"></a>
   <h4 id="LobsterFramework_ReferenceProvider_IsRequirementSatisfied_System_Type_" data-uid="LobsterFramework.ReferenceProvider.IsRequirementSatisfied(System.Type)">IsRequirementSatisfied(Type)</h4>
@@ -622,11 +622,12 @@ This method should be called in the &quot;OnValidate&quot; message to ensure the
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_ReferenceProvider_OnDestroy.md&amp;value=---%0Auid%3A%20LobsterFramework.ReferenceProvider.OnDestroy%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L28">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L32">View Source</a>
   </span>
   <a id="LobsterFramework_ReferenceProvider_OnDestroy_" data-uid="LobsterFramework.ReferenceProvider.OnDestroy*"></a>
   <h4 id="LobsterFramework_ReferenceProvider_OnDestroy" data-uid="LobsterFramework.ReferenceProvider.OnDestroy">OnDestroy()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Unbind with the data container requesting component references</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -641,7 +642,8 @@ This method should be called in the &quot;OnValidate&quot; message to ensure the
   </span>
   <a id="LobsterFramework_ReferenceProvider_OnValidate_" data-uid="LobsterFramework.ReferenceProvider.OnValidate*"></a>
   <h4 id="LobsterFramework_ReferenceProvider_OnValidate" data-uid="LobsterFramework.ReferenceProvider.OnValidate">OnValidate()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Validate and hook up listeners with the data container requesting component references</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -652,7 +654,7 @@ This method should be called in the &quot;OnValidate&quot; message to ensure the
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_ReferenceProvider_UnBind.md&amp;value=---%0Auid%3A%20LobsterFramework.ReferenceProvider.UnBind%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L64">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/ReferenceManagement/ReferenceProvider.cs/#L68">View Source</a>
   </span>
   <a id="LobsterFramework_ReferenceProvider_UnBind_" data-uid="LobsterFramework.ReferenceProvider.UnBind*"></a>
   <h4 id="LobsterFramework_ReferenceProvider_UnBind" data-uid="LobsterFramework.ReferenceProvider.UnBind">UnBind()</h4>

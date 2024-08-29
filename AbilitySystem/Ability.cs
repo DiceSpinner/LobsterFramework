@@ -30,6 +30,10 @@ namespace LobsterFramework.AbilitySystem {
         /// The priority in which this ability will be executed. Higher number means earlier execution in relation to other abilities.
         /// </summary>
         public int ExecutionPriority { get { return executionPriority; } }
+
+        /// <summary>
+        /// The name of the currently running ability instance
+        /// </summary>
         protected string Instance { get; private set; }
         /// <summary>
         /// The configuration of the currently executing ability instance
@@ -496,7 +500,7 @@ namespace LobsterFramework.AbilitySystem {
         #endregion
     }
 
-    #region Complementary classes (Must be defined for each Ability)
+    #region Complementary classes (Must be defined for each Ability that can be instantiazed)
     /// <summary>
     ///  The runtime context of the ability. Not accessible from outside.
     ///  When creating a new ability, you must also declare a class named "AbilityName"Context in the same namespace where "AbilityName" is the name of the ability you're creating.
@@ -513,6 +517,7 @@ namespace LobsterFramework.AbilitySystem {
     /// <summary>
     /// Communication channel of the ability. Can be used to control ability behaviors at runtime.
     /// When creating a new ability, you must also declare a class named "AbilityName"Channel in the same namespace where "AbilityName" is the name of the ability you're creating.
+    /// Can be accessed via <see cref="AbilityManager.GetAbilityComponent{T}"/>
     /// </summary>
     public class AbilityChannel
     {
@@ -571,6 +576,8 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         public bool IsNullAbility { get { return ability == null; } }
+
+        public bool Equals(AbilityInstance instance) { return ability == instance.ability && name == instance.name;  }
     }
 
     [Serializable]

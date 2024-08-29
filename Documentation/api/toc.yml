@@ -3,12 +3,8 @@ items:
 - uid: Global
   name: ''
   items:
-  - uid: Global.AITrackData
-    name: AITrackData
   - uid: Global.BoolEventChannel
     name: BoolEventChannel
-  - uid: Global.ControllerData
-    name: ControllerData
   - uid: Global.DescriptionBaseSO
     name: DescriptionBaseSO
   - uid: Global.FloatEventChannel
@@ -405,8 +401,6 @@ items:
 - uid: LobsterFramework.Utility
   name: LobsterFramework.Utility
   items:
-  - uid: LobsterFramework.Utility.AbilitySet
-    name: AbilitySet
   - uid: LobsterFramework.Utility.And
     name: And
   - uid: LobsterFramework.Utility.CombinedValue`1

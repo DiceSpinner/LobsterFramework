@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace LobsterFramework
 {
+    /// <summary>
+    /// Provides access to singleton components defined by LobsterFramework
+    /// </summary>
     public static class Singleton
     {
         public static GameObject SingletonObject { get; private set; }

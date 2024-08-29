@@ -34,10 +34,10 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.SetOnHitDamage(LobsterFramework.Damage)
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.SetOnHitDamage(System.Single,System.Single)
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Sharpness
+  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Tail
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.WeaponType
   - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Weight
-  - LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
   langs:
   - csharp
   - vb
@@ -887,35 +887,35 @@ items:
       type: LobsterFramework.Entity
     content.vb: Public Property Entity As Entity
   overload: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.Entity*
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  id: state
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  id: State
   parent: LobsterFramework.AbilitySystem.WeaponSystem.Weapon
   langs:
   - csharp
   - vb
-  name: state
-  nameWithType: Weapon.state
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
+  name: State
+  nameWithType: Weapon.State
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
   type: Property
   source:
     remote:
       path: AbilitySystem/Weapon System/Weapon.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: state
+    id: State
     path: ../AbilitySystem/Weapon System/Weapon.cs
     startLine: 109
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
   syntax:
-    content: public WeaponState state { get; set; }
+    content: public WeaponState State { get; set; }
     parameters: []
     return:
       type: LobsterFramework.AbilitySystem.WeaponSystem.WeaponState
-    content.vb: Public Property state As WeaponState
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state*
+    content.vb: Public Property State As WeaponState
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State*
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.SetOnHitDamage(System.Single,System.Single)
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.SetOnHitDamage(System.Single,System.Single)
   id: SetOnHitDamage(System.Single,System.Single)
@@ -934,7 +934,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetOnHitDamage
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 126
+    startLine: 127
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -968,7 +968,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetOnHitDamage
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 129
+    startLine: 130
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -997,7 +997,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Enable
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 144
+    startLine: 145
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1029,7 +1029,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Disable
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 151
+    startLine: 152
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1057,7 +1057,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Pause
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 161
+    startLine: 162
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1085,7 +1085,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetWeaponStat
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 175
+    startLine: 176
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1122,7 +1122,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasWeaponStat
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 190
+    startLine: 191
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1159,7 +1159,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasWeaponStat
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 200
+    startLine: 201
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -5945,12 +5945,12 @@ references:
   name: Entity
   nameWithType: Entity
   fullName: LobsterFramework.Entity
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  href: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html#LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
-  name: state
-  nameWithType: Weapon.state
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.state
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  href: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.html#LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
+  name: State
+  nameWithType: Weapon.State
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Weapon.State
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponState
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponState
   parent: LobsterFramework.AbilitySystem.WeaponSystem

@@ -4,7 +4,6 @@ items:
   commentId: N:LobsterFramework.Utility
   id: LobsterFramework.Utility
   children:
-  - LobsterFramework.Utility.AbilitySet
   - LobsterFramework.Utility.And
   - LobsterFramework.Utility.CombinedValueEffector`1
   - LobsterFramework.Utility.CombinedValue`1
@@ -169,12 +168,6 @@ references:
   - name: " "
   - name: TValue
   - name: )
-- uid: LobsterFramework.Utility.AbilitySet
-  commentId: T:LobsterFramework.Utility.AbilitySet
-  href: LobsterFramework.Utility.AbilitySet.html
-  name: AbilitySet
-  nameWithType: AbilitySet
-  fullName: LobsterFramework.Utility.AbilitySet
 - uid: LobsterFramework.Utility.CoroutineRunner
   commentId: T:LobsterFramework.Utility.CoroutineRunner
   parent: LobsterFramework.Utility

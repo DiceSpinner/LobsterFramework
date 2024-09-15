@@ -1,3 +1,4 @@
+using LobsterFramework.Init;
 using LobsterFramework.Utility;
 using System;
 using System.Collections;
@@ -14,8 +15,9 @@ namespace LobsterFramework.AbilitySystem {
     /// <summary>
     /// Applied to <see cref="Ability"/> to make it visible to editor scripts
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Dual)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class AddAbilityMenuAttribute : Attribute
+    public sealed class AddAbilityMenuAttribute : InitializationAttribute
     {
         internal static Dictionary<Type, Texture2D> abilityIcons = new();
         internal static Dictionary<Type, GUIContent> abilityDisplayEntries = new();
@@ -45,17 +47,19 @@ namespace LobsterFramework.AbilitySystem {
             this.menuPath = menuPath;   
         }
 
-        internal void AddAbility(Type abilityType) {
+        public static bool IsCompatible(Type abilityType)
+        {
             if (abilityType.IsSubclassOf(typeof(Ability)))
             {
-                if (!abilityType.IsSealed) {
-                    Debug.LogError($"{abilityType.FullName} must be sealed!");
-                    return;
+                if (!abilityType.IsSealed)
+                {
+                    return false;
                 }
 
-                if (!RegisterHandles(abilityType)) {
+                if (!RegisterHandles(abilityType))
+                {
                     Debug.LogWarning($"Failed to register handle for {abilityType.FullName}");
-                    return;
+                    return false;
                 }
 #if UNITY_EDITOR
                 GUIContent content = new(abilityType.Name);
@@ -72,16 +76,18 @@ namespace LobsterFramework.AbilitySystem {
                         abilityIcons[abilityType] = texture;
                         content.image = texture;
                     }
-                }catch (NullReferenceException)
+                }
+                catch (NullReferenceException)
                 {
                     Debug.LogError("Null pointer exception when setting icon for script: " + abilityType.FullName);
-                } 
+                }
 #endif
+                return true;
             }
-            else {
-                Debug.LogError("The type specified for ability menu is not an ability:" + abilityType.FullName);
-            }
+            return false;
+        }
 
+        internal protected override void Init(Type abilityType) {
             if (menuPath == "")
             {
                 root.options.Add(abilityType);
@@ -180,7 +186,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Check to see if the ability class has the channel, config and context classes defined in the same namespace
         /// </summary>
         /// <returns>true if all necessities have been defined, false otherwise</returns>
-        private bool RegisterHandles(Type abilityType)
+        private static bool RegisterHandles(Type abilityType)
         {
             string configName = abilityType.FullName + "Config";
             string channelName = abilityType.FullName + "Channel";
@@ -216,7 +222,7 @@ namespace LobsterFramework.AbilitySystem {
                 Func<AbilityChannel> channelHandle = null;
                 Func<AbilityContext> contextHandle = null;
 
-                Type type = GetType();
+                Type type = typeof(AddAbilityMenuAttribute);
                 #region AbilityChannel
                 try
                 {

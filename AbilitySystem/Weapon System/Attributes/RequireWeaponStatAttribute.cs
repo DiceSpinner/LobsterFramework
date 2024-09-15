@@ -1,3 +1,4 @@
+using LobsterFramework.Init;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,7 +7,8 @@ using UnityEngine;
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
-    public class RequireWeaponStatAttribute : Attribute
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Runtime)]
+    public sealed class RequireWeaponStatAttribute : InitializationAttribute
     {
         private static Dictionary<Type, HashSet<Type>> typeRequirements = new();
         private List<Type> weaponStatTypes;
@@ -34,7 +36,12 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             }
         }
 
-        public void Init(Type type) {
+        public static bool IsCompatible(Type type)
+        {
+            return type.IsSubclassOf(typeof(WeaponAbility));
+        }
+
+        internal protected override void Init(Type type) {
             if (!typeRequirements.ContainsKey(type)) { 
                 typeRequirements.Add(type, new());
             }

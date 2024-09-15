@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using LobsterFramework.Utility;
 using System.Diagnostics.CodeAnalysis;
+using LobsterFramework.Init;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -14,9 +16,9 @@ namespace LobsterFramework.AI
     /// <summary>
     /// Applied to <see cref="State"/> to make it visible to editor scripts.
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Editor)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    
-    public class AddStateMenuAttribute : Attribute
+    public sealed class AddStateMenuAttribute : InitializationAttribute
     {
         /// <summary>
         /// The root menu group
@@ -40,16 +42,23 @@ namespace LobsterFramework.AI
             this.menuName = menuPath;
         }
 
-        internal void Init(Type type) {
-            if (!type.IsSubclassOf(typeof(State))) {
-                Debug.LogWarning($"Type {type.Name} is not a valid state type!");
-                return;
+        public static bool IsCompatible(Type type)
+        {
+            if (!type.IsSubclassOf(typeof(State)))
+            {
+                return false;
             }
             if (!type.IsSealed)
-            { 
+            {
                 Debug.LogError($"{type.FullName} must be sealed!");
-                return;
+                return false;
             }
+            return true;
+        }
+
+        internal protected override void Init(Type type) {
+            
+            
             if (menuName == "")
             {
                 main.options.Add(type);

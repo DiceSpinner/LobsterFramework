@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using LobsterFramework.Utility;
+using LobsterFramework.Init;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,8 +15,9 @@ namespace LobsterFramework.AbilitySystem
     /// <summary>
     /// Applied to <see cref="AbilityComponent"/> to make it visible to editor scripts
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Dual)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class AddAbilityComponentMenuAttribute : Attribute
+    public sealed class AddAbilityComponentMenuAttribute : InitializationAttribute
     {
         
         public static HashSet<Type> types = new HashSet<Type>();
@@ -41,12 +44,14 @@ namespace LobsterFramework.AbilitySystem
             this.menuPath = menuPath;
         }
 
-        public void Init(Type componentType) {
-            if (componentType.IsSubclassOf(typeof(AbilityComponent))) 
+        public static bool IsCompatible(Type componentType)
+        {
+            if (componentType.IsSubclassOf(typeof(AbilityComponent)))
             {
-                if (!componentType.IsSealed) {
+                if (!componentType.IsSealed)
+                {
                     Debug.LogError($"{componentType.FullName} must be sealed!");
-                    return;
+                    return false;
                 }
                 types.Add(componentType);
 #if UNITY_EDITOR
@@ -66,13 +71,12 @@ namespace LobsterFramework.AbilitySystem
                     Debug.LogError("Null pointer exception when setting icon for script: " + componentType.FullName);
                 }
 #endif
+                return true;
             }
-            else
-            {
-                Debug.LogError($"Type {componentType.FullName} is not a valid {nameof(AbilityComponent)}.");
-                return;
-            }
+            return false;
+        }
 
+        internal protected override void Init(Type componentType) {
             if (menuPath == "")
             {
                 root.options.Add(componentType);

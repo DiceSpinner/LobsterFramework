@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using LobsterFramework.Utility;
+using LobsterFramework.Init;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -60,15 +61,15 @@ namespace LobsterFramework.AI
 
         private new void OnValidate()
         {
-            if (AttributeInitializer.Finished)
+            if (AttributeInitialization.Finished)
             {
                 Bind(inputData);
             }
             else
             {
                 void lambda() { Bind(inputData); }
-                AttributeInitializer.OnInitializationComplete -= lambda;
-                AttributeInitializer.OnInitializationComplete += lambda;
+                AttributeInitialization.OnInitializationComplete -= lambda;
+                AttributeInitialization.OnInitializationComplete += lambda;
             }
         }
 

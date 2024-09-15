@@ -4,14 +4,16 @@ using UnityEngine;
 using System;
 using LobsterFramework.Utility;
 using System.Reflection;
+using LobsterFramework.Init;
 
 namespace LobsterFramework
 {
     /// <summary>
     /// Indicates this class requires a reference to the specified <see cref="Component"/> to function, this attribute will be inherited by subclasses.
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Dual)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
-    public class RequireComponentReferenceAttribute : Attribute
+    public sealed class RequireComponentReferenceAttribute : InitializationAttribute
     {
         private static Dictionary<Type, Dictionary<Type, List<RequirementDescription>>> requirement = new();
 
@@ -23,6 +25,9 @@ namespace LobsterFramework
         /// </summary>
         public static ReadOnlyDictionary<Type, Dictionary<Type, List<RequirementDescription>>> Requirement = new(requirement);
 
+        public static bool IsCompatible(Type type) {
+            return type.IsSealed && !type.IsSubclassOf(typeof(Component));
+        }
 
         public RequireComponentReferenceAttribute(Type requiredType)
         {
@@ -123,10 +128,7 @@ namespace LobsterFramework
             }
         }
 
-        internal void Init(Type requesterType) {
-            if (!requesterType.IsSealed) { // Only register requirements for sealed classes, abstract classes cannot be constructed and therefore do not need to be registered. 
-                return;
-            }
+        internal protected override void Init(Type requesterType) {
             if (components == null) {
                 return;
             }

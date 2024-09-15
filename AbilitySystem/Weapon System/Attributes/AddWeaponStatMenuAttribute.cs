@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using LobsterFramework.Utility;
 using System.Diagnostics.CodeAnalysis;
+using LobsterFramework.Init;
+
 
 
 #if UNITY_EDITOR
@@ -15,8 +17,9 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     /// <summary>
     /// Applied to <see cref="WeaponStat"/> to make it visible to editor scripts
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Editor)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class AddWeaponStatMenuAttribute : Attribute
+    public sealed class AddWeaponStatMenuAttribute : InitializationAttribute
     {
         public static HashSet<Type> types = new HashSet<Type>();
         public static Dictionary<Type, Texture2D> icons = new();
@@ -41,14 +44,14 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         {
             this.menuPath = menuPath;
         }
-        public void Init(Type type)
-        {
+
+        public static bool IsCompatible(Type type) {
             if (type.IsSubclassOf(typeof(WeaponStat)))
             {
                 if (!type.IsSealed)
                 {
                     Debug.LogError($"{type.FullName} must be sealed!");
-                    return;
+                    return false;
                 }
                 types.Add(type);
 #if UNITY_EDITOR
@@ -68,13 +71,12 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
                     Debug.LogError("Null pointer exception when setting icon for script: " + type.FullName);
                 }
 #endif
+                return true;
             }
-            else
-            {
-                Debug.LogError("Attempting to apply WeaponStat Attribute on invalid type: " + type.Name);
-                return;
-            }
-
+            return false;
+        }
+        internal protected override void Init(Type type)
+        {
             if (menuPath == "")
             {
                 root.options.Add(type);

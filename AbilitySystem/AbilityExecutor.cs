@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LobsterFramework.Init;
 
 namespace LobsterFramework.AbilitySystem{
     /// <summary>
@@ -15,17 +16,9 @@ namespace LobsterFramework.AbilitySystem{
          * effects.
          */
         private readonly List<AbilityInstance> abilityQueue = new();
-         
-        private void Awake()
-        {
-            if (_instance == null)
-            {
-                _instance = this;
-            }
-            else { 
-                Destroy( gameObject);
-            }
-        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Init() { _instance = Singleton.SingletonObject.AddComponent<AbilityExecutor>(); }
 
         internal static void EnqueueAction(AbilityInstance pair)
         {
@@ -53,6 +46,8 @@ namespace LobsterFramework.AbilitySystem{
                 }
             }
         }
+
+        private void PostLateUpdate() { }
     }
 }
 

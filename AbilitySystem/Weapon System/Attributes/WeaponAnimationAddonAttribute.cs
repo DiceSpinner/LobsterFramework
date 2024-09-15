@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Collections.ObjectModel;
+using LobsterFramework.Init;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     /// <summary>
     /// Register a ScriptableObject as the addon data asset for your <see cref="WeaponAbility"/>. It will appear inside the <see cref="CharacterWeaponAnimationData"/> inspector.
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Editor)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class WeaponAnimationAddonAttribute : Attribute
+    public sealed class WeaponAnimationAddonAttribute : InitializationAttribute
     {
         private static Dictionary<Type, Type> registeredPairs = new();
         public static ReadOnlyDictionary<Type, Type> RegisteredAddons = new(registeredPairs);
@@ -20,12 +22,13 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             this.dataType = dataType;
         }
 
-        public void Init(Type abilityType) {
-            if (abilityType.IsAbstract || !abilityType.IsSubclassOf(typeof(WeaponAbility))) {
-                Debug.LogWarning($"Cannot use {nameof(WeaponAnimationAddonAttribute)} on type {abilityType.FullName} since it's not a valid {nameof(WeaponAbility)} type!");
-                return;
-            }
-            if (dataType.IsAbstract || !dataType.IsSubclassOf(typeof(ScriptableObject))) {
+        public static bool IsCompatible(Type abilityType) {
+            return abilityType.IsSubclassOf(typeof(WeaponAbility));
+        }
+
+        internal protected override void Init(Type abilityType) {
+            if (dataType.IsAbstract || !dataType.IsSubclassOf(typeof(ScriptableObject)))
+            {
                 Debug.LogWarning($"Type {dataType.FullName} is not {nameof(ScriptableObject)} or is abstract and cannot be used as weapon ability setting for {abilityType.FullName}!");
                 return;
             }

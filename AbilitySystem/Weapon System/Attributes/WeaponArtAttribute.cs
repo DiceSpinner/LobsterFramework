@@ -1,3 +1,4 @@
+using LobsterFramework.Init;
 using LobsterFramework.Utility;
 using System;
 using System.Collections;
@@ -10,8 +11,12 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     /// <summary>
     /// Applied to <see cref="WeaponAbility"/> to mark it as a weapon art that can be called by <see cref="WeaponArt"/>.
     /// </summary>
+    /// <remarks>
+    /// The <see cref="WeaponAbility"/> being applied to must be sealed.
+    /// </remarks>
+    [RegisterInitialization]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class WeaponArtAttribute : Attribute
+    public sealed class WeaponArtAttribute : InitializationAttribute
     {
         /// <summary>
         /// A array of lists that contains the type of weapon arts that can be performed by each weapon, indexed by <see cref="WeaponType"/>
@@ -41,10 +46,12 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             inputCollection = new List<WeaponType>(weaponTypes);
         }
 
-        public void Init(Type type) {
-            if (!type.IsSubclassOf(typeof(WeaponAbility))) {
-                return;
-            }
+        public static bool IsCompatible(Type type)
+        {
+            return type.IsSubclassOf(typeof(WeaponAbility)) && type.IsSealed;
+        }
+
+        internal protected override void Init(Type type) {
             if (BlackList)
             {
                 for(int i = 0;i < EnumCache.GetSize<WeaponType>();i++)

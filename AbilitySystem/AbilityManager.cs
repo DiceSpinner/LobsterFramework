@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using LobsterFramework.Init;
 using LobsterFramework.Utility;
 using Animancer;
 
@@ -78,14 +79,14 @@ namespace LobsterFramework.AbilitySystem {
 
         private new void OnValidate()
         {
-            if (AttributeInitializer.Finished)
+            if (AttributeInitialization.Finished)
             {                
                 Bind(inputData); 
             }
             else {
                 void lambda() { Bind(inputData); }
-                AttributeInitializer.OnInitializationComplete -= lambda;
-                AttributeInitializer.OnInitializationComplete += lambda;
+                AttributeInitialization.OnInitializationComplete -= lambda;
+                AttributeInitialization.OnInitializationComplete += lambda;
             }
         }
 

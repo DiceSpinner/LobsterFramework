@@ -1,3 +1,4 @@
+using LobsterFramework.Init;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -8,8 +9,9 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     /// <summary>
     /// Indicate the weapon ability has an array of animations.
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Editor)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-    public class WeaponAnimationAttribute : Attribute
+    public sealed class WeaponAnimationAttribute : InitializationAttribute
     {
         /// <summary>
         /// Key => Ability Type, Value => Enum Type indicates the number of animations and their names
@@ -23,16 +25,21 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             this.enumType = enumType;
         }
 
-        internal void Init(Type abilityType) {
-            if (!abilityType.IsSubclassOf(typeof(WeaponAbility))) {
-                Debug.LogError($"Type {abilityType.FullName} is not a valid {nameof(WeaponAbility)} type!");
-                return;
+        public static bool IsCompatible(Type abilityType)
+        { 
+            if (!abilityType.IsSubclassOf(typeof(WeaponAbility)))
+            {
+                return false;
             }
-            if (!abilityType.IsSealed) {
+            if (!abilityType.IsSealed)
+            {
                 Debug.LogError($"Type {abilityType.FullName} must be sealed!");
-                return;
+                return false;
             }
+            return true;
+        }
 
+        internal protected override void Init(Type abilityType) {
             if (enumType.IsEnum && Enum.GetUnderlyingType(enumType) == typeof(int))
             {
                 AbilityAnimationInfo[abilityType] = enumType;

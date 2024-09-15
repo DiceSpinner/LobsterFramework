@@ -4,8 +4,8 @@ using UnityEngine;
 using LobsterFramework.Utility;
 using System;
 using System.Linq;
+using LobsterFramework.Init;
 using TypeCache = LobsterFramework.Utility.TypeCache;
-
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -25,13 +25,13 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
 #if UNITY_EDITOR
         private void OnValidate() {
-            if (AttributeInitializer.Finished)
+            if (AttributeInitialization.Finished)
             {
                 Verify();
             }
             else {
-                AttributeInitializer.OnInitializationComplete -= Verify;
-                AttributeInitializer.OnInitializationComplete += Verify;
+                AttributeInitialization.OnInitializationComplete -= Verify;
+                AttributeInitialization.OnInitializationComplete += Verify;
             }
         }
 

@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using LobsterFramework.Init;
 
 namespace LobsterFramework.AbilitySystem
 {
     /// <summary>
     /// Marks this ability as requiring specified <see cref="AbilityComponent"/> to run
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Dual)]
     [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
-    public class RequireAbilityComponentsAttribute : Attribute
+    public sealed class RequireAbilityComponentsAttribute : InitializationAttribute
     {
         /// <summary>
         /// Key: <see cref="Ability"/> Type, Value: The set of <see cref="AbilityComponent"/> types required by this ability. 
@@ -28,12 +30,12 @@ namespace LobsterFramework.AbilitySystem
             this.abilityComponents = abilityComponents;
         }
 
-        internal void Init(Type ability) {
-            if (!ability.IsSubclassOf(typeof(Ability)))
-            {
-                Debug.LogError("Type:" + ability.ToString() + " is not an Ability!");
-                return;
-            }
+        public static bool IsCompatible(Type ability) {
+            return ability.IsSubclassOf(typeof(Ability));
+        }
+
+        internal protected override void Init(Type ability) {
+            
             if (abilityComponents == null) {
                 Debug.LogWarning($"Passing null argument to {nameof(RequireAbilityComponentsAttribute)} when being applied to {ability.FullName}! The attribute will be discarded!");
                 return;

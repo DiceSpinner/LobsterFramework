@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using LobsterFramework.Init;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     /// <summary>
     /// Mark the WeaponAbility as an offhand WeaponAbility
     /// </summary>
+    [RegisterInitialization(AttributeType = InitializationAttributeType.Runtime)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-    public class OffhandWeaponAbilityAttribute : Attribute
+    public sealed class OffhandWeaponAbilityAttribute : InitializationAttribute
     {
         private static readonly HashSet<Type> abilityTypes = new();
 
@@ -17,12 +19,13 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             return abilityTypes.Contains(type);
         }
 
-        public void Init(Type abilityType)
+        public static bool IsCompatible(Type abilityType) {
+            return abilityType.IsSubclassOf(typeof(WeaponAbility)) ;
+        }
+
+        internal protected override void Init(Type abilityType)
         {
-            if (abilityType.IsSubclassOf(typeof(WeaponAbility)))
-            {
-                abilityTypes.Add(abilityType);
-            }
+            abilityTypes.Add(abilityType);
         }
     }
 }

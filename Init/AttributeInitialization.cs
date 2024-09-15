@@ -34,31 +34,51 @@ namespace LobsterFramework.Init
             if (Finished) {
                 return;
             }
-            Assembly frameworkAssembly = typeof(Setting).Assembly;
+            Assembly frameworkAssembly = typeof(AttributeInitialization).Assembly;
+            AssemblyName frameworkName = frameworkAssembly.GetName();
 
+            HashSet<string> keyAssemblies = new() { frameworkName.FullName };
             List<Type> typesToInit = new(frameworkAssembly.GetTypes());
 
-            AssemblyName assemblyName = frameworkAssembly.GetName();
-            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            Dictionary<Assembly, AssemblyName[]> referencedAssemblies = new();
+            foreach (Assembly assembly in assemblies)
             {
                 AssemblyName[] references = assembly.GetReferencedAssemblies();
+                referencedAssemblies[assembly] = references;
                 foreach (AssemblyName reference in references)
                 {
-                    if (reference.Name == assemblyName.Name)
+                    if (reference.FullName == frameworkName.FullName)
                     {
-                        typesToInit.AddRange(assembly.GetTypes());
-                        // Debug.Log($"Assembly {assembly.GetName().Name} use of LobsterFramework detected!"); 
+                        // Debug.Log($"{assembly.GetName().Name} referencing LobsterFramework.");
+                        if (assembly.GetCustomAttribute<AttributeProviderAttribute>() != null) {
+                            keyAssemblies.Add(assembly.GetName().FullName);
+                        }
                         break;
                     }
                 }
             }
 
-            FindInitAttributes(typesToInit);
+            foreach (Assembly assembly in assemblies) 
+            {
+                AssemblyName assemblyName = assembly.GetName();
+                foreach (AssemblyName reference in referencedAssemblies[assembly])
+                {
+                    if (keyAssemblies.Contains(reference.FullName))
+                    {
+                        // Debug.Log($"Assembly {assemblyName.Name} will be inspected for attribute initialization!"); 
+                        typesToInit.AddRange(assembly.GetTypes());
+                        break;
+                    }
+                }
+            }
+
+            FindInitAttributes(typesToInit); 
 
             AttributePriorityComparer comparer = new();
 
 #if UNITY_EDITOR
-            editorAttributes.Sort(comparer);
+            editorAttributes.Sort(comparer); 
             InitializeEditorAttributes(typesToInit);
 #endif
 
@@ -77,7 +97,6 @@ namespace LobsterFramework.Init
         }
 
         private static void FindInitAttributes(List<Type> types) {
-#if UNITY_EDITOR
             foreach (Type type in types)
             {
                 if (type.IsSubclassOf(typeof(InitializationAttribute)) && type.IsSealed) {
@@ -112,7 +131,6 @@ namespace LobsterFramework.Init
                     }
                 }
             }
-#endif
         }
 
 #if UNITY_EDITOR
@@ -176,7 +194,7 @@ namespace LobsterFramework.Init
     internal class AttributePriorityComparer : IComparer<(InitializationAttributeType, Type, int)> {
         public int Compare((InitializationAttributeType, Type, int) x, (InitializationAttributeType, Type, int) y)
         {
-            if (x.Item1 == y.Item1) {
+            if (x.Item1 == y.Item1 || (x.Item1 == InitializationAttributeType.Dual && y.Item1 == InitializationAttributeType.Editor) || (x.Item1 == InitializationAttributeType.Editor && y.Item1 == InitializationAttributeType.Dual)) {
                 return y.Item3 - x.Item3;
             }
 

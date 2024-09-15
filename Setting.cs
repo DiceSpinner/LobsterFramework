@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("LobsterFrameworkEditor")] 
 namespace LobsterFramework
 {
-
     public class Setting : MonoBehaviour
     {
         private static Setting instance;

@@ -38,8 +38,9 @@ namespace LobsterFramework.Editors
                 content.image = icon;
             }
             else {
-                content.image = icon;
+                content.image = null;
             }
+
             content.tooltip = weaponStatType.FullName;
             return content;
         }

@@ -37,6 +37,9 @@ namespace LobsterFramework.Editors
             {
                 content.image = icon;
             }
+            else {
+                content.image = null;
+            }
             return content;
         }
 

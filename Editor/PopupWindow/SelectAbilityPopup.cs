@@ -28,7 +28,10 @@ namespace LobsterFramework.Editors
             content.tooltip = abilityType.FullName;
             if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(abilityType, out Texture2D icon))
             {
-                content.image = icon; 
+                content.image = icon;
+            }
+            else {
+                content.image = null;
             }
             return content;
         }

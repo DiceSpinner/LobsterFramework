@@ -4,56 +4,81 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
 using System;
+using LobsterFramework.Utility;
+using System.Reflection;
 
 namespace LobsterFramework.Editors
 {
     [CustomPropertyDrawer(typeof(AbilitySelector))]
-    public class AbilitySelectorDrawer : PropertyDrawer
+    public sealed class AbilitySelectorDrawer : PropertyDrawer
     {
-        private List<Type> selectionMapping;
-        private GUIContent[] options;
-        private List<string> names;
-        private int selectionIndex;
+        private AbilitySelectorPopup popup;
+        internal string newSelection = "";
+        private bool isExpanded = false;
 
         public AbilitySelectorDrawer() { 
-            selectionMapping = new();
-            selectionMapping.AddRange(AddAbilityMenuAttribute.abilityMenus.Keys);
-            selectionIndex = -1;
-            names = new List<string>
-            {
-                "None"
-            };
-            options = new GUIContent[selectionMapping.Count + 1];
-            options[0] = new("None");
-            for(int i = 1;i < selectionMapping.Count + 1;i++) {
-                Type type = selectionMapping[i - 1];
-                GUIContent content = new(type.Name);
-                if (AddAbilityMenuAttribute.abilityIcons.TryGetValue(type, out Texture2D icon)) {
-                    content.image = icon;
-                }
-                options[i] = content;
-                names.Add(type.AssemblyQualifiedName);
-            }
+            popup = new AbilitySelectorPopup(this);
         }
 
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            if (!isExpanded)
+            {
+                return EditorGUIUtility.singleLineHeight;
+            }
+            return 2 * EditorGUIUtility.singleLineHeight;
+        }
+
+        private GUIContent mock = new(" ");
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            if (selectionMapping.Count == 0) {
-                return;
+            if (popup.restriction == null) {
+                popup.restriction = fieldInfo.GetCustomAttribute<RestrictAbilityTypeAttribute>();
             }
-            while(property.name != "qualifieldTypeName") {
+            
+            while(property.name != nameof(SerializableType.typeName)) {
                 property.Next(true);
             }
-            if (selectionIndex == -1) {
-                selectionIndex = names.IndexOf(property.stringValue);
-                if (selectionIndex == -1) {
-                    selectionIndex = 0;
-                }
+            if (newSelection != "")
+            {
+                property.stringValue = newSelection;
+                newSelection = "";
             }
 
-            selectionIndex  = EditorGUI.Popup(position, label, selectionIndex, options);
-            string abilityName = names[selectionIndex];
-            property.stringValue = abilityName;
+            Rect totalSpace = new(position);
+            totalSpace.height = EditorGUIUtility.singleLineHeight;
+            Rect foldoutRect = new(totalSpace);
+            foldoutRect.width = EditorGUIUtility.labelWidth;
+            isExpanded = EditorGUI.Foldout(foldoutRect, isExpanded, label);            
+            Rect rect1  = EditorGUI.PrefixLabel(totalSpace, GUIUtility.GetControlID(FocusType.Keyboard), mock);
+
+            bool buttonPressed;
+            Type abilityType = Utility.TypeCache.GetTypeByName(property.stringValue);
+            if (abilityType == null || !AddAbilityMenuAttribute.abilityDisplayEntries.ContainsKey(abilityType)) {
+                buttonPressed = GUI.Button(rect1, "None", EditorStyles.miniPullDown);
+            }
+            else {
+                buttonPressed = GUI.Button(rect1, AddAbilityMenuAttribute.abilityDisplayEntries[abilityType], EditorStyles.miniPullDown);
+            }
+
+            if (buttonPressed) {
+                PopupWindow.Show(new() { position = Event.current.mousePosition}, popup);
+            }
+
+            Rect rect = new(position);
+            rect.y += EditorGUIUtility.singleLineHeight;
+            rect.height = EditorGUIUtility.singleLineHeight;
+
+            EditorUtils.SetPropertyPointer(property, nameof(AbilitySelector.instance));
+            if (isExpanded) {
+                EditorGUI.indentLevel++;
+                EditorGUI.BeginChangeCheck();
+                string text = EditorGUI.TextField(rect, property.displayName, property.stringValue);
+                if (EditorGUI.EndChangeCheck()) {
+                    property.stringValue = text;
+                }
+                EditorGUI.indentLevel--;
+            }
         }
     }
 }

@@ -4,6 +4,9 @@ using LobsterFramework.Utility;
 using System.Collections.Generic;
 using System.Linq;
 using TypeCache = LobsterFramework.Utility.TypeCache;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace LobsterFramework
 {
@@ -148,6 +151,7 @@ namespace LobsterFramework
             storedKeys.Clear();
         }
 
+#if UNITY_EDITOR
         /// <summary>
         /// Quickly fill the required references using the current gameobject
         /// </summary>
@@ -159,11 +163,13 @@ namespace LobsterFramework
                         if (lst[i] == null)
                         {
                             lst[i] = GetComponent(TypeCache.GetTypeByName(kwp.Key));
+                            EditorUtility.SetDirty(this);
                         }
                     }
                 }
             }
         }
+#endif
         private void OnRequirementAdded(Type requesterType) {
             var requirement = RequireComponentReferenceAttribute.Requirement[requesterType];
             referenceMapping.Add(requesterType.AssemblyQualifiedName, new());

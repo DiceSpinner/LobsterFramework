@@ -9,8 +9,8 @@ namespace LobsterFramework.AbilitySystem
     [Serializable]
     public class AbilitySelector : SerializableType<Ability>
     {
-        [SerializeField] private string configName;
+        [SerializeField] internal string instance = Ability.DefaultAbilityInstance;
 
-        public string ConfigName { get { return configName; } }
+        public string Instance { get { return instance; } }
     }
 }

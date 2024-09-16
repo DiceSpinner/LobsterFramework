@@ -23,7 +23,7 @@ namespace LobsterFramework.Editors
             selectionIndex = 0;
         }
 
-        private void ResetOptions(WeaponType weaponType)
+        private void ResetOptions(WeaponType weaponType, SerializedProperty property)
         {
             guiContents.RemoveRange(1, guiContents.Count - 1); 
             weaponArtSelections.Clear();
@@ -33,6 +33,9 @@ namespace LobsterFramework.Editors
                 Type ability = weaponArts[i];
                 guiContents.Add(AddAbilityMenuAttribute.abilityDisplayEntries[ability]);
                 weaponArtSelections.Add(ability);
+                if (ability.AssemblyQualifiedName == property.stringValue) {
+                    selectionIndex = i + 1;
+                }
             }
         }
 
@@ -45,20 +48,26 @@ namespace LobsterFramework.Editors
         {
             EditorUtils.SetPropertyPointer(property, nameof(WeaponArtSelector.weaponType));
             WeaponType weaponType = (WeaponType)property.enumValueIndex;
-            ResetOptions(weaponType);
-            float height = EditorGUI.GetPropertyHeight(property);
 
             EditorUtils.SetPropertyPointer(property, nameof(WeaponArtSelector.typeName));
+            ResetOptions(weaponType, property);
+            float height = EditorGUI.GetPropertyHeight(property);
+
             Rect rect1 = new(position);
             rect1.height = height;
 
+            EditorGUI.BeginChangeCheck();
             selectionIndex = EditorGUI.Popup(rect1, label, selectionIndex, guiContents.ToArray());
-            if (selectionIndex != 0) // Weapon Art selected
-            {
-                property.stringValue = weaponArtSelections[selectionIndex - 1].AssemblyQualifiedName;
-            }
-            else { // None option selected
-                property.stringValue = default;
+            
+            if (EditorGUI.EndChangeCheck()) {
+                if (selectionIndex != 0) // Weapon Art selected
+                {
+                    property.stringValue = weaponArtSelections[selectionIndex - 1].AssemblyQualifiedName;
+                }
+                else
+                { // None option selected
+                    property.stringValue = default;
+                }
             }
 
             Rect rect2 = new(rect1);

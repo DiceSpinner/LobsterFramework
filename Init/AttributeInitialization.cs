@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
+using StopWatch = System.Diagnostics.Stopwatch;
 
 namespace LobsterFramework.Init
 {
@@ -34,6 +35,9 @@ namespace LobsterFramework.Init
             if (Finished) {
                 return;
             }
+            var stopWatch = StopWatch.StartNew();
+            stopWatch.Start();
+
             Assembly frameworkAssembly = typeof(AttributeInitialization).Assembly;
             AssemblyName frameworkName = frameworkAssembly.GetName();
 
@@ -94,6 +98,9 @@ namespace LobsterFramework.Init
                 Debug.LogException(ex);
             }
             OnInitializationComplete = null;
+
+            stopWatch.Stop();
+            Debug.Log($"Attribute initialization took {stopWatch.Elapsed.TotalSeconds} seconds!");
         }
 
         private static void FindInitAttributes(List<Type> types) {

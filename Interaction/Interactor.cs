@@ -27,11 +27,11 @@ namespace LobsterFramework.Interaction
         /// <summary>
         /// Called when an interactable gets in range
         /// </summary>
-        public Action<IInteractable> onInteractableAdded;
+        public event Action<IInteractable> OnInteractableAdded;
         /// <summary>
         /// Called when an interactable goes out of range
         /// </summary>
-        public Action<IInteractable> onInteractableRemoved;
+        public event Action<IInteractable> OnInteractableRemoved;
 
         /// <summary>
         /// Find any interactable objects on the collided object and add them to the interactables.
@@ -42,7 +42,7 @@ namespace LobsterFramework.Interaction
             IInteractable[] objs = collision.GetComponents<IInteractable>();
             foreach (IInteractable obj in objs) {
                 interactables.Add(obj);
-                onInteractableAdded?.Invoke(obj);
+                OnInteractableAdded?.Invoke(obj);
             }
             if (objs.Length != 0) {
                 objectsInRange[collision] = objs;
@@ -61,7 +61,7 @@ namespace LobsterFramework.Interaction
             IInteractable[] objs = objectsInRange[collision];
             foreach (IInteractable obj in objs) {
                 interactables.Remove(obj);
-                onInteractableRemoved?.Invoke(obj);
+                OnInteractableRemoved?.Invoke(obj);
             }
             objectsInRange.Remove(collision);
         }

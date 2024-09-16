@@ -1,6 +1,6 @@
 {
     "name": "LobsterFrameworkEditor",
-    "rootNamespace": "",
+    "rootNamespace": "LobsterFramework",
     "references": [
         "GUID:bf31be925925ba14baa8690dc416a427"
     ],

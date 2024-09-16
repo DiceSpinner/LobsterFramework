@@ -563,6 +563,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.TargetSetting.yml",
       "output": {
         ".html": {
@@ -983,16 +993,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AttributeInitializer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AttributeInitializer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.CharacterStateManager.CharacterState.yml",
       "output": {
         ".html": {
@@ -1117,6 +1117,16 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Editors.AbilitySelectorDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.AbilitySelectorPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.AbilitySelectorPopup.html"
         }
       },
       "version": ""
@@ -1543,6 +1553,86 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.AttributeInitialization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.AttributeInitialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.AttributeProviderAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.AttributeProviderAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.InitializationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.InitializationAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.InitializationAttributeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.InitializationAttributeType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.PlayerLoopInject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.PlayerLoopInject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.RegisterInitializationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.RegisterInitializationAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.Singleton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.Singleton.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Interaction.CollectableItem.yml",
       "output": {
         ".html": {
@@ -1907,16 +1997,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.SimpleCollision2D.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Singleton.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Singleton.html"
         }
       },
       "version": ""
@@ -2293,6 +2373,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "manual/AI.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/AI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "manual/AbilitySystem.md",
       "output": {
         ".html": {
@@ -2303,10 +2393,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/Intro.md",
+      "source_relative_path": "manual/Initialization.md",
       "output": {
         ".html": {
-          "relative_path": "manual/Intro.html"
+          "relative_path": "manual/Initialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Interaction.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Interaction.html"
         }
       },
       "version": ""
@@ -2317,6 +2417,26 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/AbilitySelector.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/AbilitySelector.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/AbilitySelector.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/AbilitySelector.gif.meta"
         }
       },
       "version": ""

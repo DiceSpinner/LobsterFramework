@@ -11,6 +11,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     {
         [SerializeField] internal WeaponType weaponType;
         [SerializeField] internal string instance=Ability.DefaultAbilityInstance;
+        public Type AbilityType { get { return Type; } }
         public string Instance { get { return instance; } }
         public WeaponType WeaponType { get {  return weaponType; }}
     }

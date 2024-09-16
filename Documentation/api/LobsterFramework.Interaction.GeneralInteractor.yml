@@ -34,8 +34,8 @@ items:
   - UnityEngine.MonoBehaviour
   - LobsterFramework.Interaction.Interactor
   inheritedMembers:
-  - LobsterFramework.Interaction.Interactor.onInteractableAdded
-  - LobsterFramework.Interaction.Interactor.onInteractableRemoved
+  - LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  - LobsterFramework.Interaction.Interactor.OnInteractableRemoved
   - LobsterFramework.Interaction.Interactor.GetInteractablesInRange(System.Collections.Generic.List{LobsterFramework.Interaction.IInteractable})
   - LobsterFramework.Interaction.Interactor.CheckInteractability(LobsterFramework.Interaction.IInteractable)
   - LobsterFramework.Interaction.Interactor.Interact(LobsterFramework.Interaction.IInteractable,LobsterFramework.Interaction.InteractionType)
@@ -225,20 +225,20 @@ references:
   name: Interactor
   nameWithType: Interactor
   fullName: LobsterFramework.Interaction.Interactor
-- uid: LobsterFramework.Interaction.Interactor.onInteractableAdded
-  commentId: F:LobsterFramework.Interaction.Interactor.onInteractableAdded
+- uid: LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  commentId: E:LobsterFramework.Interaction.Interactor.OnInteractableAdded
   parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.onInteractableAdded
-  name: onInteractableAdded
-  nameWithType: Interactor.onInteractableAdded
-  fullName: LobsterFramework.Interaction.Interactor.onInteractableAdded
-- uid: LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  commentId: F:LobsterFramework.Interaction.Interactor.onInteractableRemoved
+  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  name: OnInteractableAdded
+  nameWithType: Interactor.OnInteractableAdded
+  fullName: LobsterFramework.Interaction.Interactor.OnInteractableAdded
+- uid: LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  commentId: E:LobsterFramework.Interaction.Interactor.OnInteractableRemoved
   parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  name: onInteractableRemoved
-  nameWithType: Interactor.onInteractableRemoved
-  fullName: LobsterFramework.Interaction.Interactor.onInteractableRemoved
+  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  name: OnInteractableRemoved
+  nameWithType: Interactor.OnInteractableRemoved
+  fullName: LobsterFramework.Interaction.Interactor.OnInteractableRemoved
 - uid: LobsterFramework.Interaction.Interactor.GetInteractablesInRange(System.Collections.Generic.List{LobsterFramework.Interaction.IInteractable})
   commentId: M:LobsterFramework.Interaction.Interactor.GetInteractablesInRange(System.Collections.Generic.List{LobsterFramework.Interaction.IInteractable})
   parent: LobsterFramework.Interaction.Interactor

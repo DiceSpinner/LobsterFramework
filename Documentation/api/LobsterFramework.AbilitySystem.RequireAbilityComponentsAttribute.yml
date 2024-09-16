@@ -6,6 +6,8 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor(System.Type[])
+  - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
   langs:
   - csharp
   - vb
@@ -20,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: RequireAbilityComponentsAttribute
     path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -28,17 +30,23 @@ items:
   example: []
   syntax:
     content: >-
+      [RegisterInitialization(0, AttributeType = InitializationAttributeType.Dual)]
+
       [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
 
-      public class RequireAbilityComponentsAttribute : Attribute
+      public sealed class RequireAbilityComponentsAttribute : InitializationAttribute
     content.vb: >-
+      <RegisterInitialization(0, AttributeType:=InitializationAttributeType.Dual)>
+
       <AttributeUsage(AttributeTargets.Class, Inherited:=True, AllowMultiple:=True)>
 
-      Public Class RequireAbilityComponentsAttribute Inherits Attribute
+      Public NotInheritable Class RequireAbilityComponentsAttribute Inherits InitializationAttribute
   inheritance:
   - System.Object
   - System.Attribute
+  - LobsterFramework.Init.InitializationAttribute
   inheritedMembers:
+  - LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   - System.Attribute.Equals(System.Object)
   - System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type)
   - System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type,System.Boolean)
@@ -78,10 +86,18 @@ items:
   - System.Attribute.TypeId
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
   attributes:
+  - type: LobsterFramework.Init.RegisterInitializationAttribute
+    ctor: LobsterFramework.Init.RegisterInitializationAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    namedArguments:
+    - name: AttributeType
+      type: LobsterFramework.Init.InitializationAttributeType
+      value: 2
   - type: System.AttributeUsageAttribute
     ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
     arguments:
@@ -112,7 +128,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -126,6 +142,69 @@ items:
   nameWithType.vb: RequireAbilityComponentsAttribute.New(ParamArray Type())
   fullName.vb: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.New(ParamArray System.Type())
   name.vb: New(ParamArray Type())
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
+  commentId: M:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
+  id: IsCompatible(System.Type)
+  parent: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsCompatible(Type)
+  nameWithType: RequireAbilityComponentsAttribute.IsCompatible(Type)
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
+  type: Method
+  source:
+    remote:
+      path: AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IsCompatible
+    path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
+    startLine: 32
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public static bool IsCompatible(Type ability)
+    parameters:
+    - id: ability
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsCompatible(ability As Type) As Boolean
+  overload: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible*
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  id: Init(System.Type)
+  parent: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
+  langs:
+  - csharp
+  - vb
+  name: Init(Type)
+  nameWithType: RequireAbilityComponentsAttribute.Init(Type)
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  type: Method
+  source:
+    remote:
+      path: AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Init
+    path: ../AbilitySystem/Attributes/RequireAbilityComponentsAttribute.cs
+    startLine: 36
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: Perform initialization tasks
+  example: []
+  syntax:
+    content: protected override void Init(Type ability)
+    parameters:
+    - id: ability
+      type: System.Type
+    content.vb: Protected Overrides Sub Init(ability As Type)
+  overridden: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  overload: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init*
 references:
 - uid: LobsterFramework.AbilitySystem.AbilityComponent
   commentId: T:LobsterFramework.AbilitySystem.AbilityComponent
@@ -175,6 +254,20 @@ references:
   name: Attribute
   nameWithType: Attribute
   fullName: System.Attribute
+- uid: LobsterFramework.Init.InitializationAttribute
+  commentId: T:LobsterFramework.Init.InitializationAttribute
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.InitializationAttribute.html
+  name: InitializationAttribute
+  nameWithType: InitializationAttribute
+  fullName: LobsterFramework.Init.InitializationAttribute
+- uid: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  commentId: F:LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  parent: LobsterFramework.Init.InitializationAttribute
+  href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  name: CompatabilityCheckerMethodName
+  nameWithType: InitializationAttribute.CompatabilityCheckerMethodName
+  fullName: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
 - uid: System.Attribute.Equals(System.Object)
   commentId: M:System.Attribute.Equals(System.Object)
   parent: System.Attribute
@@ -1850,30 +1943,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -1950,6 +2019,28 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: LobsterFramework.Init
+  commentId: N:LobsterFramework.Init
+  href: LobsterFramework.html
+  name: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
 - uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor*
   commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor
   href: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.#ctor(System.Type[])
@@ -1982,3 +2073,62 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
   - name: )
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible*
+  commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible
+  href: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
+  name: IsCompatible
+  nameWithType: RequireAbilityComponentsAttribute.IsCompatible
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  parent: LobsterFramework.Init.InitializationAttribute
+  isExternal: true
+  href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  name: Init(Type)
+  nameWithType: InitializationAttribute.Init(Type)
+  fullName: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  spec.csharp:
+  - uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+    name: Init
+    href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+    name: Init
+    href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init*
+  commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init
+  href: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  name: Init
+  nameWithType: RequireAbilityComponentsAttribute.Init
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init

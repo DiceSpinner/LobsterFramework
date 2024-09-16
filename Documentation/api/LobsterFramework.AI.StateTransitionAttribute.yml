@@ -6,6 +6,8 @@ items:
   parent: LobsterFramework.AI
   children:
   - LobsterFramework.AI.StateTransitionAttribute.#ctor(System.Type[])
+  - LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  - LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
   langs:
   - csharp
   - vb
@@ -20,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: StateTransitionAttribute
     path: ../AI/Attributes/StateTransitionAttribute.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -28,17 +30,23 @@ items:
   example: []
   syntax:
     content: >-
+      [RegisterInitialization(0, AttributeType = InitializationAttributeType.Dual)]
+
       [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
 
-      public class StateTransitionAttribute : Attribute
+      public sealed class StateTransitionAttribute : InitializationAttribute
     content.vb: >-
+      <RegisterInitialization(0, AttributeType:=InitializationAttributeType.Dual)>
+
       <AttributeUsage(AttributeTargets.Class, AllowMultiple:=True, Inherited:=False)>
 
-      Public Class StateTransitionAttribute Inherits Attribute
+      Public NotInheritable Class StateTransitionAttribute Inherits InitializationAttribute
   inheritance:
   - System.Object
   - System.Attribute
+  - LobsterFramework.Init.InitializationAttribute
   inheritedMembers:
+  - LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   - System.Attribute.Equals(System.Object)
   - System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type)
   - System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type,System.Boolean)
@@ -78,10 +86,18 @@ items:
   - System.Attribute.TypeId
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
   attributes:
+  - type: LobsterFramework.Init.RegisterInitializationAttribute
+    ctor: LobsterFramework.Init.RegisterInitializationAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    namedArguments:
+    - name: AttributeType
+      type: LobsterFramework.Init.InitializationAttributeType
+      value: 2
   - type: System.AttributeUsageAttribute
     ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
     arguments:
@@ -112,7 +128,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AI/Attributes/StateTransitionAttribute.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -126,6 +142,69 @@ items:
   nameWithType.vb: StateTransitionAttribute.New(ParamArray Type())
   fullName.vb: LobsterFramework.AI.StateTransitionAttribute.New(ParamArray System.Type())
   name.vb: New(ParamArray Type())
+- uid: LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
+  commentId: M:LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
+  id: IsCompatible(System.Type)
+  parent: LobsterFramework.AI.StateTransitionAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsCompatible(Type)
+  nameWithType: StateTransitionAttribute.IsCompatible(Type)
+  fullName: LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
+  type: Method
+  source:
+    remote:
+      path: AI/Attributes/StateTransitionAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IsCompatible
+    path: ../AI/Attributes/StateTransitionAttribute.cs
+    startLine: 24
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public static bool IsCompatible(Type state)
+    parameters:
+    - id: state
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsCompatible(state As Type) As Boolean
+  overload: LobsterFramework.AI.StateTransitionAttribute.IsCompatible*
+- uid: LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  id: Init(System.Type)
+  parent: LobsterFramework.AI.StateTransitionAttribute
+  langs:
+  - csharp
+  - vb
+  name: Init(Type)
+  nameWithType: StateTransitionAttribute.Init(Type)
+  fullName: LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  type: Method
+  source:
+    remote:
+      path: AI/Attributes/StateTransitionAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Init
+    path: ../AI/Attributes/StateTransitionAttribute.cs
+    startLine: 29
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  summary: Perform initialization tasks
+  example: []
+  syntax:
+    content: protected override void Init(Type state)
+    parameters:
+    - id: state
+      type: System.Type
+    content.vb: Protected Overrides Sub Init(state As Type)
+  overridden: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  overload: LobsterFramework.AI.StateTransitionAttribute.Init*
 references:
 - uid: LobsterFramework.AI
   commentId: N:LobsterFramework.AI
@@ -168,6 +247,20 @@ references:
   name: Attribute
   nameWithType: Attribute
   fullName: System.Attribute
+- uid: LobsterFramework.Init.InitializationAttribute
+  commentId: T:LobsterFramework.Init.InitializationAttribute
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.InitializationAttribute.html
+  name: InitializationAttribute
+  nameWithType: InitializationAttribute
+  fullName: LobsterFramework.Init.InitializationAttribute
+- uid: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  commentId: F:LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  parent: LobsterFramework.Init.InitializationAttribute
+  href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  name: CompatabilityCheckerMethodName
+  nameWithType: InitializationAttribute.CompatabilityCheckerMethodName
+  fullName: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
 - uid: System.Attribute.Equals(System.Object)
   commentId: M:System.Attribute.Equals(System.Object)
   parent: System.Attribute
@@ -1843,30 +1936,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -1943,6 +2012,28 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: LobsterFramework.Init
+  commentId: N:LobsterFramework.Init
+  href: LobsterFramework.html
+  name: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
 - uid: LobsterFramework.AI.StateTransitionAttribute.#ctor*
   commentId: Overload:LobsterFramework.AI.StateTransitionAttribute.#ctor
   href: LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework.AI.StateTransitionAttribute.#ctor(System.Type[])
@@ -1975,3 +2066,62 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
   - name: )
+- uid: LobsterFramework.AI.StateTransitionAttribute.IsCompatible*
+  commentId: Overload:LobsterFramework.AI.StateTransitionAttribute.IsCompatible
+  href: LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
+  name: IsCompatible
+  nameWithType: StateTransitionAttribute.IsCompatible
+  fullName: LobsterFramework.AI.StateTransitionAttribute.IsCompatible
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  parent: LobsterFramework.Init.InitializationAttribute
+  isExternal: true
+  href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  name: Init(Type)
+  nameWithType: InitializationAttribute.Init(Type)
+  fullName: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  spec.csharp:
+  - uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+    name: Init
+    href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+    name: Init
+    href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: LobsterFramework.AI.StateTransitionAttribute.Init*
+  commentId: Overload:LobsterFramework.AI.StateTransitionAttribute.Init
+  href: LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  name: Init
+  nameWithType: StateTransitionAttribute.Init
+  fullName: LobsterFramework.AI.StateTransitionAttribute.Init

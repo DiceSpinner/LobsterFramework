@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Init.InitializationAttributeType
+  commentId: T:LobsterFramework.Init.InitializationAttributeType
+  id: InitializationAttributeType
+  parent: LobsterFramework.Init
+  children:
+  - LobsterFramework.Init.InitializationAttributeType.Dual
+  - LobsterFramework.Init.InitializationAttributeType.Editor
+  - LobsterFramework.Init.InitializationAttributeType.Runtime
+  langs:
+  - csharp
+  - vb
+  name: InitializationAttributeType
+  nameWithType: InitializationAttributeType
+  fullName: LobsterFramework.Init.InitializationAttributeType
+  type: Enum
+  source:
+    remote:
+      path: Init/RegisterInitializationAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: InitializationAttributeType
+    path: ../Init/RegisterInitializationAttribute.cs
+    startLine: 23
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Init
+  syntax:
+    content: public enum InitializationAttributeType
+    content.vb: Public Enum InitializationAttributeType
+- uid: LobsterFramework.Init.InitializationAttributeType.Editor
+  commentId: F:LobsterFramework.Init.InitializationAttributeType.Editor
+  id: Editor
+  parent: LobsterFramework.Init.InitializationAttributeType
+  langs:
+  - csharp
+  - vb
+  name: Editor
+  nameWithType: InitializationAttributeType.Editor
+  fullName: LobsterFramework.Init.InitializationAttributeType.Editor
+  type: Field
+  source:
+    remote:
+      path: Init/RegisterInitializationAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Editor
+    path: ../Init/RegisterInitializationAttribute.cs
+    startLine: 24
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Init
+  syntax:
+    content: Editor = 3
+    return:
+      type: LobsterFramework.Init.InitializationAttributeType
+- uid: LobsterFramework.Init.InitializationAttributeType.Runtime
+  commentId: F:LobsterFramework.Init.InitializationAttributeType.Runtime
+  id: Runtime
+  parent: LobsterFramework.Init.InitializationAttributeType
+  langs:
+  - csharp
+  - vb
+  name: Runtime
+  nameWithType: InitializationAttributeType.Runtime
+  fullName: LobsterFramework.Init.InitializationAttributeType.Runtime
+  type: Field
+  source:
+    remote:
+      path: Init/RegisterInitializationAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Runtime
+    path: ../Init/RegisterInitializationAttribute.cs
+    startLine: 25
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Init
+  syntax:
+    content: Runtime = 1
+    return:
+      type: LobsterFramework.Init.InitializationAttributeType
+- uid: LobsterFramework.Init.InitializationAttributeType.Dual
+  commentId: F:LobsterFramework.Init.InitializationAttributeType.Dual
+  id: Dual
+  parent: LobsterFramework.Init.InitializationAttributeType
+  langs:
+  - csharp
+  - vb
+  name: Dual
+  nameWithType: InitializationAttributeType.Dual
+  fullName: LobsterFramework.Init.InitializationAttributeType.Dual
+  type: Field
+  source:
+    remote:
+      path: Init/RegisterInitializationAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Dual
+    path: ../Init/RegisterInitializationAttribute.cs
+    startLine: 26
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Init
+  syntax:
+    content: Dual = 2
+    return:
+      type: LobsterFramework.Init.InitializationAttributeType
+references:
+- uid: LobsterFramework.Init
+  commentId: N:LobsterFramework.Init
+  href: LobsterFramework.html
+  name: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+- uid: LobsterFramework.Init.InitializationAttributeType
+  commentId: T:LobsterFramework.Init.InitializationAttributeType
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.InitializationAttributeType.html
+  name: InitializationAttributeType
+  nameWithType: InitializationAttributeType
+  fullName: LobsterFramework.Init.InitializationAttributeType

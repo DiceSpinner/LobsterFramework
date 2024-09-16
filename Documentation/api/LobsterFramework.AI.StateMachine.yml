@@ -22,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: StateMachine
     path: ../AI/StateMachine.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -180,7 +180,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: RunCoroutine
     path: ../AI/StateMachine.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -214,7 +214,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CurrentState
     path: ../AI/StateMachine.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -243,7 +243,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Update
     path: ../AI/StateMachine.cs
-    startLine: 74
+    startLine: 75
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI

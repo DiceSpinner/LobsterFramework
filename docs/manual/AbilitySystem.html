@@ -82,8 +82,6 @@
 <h1 id="contents">Contents</h1>
 <ul>
 <li><a href="#intro">Intro</a></li>
-<li><a href="#usage">Usage</a>
-<ul>
 <li><a href="#basics">Basics</a>
 <ul>
 <li><a href="#ability-manager--ability-data">Ability Manager &amp; Ability Data</a></li>
@@ -115,6 +113,9 @@
 </li>
 <li><a href="#join-abilities">Join Abilities</a></li>
 <li><a href="#coroutine">Coroutine</a></li>
+<li><a href="#utilities">Utilities</a>
+<ul>
+<li><a href="#ability-selector">Ability Selector</a></li>
 </ul>
 </li>
 <li><a href="#summary">Summary</a></li>
@@ -220,7 +221,7 @@ public class PlayerControl : MonoBehaviour
 }
 </code></pre>
 <p><img src="../resources/example1-addcontrol.gif" alt="example1-addControl"></p>
-<p>When we enter playmode and spam left clicks, we can see the output of the ability on the console. Additionally, we can use <code>AbilityManager</code> inspector to edit ability data in real time. The changes won't get saved to the disk unless the <code>Save</code> button is clicked. You can also use <code>Save As</code> button to store a copy of the <code>AbilityData</code> somewhere else.</p>
+<p>Here we're using <a class="xref" href="../api/LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework_AbilitySystem_AbilityManager_EnqueueAbility__1_System_String_"><code>AbilityManager.EnqueueAbility&lt;T&gt;(string)</code></a> for ability invokation, note that this call should only be done during <code>Update()</code> since the ability execution will take place during <code>LateUpdate()</code> and we can run into race conditions and have incorrect order of execution of abilities. When we enter playmode and spam left clicks, we can see the output of the ability on the console. Additionally, we can use <code>AbilityManager</code> inspector to edit ability data in real time. The changes won't get saved to the disk unless the <code>Save</code> button is clicked. You can also use <code>Save As</code> button to store a copy of the <code>AbilityData</code> somewhere else.</p>
 <p><img src="../resources/example1-run.gif" alt="example1-run"></p>
 <h2 id="ability-instancing">Ability Instancing</h2>
 <h3 id="ability-config-channel--context">Ability Config, Channel &amp; Context</h3>
@@ -670,6 +671,21 @@ public class AttackConfig : AbilityConfig {
 </ul>
 <p>When defining context type for your ability, you must inherit from <a class="xref" href="../api/LobsterFramework.AbilitySystem.AbilityCoroutineContext.html"><code>AbilityCoroutineContext</code></a> instead of <a class="xref" href="../api/LobsterFramework.AbilitySystem.AbilityContext.html"><code>AbilityContext</code></a> according to the rule of <a href="#abilitycontext">ability inheritence</a>.</p>
 <p>In addition, when <a class="xref" href="../api/LobsterFramework.Utility.CoroutineOption.html#LobsterFramework_Utility_CoroutineOption_Reset"><code>CoroutineOption.Reset</code></a> is yielded, the coroutine will restart from the beginning next frame it is invoked. <a class="xref" href="../api/LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineReset"><code>AbilityCoroutine.OnCoroutineReset()</code></a> is called immediately after receiving this return value to allow context variables to be reset before resuming next frame.</p>
+<h1 id="utilities">Utilities</h1>
+<h2 id="ability-selector">Ability Selector</h2>
+<p>For dynamically loading in and changing the ability instance you wish to call, you'll need to be able to store this information and edit it inside the inspector. <a class="xref" href="../api/LobsterFramework.AbilitySystem.AbilitySelector.html"><code>AbilitySelector</code></a> is a serializable ability instance that can be edited in the inspector to support such behavior. In addition, <a class="xref" href="../api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html"><code>RestrictAbilityTypeAttribute</code></a> can be used to limit of the set of options you can have when editing the ability instance.</p>
+<pre><code>class PlayerController : Monobehavior {
+    [SerializeField] private AbilitySelector abilityToRun;
+    [SerializeField] private AbilityManager abilityManager;
+
+    /* ... */
+
+    public void RunAbility(){
+        abilityManager.EnqueueAbility(abilityToRun.AbilityType, abilityToRun.Instance);
+    }
+}
+</code></pre>
+<p><img src="../resources/AbilitySelector.gif" alt=""></p>
 <h1 id="summary">Summary</h1>
 <h2 id="abilitymanager"><a class="xref" href="../api/LobsterFramework.AbilitySystem.AbilityManager.html">AbilityManager</a></h2>
 <p>Attach this component to the character to enable it to cast abilities. This component takes in an <a href="#ability-data">AbilityData</a> as input. Calls to enqueue, query, terminate, send event to and communication with abilities can only be done through this component during the <code>Update()</code> unity event. The following section summarizes the set of methods this component has to offer.</p>
@@ -751,7 +767,7 @@ public class AttackConfig : AbilityConfig {
 <li><a class="xref" href="../api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_Animancer_AnimancerState_"><code>void OnAnimationInterrupt()</code></a></li>
 </ul>
 <h3 id="others">Others:</h3>
-<p>These methods provided to support various actions &amp; querying</p>
+<p>These methods are provided to support various actions &amp; querying</p>
 <ul>
 <li><a class="xref" href="../api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_GetComponentReference__1_System_Int32_"><code>T GetComponentReference&lt;T&gt;()</code></a></li>
 <li><a class="xref" href="../api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_GetAbilityComponent__1"><code>T GetAbilityComponent&lt;T&gt;()</code></a></li>

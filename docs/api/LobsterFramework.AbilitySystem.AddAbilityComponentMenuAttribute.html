@@ -90,10 +90,14 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute">Attribute</a></div>
-    <div class="level2"><span class="xref">AddAbilityComponentMenuAttribute</span></div>
+    <div class="level2"><a class="xref" href="LobsterFramework.Init.InitializationAttribute.html">InitializationAttribute</a></div>
+    <div class="level3"><span class="xref">AddAbilityComponentMenuAttribute</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="LobsterFramework.Init.InitializationAttribute.html#LobsterFramework_Init_InitializationAttribute_CompatabilityCheckerMethodName">InitializationAttribute.CompatabilityCheckerMethodName</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute.equals">Attribute.Equals(object)</a>
     </div>
@@ -212,9 +216,6 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
@@ -225,8 +226,9 @@
   <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-public class AddAbilityComponentMenuAttribute : Attribute</code></pre>
+    <pre><code class="lang-csharp hljs">[RegisterInitialization(0, AttributeType = InitializationAttributeType.Dual)]
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+public sealed class AddAbilityComponentMenuAttribute : InitializationAttribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
@@ -235,7 +237,7 @@ public class AddAbilityComponentMenuAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute__ctor_System_String_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L39">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L42">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute__ctor_" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute__ctor_System_String_" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.#ctor(System.String)">AddAbilityComponentMenuAttribute(string)</h4>
@@ -270,7 +272,7 @@ public class AddAbilityComponentMenuAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_icons.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.icons%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L21">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L24">View Source</a>
   </span>
   <h4 id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_icons" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.icons">icons</h4>
   <div class="markdown level1 summary"></div>
@@ -299,7 +301,7 @@ public class AddAbilityComponentMenuAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_types.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.types%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L20">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L23">View Source</a>
   </span>
   <h4 id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_types" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.types">types</h4>
   <div class="markdown level1 summary"></div>
@@ -330,15 +332,16 @@ public class AddAbilityComponentMenuAttribute : Attribute</code></pre>
     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_Init_System_Type_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L44">View Source</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L79">View Source</a>
   </span>
   <a id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_Init_" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init*"></a>
   <h4 id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_Init_System_Type_" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init(System.Type)">Init(Type)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Perform initialization tasks</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Init(Type componentType)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Init(Type componentType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -357,6 +360,55 @@ public class AddAbilityComponentMenuAttribute : Attribute</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.Init.InitializationAttribute.html#LobsterFramework_Init_InitializationAttribute_Init_System_Type_">InitializationAttribute.Init(Type)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_IsCompatible_System_Type_.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L47">View Source</a>
+  </span>
+  <a id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_IsCompatible_" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_IsCompatible_System_Type_" data-uid="LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible(System.Type)">IsCompatible(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsCompatible(Type componentType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">componentType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -369,7 +421,7 @@ public class AddAbilityComponentMenuAttribute : Attribute</code></pre>
                     <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute.md&amp;value=---%0Auid%3A%20LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/AbilitySystem/Attributes/AddAbilityComponentMenuAttribute.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

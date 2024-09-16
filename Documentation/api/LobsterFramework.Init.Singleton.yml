@@ -1,35 +1,34 @@
 ### YamlMime:ManagedReference
 items:
-- uid: LobsterFramework.AttributeInitializer
-  commentId: T:LobsterFramework.AttributeInitializer
-  id: AttributeInitializer
-  parent: LobsterFramework
+- uid: LobsterFramework.Init.Singleton
+  commentId: T:LobsterFramework.Init.Singleton
+  id: Singleton
+  parent: LobsterFramework.Init
   children:
-  - LobsterFramework.AttributeInitializer.Finished
-  - LobsterFramework.AttributeInitializer.OnInitializationComplete
+  - LobsterFramework.Init.Singleton.SingletonObject
   langs:
   - csharp
   - vb
-  name: AttributeInitializer
-  nameWithType: AttributeInitializer
-  fullName: LobsterFramework.AttributeInitializer
+  name: Singleton
+  nameWithType: Singleton
+  fullName: LobsterFramework.Init.Singleton
   type: Class
   source:
     remote:
-      path: AttributeInitializer.cs
+      path: Init/Singleton.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: AttributeInitializer
-    path: ../AttributeInitializer.cs
-    startLine: 13
+    id: Singleton
+    path: ../Init/Singleton.cs
+    startLine: 10
   assemblies:
   - LobsterFramework
-  namespace: LobsterFramework
-  summary: Initializes all of the custom attributes of LobsterFramework for all assemblies that reference it.
+  namespace: LobsterFramework.Init
+  summary: Provides access to singleton components defined by LobsterFramework
   example: []
   syntax:
-    content: public class AttributeInitializer
-    content.vb: Public Class AttributeInitializer
+    content: public static class Singleton
+    content.vb: Public Module Singleton
   inheritance:
   - System.Object
   inheritedMembers:
@@ -40,69 +39,58 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.AttributeInitializer.Finished
-  commentId: F:LobsterFramework.AttributeInitializer.Finished
-  id: Finished
-  parent: LobsterFramework.AttributeInitializer
+- uid: LobsterFramework.Init.Singleton.SingletonObject
+  commentId: P:LobsterFramework.Init.Singleton.SingletonObject
+  id: SingletonObject
+  parent: LobsterFramework.Init.Singleton
   langs:
   - csharp
   - vb
-  name: Finished
-  nameWithType: AttributeInitializer.Finished
-  fullName: LobsterFramework.AttributeInitializer.Finished
-  type: Field
+  name: SingletonObject
+  nameWithType: Singleton.SingletonObject
+  fullName: LobsterFramework.Init.Singleton.SingletonObject
+  type: Property
   source:
     remote:
-      path: AttributeInitializer.cs
+      path: Init/Singleton.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Finished
-    path: ../AttributeInitializer.cs
-    startLine: 18
+    id: SingletonObject
+    path: ../Init/Singleton.cs
+    startLine: 13
   assemblies:
   - LobsterFramework
-  namespace: LobsterFramework
-  summary: Flag to indicate whether attribute initialization is completed.
-  example: []
+  namespace: LobsterFramework.Init
   syntax:
-    content: public static bool Finished
+    content: public static GameObject SingletonObject { get; }
+    parameters: []
     return:
-      type: System.Boolean
-    content.vb: Public Shared Finished As Boolean
-- uid: LobsterFramework.AttributeInitializer.OnInitializationComplete
-  commentId: E:LobsterFramework.AttributeInitializer.OnInitializationComplete
-  id: OnInitializationComplete
-  parent: LobsterFramework.AttributeInitializer
-  langs:
-  - csharp
-  - vb
-  name: OnInitializationComplete
-  nameWithType: AttributeInitializer.OnInitializationComplete
-  fullName: LobsterFramework.AttributeInitializer.OnInitializationComplete
-  type: Event
-  source:
-    remote:
-      path: AttributeInitializer.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnInitializationComplete
-    path: ../AttributeInitializer.cs
-    startLine: 20
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework
-  syntax:
-    content: public static event Action OnInitializationComplete
-    return:
-      type: System.Action
-    content.vb: Public Shared Event OnInitializationComplete As Action
+      type: UnityEngine.GameObject
+    content.vb: Public Shared ReadOnly Property SingletonObject As GameObject
+  overload: LobsterFramework.Init.Singleton.SingletonObject*
 references:
-- uid: LobsterFramework
-  commentId: N:LobsterFramework
+- uid: LobsterFramework.Init
+  commentId: N:LobsterFramework.Init
   href: LobsterFramework.html
-  name: LobsterFramework
-  nameWithType: LobsterFramework
-  fullName: LobsterFramework
+  name: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -340,22 +328,22 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
+- uid: LobsterFramework.Init.Singleton.SingletonObject*
+  commentId: Overload:LobsterFramework.Init.Singleton.SingletonObject
+  href: LobsterFramework.Init.Singleton.html#LobsterFramework.Init.Singleton.SingletonObject
+  name: SingletonObject
+  nameWithType: Singleton.SingletonObject
+  fullName: LobsterFramework.Init.Singleton.SingletonObject
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: System.Action
-  commentId: T:System.Action
-  parent: System
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: UnityEngine
+  commentId: N:UnityEngine
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.action
-  name: Action
-  nameWithType: Action
-  fullName: System.Action
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

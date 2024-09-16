@@ -464,68 +464,6 @@ Interactors without any interaction handlers are allowed but will not be able do
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(Collider2D))]
 public abstract class Interactor : MonoBehaviour</code></pre>
   </div>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_Interaction_Interactor_onInteractableAdded.md&amp;value=---%0Auid%3A%20LobsterFramework.Interaction.Interactor.onInteractableAdded%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/Interaction/Interactor.cs/#L30">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_Interaction_Interactor_onInteractableAdded" data-uid="LobsterFramework.Interaction.Interactor.onInteractableAdded">onInteractableAdded</h4>
-  <div class="markdown level1 summary"><p>Called when an interactable gets in range</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;IInteractable&gt; onInteractableAdded</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="LobsterFramework.Interaction.IInteractable.html">IInteractable</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_Interaction_Interactor_onInteractableRemoved.md&amp;value=---%0Auid%3A%20LobsterFramework.Interaction.Interactor.onInteractableRemoved%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/Interaction/Interactor.cs/#L34">View Source</a>
-  </span>
-  <h4 id="LobsterFramework_Interaction_Interactor_onInteractableRemoved" data-uid="LobsterFramework.Interaction.Interactor.onInteractableRemoved">onInteractableRemoved</h4>
-  <div class="markdown level1 summary"><p>Called when an interactable goes out of range</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;IInteractable&gt; onInteractableRemoved</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="LobsterFramework.Interaction.IInteractable.html">IInteractable</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
@@ -649,6 +587,68 @@ Use CheckInteractability to check for this info.</p>
         <td><span class="parametername">interactionType</span></td>
         <td><p>The type of the interaction</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_Interaction_Interactor_OnInteractableAdded.md&amp;value=---%0Auid%3A%20LobsterFramework.Interaction.Interactor.OnInteractableAdded%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/Interaction/Interactor.cs/#L30">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_Interaction_Interactor_OnInteractableAdded" data-uid="LobsterFramework.Interaction.Interactor.OnInteractableAdded">OnInteractableAdded</h4>
+  <div class="markdown level1 summary"><p>Called when an interactable gets in range</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;IInteractable&gt; OnInteractableAdded</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="LobsterFramework.Interaction.IInteractable.html">IInteractable</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_Interaction_Interactor_OnInteractableRemoved.md&amp;value=---%0Auid%3A%20LobsterFramework.Interaction.Interactor.OnInteractableRemoved%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/Interaction/Interactor.cs/#L34">View Source</a>
+  </span>
+  <h4 id="LobsterFramework_Interaction_Interactor_OnInteractableRemoved" data-uid="LobsterFramework.Interaction.Interactor.OnInteractableRemoved">OnInteractableRemoved</h4>
+  <div class="markdown level1 summary"><p>Called when an interactable goes out of range</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;IInteractable&gt; OnInteractableRemoved</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="LobsterFramework.Interaction.IInteractable.html">IInteractable</a>&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

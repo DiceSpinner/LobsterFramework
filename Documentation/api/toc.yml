@@ -62,8 +62,6 @@ items:
     name: AnimationClipArray
   - uid: LobsterFramework.AttackSetting
     name: AttackSetting
-  - uid: LobsterFramework.AttributeInitializer
-    name: AttributeInitializer
   - uid: LobsterFramework.CharacterStateManager
     name: CharacterStateManager
   - uid: LobsterFramework.CharacterStateManager.CharacterState
@@ -120,8 +118,6 @@ items:
     name: Setting
   - uid: LobsterFramework.SimpleCollision2D
     name: SimpleCollision2D
-  - uid: LobsterFramework.Singleton
-    name: Singleton
   - uid: LobsterFramework.SubLevelComponent
     name: SubLevelComponent
 - uid: LobsterFramework.AbilitySystem
@@ -163,6 +159,8 @@ items:
     name: DamageModifier
   - uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
     name: RequireAbilityComponentsAttribute
+  - uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+    name: RestrictAbilityTypeAttribute
   - uid: LobsterFramework.AbilitySystem.TargetSetting
     name: TargetSetting
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
@@ -276,6 +274,8 @@ items:
     name: AbilityManagerEditor
   - uid: LobsterFramework.Editors.AbilitySelectorDrawer
     name: AbilitySelectorDrawer
+  - uid: LobsterFramework.Editors.AbilitySelectorPopup
+    name: AbilitySelectorPopup
   - uid: LobsterFramework.Editors.AddAbilityComponentPopup
     name: AddAbilityComponentPopup
   - uid: LobsterFramework.Editors.AddAbilityPopup
@@ -347,6 +347,23 @@ items:
     name: SilentEffect
   - uid: LobsterFramework.Effects.StunEffect
     name: StunEffect
+- uid: LobsterFramework.Init
+  name: LobsterFramework.Init
+  items:
+  - uid: LobsterFramework.Init.AttributeInitialization
+    name: AttributeInitialization
+  - uid: LobsterFramework.Init.AttributeProviderAttribute
+    name: AttributeProviderAttribute
+  - uid: LobsterFramework.Init.InitializationAttribute
+    name: InitializationAttribute
+  - uid: LobsterFramework.Init.InitializationAttributeType
+    name: InitializationAttributeType
+  - uid: LobsterFramework.Init.PlayerLoopInject
+    name: PlayerLoopInject
+  - uid: LobsterFramework.Init.RegisterInitializationAttribute
+    name: RegisterInitializationAttribute
+  - uid: LobsterFramework.Init.Singleton
+    name: Singleton
 - uid: LobsterFramework.Interaction
   name: LobsterFramework.Interaction
   items:

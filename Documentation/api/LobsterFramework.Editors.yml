@@ -10,6 +10,7 @@ items:
   - LobsterFramework.Editors.AbilityEditorConfig
   - LobsterFramework.Editors.AbilityManagerEditor
   - LobsterFramework.Editors.AbilitySelectorDrawer
+  - LobsterFramework.Editors.AbilitySelectorPopup
   - LobsterFramework.Editors.AddAbilityComponentPopup
   - LobsterFramework.Editors.AddAbilityPopup
   - LobsterFramework.Editors.AddStatePopup
@@ -100,6 +101,12 @@ references:
   name: SelectAbilityPopup
   nameWithType: SelectAbilityPopup
   fullName: LobsterFramework.Editors.SelectAbilityPopup
+- uid: LobsterFramework.Editors.AbilitySelectorPopup
+  commentId: T:LobsterFramework.Editors.AbilitySelectorPopup
+  href: LobsterFramework.Editors.AbilitySelectorPopup.html
+  name: AbilitySelectorPopup
+  nameWithType: AbilitySelectorPopup
+  fullName: LobsterFramework.Editors.AbilitySelectorPopup
 - uid: LobsterFramework.Editors.StateEditorConfig
   commentId: T:LobsterFramework.Editors.StateEditorConfig
   href: LobsterFramework.Editors.StateEditorConfig.html
@@ -304,6 +311,7 @@ references:
   fullName: LobsterFramework.Editors.EntityEditor
 - uid: LobsterFramework.Editors.AbilitySelectorDrawer
   commentId: T:LobsterFramework.Editors.AbilitySelectorDrawer
+  parent: LobsterFramework.Editors
   href: LobsterFramework.Editors.AbilitySelectorDrawer.html
   name: AbilitySelectorDrawer
   nameWithType: AbilitySelectorDrawer

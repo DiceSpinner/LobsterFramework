@@ -5,7 +5,8 @@ items:
   id: AbilitySelector
   parent: LobsterFramework.AbilitySystem
   children:
-  - LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  - LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  - LobsterFramework.AbilitySystem.AbilitySelector.Instance
   langs:
   - csharp
   - vb
@@ -20,10 +21,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilitySelector
     path: ../AbilitySystem/AbilitySelector.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: A serializable ability instance. Can be restricted type via <xref href="LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: >-
       [Serializable]
@@ -53,36 +56,71 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
-- uid: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  commentId: P:LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  id: ConfigName
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  commentId: P:LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  id: AbilityType
   parent: LobsterFramework.AbilitySystem.AbilitySelector
   langs:
   - csharp
   - vb
-  name: ConfigName
-  nameWithType: AbilitySelector.ConfigName
-  fullName: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  name: AbilityType
+  nameWithType: AbilitySelector.AbilityType
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
   type: Property
   source:
     remote:
       path: AbilitySystem/AbilitySelector.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: ConfigName
+    id: AbilityType
     path: ../AbilitySystem/AbilitySelector.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: public string ConfigName { get; }
+    content: public Type AbilityType { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public ReadOnly Property AbilityType As Type
+  overload: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType*
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  commentId: P:LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  id: Instance
+  parent: LobsterFramework.AbilitySystem.AbilitySelector
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: AbilitySelector.Instance
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/AbilitySelector.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Instance
+    path: ../AbilitySystem/AbilitySelector.cs
+    startLine: 16
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public string Instance { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public ReadOnly Property ConfigName As String
-  overload: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName*
+    content.vb: Public ReadOnly Property Instance As String
+  overload: LobsterFramework.AbilitySystem.AbilitySelector.Instance*
 references:
+- uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+  commentId: T:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+  href: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html
+  name: RestrictAbilityTypeAttribute
+  nameWithType: RestrictAbilityTypeAttribute
+  fullName: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html
@@ -535,12 +573,26 @@ references:
     href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
   - name: (
   - name: )
-- uid: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  href: LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  name: ConfigName
-  nameWithType: AbilitySelector.ConfigName
-  fullName: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  href: LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  name: AbilityType
+  nameWithType: AbilitySelector.AbilityType
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.Instance*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  href: LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  name: Instance
+  nameWithType: AbilitySelector.Instance
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.Instance
 - uid: System.String
   commentId: T:System.String
   parent: System

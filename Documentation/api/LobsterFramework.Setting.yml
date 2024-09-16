@@ -27,7 +27,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Setting
     path: ../Setting.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -176,7 +176,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Instance
     path: ../Setting.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -205,7 +205,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: TARGET_FRAME_RATE
     path: ../Setting.cs
-    startLine: 16
+    startLine: 15
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -234,7 +234,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EXPIRE_ATTACK_TIME
     path: ../Setting.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -263,7 +263,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: POSTURE_BROKEN_DAMAGE_MODIFIER
     path: ../Setting.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -292,7 +292,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: POSTURE_BROKEN_DURATION
     path: ../Setting.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -321,7 +321,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SUPPRESS_REGEN_DURATION
     path: ../Setting.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -350,7 +350,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GamePaused
     path: ../Setting.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -379,7 +379,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: onGamePaused
     path: ../Setting.cs
-    startLine: 36
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

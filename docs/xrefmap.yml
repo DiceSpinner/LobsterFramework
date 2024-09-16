@@ -2044,19 +2044,32 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.AbilitySelector
   fullName: LobsterFramework.AbilitySystem.AbilitySelector
   nameWithType: AbilitySelector
-- uid: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  name: ConfigName
-  href: api/LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework_AbilitySystem_AbilitySelector_ConfigName
-  commentId: P:LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  fullName: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  nameWithType: AbilitySelector.ConfigName
-- uid: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName*
-  name: ConfigName
-  href: api/LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework_AbilitySystem_AbilitySelector_ConfigName_
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  name: AbilityType
+  href: api/LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework_AbilitySystem_AbilitySelector_AbilityType
+  commentId: P:LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  nameWithType: AbilitySelector.AbilityType
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType*
+  name: AbilityType
+  href: api/LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework_AbilitySystem_AbilitySelector_AbilityType_
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
   isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
-  nameWithType: AbilitySelector.ConfigName
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.AbilityType
+  nameWithType: AbilitySelector.AbilityType
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  name: Instance
+  href: api/LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework_AbilitySystem_AbilitySelector_Instance
+  commentId: P:LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  nameWithType: AbilitySelector.Instance
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.Instance*
+  name: Instance
+  href: api/LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework_AbilitySystem_AbilitySelector_Instance_
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.Instance
+  nameWithType: AbilitySelector.Instance
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
   name: AddAbilityComponentMenuAttribute
   href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html
@@ -2101,6 +2114,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.Init
   nameWithType: AddAbilityComponentMenuAttribute.Init
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible(System.Type)
+  nameWithType: AddAbilityComponentMenuAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.IsCompatible
+  nameWithType: AddAbilityComponentMenuAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.types
   name: types
   href: api/LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityComponentMenuAttribute_types
@@ -2132,6 +2158,32 @@ references:
   fullName.vb: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.New
   nameWithType: AddAbilityMenuAttribute.AddAbilityMenuAttribute
   nameWithType.vb: AddAbilityMenuAttribute.New
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.Init(System.Type)
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.Init(System.Type)
+  nameWithType: AddAbilityMenuAttribute.Init(Type)
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_Init_
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.Init
+  nameWithType: AddAbilityMenuAttribute.Init
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.IsCompatible(System.Type)
+  nameWithType: AddAbilityMenuAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html#LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.IsCompatible
+  nameWithType: AddAbilityMenuAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.DamageModifier
   name: DamageModifier
   href: api/LobsterFramework.AbilitySystem.DamageModifier.html
@@ -2188,6 +2240,69 @@ references:
   fullName.vb: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.New
   nameWithType: RequireAbilityComponentsAttribute.RequireAbilityComponentsAttribute
   nameWithType.vb: RequireAbilityComponentsAttribute.New
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init(System.Type)
+  nameWithType: RequireAbilityComponentsAttribute.Init(Type)
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_Init_
+  commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.Init
+  nameWithType: RequireAbilityComponentsAttribute.Init
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible(System.Type)
+  nameWithType: RequireAbilityComponentsAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.html#LobsterFramework_AbilitySystem_RequireAbilityComponentsAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute.IsCompatible
+  nameWithType: RequireAbilityComponentsAttribute.IsCompatible
+- uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+  name: RestrictAbilityTypeAttribute
+  href: api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html
+  commentId: T:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+  fullName: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+  nameWithType: RestrictAbilityTypeAttribute
+- uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.#ctor(System.Type)
+  name: RestrictAbilityTypeAttribute(Type)
+  href: api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html#LobsterFramework_AbilitySystem_RestrictAbilityTypeAttribute__ctor_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.#ctor(System.Type)
+  name.vb: New(Type)
+  fullName: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.RestrictAbilityTypeAttribute(System.Type)
+  fullName.vb: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.New(System.Type)
+  nameWithType: RestrictAbilityTypeAttribute.RestrictAbilityTypeAttribute(Type)
+  nameWithType.vb: RestrictAbilityTypeAttribute.New(Type)
+- uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.#ctor*
+  name: RestrictAbilityTypeAttribute
+  href: api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html#LobsterFramework_AbilitySystem_RestrictAbilityTypeAttribute__ctor_
+  commentId: Overload:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.RestrictAbilityTypeAttribute
+  fullName.vb: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.New
+  nameWithType: RestrictAbilityTypeAttribute.RestrictAbilityTypeAttribute
+  nameWithType.vb: RestrictAbilityTypeAttribute.New
+- uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.IncludeParent
+  name: IncludeParent
+  href: api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html#LobsterFramework_AbilitySystem_RestrictAbilityTypeAttribute_IncludeParent
+  commentId: F:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.IncludeParent
+  fullName: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.IncludeParent
+  nameWithType: RestrictAbilityTypeAttribute.IncludeParent
+- uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.ParentType
+  name: ParentType
+  href: api/LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html#LobsterFramework_AbilitySystem_RestrictAbilityTypeAttribute_ParentType
+  commentId: F:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.ParentType
+  fullName: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.ParentType
+  nameWithType: RestrictAbilityTypeAttribute.ParentType
 - uid: LobsterFramework.AbilitySystem.TargetSetting
   name: TargetSetting
   href: api/LobsterFramework.AbilitySystem.TargetSetting.html
@@ -2269,6 +2384,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.Init
   nameWithType: AddWeaponStatMenuAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.IsCompatible(System.Type)
+  nameWithType: AddWeaponStatMenuAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.IsCompatible
+  nameWithType: AddWeaponStatMenuAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.types
   name: types
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.AddWeaponStatMenuAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_AddWeaponStatMenuAttribute_types
@@ -3036,6 +3164,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.Init
   nameWithType: OffhandWeaponAbilityAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_OffhandWeaponAbilityAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.IsCompatible(System.Type)
+  nameWithType: OffhandWeaponAbilityAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_OffhandWeaponAbilityAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.IsCompatible
+  nameWithType: OffhandWeaponAbilityAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.IsOffhand(System.Type)
   name: IsOffhand(Type)
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_OffhandWeaponAbilityAttribute_IsOffhand_System_Type_
@@ -3087,6 +3228,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init
   nameWithType: RequireWeaponStatAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
+  nameWithType: RequireWeaponStatAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible
+  nameWithType: RequireWeaponStatAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements
   name: Requirements
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_RequireWeaponStatAttribute_Requirements
@@ -3624,6 +3778,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.Init
   nameWithType: WeaponAnimationAddonAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAnimationAddonAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.IsCompatible(System.Type)
+  nameWithType: WeaponAnimationAddonAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAnimationAddonAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.IsCompatible
+  nameWithType: WeaponAnimationAddonAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.RegisteredAddons
   name: RegisteredAddons
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAddonAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAnimationAddonAttribute_RegisteredAddons
@@ -3655,6 +3822,32 @@ references:
   fullName.vb: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.New
   nameWithType: WeaponAnimationAttribute.WeaponAnimationAttribute
   nameWithType.vb: WeaponAnimationAttribute.New
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAnimationAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.Init(System.Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.Init(System.Type)
+  nameWithType: WeaponAnimationAttribute.Init(Type)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAnimationAttribute_Init_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.Init
+  nameWithType: WeaponAnimationAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAnimationAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.IsCompatible(System.Type)
+  nameWithType: WeaponAnimationAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAnimationAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAnimationAttribute.IsCompatible
+  nameWithType: WeaponAnimationAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt
   name: WeaponArt
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArt.html
@@ -3770,6 +3963,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.Init
   nameWithType: WeaponArtAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.IsCompatible(System.Type)
+  nameWithType: WeaponArtAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtAttribute.IsCompatible
+  nameWithType: WeaponArtAttribute.IsCompatible
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel
   name: WeaponArtChannel
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel.html
@@ -3794,6 +4000,19 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
   nameWithType: WeaponArtSelector
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.AbilityType
+  name: AbilityType
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_AbilityType
+  commentId: P:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.AbilityType
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.AbilityType
+  nameWithType: WeaponArtSelector.AbilityType
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.AbilityType*
+  name: AbilityType
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_AbilityType_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.AbilityType
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.AbilityType
+  nameWithType: WeaponArtSelector.AbilityType
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.Instance
   name: Instance
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponArtSelector_Instance
@@ -4253,6 +4472,32 @@ references:
   fullName.vb: LobsterFramework.AI.AddStateMenuAttribute.New
   nameWithType: AddStateMenuAttribute.AddStateMenuAttribute
   nameWithType.vb: AddStateMenuAttribute.New
+- uid: LobsterFramework.AI.AddStateMenuAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework_AI_AddStateMenuAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.AI.AddStateMenuAttribute.Init(System.Type)
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.Init(System.Type)
+  nameWithType: AddStateMenuAttribute.Init(Type)
+- uid: LobsterFramework.AI.AddStateMenuAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework_AI_AddStateMenuAttribute_Init_
+  commentId: Overload:LobsterFramework.AI.AddStateMenuAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.Init
+  nameWithType: AddStateMenuAttribute.Init
+- uid: LobsterFramework.AI.AddStateMenuAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework_AI_AddStateMenuAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AI.AddStateMenuAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.IsCompatible(System.Type)
+  nameWithType: AddStateMenuAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AI.AddStateMenuAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework_AI_AddStateMenuAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AI.AddStateMenuAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AI.AddStateMenuAttribute.IsCompatible
+  nameWithType: AddStateMenuAttribute.IsCompatible
 - uid: LobsterFramework.AI.AIPathFinder
   name: AIPathFinder
   href: api/LobsterFramework.AI.AIPathFinder.html
@@ -4608,6 +4853,32 @@ references:
   fullName.vb: LobsterFramework.AI.StateTransitionAttribute.New
   nameWithType: StateTransitionAttribute.StateTransitionAttribute
   nameWithType.vb: StateTransitionAttribute.New
+- uid: LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework_AI_StateTransitionAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  fullName: LobsterFramework.AI.StateTransitionAttribute.Init(System.Type)
+  nameWithType: StateTransitionAttribute.Init(Type)
+- uid: LobsterFramework.AI.StateTransitionAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework_AI_StateTransitionAttribute_Init_
+  commentId: Overload:LobsterFramework.AI.StateTransitionAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.AI.StateTransitionAttribute.Init
+  nameWithType: StateTransitionAttribute.Init
+- uid: LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework_AI_StateTransitionAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.AI.StateTransitionAttribute.IsCompatible(System.Type)
+  nameWithType: StateTransitionAttribute.IsCompatible(Type)
+- uid: LobsterFramework.AI.StateTransitionAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.AI.StateTransitionAttribute.html#LobsterFramework_AI_StateTransitionAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.AI.StateTransitionAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.AI.StateTransitionAttribute.IsCompatible
+  nameWithType: StateTransitionAttribute.IsCompatible
 - uid: LobsterFramework.AnimationClipArray
   name: AnimationClipArray
   href: api/LobsterFramework.AnimationClipArray.html
@@ -4660,24 +4931,6 @@ references:
   commentId: F:LobsterFramework.AttackSetting.b
   fullName: LobsterFramework.AttackSetting.b
   nameWithType: AttackSetting.b
-- uid: LobsterFramework.AttributeInitializer
-  name: AttributeInitializer
-  href: api/LobsterFramework.AttributeInitializer.html
-  commentId: T:LobsterFramework.AttributeInitializer
-  fullName: LobsterFramework.AttributeInitializer
-  nameWithType: AttributeInitializer
-- uid: LobsterFramework.AttributeInitializer.Finished
-  name: Finished
-  href: api/LobsterFramework.AttributeInitializer.html#LobsterFramework_AttributeInitializer_Finished
-  commentId: F:LobsterFramework.AttributeInitializer.Finished
-  fullName: LobsterFramework.AttributeInitializer.Finished
-  nameWithType: AttributeInitializer.Finished
-- uid: LobsterFramework.AttributeInitializer.OnInitializationComplete
-  name: OnInitializationComplete
-  href: api/LobsterFramework.AttributeInitializer.html#LobsterFramework_AttributeInitializer_OnInitializationComplete
-  commentId: E:LobsterFramework.AttributeInitializer.OnInitializationComplete
-  fullName: LobsterFramework.AttributeInitializer.OnInitializationComplete
-  nameWithType: AttributeInitializer.OnInitializationComplete
 - uid: LobsterFramework.CharacterStateManager
   name: CharacterStateManager
   href: api/LobsterFramework.CharacterStateManager.html
@@ -5182,6 +5435,19 @@ references:
   fullName.vb: LobsterFramework.Editors.AbilitySelectorDrawer.New
   nameWithType: AbilitySelectorDrawer.AbilitySelectorDrawer
   nameWithType.vb: AbilitySelectorDrawer.New
+- uid: LobsterFramework.Editors.AbilitySelectorDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  name: GetPropertyHeight(SerializedProperty, GUIContent)
+  href: api/LobsterFramework.Editors.AbilitySelectorDrawer.html#LobsterFramework_Editors_AbilitySelectorDrawer_GetPropertyHeight_UnityEditor_SerializedProperty_UnityEngine_GUIContent_
+  commentId: M:LobsterFramework.Editors.AbilitySelectorDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  fullName: LobsterFramework.Editors.AbilitySelectorDrawer.GetPropertyHeight(UnityEditor.SerializedProperty, UnityEngine.GUIContent)
+  nameWithType: AbilitySelectorDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+- uid: LobsterFramework.Editors.AbilitySelectorDrawer.GetPropertyHeight*
+  name: GetPropertyHeight
+  href: api/LobsterFramework.Editors.AbilitySelectorDrawer.html#LobsterFramework_Editors_AbilitySelectorDrawer_GetPropertyHeight_
+  commentId: Overload:LobsterFramework.Editors.AbilitySelectorDrawer.GetPropertyHeight
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.AbilitySelectorDrawer.GetPropertyHeight
+  nameWithType: AbilitySelectorDrawer.GetPropertyHeight
 - uid: LobsterFramework.Editors.AbilitySelectorDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   name: OnGUI(Rect, SerializedProperty, GUIContent)
   href: api/LobsterFramework.Editors.AbilitySelectorDrawer.html#LobsterFramework_Editors_AbilitySelectorDrawer_OnGUI_UnityEngine_Rect_UnityEditor_SerializedProperty_UnityEngine_GUIContent_
@@ -5195,6 +5461,44 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Editors.AbilitySelectorDrawer.OnGUI
   nameWithType: AbilitySelectorDrawer.OnGUI
+- uid: LobsterFramework.Editors.AbilitySelectorPopup
+  name: AbilitySelectorPopup
+  href: api/LobsterFramework.Editors.AbilitySelectorPopup.html
+  commentId: T:LobsterFramework.Editors.AbilitySelectorPopup
+  fullName: LobsterFramework.Editors.AbilitySelectorPopup
+  nameWithType: AbilitySelectorPopup
+- uid: LobsterFramework.Editors.AbilitySelectorPopup.#ctor(LobsterFramework.Editors.AbilitySelectorDrawer)
+  name: AbilitySelectorPopup(AbilitySelectorDrawer)
+  href: api/LobsterFramework.Editors.AbilitySelectorPopup.html#LobsterFramework_Editors_AbilitySelectorPopup__ctor_LobsterFramework_Editors_AbilitySelectorDrawer_
+  commentId: M:LobsterFramework.Editors.AbilitySelectorPopup.#ctor(LobsterFramework.Editors.AbilitySelectorDrawer)
+  name.vb: New(AbilitySelectorDrawer)
+  fullName: LobsterFramework.Editors.AbilitySelectorPopup.AbilitySelectorPopup(LobsterFramework.Editors.AbilitySelectorDrawer)
+  fullName.vb: LobsterFramework.Editors.AbilitySelectorPopup.New(LobsterFramework.Editors.AbilitySelectorDrawer)
+  nameWithType: AbilitySelectorPopup.AbilitySelectorPopup(AbilitySelectorDrawer)
+  nameWithType.vb: AbilitySelectorPopup.New(AbilitySelectorDrawer)
+- uid: LobsterFramework.Editors.AbilitySelectorPopup.#ctor*
+  name: AbilitySelectorPopup
+  href: api/LobsterFramework.Editors.AbilitySelectorPopup.html#LobsterFramework_Editors_AbilitySelectorPopup__ctor_
+  commentId: Overload:LobsterFramework.Editors.AbilitySelectorPopup.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Editors.AbilitySelectorPopup.AbilitySelectorPopup
+  fullName.vb: LobsterFramework.Editors.AbilitySelectorPopup.New
+  nameWithType: AbilitySelectorPopup.AbilitySelectorPopup
+  nameWithType.vb: AbilitySelectorPopup.New
+- uid: LobsterFramework.Editors.AbilitySelectorPopup.OnGUI(UnityEngine.Rect)
+  name: OnGUI(Rect)
+  href: api/LobsterFramework.Editors.AbilitySelectorPopup.html#LobsterFramework_Editors_AbilitySelectorPopup_OnGUI_UnityEngine_Rect_
+  commentId: M:LobsterFramework.Editors.AbilitySelectorPopup.OnGUI(UnityEngine.Rect)
+  fullName: LobsterFramework.Editors.AbilitySelectorPopup.OnGUI(UnityEngine.Rect)
+  nameWithType: AbilitySelectorPopup.OnGUI(Rect)
+- uid: LobsterFramework.Editors.AbilitySelectorPopup.OnGUI*
+  name: OnGUI
+  href: api/LobsterFramework.Editors.AbilitySelectorPopup.html#LobsterFramework_Editors_AbilitySelectorPopup_OnGUI_
+  commentId: Overload:LobsterFramework.Editors.AbilitySelectorPopup.OnGUI
+  isSpec: "True"
+  fullName: LobsterFramework.Editors.AbilitySelectorPopup.OnGUI
+  nameWithType: AbilitySelectorPopup.OnGUI
 - uid: LobsterFramework.Editors.AddAbilityComponentPopup
   name: AddAbilityComponentPopup
   href: api/LobsterFramework.Editors.AddAbilityComponentPopup.html
@@ -7163,6 +7467,141 @@ references:
   commentId: T:LobsterFramework.FolderPathAttribute
   fullName: LobsterFramework.FolderPathAttribute
   nameWithType: FolderPathAttribute
+- uid: LobsterFramework.Init
+  name: LobsterFramework.Init
+  href: api/LobsterFramework.Init.html
+  commentId: N:LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+- uid: LobsterFramework.Init.AttributeInitialization
+  name: AttributeInitialization
+  href: api/LobsterFramework.Init.AttributeInitialization.html
+  commentId: T:LobsterFramework.Init.AttributeInitialization
+  fullName: LobsterFramework.Init.AttributeInitialization
+  nameWithType: AttributeInitialization
+- uid: LobsterFramework.Init.AttributeInitialization.Finished
+  name: Finished
+  href: api/LobsterFramework.Init.AttributeInitialization.html#LobsterFramework_Init_AttributeInitialization_Finished
+  commentId: F:LobsterFramework.Init.AttributeInitialization.Finished
+  fullName: LobsterFramework.Init.AttributeInitialization.Finished
+  nameWithType: AttributeInitialization.Finished
+- uid: LobsterFramework.Init.AttributeInitialization.OnInitializationComplete
+  name: OnInitializationComplete
+  href: api/LobsterFramework.Init.AttributeInitialization.html#LobsterFramework_Init_AttributeInitialization_OnInitializationComplete
+  commentId: E:LobsterFramework.Init.AttributeInitialization.OnInitializationComplete
+  fullName: LobsterFramework.Init.AttributeInitialization.OnInitializationComplete
+  nameWithType: AttributeInitialization.OnInitializationComplete
+- uid: LobsterFramework.Init.AttributeProviderAttribute
+  name: AttributeProviderAttribute
+  href: api/LobsterFramework.Init.AttributeProviderAttribute.html
+  commentId: T:LobsterFramework.Init.AttributeProviderAttribute
+  fullName: LobsterFramework.Init.AttributeProviderAttribute
+  nameWithType: AttributeProviderAttribute
+- uid: LobsterFramework.Init.InitializationAttribute
+  name: InitializationAttribute
+  href: api/LobsterFramework.Init.InitializationAttribute.html
+  commentId: T:LobsterFramework.Init.InitializationAttribute
+  fullName: LobsterFramework.Init.InitializationAttribute
+  nameWithType: InitializationAttribute
+- uid: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  name: CompatabilityCheckerMethodName
+  href: api/LobsterFramework.Init.InitializationAttribute.html#LobsterFramework_Init_InitializationAttribute_CompatabilityCheckerMethodName
+  commentId: F:LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  fullName: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  nameWithType: InitializationAttribute.CompatabilityCheckerMethodName
+- uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.Init.InitializationAttribute.html#LobsterFramework_Init_InitializationAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  fullName: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  nameWithType: InitializationAttribute.Init(Type)
+- uid: LobsterFramework.Init.InitializationAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.Init.InitializationAttribute.html#LobsterFramework_Init_InitializationAttribute_Init_
+  commentId: Overload:LobsterFramework.Init.InitializationAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.Init.InitializationAttribute.Init
+  nameWithType: InitializationAttribute.Init
+- uid: LobsterFramework.Init.InitializationAttributeType
+  name: InitializationAttributeType
+  href: api/LobsterFramework.Init.InitializationAttributeType.html
+  commentId: T:LobsterFramework.Init.InitializationAttributeType
+  fullName: LobsterFramework.Init.InitializationAttributeType
+  nameWithType: InitializationAttributeType
+- uid: LobsterFramework.Init.InitializationAttributeType.Dual
+  name: Dual
+  href: api/LobsterFramework.Init.InitializationAttributeType.html#LobsterFramework_Init_InitializationAttributeType_Dual
+  commentId: F:LobsterFramework.Init.InitializationAttributeType.Dual
+  fullName: LobsterFramework.Init.InitializationAttributeType.Dual
+  nameWithType: InitializationAttributeType.Dual
+- uid: LobsterFramework.Init.InitializationAttributeType.Editor
+  name: Editor
+  href: api/LobsterFramework.Init.InitializationAttributeType.html#LobsterFramework_Init_InitializationAttributeType_Editor
+  commentId: F:LobsterFramework.Init.InitializationAttributeType.Editor
+  fullName: LobsterFramework.Init.InitializationAttributeType.Editor
+  nameWithType: InitializationAttributeType.Editor
+- uid: LobsterFramework.Init.InitializationAttributeType.Runtime
+  name: Runtime
+  href: api/LobsterFramework.Init.InitializationAttributeType.html#LobsterFramework_Init_InitializationAttributeType_Runtime
+  commentId: F:LobsterFramework.Init.InitializationAttributeType.Runtime
+  fullName: LobsterFramework.Init.InitializationAttributeType.Runtime
+  nameWithType: InitializationAttributeType.Runtime
+- uid: LobsterFramework.Init.PlayerLoopInject
+  name: PlayerLoopInject
+  href: api/LobsterFramework.Init.PlayerLoopInject.html
+  commentId: T:LobsterFramework.Init.PlayerLoopInject
+  fullName: LobsterFramework.Init.PlayerLoopInject
+  nameWithType: PlayerLoopInject
+- uid: LobsterFramework.Init.RegisterInitializationAttribute
+  name: RegisterInitializationAttribute
+  href: api/LobsterFramework.Init.RegisterInitializationAttribute.html
+  commentId: T:LobsterFramework.Init.RegisterInitializationAttribute
+  fullName: LobsterFramework.Init.RegisterInitializationAttribute
+  nameWithType: RegisterInitializationAttribute
+- uid: LobsterFramework.Init.RegisterInitializationAttribute.#ctor(System.Int32)
+  name: RegisterInitializationAttribute(int)
+  href: api/LobsterFramework.Init.RegisterInitializationAttribute.html#LobsterFramework_Init_RegisterInitializationAttribute__ctor_System_Int32_
+  commentId: M:LobsterFramework.Init.RegisterInitializationAttribute.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: LobsterFramework.Init.RegisterInitializationAttribute.RegisterInitializationAttribute(int)
+  fullName.vb: LobsterFramework.Init.RegisterInitializationAttribute.New(Integer)
+  nameWithType: RegisterInitializationAttribute.RegisterInitializationAttribute(int)
+  nameWithType.vb: RegisterInitializationAttribute.New(Integer)
+- uid: LobsterFramework.Init.RegisterInitializationAttribute.#ctor*
+  name: RegisterInitializationAttribute
+  href: api/LobsterFramework.Init.RegisterInitializationAttribute.html#LobsterFramework_Init_RegisterInitializationAttribute__ctor_
+  commentId: Overload:LobsterFramework.Init.RegisterInitializationAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Init.RegisterInitializationAttribute.RegisterInitializationAttribute
+  fullName.vb: LobsterFramework.Init.RegisterInitializationAttribute.New
+  nameWithType: RegisterInitializationAttribute.RegisterInitializationAttribute
+  nameWithType.vb: RegisterInitializationAttribute.New
+- uid: LobsterFramework.Init.RegisterInitializationAttribute.AttributeType
+  name: AttributeType
+  href: api/LobsterFramework.Init.RegisterInitializationAttribute.html#LobsterFramework_Init_RegisterInitializationAttribute_AttributeType
+  commentId: F:LobsterFramework.Init.RegisterInitializationAttribute.AttributeType
+  fullName: LobsterFramework.Init.RegisterInitializationAttribute.AttributeType
+  nameWithType: RegisterInitializationAttribute.AttributeType
+- uid: LobsterFramework.Init.Singleton
+  name: Singleton
+  href: api/LobsterFramework.Init.Singleton.html
+  commentId: T:LobsterFramework.Init.Singleton
+  fullName: LobsterFramework.Init.Singleton
+  nameWithType: Singleton
+- uid: LobsterFramework.Init.Singleton.SingletonObject
+  name: SingletonObject
+  href: api/LobsterFramework.Init.Singleton.html#LobsterFramework_Init_Singleton_SingletonObject
+  commentId: P:LobsterFramework.Init.Singleton.SingletonObject
+  fullName: LobsterFramework.Init.Singleton.SingletonObject
+  nameWithType: Singleton.SingletonObject
+- uid: LobsterFramework.Init.Singleton.SingletonObject*
+  name: SingletonObject
+  href: api/LobsterFramework.Init.Singleton.html#LobsterFramework_Init_Singleton_SingletonObject_
+  commentId: Overload:LobsterFramework.Init.Singleton.SingletonObject
+  isSpec: "True"
+  fullName: LobsterFramework.Init.Singleton.SingletonObject
+  nameWithType: Singleton.SingletonObject
 - uid: LobsterFramework.Interaction
   name: LobsterFramework.Interaction
   href: api/LobsterFramework.Interaction.html
@@ -7499,18 +7938,18 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Interaction.Interactor.Interact
   nameWithType: Interactor.Interact
-- uid: LobsterFramework.Interaction.Interactor.onInteractableAdded
-  name: onInteractableAdded
-  href: api/LobsterFramework.Interaction.Interactor.html#LobsterFramework_Interaction_Interactor_onInteractableAdded
-  commentId: F:LobsterFramework.Interaction.Interactor.onInteractableAdded
-  fullName: LobsterFramework.Interaction.Interactor.onInteractableAdded
-  nameWithType: Interactor.onInteractableAdded
-- uid: LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  name: onInteractableRemoved
-  href: api/LobsterFramework.Interaction.Interactor.html#LobsterFramework_Interaction_Interactor_onInteractableRemoved
-  commentId: F:LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  fullName: LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  nameWithType: Interactor.onInteractableRemoved
+- uid: LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  name: OnInteractableAdded
+  href: api/LobsterFramework.Interaction.Interactor.html#LobsterFramework_Interaction_Interactor_OnInteractableAdded
+  commentId: E:LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  fullName: LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  nameWithType: Interactor.OnInteractableAdded
+- uid: LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  name: OnInteractableRemoved
+  href: api/LobsterFramework.Interaction.Interactor.html#LobsterFramework_Interaction_Interactor_OnInteractableRemoved
+  commentId: E:LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  fullName: LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  nameWithType: Interactor.OnInteractableRemoved
 - uid: LobsterFramework.Interaction.Inventory
   name: Inventory
   href: api/LobsterFramework.Interaction.Inventory.html
@@ -7760,6 +8199,19 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.Interaction.RegisterInteractorAttribute.Init
   nameWithType: RegisterInteractorAttribute.Init
+- uid: LobsterFramework.Interaction.RegisterInteractorAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.Interaction.RegisterInteractorAttribute.html#LobsterFramework_Interaction_RegisterInteractorAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.Interaction.RegisterInteractorAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.Interaction.RegisterInteractorAttribute.IsCompatible(System.Type)
+  nameWithType: RegisterInteractorAttribute.IsCompatible(Type)
+- uid: LobsterFramework.Interaction.RegisterInteractorAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.Interaction.RegisterInteractorAttribute.html#LobsterFramework_Interaction_RegisterInteractorAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.Interaction.RegisterInteractorAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.Interaction.RegisterInteractorAttribute.IsCompatible
+  nameWithType: RegisterInteractorAttribute.IsCompatible
 - uid: LobsterFramework.Interaction.SimpleItem
   name: SimpleItem
   href: api/LobsterFramework.Interaction.SimpleItem.html
@@ -8400,6 +8852,32 @@ references:
   fullName.vb: LobsterFramework.RequireComponentReferenceAttribute.New
   nameWithType: RequireComponentReferenceAttribute.RequireComponentReferenceAttribute
   nameWithType.vb: RequireComponentReferenceAttribute.New
+- uid: LobsterFramework.RequireComponentReferenceAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.RequireComponentReferenceAttribute.html#LobsterFramework_RequireComponentReferenceAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.RequireComponentReferenceAttribute.Init(System.Type)
+  fullName: LobsterFramework.RequireComponentReferenceAttribute.Init(System.Type)
+  nameWithType: RequireComponentReferenceAttribute.Init(Type)
+- uid: LobsterFramework.RequireComponentReferenceAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.RequireComponentReferenceAttribute.html#LobsterFramework_RequireComponentReferenceAttribute_Init_
+  commentId: Overload:LobsterFramework.RequireComponentReferenceAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.RequireComponentReferenceAttribute.Init
+  nameWithType: RequireComponentReferenceAttribute.Init
+- uid: LobsterFramework.RequireComponentReferenceAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.RequireComponentReferenceAttribute.html#LobsterFramework_RequireComponentReferenceAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.RequireComponentReferenceAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.RequireComponentReferenceAttribute.IsCompatible(System.Type)
+  nameWithType: RequireComponentReferenceAttribute.IsCompatible(Type)
+- uid: LobsterFramework.RequireComponentReferenceAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.RequireComponentReferenceAttribute.html#LobsterFramework_RequireComponentReferenceAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.RequireComponentReferenceAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.RequireComponentReferenceAttribute.IsCompatible
+  nameWithType: RequireComponentReferenceAttribute.IsCompatible
 - uid: LobsterFramework.RequireComponentReferenceAttribute.Requirement
   name: Requirement
   href: api/LobsterFramework.RequireComponentReferenceAttribute.html#LobsterFramework_RequireComponentReferenceAttribute_Requirement
@@ -8777,25 +9255,6 @@ references:
   commentId: F:LobsterFramework.SimpleCollision2D.contactPoint
   fullName: LobsterFramework.SimpleCollision2D.contactPoint
   nameWithType: SimpleCollision2D.contactPoint
-- uid: LobsterFramework.Singleton
-  name: Singleton
-  href: api/LobsterFramework.Singleton.html
-  commentId: T:LobsterFramework.Singleton
-  fullName: LobsterFramework.Singleton
-  nameWithType: Singleton
-- uid: LobsterFramework.Singleton.SingletonObject
-  name: SingletonObject
-  href: api/LobsterFramework.Singleton.html#LobsterFramework_Singleton_SingletonObject
-  commentId: P:LobsterFramework.Singleton.SingletonObject
-  fullName: LobsterFramework.Singleton.SingletonObject
-  nameWithType: Singleton.SingletonObject
-- uid: LobsterFramework.Singleton.SingletonObject*
-  name: SingletonObject
-  href: api/LobsterFramework.Singleton.html#LobsterFramework_Singleton_SingletonObject_
-  commentId: Overload:LobsterFramework.Singleton.SingletonObject
-  isSpec: "True"
-  fullName: LobsterFramework.Singleton.SingletonObject
-  nameWithType: Singleton.SingletonObject
 - uid: LobsterFramework.SubLevelComponent
   name: SubLevelComponent
   href: api/LobsterFramework.SubLevelComponent.html

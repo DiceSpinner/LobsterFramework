@@ -45,7 +45,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityManager
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -223,7 +223,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityEnqueued
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -252,7 +252,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityFinished
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -281,7 +281,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAnimationBegin
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -310,7 +310,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAnimationEnd
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 54
+    startLine: 55
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -339,7 +339,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ActionBlocked
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -368,7 +368,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Reset
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 142
+    startLine: 143
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -396,7 +396,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EnqueueAbility
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 175
+    startLine: 176
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -452,7 +452,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EnqueueAbility
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 205
+    startLine: 206
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -508,7 +508,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EnqueueAbilitiesInJoint
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 228
+    startLine: 229
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -554,7 +554,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendAbilityInstance
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 260
+    startLine: 261
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -595,7 +595,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendAbilityInstance
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 275
+    startLine: 276
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -636,7 +636,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendAbility
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 292
+    startLine: 293
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -673,7 +673,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendAbilities
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 304
+    startLine: 305
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -701,7 +701,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetAbilityComponent
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 319
+    startLine: 320
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -738,7 +738,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetAbilityChannel
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 335
+    startLine: 336
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -779,7 +779,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityReady
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 350
+    startLine: 351
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -820,7 +820,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityReady
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 365
+    startLine: 366
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -861,7 +861,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityRunning
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 384
+    startLine: 385
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -902,7 +902,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAbilityRunning
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 397
+    startLine: 398
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -943,7 +943,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsAnimating
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 412
+    startLine: 413
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -974,7 +974,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: JoinAbilities
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 427
+    startLine: 428
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1021,7 +1021,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: JoinAbilities
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 445
+    startLine: 446
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1067,7 +1067,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InterruptAbilityAnimation
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 488
+    startLine: 489
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1095,7 +1095,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Signal
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 503
+    startLine: 504
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1131,7 +1131,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AnimationSignal
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 513
+    startLine: 514
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1162,7 +1162,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AnimationEnd
     path: ../AbilitySystem/AbilityManager.cs
-    startLine: 526
+    startLine: 527
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

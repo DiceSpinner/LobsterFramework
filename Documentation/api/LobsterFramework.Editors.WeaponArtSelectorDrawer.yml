@@ -105,7 +105,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetPropertyHeight
     path: ../Editor/Property Drawer/AbilitySystem/WeaponArtSelectorDrawer.cs
-    startLine: 38
+    startLine: 41
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -144,7 +144,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnGUI
     path: ../Editor/Property Drawer/AbilitySystem/WeaponArtSelectorDrawer.cs
-    startLine: 43
+    startLine: 46
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

@@ -25,7 +25,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ReferenceProvider
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -179,7 +179,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnValidate
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -207,7 +207,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnDestroy
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 31
+    startLine: 34
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -235,7 +235,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Bind
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 44
+    startLine: 47
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -274,7 +274,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UnBind
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 67
+    startLine: 70
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -300,7 +300,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsRequirementSatisfied
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 188
+    startLine: 194
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework
@@ -335,7 +335,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetComponentReference
     path: ../ReferenceManagement/ReferenceProvider.cs
-    startLine: 215
+    startLine: 221
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework

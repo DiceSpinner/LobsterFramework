@@ -3,26 +3,27 @@ This page will serve as an manual to how the Ability System functions in Lobster
 
 # Contents
 - [Intro](#intro)
-- [Usage](#usage)
-    - [Basics](#basics)
-        - [Ability Manager & Ability Data](#ability-manager--ability-data)
-        - [Defining Abilities & Editing Properties](#defining-abilities--editing-properties)
-        - [Invoke Ability](#invoke-ability)
-    - [Ability Instancing](#ability-instancing)
-        - [Ability Config, Channel & Context](#ability-config-channel--context)
-        - [Acquire Component Reference](#acquire-component-reference)
-        - [Initialization & Finalization Routines](#initialization--finalization-routines)
-    - [Shared Data Between Abilities](#shared-data-between-abilities)
-        - [Edit Multiple Abilities In The Inspector](#edit-multiple-abilities-in-the-inspector)
-        - [AbilityComponent](#abilitycomponent)
-        - [Enforce the Requirement](#enforce-the-requirement)
-    - [Customized Running Condition & Signal Handling](#customized-running-condition--signal-handling)
-        - [Ability Condition](#ability-condition)
-        - [Prepare & Reset Ability Context](#prepare--reset-ability-context)
-        - [Animation Event & Ability Signals](#animation-event--ability-signals)
-        - [Interrupt & Stop Ability](#interrupt--stop-ability)
-    - [Join Abilities](#join-abilities)
-    - [Coroutine](#coroutine)
+- [Basics](#basics)
+    - [Ability Manager & Ability Data](#ability-manager--ability-data)
+    - [Defining Abilities & Editing Properties](#defining-abilities--editing-properties)
+    - [Invoke Ability](#invoke-ability)
+- [Ability Instancing](#ability-instancing)
+    - [Ability Config, Channel & Context](#ability-config-channel--context)
+    - [Acquire Component Reference](#acquire-component-reference)
+    - [Initialization & Finalization Routines](#initialization--finalization-routines)
+- [Shared Data Between Abilities](#shared-data-between-abilities)
+    - [Edit Multiple Abilities In The Inspector](#edit-multiple-abilities-in-the-inspector)
+    - [AbilityComponent](#abilitycomponent)
+    - [Enforce the Requirement](#enforce-the-requirement)
+- [Customized Running Condition & Signal Handling](#customized-running-condition--signal-handling)
+    - [Ability Condition](#ability-condition)
+    - [Prepare & Reset Ability Context](#prepare--reset-ability-context)
+    - [Animation Event & Ability Signals](#animation-event--ability-signals)
+    - [Interrupt & Stop Ability](#interrupt--stop-ability)
+- [Join Abilities](#join-abilities)
+- [Coroutine](#coroutine)
+- [Utilities](#utilities)
+    - [Ability Selector](#ability-selector)
 - [Summary](#summary)
 - [What Goes Next](#what-goes-next)
 
@@ -137,7 +138,7 @@ public class PlayerControl : MonoBehaviour
 ```
 ![example1-addControl](../resources/example1-addcontrol.gif)
 
-When we enter playmode and spam left clicks, we can see the output of the ability on the console. Additionally, we can use `AbilityManager` inspector to edit ability data in real time. The changes won't get saved to the disk unless the `Save` button is clicked. You can also use `Save As` button to store a copy of the `AbilityData` somewhere else.
+Here we're using [`AbilityManager.EnqueueAbility<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility``1(System.String)) for ability invokation, note that this call should only be done during `Update()` since the ability execution will take place during `LateUpdate()` and we can run into race conditions and have incorrect order of execution of abilities. When we enter playmode and spam left clicks, we can see the output of the ability on the console. Additionally, we can use `AbilityManager` inspector to edit ability data in real time. The changes won't get saved to the disk unless the `Save` button is clicked. You can also use `Save As` button to store a copy of the `AbilityData` somewhere else.
 
 ![example1-run](../resources/example1-run.gif)
 
@@ -633,6 +634,22 @@ When defining context type for your ability, you must inherit from [`AbilityCoro
 
 In addition, when [`CoroutineOption.Reset`](xref:LobsterFramework.Utility.CoroutineOption.Reset) is yielded, the coroutine will restart from the beginning next frame it is invoked. [`AbilityCoroutine.OnCoroutineReset()`](xref:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset) is called immediately after receiving this return value to allow context variables to be reset before resuming next frame.
 
+# Utilities
+## Ability Selector
+For dynamically loading in and changing the ability instance you wish to call, you'll need to be able to store this information and edit it inside the inspector. [`AbilitySelector`](xref:LobsterFramework.AbilitySystem.AbilitySelector) is a serializable ability instance that can be edited in the inspector to support such behavior. In addition, [`RestrictAbilityTypeAttribute`](xref:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute) can be used to limit of the set of options you can have when editing the ability instance.
+```
+class PlayerController : Monobehavior {
+    [SerializeField] private AbilitySelector abilityToRun;
+    [SerializeField] private AbilityManager abilityManager;
+
+    /* ... */
+
+    public void RunAbility(){
+        abilityManager.EnqueueAbility(abilityToRun.AbilityType, abilityToRun.Instance);
+    }
+}
+```
+![](../resources/AbilitySelector.gif)
 
 # Summary
 
@@ -704,7 +721,7 @@ These methods have access to variables (not null): `Ability.Config`, `AbilityCha
 - [`void OnSignaled()`](xref:LobsterFramework.AbilitySystem.Ability.OnSignaled)
 - [`void OnAnimationInterrupt()`](xref:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState))
 ### Others:
-These methods provided to support various actions & querying
+These methods are provided to support various actions & querying
 - [`T GetComponentReference<T>()`](xref:LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32))
 - [`T GetAbilityComponent<T>()`](xref:LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1)
 - [`AnimancerState StartAnimation(AnimationClip, float)`](xref:LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single))

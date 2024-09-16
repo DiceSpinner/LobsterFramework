@@ -7,6 +7,7 @@ items:
   children:
   - LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.#ctor(System.Type[])
   - LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)
+  - LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
   - LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements
   langs:
   - csharp
@@ -22,7 +23,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: RequireWeaponStatAttribute
     path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -30,15 +31,21 @@ items:
     content: >-
       [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 
-      public class RequireWeaponStatAttribute : Attribute
+      [RegisterInitialization(0, AttributeType = InitializationAttributeType.Runtime)]
+
+      public sealed class RequireWeaponStatAttribute : InitializationAttribute
     content.vb: >-
       <AttributeUsage(AttributeTargets.Class, AllowMultiple:=True, Inherited:=True)>
 
-      Public Class RequireWeaponStatAttribute Inherits Attribute
+      <RegisterInitialization(0, AttributeType:=InitializationAttributeType.Runtime)>
+
+      Public NotInheritable Class RequireWeaponStatAttribute Inherits InitializationAttribute
   inheritance:
   - System.Object
   - System.Attribute
+  - LobsterFramework.Init.InitializationAttribute
   inheritedMembers:
+  - LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   - System.Attribute.Equals(System.Object)
   - System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type)
   - System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type,System.Boolean)
@@ -78,7 +85,6 @@ items:
   - System.Attribute.TypeId
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
   attributes:
@@ -94,6 +100,15 @@ items:
     - name: Inherited
       type: System.Boolean
       value: true
+  - type: LobsterFramework.Init.RegisterInitializationAttribute
+    ctor: LobsterFramework.Init.RegisterInitializationAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    namedArguments:
+    - name: AttributeType
+      type: LobsterFramework.Init.InitializationAttributeType
+      value: 1
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements
   commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Requirements
   id: Requirements
@@ -112,7 +127,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Requirements
     path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -146,7 +161,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: .ctor
     path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -160,6 +175,37 @@ items:
   nameWithType.vb: RequireWeaponStatAttribute.New(ParamArray Type())
   fullName.vb: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.New(ParamArray System.Type())
   name.vb: New(ParamArray Type())
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
+  id: IsCompatible(System.Type)
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsCompatible(Type)
+  nameWithType: RequireWeaponStatAttribute.IsCompatible(Type)
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
+  type: Method
+  source:
+    remote:
+      path: AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IsCompatible
+    path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 38
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  syntax:
+    content: public static bool IsCompatible(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsCompatible(type As Type) As Boolean
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible*
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)
   id: Init(System.Type)
@@ -178,16 +224,20 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Init
     path: ../AbilitySystem/Weapon System/Attributes/RequireWeaponStatAttribute.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
+  summary: Perform initialization tasks
+  example: []
   syntax:
-    content: public void Init(Type type)
+    content: protected override void Init(Type type)
     parameters:
     - id: type
       type: System.Type
-    content.vb: Public Sub Init(type As Type)
+      description: The class type this attribute is applied on
+    content.vb: Protected Overrides Sub Init(type As Type)
+  overridden: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
   overload: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init*
 references:
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
@@ -239,6 +289,20 @@ references:
   name: Attribute
   nameWithType: Attribute
   fullName: System.Attribute
+- uid: LobsterFramework.Init.InitializationAttribute
+  commentId: T:LobsterFramework.Init.InitializationAttribute
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.InitializationAttribute.html
+  name: InitializationAttribute
+  nameWithType: InitializationAttribute
+  fullName: LobsterFramework.Init.InitializationAttribute
+- uid: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  commentId: F:LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  parent: LobsterFramework.Init.InitializationAttribute
+  href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
+  name: CompatabilityCheckerMethodName
+  nameWithType: InitializationAttribute.CompatabilityCheckerMethodName
+  fullName: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
 - uid: System.Attribute.Equals(System.Object)
   commentId: M:System.Attribute.Equals(System.Object)
   parent: System.Attribute
@@ -1914,30 +1978,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -2014,6 +2054,28 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: LobsterFramework.Init
+  commentId: N:LobsterFramework.Init
+  href: LobsterFramework.html
+  name: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
   commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.WeaponStat
   parent: LobsterFramework.AbilitySystem.WeaponSystem
@@ -2192,12 +2254,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
   - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init
-  href: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)
-  name: Init
-  nameWithType: RequireWeaponStatAttribute.Init
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible
+  href: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible(System.Type)
+  name: IsCompatible
+  nameWithType: RequireWeaponStatAttribute.IsCompatible
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.IsCompatible
 - uid: System.Type
   commentId: T:System.Type
   parent: System
@@ -2206,3 +2268,48 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  parent: LobsterFramework.Init.InitializationAttribute
+  isExternal: true
+  href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  name: Init(Type)
+  nameWithType: InitializationAttribute.Init(Type)
+  fullName: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  spec.csharp:
+  - uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+    name: Init
+    href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+    name: Init
+    href: LobsterFramework.Init.InitializationAttribute.html#LobsterFramework.Init.InitializationAttribute.Init(System.Type)
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init
+  href: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.html#LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init(System.Type)
+  name: Init
+  nameWithType: RequireWeaponStatAttribute.Init
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute.Init

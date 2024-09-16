@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityData
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -127,7 +127,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetRequestingTypes
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Clone
     path: ../AbilitySystem/AbilityData.cs
-    startLine: 151
+    startLine: 150
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem

@@ -8,8 +8,8 @@ items:
   - LobsterFramework.Interaction.Interactor.CheckInteractability(LobsterFramework.Interaction.IInteractable)
   - LobsterFramework.Interaction.Interactor.GetInteractablesInRange(System.Collections.Generic.List{LobsterFramework.Interaction.IInteractable})
   - LobsterFramework.Interaction.Interactor.Interact(LobsterFramework.Interaction.IInteractable,LobsterFramework.Interaction.InteractionType)
-  - LobsterFramework.Interaction.Interactor.onInteractableAdded
-  - LobsterFramework.Interaction.Interactor.onInteractableRemoved
+  - LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  - LobsterFramework.Interaction.Interactor.OnInteractableRemoved
   langs:
   - csharp
   - vb
@@ -182,23 +182,23 @@ items:
     arguments:
     - type: System.Type
       value: UnityEngine.Collider2D
-- uid: LobsterFramework.Interaction.Interactor.onInteractableAdded
-  commentId: F:LobsterFramework.Interaction.Interactor.onInteractableAdded
-  id: onInteractableAdded
+- uid: LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  commentId: E:LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  id: OnInteractableAdded
   parent: LobsterFramework.Interaction.Interactor
   langs:
   - csharp
   - vb
-  name: onInteractableAdded
-  nameWithType: Interactor.onInteractableAdded
-  fullName: LobsterFramework.Interaction.Interactor.onInteractableAdded
-  type: Field
+  name: OnInteractableAdded
+  nameWithType: Interactor.OnInteractableAdded
+  fullName: LobsterFramework.Interaction.Interactor.OnInteractableAdded
+  type: Event
   source:
     remote:
       path: Interaction/Interactor.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onInteractableAdded
+    id: OnInteractableAdded
     path: ../Interaction/Interactor.cs
     startLine: 29
   assemblies:
@@ -207,27 +207,27 @@ items:
   summary: Called when an interactable gets in range
   example: []
   syntax:
-    content: public Action<IInteractable> onInteractableAdded
+    content: public event Action<IInteractable> OnInteractableAdded
     return:
       type: System.Action{LobsterFramework.Interaction.IInteractable}
-    content.vb: Public onInteractableAdded As Action(Of IInteractable)
-- uid: LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  commentId: F:LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  id: onInteractableRemoved
+    content.vb: Public Event OnInteractableAdded As Action(Of IInteractable)
+- uid: LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  commentId: E:LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  id: OnInteractableRemoved
   parent: LobsterFramework.Interaction.Interactor
   langs:
   - csharp
   - vb
-  name: onInteractableRemoved
-  nameWithType: Interactor.onInteractableRemoved
-  fullName: LobsterFramework.Interaction.Interactor.onInteractableRemoved
-  type: Field
+  name: OnInteractableRemoved
+  nameWithType: Interactor.OnInteractableRemoved
+  fullName: LobsterFramework.Interaction.Interactor.OnInteractableRemoved
+  type: Event
   source:
     remote:
       path: Interaction/Interactor.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onInteractableRemoved
+    id: OnInteractableRemoved
     path: ../Interaction/Interactor.cs
     startLine: 33
   assemblies:
@@ -236,10 +236,10 @@ items:
   summary: Called when an interactable goes out of range
   example: []
   syntax:
-    content: public Action<IInteractable> onInteractableRemoved
+    content: public event Action<IInteractable> OnInteractableRemoved
     return:
       type: System.Action{LobsterFramework.Interaction.IInteractable}
-    content.vb: Public onInteractableRemoved As Action(Of IInteractable)
+    content.vb: Public Event OnInteractableRemoved As Action(Of IInteractable)
 - uid: LobsterFramework.Interaction.Interactor.GetInteractablesInRange(System.Collections.Generic.List{LobsterFramework.Interaction.IInteractable})
   commentId: M:LobsterFramework.Interaction.Interactor.GetInteractablesInRange(System.Collections.Generic.List{LobsterFramework.Interaction.IInteractable})
   id: GetInteractablesInRange(System.Collections.Generic.List{LobsterFramework.Interaction.IInteractable})

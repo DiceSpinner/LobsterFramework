@@ -6,7 +6,6 @@ items:
   children:
   - LobsterFramework.AnimationClipArray
   - LobsterFramework.AttackSetting
-  - LobsterFramework.AttributeInitializer
   - LobsterFramework.CharacterStateManager
   - LobsterFramework.CharacterStateManager.CharacterState
   - LobsterFramework.ContinousCollision2D
@@ -35,7 +34,6 @@ items:
   - LobsterFramework.SerializableArray`1
   - LobsterFramework.Setting
   - LobsterFramework.SimpleCollision2D
-  - LobsterFramework.Singleton
   - LobsterFramework.SubLevelComponent
   langs:
   - csharp
@@ -100,12 +98,6 @@ references:
   name: MovementController
   nameWithType: MovementController
   fullName: LobsterFramework.MovementController
-- uid: LobsterFramework.AttributeInitializer
-  commentId: T:LobsterFramework.AttributeInitializer
-  href: LobsterFramework.AttributeInitializer.html
-  name: AttributeInitializer
-  nameWithType: AttributeInitializer
-  fullName: LobsterFramework.AttributeInitializer
 - uid: LobsterFramework.DisplayNameAttribute
   commentId: T:LobsterFramework.DisplayNameAttribute
   parent: LobsterFramework
@@ -126,12 +118,6 @@ references:
   name: ItemEntryUI
   nameWithType: ItemEntryUI
   fullName: LobsterFramework.ItemEntryUI
-- uid: LobsterFramework.Singleton
-  commentId: T:LobsterFramework.Singleton
-  href: LobsterFramework.Singleton.html
-  name: Singleton
-  nameWithType: Singleton
-  fullName: LobsterFramework.Singleton
 - uid: LobsterFramework.Poise
   commentId: T:LobsterFramework.Poise
   parent: LobsterFramework

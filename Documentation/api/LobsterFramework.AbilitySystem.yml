@@ -22,6 +22,7 @@ items:
   - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   - LobsterFramework.AbilitySystem.DamageModifier
   - LobsterFramework.AbilitySystem.RequireAbilityComponentsAttribute
+  - LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
   - LobsterFramework.AbilitySystem.TargetSetting
   langs:
   - csharp
@@ -74,6 +75,12 @@ references:
   name: AbilityExecutor
   nameWithType: AbilityExecutor
   fullName: LobsterFramework.AbilitySystem.AbilityExecutor
+- uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+  commentId: T:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
+  href: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html
+  name: RestrictAbilityTypeAttribute
+  nameWithType: RestrictAbilityTypeAttribute
+  fullName: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
 - uid: LobsterFramework.AbilitySystem.TargetSetting
   commentId: T:LobsterFramework.AbilitySystem.TargetSetting
   parent: LobsterFramework.AbilitySystem

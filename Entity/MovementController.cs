@@ -15,7 +15,7 @@ namespace LobsterFramework
         /// <summary>
         /// Event that occurs when movement status is changed
         /// </summary>
-        public Action<bool> onMovementBlocked;
+        public Action<bool> OnMovementBlocked;
         /// <summary>
         /// Manages movement blocking and unblocking. Add true values to block movement, remove all true values to unblock.
         /// </summary>
@@ -81,10 +81,10 @@ namespace LobsterFramework
         {
             if (blocked)
             {
-                onMovementBlocked?.Invoke(true);
+                OnMovementBlocked?.Invoke(true);
             }
             else {
-                onMovementBlocked?.Invoke(false);
+                OnMovementBlocked?.Invoke(false);
             }
         }
         private void OnMoveSpeedChanged(float modifier) {

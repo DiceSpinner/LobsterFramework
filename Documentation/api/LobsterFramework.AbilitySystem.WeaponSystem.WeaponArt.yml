@@ -51,8 +51,6 @@ items:
   inheritedMembers:
   - LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
   - LobsterFramework.AbilitySystem.Ability.ExecutionPriority
-  - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - LobsterFramework.AbilitySystem.Ability.InstancesRunning
   - LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - LobsterFramework.AbilitySystem.Ability.HasInstance(System.String)
@@ -348,38 +346,6 @@ references:
   name: ExecutionPriority
   nameWithType: Ability.ExecutionPriority
   fullName: LobsterFramework.AbilitySystem.Ability.ExecutionPriority
-- uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  name: CompareByExecutionPriority(Ability)
-  nameWithType: Ability.CompareByExecutionPriority(Ability)
-  fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-    name: CompareByExecutionPriority
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-    name: CompareByExecutionPriority
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  commentId: P:LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  name: InstancesRunning
-  nameWithType: Ability.InstancesRunning
-  fullName: LobsterFramework.AbilitySystem.Ability.InstancesRunning
 - uid: LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   parent: LobsterFramework.AbilitySystem.Ability

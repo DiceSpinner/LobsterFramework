@@ -22,9 +22,10 @@ namespace LobsterFramework.AbilitySystem {
         [SerializeField, HideInInspector] internal AbilityConfigDictionary configs = new();
         internal Dictionary<string, AbilityChannel> channels = new();
         internal Dictionary<string, AbilityContext> contexts = new();
+        internal HashSet<AbilityInstance> joined = new();
+        internal HashSet<AbilityInstance> joinedBy = new();
 
-        internal protected AbilityManager abilityManager { get; internal set; }
-        private HashSet<string> runningInstances = new();
+        internal protected AbilityManager AbilityManager { get; internal set; }
 
         /// <summary>
         /// The priority in which this ability will be executed. Higher number means earlier execution in relation to other abilities.
@@ -99,12 +100,11 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         internal void DisplayCurrentExecutingInstances() {
-            if (runningInstances.Count > 0)
+            string ability = GetType().Name;
+            foreach (var channel in channels)
             {
-                string ability = GetType().Name;
-                foreach (string instance in runningInstances)
-                {
-                    EditorGUILayout.LabelField(ability, instance);
+                if (channel.Value.IsRunning) {
+                    EditorGUILayout.LabelField(ability, channel.Key);
                 }
             }
         }
@@ -131,11 +131,15 @@ namespace LobsterFramework.AbilitySystem {
                     removed.Add(name);
                     continue;
                 }
-                AbilityChannel channel = AddAbilityMenuAttribute.CreateAbilityChannel(type);
-                channels[name] = channel;
 
                 AbilityContext context = AddAbilityMenuAttribute.CreateAbilityContext(type); ;
                 contexts[name] = context;
+
+                AbilityChannel channel = AddAbilityMenuAttribute.CreateAbilityChannel(type);
+                channels[name] = channel;
+                channel.TimeWhenAvailable = 0;
+                channel.config = config;
+                channel.context = context;
 
                 SetContext(name);
                 InitializeContext();
@@ -157,7 +161,7 @@ namespace LobsterFramework.AbilitySystem {
         protected virtual void InitializeContext() { }
 
         /// <summary>
-        /// Called when <see cref="AbilityData"/> becomes inactive, this happens when <see cref="AbilityManager"/> is disabled.
+        /// Called when <see cref="AbilityData"/> becomes inactive, this happens when <see cref="AbilitySystem.AbilityManager"/> is disabled.
         /// </summary>
         internal void OnBecomeInactive()
         {
@@ -186,30 +190,22 @@ namespace LobsterFramework.AbilitySystem {
         }
         #endregion
 
-        #region Comparer
-        // Comparer used to sort action by their priority
-        public int CompareByExecutionPriority(Ability other)
-        {
-            return executionPriority - other.executionPriority;
-        }
-        #endregion
-
         #region Actions
         protected AnimancerState StartAnimation(AnimationClip animation, float speed = 1)
         {
-            return abilityManager.StartAnimation(this, Instance, animation, speed);
+            return AbilityManager.StartAnimation(this, Instance, animation, speed);
         }
 
         /// <summary>
-        /// Attempts to get the reference of the specified component type from <see cref="AbilityManager"/>. 
+        /// Attempts to get the reference of the specified component type from <see cref="AbilitySystem.AbilityManager"/>. 
         /// The type of the reference should be one of the required types applied via <see cref="RequireComponentReferenceAttribute"/> on this ability class.
         /// </summary>
         /// <typeparam name="T">The type of the component looking for</typeparam>
         /// <param name="index">The index to the list of components of the type specified. Use of type safe enum is strongly recommended.</param>
-        /// <returns>The component reference stored in <see cref="AbilityManager"/> if it exists, otherwise null</returns>
-        /// <remarks>This is a shorthand call for <see cref="ReferenceProvider.GetComponentReference{T}(Type, int)"/> via <see cref="abilityManager"/></remarks>
+        /// <returns>The component reference stored in <see cref="AbilitySystem.AbilityManager"/> if it exists, otherwise null</returns>
+        /// <remarks>This is a shorthand call for <see cref="ReferenceProvider.GetComponentReference{T}(Type, int)"/> via <see cref="AbilityManager"/></remarks>
         protected T GetComponentReference<T>(int index=0) where T : Component {
-            return abilityManager.GetComponentReference<T>(GetType(), index);
+            return AbilityManager.GetComponentReference<T>(GetType(), index);
         }
 
         /// <summary>
@@ -217,40 +213,39 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         /// <typeparam name="T">The type of the <see cref="AbilityComponent"/> being asked for</typeparam>
         /// <returns>The reference to the <see cref="AbilityComponent"/> if exists</returns>
-        /// <remarks>This is a shorthand call for <see cref="AbilityManager.GetAbilityComponent{T}"/> via <see cref="abilityManager"/></remarks>
+        /// <remarks>This is a shorthand call for <see cref="AbilityManager.GetAbilityComponent{T}"/> via <see cref="AbilityManager"/></remarks>
         protected T GetAbilityComponent<T>() where T : AbilityComponent { 
-            return abilityManager.GetAbilityComponent<T>();
+            return AbilityManager.GetAbilityComponent<T>();
         }
 
         /// <summary>
-        /// Suspend the execution of the specified ability instance and causing it to finish at the current frame
+        /// Suspend the execution of the specified ability instance and causing it to finish during the next suspension event.
         /// </summary>
         /// <param name="instance"> Name of the configuration of the ability instance to terminate </param>
         /// <returns> true if the configuration exists and is not running or suspended, otherwise false </returns>
         internal protected bool SuspendInstance(string instance)
         {
-            try
-            {
-                SetContext(instance);
-                if (!Context.isRunning)
-                {
-                    return true;
+            try {
+                var channel = channels[instance];
+                if (!channel.IsRunning || channel.IsSuspended) {
+                    return false;
                 }
-                Context.isRunning = false;
-                runningInstances.Remove(instance);
-                Context.timeWhenAvailable = Time.time + Config.CoolDown;
-                OnAbilityFinish();
-            }
-            catch (Exception ex)
-            {
-                Debug.LogWarning($"Ability '{GetType().FullName}' failed to finialize with instance {instance}:\n", abilityManager);
-                Debug.LogException(ex);
+                channel.IsSuspended = true;
+                AbilityInstanceManagement.SuspendInstance(new(this, instance));
+                foreach (var abilityInstance in joined) {
+                    abilityInstance.ability.joinedBy.Remove(new(this, instance));
+                }
+
+                foreach(var abilityInstance in joinedBy) {
+                    abilityInstance.ability.joined.Remove(new(this, instance));
+                    abilityInstance.ability.SuspendInstance(abilityInstance.name);
+                }
+                joinedBy.Clear();
+                return true;
+            } 
+            catch (KeyNotFoundException) {
                 return false;
             }
-
-            // Update execution info for ability manager
-            abilityManager.OnAbilityFinish(new AbilityInstance(this, instance));
-            return true;
         }
 
         /// <summary>
@@ -273,7 +268,15 @@ namespace LobsterFramework.AbilitySystem {
         /// <returns> Return true on success, otherwise false </returns>
         protected bool JoinAsSecondary<T>(string instance) where T : Ability
         {
-            return abilityManager.JoinAbilities(typeof(T), GetType(), instance, Instance);
+            if (AbilityManager.abilities.TryGetValue(typeof(T).AssemblyQualifiedName, out Ability ability)) {
+                if (ability.configs.ContainsKey(instance)) {
+                    ability.joinedBy.Add(new(this, Instance));
+                    joined.Add(new(ability, instance));
+                    return true;
+                }
+                return false;
+            }
+            return false;
         }
 
         /// <summary>
@@ -285,7 +288,21 @@ namespace LobsterFramework.AbilitySystem {
         /// <returns> Return true on success, otherwise false</returns>
         protected bool JoinAsSecondary(Type abilityType, string instance)
         {
-            return abilityManager.JoinAbilities(abilityType, GetType(), instance, Instance);
+            if (abilityType == null) {
+                return false;
+            }
+
+            if (AbilityManager.abilities.TryGetValue(abilityType.AssemblyQualifiedName, out Ability ability))
+            {
+                if (ability.configs.ContainsKey(instance))
+                {
+                    ability.joinedBy.Add(new(this, Instance));
+                    joined.Add(new(ability, instance));
+                    return true;
+                }
+                return false;
+            }
+            return false;
         }
         #endregion
 
@@ -320,17 +337,15 @@ namespace LobsterFramework.AbilitySystem {
             {
                 if (IsReady(instance)) // SetContext() called here
                 {
-                    Context.isRunning = true;
-                    runningInstances.Add(instance);
-                    AbilityExecutor.EnqueueAction(new AbilityInstance(this, instance));
-
+                    Channel.IsRunning = true;
+                    AbilityInstanceManagement.EnqueueAction(new AbilityInstance(this, instance));
                     OnAbilityEnqueue();
                     return true;
                 }
             }
             catch (Exception e)
             {
-                Debug.LogWarning($"Ability '{GetType().FullName}' Enqueue error:", abilityManager);
+                Debug.LogWarning($"Ability '{GetType().FullName}' Enqueue error:", AbilityManager);
                 Debug.LogException(e);
                 SuspendInstance(instance);
             }
@@ -338,7 +353,7 @@ namespace LobsterFramework.AbilitySystem {
             return false;
         }
 
-
+        #region AbilityInstanceManagement
         /// <summary>
         /// Execute the ability instance
         /// </summary>
@@ -349,16 +364,38 @@ namespace LobsterFramework.AbilitySystem {
             try
             {
                 SetContext(instanceName);
-                return Action();
+                if (Action())
+                {
+                    return true;
+                }
             }
             catch (Exception ex)
             {
-                Debug.LogWarning($"Ability '{GetType().FullName}' failed to execute with instance {instanceName}:\n", abilityManager);
+                Debug.LogWarning($"Ability '{GetType().FullName}' failed to execute with instance {instanceName}:\n", AbilityManager);
                 Debug.LogException(ex);
-                SuspendInstance(instanceName);
             }
-            return false;
+            SuspendInstance(instanceName);
+            return false; 
         }
+
+        internal void Suspend(string instanceName)
+        {
+            try
+            {
+                SetContext(instanceName);
+                OnAbilityFinish();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"Ability '{GetType().FullName}' failed to execute with instance {instanceName}:\n");
+                Debug.LogException(ex);
+            }
+            Channel.TimeWhenAvailable = Time.time + Config.CoolDown;
+            Channel.IsSuspended = false;
+            Channel.IsRunning = false;
+            AbilityManager.RegisterSuspendedAbilityInstance(new(this, Instance));
+        }
+        #endregion
 
         /// <summary>
         /// Send animation interrupt signal to the ability
@@ -373,9 +410,9 @@ namespace LobsterFramework.AbilitySystem {
 
         internal AbilityChannel GetAbilityChannel(string configName)
         {
-            if (configs.ContainsKey(configName))
+            if (channels.TryGetValue(configName, out var channel))
             {
-                return channels[configName];
+                return channel;
             }
             return default;
         }
@@ -383,18 +420,16 @@ namespace LobsterFramework.AbilitySystem {
 
         #region Query
         /// <summary>
-        /// The number of instances of this ability is running
-        /// </summary>
-        public int InstancesRunning { get { return runningInstances.Count; } }
-
-        /// <summary>
         /// Check if the ability instance is executing, this method will return false if the instance is not present
         /// </summary>
         /// <param name="instance"> The name of the instance to be examined </param>
         /// <returns> true if the specified instance is executing, otherwise false </returns>
         public bool IsRunning(string instance)
         {
-            return runningInstances.Contains(instance);
+            if (channels.TryGetValue(instance, out var channel)) {
+                return channel.IsRunning;
+            }
+            return false;
         }
 
         /// <summary>
@@ -406,7 +441,7 @@ namespace LobsterFramework.AbilitySystem {
         {
             try {
                 SetContext(instance);
-                return !Context.IsRunning && (!Config.UseCooldown || !Context.OnCooldown) && ConditionSatisfied();
+                return !Channel.IsRunning && !Channel.OnCooldown && ConditionSatisfied();
             } catch (KeyNotFoundException) {
                 Debug.LogError(GetType().ToString() + " does not have config with name '" + instance + "'", this);
                 return false;
@@ -462,7 +497,7 @@ namespace LobsterFramework.AbilitySystem {
             try
             {
                 SetContext(instanceName);
-                if (Context.isRunning)
+                if (Channel.IsRunning)
                 {
                     OnSignaled(animationEvent);
                 }
@@ -478,7 +513,7 @@ namespace LobsterFramework.AbilitySystem {
             try
             {
                 SetContext(instanceName);
-                if (Context.isRunning)
+                if (Channel.IsRunning)
                 {
                     OnSignaled();
                 }
@@ -505,14 +540,7 @@ namespace LobsterFramework.AbilitySystem {
     ///  The runtime context of the ability. Not accessible from outside.
     ///  When creating a new ability, you must also declare a class named "AbilityName"Context in the same namespace where "AbilityName" is the name of the ability you're creating.
     /// </summary>
-    public class AbilityContext
-    {
-        internal bool isRunning = false;
-        internal float timeWhenAvailable = 0;
-        
-        public bool IsRunning { get { return isRunning; } }
-        public bool OnCooldown { get { return Time.time < timeWhenAvailable; } }
-    }
+    public class AbilityContext { }
 
     /// <summary>
     /// Communication channel of the ability. Can be used to control ability behaviors at runtime.
@@ -521,6 +549,14 @@ namespace LobsterFramework.AbilitySystem {
     /// </summary>
     public class AbilityChannel
     {
+        internal protected AbilityContext context;
+        internal protected AbilityConfig config;
+
+        public bool IsRunning { get; internal set; }
+        public bool IsSuspended { get; internal set; }
+        public float TimeWhenAvailable { get; internal set; }
+        public bool OnCooldown { get { return config.UseCooldown && Time.time < TimeWhenAvailable; } } 
+        public float Cooldown { get { return config.CoolDown; } }
     }
 
     /// <summary>
@@ -554,7 +590,7 @@ namespace LobsterFramework.AbilitySystem {
 
     #region Other Structs
     /// <summary>
-    /// Represents an instance of ability to be executed by <see cref="AbilityExecutor"></see>
+    /// Represents an instance of ability to be executed by <see cref="AbilityInstanceManagement"></see>
     /// </summary>
     internal readonly struct AbilityInstance
     {
@@ -564,15 +600,6 @@ namespace LobsterFramework.AbilitySystem {
         {
             this.ability = ability;
             this.name = name;
-        }
-
-        public bool StopAbility()
-        {
-            return ability.SuspendInstance(name);
-        }
-
-        public bool IsValid() {
-            return ability.IsRunning(name);
         }
 
         public bool IsNullAbility { get { return ability == null; } }

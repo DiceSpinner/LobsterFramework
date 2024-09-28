@@ -144,7 +144,10 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         /// </summary>
         /// <param name="state">The weapon state to set the weapon to be</param>
         public void Enable(WeaponState state = WeaponState.Attacking) {
-            thisCollider.enabled = true;
+            if (thisCollider != null)
+            {
+                thisCollider.enabled = true;
+            }
             this.State = state;
         }
         /// <summary>
@@ -152,7 +155,10 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         /// </summary>
         public void Disable()
         {
-            thisCollider.enabled = false;
+            if (thisCollider != null) {
+                thisCollider.enabled = false;
+            }
+            
             State = WeaponState.Idle;
             hitted.Clear();
         }

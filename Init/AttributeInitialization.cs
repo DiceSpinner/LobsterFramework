@@ -42,7 +42,7 @@ namespace LobsterFramework.Init
             AssemblyName frameworkName = frameworkAssembly.GetName();
 
             HashSet<string> keyAssemblies = new() { frameworkName.FullName };
-            List<Type> typesToInit = new(frameworkAssembly.GetTypes());
+            List<Type> typesToInit = new(frameworkAssembly.GetExportedTypes());
 
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             Dictionary<Assembly, AssemblyName[]> referencedAssemblies = new();
@@ -71,7 +71,7 @@ namespace LobsterFramework.Init
                     if (keyAssemblies.Contains(reference.FullName))
                     {
                         // Debug.Log($"Assembly {assemblyName.Name} will be inspected for attribute initialization!"); 
-                        typesToInit.AddRange(assembly.GetTypes());
+                        typesToInit.AddRange(assembly.GetExportedTypes());
                         break;
                     }
                 }

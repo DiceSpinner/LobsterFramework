@@ -12,6 +12,7 @@ items:
   - LobsterFramework.MovementController.KinematicBody(System.Boolean)
   - LobsterFramework.MovementController.MoveInDirection(UnityEngine.Vector2,System.Single)
   - LobsterFramework.MovementController.MovementBlocked
+  - LobsterFramework.MovementController.OnMovementBlocked
   - LobsterFramework.MovementController.RigidBody
   - LobsterFramework.MovementController.RotateByDegrees(System.Single)
   - LobsterFramework.MovementController.RotateForwardDirection(UnityEngine.Vector2)
@@ -21,7 +22,6 @@ items:
   - LobsterFramework.MovementController.Speed
   - LobsterFramework.MovementController.moveSpeedModifier
   - LobsterFramework.MovementController.movementLock
-  - LobsterFramework.MovementController.onMovementBlocked
   - LobsterFramework.MovementController.rotateSpeedModifier
   langs:
   - csharp
@@ -180,23 +180,23 @@ items:
     arguments:
     - type: System.Type
       value: UnityEngine.Rigidbody2D
-- uid: LobsterFramework.MovementController.onMovementBlocked
-  commentId: F:LobsterFramework.MovementController.onMovementBlocked
-  id: onMovementBlocked
+- uid: LobsterFramework.MovementController.OnMovementBlocked
+  commentId: F:LobsterFramework.MovementController.OnMovementBlocked
+  id: OnMovementBlocked
   parent: LobsterFramework.MovementController
   langs:
   - csharp
   - vb
-  name: onMovementBlocked
-  nameWithType: MovementController.onMovementBlocked
-  fullName: LobsterFramework.MovementController.onMovementBlocked
+  name: OnMovementBlocked
+  nameWithType: MovementController.OnMovementBlocked
+  fullName: LobsterFramework.MovementController.OnMovementBlocked
   type: Field
   source:
     remote:
       path: Entity/MovementController.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: onMovementBlocked
+    id: OnMovementBlocked
     path: ../Entity/MovementController.cs
     startLine: 17
   assemblies:
@@ -205,10 +205,10 @@ items:
   summary: Event that occurs when movement status is changed
   example: []
   syntax:
-    content: public Action<bool> onMovementBlocked
+    content: public Action<bool> OnMovementBlocked
     return:
       type: System.Action{System.Boolean}
-    content.vb: Public onMovementBlocked As Action(Of Boolean)
+    content.vb: Public OnMovementBlocked As Action(Of Boolean)
 - uid: LobsterFramework.MovementController.movementLock
   commentId: F:LobsterFramework.MovementController.movementLock
   id: movementLock

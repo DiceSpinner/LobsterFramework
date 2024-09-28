@@ -1049,19 +1049,19 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.Ability
   fullName: LobsterFramework.AbilitySystem.Ability
   nameWithType: Ability
-- uid: LobsterFramework.AbilitySystem.Ability.abilityManager
-  name: abilityManager
-  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityManager
-  commentId: P:LobsterFramework.AbilitySystem.Ability.abilityManager
-  fullName: LobsterFramework.AbilitySystem.Ability.abilityManager
-  nameWithType: Ability.abilityManager
-- uid: LobsterFramework.AbilitySystem.Ability.abilityManager*
-  name: abilityManager
-  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityManager_
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.abilityManager
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityManager
+  name: AbilityManager
+  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_AbilityManager
+  commentId: P:LobsterFramework.AbilitySystem.Ability.AbilityManager
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityManager
+  nameWithType: Ability.AbilityManager
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityManager*
+  name: AbilityManager
+  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_AbilityManager_
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.AbilityManager
   isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.Ability.abilityManager
-  nameWithType: Ability.abilityManager
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityManager
+  nameWithType: Ability.AbilityManager
 - uid: LobsterFramework.AbilitySystem.Ability.Action
   name: Action()
   href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Action
@@ -1088,19 +1088,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.Ability.Channel
   nameWithType: Ability.Channel
-- uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  name: CompareByExecutionPriority(Ability)
-  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_LobsterFramework_AbilitySystem_Ability_
-  commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  nameWithType: Ability.CompareByExecutionPriority(Ability)
-- uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority*
-  name: CompareByExecutionPriority
-  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority
-  nameWithType: Ability.CompareByExecutionPriority
 - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   name: ConditionSatisfied()
   href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ConditionSatisfied
@@ -1272,19 +1259,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.Ability.Instance
   nameWithType: Ability.Instance
-- uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  name: InstancesRunning
-  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_InstancesRunning
-  commentId: P:LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  fullName: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  nameWithType: Ability.InstancesRunning
-- uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning*
-  name: InstancesRunning
-  href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_InstancesRunning_
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  nameWithType: Ability.InstancesRunning
 - uid: LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   name: IsReady(string)
   href: api/LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_IsReady_System_String_
@@ -1451,6 +1425,83 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.AbilityChannel
   fullName: LobsterFramework.AbilitySystem.AbilityChannel
   nameWithType: AbilityChannel
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
+  name: config
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_config
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
+  nameWithType: AbilityChannel.config
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.context
+  name: context
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_context
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.context
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.context
+  nameWithType: AbilityChannel.context
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  name: Cooldown
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_Cooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  nameWithType: AbilityChannel.Cooldown
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown*
+  name: Cooldown
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_Cooldown_
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  nameWithType: AbilityChannel.Cooldown
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  name: IsRunning
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_IsRunning
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  nameWithType: AbilityChannel.IsRunning
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning*
+  name: IsRunning
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_IsRunning_
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  nameWithType: AbilityChannel.IsRunning
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  name: IsSuspended
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_IsSuspended
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  nameWithType: AbilityChannel.IsSuspended
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended*
+  name: IsSuspended
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_IsSuspended_
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  nameWithType: AbilityChannel.IsSuspended
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  name: OnCooldown
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_OnCooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  nameWithType: AbilityChannel.OnCooldown
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown*
+  name: OnCooldown
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_OnCooldown_
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  nameWithType: AbilityChannel.OnCooldown
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  name: TimeWhenAvailable
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_TimeWhenAvailable
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  nameWithType: AbilityChannel.TimeWhenAvailable
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable*
+  name: TimeWhenAvailable
+  href: api/LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework_AbilitySystem_AbilityChannel_TimeWhenAvailable_
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  nameWithType: AbilityChannel.TimeWhenAvailable
 - uid: LobsterFramework.AbilitySystem.AbilityComponent
   name: AbilityComponent
   href: api/LobsterFramework.AbilitySystem.AbilityComponent.html
@@ -1546,32 +1597,6 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.AbilityContext
   fullName: LobsterFramework.AbilitySystem.AbilityContext
   nameWithType: AbilityContext
-- uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  name: IsRunning
-  href: api/LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework_AbilitySystem_AbilityContext_IsRunning
-  commentId: P:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  nameWithType: AbilityContext.IsRunning
-- uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning*
-  name: IsRunning
-  href: api/LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework_AbilitySystem_AbilityContext_IsRunning_
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  nameWithType: AbilityContext.IsRunning
-- uid: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  name: OnCooldown
-  href: api/LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework_AbilitySystem_AbilityContext_OnCooldown
-  commentId: P:LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  nameWithType: AbilityContext.OnCooldown
-- uid: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown*
-  name: OnCooldown
-  href: api/LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework_AbilitySystem_AbilityContext_OnCooldown_
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  nameWithType: AbilityContext.OnCooldown
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine
   name: AbilityCoroutine
   href: api/LobsterFramework.AbilitySystem.AbilityCoroutine.html
@@ -1713,12 +1738,12 @@ references:
   commentId: T:LobsterFramework.AbilitySystem.AbilityDictionary
   fullName: LobsterFramework.AbilitySystem.AbilityDictionary
   nameWithType: AbilityDictionary
-- uid: LobsterFramework.AbilitySystem.AbilityExecutor
-  name: AbilityExecutor
-  href: api/LobsterFramework.AbilitySystem.AbilityExecutor.html
-  commentId: T:LobsterFramework.AbilitySystem.AbilityExecutor
-  fullName: LobsterFramework.AbilitySystem.AbilityExecutor
-  nameWithType: AbilityExecutor
+- uid: LobsterFramework.AbilitySystem.AbilityInstanceManagement
+  name: AbilityInstanceManagement
+  href: api/LobsterFramework.AbilitySystem.AbilityInstanceManagement.html
+  commentId: T:LobsterFramework.AbilitySystem.AbilityInstanceManagement
+  fullName: LobsterFramework.AbilitySystem.AbilityInstanceManagement
+  nameWithType: AbilityInstanceManagement
 - uid: LobsterFramework.AbilitySystem.AbilityManager
   name: AbilityManager
   href: api/LobsterFramework.AbilitySystem.AbilityManager.html
@@ -2435,32 +2460,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.InitWeaponAbilityReferences
   nameWithType: Attack.InitWeaponAbilityReferences
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineEnqueue
-  name: OnCoroutineEnqueue()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnCoroutineEnqueue
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineEnqueue
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineEnqueue()
-  nameWithType: Attack.OnCoroutineEnqueue()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineEnqueue*
-  name: OnCoroutineEnqueue
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnCoroutineEnqueue_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineEnqueue
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineEnqueue
-  nameWithType: Attack.OnCoroutineEnqueue
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineFinish
-  name: OnCoroutineFinish()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnCoroutineFinish
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineFinish
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineFinish()
-  nameWithType: Attack.OnCoroutineFinish()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineFinish*
-  name: OnCoroutineFinish
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnCoroutineFinish_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineFinish
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineFinish
-  nameWithType: Attack.OnCoroutineFinish
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnCoroutineReset
   name: OnCoroutineReset()
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnCoroutineReset
@@ -2493,6 +2492,32 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnSignaled
   nameWithType: Attack.OnSignaled
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityEnqueue
+  name: OnWeaponAbilityEnqueue()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnWeaponAbilityEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityEnqueue
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityEnqueue()
+  nameWithType: Attack.OnWeaponAbilityEnqueue()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityEnqueue*
+  name: OnWeaponAbilityEnqueue
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnWeaponAbilityEnqueue_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityEnqueue
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityEnqueue
+  nameWithType: Attack.OnWeaponAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityFinish
+  name: OnWeaponAbilityFinish()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnWeaponAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityFinish
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityFinish()
+  nameWithType: Attack.OnWeaponAbilityFinish()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityFinish*
+  name: OnWeaponAbilityFinish
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Attack.html#LobsterFramework_AbilitySystem_WeaponSystem_Attack_OnWeaponAbilityFinish_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityFinish
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Attack.OnWeaponAbilityFinish
+  nameWithType: Attack.OnWeaponAbilityFinish
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel
   name: AttackChannel
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel.html
@@ -2625,32 +2650,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitWeaponAbilityReferences
   nameWithType: ChargedAttack.InitWeaponAbilityReferences
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineEnqueue
-  name: OnCoroutineEnqueue()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnCoroutineEnqueue
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineEnqueue
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineEnqueue()
-  nameWithType: ChargedAttack.OnCoroutineEnqueue()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineEnqueue*
-  name: OnCoroutineEnqueue
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnCoroutineEnqueue_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineEnqueue
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineEnqueue
-  nameWithType: ChargedAttack.OnCoroutineEnqueue
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineFinish
-  name: OnCoroutineFinish()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnCoroutineFinish
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineFinish
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineFinish()
-  nameWithType: ChargedAttack.OnCoroutineFinish()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineFinish*
-  name: OnCoroutineFinish
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnCoroutineFinish_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineFinish
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineFinish
-  nameWithType: ChargedAttack.OnCoroutineFinish
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineReset
   name: OnCoroutineReset()
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnCoroutineReset
@@ -2696,6 +2695,32 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnSignaled
   nameWithType: ChargedAttack.OnSignaled
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue
+  name: OnWeaponAbilityEnqueue()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnWeaponAbilityEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue()
+  nameWithType: ChargedAttack.OnWeaponAbilityEnqueue()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue*
+  name: OnWeaponAbilityEnqueue
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnWeaponAbilityEnqueue_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue
+  nameWithType: ChargedAttack.OnWeaponAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityFinish
+  name: OnWeaponAbilityFinish()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnWeaponAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityFinish
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityFinish()
+  nameWithType: ChargedAttack.OnWeaponAbilityFinish()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityFinish*
+  name: OnWeaponAbilityFinish
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnWeaponAbilityFinish_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityFinish
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityFinish
+  nameWithType: ChargedAttack.OnWeaponAbilityFinish
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponHit(LobsterFramework.AbilitySystem.WeaponSystem.Weapon)
   name: OnWeaponHit(Weapon)
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework_AbilitySystem_WeaponSystem_ChargedAttack_OnWeaponHit_LobsterFramework_AbilitySystem_WeaponSystem_Weapon_
@@ -2924,32 +2949,6 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.InitWeaponAbilityReferences
   nameWithType: Guard.InitWeaponAbilityReferences
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  name: OnCoroutineEnqueue()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnCoroutineEnqueue
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue()
-  nameWithType: Guard.OnCoroutineEnqueue()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue*
-  name: OnCoroutineEnqueue
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnCoroutineEnqueue_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  nameWithType: Guard.OnCoroutineEnqueue
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  name: OnCoroutineFinish()
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnCoroutineFinish
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish()
-  nameWithType: Guard.OnCoroutineFinish()
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish*
-  name: OnCoroutineFinish
-  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnCoroutineFinish_
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  isSpec: "True"
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  nameWithType: Guard.OnCoroutineFinish
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineReset
   name: OnCoroutineReset()
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnCoroutineReset
@@ -2982,6 +2981,32 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnSignaled
   nameWithType: Guard.OnSignaled
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  name: OnWeaponAbilityEnqueue()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnWeaponAbilityEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue()
+  nameWithType: Guard.OnWeaponAbilityEnqueue()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue*
+  name: OnWeaponAbilityEnqueue
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnWeaponAbilityEnqueue_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  nameWithType: Guard.OnWeaponAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  name: OnWeaponAbilityFinish()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnWeaponAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish()
+  nameWithType: Guard.OnWeaponAbilityFinish()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish*
+  name: OnWeaponAbilityFinish
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_OnWeaponAbilityFinish_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  nameWithType: Guard.OnWeaponAbilityFinish
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.WeaponAbilityReady
   name: WeaponAbilityReady()
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework_AbilitySystem_WeaponSystem_Guard_WeaponAbilityReady
@@ -3701,6 +3726,12 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
   nameWithType: WeaponAbility.InitWeaponAbilityReferences
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InstanceExecuting
+  name: InstanceExecuting
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_InstanceExecuting
+  commentId: F:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InstanceExecuting
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InstanceExecuting
+  nameWithType: WeaponAbility.InstanceExecuting
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.IsMainhanded
   name: IsMainhanded
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_IsMainhanded
@@ -3714,6 +3745,58 @@ references:
   isSpec: "True"
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.IsMainhanded
   nameWithType: WeaponAbility.IsMainhanded
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
+  name: OnCoroutineEnqueue()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnCoroutineEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue()
+  nameWithType: WeaponAbility.OnCoroutineEnqueue()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue*
+  name: OnCoroutineEnqueue
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnCoroutineEnqueue_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
+  nameWithType: WeaponAbility.OnCoroutineEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
+  name: OnCoroutineFinish()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnCoroutineFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish()
+  nameWithType: WeaponAbility.OnCoroutineFinish()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish*
+  name: OnCoroutineFinish
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnCoroutineFinish_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
+  nameWithType: WeaponAbility.OnCoroutineFinish
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  name: OnWeaponAbilityEnqueue()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnWeaponAbilityEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue()
+  nameWithType: WeaponAbility.OnWeaponAbilityEnqueue()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue*
+  name: OnWeaponAbilityEnqueue
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnWeaponAbilityEnqueue_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  nameWithType: WeaponAbility.OnWeaponAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  name: OnWeaponAbilityFinish()
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnWeaponAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish()
+  nameWithType: WeaponAbility.OnWeaponAbilityFinish()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish*
+  name: OnWeaponAbilityFinish
+  href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_OnWeaponAbilityFinish_
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  isSpec: "True"
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  nameWithType: WeaponAbility.OnWeaponAbilityFinish
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
   name: WeaponAbilityReady()
   href: api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponSystem_WeaponAbility_WeaponAbilityReady
@@ -7546,12 +7629,106 @@ references:
   commentId: F:LobsterFramework.Init.InitializationAttributeType.Runtime
   fullName: LobsterFramework.Init.InitializationAttributeType.Runtime
   nameWithType: InitializationAttributeType.Runtime
-- uid: LobsterFramework.Init.PlayerLoopInject
-  name: PlayerLoopInject
-  href: api/LobsterFramework.Init.PlayerLoopInject.html
-  commentId: T:LobsterFramework.Init.PlayerLoopInject
-  fullName: LobsterFramework.Init.PlayerLoopInject
-  nameWithType: PlayerLoopInject
+- uid: LobsterFramework.Init.IPlayerLoopEventGroup
+  name: IPlayerLoopEventGroup
+  href: api/LobsterFramework.Init.IPlayerLoopEventGroup.html
+  commentId: T:LobsterFramework.Init.IPlayerLoopEventGroup
+  fullName: LobsterFramework.Init.IPlayerLoopEventGroup
+  nameWithType: IPlayerLoopEventGroup
+- uid: LobsterFramework.Init.PlayerLoopEventAttribute
+  name: PlayerLoopEventAttribute
+  href: api/LobsterFramework.Init.PlayerLoopEventAttribute.html
+  commentId: T:LobsterFramework.Init.PlayerLoopEventAttribute
+  fullName: LobsterFramework.Init.PlayerLoopEventAttribute
+  nameWithType: PlayerLoopEventAttribute
+- uid: LobsterFramework.Init.PlayerLoopEventAttribute.#ctor(System.Type)
+  name: PlayerLoopEventAttribute(Type)
+  href: api/LobsterFramework.Init.PlayerLoopEventAttribute.html#LobsterFramework_Init_PlayerLoopEventAttribute__ctor_System_Type_
+  commentId: M:LobsterFramework.Init.PlayerLoopEventAttribute.#ctor(System.Type)
+  name.vb: New(Type)
+  fullName: LobsterFramework.Init.PlayerLoopEventAttribute.PlayerLoopEventAttribute(System.Type)
+  fullName.vb: LobsterFramework.Init.PlayerLoopEventAttribute.New(System.Type)
+  nameWithType: PlayerLoopEventAttribute.PlayerLoopEventAttribute(Type)
+  nameWithType.vb: PlayerLoopEventAttribute.New(Type)
+- uid: LobsterFramework.Init.PlayerLoopEventAttribute.#ctor*
+  name: PlayerLoopEventAttribute
+  href: api/LobsterFramework.Init.PlayerLoopEventAttribute.html#LobsterFramework_Init_PlayerLoopEventAttribute__ctor_
+  commentId: Overload:LobsterFramework.Init.PlayerLoopEventAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Init.PlayerLoopEventAttribute.PlayerLoopEventAttribute
+  fullName.vb: LobsterFramework.Init.PlayerLoopEventAttribute.New
+  nameWithType: PlayerLoopEventAttribute.PlayerLoopEventAttribute
+  nameWithType.vb: PlayerLoopEventAttribute.New
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  name: PlayerLoopEventGroupAttribute
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html
+  commentId: T:LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  nameWithType: PlayerLoopEventGroupAttribute
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.#ctor(System.Type)
+  name: PlayerLoopEventGroupAttribute(Type)
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute__ctor_System_Type_
+  commentId: M:LobsterFramework.Init.PlayerLoopEventGroupAttribute.#ctor(System.Type)
+  name.vb: New(Type)
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.PlayerLoopEventGroupAttribute(System.Type)
+  fullName.vb: LobsterFramework.Init.PlayerLoopEventGroupAttribute.New(System.Type)
+  nameWithType: PlayerLoopEventGroupAttribute.PlayerLoopEventGroupAttribute(Type)
+  nameWithType.vb: PlayerLoopEventGroupAttribute.New(Type)
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.#ctor*
+  name: PlayerLoopEventGroupAttribute
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute__ctor_
+  commentId: Overload:LobsterFramework.Init.PlayerLoopEventGroupAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.PlayerLoopEventGroupAttribute
+  fullName.vb: LobsterFramework.Init.PlayerLoopEventGroupAttribute.New
+  nameWithType: PlayerLoopEventGroupAttribute.PlayerLoopEventGroupAttribute
+  nameWithType.vb: PlayerLoopEventGroupAttribute.New
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.Init(System.Type)
+  name: Init(Type)
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute_Init_System_Type_
+  commentId: M:LobsterFramework.Init.PlayerLoopEventGroupAttribute.Init(System.Type)
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.Init(System.Type)
+  nameWithType: PlayerLoopEventGroupAttribute.Init(Type)
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.Init*
+  name: Init
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute_Init_
+  commentId: Overload:LobsterFramework.Init.PlayerLoopEventGroupAttribute.Init
+  isSpec: "True"
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.Init
+  nameWithType: PlayerLoopEventGroupAttribute.Init
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.InjectAfter
+  name: InjectAfter
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute_InjectAfter
+  commentId: F:LobsterFramework.Init.PlayerLoopEventGroupAttribute.InjectAfter
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.InjectAfter
+  nameWithType: PlayerLoopEventGroupAttribute.InjectAfter
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.IsCompatible(System.Type)
+  name: IsCompatible(Type)
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute_IsCompatible_System_Type_
+  commentId: M:LobsterFramework.Init.PlayerLoopEventGroupAttribute.IsCompatible(System.Type)
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.IsCompatible(System.Type)
+  nameWithType: PlayerLoopEventGroupAttribute.IsCompatible(Type)
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.IsCompatible*
+  name: IsCompatible
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute_IsCompatible_
+  commentId: Overload:LobsterFramework.Init.PlayerLoopEventGroupAttribute.IsCompatible
+  isSpec: "True"
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.IsCompatible
+  nameWithType: PlayerLoopEventGroupAttribute.IsCompatible
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute.Priority
+  name: Priority
+  href: api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html#LobsterFramework_Init_PlayerLoopEventGroupAttribute_Priority
+  commentId: F:LobsterFramework.Init.PlayerLoopEventGroupAttribute.Priority
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute.Priority
+  nameWithType: PlayerLoopEventGroupAttribute.Priority
+- uid: LobsterFramework.Init.PlayerLoopEventInjection
+  name: PlayerLoopEventInjection
+  href: api/LobsterFramework.Init.PlayerLoopEventInjection.html
+  commentId: T:LobsterFramework.Init.PlayerLoopEventInjection
+  fullName: LobsterFramework.Init.PlayerLoopEventInjection
+  nameWithType: PlayerLoopEventInjection
 - uid: LobsterFramework.Init.RegisterInitializationAttribute
   name: RegisterInitializationAttribute
   href: api/LobsterFramework.Init.RegisterInitializationAttribute.html
@@ -7583,25 +7760,6 @@ references:
   commentId: F:LobsterFramework.Init.RegisterInitializationAttribute.AttributeType
   fullName: LobsterFramework.Init.RegisterInitializationAttribute.AttributeType
   nameWithType: RegisterInitializationAttribute.AttributeType
-- uid: LobsterFramework.Init.Singleton
-  name: Singleton
-  href: api/LobsterFramework.Init.Singleton.html
-  commentId: T:LobsterFramework.Init.Singleton
-  fullName: LobsterFramework.Init.Singleton
-  nameWithType: Singleton
-- uid: LobsterFramework.Init.Singleton.SingletonObject
-  name: SingletonObject
-  href: api/LobsterFramework.Init.Singleton.html#LobsterFramework_Init_Singleton_SingletonObject
-  commentId: P:LobsterFramework.Init.Singleton.SingletonObject
-  fullName: LobsterFramework.Init.Singleton.SingletonObject
-  nameWithType: Singleton.SingletonObject
-- uid: LobsterFramework.Init.Singleton.SingletonObject*
-  name: SingletonObject
-  href: api/LobsterFramework.Init.Singleton.html#LobsterFramework_Init_Singleton_SingletonObject_
-  commentId: Overload:LobsterFramework.Init.Singleton.SingletonObject
-  isSpec: "True"
-  fullName: LobsterFramework.Init.Singleton.SingletonObject
-  nameWithType: Singleton.SingletonObject
 - uid: LobsterFramework.Interaction
   name: LobsterFramework.Interaction
   href: api/LobsterFramework.Interaction.html
@@ -8389,12 +8547,12 @@ references:
   commentId: F:LobsterFramework.MovementController.moveSpeedModifier
   fullName: LobsterFramework.MovementController.moveSpeedModifier
   nameWithType: MovementController.moveSpeedModifier
-- uid: LobsterFramework.MovementController.onMovementBlocked
-  name: onMovementBlocked
-  href: api/LobsterFramework.MovementController.html#LobsterFramework_MovementController_onMovementBlocked
-  commentId: F:LobsterFramework.MovementController.onMovementBlocked
-  fullName: LobsterFramework.MovementController.onMovementBlocked
-  nameWithType: MovementController.onMovementBlocked
+- uid: LobsterFramework.MovementController.OnMovementBlocked
+  name: OnMovementBlocked
+  href: api/LobsterFramework.MovementController.html#LobsterFramework_MovementController_OnMovementBlocked
+  commentId: F:LobsterFramework.MovementController.OnMovementBlocked
+  fullName: LobsterFramework.MovementController.OnMovementBlocked
+  nameWithType: MovementController.OnMovementBlocked
 - uid: LobsterFramework.MovementController.RigidBody
   name: RigidBody
   href: api/LobsterFramework.MovementController.html#LobsterFramework_MovementController_RigidBody

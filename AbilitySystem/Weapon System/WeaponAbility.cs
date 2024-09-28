@@ -11,6 +11,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
     {
         protected WeaponManager WeaponManager { get; private set; }
         protected bool IsMainhanded { get;private set; }
+        protected bool InstanceExecuting = false;
 
         protected sealed override void InitializeSharedReferences()
         {
@@ -31,6 +32,9 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
         protected sealed override bool ConditionSatisfied()
         {
+            if (InstanceExecuting) {
+                return false;
+            }
             Weapon query;
             if (IsMainhanded) {
                 query = WeaponManager.Mainhand;
@@ -52,7 +56,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
                 }
             }
 
-            return query != null && InstancesRunning == 0 && WeaponAbilityReady();
+            return query != null && WeaponAbilityReady();
         }
 
         /// <summary>
@@ -60,5 +64,32 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         /// </summary>
         /// <returns>true if the ability is ready, otherwise false</returns>
         protected virtual bool WeaponAbilityReady() { return true; } 
+
+        /// <summary>
+        /// Replaced by <see cref="OnWeaponAbilityEnqueue"/>
+        /// </summary>
+        protected sealed override void OnCoroutineEnqueue() { 
+            InstanceExecuting = true;
+            OnWeaponAbilityEnqueue();
+        }
+
+        /// <summary>
+        /// Replaces <see cref="OnCoroutineEnqueue"/>
+        /// </summary>
+        protected virtual void OnWeaponAbilityEnqueue() { }
+
+        /// <summary>
+        /// Replaced by <see cref="OnWeaponAbilityFinish"/>
+        /// </summary>
+        protected sealed override void OnCoroutineFinish()
+        {
+            InstanceExecuting = false;
+            OnWeaponAbilityFinish();
+        }
+
+        /// <summary>
+        /// Repalces <see cref="OnCoroutineFinish"/>
+        /// </summary>
+        protected virtual void OnWeaponAbilityFinish() { }
     }
 }

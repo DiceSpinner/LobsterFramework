@@ -20,7 +20,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         {
             if (weaponManager.Mainhand != null) {
                 ValueTuple<Type, string> setting = weaponManager.Mainhand.AbilitySetting;
-                return abilityManager.IsAbilityReady(setting.Item1, setting.Item2);
+                return AbilityManager.IsAbilityReady(setting.Item1, setting.Item2);
             }
             return false;
         }
@@ -28,14 +28,14 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         protected override void OnAbilityEnqueue()
         {
             (Type abilityType, string instance) = weaponManager.Mainhand.AbilitySetting;
-            abilityManager.EnqueueAbility(abilityType, instance);
+            AbilityManager.EnqueueAbility(abilityType, instance);
             JoinAsSecondary(abilityType, instance);
         }
 
         protected override void OnAbilityFinish()
         {
            (Type abilityType, string instance) = weaponManager.Mainhand.AbilitySetting;
-            abilityManager.SuspendAbilityInstance(abilityType, instance);
+            AbilityManager.SuspendAbilityInstance(abilityType, instance);
         }
 
         protected override bool Action()

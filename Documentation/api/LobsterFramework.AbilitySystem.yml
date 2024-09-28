@@ -15,7 +15,7 @@ items:
   - LobsterFramework.AbilitySystem.AbilityCoroutineContext
   - LobsterFramework.AbilitySystem.AbilityData
   - LobsterFramework.AbilitySystem.AbilityDictionary
-  - LobsterFramework.AbilitySystem.AbilityExecutor
+  - LobsterFramework.AbilitySystem.AbilityInstanceManagement
   - LobsterFramework.AbilitySystem.AbilityManager
   - LobsterFramework.AbilitySystem.AbilitySelector
   - LobsterFramework.AbilitySystem.AddAbilityComponentMenuAttribute
@@ -55,6 +55,12 @@ references:
   name: AbilityData
   nameWithType: AbilityData
   fullName: LobsterFramework.AbilitySystem.AbilityData
+- uid: LobsterFramework.AbilitySystem.AbilityInstanceManagement
+  commentId: T:LobsterFramework.AbilitySystem.AbilityInstanceManagement
+  href: LobsterFramework.AbilitySystem.AbilityInstanceManagement.html
+  name: AbilityInstanceManagement
+  nameWithType: AbilityInstanceManagement
+  fullName: LobsterFramework.AbilitySystem.AbilityInstanceManagement
 - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   parent: LobsterFramework.AbilitySystem
@@ -69,12 +75,6 @@ references:
   name: AbilitySelector
   nameWithType: AbilitySelector
   fullName: LobsterFramework.AbilitySystem.AbilitySelector
-- uid: LobsterFramework.AbilitySystem.AbilityExecutor
-  commentId: T:LobsterFramework.AbilitySystem.AbilityExecutor
-  href: LobsterFramework.AbilitySystem.AbilityExecutor.html
-  name: AbilityExecutor
-  nameWithType: AbilityExecutor
-  fullName: LobsterFramework.AbilitySystem.AbilityExecutor
 - uid: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
   commentId: T:LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute
   href: LobsterFramework.AbilitySystem.RestrictAbilityTypeAttribute.html

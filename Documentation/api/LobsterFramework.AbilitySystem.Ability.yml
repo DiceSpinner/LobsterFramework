@@ -5,9 +5,9 @@ items:
   id: Ability
   parent: LobsterFramework.AbilitySystem
   children:
+  - LobsterFramework.AbilitySystem.Ability.AbilityManager
   - LobsterFramework.AbilitySystem.Ability.Action
   - LobsterFramework.AbilitySystem.Ability.Channel
-  - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   - LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
   - LobsterFramework.AbilitySystem.Ability.Config
   - LobsterFramework.AbilitySystem.Ability.Context
@@ -21,7 +21,6 @@ items:
   - LobsterFramework.AbilitySystem.Ability.InitializeContext
   - LobsterFramework.AbilitySystem.Ability.InitializeSharedReferences
   - LobsterFramework.AbilitySystem.Ability.Instance
-  - LobsterFramework.AbilitySystem.Ability.InstancesRunning
   - LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
@@ -34,7 +33,6 @@ items:
   - LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   - LobsterFramework.AbilitySystem.Ability.SuspendAll
   - LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)
-  - LobsterFramework.AbilitySystem.Ability.abilityManager
   langs:
   - csharp
   - vb
@@ -148,35 +146,35 @@ items:
     return:
       type: System.String
     content.vb: Public Const DefaultAbilityInstance As String = "default"
-- uid: LobsterFramework.AbilitySystem.Ability.abilityManager
-  commentId: P:LobsterFramework.AbilitySystem.Ability.abilityManager
-  id: abilityManager
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityManager
+  commentId: P:LobsterFramework.AbilitySystem.Ability.AbilityManager
+  id: AbilityManager
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: abilityManager
-  nameWithType: Ability.abilityManager
-  fullName: LobsterFramework.AbilitySystem.Ability.abilityManager
+  name: AbilityManager
+  nameWithType: Ability.AbilityManager
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityManager
   type: Property
   source:
     remote:
       path: AbilitySystem/Ability.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: abilityManager
+    id: AbilityManager
     path: ../AbilitySystem/Ability.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: protected AbilityManager abilityManager { get; }
+    content: protected AbilityManager AbilityManager { get; }
     parameters: []
     return:
       type: LobsterFramework.AbilitySystem.AbilityManager
-    content.vb: Protected Property abilityManager As AbilityManager
-  overload: LobsterFramework.AbilitySystem.Ability.abilityManager*
+    content.vb: Protected Property AbilityManager As AbilityManager
+  overload: LobsterFramework.AbilitySystem.Ability.AbilityManager*
 - uid: LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   commentId: P:LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   id: ExecutionPriority
@@ -195,7 +193,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ExecutionPriority
     path: ../AbilitySystem/Ability.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -226,7 +224,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Instance
     path: ../AbilitySystem/Ability.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -257,7 +255,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Config
     path: ../AbilitySystem/Ability.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -288,7 +286,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Channel
     path: ../AbilitySystem/Ability.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -319,7 +317,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Context
     path: ../AbilitySystem/Ability.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -350,7 +348,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializeSharedReferences
     path: ../AbilitySystem/Ability.cs
-    startLine: 151
+    startLine: 155
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -378,7 +376,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializeContext
     path: ../AbilitySystem/Ability.cs
-    startLine: 156
+    startLine: 160
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -406,7 +404,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: FinalizeSharedReferences
     path: ../AbilitySystem/Ability.cs
-    startLine: 174
+    startLine: 178
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -434,7 +432,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: FinalizeContext
     path: ../AbilitySystem/Ability.cs
-    startLine: 179
+    startLine: 183
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -444,37 +442,6 @@ items:
     content: protected virtual void FinalizeContext()
     content.vb: Protected Overridable Sub FinalizeContext()
   overload: LobsterFramework.AbilitySystem.Ability.FinalizeContext*
-- uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  id: CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: CompareByExecutionPriority(Ability)
-  nameWithType: Ability.CompareByExecutionPriority(Ability)
-  fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: CompareByExecutionPriority
-    path: ../AbilitySystem/Ability.cs
-    startLine: 190
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public int CompareByExecutionPriority(Ability other)
-    parameters:
-    - id: other
-      type: LobsterFramework.AbilitySystem.Ability
-    return:
-      type: System.Int32
-    content.vb: Public Function CompareByExecutionPriority(other As Ability) As Integer
-  overload: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority*
 - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   commentId: M:LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   id: StartAnimation(UnityEngine.AnimationClip,System.Single)
@@ -493,7 +460,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: StartAnimation
     path: ../AbilitySystem/Ability.cs
-    startLine: 197
+    startLine: 193
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -529,7 +496,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetComponentReference
     path: ../AbilitySystem/Ability.cs
-    startLine: 210
+    startLine: 206
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -537,7 +504,7 @@ items:
     Attempts to get the reference of the specified component type from <xref href="LobsterFramework.AbilitySystem.AbilityManager" data-throw-if-not-resolved="false"></xref>. 
 
     The type of the reference should be one of the required types applied via <xref href="LobsterFramework.RequireComponentReferenceAttribute" data-throw-if-not-resolved="false"></xref> on this ability class.
-  remarks: This is a shorthand call for <xref href="LobsterFramework.ReferenceProvider.GetComponentReference%60%601(System.Type%2cSystem.Int32)" data-throw-if-not-resolved="false"></xref> via <xref href="LobsterFramework.AbilitySystem.Ability.abilityManager" data-throw-if-not-resolved="false"></xref>
+  remarks: This is a shorthand call for <xref href="LobsterFramework.ReferenceProvider.GetComponentReference%60%601(System.Type%2cSystem.Int32)" data-throw-if-not-resolved="false"></xref> via <xref href="LobsterFramework.AbilitySystem.Ability.AbilityManager" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: 'protected T GetComponentReference<T>(int index = 0) where T : Component'
@@ -574,12 +541,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetAbilityComponent
     path: ../AbilitySystem/Ability.cs
-    startLine: 220
+    startLine: 216
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Attempts to get the reference of the specified <xref href="LobsterFramework.AbilitySystem.AbilityComponent" data-throw-if-not-resolved="false"></xref> stored in the same <xref href="LobsterFramework.AbilitySystem.AbilityData" data-throw-if-not-resolved="false"></xref>
-  remarks: This is a shorthand call for <xref href="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent%60%601" data-throw-if-not-resolved="false"></xref> via <xref href="LobsterFramework.AbilitySystem.Ability.abilityManager" data-throw-if-not-resolved="false"></xref>
+  remarks: This is a shorthand call for <xref href="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent%60%601" data-throw-if-not-resolved="false"></xref> via <xref href="LobsterFramework.AbilitySystem.Ability.AbilityManager" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: 'protected T GetAbilityComponent<T>() where T : AbilityComponent'
@@ -612,11 +579,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendInstance
     path: ../AbilitySystem/Ability.cs
-    startLine: 229
+    startLine: 225
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Suspend the execution of the specified ability instance and causing it to finish at the current frame
+  summary: Suspend the execution of the specified ability instance and causing it to finish during the next suspension event.
   example: []
   syntax:
     content: protected bool SuspendInstance(string instance)
@@ -650,7 +617,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SuspendAll
     path: ../AbilitySystem/Ability.cs
-    startLine: 258
+    startLine: 253
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -678,7 +645,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: JoinAsSecondary
     path: ../AbilitySystem/Ability.cs
-    startLine: 273
+    startLine: 268
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -722,7 +689,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: JoinAsSecondary
     path: ../AbilitySystem/Ability.cs
-    startLine: 285
+    startLine: 288
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -748,37 +715,6 @@ items:
   nameWithType.vb: Ability.JoinAsSecondary(Type, String)
   fullName.vb: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type, String)
   name.vb: JoinAsSecondary(Type, String)
-- uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  commentId: P:LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  id: InstancesRunning
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: InstancesRunning
-  nameWithType: Ability.InstancesRunning
-  fullName: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  type: Property
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: InstancesRunning
-    path: ../AbilitySystem/Ability.cs
-    startLine: 387
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  summary: The number of instances of this ability is running
-  example: []
-  syntax:
-    content: public int InstancesRunning { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public ReadOnly Property InstancesRunning As Integer
-  overload: LobsterFramework.AbilitySystem.Ability.InstancesRunning*
 - uid: LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   id: IsRunning(System.String)
@@ -797,7 +733,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsRunning
     path: ../AbilitySystem/Ability.cs
-    startLine: 394
+    startLine: 426
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -835,7 +771,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: IsReady
     path: ../AbilitySystem/Ability.cs
-    startLine: 404
+    startLine: 439
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -873,7 +809,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasInstance
     path: ../AbilitySystem/Ability.cs
-    startLine: 420
+    startLine: 455
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -911,7 +847,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ConditionSatisfied
     path: ../AbilitySystem/Ability.cs
-    startLine: 431
+    startLine: 466
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -942,7 +878,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Action
     path: ../AbilitySystem/Ability.cs
-    startLine: 437
+    startLine: 472
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -973,7 +909,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityEnqueue
     path: ../AbilitySystem/Ability.cs
-    startLine: 442
+    startLine: 477
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1001,7 +937,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAbilityFinish
     path: ../AbilitySystem/Ability.cs
-    startLine: 447
+    startLine: 482
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1029,7 +965,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnAnimationInterrupt
     path: ../AbilitySystem/Ability.cs
-    startLine: 453
+    startLine: 488
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1063,7 +999,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnSignaled
     path: ../AbilitySystem/Ability.cs
-    startLine: 491
+    startLine: 526
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -1094,7 +1030,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnSignaled
     path: ../AbilitySystem/Ability.cs
-    startLine: 496
+    startLine: 531
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -3242,12 +3178,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: LobsterFramework.AbilitySystem.Ability.abilityManager*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.abilityManager
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityManager
-  name: abilityManager
-  nameWithType: Ability.abilityManager
-  fullName: LobsterFramework.AbilitySystem.Ability.abilityManager
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityManager*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.AbilityManager
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.AbilityManager
+  name: AbilityManager
+  nameWithType: Ability.AbilityManager
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityManager
 - uid: LobsterFramework.AbilitySystem.AbilityManager
   commentId: T:LobsterFramework.AbilitySystem.AbilityManager
   parent: LobsterFramework.AbilitySystem
@@ -3341,19 +3277,6 @@ references:
   name: FinalizeContext
   nameWithType: Ability.FinalizeContext
   fullName: LobsterFramework.AbilitySystem.Ability.FinalizeContext
-- uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  name: CompareByExecutionPriority
-  nameWithType: Ability.CompareByExecutionPriority
-  fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority
-- uid: LobsterFramework.AbilitySystem.Ability
-  commentId: T:LobsterFramework.AbilitySystem.Ability
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.Ability.html
-  name: Ability
-  nameWithType: Ability
-  fullName: LobsterFramework.AbilitySystem.Ability
 - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.StartAnimation
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
@@ -3447,13 +3370,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.abilityManager
-  commentId: P:LobsterFramework.AbilitySystem.Ability.abilityManager
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityManager
+  commentId: P:LobsterFramework.AbilitySystem.Ability.AbilityManager
   parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityManager
-  name: abilityManager
-  nameWithType: Ability.abilityManager
-  fullName: LobsterFramework.AbilitySystem.Ability.abilityManager
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.AbilityManager
+  name: AbilityManager
+  nameWithType: Ability.AbilityManager
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityManager
 - uid: LobsterFramework.AbilitySystem.Ability.GetComponentReference*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.GetComponentReference
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
@@ -3479,6 +3402,13 @@ references:
   name: ReferenceProvider
   nameWithType: ReferenceProvider
   fullName: LobsterFramework.ReferenceProvider
+- uid: LobsterFramework.AbilitySystem.Ability
+  commentId: T:LobsterFramework.AbilitySystem.Ability
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability
+  nameWithType: Ability
+  fullName: LobsterFramework.AbilitySystem.Ability
 - uid: T
   name: T
   nameWithType: T
@@ -3562,12 +3492,6 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
-- uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  name: InstancesRunning
-  nameWithType: Ability.InstancesRunning
-  fullName: LobsterFramework.AbilitySystem.Ability.InstancesRunning
 - uid: LobsterFramework.AbilitySystem.Ability.IsRunning*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.IsRunning
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)

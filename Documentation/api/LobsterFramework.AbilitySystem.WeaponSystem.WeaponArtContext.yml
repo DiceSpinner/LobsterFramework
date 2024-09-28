@@ -30,8 +30,6 @@ items:
   - System.Object
   - LobsterFramework.AbilitySystem.AbilityContext
   inheritedMembers:
-  - LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  - LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -88,20 +86,6 @@ references:
   name: AbilityContext
   nameWithType: AbilityContext
   fullName: LobsterFramework.AbilitySystem.AbilityContext
-- uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  commentId: P:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  name: IsRunning
-  nameWithType: AbilityContext.IsRunning
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-- uid: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  commentId: P:LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  name: OnCooldown
-  nameWithType: AbilityContext.OnCooldown
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object

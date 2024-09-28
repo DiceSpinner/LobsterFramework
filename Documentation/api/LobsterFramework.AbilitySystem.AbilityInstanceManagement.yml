@@ -1,64 +1,86 @@
 ### YamlMime:ManagedReference
 items:
-- uid: LobsterFramework.Init.PlayerLoopInject
-  commentId: T:LobsterFramework.Init.PlayerLoopInject
-  id: PlayerLoopInject
-  parent: LobsterFramework.Init
+- uid: LobsterFramework.AbilitySystem.AbilityInstanceManagement
+  commentId: T:LobsterFramework.AbilitySystem.AbilityInstanceManagement
+  id: AbilityInstanceManagement
+  parent: LobsterFramework.AbilitySystem
   children: []
   langs:
   - csharp
   - vb
-  name: PlayerLoopInject
-  nameWithType: PlayerLoopInject
-  fullName: LobsterFramework.Init.PlayerLoopInject
+  name: AbilityInstanceManagement
+  nameWithType: AbilityInstanceManagement
+  fullName: LobsterFramework.AbilitySystem.AbilityInstanceManagement
   type: Class
   source:
     remote:
-      path: Init/PlayerLoopInject.cs
+      path: AbilitySystem/AbilityInstanceManagement.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: PlayerLoopInject
-    path: ../Init/PlayerLoopInject.cs
-    startLine: 7
+    id: AbilityInstanceManagement
+    path: ../AbilitySystem/AbilityInstanceManagement.cs
+    startLine: 10
   assemblies:
   - LobsterFramework
-  namespace: LobsterFramework.Init
+  namespace: LobsterFramework.AbilitySystem
+  summary: Carries out ability instance execution according to the priorities of the abilities.
+  example: []
   syntax:
-    content: public class PlayerLoopInject
-    content.vb: Public Class PlayerLoopInject
+    content: >-
+      [PlayerLoopEventGroup(typeof(PreLateUpdate.ScriptRunBehaviourLateUpdate), Priority = 0, InjectAfter = false)]
+
+      public sealed class AbilityInstanceManagement : IPlayerLoopEventGroup
+    content.vb: >-
+      <PlayerLoopEventGroup(GetType(PreLateUpdate.ScriptRunBehaviourLateUpdate), Priority:=0, InjectAfter:=False)>
+
+      Public NotInheritable Class AbilityInstanceManagement Implements IPlayerLoopEventGroup
   inheritance:
   - System.Object
+  implements:
+  - LobsterFramework.Init.IPlayerLoopEventGroup
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+  attributes:
+  - type: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+    ctor: LobsterFramework.Init.PlayerLoopEventGroupAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: UnityEngine.PlayerLoop.PreLateUpdate.ScriptRunBehaviourLateUpdate
+    namedArguments:
+    - name: Priority
+      type: System.Int32
+      value: 0
+    - name: InjectAfter
+      type: System.Boolean
+      value: false
 references:
-- uid: LobsterFramework.Init
-  commentId: N:LobsterFramework.Init
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html
-  name: LobsterFramework.Init
-  nameWithType: LobsterFramework.Init
-  fullName: LobsterFramework.Init
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
     href: LobsterFramework.html
   - name: .
-  - uid: LobsterFramework.Init
-    name: Init
-    href: LobsterFramework.Init.html
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
     href: LobsterFramework.html
   - name: .
-  - uid: LobsterFramework.Init
-    name: Init
-    href: LobsterFramework.Init.html
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -70,6 +92,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: LobsterFramework.Init.IPlayerLoopEventGroup
+  commentId: T:LobsterFramework.Init.IPlayerLoopEventGroup
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.IPlayerLoopEventGroup.html
+  name: IPlayerLoopEventGroup
+  nameWithType: IPlayerLoopEventGroup
+  fullName: LobsterFramework.Init.IPlayerLoopEventGroup
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -196,30 +225,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -296,3 +301,25 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: LobsterFramework.Init
+  commentId: N:LobsterFramework.Init
+  href: LobsterFramework.html
+  name: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html

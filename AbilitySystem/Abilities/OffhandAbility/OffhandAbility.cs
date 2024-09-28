@@ -20,7 +20,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             if (weaponManager.Offhand != null && (weaponManager.Mainhand == null || !weaponManager.Mainhand.DoubleHanded))
             {
                 ValueTuple<Type, string> setting = weaponManager.Offhand.AbilitySetting;
-                return abilityManager.IsAbilityReady(setting.Item1, setting.Item2);
+                return AbilityManager.IsAbilityReady(setting.Item1, setting.Item2);
             }
             return false;
         }
@@ -28,7 +28,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         protected override void OnAbilityEnqueue()
         {
             (Type abilityType, string instance) = weaponManager.Offhand.AbilitySetting;
-            if (abilityManager.EnqueueAbility(abilityType, instance))
+            if (AbilityManager.EnqueueAbility(abilityType, instance))
             {
                 JoinAsSecondary(abilityType, instance);
             }
@@ -40,7 +40,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         protected override void OnAbilityFinish()
         {
             (Type abilityType, string instance) = weaponManager.Offhand.AbilitySetting;
-             abilityManager.SuspendAbilityInstance(abilityType, instance);
+             AbilityManager.SuspendAbilityInstance(abilityType, instance);
         }
 
         protected override bool Action()

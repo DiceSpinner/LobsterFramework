@@ -145,8 +145,8 @@ items:
     name: AbilityData
   - uid: LobsterFramework.AbilitySystem.AbilityDictionary
     name: AbilityDictionary
-  - uid: LobsterFramework.AbilitySystem.AbilityExecutor
-    name: AbilityExecutor
+  - uid: LobsterFramework.AbilitySystem.AbilityInstanceManagement
+    name: AbilityInstanceManagement
   - uid: LobsterFramework.AbilitySystem.AbilityManager
     name: AbilityManager
   - uid: LobsterFramework.AbilitySystem.AbilitySelector
@@ -358,12 +358,16 @@ items:
     name: InitializationAttribute
   - uid: LobsterFramework.Init.InitializationAttributeType
     name: InitializationAttributeType
-  - uid: LobsterFramework.Init.PlayerLoopInject
-    name: PlayerLoopInject
+  - uid: LobsterFramework.Init.IPlayerLoopEventGroup
+    name: IPlayerLoopEventGroup
+  - uid: LobsterFramework.Init.PlayerLoopEventAttribute
+    name: PlayerLoopEventAttribute
+  - uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+    name: PlayerLoopEventGroupAttribute
+  - uid: LobsterFramework.Init.PlayerLoopEventInjection
+    name: PlayerLoopEventInjection
   - uid: LobsterFramework.Init.RegisterInitializationAttribute
     name: RegisterInitializationAttribute
-  - uid: LobsterFramework.Init.Singleton
-    name: Singleton
 - uid: LobsterFramework.Interaction
   name: LobsterFramework.Interaction
   items:

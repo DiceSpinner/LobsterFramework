@@ -30,6 +30,13 @@ items:
   - System.Object
   - LobsterFramework.AbilitySystem.AbilityChannel
   inheritedMembers:
+  - LobsterFramework.AbilitySystem.AbilityChannel.context
+  - LobsterFramework.AbilitySystem.AbilityChannel.config
+  - LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  - LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  - LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  - LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  - LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -86,6 +93,55 @@ references:
   name: AbilityChannel
   nameWithType: AbilityChannel
   fullName: LobsterFramework.AbilitySystem.AbilityChannel
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.context
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.context
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.context
+  name: context
+  nameWithType: AbilityChannel.context
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.context
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.config
+  name: config
+  nameWithType: AbilityChannel.config
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  name: IsRunning
+  nameWithType: AbilityChannel.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  name: IsSuspended
+  nameWithType: AbilityChannel.IsSuspended
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  name: TimeWhenAvailable
+  nameWithType: AbilityChannel.TimeWhenAvailable
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  name: OnCooldown
+  nameWithType: AbilityChannel.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  name: Cooldown
+  nameWithType: AbilityChannel.Cooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object

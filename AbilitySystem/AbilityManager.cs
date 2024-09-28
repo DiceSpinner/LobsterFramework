@@ -56,12 +56,12 @@ namespace LobsterFramework.AbilitySystem {
         public event Action<Type> OnAnimationEnd;
         #endregion
 
-        // Abilities running
-        private readonly Dictionary<AbilityInstance, AbilityInstance> jointlyRunning = new();
-
         //Animation
         private AnimancerState currentState;
-        private AbilityInstance animating;
+
+        internal AbilityInstance Animating {
+            get; private set;
+        }
         private AnimancerComponent animancer;
 
         // Status
@@ -95,6 +95,15 @@ namespace LobsterFramework.AbilitySystem {
                 SuspendAbilities();
             }
         }
+
+        internal void RegisterSuspendedAbilityInstance(AbilityInstance abilityInstance) {
+            Type abilityType = abilityInstance.ability.GetType();
+            if (Animating.ability == abilityInstance.ability && Animating.name == abilityInstance.name) {
+                OnAnimationEnd?.Invoke(abilityType);
+                Animating = default;
+            }
+            OnAbilityFinished?.Invoke(abilityType);
+        }
          
         private void OnDisable()
         {
@@ -119,23 +128,6 @@ namespace LobsterFramework.AbilitySystem {
             }
            Bind(abilityData);
             abilityData.Activate(this);
-        }
-
-        internal void OnAbilityFinish(AbilityInstance instance) {
-            OnAbilityFinished?.Invoke(instance.ability.GetType());
-
-            if (animating.ability == instance.ability && animating.name == instance.name)
-            {
-                animating = default;
-                OnAnimationEnd?.Invoke(instance.ability.GetType());
-            }
-
-            if (jointlyRunning.ContainsKey(instance))
-            {
-                AbilityInstance joined = jointlyRunning[instance];
-                jointlyRunning.Remove(instance);
-                joined.StopAbility();
-            }
         }
 
         /// <summary>
@@ -169,7 +161,8 @@ namespace LobsterFramework.AbilitySystem {
         /// 3. The precondition of the specified ability instance must be satisfied. <br/>
         /// 4. The ability instance must not be currently running or enqueued. <br/>
         /// <br/>
-        /// Note that this method should only be called inside Update(), calling it elsewhere will result in undefined behavior.
+        /// Note that this method should only be called before LateUpdate(), otherwise the ability instance execution will be deferred to the next frame.
+        /// <see cref="Ability.OnAbilityEnqueue"/> will be immediately called if enqueued successfully.
         /// </summary>
         /// <typeparam name="T">Type of the Ability to be enqueued</typeparam>
         /// <param name="instance">Name of the instance to be enqueued</param>
@@ -199,7 +192,8 @@ namespace LobsterFramework.AbilitySystem {
         /// 3. The precondition of the specified ability instance must be satisfied. <br/>
         /// 4. The ability instance must not be currently running or enqueued. <br/>
         /// <br/>
-        /// Note that this method should only be called inside Update(), calling it elsewhere will result in undefined behavior.
+        /// Note that this method should only be called before LateUpdate(), otherwise the ability instance execution will be deferred to the next frame.
+        /// <see cref="Ability.OnAbilityEnqueue"/> will be immediately called if enqueued successfully.
         /// </summary>
         /// <param name="abilityType">Type of the ability to be enqueued</param>
         /// <param name="instance">Name of the instance to be enqueued</param>
@@ -244,7 +238,8 @@ namespace LobsterFramework.AbilitySystem {
                     EnqueueAbility<V>(instance2);
                     AbilityInstance p1 = new(a1, instance1);
                     AbilityInstance p2 = new(a2, instance2);
-                    jointlyRunning[p1] = p2;
+                    a2.joined.Add(p1);
+                    a1.joinedBy.Add(p2);
                     return true;
                 }
             }
@@ -413,7 +408,7 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         public bool IsAnimating
         {
-            get  { return !animating.IsNullAbility; }
+            get  { return !Animating.IsNullAbility; }
         }
         #endregion
 
@@ -428,9 +423,12 @@ namespace LobsterFramework.AbilitySystem {
         /// <returns>true on success, false otherwise</returns>
         public bool JoinAbilities(Type primaryAbility, Type secondaryAbility, string instance1=Ability.DefaultAbilityInstance, string instance2=Ability.DefaultAbilityInstance) {
             if (IsAbilityRunning(primaryAbility, instance1) && IsAbilityRunning(secondaryAbility, instance2)) {
-                AbilityInstance p1 = new(abilities[primaryAbility.AssemblyQualifiedName], instance1);
-                AbilityInstance p2 = new(abilities[secondaryAbility.AssemblyQualifiedName], instance2);
-                jointlyRunning[p1] = p2;
+                var a1 = abilities[primaryAbility.AssemblyQualifiedName];
+                var a2 = abilities[secondaryAbility.AssemblyQualifiedName];
+                AbilityInstance p1 = new(a1, instance1);
+                AbilityInstance p2 = new(a2, instance2);
+                a1.joinedBy.Add(p2);
+                a2.joined.Add(p1);
                 return true;
             }
             return false;
@@ -448,9 +446,12 @@ namespace LobsterFramework.AbilitySystem {
         {
             if (IsAbilityRunning<T>(instance1) && IsAbilityRunning<V>(instance2))
             {
-                AbilityInstance p1 = new(abilities[typeof(T).AssemblyQualifiedName], instance1);
-                AbilityInstance p2 = new(abilities[typeof(V).AssemblyQualifiedName], instance2);
-                jointlyRunning[p1] = p2;
+                var a1 = abilities[typeof(T).AssemblyQualifiedName];
+                var a2 = abilities[typeof(V).AssemblyQualifiedName];
+                AbilityInstance p1 = new(a1, instance1);
+                AbilityInstance p2 = new(a2, instance2);
+                a1.joinedBy.Add(p2);
+                a2.joined.Add(p1);
                 return true;
             }
             return false;
@@ -472,11 +473,11 @@ namespace LobsterFramework.AbilitySystem {
             {
                 speed = 1;
             }
-            if (!animating.IsNullAbility && !animating.Equals(new AbilityInstance(ability, instance)))
+            if (!Animating.IsNullAbility && !Animating.Equals(new AbilityInstance(ability, instance)))
             {
-                animating.ability.AnimationInterrupt(animating.name, currentState);
+                Animating.ability.AnimationInterrupt(Animating.name, currentState);
             }
-            animating = new(ability, instance);
+            Animating = new(ability, instance);
 
             OnAnimationBegin?.Invoke(ability.GetType());
             currentState = animancer.Play(animation, 0.3f / speed, FadeMode.FromStart);
@@ -489,13 +490,13 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         public void InterruptAbilityAnimation()
         {
-            if (animating.IsNullAbility)
+            if (Animating.IsNullAbility)
             {
                 return;
             }
-            Ability ability = animating.ability;
-            ability.AnimationInterrupt(animating.name, currentState);
-            animating = default;
+            Ability ability = Animating.ability;
+            ability.AnimationInterrupt(Animating.name, currentState);
+            Animating = default;
             OnAnimationEnd?.Invoke(ability.GetType());
         }
 
@@ -514,10 +515,10 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         public void AnimationSignal(AnimationEvent animationEvent)
         {
-            if (animating.IsNullAbility) { return; }
+            if (Animating.IsNullAbility) { return; }
             if (animationEvent.animatorClipInfo.clip == currentState.Clip)
             {
-                animating.ability.Signal(animating.name, animationEvent);
+                Animating.ability.Signal(Animating.name, animationEvent);
             }
         }
 
@@ -527,10 +528,10 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="animationEvent">The animation event instance to be queried</param>
         public void AnimationEnd(AnimationEvent animationEvent)
         {
-            if (animating.IsNullAbility) { return; }
+            if (Animating.IsNullAbility) { return; }
             if (animationEvent.animatorClipInfo.clip == currentState.Clip)
             {
-                animating.ability.SuspendInstance(animating.name);
+                Animating.ability.SuspendInstance(Animating.name);
             }
         }
         #endregion

@@ -21,7 +21,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         protected override void InitWeaponAbilityReferences()
         {
             moveControl = GetComponentReference<MovementController>();
-            damageModifier = abilityManager.GetAbilityComponent<DamageModifier>();
+            damageModifier = AbilityManager.GetAbilityComponent<DamageModifier>();
             move = moveControl.moveSpeedModifier.MakeEffector();
             rotate = moveControl.rotateSpeedModifier.MakeEffector();
         }
@@ -32,7 +32,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             channel.SetConfig((ChargedAttackConfig)Config);
         }
 
-        protected override void OnCoroutineEnqueue()
+        protected override void OnWeaponAbilityEnqueue()
         {
             ChargedAttackContext context = (ChargedAttackContext)Context;
             context.currentWeapon = WeaponManager.Mainhand;
@@ -45,7 +45,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             SubscribeWeaponEvent();
             move.Apply(context.currentWeapon.HMoveSpeedModifier);
             rotate.Apply(context.currentWeapon.HRotationSpeedModifier);
-            context.animationState = abilityManager.StartAnimation(this, Instance, animation, WeaponManager.Mainhand.AttackSpeed);
+            context.animationState = AbilityManager.StartAnimation(this, Instance, animation, WeaponManager.Mainhand.AttackSpeed);
         }
 
         protected override IEnumerable<CoroutineOption> Coroutine()
@@ -82,7 +82,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             }
         }
 
-        protected override void OnCoroutineFinish()
+        protected override void OnWeaponAbilityFinish()
         {
             ChargedAttackContext context = (ChargedAttackContext)Context;
             UnSubscribeWeaponEvent();

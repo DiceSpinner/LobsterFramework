@@ -24,6 +24,8 @@ This page will serve as an manual to how the Ability System functions in Lobster
 - [Coroutine](#coroutine)
 - [Utilities](#utilities)
     - [Ability Selector](#ability-selector)
+- [Notes](#notes)
+    - [Life cycle of Ability Instance](#life-cycle-of-ability-instance)
 - [Summary](#summary)
 - [What Goes Next](#what-goes-next)
 
@@ -82,13 +84,13 @@ public class CircleAttackConfig : AbilityConfig { }
 public class CircleAttackChannel : AbilityChannel { }
 public class CircleAttackContext : AbilityContext { }
 ```
-Defining an ability is really simple! The only thing we are required to do is implement `Ability.Action()` method. This method will be called during ability invokation, which occurs during the `LateUpdate()` unity event, and will continously be called every frame until the method returns false. Currently our ability immediately terminates after dealing damage to the enemy.
+Defining an ability is really simple! The only thing we are required to do is implement `Ability.Action()` method. This method will be called during ability invokation, which occurs right before the `LateUpdate()` unity event, and will continously be called every frame until the method returns false. Currently our ability immediately terminates after dealing damage to the enemy.
 
 Make sure the `[AddAbilityMenu]` attribute is applied and the bottom 3 classes match the names letter by letter in the example. The former makes the ability definition visible to the ability system and it will then use reflection to search for and validate the definition of these 3 supplementary classes. We'll talk about those later in other examples. We should now be able to see the option to add this ability to the `data` asset we created moments ago when we open the editor. Also, the ability system requires all abilities that are instantiable to be `sealed` for safety concerns.
 
 ![example1-add-circleattack](../resources/example1-add-circleattack.gif)
 
-Here inside the inspector we can edit ability settings. Currently the only thing we can edit is the cooldown and execution priorities of the ability. The former determines the frequency the ability can be casted and the latter dictates the order of invokation of this ability during the `LateUpdate()` Unity event. The higher the priority, the earlier the ability will be executed in relation to other abilities. We can also define our own properties of the ability that can be edited in the inspector. Take a look a the extended definition of `CircleAttackConfig`:
+Here inside the inspector we can edit ability settings. Currently the only thing we can edit is the cooldown and execution priorities of the ability. The former determines the frequency the ability can be casted and the latter dictates the order of invokation of this ability. The higher the priority, the earlier the ability will be executed in relation to other abilities. We can also define our own properties of the ability that can be edited in the inspector. Take a look a the extended definition of `CircleAttackConfig`:
 ```
 // CircleAttackConfig.cs
 using LobsterFramework.AbilitySystem;
@@ -138,7 +140,7 @@ public class PlayerControl : MonoBehaviour
 ```
 ![example1-addControl](../resources/example1-addcontrol.gif)
 
-Here we're using [`AbilityManager.EnqueueAbility<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility``1(System.String)) for ability invokation, note that this call should only be done during `Update()` since the ability execution will take place during `LateUpdate()` and we can run into race conditions and have incorrect order of execution of abilities. When we enter playmode and spam left clicks, we can see the output of the ability on the console. Additionally, we can use `AbilityManager` inspector to edit ability data in real time. The changes won't get saved to the disk unless the `Save` button is clicked. You can also use `Save As` button to store a copy of the `AbilityData` somewhere else.
+Here we're using [`AbilityManager.EnqueueAbility<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility``1(System.String)) for ability invokation, note that this call should only be done during `Update()` or `FixedUpdate()` or anywhere before `LateUpdate()` since the ability execution will take place right before `LateUpdate()` and the ability will not be runned during the current frame if being enqueued during `LateUpdate()`. When we enter playmode and spam left clicks, we can see the output of the ability on the console. Additionally, we can use `AbilityManager` inspector to edit ability data in real time. The changes won't get saved to the disk unless the `Save` button is clicked. You can also use `Save As` button to store a copy of the `AbilityData` somewhere else.
 
 ![example1-run](../resources/example1-run.gif)
 
@@ -191,7 +193,7 @@ public class CircleAttackConfig : AbilityConfig {
 }
 ```
 ### Acquire Component Reference
-Now we will need the reference to the particle system component attached to the character. Since we're asking for references to scene object, we cannot serialize them on an asset object. The simpliest way would be to use `Component.GetComponent<T>()` on [`Ability.abilityManager`](xref:LobsterFramework.AbilitySystem.Ability.abilityManager) as they're on the same game object. However this may not always be the case and this appoach would fail when the component is located elsewhere. Instead, we will use [`RequireComponentReferenceAttribute`](xref:LobsterFramework.RequireComponentReferenceAttribute) to achieve this goal:
+Now we will need the reference to the particle system component attached to the character. Since we're asking for references to scene object, we cannot serialize them on an asset object. The simpliest way would be to use `Component.GetComponent<T>()` on [`Ability.AbilityManager`](xref:LobsterFramework.AbilitySystem.Ability.AbilityManager) as they're on the same game object. However this may not always be the case and this appoach would fail when the component is located elsewhere. Instead, we will use [`RequireComponentReferenceAttribute`](xref:LobsterFramework.RequireComponentReferenceAttribute) to achieve this goal:
 ```
 // CircleAttack.cs
 using LobsterFramework;
@@ -251,7 +253,7 @@ public class CircleAttackChannel : AbilityChannel { }
 public class CircleAttackContext : AbilityContext { }
 ```
 ### Initialization & Finalization Routines
-Since the component reference is shared among all ability instances, we can declare it as a property inside `CircleAttack` directly. [`Ability.InitializeSharedReferences()`](xref:LobsterFramework.AbilitySystem.Ability.InitializeSharedReferences) provides a routine for us to initialize any of these references when [`abilityManager`](xref:LobsterFramework.AbilitySystem.Ability.abilityManager) is enabled. Conversly, we also have [`Ability.FinializeSharedReferences()`](xref:LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences) to allow for any clean up operations such as unsubscribing from events. For temporary fields that are specific to each ability instance defined in [ability context](#abilitycontext) requiring initialization, we have [`Ability.InitializeContext()`](xref:LobsterFramework.AbilitySystem.Ability.InitializeContext) and [`Ability.FinalizeContext()`](xref:LobsterFramework.AbilitySystem.Ability.FinalizeContext) for this purpose. Here's the result when we run the game:
+Since the component reference is shared among all ability instances, we can declare it as a property inside `CircleAttack` directly. [`Ability.InitializeSharedReferences()`](xref:LobsterFramework.AbilitySystem.Ability.InitializeSharedReferences) provides a routine for us to initialize any of these references when [`AbilityManager`](xref:LobsterFramework.AbilitySystem.Ability.AbilityManager) is enabled. Conversly, we also have [`Ability.FinializeSharedReferences()`](xref:LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences) to allow for any clean up operations such as unsubscribing from events. For temporary fields that are specific to each ability instance defined in [ability context](#abilitycontext) requiring initialization, we have [`Ability.InitializeContext()`](xref:LobsterFramework.AbilitySystem.Ability.InitializeContext) and [`Ability.FinalizeContext()`](xref:LobsterFramework.AbilitySystem.Ability.FinalizeContext) for this purpose. Here's the result when we run the game:
 
 ![example2-result](../resources/example2-result.gif)
 
@@ -651,10 +653,22 @@ class PlayerController : Monobehavior {
 ```
 ![](../resources/AbilitySelector.gif)
 
+# Notes
+## Life Cycle of Ability Instance
+The ability system injects 2 events into the player loop event system using [`PlayerLoopEventGroupAttribute`](xref:LobsterFramework.Init.PlayerLoopEventGroupAttribute) in the following order:
+
+`FixedUpdate()` => `Update()` => `Execution` => `Termination` => `LateUpdate()`
+
+When enqueuing an ability instance, it will be marked as running and [`Ability.OnAbilityEnqueue()`](xref:LobsterFramework.AbilitySystem.Ability.OnAbilityEnqueue) is immediately called if this operation is successful. The ability instance will be added to the execution queue waiting to be executed. It is the programmer's responsibility to ensure the logic inside [`Ability.OnAbilityEnqueue()`](xref:LobsterFramework.AbilitySystem.Ability.OnAbilityEnqueue) is independent of the execution priority of the abilities.
+
+The `Execution` event executes enqueued abilitiy instances by calling [`Ability.Action()`](xref:LobsterFramework.AbilitySystem.Ability.Action) ordered by their execution priority. If the return value this method is `false`, [`Ability.SuspendInstance(string)`](xref:LobsterFramework.AbilitySystem.Ability.SuspendInstance(System.String)) will be called for the ability instance and it will be removed from the execution queue. Any ability instance that is marked as suspended via this method will have itself along with any other joined ability instances added to the suspension queue.
+
+The `Termination` event goes through the suspension queue to suspend ability instances. [`Ability.OnAbilityFinish()`](xref:LobsterFramework.AbilitySystem.Ability.OnAbilityFinish) is called during this process. The abilities are again handled in order by their execution priority. All suspended ability instances will then be removed from the suspension queue and be marked as not running and not suspended. To enforce this order, any ability instance that are later added to the suspension queue during the suspension process will be deferred to the next frame for suspension.
+
 # Summary
 
 ## [AbilityManager](xref:LobsterFramework.AbilitySystem.AbilityManager)
-Attach this component to the character to enable it to cast abilities. This component takes in an [AbilityData](#ability-data) as input. Calls to enqueue, query, terminate, send event to and communication with abilities can only be done through this component during the `Update()` unity event. The following section summarizes the set of methods this component has to offer.
+Attach this component to the character to enable it to cast abilities. This component takes in an [AbilityData](#ability-data) as input. Calls to enqueue, query, terminate, send event to and communication with abilities should be done through this component during the `Update()` and `FixedUpdate()` unity event. The following section summarizes the set of methods this component has to offer.
 
 ### Enqueue Abilities
 - [`AbilityManager.EnqueueAbility<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility``1(System.String))
@@ -743,7 +757,4 @@ Allows client code to communicate with the ability when it is being runned. Acce
 Stores context variables use by the ability during its execution. Only accessible while in the [context methods](#context-methods). An instantiable ability needs to define **{#NameOfAbility}Context** that inherit from this type or its closest ancestor's context type. Do not define constructors for this type as the system uses reflection to call the default parameterless constructor. For custom initialization see [`Ability.InitializeContext()`](xref:LobsterFramework.AbilitySystem.Ability.InitializeContext).
 
 # What Goes Next
-- Bug Fix (Obviously)
-    - Running abilities in joint can have problem when the secondary ability terminates before the primary ability and the joined relationship is not terminated.
-- Make use of `UnityEngine.LowLevel.PlayerLoop` or something else to inject 1 layer of update cycle after each of `Update()` and `LateUpdate()` to avoid race conditions of ability enqueuing and termination. Currently, calling methods like [`AbilityManager.EnqueueAbility<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.EnqueueAbility``1(System.String)) and [`AbilityManager.SuspendAbilityInstance<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilityInstance``1(System.String)) will immediately add/remove the ability instance to/from the execution queue. For a script with its `Update()` called in unknown order by the unity engine, the results of querying methods like [`AbilityManager.IsAbilityRunning<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.IsAbilityRunning``1(System.String)) or [`AbilityManager.IsAbilityReady<T>(string)`](xref:LobsterFramework.AbilitySystem.AbilityManager.IsAbilityReady``1(System.String)) during `Update()` depends on the script execution order. Having an extra custom event after each of `Update()` and `LateUpdate()` allows for delaying the enqueuing and termination of ability instances to the custom event thus avoiding the race condition in `Update()` and `LateUpdate()`.
 - Custom Analyzer: Currently the system performs checks to ensure the type and arguments passed in via attributes are valid after compilation. As the codebase grow larger and more attributes are added the compilation time will increase. Custom analyzer can help lifting some of these workload and help developers to discover some of these errors before the scripts are compiled.

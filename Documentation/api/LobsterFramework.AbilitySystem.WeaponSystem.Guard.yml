@@ -7,11 +7,11 @@ items:
   children:
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard.InitWeaponAbilityReferences
-  - LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  - LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineReset
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnSignaled
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnSignaled(UnityEngine.AnimationEvent)
+  - LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  - LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
   - LobsterFramework.AbilitySystem.WeaponSystem.Guard.WeaponAbilityReady
   langs:
   - csharp
@@ -62,8 +62,6 @@ items:
   inheritedMembers:
   - LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
   - LobsterFramework.AbilitySystem.Ability.ExecutionPriority
-  - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - LobsterFramework.AbilitySystem.Ability.InstancesRunning
   - LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - LobsterFramework.AbilitySystem.Ability.HasInstance(System.String)
@@ -197,64 +195,64 @@ items:
     content.vb: Protected Overrides Function WeaponAbilityReady() As Boolean
   overridden: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.WeaponAbilityReady
   overload: LobsterFramework.AbilitySystem.WeaponSystem.Guard.WeaponAbilityReady*
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  id: OnCoroutineEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  id: OnWeaponAbilityEnqueue
   parent: LobsterFramework.AbilitySystem.WeaponSystem.Guard
   langs:
   - csharp
   - vb
-  name: OnCoroutineEnqueue()
-  nameWithType: Guard.OnCoroutineEnqueue()
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue()
+  name: OnWeaponAbilityEnqueue()
+  nameWithType: Guard.OnWeaponAbilityEnqueue()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue()
   type: Method
   source:
     remote:
       path: AbilitySystem/Abilities/Guard/Guard.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnCoroutineEnqueue
+    id: OnWeaponAbilityEnqueue
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
     startLine: 30
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Called when the ability is enqueued, replaces <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue" data-throw-if-not-resolved="false"></xref>
+  summary: Replaces <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: protected override void OnCoroutineEnqueue()
-    content.vb: Protected Overrides Sub OnCoroutineEnqueue()
-  overridden: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue*
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  id: OnCoroutineFinish
+    content: protected override void OnWeaponAbilityEnqueue()
+    content.vb: Protected Overrides Sub OnWeaponAbilityEnqueue()
+  overridden: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue*
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  id: OnWeaponAbilityFinish
   parent: LobsterFramework.AbilitySystem.WeaponSystem.Guard
   langs:
   - csharp
   - vb
-  name: OnCoroutineFinish()
-  nameWithType: Guard.OnCoroutineFinish()
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish()
+  name: OnWeaponAbilityFinish()
+  nameWithType: Guard.OnWeaponAbilityFinish()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish()
   type: Method
   source:
     remote:
       path: AbilitySystem/Abilities/Guard/Guard.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnCoroutineFinish
+    id: OnWeaponAbilityFinish
     path: ../AbilitySystem/Abilities/Guard/Guard.cs
     startLine: 56
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Called when the ability is finished, replaces <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish" data-throw-if-not-resolved="false"></xref>
+  summary: Repalces <xref href="LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: protected override void OnCoroutineFinish()
-    content.vb: Protected Overrides Sub OnCoroutineFinish()
-  overridden: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish*
+    content: protected override void OnWeaponAbilityFinish()
+    content.vb: Protected Overrides Sub OnWeaponAbilityFinish()
+  overridden: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  overload: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish*
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine
   id: Coroutine
@@ -468,38 +466,6 @@ references:
   name: ExecutionPriority
   nameWithType: Ability.ExecutionPriority
   fullName: LobsterFramework.AbilitySystem.Ability.ExecutionPriority
-- uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  name: CompareByExecutionPriority(Ability)
-  nameWithType: Ability.CompareByExecutionPriority(Ability)
-  fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-    name: CompareByExecutionPriority
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-    name: CompareByExecutionPriority
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  commentId: P:LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  name: InstancesRunning
-  nameWithType: Ability.InstancesRunning
-  fullName: LobsterFramework.AbilitySystem.Ability.InstancesRunning
 - uid: LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   parent: LobsterFramework.AbilitySystem.Ability
@@ -2760,94 +2726,92 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
-  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
-  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
-  name: OnAbilityEnqueue()
-  nameWithType: AbilityCoroutine.OnAbilityEnqueue()
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
-    name: OnAbilityEnqueue
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
-    name: OnAbilityEnqueue
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityEnqueue
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
-  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
-  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
   name: OnCoroutineEnqueue()
-  nameWithType: AbilityCoroutine.OnCoroutineEnqueue()
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue()
+  nameWithType: WeaponAbility.OnCoroutineEnqueue()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue()
   spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
     name: OnCoroutineEnqueue
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
   - name: (
   - name: )
   spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
     name: OnCoroutineEnqueue
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineEnqueue
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
   - name: (
   - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  href: LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-  name: OnCoroutineEnqueue
-  nameWithType: Guard.OnCoroutineEnqueue
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineEnqueue
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
-  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
-  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
-  name: OnAbilityFinish()
-  nameWithType: AbilityCoroutine.OnAbilityFinish()
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish()
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+  name: OnWeaponAbilityEnqueue()
+  nameWithType: WeaponAbility.OnWeaponAbilityEnqueue()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue()
   spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
-    name: OnAbilityFinish
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+    name: OnWeaponAbilityEnqueue
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
   - name: (
   - name: )
   spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
-    name: OnAbilityFinish
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnAbilityFinish
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
+    name: OnWeaponAbilityEnqueue
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityEnqueue
   - name: (
   - name: )
-- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
-  commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
-  parent: LobsterFramework.AbilitySystem.AbilityCoroutine
-  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  href: LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+  name: OnWeaponAbilityEnqueue
+  nameWithType: Guard.OnWeaponAbilityEnqueue
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityEnqueue
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
   name: OnCoroutineFinish()
-  nameWithType: AbilityCoroutine.OnCoroutineFinish()
-  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish()
+  nameWithType: WeaponAbility.OnCoroutineFinish()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish()
   spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
     name: OnCoroutineFinish
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
   - name: (
   - name: )
   spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
     name: OnCoroutineFinish
-    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineFinish
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineFinish
   - name: (
   - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  href: LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
-  name: OnCoroutineFinish
-  nameWithType: Guard.OnCoroutineFinish
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnCoroutineFinish
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  parent: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
+  href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  name: OnWeaponAbilityFinish()
+  nameWithType: WeaponAbility.OnWeaponAbilityFinish()
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+    name: OnWeaponAbilityFinish
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+    name: OnWeaponAbilityFinish
+    href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnWeaponAbilityFinish
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish*
+  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  href: LobsterFramework.AbilitySystem.WeaponSystem.Guard.html#LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
+  name: OnWeaponAbilityFinish
+  nameWithType: Guard.OnWeaponAbilityFinish
+  fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.OnWeaponAbilityFinish
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Action
   commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Action
   parent: LobsterFramework.AbilitySystem.AbilityCoroutine

@@ -493,10 +493,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityExecutor.yml",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityInstanceManagement.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityExecutor.html"
+          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityInstanceManagement.html"
         }
       },
       "version": ""
@@ -1573,6 +1573,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.IPlayerLoopEventGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.IPlayerLoopEventGroup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Init.InitializationAttribute.yml",
       "output": {
         ".html": {
@@ -1593,10 +1603,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Init.PlayerLoopInject.yml",
+      "source_relative_path": "api/LobsterFramework.Init.PlayerLoopEventAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Init.PlayerLoopInject.html"
+          "relative_path": "api/LobsterFramework.Init.PlayerLoopEventAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.PlayerLoopEventGroupAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Init.PlayerLoopEventInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Init.PlayerLoopEventInjection.html"
         }
       },
       "version": ""
@@ -1607,16 +1637,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Init.RegisterInitializationAttribute.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Init.Singleton.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Init.Singleton.html"
         }
       },
       "version": ""

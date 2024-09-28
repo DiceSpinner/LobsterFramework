@@ -6,11 +6,13 @@ items:
   children:
   - LobsterFramework.Init.AttributeInitialization
   - LobsterFramework.Init.AttributeProviderAttribute
+  - LobsterFramework.Init.IPlayerLoopEventGroup
   - LobsterFramework.Init.InitializationAttribute
   - LobsterFramework.Init.InitializationAttributeType
-  - LobsterFramework.Init.PlayerLoopInject
+  - LobsterFramework.Init.PlayerLoopEventAttribute
+  - LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  - LobsterFramework.Init.PlayerLoopEventInjection
   - LobsterFramework.Init.RegisterInitializationAttribute
-  - LobsterFramework.Init.Singleton
   langs:
   - csharp
   - vb
@@ -27,12 +29,12 @@ references:
   name: AttributeProviderAttribute
   nameWithType: AttributeProviderAttribute
   fullName: LobsterFramework.Init.AttributeProviderAttribute
-- uid: LobsterFramework.Init.PlayerLoopInject
-  commentId: T:LobsterFramework.Init.PlayerLoopInject
-  href: LobsterFramework.Init.PlayerLoopInject.html
-  name: PlayerLoopInject
-  nameWithType: PlayerLoopInject
-  fullName: LobsterFramework.Init.PlayerLoopInject
+- uid: LobsterFramework.Init.PlayerLoopEventInjection
+  commentId: T:LobsterFramework.Init.PlayerLoopEventInjection
+  href: LobsterFramework.Init.PlayerLoopEventInjection.html
+  name: PlayerLoopEventInjection
+  nameWithType: PlayerLoopEventInjection
+  fullName: LobsterFramework.Init.PlayerLoopEventInjection
 - uid: LobsterFramework.Init.InitializationAttribute
   commentId: T:LobsterFramework.Init.InitializationAttribute
   parent: LobsterFramework.Init
@@ -40,18 +42,32 @@ references:
   name: InitializationAttribute
   nameWithType: InitializationAttribute
   fullName: LobsterFramework.Init.InitializationAttribute
-- uid: LobsterFramework.Init.Singleton
-  commentId: T:LobsterFramework.Init.Singleton
-  href: LobsterFramework.Init.Singleton.html
-  name: Singleton
-  nameWithType: Singleton
-  fullName: LobsterFramework.Init.Singleton
+- uid: LobsterFramework.Init.PlayerLoopEventAttribute
+  commentId: T:LobsterFramework.Init.PlayerLoopEventAttribute
+  href: LobsterFramework.Init.PlayerLoopEventAttribute.html
+  name: PlayerLoopEventAttribute
+  nameWithType: PlayerLoopEventAttribute
+  fullName: LobsterFramework.Init.PlayerLoopEventAttribute
+- uid: LobsterFramework.Init.IPlayerLoopEventGroup
+  commentId: T:LobsterFramework.Init.IPlayerLoopEventGroup
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.IPlayerLoopEventGroup.html
+  name: IPlayerLoopEventGroup
+  nameWithType: IPlayerLoopEventGroup
+  fullName: LobsterFramework.Init.IPlayerLoopEventGroup
 - uid: LobsterFramework.Init.AttributeInitialization
   commentId: T:LobsterFramework.Init.AttributeInitialization
   href: LobsterFramework.Init.AttributeInitialization.html
   name: AttributeInitialization
   nameWithType: AttributeInitialization
   fullName: LobsterFramework.Init.AttributeInitialization
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  commentId: T:LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.PlayerLoopEventGroupAttribute.html
+  name: PlayerLoopEventGroupAttribute
+  nameWithType: PlayerLoopEventGroupAttribute
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute
 - uid: LobsterFramework.Init.RegisterInitializationAttribute
   commentId: T:LobsterFramework.Init.RegisterInitializationAttribute
   parent: LobsterFramework.Init

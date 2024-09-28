@@ -44,7 +44,7 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility
   inheritedMembers:
   - LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
-  - LobsterFramework.AbilitySystem.Ability.abilityManager
+  - LobsterFramework.AbilitySystem.Ability.AbilityManager
   - LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   - LobsterFramework.AbilitySystem.Ability.Instance
   - LobsterFramework.AbilitySystem.Ability.Config
@@ -54,7 +54,6 @@ items:
   - LobsterFramework.AbilitySystem.Ability.InitializeContext
   - LobsterFramework.AbilitySystem.Ability.FinalizeSharedReferences
   - LobsterFramework.AbilitySystem.Ability.FinalizeContext
-  - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   - LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   - LobsterFramework.AbilitySystem.Ability.GetComponentReference``1(System.Int32)
   - LobsterFramework.AbilitySystem.Ability.GetAbilityComponent``1
@@ -62,7 +61,6 @@ items:
   - LobsterFramework.AbilitySystem.Ability.SuspendAll
   - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
   - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
-  - LobsterFramework.AbilitySystem.Ability.InstancesRunning
   - LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - LobsterFramework.AbilitySystem.Ability.HasInstance(System.String)
@@ -391,13 +389,13 @@ references:
   name: DefaultAbilityInstance
   nameWithType: Ability.DefaultAbilityInstance
   fullName: LobsterFramework.AbilitySystem.Ability.DefaultAbilityInstance
-- uid: LobsterFramework.AbilitySystem.Ability.abilityManager
-  commentId: P:LobsterFramework.AbilitySystem.Ability.abilityManager
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityManager
+  commentId: P:LobsterFramework.AbilitySystem.Ability.AbilityManager
   parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityManager
-  name: abilityManager
-  nameWithType: Ability.abilityManager
-  fullName: LobsterFramework.AbilitySystem.Ability.abilityManager
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.AbilityManager
+  name: AbilityManager
+  nameWithType: Ability.AbilityManager
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityManager
 - uid: LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   commentId: P:LobsterFramework.AbilitySystem.Ability.ExecutionPriority
   parent: LobsterFramework.AbilitySystem.Ability
@@ -508,31 +506,6 @@ references:
     name: FinalizeContext
     href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.FinalizeContext
   - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  name: CompareByExecutionPriority(Ability)
-  nameWithType: Ability.CompareByExecutionPriority(Ability)
-  fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-    name: CompareByExecutionPriority
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-    name: CompareByExecutionPriority
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
   commentId: M:LobsterFramework.AbilitySystem.Ability.StartAnimation(UnityEngine.AnimationClip,System.Single)
@@ -776,13 +749,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  commentId: P:LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InstancesRunning
-  name: InstancesRunning
-  nameWithType: Ability.InstancesRunning
-  fullName: LobsterFramework.AbilitySystem.Ability.InstancesRunning
 - uid: LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.IsRunning(System.String)
   parent: LobsterFramework.AbilitySystem.Ability

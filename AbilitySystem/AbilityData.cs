@@ -55,7 +55,7 @@ namespace LobsterFramework.AbilitySystem
 
                 if (VerifyComponentRequirements(ability.GetType()) && abilityManager.IsRequirementSatisfied(ability.GetType()))
                 {
-                    ability.abilityManager = abilityManager;
+                    ability.AbilityManager = abilityManager;
                     try {
                         ability.Activate();
                         runnables[ability.GetType().AssemblyQualifiedName] = ability;

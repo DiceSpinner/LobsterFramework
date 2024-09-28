@@ -94,15 +94,27 @@ Classes
       <section><p>Marks an assembly such that any assemblies referencing the target assembly will be inspected for attribute initialization</p>
 </section>
       <h4><a class="xref" href="LobsterFramework.Init.InitializationAttribute.html">InitializationAttribute</a></h4>
-      <section><p>Attributes that will be feteched for each class at the start of the game or after compilation. For more info, check out <a class="xref" href="LobsterFramework.Init.RegisterInitializationAttribute.html">RegisterInitializationAttribute</a>.</p>
+      <section><p>Attributes that will be feteched for each public class at the start of the game or after compilation. For more info, check out <a class="xref" href="LobsterFramework.Init.RegisterInitializationAttribute.html">RegisterInitializationAttribute</a>.</p>
 </section>
-      <h4><a class="xref" href="LobsterFramework.Init.PlayerLoopInject.html">PlayerLoopInject</a></h4>
-      <section></section>
+      <h4><a class="xref" href="LobsterFramework.Init.PlayerLoopEventAttribute.html">PlayerLoopEventAttribute</a></h4>
+      <section><p>Apply on methods to inject them into player loop system. The method must be static, returns void, and parameterless.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.Init.PlayerLoopEventGroupAttribute.html">PlayerLoopEventGroupAttribute</a></h4>
+      <section><p>Initializes a new player loop event group. Sealed classes implementing <a class="xref" href="LobsterFramework.Init.IPlayerLoopEventGroup.html">IPlayerLoopEventGroup</a> applied with this attribute will be inspected for <a class="xref" href="LobsterFramework.Init.PlayerLoopEventAttribute.html">PlayerLoopEventAttribute</a> on its static methods for player loop event injection.</p>
+</section>
+      <h4><a class="xref" href="LobsterFramework.Init.PlayerLoopEventInjection.html">PlayerLoopEventInjection</a></h4>
+      <section><p>Injects custom events into the player loop system. To create custom events, use <a class="xref" href="LobsterFramework.Init.PlayerLoopEventGroupAttribute.html">PlayerLoopEventGroupAttribute</a> on classes implementing <a class="xref" href="LobsterFramework.Init.IPlayerLoopEventGroup.html">IPlayerLoopEventGroup</a>.</p>
+</section>
       <h4><a class="xref" href="LobsterFramework.Init.RegisterInitializationAttribute.html">RegisterInitializationAttribute</a></h4>
       <section><p>Attributes used to mark a custom attribute as an initialization attribute. Meaning it'll be initialized in editor mode after code recompiles or at runtime.</p>
 </section>
-      <h4><a class="xref" href="LobsterFramework.Init.Singleton.html">Singleton</a></h4>
-      <section><p>Provides access to singleton components defined by LobsterFramework</p>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+      <h4><a class="xref" href="LobsterFramework.Init.IPlayerLoopEventGroup.html">IPlayerLoopEventGroup</a></h4>
+      <section><p>A marker interface indicating this type is an event that will be injected into the unity player loop.<br>
+<br>
+<remarks>  For more info, see <a class="xref" href="LobsterFramework.Init.PlayerLoopEventGroupAttribute.html">PlayerLoopEventGroupAttribute</a>. </remarks></p>
 </section>
     <h3 id="enums">
 Enums

@@ -24,12 +24,12 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         {
             attacker = WeaponManager.Wielder;
             moveControl = attacker.GetComponent<MovementController>();
-            damageModifier = abilityManager.GetAbilityComponent<DamageModifier>();
+            damageModifier = AbilityManager.GetAbilityComponent<DamageModifier>();
             move = moveControl.moveSpeedModifier.MakeEffector();
             rotate = moveControl.rotateSpeedModifier.MakeEffector();
         }
 
-        protected override void OnCoroutineEnqueue()
+        protected override void OnWeaponAbilityEnqueue()
         {
             AttackContext context = (AttackContext)Context;
             context.currentWeapon = WeaponManager.Mainhand;
@@ -37,7 +37,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             context.inputSignaled.Reset();
 
             AnimationClip animation = WeaponManager.AnimationData.GetAbilityClip<Attack>(WeaponManager.Mainhand.WeaponType);
-            state = abilityManager.StartAnimation(this, Instance, animation, context.currentWeapon.AttackSpeed);
+            state = AbilityManager.StartAnimation(this, Instance, animation, context.currentWeapon.AttackSpeed);
 
             SubscribeWeaponEvent(context.currentWeapon);
             move.Apply(context.currentWeapon.LMoveSpeedModifier);
@@ -70,7 +70,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             } while (context.inputSignaled); // Continue to perform attack if the user signal is received
         }
 
-        protected override void OnCoroutineFinish(){
+        protected override void OnWeaponAbilityFinish(){
             AttackContext context = (AttackContext)Context;
             UnSubscribeWeaponEvent(context.currentWeapon);
             context.currentWeapon.Disable();

@@ -25,7 +25,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponType
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 304
+    startLine: 310
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -60,7 +60,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Sword
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 307
+    startLine: 313
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -86,7 +86,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Hammer
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 308
+    startLine: 314
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Dagger
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 309
+    startLine: 315
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -138,7 +138,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Stick
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 310
+    startLine: 316
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -164,7 +164,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: EmptyHand
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 313
+    startLine: 319
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -190,7 +190,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Firearm
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 316
+    startLine: 322
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

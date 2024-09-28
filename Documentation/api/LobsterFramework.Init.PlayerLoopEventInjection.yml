@@ -1,34 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: LobsterFramework.Init.Singleton
-  commentId: T:LobsterFramework.Init.Singleton
-  id: Singleton
+- uid: LobsterFramework.Init.PlayerLoopEventInjection
+  commentId: T:LobsterFramework.Init.PlayerLoopEventInjection
+  id: PlayerLoopEventInjection
   parent: LobsterFramework.Init
-  children:
-  - LobsterFramework.Init.Singleton.SingletonObject
+  children: []
   langs:
   - csharp
   - vb
-  name: Singleton
-  nameWithType: Singleton
-  fullName: LobsterFramework.Init.Singleton
+  name: PlayerLoopEventInjection
+  nameWithType: PlayerLoopEventInjection
+  fullName: LobsterFramework.Init.PlayerLoopEventInjection
   type: Class
   source:
     remote:
-      path: Init/Singleton.cs
+      path: Init/PlayerLoopEventInjection.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: Singleton
-    path: ../Init/Singleton.cs
-    startLine: 10
+    id: PlayerLoopEventInjection
+    path: ../Init/PlayerLoopEventInjection.cs
+    startLine: 17
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Init
-  summary: Provides access to singleton components defined by LobsterFramework
+  summary: Injects custom events into the player loop system. To create custom events, use <xref href="LobsterFramework.Init.PlayerLoopEventGroupAttribute" data-throw-if-not-resolved="false"></xref> on classes implementing <xref href="LobsterFramework.Init.IPlayerLoopEventGroup" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public static class Singleton
-    content.vb: Public Module Singleton
+    content: public static class PlayerLoopEventInjection
+    content.vb: Public Module PlayerLoopEventInjection
   inheritance:
   - System.Object
   inheritedMembers:
@@ -39,36 +38,21 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.Init.Singleton.SingletonObject
-  commentId: P:LobsterFramework.Init.Singleton.SingletonObject
-  id: SingletonObject
-  parent: LobsterFramework.Init.Singleton
-  langs:
-  - csharp
-  - vb
-  name: SingletonObject
-  nameWithType: Singleton.SingletonObject
-  fullName: LobsterFramework.Init.Singleton.SingletonObject
-  type: Property
-  source:
-    remote:
-      path: Init/Singleton.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: SingletonObject
-    path: ../Init/Singleton.cs
-    startLine: 13
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Init
-  syntax:
-    content: public static GameObject SingletonObject { get; }
-    parameters: []
-    return:
-      type: UnityEngine.GameObject
-    content.vb: Public Shared ReadOnly Property SingletonObject As GameObject
-  overload: LobsterFramework.Init.Singleton.SingletonObject*
 references:
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  commentId: T:LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.PlayerLoopEventGroupAttribute.html
+  name: PlayerLoopEventGroupAttribute
+  nameWithType: PlayerLoopEventGroupAttribute
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+- uid: LobsterFramework.Init.IPlayerLoopEventGroup
+  commentId: T:LobsterFramework.Init.IPlayerLoopEventGroup
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.IPlayerLoopEventGroup.html
+  name: IPlayerLoopEventGroup
+  nameWithType: IPlayerLoopEventGroup
+  fullName: LobsterFramework.Init.IPlayerLoopEventGroup
 - uid: LobsterFramework.Init
   commentId: N:LobsterFramework.Init
   href: LobsterFramework.html
@@ -328,22 +312,3 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: LobsterFramework.Init.Singleton.SingletonObject*
-  commentId: Overload:LobsterFramework.Init.Singleton.SingletonObject
-  href: LobsterFramework.Init.Singleton.html#LobsterFramework.Init.Singleton.SingletonObject
-  name: SingletonObject
-  nameWithType: Singleton.SingletonObject
-  fullName: LobsterFramework.Init.Singleton.SingletonObject
-- uid: UnityEngine.GameObject
-  commentId: T:UnityEngine.GameObject
-  parent: UnityEngine
-  isExternal: true
-  name: GameObject
-  nameWithType: GameObject
-  fullName: UnityEngine.GameObject
-- uid: UnityEngine
-  commentId: N:UnityEngine
-  isExternal: true
-  name: UnityEngine
-  nameWithType: UnityEngine
-  fullName: UnityEngine

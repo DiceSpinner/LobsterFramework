@@ -4,7 +4,14 @@ items:
   commentId: T:LobsterFramework.AbilitySystem.AbilityChannel
   id: AbilityChannel
   parent: LobsterFramework.AbilitySystem
-  children: []
+  children:
+  - LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  - LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  - LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  - LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  - LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  - LobsterFramework.AbilitySystem.AbilityChannel.config
+  - LobsterFramework.AbilitySystem.AbilityChannel.context
   langs:
   - csharp
   - vb
@@ -19,7 +26,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityChannel
     path: ../AbilitySystem/Ability.cs
-    startLine: 521
+    startLine: 549
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -49,6 +56,205 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.context
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.context
+  id: context
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  langs:
+  - csharp
+  - vb
+  name: context
+  nameWithType: AbilityChannel.context
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.context
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: context
+    path: ../AbilitySystem/Ability.cs
+    startLine: 551
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: protected AbilityContext context
+    return:
+      type: LobsterFramework.AbilitySystem.AbilityContext
+    content.vb: Protected context As AbilityContext
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
+  id: config
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  langs:
+  - csharp
+  - vb
+  name: config
+  nameWithType: AbilityChannel.config
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
+  type: Field
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: config
+    path: ../AbilitySystem/Ability.cs
+    startLine: 552
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: protected AbilityConfig config
+    return:
+      type: LobsterFramework.AbilitySystem.AbilityConfig
+    content.vb: Protected config As AbilityConfig
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  id: IsRunning
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  langs:
+  - csharp
+  - vb
+  name: IsRunning
+  nameWithType: AbilityChannel.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IsRunning
+    path: ../AbilitySystem/Ability.cs
+    startLine: 554
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public bool IsRunning { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsRunning As Boolean
+  overload: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning*
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  id: IsSuspended
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  langs:
+  - csharp
+  - vb
+  name: IsSuspended
+  nameWithType: AbilityChannel.IsSuspended
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IsSuspended
+    path: ../AbilitySystem/Ability.cs
+    startLine: 555
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public bool IsSuspended { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsSuspended As Boolean
+  overload: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended*
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  id: TimeWhenAvailable
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  langs:
+  - csharp
+  - vb
+  name: TimeWhenAvailable
+  nameWithType: AbilityChannel.TimeWhenAvailable
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: TimeWhenAvailable
+    path: ../AbilitySystem/Ability.cs
+    startLine: 556
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public float TimeWhenAvailable { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property TimeWhenAvailable As Single
+  overload: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable*
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  id: OnCooldown
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  langs:
+  - csharp
+  - vb
+  name: OnCooldown
+  nameWithType: AbilityChannel.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnCooldown
+    path: ../AbilitySystem/Ability.cs
+    startLine: 557
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public bool OnCooldown { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property OnCooldown As Boolean
+  overload: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown*
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  id: Cooldown
+  parent: LobsterFramework.AbilitySystem.AbilityChannel
+  langs:
+  - csharp
+  - vb
+  name: Cooldown
+  nameWithType: AbilityChannel.Cooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  type: Property
+  source:
+    remote:
+      path: AbilitySystem/Ability.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Cooldown
+    path: ../AbilitySystem/Ability.cs
+    startLine: 558
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public float Cooldown { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Cooldown As Single
+  overload: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown*
 references:
 - uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
   commentId: M:LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
@@ -338,3 +544,69 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: LobsterFramework.AbilitySystem.AbilityContext
+  commentId: T:LobsterFramework.AbilitySystem.AbilityContext
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityContext.html
+  name: AbilityContext
+  nameWithType: AbilityContext
+  fullName: LobsterFramework.AbilitySystem.AbilityContext
+- uid: LobsterFramework.AbilitySystem.AbilityConfig
+  commentId: T:LobsterFramework.AbilitySystem.AbilityConfig
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityConfig.html
+  name: AbilityConfig
+  nameWithType: AbilityConfig
+  fullName: LobsterFramework.AbilitySystem.AbilityConfig
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+  name: IsRunning
+  nameWithType: AbilityChannel.IsRunning
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+  name: IsSuspended
+  nameWithType: AbilityChannel.IsSuspended
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+  name: TimeWhenAvailable
+  nameWithType: AbilityChannel.TimeWhenAvailable
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+  name: OnCooldown
+  nameWithType: AbilityChannel.OnCooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
+  name: Cooldown
+  nameWithType: AbilityChannel.Cooldown
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown

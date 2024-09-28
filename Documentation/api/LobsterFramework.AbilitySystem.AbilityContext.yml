@@ -4,9 +4,7 @@ items:
   commentId: T:LobsterFramework.AbilitySystem.AbilityContext
   id: AbilityContext
   parent: LobsterFramework.AbilitySystem
-  children:
-  - LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  - LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
+  children: []
   langs:
   - csharp
   - vb
@@ -21,7 +19,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilityContext
     path: ../AbilitySystem/Ability.cs
-    startLine: 507
+    startLine: 542
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -47,64 +45,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  commentId: P:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  id: IsRunning
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  langs:
-  - csharp
-  - vb
-  name: IsRunning
-  nameWithType: AbilityContext.IsRunning
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  type: Property
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: IsRunning
-    path: ../AbilitySystem/Ability.cs
-    startLine: 512
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public bool IsRunning { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public ReadOnly Property IsRunning As Boolean
-  overload: LobsterFramework.AbilitySystem.AbilityContext.IsRunning*
-- uid: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  commentId: P:LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  id: OnCooldown
-  parent: LobsterFramework.AbilitySystem.AbilityContext
-  langs:
-  - csharp
-  - vb
-  name: OnCooldown
-  nameWithType: AbilityContext.OnCooldown
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  type: Property
-  source:
-    remote:
-      path: AbilitySystem/Ability.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: OnCooldown
-    path: ../AbilitySystem/Ability.cs
-    startLine: 513
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public bool OnCooldown { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public ReadOnly Property OnCooldown As Boolean
-  overload: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown*
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -365,26 +305,3 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: LobsterFramework.AbilitySystem.AbilityContext.IsRunning*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-  name: IsRunning
-  nameWithType: AbilityContext.IsRunning
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.IsRunning
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  href: LobsterFramework.AbilitySystem.AbilityContext.html#LobsterFramework.AbilitySystem.AbilityContext.OnCooldown
-  name: OnCooldown
-  nameWithType: AbilityContext.OnCooldown
-  fullName: LobsterFramework.AbilitySystem.AbilityContext.OnCooldown

@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Init.IPlayerLoopEventGroup
+  commentId: T:LobsterFramework.Init.IPlayerLoopEventGroup
+  id: IPlayerLoopEventGroup
+  parent: LobsterFramework.Init
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IPlayerLoopEventGroup
+  nameWithType: IPlayerLoopEventGroup
+  fullName: LobsterFramework.Init.IPlayerLoopEventGroup
+  type: Interface
+  source:
+    remote:
+      path: Init/IPlayerLoopEventGroup.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: IPlayerLoopEventGroup
+    path: ../Init/IPlayerLoopEventGroup.cs
+    startLine: 11
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Init
+  summary: " A marker interface indicating this type is an event that will be injected into the unity player loop.  \r\n<br />\r\n <remarks>  For more info, see <xref href=\"LobsterFramework.Init.PlayerLoopEventGroupAttribute\" data-throw-if-not-resolved=\"false\"></xref>. </remarks>"
+  example: []
+  syntax:
+    content: public interface IPlayerLoopEventGroup
+    content.vb: Public Interface IPlayerLoopEventGroup
+references:
+- uid: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  commentId: T:LobsterFramework.Init.PlayerLoopEventGroupAttribute
+  parent: LobsterFramework.Init
+  href: LobsterFramework.Init.PlayerLoopEventGroupAttribute.html
+  name: PlayerLoopEventGroupAttribute
+  nameWithType: PlayerLoopEventGroupAttribute
+  fullName: LobsterFramework.Init.PlayerLoopEventGroupAttribute
+- uid: LobsterFramework.Init
+  commentId: N:LobsterFramework.Init
+  href: LobsterFramework.html
+  name: LobsterFramework.Init
+  nameWithType: LobsterFramework.Init
+  fullName: LobsterFramework.Init
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Init
+    name: Init
+    href: LobsterFramework.Init.html

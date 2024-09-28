@@ -28,7 +28,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             return WeaponManager.Mainhand.State == WeaponState.Idle;
         }
 
-        protected override void OnCoroutineEnqueue()
+        protected override void OnWeaponAbilityEnqueue()
         {
             GuardContext context = (GuardContext)Context;
             context.currentWeapon = WeaponManager.Mainhand;
@@ -46,7 +46,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
                 deflectAnimation = WeaponManager.AnimationData.GetAbilityClip<Guard>(context.currentWeapon.WeaponType, (int)GuardAnimations.DeflectRight);
             }
             leftDeflect = !leftDeflect;
-            context.animancerState = abilityManager.StartAnimation(this, Instance, deflectAnimation, context.currentWeapon.DefenseSpeed);
+            context.animancerState = AbilityManager.StartAnimation(this, Instance, deflectAnimation, context.currentWeapon.DefenseSpeed);
 
             // Movement constraints
             context.currentWeapon.OnWeaponDeflect += OnDeflect;
@@ -54,7 +54,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             rotateModifier.Apply(context.currentWeapon.GRotationSpeedModifier);
         }
 
-        protected override void OnCoroutineFinish()
+        protected override void OnWeaponAbilityFinish()
         {
             GuardContext context = (GuardContext)Context;
             context.currentWeapon.Disable();

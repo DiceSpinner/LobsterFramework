@@ -510,7 +510,7 @@ To stop the execution of an ability instance, use [`AbilityManager.SuspendAbilit
 To stop the execution of all instances of an ability, use [`AbilityManager.SuspendAbility<T>()`](xref:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbility``1) or [`Ability.SuspendAll()`](xref:LobsterFramework.AbilitySystem.Ability.SuspendAll) while in the [context methods](#context-methods).
 To stop the execution of all abilities, use [`AbilityManager.SuspendAbilities()`](xref:LobsterFramework.AbilitySystem.AbilityManager.SuspendAbilities).
 
-The effect will take place immediately, [`Ability.OnAbilityFinish()`](xref:LobsterFramework.AbilitySystem.Ability.OnAbilityFinish) will be called and the query of the status of the ability instance will indicate the ability instance is no longer running. Here's an example scenario of where stopping ability can be used:
+The effect will take place during the before the next `LateUpdate()` event, [`Ability.OnAbilityFinish()`](xref:LobsterFramework.AbilitySystem.Ability.OnAbilityFinish) will be called and the query of the status of the ability instance will indicate the ability instance is no longer running. Here's an example scenario of where stopping ability can be used:
 ```
 public class PlayerControl : MonoBehavior {
     [SerializeField] private AbilityManager abilityManager;
@@ -724,7 +724,7 @@ The following can be overriden but are not required to do so
 - [`void OnSignaled()`](xref:LobsterFramework.AbilitySystem.Ability.OnSignaled)
 - [`void OnAnimationInterrupt()`](xref:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState))
 ### Context Methods:
-These methods have access to variables (not null): `Ability.Config`, `AbilityChannel` and `AbilityContext`
+These methods have access to variables (not null): [`Ability.Config`](xref:LobsterFramework.AbilitySystem.Ability.Config), [`Ability.Channel`](xref:LobsterFramework.AbilitySystem.Ability.Channel) and [`Ability.Context`](xref:LobsterFramework.AbilitySystem.Ability.Context)
 - [`bool Action()`](xref:LobsterFramework.AbilitySystem.Ability.Action)
 - [`void InitializeContext()`](xref:LobsterFramework.AbilitySystem.Ability.InitializeContext)
 - [`void FinalizeContext()`](xref:LobsterFramework.AbilitySystem.Ability.FinalizeContext)

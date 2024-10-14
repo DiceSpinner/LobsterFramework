@@ -104,7 +104,7 @@ namespace LobsterFramework.AI
 
         internal void Activate(StateMachine machine) {
             foreach (State state in states.Values) {
-                state.stateMachine = machine;
+                state.StateMachine = machine;
                 state.InitializeFields();
             }
         }

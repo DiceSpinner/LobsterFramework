@@ -545,7 +545,7 @@ namespace LobsterFramework.AbilitySystem {
     /// <summary>
     /// Communication channel of the ability. Can be used to control ability behaviors at runtime.
     /// When creating a new ability, you must also declare a class named "AbilityName"Channel in the same namespace where "AbilityName" is the name of the ability you're creating.
-    /// Can be accessed via <see cref="AbilityManager.GetAbilityComponent{T}"/>
+    /// Can be accessed via <see cref="AbilityManager.GetAbilityChannel{T}(string)"/>
     /// </summary>
     public class AbilityChannel
     {

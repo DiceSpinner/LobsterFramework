@@ -2,11 +2,11 @@
 This page will serve as an manual about how the AI modules works in LobsterFramework.
 
 # Contents
-- [Intro](#intro)
+- [Finite State Machine](#finite-state-machine)
 - [Summary](#summary)
 - [What Goes Next](#what-goes-next)
 
-# Intro
+# Finite State Machine
 
 # Summary
 

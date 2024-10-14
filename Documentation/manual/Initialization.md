@@ -2,11 +2,14 @@
 This page will serve as an manual about how the framework initialization functions.
 
 # Contents
-- [Intro](#intro)
+- [Attributes Initialization](#attributes-initialization)
+- [PlayerLoop Event](#playerloop-event)
 - [Summary](#summary)
 - [What Goes Next](#what-goes-next)
 
-# Intro
+# Attributes Initialization
+
+# PlayerLoop Event
 
 # Summary
 

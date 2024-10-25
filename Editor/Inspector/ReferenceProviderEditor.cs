@@ -8,9 +8,9 @@ namespace LobsterFramework.Editors
 {
     /// <summary>
     /// Custom inspector for <see cref="ReferenceProvider"/>. Custom editors of subclasses can inherit from this 
-    /// to make use of the implementation of <see cref="OnInspectorGUI"/> to draw out fields to store component references.
+    /// to make use of the implementation of <see cref="DrawReferenceSection"/> to draw out fields to store component references.
     /// </summary>
-    [CustomEditor(typeof(ReferenceProvider), true)] 
+    [CustomEditor(typeof(ReferenceProvider), true)]
     public class ReferenceProviderEditor : Editor
     {
         private static readonly GUIContent label = new();
@@ -26,22 +26,34 @@ namespace LobsterFramework.Editors
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
+            DrawReferenceSection();
+        }
+
+        /// <summary>
+        /// Draws out reference assignment section.
+        /// </summary>
+        protected void DrawReferenceSection()
+        {
             var refProvider = (ReferenceProvider)target;
             Color color = GUI.color;
-            if (refProvider.referenceMapping.Count > 0) {
+            if (refProvider.referenceMapping.Count > 0)
+            {
                 EditorGUILayout.Space();
                 EditorGUILayout.BeginHorizontal();
                 referenceFieldsExpanded = EditorGUILayout.Foldout(referenceFieldsExpanded, "Required References", EditorStyles.foldout);
-                if (GUILayout.Button(quickfillLabel, GUILayout.Width(100))) {
+                if (GUILayout.Button(quickfillLabel, GUILayout.Width(100)))
+                {
                     refProvider.QuickFillFields();
                 }
                 EditorGUILayout.EndHorizontal();
             }
-            else {
-                referenceFieldsExpanded = false;            
+            else
+            {
+                referenceFieldsExpanded = false;
             }
 
-            if (referenceFieldsExpanded) {
+            if (referenceFieldsExpanded)
+            {
                 EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
                 foreach (var item in refProvider.referenceMapping)
                 {
@@ -60,7 +72,8 @@ namespace LobsterFramework.Editors
                         var requiredTypeName = kwp.Key.AssemblyQualifiedName;
                         var referenceCollection = refProvider.referenceMapping[requesterTypeName][requiredTypeName];
 
-                        for (int i = 0;i < kwp.Value.Count;i++) {
+                        for (int i = 0; i < kwp.Value.Count; i++)
+                        {
                             var requirementDescription = kwp.Value[i];
                             label.text = requirementDescription.Name != default ? requirementDescription.Name : requiredType.Name;
                             label.image = null;

@@ -20,6 +20,7 @@ namespace LobsterFramework.AI
     {
         [SerializeField] internal StateDicationary states = new();
         [SerializeField] internal State initialState;
+        internal bool isActive = false;
 
 #if UNITY_EDITOR
         /// <summary>
@@ -36,6 +37,7 @@ namespace LobsterFramework.AI
             {
                 AssetDatabase.AddObjectToAsset(state, this);
             }
+            RaiseRequirementAddedEvent(stateType);
         }
 
         /// <summary>
@@ -51,6 +53,7 @@ namespace LobsterFramework.AI
             }
             DestroyImmediate(states[stateType.AssemblyQualifiedName], true);
             states.Remove(stateType.AssemblyQualifiedName);
+            RaiseRequirementRemovedEvent(stateType);
         }
 
         /// <summary>
@@ -84,10 +87,18 @@ namespace LobsterFramework.AI
         /// Check if each state has its transitions defined and the initial state is defined
         /// </summary>
         /// <returns></returns>
-        internal bool Validate() {
+        private bool Validate(StateMachine stateMachine) {
             if (initialState == null) {
                 return false;
             }
+            foreach (State state in states.Values)
+            {
+                if (!stateMachine.IsRequirementSatisfied(state.GetType()))
+                {
+                    return false;
+                }
+            }
+
             foreach (State state in states.Values) {
                 Type stateType = state.GetType();
                 if (!StateTransitionAttribute.transitionTable.ContainsKey(stateType)) {
@@ -102,14 +113,28 @@ namespace LobsterFramework.AI
             return true;
         }
 
-        internal void Activate(StateMachine machine) {
-            foreach (State state in states.Values) {
-                state.StateMachine = machine;
-                state.InitializeFields();
+        internal bool Activate(StateMachine machine) {
+            if (Validate(machine))
+            {
+                foreach (State state in states.Values)
+                {
+                    state.StateMachine = machine;
+                    state.InitializeFields();
+                }
+                isActive = true;
+                machine.currentState = initialState;
+                return true;
             }
+            return false;
         }
 
         internal void Deactivate() {
+            if (!isActive)
+            {
+                return;
+            }
+            isActive = false;
+            
             foreach (State state in states.Values)
             {
                 state.OnBecomeInactive();

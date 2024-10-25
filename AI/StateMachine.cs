@@ -17,7 +17,7 @@ namespace LobsterFramework.AI
         internal StateData runtimeData;
 
         [ReadOnly]
-        [SerializeField] private State currentState;
+        [SerializeField] internal State currentState;
         [HideInInspector]
         [SerializeField] internal string statePath;    
 
@@ -36,28 +36,55 @@ namespace LobsterFramework.AI
             set { currentState = value; }
         }
 
-        private void OnEnable()
+        internal void OnEnable()
         {
             if (runtimeData == null) {
-                if (inputData == null || !inputData.Validate()) {
-                    Debug.Log("Input state data is missing initial state or missing transitions.");
+                if (inputData == null) {
                     return;
                 }
                 runtimeData = inputData.Clone();
             }
             Bind(runtimeData);
-            currentState = runtimeData.initialState;
-            runtimeData.Activate(this);
+            if (!runtimeData.Activate(this))
+            {
+                DestroyImmediate(runtimeData);
+                Bind(inputData);
+                Debug.LogWarning("Input State Data is not configured correctly or required references missing, make sure all state transitions are present and initial state is set!", this);
+            }
         }
 
         private void OnDisable()
         {
-            runtimeData.Deactivate();
-            Bind(inputData);
+            if (runtimeData != null) {
+                if (currentState != null)
+                {
+                    currentState.OnExit();
+                }
+                runtimeData.Deactivate();
+            }
+        }
+
+        /// <summary>
+        /// Reset all states in the runtime data
+        /// </summary>
+        public void ResetStates()
+        {
+            if (runtimeData != null) {
+                if (currentState != null)
+                {
+                    currentState.OnExit();
+                }
+                runtimeData.Deactivate();
+                runtimeData.Activate(this);
+            }
         }
 
         private new void OnValidate()
         {
+            if (Application.isPlaying)
+            {
+                return;
+            }
             if (AttributeInitialization.Finished)
             {
                 Bind(inputData);
@@ -67,6 +94,14 @@ namespace LobsterFramework.AI
                 void lambda() { Bind(inputData); }
                 AttributeInitialization.OnInitializationComplete -= lambda;
                 AttributeInitialization.OnInitializationComplete += lambda;
+            }
+        }
+
+        private new void OnDestroy()
+        {
+            base.OnDestroy();
+            if (runtimeData != null) {
+                DestroyImmediate(runtimeData);
             }
         }
 

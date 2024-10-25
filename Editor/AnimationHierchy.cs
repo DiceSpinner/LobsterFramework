@@ -8,8 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace LobsterFramework.Editors
 {
-
-	public class AnimationHierarchyEditor : EditorWindow
+	internal class AnimationHierarchyEditor : EditorWindow
 	{
 		private static int columnWidth = 300;
 

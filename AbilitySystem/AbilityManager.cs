@@ -79,6 +79,10 @@ namespace LobsterFramework.AbilitySystem {
 
         private new void OnValidate()
         {
+            if (Application.isPlaying)
+            {
+                return;
+            }
             if (AttributeInitialization.Finished)
             {                
                 Bind(inputData); 
@@ -104,7 +108,22 @@ namespace LobsterFramework.AbilitySystem {
             }
             OnAbilityFinished?.Invoke(abilityType);
         }
-         
+
+        private void OnEnable()
+        {
+            if (abilityData == null)
+            {
+                if (inputData == null)
+                {
+                    Debug.LogWarning("Ability Data is not set!", gameObject);
+                    return;
+                }
+                abilityData = inputData.Clone();
+            }
+            Bind(abilityData);
+            abilityData.Activate(this);
+        }
+
         private void OnDisable()
         {
             ActionBlocked.ClearEffectors();
@@ -116,18 +135,13 @@ namespace LobsterFramework.AbilitySystem {
             Bind(inputData);
         }
 
-        private void OnEnable()
+        private new void OnDestroy()
         {
-            if (abilityData == null)
+            base.OnDestroy();
+            if (abilityData != null)
             {
-                if (inputData == null) {
-                    Debug.LogWarning("Ability Data is not set!", gameObject);
-                    return;
-                }
-                abilityData = inputData.Clone();
+                DestroyImmediate(abilityData);
             }
-           Bind(abilityData);
-            abilityData.Activate(this);
         }
 
         /// <summary>

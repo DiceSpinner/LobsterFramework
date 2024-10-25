@@ -61,7 +61,11 @@ namespace LobsterFramework.Editors
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("States: " + stateData.states.Values.Count, EditorStyles.boldLabel);
             GUILayout.FlexibleSpace();
-            bool addBtnClicked = GUILayout.Button("Add State", GUILayout.Width(100));
+            bool addBtnClicked = false;
+            if (!stateData.isActive)
+            {
+                addBtnClicked = GUILayout.Button("Add State", GUILayout.Width(100));
+            }
             EditorGUILayout.EndHorizontal();
 
             if (addBtnClicked) // Add state button clicked
@@ -94,18 +98,19 @@ namespace LobsterFramework.Editors
             EditorGUILayout.BeginHorizontal();
             GUIContent content = new();
             GUIStyle style;
-            bool selectButtonClicked;
             if (stateData.initialState == selectedState)
             {
                 content.text = $"{stateType.Name} (Initial State)";
                 style = StateEditorConfig.InitialStateStyle;
             }
-            else {
+            else
+            {
                 content.text = stateType.Name;
                 style = StateEditorConfig.StateStyle;
             }
             content.tooltip = stateType.FullName;
-            
+
+            bool selectButtonClicked;
             if (AddStateMenuAttribute.icons.TryGetValue(stateType, out Texture2D icon))
             {
                 content.image = icon;
@@ -125,7 +130,7 @@ namespace LobsterFramework.Editors
 
             GUILayout.FlexibleSpace();
 
-            // Draw remove state button
+            // Draw set initial state button
             if (stateData.initialState != selectedState) {
                 EditorGUILayout.BeginVertical();
                 GUILayout.FlexibleSpace();
@@ -135,7 +140,6 @@ namespace LobsterFramework.Editors
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndVertical();
             }
-            
 
             EditorGUILayout.EndHorizontal();
         }
@@ -161,7 +165,7 @@ namespace LobsterFramework.Editors
             GUILayout.Space(EditorGUIUtility.singleLineHeight);
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            if (EditorUtils.Button(Color.red, "Remove State", GUILayout.Width(100)))
+            if (!stateData.isActive && EditorUtils.Button(Color.red, "Remove State", GUILayout.Width(100)))
             {
                 removeState = stateToDraw.GetType();
             }

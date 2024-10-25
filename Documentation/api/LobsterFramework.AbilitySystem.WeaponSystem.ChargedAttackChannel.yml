@@ -8,7 +8,6 @@ items:
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.BaseDamageModifier
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.MaxChargeDamageIncrease
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.MaxChargeTime
-  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig(LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig)
   langs:
   - csharp
   - vb
@@ -23,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ChargedAttackChannel
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 160
+    startLine: 154
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -34,8 +33,8 @@ items:
   - System.Object
   - LobsterFramework.AbilitySystem.AbilityChannel
   inheritedMembers:
-  - LobsterFramework.AbilitySystem.AbilityChannel.context
-  - LobsterFramework.AbilitySystem.AbilityChannel.config
+  - LobsterFramework.AbilitySystem.AbilityChannel.Context
+  - LobsterFramework.AbilitySystem.AbilityChannel.Config
   - LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   - LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
   - LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
@@ -66,7 +65,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: MaxChargeTime
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 163
+    startLine: 156
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -95,7 +94,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: MaxChargeDamageIncrease
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 164
+    startLine: 157
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -124,7 +123,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: BaseDamageModifier
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 165
+    startLine: 158
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -135,35 +134,6 @@ items:
       type: System.Single
     content.vb: Public ReadOnly Property BaseDamageModifier As Single
   overload: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.BaseDamageModifier*
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig(LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig)
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig(LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig)
-  id: SetConfig(LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig)
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel
-  langs:
-  - csharp
-  - vb
-  name: SetConfig(ChargedAttackConfig)
-  nameWithType: ChargedAttackChannel.SetConfig(ChargedAttackConfig)
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig(LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig)
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: SetConfig
-    path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 167
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  syntax:
-    content: public void SetConfig(ChargedAttackConfig config)
-    parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
-    content.vb: Public Sub SetConfig(config As ChargedAttackConfig)
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig*
 references:
 - uid: LobsterFramework.AbilitySystem.WeaponSystem
   commentId: N:LobsterFramework.AbilitySystem.WeaponSystem
@@ -213,20 +183,20 @@ references:
   name: AbilityChannel
   nameWithType: AbilityChannel
   fullName: LobsterFramework.AbilitySystem.AbilityChannel
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.context
-  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.context
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Context
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.Context
   parent: LobsterFramework.AbilitySystem.AbilityChannel
-  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.context
-  name: context
-  nameWithType: AbilityChannel.context
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.context
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
-  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Context
+  name: Context
+  nameWithType: AbilityChannel.Context
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Context
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Config
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.Config
   parent: LobsterFramework.AbilitySystem.AbilityChannel
-  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.config
-  name: config
-  nameWithType: AbilityChannel.config
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Config
+  name: Config
+  nameWithType: AbilityChannel.Config
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Config
 - uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   parent: LobsterFramework.AbilitySystem.AbilityChannel
@@ -539,16 +509,3 @@ references:
   name: BaseDamageModifier
   nameWithType: ChargedAttackChannel.BaseDamageModifier
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.BaseDamageModifier
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig
-  href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.html#LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig(LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig)
-  name: SetConfig
-  nameWithType: ChargedAttackChannel.SetConfig
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel.SetConfig
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
-  commentId: T:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
-  parent: LobsterFramework.AbilitySystem.WeaponSystem
-  href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.html
-  name: ChargedAttackConfig
-  nameWithType: ChargedAttackConfig
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig

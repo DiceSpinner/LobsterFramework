@@ -52,7 +52,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Weapon
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -215,7 +215,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnEntityHit
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 57
+    startLine: 56
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -242,7 +242,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnWeaponHit
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 58
+    startLine: 57
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -269,7 +269,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnWeaponDeflect
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 59
+    startLine: 58
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -296,7 +296,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Name
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 68
+    startLine: 67
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -325,7 +325,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: WeaponType
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 69
+    startLine: 68
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -354,7 +354,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AbilitySetting
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 71
+    startLine: 70
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -383,7 +383,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Weight
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 72
+    startLine: 71
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -412,7 +412,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Sharpness
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 73
+    startLine: 72
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -441,7 +441,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: AttackSpeed
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 74
+    startLine: 73
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -470,7 +470,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DefenseSpeed
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 76
+    startLine: 75
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -499,7 +499,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: DoubleHanded
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 78
+    startLine: 77
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -528,7 +528,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ClashSpark
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 80
+    startLine: 79
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -557,7 +557,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnHitDamage
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 82
+    startLine: 81
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -586,7 +586,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Head
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 84
+    startLine: 83
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -615,7 +615,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Tail
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 85
+    startLine: 84
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -644,7 +644,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HealthDamageReduction
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 88
+    startLine: 87
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -673,7 +673,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: PostureDamageReduction
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 89
+    startLine: 88
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -702,7 +702,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GMoveSpeedModifier
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 90
+    startLine: 89
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -731,7 +731,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GRotationSpeedModifier
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 91
+    startLine: 90
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -760,7 +760,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: LMoveSpeedModifier
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 95
+    startLine: 94
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -789,7 +789,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: LRotationSpeedModifier
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 96
+    startLine: 95
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -818,7 +818,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HMoveSpeedModifier
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 100
+    startLine: 99
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -847,7 +847,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HRotationSpeedModifier
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 101
+    startLine: 100
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -876,7 +876,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Entity
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 104
+    startLine: 103
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -905,7 +905,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: State
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 109
+    startLine: 108
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -934,7 +934,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetOnHitDamage
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 127
+    startLine: 126
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -968,7 +968,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SetOnHitDamage
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 130
+    startLine: 129
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -997,7 +997,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Enable
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 145
+    startLine: 144
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1029,7 +1029,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Disable
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 155
+    startLine: 154
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1057,7 +1057,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Pause
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 168
+    startLine: 167
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1085,7 +1085,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetWeaponStat
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 182
+    startLine: 181
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1122,7 +1122,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasWeaponStat
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 197
+    startLine: 196
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -1159,7 +1159,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: HasWeaponStat
     path: ../AbilitySystem/Weapon System/Weapon.cs
-    startLine: 207
+    startLine: 206
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

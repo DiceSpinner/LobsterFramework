@@ -28,12 +28,14 @@ items:
   summary: Overrides the displayed name of the field in inspector. Need to be used before other Unity property attributes to avoid being overriden.
   example: []
   syntax:
-    content: 'public class DisplayNameAttribute : PropertyAttribute'
-    content.vb: Public Class DisplayNameAttribute Inherits PropertyAttribute
+    content: 'public class DisplayNameAttribute : PropertyAttribute, _Attribute'
+    content.vb: Public Class DisplayNameAttribute Inherits PropertyAttribute Implements _Attribute
   inheritance:
   - System.Object
   - System.Attribute
   - UnityEngine.PropertyAttribute
+  implements:
+  - System.Runtime.InteropServices._Attribute
   inheritedMembers:
   - UnityEngine.PropertyAttribute.order
   - System.Attribute.Equals(System.Object)
@@ -170,6 +172,14 @@ references:
   name: PropertyAttribute
   nameWithType: PropertyAttribute
   fullName: UnityEngine.PropertyAttribute
+- uid: System.Runtime.InteropServices._Attribute
+  commentId: T:System.Runtime.InteropServices._Attribute
+  parent: System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute
+  name: _Attribute
+  nameWithType: _Attribute
+  fullName: System.Runtime.InteropServices._Attribute
 - uid: UnityEngine.PropertyAttribute.order
   commentId: P:UnityEngine.PropertyAttribute.order
   parent: UnityEngine.PropertyAttribute
@@ -1958,6 +1968,43 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
+- uid: System.Runtime.InteropServices
+  commentId: N:System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.InteropServices
+  nameWithType: System.Runtime.InteropServices
+  fullName: System.Runtime.InteropServices
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
 - uid: System.String
   commentId: T:System.String
   parent: System

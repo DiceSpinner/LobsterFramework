@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
 using System;
-using LobsterFramework.Utility;
 using System.Reflection;
 
 namespace LobsterFramework.Editors
@@ -53,7 +50,7 @@ namespace LobsterFramework.Editors
             Rect rect1  = EditorGUI.PrefixLabel(totalSpace, GUIUtility.GetControlID(FocusType.Keyboard), mock);
 
             bool buttonPressed;
-            Type abilityType = Utility.TypeCache.GetTypeByName(property.stringValue);
+            Type abilityType = TypeCache.GetTypeByName(property.stringValue);
             if (abilityType == null || !AddAbilityMenuAttribute.abilityDisplayEntries.ContainsKey(abilityType)) {
                 buttonPressed = GUI.Button(rect1, "None", EditorStyles.miniPullDown);
             }

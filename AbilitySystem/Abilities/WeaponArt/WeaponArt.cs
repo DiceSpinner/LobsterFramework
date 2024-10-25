@@ -45,5 +45,5 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         }
     }
     public class WeaponArtChannel : AbilityChannel { }
-    public class WeaponArtContext : AbilityContext { }
+    internal class WeaponArtContext : AbilityContext { }
 }

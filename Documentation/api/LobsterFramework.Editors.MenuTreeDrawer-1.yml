@@ -5,7 +5,7 @@ items:
   id: MenuTreeDrawer`1
   parent: LobsterFramework.Editors
   children:
-  - LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.Utility.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
+  - LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
   - LobsterFramework.Editors.MenuTreeDrawer`1.Draw
   - LobsterFramework.Editors.MenuTreeDrawer`1.SetColors(UnityEngine.Color,UnityEngine.Color)
   - LobsterFramework.Editors.MenuTreeDrawer`1.SetEmptyNote(System.String)
@@ -27,13 +27,13 @@ items:
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
-  summary: A utility class that helps with drawing out options from <xref href="LobsterFramework.Utility.MenuTree%601" data-throw-if-not-resolved="false"></xref>
+  summary: A utility class that helps with drawing out options from <xref href="LobsterFramework.MenuTree%601" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: public class MenuTreeDrawer<T>
     typeParameters:
     - id: T
-      description: The type of the data stored in <xref href="LobsterFramework.Utility.MenuTree%601" data-throw-if-not-resolved="false"></xref>
+      description: The type of the data stored in <xref href="LobsterFramework.MenuTree%601" data-throw-if-not-resolved="false"></xref>
     content.vb: Public Class MenuTreeDrawer(Of T)
   inheritance:
   - System.Object
@@ -48,16 +48,16 @@ items:
   nameWithType.vb: MenuTreeDrawer(Of T)
   fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T)
   name.vb: MenuTreeDrawer(Of T)
-- uid: LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.Utility.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
-  commentId: M:LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.Utility.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
-  id: '#ctor(LobsterFramework.Utility.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})'
+- uid: LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
+  commentId: M:LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
+  id: '#ctor(LobsterFramework.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})'
   parent: LobsterFramework.Editors.MenuTreeDrawer`1
   langs:
   - csharp
   - vb
   name: MenuTreeDrawer(MenuTree<T>, Action<T>, Func<MenuTree<T>, GUIContent>, Func<T, GUIContent>)
   nameWithType: MenuTreeDrawer<T>.MenuTreeDrawer(MenuTree<T>, Action<T>, Func<MenuTree<T>, GUIContent>, Func<T, GUIContent>)
-  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.MenuTreeDrawer(LobsterFramework.Utility.MenuTree<T>, System.Action<T>, System.Func<LobsterFramework.Utility.MenuTree<T>, UnityEngine.GUIContent>, System.Func<T, UnityEngine.GUIContent>)
+  fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.MenuTreeDrawer(LobsterFramework.MenuTree<T>, System.Action<T>, System.Func<LobsterFramework.MenuTree<T>, UnityEngine.GUIContent>, System.Func<T, UnityEngine.GUIContent>)
   type: Constructor
   source:
     remote:
@@ -74,17 +74,17 @@ items:
     content: public MenuTreeDrawer(MenuTree<T> startNode, Action<T> optionHandle, Func<MenuTree<T>, GUIContent> guiNodeHandle, Func<T, GUIContent> guiOptionHandle)
     parameters:
     - id: startNode
-      type: LobsterFramework.Utility.MenuTree{{T}}
+      type: LobsterFramework.MenuTree{{T}}
     - id: optionHandle
       type: System.Action{{T}}
     - id: guiNodeHandle
-      type: System.Func{LobsterFramework.Utility.MenuTree{{T}},UnityEngine.GUIContent}
+      type: System.Func{LobsterFramework.MenuTree{{T}},UnityEngine.GUIContent}
     - id: guiOptionHandle
       type: System.Func{{T},UnityEngine.GUIContent}
     content.vb: Public Sub New(startNode As MenuTree(Of T), optionHandle As Action(Of T), guiNodeHandle As Func(Of MenuTree(Of T), GUIContent), guiOptionHandle As Func(Of T, GUIContent))
   overload: LobsterFramework.Editors.MenuTreeDrawer`1.#ctor*
   nameWithType.vb: MenuTreeDrawer(Of T).New(MenuTree(Of T), Action(Of T), Func(Of MenuTree(Of T), GUIContent), Func(Of T, GUIContent))
-  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).New(LobsterFramework.Utility.MenuTree(Of T), System.Action(Of T), System.Func(Of LobsterFramework.Utility.MenuTree(Of T), UnityEngine.GUIContent), System.Func(Of T, UnityEngine.GUIContent))
+  fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).New(LobsterFramework.MenuTree(Of T), System.Action(Of T), System.Func(Of LobsterFramework.MenuTree(Of T), UnityEngine.GUIContent), System.Func(Of T, UnityEngine.GUIContent))
   name.vb: New(MenuTree(Of T), Action(Of T), Func(Of MenuTree(Of T), GUIContent), Func(Of T, GUIContent))
 - uid: LobsterFramework.Editors.MenuTreeDrawer`1.SetColors(UnityEngine.Color,UnityEngine.Color)
   commentId: M:LobsterFramework.Editors.MenuTreeDrawer`1.SetColors(UnityEngine.Color,UnityEngine.Color)
@@ -180,27 +180,27 @@ items:
   nameWithType.vb: MenuTreeDrawer(Of T).Draw()
   fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).Draw()
 references:
-- uid: LobsterFramework.Utility.MenuTree`1
-  commentId: T:LobsterFramework.Utility.MenuTree`1
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.MenuTree-1.html
+- uid: LobsterFramework.MenuTree`1
+  commentId: T:LobsterFramework.MenuTree`1
+  parent: LobsterFramework
+  href: LobsterFramework.MenuTree-1.html
   name: MenuTree<T>
   nameWithType: MenuTree<T>
-  fullName: LobsterFramework.Utility.MenuTree<T>
+  fullName: LobsterFramework.MenuTree<T>
   nameWithType.vb: MenuTree(Of T)
-  fullName.vb: LobsterFramework.Utility.MenuTree(Of T)
+  fullName.vb: LobsterFramework.MenuTree(Of T)
   name.vb: MenuTree(Of T)
   spec.csharp:
-  - uid: LobsterFramework.Utility.MenuTree`1
+  - uid: LobsterFramework.MenuTree`1
     name: MenuTree
-    href: LobsterFramework.Utility.MenuTree-1.html
+    href: LobsterFramework.MenuTree-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: LobsterFramework.Utility.MenuTree`1
+  - uid: LobsterFramework.MenuTree`1
     name: MenuTree
-    href: LobsterFramework.Utility.MenuTree-1.html
+    href: LobsterFramework.MenuTree-1.html
   - name: (
   - name: Of
   - name: " "
@@ -458,28 +458,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: LobsterFramework.Utility
-  commentId: N:LobsterFramework.Utility
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.Utility
-  nameWithType: LobsterFramework.Utility
-  fullName: LobsterFramework.Utility
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
 - uid: System
   commentId: N:System
   isExternal: true
@@ -489,31 +473,31 @@ references:
   fullName: System
 - uid: LobsterFramework.Editors.MenuTreeDrawer`1.#ctor*
   commentId: Overload:LobsterFramework.Editors.MenuTreeDrawer`1.#ctor
-  href: LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.Utility.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
+  href: LobsterFramework.Editors.MenuTreeDrawer-1.html#LobsterFramework.Editors.MenuTreeDrawer`1.#ctor(LobsterFramework.MenuTree{`0},System.Action{`0},System.Func{LobsterFramework.MenuTree{`0},UnityEngine.GUIContent},System.Func{`0,UnityEngine.GUIContent})
   name: MenuTreeDrawer
   nameWithType: MenuTreeDrawer<T>.MenuTreeDrawer
   fullName: LobsterFramework.Editors.MenuTreeDrawer<T>.MenuTreeDrawer
   nameWithType.vb: MenuTreeDrawer(Of T).New
   fullName.vb: LobsterFramework.Editors.MenuTreeDrawer(Of T).New
   name.vb: New
-- uid: LobsterFramework.Utility.MenuTree{{T}}
-  commentId: T:LobsterFramework.Utility.MenuTree{`0}
-  parent: LobsterFramework.Utility
-  definition: LobsterFramework.Utility.MenuTree`1
+- uid: LobsterFramework.MenuTree{{T}}
+  commentId: T:LobsterFramework.MenuTree{`0}
+  parent: LobsterFramework
+  definition: LobsterFramework.MenuTree`1
   name: MenuTree<T>
   nameWithType: MenuTree<T>
-  fullName: LobsterFramework.Utility.MenuTree<T>
+  fullName: LobsterFramework.MenuTree<T>
   nameWithType.vb: MenuTree(Of T)
-  fullName.vb: LobsterFramework.Utility.MenuTree(Of T)
+  fullName.vb: LobsterFramework.MenuTree(Of T)
   name.vb: MenuTree(Of T)
   spec.csharp:
-  - uid: LobsterFramework.Utility.MenuTree`1
+  - uid: LobsterFramework.MenuTree`1
     name: MenuTree
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: LobsterFramework.Utility.MenuTree`1
+  - uid: LobsterFramework.MenuTree`1
     name: MenuTree
   - name: (
   - name: Of
@@ -549,16 +533,16 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Func{LobsterFramework.Utility.MenuTree{{T}},UnityEngine.GUIContent}
-  commentId: T:System.Func{LobsterFramework.Utility.MenuTree{`0},UnityEngine.GUIContent}
+- uid: System.Func{LobsterFramework.MenuTree{{T}},UnityEngine.GUIContent}
+  commentId: T:System.Func{LobsterFramework.MenuTree{`0},UnityEngine.GUIContent}
   parent: System
   definition: System.Func`2
   href: https://learn.microsoft.com/dotnet/api/system.func-2
   name: Func<MenuTree<T>, GUIContent>
   nameWithType: Func<MenuTree<T>, GUIContent>
-  fullName: System.Func<LobsterFramework.Utility.MenuTree<T>, UnityEngine.GUIContent>
+  fullName: System.Func<LobsterFramework.MenuTree<T>, UnityEngine.GUIContent>
   nameWithType.vb: Func(Of MenuTree(Of T), GUIContent)
-  fullName.vb: System.Func(Of LobsterFramework.Utility.MenuTree(Of T), UnityEngine.GUIContent)
+  fullName.vb: System.Func(Of LobsterFramework.MenuTree(Of T), UnityEngine.GUIContent)
   name.vb: Func(Of MenuTree(Of T), GUIContent)
   spec.csharp:
   - uid: System.Func`2
@@ -566,7 +550,7 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-  - uid: LobsterFramework.Utility.MenuTree`1
+  - uid: LobsterFramework.MenuTree`1
     name: MenuTree
   - name: <
   - name: T
@@ -585,7 +569,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: LobsterFramework.Utility.MenuTree`1
+  - uid: LobsterFramework.MenuTree`1
     name: MenuTree
   - name: (
   - name: Of

@@ -1,9 +1,7 @@
 using System;
 using UnityEngine;
-using LobsterFramework.Utility;
 using System.Collections.Generic;
 using System.Linq;
-using TypeCache = LobsterFramework.Utility.TypeCache;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace LobsterFramework.Utility { 
+namespace LobsterFramework { 
     public static class GameUtility
     {
         public static void SetAbsoluteScale(GameObject obj, Vector2 size) {

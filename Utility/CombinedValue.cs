@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
     /// Represents the combined value of a set of values of the same type. <br/>
@@ -271,9 +271,9 @@ namespace LobsterFramework.Utility
     /// <summary>
     /// Value is true if all effectors are true, otherwise return base value
     /// </summary>
-    public class And : CombinedValue<bool>
+    public class AndValue : CombinedValue<bool>
     {
-        public And(bool value) : base(value)
+        public AndValue(bool value) : base(value)
         {
         }
 

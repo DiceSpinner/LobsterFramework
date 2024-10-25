@@ -2,52 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct RefFloat
+namespace LobsterFramework
 {
-    [SerializeField] private float value;
-    [SerializeField] private bool useSharedValue;
-    [SerializeField] private VarFloat sharedValue;
-
-    public RefFloat(float value = 0, bool useSharedValue = false, VarFloat sharedValue = null) { 
-        this.value = value;
-        this.useSharedValue = useSharedValue;
-        this.sharedValue = sharedValue;
-    }
-
-    public static implicit operator RefFloat(float value)
+    [System.Serializable]
+    public struct RefFloat
     {
-        return new RefFloat(value);
-    }
+        [SerializeField] private float value;
+        [SerializeField] private bool useSharedValue;
+        [SerializeField] private VarFloat sharedValue;
 
-    public static implicit operator float(RefFloat value) { 
-        return value.Value;
-    }
-
-    public float Value
-    {
-        get
+        public RefFloat(float value = 0, bool useSharedValue = false, VarFloat sharedValue = null)
         {
-            if (useSharedValue)
-            {
-                if (sharedValue == null)
-                {
-                    return default;
-                }
-                return sharedValue.Value;
-            }
-            return value;
+            this.value = value;
+            this.useSharedValue = useSharedValue;
+            this.sharedValue = sharedValue;
         }
 
-        set
+        public static implicit operator RefFloat(float value)
         {
-            if (useSharedValue)
+            return new RefFloat(value);
+        }
+
+        public static implicit operator float(RefFloat value)
+        {
+            return value.Value;
+        }
+
+        public float Value
+        {
+            get
             {
-                sharedValue.Value = value;
+                if (useSharedValue)
+                {
+                    if (sharedValue == null)
+                    {
+                        return default;
+                    }
+                    return sharedValue.Value;
+                }
+                return value;
             }
-            else
+
+            set
             {
-                this.value = value;
+                if (useSharedValue)
+                {
+                    sharedValue.Value = value;
+                }
+                else
+                {
+                    this.value = value;
+                }
             }
         }
     }

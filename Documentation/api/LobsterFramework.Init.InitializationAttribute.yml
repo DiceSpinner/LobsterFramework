@@ -28,8 +28,8 @@ items:
   summary: Attributes that will be feteched for each public class at the start of the game or after compilation. For more info, check out <xref href="LobsterFramework.Init.RegisterInitializationAttribute" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: 'public abstract class InitializationAttribute : Attribute'
-    content.vb: Public MustInherit Class InitializationAttribute Inherits Attribute
+    content: 'public abstract class InitializationAttribute : Attribute, _Attribute'
+    content.vb: Public MustInherit Class InitializationAttribute Inherits Attribute Implements _Attribute
   inheritance:
   - System.Object
   - System.Attribute
@@ -48,6 +48,8 @@ items:
   - LobsterFramework.Init.PlayerLoopEventGroupAttribute
   - LobsterFramework.Interaction.RegisterInteractorAttribute
   - LobsterFramework.RequireComponentReferenceAttribute
+  implements:
+  - System.Runtime.InteropServices._Attribute
   inheritedMembers:
   - System.Attribute.Equals(System.Object)
   - System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type)
@@ -199,6 +201,14 @@ references:
   name: Attribute
   nameWithType: Attribute
   fullName: System.Attribute
+- uid: System.Runtime.InteropServices._Attribute
+  commentId: T:System.Runtime.InteropServices._Attribute
+  parent: System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute
+  name: _Attribute
+  nameWithType: _Attribute
+  fullName: System.Runtime.InteropServices._Attribute
 - uid: System.Attribute.Equals(System.Object)
   commentId: M:System.Attribute.Equals(System.Object)
   parent: System.Attribute
@@ -1974,6 +1984,43 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.Runtime.InteropServices
+  commentId: N:System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.InteropServices
+  nameWithType: System.Runtime.InteropServices
+  fullName: System.Runtime.InteropServices
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
 - uid: System.String
   commentId: T:System.String
   parent: System

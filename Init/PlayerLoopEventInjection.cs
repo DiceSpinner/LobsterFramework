@@ -51,7 +51,7 @@ namespace LobsterFramework.Init
                     type = group.Type
                 };
 
-                if (group.InjectAfter)
+                if (group.InjectBefore)
                 {
                     playerloop = InjectAfter(group.NeighbourEvent, playerloop, injection, out bool isAdded);
                 }

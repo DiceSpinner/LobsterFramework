@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     [System.Serializable]
     public class DialogueResponse

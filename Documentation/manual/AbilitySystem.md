@@ -86,7 +86,7 @@ public class CircleAttackContext : AbilityContext { }
 ```
 Defining an ability is really simple! The only thing we are required to do is implement `Ability.Action()` method. This method will be called during ability invokation, which occurs right before the `LateUpdate()` unity event, and will continously be called every frame until the method returns false. Currently our ability immediately terminates after dealing damage to the enemy.
 
-Make sure the `[AddAbilityMenu]` attribute is applied and the bottom 3 classes match the names letter by letter in the example. The former makes the ability definition visible to the ability system and it will then use reflection to search for and validate the definition of these 3 supplementary classes. We'll talk about those later in other examples. We should now be able to see the option to add this ability to the `data` asset we created moments ago when we open the editor. Also, the ability system requires all abilities that are instantiable to be `sealed` for safety concerns.
+Make sure the [`[AddAbilityMenu]`](xref:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute) attribute is applied and the bottom 3 classes match the names letter by letter in the example. The former makes the ability definition visible to the ability system and it will then use reflection to search for and validate the definition of these 3 supplementary classes. We'll talk about those later in other examples. We should now be able to see the option to add this ability to the `data` asset we created moments ago when we open the editor. Also, the ability system requires all abilities that are instantiable to be `sealed` for safety concerns.
 
 ![example1-add-circleattack](../resources/example1-add-circleattack.gif)
 
@@ -567,7 +567,7 @@ public class PlayerControl : MonoBehavior {
 ```
 
 ## Coroutine
-The ability system provides an extended version of [`Ability`](#ability) named [`AbilityCoroutine`](xref:LobsterFramework.AbilitySystem.AbilityCoroutine) that allows abilities to be executed like coroutines. Of course, with the order of execution by ability priorities still being preserved as it is directly implemented via the ability interface. Inheriting from [`AbilityCoroutine`](xref:LobsterFramework.AbilitySystem.AbilityCoroutine) will allow you to write the ability code that remembers its position before return so that in the next frame the execution will continue from that position. Similar to `UnityEngine.YieldInstruction`, the coroutine will return a [`CoroutineOption`](xref:LobsterFramework.Utility.CoroutineOption) indicating whether the coroutine will continue, wait for another coroutine, wait for condition, wait for time/unscaled time or reset. Here's a simple example of weapon ability `Attack` implemented via coroutine:
+The ability system provides an extended version of [`Ability`](#ability) named [`AbilityCoroutine`](xref:LobsterFramework.AbilitySystem.AbilityCoroutine) that allows abilities to be executed like coroutines. Of course, with the order of execution by ability priorities still being preserved as it is directly implemented via the ability interface. Inheriting from [`AbilityCoroutine`](xref:LobsterFramework.AbilitySystem.AbilityCoroutine) will allow you to write the ability code that remembers its position before return so that in the next frame the execution will continue from that position. Similar to `UnityEngine.YieldInstruction`, the coroutine will return a [`CoroutineOption`](xref:LobsterFramework.CoroutineOption) indicating whether the coroutine will continue, wait for another coroutine, wait for condition, wait for time/unscaled time or reset. Here's a simple example of weapon ability `Attack` implemented via coroutine:
 ```
 // Attack.cs
 
@@ -634,7 +634,7 @@ The ability interface is changed as follows:
 
 When defining context type for your ability, you must inherit from [`AbilityCoroutineContext`](xref:LobsterFramework.AbilitySystem.AbilityCoroutineContext) instead of [`AbilityContext`](xref:LobsterFramework.AbilitySystem.AbilityContext) according to the rule of [ability inheritence](#abilitycontext).
 
-In addition, when [`CoroutineOption.Reset`](xref:LobsterFramework.Utility.CoroutineOption.Reset) is yielded, the coroutine will restart from the beginning next frame it is invoked. [`AbilityCoroutine.OnCoroutineReset()`](xref:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset) is called immediately after receiving this return value to allow context variables to be reset before resuming next frame.
+In addition, when [`CoroutineOption.Reset`](xref:LobsterFramework.CoroutineOption.Reset) is yielded, the coroutine will restart from the beginning next frame it is invoked. [`AbilityCoroutine.OnCoroutineReset()`](xref:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset) is called immediately after receiving this return value to allow context variables to be reset before resuming next frame.
 
 # Utilities
 ## Ability Selector

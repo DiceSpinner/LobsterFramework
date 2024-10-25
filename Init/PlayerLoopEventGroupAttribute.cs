@@ -17,8 +17,8 @@ namespace LobsterFramework.Init
         internal static List<PlayerLoopEventGroupAttribute> EventGroups = new(); 
         internal Type NeighbourEvent;
         internal Type Type;
-        public bool InjectAfter;
-        public int Priority;
+        public bool InjectBefore = false;
+        public int Priority = 0;
         internal List<PlayerLoopSystem.UpdateFunction> UpdateEvents = new();
         internal Dictionary<PlayerLoopSystem.UpdateFunction, Type> EventTypes = new();
 

@@ -1,8 +1,8 @@
+- name: Framework Initialization
+  href: Initialization.md
 - name: Ability System
   href: AbilitySystem.md
 - name: AI
   href: AI.md
 - name: Interaction
   href: Interaction.md
-- name: Framework Initialization
-  href: Initialization.md

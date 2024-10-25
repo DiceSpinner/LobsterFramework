@@ -222,7 +222,7 @@ items:
   syntax:
     content: public readonly OrValue hyperarmor
     return:
-      type: LobsterFramework.Utility.OrValue
+      type: LobsterFramework.OrValue
     content.vb: Public ReadOnly hyperarmor As OrValue
 - uid: LobsterFramework.Poise.PoiseBroken
   commentId: P:LobsterFramework.Poise.PoiseBroken
@@ -4814,35 +4814,13 @@ references:
   - uid: UnityEngine.Events
     name: Events
     isExternal: true
-- uid: LobsterFramework.Utility.OrValue
-  commentId: T:LobsterFramework.Utility.OrValue
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.OrValue.html
+- uid: LobsterFramework.OrValue
+  commentId: T:LobsterFramework.OrValue
+  parent: LobsterFramework
+  href: LobsterFramework.OrValue.html
   name: OrValue
   nameWithType: OrValue
-  fullName: LobsterFramework.Utility.OrValue
-- uid: LobsterFramework.Utility
-  commentId: N:LobsterFramework.Utility
-  href: LobsterFramework.html
-  name: LobsterFramework.Utility
-  nameWithType: LobsterFramework.Utility
-  fullName: LobsterFramework.Utility
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
+  fullName: LobsterFramework.OrValue
 - uid: LobsterFramework.Poise.PoiseBroken*
   commentId: Overload:LobsterFramework.Poise.PoiseBroken
   href: LobsterFramework.Poise.html#LobsterFramework.Poise.PoiseBroken

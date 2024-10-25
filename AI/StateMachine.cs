@@ -1,10 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using LobsterFramework.Utility;
 using LobsterFramework.Init;
-
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -28,7 +25,7 @@ namespace LobsterFramework.AI
         private readonly CoroutineRunner coroutineRunner = new();
         private Type switchingTo = null;
 
-        public Utility.Coroutine RunCoroutine(IEnumerable<CoroutineOption> coroutine) {
+        public Coroutine RunCoroutine(IEnumerable<CoroutineOption> coroutine) {
             return coroutineRunner.AddCoroutine(coroutine);
         }
         #endregion

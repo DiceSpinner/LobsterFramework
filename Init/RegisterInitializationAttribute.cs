@@ -21,9 +21,23 @@ namespace LobsterFramework.Init
         }   
     }
 
+    /// <summary>
+    /// Indicate whether the attribute should be fetched during editor/runtime only or both
+    /// </summary>
     public enum InitializationAttributeType { 
+        /// <summary>
+        /// This attribute shall be fetched in editor mode after compilation
+        /// </summary>
         Editor = 3,
+
+        /// <summary>
+        /// This attribute shall be fetched in play mode/build
+        /// </summary>
         Runtime = 1,
+
+        /// <summary>
+        /// This attribute shall be fetched in editor mode after compilation, and in play mode/build
+        /// </summary>
         Dual = 2
     }
 }

@@ -17,7 +17,9 @@ items:
   - LobsterFramework.Interaction.Interactor
   - LobsterFramework.Interaction.Inventory
   - LobsterFramework.Interaction.InventoryItem
+  - LobsterFramework.Interaction.InventoryUI
   - LobsterFramework.Interaction.Item
+  - LobsterFramework.Interaction.ItemEntryUI
   - LobsterFramework.Interaction.ItemType
   - LobsterFramework.Interaction.RegisterInteractorAttribute
   - LobsterFramework.Interaction.SimpleItem
@@ -51,6 +53,12 @@ references:
   name: IConsumable
   nameWithType: IConsumable
   fullName: LobsterFramework.Interaction.IConsumable
+- uid: LobsterFramework.Interaction.ItemEntryUI
+  commentId: T:LobsterFramework.Interaction.ItemEntryUI
+  href: LobsterFramework.Interaction.ItemEntryUI.html
+  name: ItemEntryUI
+  nameWithType: ItemEntryUI
+  fullName: LobsterFramework.Interaction.ItemEntryUI
 - uid: LobsterFramework.Interaction.RegisterInteractorAttribute
   commentId: T:LobsterFramework.Interaction.RegisterInteractorAttribute
   href: LobsterFramework.Interaction.RegisterInteractorAttribute.html
@@ -136,6 +144,12 @@ references:
   name: InteractabilityCheckerAttribute
   nameWithType: InteractabilityCheckerAttribute
   fullName: LobsterFramework.Interaction.InteractabilityCheckerAttribute
+- uid: LobsterFramework.Interaction.InventoryUI
+  commentId: T:LobsterFramework.Interaction.InventoryUI
+  href: LobsterFramework.Interaction.InventoryUI.html
+  name: InventoryUI
+  nameWithType: InventoryUI
+  fullName: LobsterFramework.Interaction.InventoryUI
 - uid: LobsterFramework.Interaction.HealthPotion
   commentId: T:LobsterFramework.Interaction.HealthPotion
   href: LobsterFramework.Interaction.HealthPotion.html

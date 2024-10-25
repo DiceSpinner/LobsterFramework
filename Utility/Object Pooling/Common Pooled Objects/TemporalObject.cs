@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.Pool
+namespace LobsterFramework
 {
     public class TemporalObject : MonoBehaviour
     {

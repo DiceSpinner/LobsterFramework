@@ -31,10 +31,6 @@ items:
   inheritance:
   - System.Object
   - LobsterFramework.AbilitySystem.AbilityContext
-  derivedClasses:
-  - LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.GuardContext
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)

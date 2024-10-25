@@ -2,43 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct RefBool{
-    [SerializeField] private bool value;
-    [SerializeField] private bool useSharedValue;
-    [SerializeField] private VarBool sharedValue;
-
-    public RefBool(bool value = default, bool useSharedValue = false, VarBool sharedValue = null)
+namespace LobsterFramework
+{
+    [System.Serializable]
+    public struct RefBool
     {
-        this.value = value;
-        this.useSharedValue = useSharedValue;
-        this.sharedValue = sharedValue;
-    }
+        [SerializeField] private bool value;
+        [SerializeField] private bool useSharedValue;
+        [SerializeField] private VarBool sharedValue;
 
-    public bool Value
-    {
-        get
+        public RefBool(bool value = default, bool useSharedValue = false, VarBool sharedValue = null)
         {
-            if (useSharedValue)
-            {
-                if (sharedValue == null)
-                {
-                    return default;
-                }
-                return sharedValue.Value;
-            }
-            return value;
+            this.value = value;
+            this.useSharedValue = useSharedValue;
+            this.sharedValue = sharedValue;
         }
 
-        set
+        public bool Value
         {
-            if (useSharedValue)
+            get
             {
-                sharedValue.Value = value;
+                if (useSharedValue)
+                {
+                    if (sharedValue == null)
+                    {
+                        return default;
+                    }
+                    return sharedValue.Value;
+                }
+                return value;
             }
-            else
+
+            set
             {
-                this.value = value;
+                if (useSharedValue)
+                {
+                    sharedValue.Value = value;
+                }
+                else
+                {
+                    this.value = value;
+                }
             }
         }
     }

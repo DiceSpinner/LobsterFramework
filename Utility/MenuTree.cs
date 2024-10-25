@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
     /// A menu tree that is used by editor scripts to display nested menu options

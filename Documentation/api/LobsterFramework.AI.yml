@@ -9,7 +9,6 @@ items:
   - LobsterFramework.AI.AddStateMenuAttribute
   - LobsterFramework.AI.State
   - LobsterFramework.AI.StateData
-  - LobsterFramework.AI.StateDicationary
   - LobsterFramework.AI.StateMachine
   - LobsterFramework.AI.StateTransitionAttribute
   langs:
@@ -47,12 +46,6 @@ references:
   name: StateData
   nameWithType: StateData
   fullName: LobsterFramework.AI.StateData
-- uid: LobsterFramework.AI.StateDicationary
-  commentId: T:LobsterFramework.AI.StateDicationary
-  href: LobsterFramework.AI.StateDicationary.html
-  name: StateDicationary
-  nameWithType: StateDicationary
-  fullName: LobsterFramework.AI.StateDicationary
 - uid: LobsterFramework.AI.AIPathFinder
   commentId: T:LobsterFramework.AI.AIPathFinder
   href: LobsterFramework.AI.AIPathFinder.html

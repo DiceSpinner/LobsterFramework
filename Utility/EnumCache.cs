@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using System.Collections.ObjectModel;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
     /// Helper class for quicker enum type queries. The result obtained from reflection is cached locally making subsequent queries faster.

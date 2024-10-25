@@ -5,13 +5,13 @@ items:
   id: AbilityChannel
   parent: LobsterFramework.AbilitySystem
   children:
+  - LobsterFramework.AbilitySystem.AbilityChannel.Config
+  - LobsterFramework.AbilitySystem.AbilityChannel.Context
   - LobsterFramework.AbilitySystem.AbilityChannel.Cooldown
   - LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   - LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
   - LobsterFramework.AbilitySystem.AbilityChannel.OnCooldown
   - LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
-  - LobsterFramework.AbilitySystem.AbilityChannel.config
-  - LobsterFramework.AbilitySystem.AbilityChannel.context
   langs:
   - csharp
   - vb
@@ -35,7 +35,7 @@ items:
 
     When creating a new ability, you must also declare a class named "AbilityName"Channel in the same namespace where "AbilityName" is the name of the ability you're creating.
 
-    Can be accessed via <xref href="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent%60%601" data-throw-if-not-resolved="false"></xref>
+    Can be accessed via <xref href="LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel%60%601(System.String)" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: public class AbilityChannel
@@ -56,60 +56,60 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.context
-  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.context
-  id: context
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Context
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.Context
+  id: Context
   parent: LobsterFramework.AbilitySystem.AbilityChannel
   langs:
   - csharp
   - vb
-  name: context
-  nameWithType: AbilityChannel.context
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.context
+  name: Context
+  nameWithType: AbilityChannel.Context
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Context
   type: Field
   source:
     remote:
       path: AbilitySystem/Ability.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: context
+    id: Context
     path: ../AbilitySystem/Ability.cs
     startLine: 551
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: protected AbilityContext context
+    content: protected AbilityContext Context
     return:
       type: LobsterFramework.AbilitySystem.AbilityContext
-    content.vb: Protected context As AbilityContext
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
-  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
-  id: config
+    content.vb: Protected Context As AbilityContext
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Config
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.Config
+  id: Config
   parent: LobsterFramework.AbilitySystem.AbilityChannel
   langs:
   - csharp
   - vb
-  name: config
-  nameWithType: AbilityChannel.config
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
+  name: Config
+  nameWithType: AbilityChannel.Config
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Config
   type: Field
   source:
     remote:
       path: AbilitySystem/Ability.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: config
+    id: Config
     path: ../AbilitySystem/Ability.cs
     startLine: 552
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: protected AbilityConfig config
+    content: protected AbilityConfig Config
     return:
       type: LobsterFramework.AbilitySystem.AbilityConfig
-    content.vb: Protected config As AbilityConfig
+    content.vb: Protected Config As AbilityConfig
 - uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   id: IsRunning
@@ -256,34 +256,43 @@ items:
     content.vb: Public ReadOnly Property Cooldown As Single
   overload: LobsterFramework.AbilitySystem.AbilityChannel.Cooldown*
 references:
-- uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
-  commentId: M:LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
-  href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
-  name: GetAbilityComponent<T>()
-  nameWithType: AbilityManager.GetAbilityComponent<T>()
-  fullName: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent<T>()
-  nameWithType.vb: AbilityManager.GetAbilityComponent(Of T)()
-  fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent(Of T)()
-  name.vb: GetAbilityComponent(Of T)()
+- uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)
+  commentId: M:LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)
+  isExternal: true
+  href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)
+  name: GetAbilityChannel<T>(string)
+  nameWithType: AbilityManager.GetAbilityChannel<T>(string)
+  fullName: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel<T>(string)
+  nameWithType.vb: AbilityManager.GetAbilityChannel(Of T)(String)
+  fullName.vb: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel(Of T)(String)
+  name.vb: GetAbilityChannel(Of T)(String)
   spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
-    name: GetAbilityComponent
-    href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+  - uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)
+    name: GetAbilityChannel
+    href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)
   - name: <
   - name: T
   - name: '>'
   - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
-    name: GetAbilityComponent
-    href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityComponent``1
+  - uid: LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)
+    name: GetAbilityChannel
+    href: LobsterFramework.AbilitySystem.AbilityManager.html#LobsterFramework.AbilitySystem.AbilityManager.GetAbilityChannel``1(System.String)
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
   - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem

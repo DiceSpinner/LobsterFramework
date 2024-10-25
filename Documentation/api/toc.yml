@@ -1,77 +1,42 @@
 ### YamlMime:TableOfContent
 items:
-- uid: Global
-  name: ''
-  items:
-  - uid: Global.BoolEventChannel
-    name: BoolEventChannel
-  - uid: Global.DescriptionBaseSO
-    name: DescriptionBaseSO
-  - uid: Global.FloatEventChannel
-    name: FloatEventChannel
-  - uid: Global.IntEventChannel
-    name: IntEventChannel
-  - uid: Global.OrderedSet`1
-    name: OrderedSet<T>
-  - uid: Global.Projectile
-    name: Projectile
-  - uid: Global.RefBool
-    name: RefBool
-  - uid: Global.RefBoolDrawer
-    name: RefBoolDrawer
-  - uid: Global.RefFloat
-    name: RefFloat
-  - uid: Global.RefFloatDrawer
-    name: RefFloatDrawer
-  - uid: Global.RefInt
-    name: RefInt
-  - uid: Global.RefIntDrawer
-    name: RefIntDrawer
-  - uid: Global.RefString
-    name: RefString
-  - uid: Global.RefStringDrawer
-    name: RefStringDrawer
-  - uid: Global.SerializableLinkedList`1
-    name: SerializableLinkedList<T>
-  - uid: Global.StringEventChannel
-    name: StringEventChannel
-  - uid: Global.VarBool
-    name: VarBool
-  - uid: Global.VarBoolDrawer
-    name: VarBoolDrawer
-  - uid: Global.VarFloat
-    name: VarFloat
-  - uid: Global.VarFloatDrawer
-    name: VarFloatDrawer
-  - uid: Global.Variable`1
-    name: Variable<T>
-  - uid: Global.VarInt
-    name: VarInt
-  - uid: Global.VarIntDrawer
-    name: VarIntDrawer
-  - uid: Global.VarString
-    name: VarString
-  - uid: Global.VarStringDrawer
-    name: VarStringDrawer
-  - uid: Global.VoidEventChannel
-    name: VoidEventChannel
 - uid: LobsterFramework
   name: LobsterFramework
   items:
-  - uid: LobsterFramework.AnimationClipArray
-    name: AnimationClipArray
-  - uid: LobsterFramework.AttackSetting
-    name: AttackSetting
+  - uid: LobsterFramework.AndValue
+    name: AndValue
+  - uid: LobsterFramework.BoolEventChannel
+    name: BoolEventChannel
   - uid: LobsterFramework.CharacterStateManager
     name: CharacterStateManager
   - uid: LobsterFramework.CharacterStateManager.CharacterState
     name: CharacterStateManager.CharacterState
+  - uid: LobsterFramework.CombinedValue`1
+    name: CombinedValue<T>
+  - uid: LobsterFramework.CombinedValueEffector`1
+    name: CombinedValueEffector<T>
   - uid: LobsterFramework.ContinousCollision2D
     name: ContinousCollision2D
+  - uid: LobsterFramework.Coroutine
+    name: Coroutine
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+  - uid: LobsterFramework.CoroutineRunner
+    name: CoroutineRunner
   - uid: LobsterFramework.Damage
     name: Damage
   - uid: LobsterFramework.DamageType
     name: DamageType
+  - uid: LobsterFramework.DescriptionBaseSO
+    name: DescriptionBaseSO
+  - uid: LobsterFramework.DialogueDisplayer
+    name: DialogueDisplayer
+  - uid: LobsterFramework.DialogueNode
+    name: DialogueNode
+  - uid: LobsterFramework.DialogueObject
+    name: DialogueObject
+  - uid: LobsterFramework.DialogueResponse
+    name: DialogueResponse
   - uid: LobsterFramework.DisableEditInPlayMode
     name: DisableEditInPlayMode
   - uid: LobsterFramework.DisplayNameAttribute
@@ -82,30 +47,58 @@ items:
     name: Entity
   - uid: LobsterFramework.EntityGroup
     name: EntityGroup
+  - uid: LobsterFramework.EnumCache
+    name: EnumCache
   - uid: LobsterFramework.FieldDescriptionAttribute
     name: FieldDescriptionAttribute
   - uid: LobsterFramework.FilePathAttribute
     name: FilePathAttribute
+  - uid: LobsterFramework.FloatEventChannel
+    name: FloatEventChannel
+  - uid: LobsterFramework.FloatProduct
+    name: FloatProduct
+  - uid: LobsterFramework.FloatSum
+    name: FloatSum
   - uid: LobsterFramework.FolderPathAttribute
     name: FolderPathAttribute
-  - uid: LobsterFramework.IntroMenu
-    name: IntroMenu
+  - uid: LobsterFramework.GameUtility
+    name: GameUtility
+  - uid: LobsterFramework.IdDistributor
+    name: IdDistributor
+  - uid: LobsterFramework.IntEventChannel
+    name: IntEventChannel
+  - uid: LobsterFramework.IntSum
+    name: IntSum
   - uid: LobsterFramework.InventoryUtil
     name: InventoryUtil
-  - uid: LobsterFramework.ItemEntryUI
-    name: ItemEntryUI
   - uid: LobsterFramework.LayerAttribute
     name: LayerAttribute
+  - uid: LobsterFramework.MenuTree`1
+    name: MenuTree<T>
   - uid: LobsterFramework.MovementController
     name: MovementController
+  - uid: LobsterFramework.ObjectPool
+    name: ObjectPool
+  - uid: LobsterFramework.OrValue
+    name: OrValue
   - uid: LobsterFramework.Poise
     name: Poise
+  - uid: LobsterFramework.Projectile
+    name: Projectile
   - uid: LobsterFramework.ReadOnlyAttribute
     name: ReadOnlyAttribute
+  - uid: LobsterFramework.RefBool
+    name: RefBool
   - uid: LobsterFramework.ReferenceProvider
     name: ReferenceProvider
   - uid: LobsterFramework.ReferenceRequester
     name: ReferenceRequester
+  - uid: LobsterFramework.RefFloat
+    name: RefFloat
+  - uid: LobsterFramework.RefInt
+    name: RefInt
+  - uid: LobsterFramework.RefString
+    name: RefString
   - uid: LobsterFramework.RequireComponentReferenceAttribute
     name: RequireComponentReferenceAttribute
   - uid: LobsterFramework.RequirementDescription
@@ -114,12 +107,44 @@ items:
     name: SceneLoader
   - uid: LobsterFramework.SerializableArray`1
     name: SerializableArray<T>
+  - uid: LobsterFramework.SerializableDictionary`2
+    name: SerializableDictionary<TKey, TValue>
+  - uid: LobsterFramework.SerializableList`1
+    name: SerializableList<T>
+  - uid: LobsterFramework.SerializableType
+    name: SerializableType
+  - uid: LobsterFramework.SerializableType`1
+    name: SerializableType<T>
   - uid: LobsterFramework.Setting
     name: Setting
+  - uid: LobsterFramework.Signal`1
+    name: Signal<T>
   - uid: LobsterFramework.SimpleCollision2D
     name: SimpleCollision2D
+  - uid: LobsterFramework.SortableItem`1
+    name: SortableItem<T>
+  - uid: LobsterFramework.StringEventChannel
+    name: StringEventChannel
   - uid: LobsterFramework.SubLevelComponent
     name: SubLevelComponent
+  - uid: LobsterFramework.TemporalObject
+    name: TemporalObject
+  - uid: LobsterFramework.TypeCache
+    name: TypeCache
+  - uid: LobsterFramework.VarBool
+    name: VarBool
+  - uid: LobsterFramework.VarFloat
+    name: VarFloat
+  - uid: LobsterFramework.Variable`1
+    name: Variable<T>
+  - uid: LobsterFramework.VarInt
+    name: VarInt
+  - uid: LobsterFramework.VarString
+    name: VarString
+  - uid: LobsterFramework.VoidEventChannel
+    name: VoidEventChannel
+  - uid: LobsterFramework.XList`1
+    name: XList<T>
 - uid: LobsterFramework.AbilitySystem
   name: LobsterFramework.AbilitySystem
   items:
@@ -129,12 +154,8 @@ items:
     name: AbilityChannel
   - uid: LobsterFramework.AbilitySystem.AbilityComponent
     name: AbilityComponent
-  - uid: LobsterFramework.AbilitySystem.AbilityComponentDictionary
-    name: AbilityComponentDictionary
   - uid: LobsterFramework.AbilitySystem.AbilityConfig
     name: AbilityConfig
-  - uid: LobsterFramework.AbilitySystem.AbilityConfigDictionary
-    name: AbilityConfigDictionary
   - uid: LobsterFramework.AbilitySystem.AbilityContext
     name: AbilityContext
   - uid: LobsterFramework.AbilitySystem.AbilityCoroutine
@@ -143,8 +164,6 @@ items:
     name: AbilityCoroutineContext
   - uid: LobsterFramework.AbilitySystem.AbilityData
     name: AbilityData
-  - uid: LobsterFramework.AbilitySystem.AbilityDictionary
-    name: AbilityDictionary
   - uid: LobsterFramework.AbilitySystem.AbilityInstanceManagement
     name: AbilityInstanceManagement
   - uid: LobsterFramework.AbilitySystem.AbilityManager
@@ -172,38 +191,24 @@ items:
     name: Attack
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.AttackChannel
     name: AttackChannel
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig
-    name: AttackConfig
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.AttackContext
-    name: AttackContext
+  - uid: LobsterFramework.AbilitySystem.WeaponSystem.Bullet
+    name: Bullet
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.CharacterWeaponAnimationData
     name: CharacterWeaponAnimationData
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack
     name: ChargedAttack
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackChannel
     name: ChargedAttackChannel
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig
-    name: ChargedAttackConfig
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext
-    name: ChargedAttackContext
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard
     name: Guard
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.Guard.GuardAnimations
     name: Guard.GuardAnimations
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.GuardChannel
     name: GuardChannel
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig
-    name: GuardConfig
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.GuardContext
-    name: GuardContext
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility
     name: OffhandAbility
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel
     name: OffhandAbilityChannel
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig
-    name: OffhandAbilityConfig
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
-    name: OffhandAbilityContext
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.OffhandWeaponAbilityAttribute
     name: OffhandWeaponAbilityAttribute
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.RequireWeaponStatAttribute
@@ -222,10 +227,6 @@ items:
     name: WeaponArtAttribute
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtChannel
     name: WeaponArtChannel
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig
-    name: WeaponArtConfig
-  - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext
-    name: WeaponArtContext
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector
     name: WeaponArtSelector
   - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponData
@@ -253,8 +254,6 @@ items:
     name: State
   - uid: LobsterFramework.AI.StateData
     name: StateData
-  - uid: LobsterFramework.AI.StateDicationary
-    name: StateDicationary
   - uid: LobsterFramework.AI.StateMachine
     name: StateMachine
   - uid: LobsterFramework.AI.StateTransitionAttribute
@@ -316,8 +315,16 @@ items:
     name: PoiseEditor
   - uid: LobsterFramework.Editors.ReadOnlyAttributeDrawer
     name: ReadOnlyAttributeDrawer
+  - uid: LobsterFramework.Editors.RefBoolDrawer
+    name: RefBoolDrawer
   - uid: LobsterFramework.Editors.ReferenceProviderEditor
     name: ReferenceProviderEditor
+  - uid: LobsterFramework.Editors.RefFloatDrawer
+    name: RefFloatDrawer
+  - uid: LobsterFramework.Editors.RefIntDrawer
+    name: RefIntDrawer
+  - uid: LobsterFramework.Editors.RefStringDrawer
+    name: RefStringDrawer
   - uid: LobsterFramework.Editors.SelectAbilityComponentPopup
     name: SelectAbilityComponentPopup
   - uid: LobsterFramework.Editors.SelectAbilityPopup
@@ -332,6 +339,14 @@ items:
     name: StateDataEditor
   - uid: LobsterFramework.Editors.StateEditorConfig
     name: StateEditorConfig
+  - uid: LobsterFramework.Editors.VarBoolDrawer
+    name: VarBoolDrawer
+  - uid: LobsterFramework.Editors.VarFloatDrawer
+    name: VarFloatDrawer
+  - uid: LobsterFramework.Editors.VarIntDrawer
+    name: VarIntDrawer
+  - uid: LobsterFramework.Editors.VarStringDrawer
+    name: VarStringDrawer
   - uid: LobsterFramework.Editors.WeaponArtSelectorDrawer
     name: WeaponArtSelectorDrawer
   - uid: LobsterFramework.Editors.WeaponDataEditor
@@ -397,90 +412,16 @@ items:
     name: Inventory
   - uid: LobsterFramework.Interaction.InventoryItem
     name: InventoryItem
+  - uid: LobsterFramework.Interaction.InventoryUI
+    name: InventoryUI
   - uid: LobsterFramework.Interaction.Item
     name: Item
+  - uid: LobsterFramework.Interaction.ItemEntryUI
+    name: ItemEntryUI
   - uid: LobsterFramework.Interaction.ItemType
     name: ItemType
   - uid: LobsterFramework.Interaction.RegisterInteractorAttribute
     name: RegisterInteractorAttribute
   - uid: LobsterFramework.Interaction.SimpleItem
     name: SimpleItem
-- uid: LobsterFramework.Pool
-  name: LobsterFramework.Pool
-  items:
-  - uid: LobsterFramework.Pool.Bullet
-    name: Bullet
-  - uid: LobsterFramework.Pool.ObjectPool
-    name: ObjectPool
-  - uid: LobsterFramework.Pool.TemporalObject
-    name: TemporalObject
-- uid: LobsterFramework.UI
-  name: LobsterFramework.UI
-  items:
-  - uid: LobsterFramework.UI.InventoryUI
-    name: InventoryUI
-- uid: LobsterFramework.Utility
-  name: LobsterFramework.Utility
-  items:
-  - uid: LobsterFramework.Utility.And
-    name: And
-  - uid: LobsterFramework.Utility.CombinedValue`1
-    name: CombinedValue<T>
-  - uid: LobsterFramework.Utility.CombinedValueEffector`1
-    name: CombinedValueEffector<T>
-  - uid: LobsterFramework.Utility.ComponentList
-    name: ComponentList
-  - uid: LobsterFramework.Utility.Coroutine
-    name: Coroutine
-  - uid: LobsterFramework.Utility.CoroutineOption
-    name: CoroutineOption
-  - uid: LobsterFramework.Utility.CoroutineRunner
-    name: CoroutineRunner
-  - uid: LobsterFramework.Utility.DialogueDisplayer
-    name: DialogueDisplayer
-  - uid: LobsterFramework.Utility.DialogueNode
-    name: DialogueNode
-  - uid: LobsterFramework.Utility.DialogueObject
-    name: DialogueObject
-  - uid: LobsterFramework.Utility.DialogueResponse
-    name: DialogueResponse
-  - uid: LobsterFramework.Utility.EnumCache
-    name: EnumCache
-  - uid: LobsterFramework.Utility.FloatProduct
-    name: FloatProduct
-  - uid: LobsterFramework.Utility.FloatSum
-    name: FloatSum
-  - uid: LobsterFramework.Utility.GameUtility
-    name: GameUtility
-  - uid: LobsterFramework.Utility.IdDistributor
-    name: IdDistributor
-  - uid: LobsterFramework.Utility.IntSum
-    name: IntSum
-  - uid: LobsterFramework.Utility.MenuTree`1
-    name: MenuTree<T>
-  - uid: LobsterFramework.Utility.OrValue
-    name: OrValue
-  - uid: LobsterFramework.Utility.SerializableDictionary`2
-    name: SerializableDictionary<TKey, TValue>
-  - uid: LobsterFramework.Utility.SerializableHashSet`1
-    name: SerializableHashSet<TValue>
-  - uid: LobsterFramework.Utility.SerializableList`1
-    name: SerializableList<T>
-  - uid: LobsterFramework.Utility.SerializableType
-    name: SerializableType
-  - uid: LobsterFramework.Utility.SerializableType`1
-    name: SerializableType<T>
-  - uid: LobsterFramework.Utility.Signal`1
-    name: Signal<T>
-  - uid: LobsterFramework.Utility.SortableItem`1
-    name: SortableItem<T>
-  - uid: LobsterFramework.Utility.TypeCache
-    name: TypeCache
-  - uid: LobsterFramework.Utility.XList`1
-    name: XList<T>
-- uid: LobsterFramework.Utility.EventChannels
-  name: LobsterFramework.Utility.EventChannels
-  items:
-  - uid: LobsterFramework.Utility.EventChannels.EntityEventChannel
-    name: EntityEventChannel
 memberLayout: SamePage

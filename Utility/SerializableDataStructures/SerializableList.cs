@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
     /// A wrapper class of an array of serializable objects.
@@ -75,5 +75,5 @@ namespace LobsterFramework.Utility
     /// A serializable list of <see cref="Component"/>
     /// </summary>
     [Serializable]
-    public class ComponentList : SerializableList<Component> { }
+    internal class ComponentList : SerializableList<Component> { }
 }

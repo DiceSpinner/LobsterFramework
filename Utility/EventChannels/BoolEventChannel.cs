@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "EventChannel/BoolEventChannel")]
-
-public class BoolEventChannel : DescriptionBaseSO
+namespace LobsterFramework
 {
-	public UnityAction<bool> OnEventRaised;
-	public void RaiseEvent(bool arg)
+	[CreateAssetMenu(menuName = "EventChannel/BoolEventChannel")]
+	public class BoolEventChannel : DescriptionBaseSO
 	{
-		if (OnEventRaised != null) { OnEventRaised.Invoke(arg); }
+		public event Action<bool> OnEventRaised;
+		public void RaiseEvent(bool arg)
+		{
+            OnEventRaised?.Invoke(arg);
+        }
 	}
 }

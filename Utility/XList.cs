@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
     /// A list that disables editing when entering playmode

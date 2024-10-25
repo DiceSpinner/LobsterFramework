@@ -31,6 +31,10 @@ items:
   - LobsterFramework.Editors.MovementControllerEditor
   - LobsterFramework.Editors.PoiseEditor
   - LobsterFramework.Editors.ReadOnlyAttributeDrawer
+  - LobsterFramework.Editors.RefBoolDrawer
+  - LobsterFramework.Editors.RefFloatDrawer
+  - LobsterFramework.Editors.RefIntDrawer
+  - LobsterFramework.Editors.RefStringDrawer
   - LobsterFramework.Editors.ReferenceProviderEditor
   - LobsterFramework.Editors.SelectAbilityComponentPopup
   - LobsterFramework.Editors.SelectAbilityPopup
@@ -39,6 +43,10 @@ items:
   - LobsterFramework.Editors.SerializedPropertyExtensions
   - LobsterFramework.Editors.StateDataEditor
   - LobsterFramework.Editors.StateEditorConfig
+  - LobsterFramework.Editors.VarBoolDrawer
+  - LobsterFramework.Editors.VarFloatDrawer
+  - LobsterFramework.Editors.VarIntDrawer
+  - LobsterFramework.Editors.VarStringDrawer
   - LobsterFramework.Editors.WeaponArtSelectorDrawer
   - LobsterFramework.Editors.WeaponDataEditor
   - LobsterFramework.Editors.XListPropertyDrawer
@@ -107,6 +115,18 @@ references:
   name: AbilitySelectorPopup
   nameWithType: AbilitySelectorPopup
   fullName: LobsterFramework.Editors.AbilitySelectorPopup
+- uid: LobsterFramework.Editors.RefIntDrawer
+  commentId: T:LobsterFramework.Editors.RefIntDrawer
+  href: LobsterFramework.Editors.RefIntDrawer.html
+  name: RefIntDrawer
+  nameWithType: RefIntDrawer
+  fullName: LobsterFramework.Editors.RefIntDrawer
+- uid: LobsterFramework.Editors.VarFloatDrawer
+  commentId: T:LobsterFramework.Editors.VarFloatDrawer
+  href: LobsterFramework.Editors.VarFloatDrawer.html
+  name: VarFloatDrawer
+  nameWithType: VarFloatDrawer
+  fullName: LobsterFramework.Editors.VarFloatDrawer
 - uid: LobsterFramework.Editors.StateEditorConfig
   commentId: T:LobsterFramework.Editors.StateEditorConfig
   href: LobsterFramework.Editors.StateEditorConfig.html
@@ -131,6 +151,12 @@ references:
   name: SelectWeaponStatPopup
   nameWithType: SelectWeaponStatPopup
   fullName: LobsterFramework.Editors.SelectWeaponStatPopup
+- uid: LobsterFramework.Editors.VarStringDrawer
+  commentId: T:LobsterFramework.Editors.VarStringDrawer
+  href: LobsterFramework.Editors.VarStringDrawer.html
+  name: VarStringDrawer
+  nameWithType: VarStringDrawer
+  fullName: LobsterFramework.Editors.VarStringDrawer
 - uid: LobsterFramework.Editors.CharacterWeaponAnimationDataEditor
   commentId: T:LobsterFramework.Editors.CharacterWeaponAnimationDataEditor
   href: LobsterFramework.Editors.CharacterWeaponAnimationDataEditor.html
@@ -205,6 +231,12 @@ references:
   name: FolderPathAttriibuteDrawer
   nameWithType: FolderPathAttriibuteDrawer
   fullName: LobsterFramework.Editors.FolderPathAttriibuteDrawer
+- uid: LobsterFramework.Editors.VarIntDrawer
+  commentId: T:LobsterFramework.Editors.VarIntDrawer
+  href: LobsterFramework.Editors.VarIntDrawer.html
+  name: VarIntDrawer
+  nameWithType: VarIntDrawer
+  fullName: LobsterFramework.Editors.VarIntDrawer
 - uid: LobsterFramework.Editors.LayerAttributeDrawer
   commentId: T:LobsterFramework.Editors.LayerAttributeDrawer
   href: LobsterFramework.Editors.LayerAttributeDrawer.html
@@ -217,6 +249,12 @@ references:
   name: AddStatePopup
   nameWithType: AddStatePopup
   fullName: LobsterFramework.Editors.AddStatePopup
+- uid: LobsterFramework.Editors.RefBoolDrawer
+  commentId: T:LobsterFramework.Editors.RefBoolDrawer
+  href: LobsterFramework.Editors.RefBoolDrawer.html
+  name: RefBoolDrawer
+  nameWithType: RefBoolDrawer
+  fullName: LobsterFramework.Editors.RefBoolDrawer
 - uid: LobsterFramework.Editors.AbilityEditor
   commentId: T:LobsterFramework.Editors.AbilityEditor
   href: LobsterFramework.Editors.AbilityEditor.html
@@ -235,6 +273,12 @@ references:
   name: EffectProcessorEditor
   nameWithType: EffectProcessorEditor
   fullName: LobsterFramework.Editors.EffectProcessorEditor
+- uid: LobsterFramework.Editors.RefFloatDrawer
+  commentId: T:LobsterFramework.Editors.RefFloatDrawer
+  href: LobsterFramework.Editors.RefFloatDrawer.html
+  name: RefFloatDrawer
+  nameWithType: RefFloatDrawer
+  fullName: LobsterFramework.Editors.RefFloatDrawer
 - uid: LobsterFramework.Editors.AbilityConfigEditor
   commentId: T:LobsterFramework.Editors.AbilityConfigEditor
   href: LobsterFramework.Editors.AbilityConfigEditor.html
@@ -260,6 +304,12 @@ references:
   name: AddAbilityPopup
   nameWithType: AddAbilityPopup
   fullName: LobsterFramework.Editors.AddAbilityPopup
+- uid: LobsterFramework.Editors.VarBoolDrawer
+  commentId: T:LobsterFramework.Editors.VarBoolDrawer
+  href: LobsterFramework.Editors.VarBoolDrawer.html
+  name: VarBoolDrawer
+  nameWithType: VarBoolDrawer
+  fullName: LobsterFramework.Editors.VarBoolDrawer
 - uid: LobsterFramework.Editors.DisableInPlayModeDrawer
   commentId: T:LobsterFramework.Editors.DisableInPlayModeDrawer
   href: LobsterFramework.Editors.DisableInPlayModeDrawer.html
@@ -285,6 +335,12 @@ references:
   name: ReferenceProviderEditor
   nameWithType: ReferenceProviderEditor
   fullName: LobsterFramework.Editors.ReferenceProviderEditor
+- uid: LobsterFramework.Editors.RefStringDrawer
+  commentId: T:LobsterFramework.Editors.RefStringDrawer
+  href: LobsterFramework.Editors.RefStringDrawer.html
+  name: RefStringDrawer
+  nameWithType: RefStringDrawer
+  fullName: LobsterFramework.Editors.RefStringDrawer
 - uid: LobsterFramework.Editors.WeaponArtSelectorDrawer
   commentId: T:LobsterFramework.Editors.WeaponArtSelectorDrawer
   href: LobsterFramework.Editors.WeaponArtSelectorDrawer.html

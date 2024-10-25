@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     public static class TypeCache
     {

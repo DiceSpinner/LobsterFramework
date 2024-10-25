@@ -128,7 +128,7 @@ items:
 
       public readonly FloatSum flatDamageModification
     return:
-      type: LobsterFramework.Utility.FloatSum
+      type: LobsterFramework.FloatSum
     content.vb: >-
       <NonSerialized>
 
@@ -165,7 +165,7 @@ items:
 
       public readonly FloatProduct percentageDamageModifcation
     return:
-      type: LobsterFramework.Utility.FloatProduct
+      type: LobsterFramework.FloatProduct
     content.vb: >-
       <NonSerialized>
 
@@ -2308,42 +2308,26 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.Utility.FloatSum
-  commentId: T:LobsterFramework.Utility.FloatSum
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.FloatSum.html
+- uid: LobsterFramework.FloatSum
+  commentId: T:LobsterFramework.FloatSum
+  parent: LobsterFramework
+  href: LobsterFramework.FloatSum.html
   name: FloatSum
   nameWithType: FloatSum
-  fullName: LobsterFramework.Utility.FloatSum
-- uid: LobsterFramework.Utility
-  commentId: N:LobsterFramework.Utility
+  fullName: LobsterFramework.FloatSum
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.Utility
-  nameWithType: LobsterFramework.Utility
-  fullName: LobsterFramework.Utility
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-- uid: LobsterFramework.Utility.FloatProduct
-  commentId: T:LobsterFramework.Utility.FloatProduct
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.FloatProduct.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: LobsterFramework.FloatProduct
+  commentId: T:LobsterFramework.FloatProduct
+  parent: LobsterFramework
+  href: LobsterFramework.FloatProduct.html
   name: FloatProduct
   nameWithType: FloatProduct
-  fullName: LobsterFramework.Utility.FloatProduct
+  fullName: LobsterFramework.FloatProduct
 - uid: LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage*
   commentId: Overload:LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage
   href: LobsterFramework.AbilitySystem.DamageModifier.html#LobsterFramework.AbilitySystem.DamageModifier.ModifyDamage(LobsterFramework.Damage)
@@ -2357,9 +2341,3 @@ references:
   name: Damage
   nameWithType: Damage
   fullName: LobsterFramework.Damage
-- uid: LobsterFramework
-  commentId: N:LobsterFramework
-  href: LobsterFramework.html
-  name: LobsterFramework
-  nameWithType: LobsterFramework
-  fullName: LobsterFramework

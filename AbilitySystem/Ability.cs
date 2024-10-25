@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using LobsterFramework.Utility;
+
 using Animancer;
 
 #if UNITY_EDITOR
@@ -138,8 +138,8 @@ namespace LobsterFramework.AbilitySystem {
                 AbilityChannel channel = AddAbilityMenuAttribute.CreateAbilityChannel(type);
                 channels[name] = channel;
                 channel.TimeWhenAvailable = 0;
-                channel.config = config;
-                channel.context = context;
+                channel.Config = config;
+                channel.Context = context;
 
                 SetContext(name);
                 InitializeContext();
@@ -549,14 +549,14 @@ namespace LobsterFramework.AbilitySystem {
     /// </summary>
     public class AbilityChannel
     {
-        internal protected AbilityContext context;
-        internal protected AbilityConfig config;
+        internal protected AbilityContext Context;
+        internal protected AbilityConfig Config;
 
         public bool IsRunning { get; internal set; }
         public bool IsSuspended { get; internal set; }
         public float TimeWhenAvailable { get; internal set; }
-        public bool OnCooldown { get { return config.UseCooldown && Time.time < TimeWhenAvailable; } } 
-        public float Cooldown { get { return config.CoolDown; } }
+        public bool OnCooldown { get { return Config.UseCooldown && Time.time < TimeWhenAvailable; } } 
+        public float Cooldown { get { return Config.CoolDown; } }
     }
 
     /// <summary>
@@ -608,9 +608,9 @@ namespace LobsterFramework.AbilitySystem {
     }
 
     [Serializable]
-    public class AbilityDictionary : SerializableDictionary<string, Ability> { }
+    internal class AbilityDictionary : SerializableDictionary<string, Ability> { }
 
     [Serializable]
-    public class AbilityConfigDictionary : SerializableDictionary<string, AbilityConfig> { }
+    internal class AbilityConfigDictionary : SerializableDictionary<string, AbilityConfig> { }
     #endregion
 }

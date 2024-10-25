@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem.WeaponSystem;
-using LobsterFramework.Utility;
+
 
 namespace LobsterFramework.Editors
 {

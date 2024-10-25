@@ -1,4 +1,4 @@
-using LobsterFramework.Utility;
+
 using System.Collections.Generic;
 using UnityEngine;
 using Animancer;
@@ -141,7 +141,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
     public class AttackChannel : AbilityChannel { }
 
-    public class AttackContext : AbilityCoroutineContext {
+    internal class AttackContext : AbilityCoroutineContext {
         public Weapon currentWeapon;
         public Signal<bool> animationSignaled = new();
         public Signal<bool> inputSignaled = new();

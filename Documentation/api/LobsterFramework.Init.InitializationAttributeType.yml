@@ -22,10 +22,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: InitializationAttributeType
     path: ../Init/RegisterInitializationAttribute.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Init
+  summary: Indicate whether the attribute should be fetched during editor/runtime only or both
+  example: []
   syntax:
     content: public enum InitializationAttributeType
     content.vb: Public Enum InitializationAttributeType
@@ -47,10 +49,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Editor
     path: ../Init/RegisterInitializationAttribute.cs
-    startLine: 24
+    startLine: 30
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Init
+  summary: This attribute shall be fetched in editor mode after compilation
+  example: []
   syntax:
     content: Editor = 3
     return:
@@ -73,10 +77,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Runtime
     path: ../Init/RegisterInitializationAttribute.cs
-    startLine: 25
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Init
+  summary: This attribute shall be fetched in play mode/build
+  example: []
   syntax:
     content: Runtime = 1
     return:
@@ -99,10 +105,12 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Dual
     path: ../Init/RegisterInitializationAttribute.cs
-    startLine: 26
+    startLine: 40
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Init
+  summary: This attribute shall be fetched in editor mode after compilation, and in play mode/build
+  example: []
   syntax:
     content: Dual = 2
     return:

@@ -93,6 +93,10 @@
     <div class="level2"><a class="xref" href="LobsterFramework.Init.InitializationAttribute.html">InitializationAttribute</a></div>
     <div class="level3"><span class="xref">PlayerLoopEventGroupAttribute</span></div>
   </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute">_Attribute</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -228,7 +232,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 [RegisterInitialization(0, AttributeType = InitializationAttributeType.Dual)]
-public sealed class PlayerLoopEventGroupAttribute : InitializationAttribute</code></pre>
+public sealed class PlayerLoopEventGroupAttribute : InitializationAttribute, _Attribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
@@ -268,17 +272,17 @@ public sealed class PlayerLoopEventGroupAttribute : InitializationAttribute</cod
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_Init_PlayerLoopEventGroupAttribute_InjectAfter.md&amp;value=---%0Auid%3A%20LobsterFramework.Init.PlayerLoopEventGroupAttribute.InjectAfter%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/DiceSpinner/LobsterFramework/new/main/apiSpec/new?filename=LobsterFramework_Init_PlayerLoopEventGroupAttribute_InjectBefore.md&amp;value=---%0Auid%3A%20LobsterFramework.Init.PlayerLoopEventGroupAttribute.InjectBefore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/DiceSpinner/LobsterFramework/blob/main/Init/PlayerLoopEventGroupAttribute.cs/#L20">View Source</a>
   </span>
-  <h4 id="LobsterFramework_Init_PlayerLoopEventGroupAttribute_InjectAfter" data-uid="LobsterFramework.Init.PlayerLoopEventGroupAttribute.InjectAfter">InjectAfter</h4>
+  <h4 id="LobsterFramework_Init_PlayerLoopEventGroupAttribute_InjectBefore" data-uid="LobsterFramework.Init.PlayerLoopEventGroupAttribute.InjectBefore">InjectBefore</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool InjectAfter</code></pre>
+    <pre><code class="lang-csharp hljs">public bool InjectBefore</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -409,6 +413,10 @@ public sealed class PlayerLoopEventGroupAttribute : InitializationAttribute</cod
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute">_Attribute</a>
+  </div>
 
 </article>
           </div>

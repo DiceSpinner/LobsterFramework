@@ -5,7 +5,7 @@ using UnityEngine;
 /* Provides utility to generate new ids
     
  */
-namespace LobsterFramework.Utility {
+namespace LobsterFramework {
     public class IdDistributor
     {
         private LinkedList<int> availableIds = new();

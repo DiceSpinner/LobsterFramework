@@ -7,7 +7,6 @@ items:
   children:
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.Coroutine
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitWeaponAbilityReferences
-  - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnCoroutineReset
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnEntityHit(LobsterFramework.Entity)
   - LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnSignaled
@@ -162,35 +161,6 @@ items:
     content.vb: Protected Overrides Sub InitWeaponAbilityReferences()
   overridden: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.InitWeaponAbilityReferences
   overload: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitWeaponAbilityReferences*
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext
-  commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext
-  id: InitializeContext
-  parent: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack
-  langs:
-  - csharp
-  - vb
-  name: InitializeContext()
-  nameWithType: ChargedAttack.InitializeContext()
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext()
-  type: Method
-  source:
-    remote:
-      path: AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-      branch: main
-      repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: InitializeContext
-    path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 28
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Called to initialize ability context and channels
-  example: []
-  syntax:
-    content: protected override void InitializeContext()
-    content.vb: Protected Overrides Sub InitializeContext()
-  overridden: LobsterFramework.AbilitySystem.Ability.InitializeContext
-  overload: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext*
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponAbilityEnqueue
   id: OnWeaponAbilityEnqueue
@@ -209,7 +179,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnWeaponAbilityEnqueue
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 34
+    startLine: 28
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -238,7 +208,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: Coroutine
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 50
+    startLine: 44
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -247,8 +217,8 @@ items:
   syntax:
     content: protected override IEnumerable<CoroutineOption> Coroutine()
     return:
-      type: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
-      description: A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <xref href="LobsterFramework.Utility.CoroutineOption" data-throw-if-not-resolved="false"></xref>
+      type: System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
+      description: A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <xref href="LobsterFramework.CoroutineOption" data-throw-if-not-resolved="false"></xref>
     content.vb: Protected Overrides Function Coroutine() As IEnumerable(Of CoroutineOption)
   overridden: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   overload: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.Coroutine*
@@ -270,7 +240,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnWeaponAbilityFinish
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 84
+    startLine: 78
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -299,7 +269,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnSignaled
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 93
+    startLine: 87
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -331,7 +301,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnSignaled
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 99
+    startLine: 93
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -360,11 +330,11 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnCoroutineReset
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 105
+    startLine: 99
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Called when <xref href="LobsterFramework.Utility.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
+  summary: Called when <xref href="LobsterFramework.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override void OnCoroutineReset()
@@ -389,7 +359,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnEntityHit
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 110
+    startLine: 104
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -418,7 +388,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnWeaponHit
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 127
+    startLine: 121
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -447,7 +417,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: SubscribeWeaponEvent
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 145
+    startLine: 139
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -473,7 +443,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: UnSubscribeWeaponEvent
     path: ../AbilitySystem/Abilities/ChargedAttack/ChargedAttack.cs
-    startLine: 152
+    startLine: 146
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -2778,31 +2748,6 @@ references:
   name: InitWeaponAbilityReferences
   nameWithType: ChargedAttack.InitWeaponAbilityReferences
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitWeaponAbilityReferences
-- uid: LobsterFramework.AbilitySystem.Ability.InitializeContext
-  commentId: M:LobsterFramework.AbilitySystem.Ability.InitializeContext
-  parent: LobsterFramework.AbilitySystem.Ability
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InitializeContext
-  name: InitializeContext()
-  nameWithType: Ability.InitializeContext()
-  fullName: LobsterFramework.AbilitySystem.Ability.InitializeContext()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.InitializeContext
-    name: InitializeContext
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InitializeContext
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.InitializeContext
-    name: InitializeContext
-    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.InitializeContext
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext*
-  commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext
-  href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext
-  name: InitializeContext
-  nameWithType: ChargedAttack.InitializeContext
-  fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.InitializeContext
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
   commentId: M:LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
   href: LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.html#LobsterFramework.AbilitySystem.WeaponSystem.WeaponAbility.OnCoroutineEnqueue
@@ -2865,13 +2810,13 @@ references:
     href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
   - name: (
   - name: )
-- uid: LobsterFramework.Utility.CoroutineOption
-  commentId: T:LobsterFramework.Utility.CoroutineOption
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.CoroutineOption.html
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  parent: LobsterFramework
+  href: LobsterFramework.CoroutineOption.html
   name: CoroutineOption
   nameWithType: CoroutineOption
-  fullName: LobsterFramework.Utility.CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   parent: LobsterFramework.AbilitySystem.AbilityCoroutine
@@ -2897,16 +2842,16 @@ references:
   name: Coroutine
   nameWithType: ChargedAttack.Coroutine
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.Coroutine
-- uid: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
-  commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
+- uid: System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
+  commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<CoroutineOption>
   nameWithType: IEnumerable<CoroutineOption>
-  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.Utility.CoroutineOption>
+  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.CoroutineOption>
   nameWithType.vb: IEnumerable(Of CoroutineOption)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.Utility.CoroutineOption)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.CoroutineOption)
   name.vb: IEnumerable(Of CoroutineOption)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -2914,9 +2859,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: LobsterFramework.Utility.CoroutineOption
+  - uid: LobsterFramework.CoroutineOption
     name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
+    href: LobsterFramework.CoroutineOption.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -2926,32 +2871,16 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: LobsterFramework.Utility.CoroutineOption
+  - uid: LobsterFramework.CoroutineOption
     name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
+    href: LobsterFramework.CoroutineOption.html
   - name: )
-- uid: LobsterFramework.Utility
-  commentId: N:LobsterFramework.Utility
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.Utility
-  nameWithType: LobsterFramework.Utility
-  fullName: LobsterFramework.Utility
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -3118,12 +3047,12 @@ references:
     href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled
   - name: (
   - name: )
-- uid: LobsterFramework.Utility.CoroutineOption.Reset
-  commentId: F:LobsterFramework.Utility.CoroutineOption.Reset
-  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.Reset
+- uid: LobsterFramework.CoroutineOption.Reset
+  commentId: F:LobsterFramework.CoroutineOption.Reset
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.Reset
   name: Reset
   nameWithType: CoroutineOption.Reset
-  fullName: LobsterFramework.Utility.CoroutineOption.Reset
+  fullName: LobsterFramework.CoroutineOption.Reset
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   parent: LobsterFramework.AbilitySystem.AbilityCoroutine
@@ -3162,12 +3091,6 @@ references:
   name: Entity
   nameWithType: Entity
   fullName: LobsterFramework.Entity
-- uid: LobsterFramework
-  commentId: N:LobsterFramework
-  href: LobsterFramework.html
-  name: LobsterFramework
-  nameWithType: LobsterFramework
-  fullName: LobsterFramework
 - uid: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponHit*
   commentId: Overload:LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponHit
   href: LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.html#LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttack.OnWeaponHit(LobsterFramework.AbilitySystem.WeaponSystem.Weapon)

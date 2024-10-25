@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "EventChannel/VoidEventChannel")]
-
-public class VoidEventChannel : DescriptionBaseSO
+namespace LobsterFramework
 {
-	public UnityAction OnEventRaised;
-	public void RaiseEvent()
+	[CreateAssetMenu(menuName = "EventChannel/VoidEventChannel")]
+
+	public class VoidEventChannel : DescriptionBaseSO
 	{
-		if (OnEventRaised != null)
-			OnEventRaised.Invoke();
+		public event Action OnEventRaised;
+		public void RaiseEvent()
+		{
+            OnEventRaised?.Invoke();
+        }
 	}
 }

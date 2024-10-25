@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using LobsterFramework.AbilitySystem.WeaponSystem;
-using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.Pool
+
+namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class Bullet : MonoBehaviour

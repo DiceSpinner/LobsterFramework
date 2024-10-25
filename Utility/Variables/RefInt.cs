@@ -2,44 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct RefInt
+namespace LobsterFramework
 {
-    [SerializeField] private int value;
-    [SerializeField] private bool useSharedValue;
-    [SerializeField] private VarInt sharedValue;
-
-    public RefInt(int value = 0, bool useSharedValue = false, VarInt sharedValue = null)
+    [System.Serializable]
+    public struct RefInt
     {
-        this.value = value;
-        this.useSharedValue = useSharedValue;
-        this.sharedValue = sharedValue;
-    }
+        [SerializeField] private int value;
+        [SerializeField] private bool useSharedValue;
+        [SerializeField] private VarInt sharedValue;
 
-    public int Value
-    {
-        get
+        public RefInt(int value = 0, bool useSharedValue = false, VarInt sharedValue = null)
         {
-            if (useSharedValue)
-            {
-                if (sharedValue == null)
-                {
-                    return default;
-                }
-                return sharedValue.Value;
-            }
-            return value;
+            this.value = value;
+            this.useSharedValue = useSharedValue;
+            this.sharedValue = sharedValue;
         }
 
-        set
+        public int Value
         {
-            if (useSharedValue)
+            get
             {
-                sharedValue.Value = value;
+                if (useSharedValue)
+                {
+                    if (sharedValue == null)
+                    {
+                        return default;
+                    }
+                    return sharedValue.Value;
+                }
+                return value;
             }
-            else
+
+            set
             {
-                this.value = value;
+                if (useSharedValue)
+                {
+                    sharedValue.Value = value;
+                }
+                else
+                {
+                    this.value = value;
+                }
             }
         }
     }

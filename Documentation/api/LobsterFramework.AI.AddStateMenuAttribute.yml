@@ -34,17 +34,19 @@ items:
 
       [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 
-      public sealed class AddStateMenuAttribute : InitializationAttribute
+      public sealed class AddStateMenuAttribute : InitializationAttribute, _Attribute
     content.vb: >-
       <RegisterInitialization(0, AttributeType:=InitializationAttributeType.Editor)>
 
       <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False, Inherited:=False)>
 
-      Public NotInheritable Class AddStateMenuAttribute Inherits InitializationAttribute
+      Public NotInheritable Class AddStateMenuAttribute Inherits InitializationAttribute Implements _Attribute
   inheritance:
   - System.Object
   - System.Attribute
   - LobsterFramework.Init.InitializationAttribute
+  implements:
+  - System.Runtime.InteropServices._Attribute
   inheritedMembers:
   - LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   - System.Attribute.Equals(System.Object)
@@ -264,6 +266,14 @@ references:
   name: InitializationAttribute
   nameWithType: InitializationAttribute
   fullName: LobsterFramework.Init.InitializationAttribute
+- uid: System.Runtime.InteropServices._Attribute
+  commentId: T:System.Runtime.InteropServices._Attribute
+  parent: System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute
+  name: _Attribute
+  nameWithType: _Attribute
+  fullName: System.Runtime.InteropServices._Attribute
 - uid: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   commentId: F:LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   parent: LobsterFramework.Init.InitializationAttribute
@@ -2044,6 +2054,43 @@ references:
   - uid: LobsterFramework.Init
     name: Init
     href: LobsterFramework.Init.html
+- uid: System.Runtime.InteropServices
+  commentId: N:System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.InteropServices
+  nameWithType: System.Runtime.InteropServices
+  fullName: System.Runtime.InteropServices
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
 - uid: LobsterFramework.AI.AddStateMenuAttribute.#ctor*
   commentId: Overload:LobsterFramework.AI.AddStateMenuAttribute.#ctor
   href: LobsterFramework.AI.AddStateMenuAttribute.html#LobsterFramework.AI.AddStateMenuAttribute.#ctor(System.String)

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Animancer;
-using LobsterFramework.Utility;
+
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
@@ -24,12 +24,6 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
             damageModifier = AbilityManager.GetAbilityComponent<DamageModifier>();
             move = moveControl.moveSpeedModifier.MakeEffector();
             rotate = moveControl.rotateSpeedModifier.MakeEffector();
-        }
-
-        protected override void InitializeContext()
-        {
-            ChargedAttackChannel channel = (ChargedAttackChannel)Channel;
-            channel.SetConfig((ChargedAttackConfig)Config);
         }
 
         protected override void OnWeaponAbilityEnqueue()
@@ -160,15 +154,12 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
 
     public class ChargedAttackChannel : AbilityChannel
     {
-        private ChargedAttackConfig conf;
-        public float MaxChargeTime { get { return conf.ChargeMaxTime; } }
-        public float MaxChargeDamageIncrease { get { return conf.MaxChargeDamageIncrease; } }
-        public float BaseDamageModifier { get { return conf.BaseDamageModifier; } }
-
-        public void SetConfig(ChargedAttackConfig config) { conf = config; }
+        public float MaxChargeTime { get { return (Config as ChargedAttackConfig).ChargeMaxTime; } }
+        public float MaxChargeDamageIncrease { get { return (Config as ChargedAttackConfig).MaxChargeDamageIncrease; } }
+        public float BaseDamageModifier { get { return (Config as ChargedAttackConfig).BaseDamageModifier; } }
     }
 
-    public class ChargedAttackContext : AbilityCoroutineContext
+    internal class ChargedAttackContext : AbilityCoroutineContext
     {
         public Signal<bool> animationSignaled = new();
         public Signal<bool> inputSignaled = new();

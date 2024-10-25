@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Animancer;
-using LobsterFramework.Utility;
+
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
@@ -130,7 +130,7 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         }
     }
 
-    public class GuardContext : AbilityCoroutineContext {
+    internal class GuardContext : AbilityCoroutineContext {
         public Signal<bool> animationSignaled = new();
         public Weapon currentWeapon;
         public AnimancerState animancerState;

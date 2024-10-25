@@ -1,4 +1,4 @@
-using LobsterFramework.Utility;
+
 using System;
 using UnityEngine;
 using System.Collections.Generic;
@@ -129,6 +129,6 @@ namespace LobsterFramework.AI
     }
 
     [Serializable]
-    public class StateDicationary : SerializableDictionary<string, State> { }
+    internal class StateDicationary : SerializableDictionary<string, State> { }
 
 }

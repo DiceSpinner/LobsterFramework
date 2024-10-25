@@ -10,8 +10,8 @@ items:
   - LobsterFramework.AI.State.OnBecomeInactive
   - LobsterFramework.AI.State.OnEnter
   - LobsterFramework.AI.State.OnExit
+  - LobsterFramework.AI.State.StateMachine
   - LobsterFramework.AI.State.Tick
-  - LobsterFramework.AI.State.stateMachine
   langs:
   - csharp
   - vb
@@ -97,23 +97,23 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: LobsterFramework.AI.State.stateMachine
-  commentId: F:LobsterFramework.AI.State.stateMachine
-  id: stateMachine
+- uid: LobsterFramework.AI.State.StateMachine
+  commentId: F:LobsterFramework.AI.State.StateMachine
+  id: StateMachine
   parent: LobsterFramework.AI.State
   langs:
   - csharp
   - vb
-  name: stateMachine
-  nameWithType: State.stateMachine
-  fullName: LobsterFramework.AI.State.stateMachine
+  name: StateMachine
+  nameWithType: State.StateMachine
+  fullName: LobsterFramework.AI.State.StateMachine
   type: Field
   source:
     remote:
       path: AI/State.cs
       branch: main
       repo: https://github.com/DiceSpinner/LobsterFramework.git
-    id: stateMachine
+    id: StateMachine
     path: ../AI/State.cs
     startLine: 13
   assemblies:
@@ -123,13 +123,13 @@ items:
     content: >-
       [HideInInspector]
 
-      protected StateMachine stateMachine
+      protected StateMachine StateMachine
     return:
       type: LobsterFramework.AI.StateMachine
     content.vb: >-
       <HideInInspector>
 
-      Protected stateMachine As StateMachine
+      Protected StateMachine As StateMachine
   attributes:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
@@ -160,7 +160,7 @@ items:
     Attempts to get the reference of the specified component type from <xref href="LobsterFramework.AI.StateMachine" data-throw-if-not-resolved="false"></xref>. 
 
     The type of the reference should be one of the required types applied via <xref href="LobsterFramework.RequireComponentReferenceAttribute" data-throw-if-not-resolved="false"></xref> on this state class.
-  remarks: This is a shorthand call for <xref href="LobsterFramework.ReferenceProvider.GetComponentReference%60%601(System.Type%2cSystem.Int32)" data-throw-if-not-resolved="false"></xref> via <xref href="LobsterFramework.AI.State.stateMachine" data-throw-if-not-resolved="false"></xref>
+  remarks: This is a shorthand call for <xref href="LobsterFramework.ReferenceProvider.GetComponentReference%60%601(System.Type%2cSystem.Int32)" data-throw-if-not-resolved="false"></xref> via <xref href="LobsterFramework.AI.State.StateMachine" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: 'protected T GetComponentReference<T>(int index = 0) where T : Component'
@@ -2526,12 +2526,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: LobsterFramework.AI.State.stateMachine
-  commentId: F:LobsterFramework.AI.State.stateMachine
-  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.stateMachine
-  name: stateMachine
-  nameWithType: State.stateMachine
-  fullName: LobsterFramework.AI.State.stateMachine
+- uid: LobsterFramework.AI.State.StateMachine
+  commentId: F:LobsterFramework.AI.State.StateMachine
+  href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.StateMachine
+  name: StateMachine
+  nameWithType: State.StateMachine
+  fullName: LobsterFramework.AI.State.StateMachine
 - uid: LobsterFramework.AI.State.GetComponentReference*
   commentId: Overload:LobsterFramework.AI.State.GetComponentReference
   href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.GetComponentReference``1(System.Int32)

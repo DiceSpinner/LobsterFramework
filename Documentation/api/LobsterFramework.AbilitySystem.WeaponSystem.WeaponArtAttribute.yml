@@ -36,17 +36,19 @@ items:
 
       [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 
-      public sealed class WeaponArtAttribute : InitializationAttribute
+      public sealed class WeaponArtAttribute : InitializationAttribute, _Attribute
     content.vb: >-
       <RegisterInitialization(0)>
 
       <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False, Inherited:=False)>
 
-      Public NotInheritable Class WeaponArtAttribute Inherits InitializationAttribute
+      Public NotInheritable Class WeaponArtAttribute Inherits InitializationAttribute Implements _Attribute
   inheritance:
   - System.Object
   - System.Attribute
   - LobsterFramework.Init.InitializationAttribute
+  implements:
+  - System.Runtime.InteropServices._Attribute
   inheritedMembers:
   - LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   - System.Attribute.Equals(System.Object)
@@ -306,6 +308,14 @@ references:
   name: InitializationAttribute
   nameWithType: InitializationAttribute
   fullName: LobsterFramework.Init.InitializationAttribute
+- uid: System.Runtime.InteropServices._Attribute
+  commentId: T:System.Runtime.InteropServices._Attribute
+  parent: System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute
+  name: _Attribute
+  nameWithType: _Attribute
+  fullName: System.Runtime.InteropServices._Attribute
 - uid: LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   commentId: F:LobsterFramework.Init.InitializationAttribute.CompatabilityCheckerMethodName
   parent: LobsterFramework.Init.InitializationAttribute
@@ -2086,6 +2096,43 @@ references:
   - uid: LobsterFramework.Init
     name: Init
     href: LobsterFramework.Init.html
+- uid: System.Runtime.InteropServices
+  commentId: N:System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.InteropServices
+  nameWithType: System.Runtime.InteropServices
+  fullName: System.Runtime.InteropServices
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System

@@ -98,6 +98,10 @@ If mutiple handlers are registered for the same interactable object, only the la
     <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute">Attribute</a></div>
     <div class="level2"><span class="xref">InteractionHandlerAttribute</span></div>
   </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute">_Attribute</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -232,7 +236,7 @@ If mutiple handlers are registered for the same interactable object, only the la
   <h5 id="LobsterFramework_Interaction_InteractionHandlerAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-public class InteractionHandlerAttribute : Attribute</code></pre>
+public class InteractionHandlerAttribute : Attribute, _Attribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
@@ -333,6 +337,10 @@ public class InteractionHandlerAttribute : Attribute</code></pre>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute">_Attribute</a>
+  </div>
 
 </article>
           </div>

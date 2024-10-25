@@ -50,5 +50,5 @@ namespace LobsterFramework.AbilitySystem.WeaponSystem
         }
     }
     public class OffhandAbilityChannel : AbilityChannel { }
-    public class OffhandAbilityContext : AbilityContext { }
+    internal class OffhandAbilityContext : AbilityContext { }
 }

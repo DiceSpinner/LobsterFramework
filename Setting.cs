@@ -11,7 +11,7 @@ namespace LobsterFramework
         
         public static Setting Instance { get { return instance; } }
 
-        [SerializeField] private VoidEventChannel exitChannel;
+        public event Action OnExit;
         // Game Settings
         [field: SerializeField] public int TARGET_FRAME_RATE { get; private set; }
 
@@ -53,14 +53,7 @@ namespace LobsterFramework
         {
             Application.targetFrameRate = TARGET_FRAME_RATE;
             QualitySettings.vSyncCount = 0;
-            exitChannel.OnEventRaised += ExitGame;
             GamePaused = false;
-        }
-
-        private void ExitGame()
-        { 
-            Application.Quit();
-            Debug.Log("Exit!");
         }
     }
 }

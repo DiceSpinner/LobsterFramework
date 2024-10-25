@@ -23,276 +23,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.BoolEventChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.BoolEventChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.DescriptionBaseSO.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.DescriptionBaseSO.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.FloatEventChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.FloatEventChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.IntEventChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.IntEventChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.OrderedSet-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.OrderedSet-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.Projectile.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.Projectile.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefBool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefBool.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefBoolDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefBoolDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefFloat.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefFloat.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefFloatDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefFloatDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefInt.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefInt.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefIntDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefIntDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefString.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefString.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RefStringDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RefStringDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.SerializableLinkedList-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.SerializableLinkedList-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.StringEventChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.StringEventChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarBool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarBool.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarBoolDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarBoolDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarFloat.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarFloat.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarFloatDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarFloatDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarInt.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarInt.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarIntDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarIntDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarString.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarString.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VarStringDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VarStringDrawer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.Variable-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.Variable-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.VoidEventChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VoidEventChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AI.AIPathFinder.yml",
       "output": {
         ".html": {
@@ -337,16 +67,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.AI.StateData.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AI.StateDicationary.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AI.StateDicationary.html"
         }
       },
       "version": ""
@@ -413,30 +133,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityComponentDictionary.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityComponentDictionary.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfig.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfigDictionary.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityConfigDictionary.html"
         }
       },
       "version": ""
@@ -477,16 +177,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.AbilitySystem.AbilityData.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.AbilityDictionary.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.AbilityDictionary.html"
         }
       },
       "version": ""
@@ -613,20 +303,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig.yml",
+      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.Bullet.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.AttackContext.html"
+          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.Bullet.html"
         }
       },
       "version": ""
@@ -663,26 +343,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.ChargedAttackContext.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.Guard.GuardAnimations.yml",
       "output": {
         ".html": {
@@ -713,26 +373,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.GuardConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.GuardContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.GuardContext.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbility.yml",
       "output": {
         ".html": {
@@ -747,26 +387,6 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext.html"
         }
       },
       "version": ""
@@ -863,26 +483,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtConfig.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtSelector.yml",
       "output": {
         ".html": {
@@ -973,20 +573,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AnimationClipArray.yml",
+      "source_relative_path": "api/LobsterFramework.AndValue.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.AnimationClipArray.html"
+          "relative_path": "api/LobsterFramework.AndValue.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.AttackSetting.yml",
+      "source_relative_path": "api/LobsterFramework.BoolEventChannel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.AttackSetting.html"
+          "relative_path": "api/LobsterFramework.BoolEventChannel.html"
         }
       },
       "version": ""
@@ -1013,10 +613,60 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.CombinedValue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.CombinedValue-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.CombinedValueEffector-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.CombinedValueEffector-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.ContinousCollision2D.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.ContinousCollision2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Coroutine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Coroutine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.CoroutineOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.CoroutineOption.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.CoroutineRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.CoroutineRunner.html"
         }
       },
       "version": ""
@@ -1037,6 +687,56 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.DamageType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DescriptionBaseSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DescriptionBaseSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueDisplayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueDisplayer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueNode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.DialogueResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.DialogueResponse.html"
         }
       },
       "version": ""
@@ -1333,6 +1033,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.RefBoolDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.RefBoolDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.RefFloatDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.RefFloatDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.RefIntDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.RefIntDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.RefStringDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.RefStringDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Editors.ReferenceProviderEditor.yml",
       "output": {
         ".html": {
@@ -1407,6 +1147,46 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Editors.StateEditorConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.VarBoolDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.VarBoolDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.VarFloatDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.VarFloatDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.VarIntDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.VarIntDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Editors.VarStringDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Editors.VarStringDrawer.html"
         }
       },
       "version": ""
@@ -1523,6 +1303,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.EnumCache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.EnumCache.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.FieldDescriptionAttribute.yml",
       "output": {
         ".html": {
@@ -1543,10 +1333,60 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.FloatEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.FloatEventChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.FloatProduct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.FloatProduct.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.FloatSum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.FloatSum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.FolderPathAttribute.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.FolderPathAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.GameUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.GameUtility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.IdDistributor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.IdDistributor.html"
         }
       },
       "version": ""
@@ -1647,6 +1487,26 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Init.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.IntEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.IntEventChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.IntSum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.IntSum.html"
         }
       },
       "version": ""
@@ -1783,10 +1643,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.InventoryUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.InventoryUI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Interaction.Item.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Interaction.Item.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Interaction.ItemEntryUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Interaction.ItemEntryUI.html"
         }
       },
       "version": ""
@@ -1833,30 +1713,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.IntroMenu.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.IntroMenu.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.InventoryUtil.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.InventoryUtil.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.ItemEntryUI.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.ItemEntryUI.html"
         }
       },
       "version": ""
@@ -1873,10 +1733,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.MenuTree-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.MenuTree-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.MovementController.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.MovementController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.ObjectPool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.ObjectPool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.OrValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.OrValue.html"
         }
       },
       "version": ""
@@ -1893,40 +1783,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Pool.Bullet.yml",
+      "source_relative_path": "api/LobsterFramework.Projectile.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Pool.Bullet.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Pool.ObjectPool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Pool.ObjectPool.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Pool.TemporalObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Pool.TemporalObject.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Pool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Pool.html"
+          "relative_path": "api/LobsterFramework.Projectile.html"
         }
       },
       "version": ""
@@ -1937,6 +1797,46 @@
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.ReadOnlyAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.RefBool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.RefBool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.RefFloat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.RefFloat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.RefInt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.RefInt.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.RefString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.RefString.html"
         }
       },
       "version": ""
@@ -2003,10 +1903,60 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SerializableDictionary-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SerializableDictionary-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SerializableList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SerializableList-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SerializableType-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SerializableType-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SerializableType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SerializableType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.Setting.yml",
       "output": {
         ".html": {
           "relative_path": "api/LobsterFramework.Setting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.Signal-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.Signal-1.html"
         }
       },
       "version": ""
@@ -2023,6 +1973,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.SortableItem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.SortableItem-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LobsterFramework.StringEventChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LobsterFramework.StringEventChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LobsterFramework.SubLevelComponent.yml",
       "output": {
         ".html": {
@@ -2033,330 +2003,90 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.UI.InventoryUI.yml",
+      "source_relative_path": "api/LobsterFramework.TemporalObject.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.UI.InventoryUI.html"
+          "relative_path": "api/LobsterFramework.TemporalObject.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.UI.yml",
+      "source_relative_path": "api/LobsterFramework.TypeCache.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.UI.html"
+          "relative_path": "api/LobsterFramework.TypeCache.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.And.yml",
+      "source_relative_path": "api/LobsterFramework.VarBool.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.And.html"
+          "relative_path": "api/LobsterFramework.VarBool.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.CombinedValue-1.yml",
+      "source_relative_path": "api/LobsterFramework.VarFloat.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.CombinedValue-1.html"
+          "relative_path": "api/LobsterFramework.VarFloat.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.CombinedValueEffector-1.yml",
+      "source_relative_path": "api/LobsterFramework.VarInt.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.CombinedValueEffector-1.html"
+          "relative_path": "api/LobsterFramework.VarInt.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.ComponentList.yml",
+      "source_relative_path": "api/LobsterFramework.VarString.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.ComponentList.html"
+          "relative_path": "api/LobsterFramework.VarString.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.Coroutine.yml",
+      "source_relative_path": "api/LobsterFramework.Variable-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.Coroutine.html"
+          "relative_path": "api/LobsterFramework.Variable-1.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.CoroutineOption.yml",
+      "source_relative_path": "api/LobsterFramework.VoidEventChannel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.CoroutineOption.html"
+          "relative_path": "api/LobsterFramework.VoidEventChannel.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.CoroutineRunner.yml",
+      "source_relative_path": "api/LobsterFramework.XList-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LobsterFramework.Utility.CoroutineRunner.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.DialogueDisplayer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.DialogueDisplayer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.DialogueNode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.DialogueNode.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.DialogueObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.DialogueObject.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.DialogueResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.DialogueResponse.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.EnumCache.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.EnumCache.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.EventChannels.EntityEventChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.EventChannels.EntityEventChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.EventChannels.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.EventChannels.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.FloatProduct.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.FloatProduct.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.FloatSum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.FloatSum.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.GameUtility.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.GameUtility.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.IdDistributor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.IdDistributor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.IntSum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.IntSum.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.MenuTree-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.MenuTree-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.OrValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.OrValue.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.SerializableDictionary-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.SerializableDictionary-2.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.SerializableHashSet-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.SerializableHashSet-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.SerializableList-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.SerializableList-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.SerializableType-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.SerializableType-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.SerializableType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.SerializableType.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.Signal-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.Signal-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.SortableItem-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.SortableItem-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.TypeCache.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.TypeCache.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.XList-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.XList-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LobsterFramework.Utility.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LobsterFramework.Utility.html"
+          "relative_path": "api/LobsterFramework.XList-1.html"
         }
       },
       "version": ""

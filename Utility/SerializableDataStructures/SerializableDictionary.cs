@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.Utility {
+namespace LobsterFramework {
     [Serializable]
     public abstract class SerializableDictionary<TKey, TValue> :
     IDictionary<TKey, TValue>, ISerializationCallbackReceiver

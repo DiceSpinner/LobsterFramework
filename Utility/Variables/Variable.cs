@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class Variable<T> : ScriptableObject
+namespace LobsterFramework
 {
-    [SerializeField] private T value;
-
-    public T Value
+    public class Variable<T> : ScriptableObject
     {
-        get { return value; }
-        set { this.value = value; }
-    }
+        [SerializeField] private T value;
 
-    public static implicit operator T(Variable<T> value) {
-        return value.value;
+        public T Value
+        {
+            get { return value; }
+            set { this.value = value; }
+        }
+
+        public static implicit operator T(Variable<T> value)
+        {
+            return value.value;
+        }
     }
 }

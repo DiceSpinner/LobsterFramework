@@ -280,8 +280,8 @@ items:
   syntax:
     content: protected override IEnumerable<CoroutineOption> Coroutine()
     return:
-      type: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
-      description: A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <xref href="LobsterFramework.Utility.CoroutineOption" data-throw-if-not-resolved="false"></xref>
+      type: System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
+      description: A value indicating whether to continue, pause, wait for other coroutine. For more info, check out <xref href="LobsterFramework.CoroutineOption" data-throw-if-not-resolved="false"></xref>
     content.vb: Protected Overrides Function Coroutine() As IEnumerable(Of CoroutineOption)
   overridden: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   overload: LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine*
@@ -368,7 +368,7 @@ items:
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
-  summary: Called when <xref href="LobsterFramework.Utility.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
+  summary: Called when <xref href="LobsterFramework.CoroutineOption.Reset" data-throw-if-not-resolved="false"></xref> is yielded by <xref href="LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: protected override void OnCoroutineReset()
@@ -2831,13 +2831,13 @@ references:
     href: LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework.AbilitySystem.AbilityCoroutine.Action
   - name: (
   - name: )
-- uid: LobsterFramework.Utility.CoroutineOption
-  commentId: T:LobsterFramework.Utility.CoroutineOption
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.CoroutineOption.html
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  parent: LobsterFramework
+  href: LobsterFramework.CoroutineOption.html
   name: CoroutineOption
   nameWithType: CoroutineOption
-  fullName: LobsterFramework.Utility.CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.Coroutine
   parent: LobsterFramework.AbilitySystem.AbilityCoroutine
@@ -2863,16 +2863,16 @@ references:
   name: Coroutine
   nameWithType: Guard.Coroutine
   fullName: LobsterFramework.AbilitySystem.WeaponSystem.Guard.Coroutine
-- uid: System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
-  commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.Utility.CoroutineOption}
+- uid: System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
+  commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<CoroutineOption>
   nameWithType: IEnumerable<CoroutineOption>
-  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.Utility.CoroutineOption>
+  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.CoroutineOption>
   nameWithType.vb: IEnumerable(Of CoroutineOption)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.Utility.CoroutineOption)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.CoroutineOption)
   name.vb: IEnumerable(Of CoroutineOption)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -2880,9 +2880,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: LobsterFramework.Utility.CoroutineOption
+  - uid: LobsterFramework.CoroutineOption
     name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
+    href: LobsterFramework.CoroutineOption.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -2892,32 +2892,16 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: LobsterFramework.Utility.CoroutineOption
+  - uid: LobsterFramework.CoroutineOption
     name: CoroutineOption
-    href: LobsterFramework.Utility.CoroutineOption.html
+    href: LobsterFramework.CoroutineOption.html
   - name: )
-- uid: LobsterFramework.Utility
-  commentId: N:LobsterFramework.Utility
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.Utility
-  nameWithType: LobsterFramework.Utility
-  fullName: LobsterFramework.Utility
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.Utility
-    name: Utility
-    href: LobsterFramework.Utility.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -3041,12 +3025,12 @@ references:
     href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnSignaled
   - name: (
   - name: )
-- uid: LobsterFramework.Utility.CoroutineOption.Reset
-  commentId: F:LobsterFramework.Utility.CoroutineOption.Reset
-  href: LobsterFramework.Utility.CoroutineOption.html#LobsterFramework.Utility.CoroutineOption.Reset
+- uid: LobsterFramework.CoroutineOption.Reset
+  commentId: F:LobsterFramework.CoroutineOption.Reset
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.Reset
   name: Reset
   nameWithType: CoroutineOption.Reset
-  fullName: LobsterFramework.Utility.CoroutineOption.Reset
+  fullName: LobsterFramework.CoroutineOption.Reset
 - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   commentId: M:LobsterFramework.AbilitySystem.AbilityCoroutine.OnCoroutineReset
   parent: LobsterFramework.AbilitySystem.AbilityCoroutine

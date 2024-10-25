@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.Init;
-using LobsterFramework.Utility;
+
 using Animancer;
 
 namespace LobsterFramework.AbilitySystem {
@@ -574,6 +574,6 @@ namespace LobsterFramework.AbilitySystem {
     }
 
     [Serializable]
-    public class AbilityComponentDictionary : SerializableDictionary<string, AbilityComponent> { }
+    internal class AbilityComponentDictionary : SerializableDictionary<string, AbilityComponent> { }
 }
 

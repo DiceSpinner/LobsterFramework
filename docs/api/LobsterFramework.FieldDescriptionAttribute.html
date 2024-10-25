@@ -91,6 +91,10 @@
     <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute">Attribute</a></div>
     <div class="level2"><span class="xref">FieldDescriptionAttribute</span></div>
   </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute">_Attribute</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -225,7 +229,7 @@
   <h5 id="LobsterFramework_FieldDescriptionAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
-public class FieldDescriptionAttribute : Attribute</code></pre>
+public class FieldDescriptionAttribute : Attribute, _Attribute</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -289,6 +293,10 @@ public class FieldDescriptionAttribute : Attribute</code></pre>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._attribute">_Attribute</a>
+  </div>
 
 </article>
           </div>

@@ -56,7 +56,7 @@ items:
     ctor: UnityEditor.CustomPropertyDrawer.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: LobsterFramework.Utility.XList{T}
+      value: LobsterFramework.XList{T}
 - uid: LobsterFramework.Editors.XListPropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   commentId: M:LobsterFramework.Editors.XListPropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   id: GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)

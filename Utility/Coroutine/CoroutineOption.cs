@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
     /// Represents options available for Coroutines, use predefined values or utility methods to create the option needed

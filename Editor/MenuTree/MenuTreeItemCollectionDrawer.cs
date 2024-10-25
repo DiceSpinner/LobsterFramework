@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEditor;
-using LobsterFramework.Utility;
+
 using UnityEngine;
 
 namespace LobsterFramework.Editors {

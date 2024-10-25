@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     [CreateAssetMenu(menuName = "Dialogue/DialogueObject")]
     public class DialogueObject : ScriptableObject

@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "EventChannel/FloatEventChannel")]
-
-public class FloatEventChannel : DescriptionBaseSO
+namespace LobsterFramework
 {
-	public UnityAction<float> OnEventRaised;
-	public void RaiseEvent(float arg)
+	[CreateAssetMenu(menuName = "EventChannel/FloatEventChannel")]
+	public class FloatEventChannel : DescriptionBaseSO
 	{
-		if (OnEventRaised != null)
-			OnEventRaised.Invoke(arg);
+		public event Action<float> OnEventRaised;
+		public void RaiseEvent(float arg)
+		{
+            OnEventRaised?.Invoke(arg);
+        }
 	}
 }

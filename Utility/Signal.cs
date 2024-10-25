@@ -1,5 +1,5 @@
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     /// <summary>
     /// Represents a signal that can be queried for value. It will automatically go back to default state every time the value is queried.

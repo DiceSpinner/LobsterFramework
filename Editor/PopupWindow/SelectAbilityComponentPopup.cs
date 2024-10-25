@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.Utility;
+
 using System.Linq;
 
 namespace LobsterFramework.Editors

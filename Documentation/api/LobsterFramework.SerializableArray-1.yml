@@ -46,8 +46,6 @@ items:
     content.vb: Public Class SerializableArray(Of T) Implements IList(Of T), ICollection(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
-  derivedClasses:
-  - LobsterFramework.AnimationClipArray
   implements:
   - System.Collections.Generic.IList{{T}}
   - System.Collections.Generic.ICollection{{T}}

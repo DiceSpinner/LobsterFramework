@@ -4,37 +4,77 @@ items:
   commentId: N:LobsterFramework
   id: LobsterFramework
   children:
-  - LobsterFramework.AnimationClipArray
-  - LobsterFramework.AttackSetting
+  - LobsterFramework.AndValue
+  - LobsterFramework.BoolEventChannel
   - LobsterFramework.CharacterStateManager
   - LobsterFramework.CharacterStateManager.CharacterState
+  - LobsterFramework.CombinedValueEffector`1
+  - LobsterFramework.CombinedValue`1
   - LobsterFramework.ContinousCollision2D
+  - LobsterFramework.Coroutine
+  - LobsterFramework.CoroutineOption
+  - LobsterFramework.CoroutineRunner
   - LobsterFramework.Damage
   - LobsterFramework.DamageType
+  - LobsterFramework.DescriptionBaseSO
+  - LobsterFramework.DialogueDisplayer
+  - LobsterFramework.DialogueNode
+  - LobsterFramework.DialogueObject
+  - LobsterFramework.DialogueResponse
   - LobsterFramework.DisableEditInPlayMode
   - LobsterFramework.DisplayNameAttribute
   - LobsterFramework.EffectProcessor
   - LobsterFramework.Entity
   - LobsterFramework.EntityGroup
+  - LobsterFramework.EnumCache
   - LobsterFramework.FieldDescriptionAttribute
   - LobsterFramework.FilePathAttribute
+  - LobsterFramework.FloatEventChannel
+  - LobsterFramework.FloatProduct
+  - LobsterFramework.FloatSum
   - LobsterFramework.FolderPathAttribute
-  - LobsterFramework.IntroMenu
+  - LobsterFramework.GameUtility
+  - LobsterFramework.IdDistributor
+  - LobsterFramework.IntEventChannel
+  - LobsterFramework.IntSum
   - LobsterFramework.InventoryUtil
-  - LobsterFramework.ItemEntryUI
   - LobsterFramework.LayerAttribute
+  - LobsterFramework.MenuTree`1
   - LobsterFramework.MovementController
+  - LobsterFramework.ObjectPool
+  - LobsterFramework.OrValue
   - LobsterFramework.Poise
+  - LobsterFramework.Projectile
   - LobsterFramework.ReadOnlyAttribute
+  - LobsterFramework.RefBool
+  - LobsterFramework.RefFloat
+  - LobsterFramework.RefInt
+  - LobsterFramework.RefString
   - LobsterFramework.ReferenceProvider
   - LobsterFramework.ReferenceRequester
   - LobsterFramework.RequireComponentReferenceAttribute
   - LobsterFramework.RequirementDescription
   - LobsterFramework.SceneLoader
   - LobsterFramework.SerializableArray`1
+  - LobsterFramework.SerializableDictionary`2
+  - LobsterFramework.SerializableList`1
+  - LobsterFramework.SerializableType
+  - LobsterFramework.SerializableType`1
   - LobsterFramework.Setting
+  - LobsterFramework.Signal`1
   - LobsterFramework.SimpleCollision2D
+  - LobsterFramework.SortableItem`1
+  - LobsterFramework.StringEventChannel
   - LobsterFramework.SubLevelComponent
+  - LobsterFramework.TemporalObject
+  - LobsterFramework.TypeCache
+  - LobsterFramework.VarBool
+  - LobsterFramework.VarFloat
+  - LobsterFramework.VarInt
+  - LobsterFramework.VarString
+  - LobsterFramework.Variable`1
+  - LobsterFramework.VoidEventChannel
+  - LobsterFramework.XList`1
   langs:
   - csharp
   - vb
@@ -59,6 +99,13 @@ references:
   name: EffectProcessor
   nameWithType: EffectProcessor
   fullName: LobsterFramework.EffectProcessor
+- uid: LobsterFramework.VarFloat
+  commentId: T:LobsterFramework.VarFloat
+  parent: LobsterFramework
+  href: LobsterFramework.VarFloat.html
+  name: VarFloat
+  nameWithType: VarFloat
+  fullName: LobsterFramework.VarFloat
 - uid: LobsterFramework.SerializableArray`1
   commentId: T:LobsterFramework.SerializableArray`1
   href: LobsterFramework.SerializableArray-1.html
@@ -84,13 +131,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: LobsterFramework.AnimationClipArray
-  commentId: T:LobsterFramework.AnimationClipArray
-  parent: LobsterFramework
-  href: LobsterFramework.AnimationClipArray.html
-  name: AnimationClipArray
-  nameWithType: AnimationClipArray
-  fullName: LobsterFramework.AnimationClipArray
 - uid: LobsterFramework.MovementController
   commentId: T:LobsterFramework.MovementController
   parent: LobsterFramework
@@ -98,6 +138,13 @@ references:
   name: MovementController
   nameWithType: MovementController
   fullName: LobsterFramework.MovementController
+- uid: LobsterFramework.VarBool
+  commentId: T:LobsterFramework.VarBool
+  parent: LobsterFramework
+  href: LobsterFramework.VarBool.html
+  name: VarBool
+  nameWithType: VarBool
+  fullName: LobsterFramework.VarBool
 - uid: LobsterFramework.DisplayNameAttribute
   commentId: T:LobsterFramework.DisplayNameAttribute
   parent: LobsterFramework
@@ -112,12 +159,31 @@ references:
   name: ReferenceProvider
   nameWithType: ReferenceProvider
   fullName: LobsterFramework.ReferenceProvider
-- uid: LobsterFramework.ItemEntryUI
-  commentId: T:LobsterFramework.ItemEntryUI
-  href: LobsterFramework.ItemEntryUI.html
-  name: ItemEntryUI
-  nameWithType: ItemEntryUI
-  fullName: LobsterFramework.ItemEntryUI
+- uid: LobsterFramework.XList`1
+  commentId: T:LobsterFramework.XList`1
+  href: LobsterFramework.XList-1.html
+  name: XList<T>
+  nameWithType: XList<T>
+  fullName: LobsterFramework.XList<T>
+  nameWithType.vb: XList(Of T)
+  fullName.vb: LobsterFramework.XList(Of T)
+  name.vb: XList(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.XList`1
+    name: XList
+    href: LobsterFramework.XList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.XList`1
+    name: XList
+    href: LobsterFramework.XList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: LobsterFramework.Poise
   commentId: T:LobsterFramework.Poise
   parent: LobsterFramework
@@ -125,6 +191,13 @@ references:
   name: Poise
   nameWithType: Poise
   fullName: LobsterFramework.Poise
+- uid: LobsterFramework.RefInt
+  commentId: T:LobsterFramework.RefInt
+  parent: LobsterFramework
+  href: LobsterFramework.RefInt.html
+  name: RefInt
+  nameWithType: RefInt
+  fullName: LobsterFramework.RefInt
 - uid: LobsterFramework.ContinousCollision2D
   commentId: T:LobsterFramework.ContinousCollision2D
   href: LobsterFramework.ContinousCollision2D.html
@@ -138,12 +211,64 @@ references:
   name: SimpleCollision2D
   nameWithType: SimpleCollision2D
   fullName: LobsterFramework.SimpleCollision2D
-- uid: LobsterFramework.IntroMenu
-  commentId: T:LobsterFramework.IntroMenu
-  href: LobsterFramework.IntroMenu.html
-  name: IntroMenu
-  nameWithType: IntroMenu
-  fullName: LobsterFramework.IntroMenu
+- uid: LobsterFramework.MenuTree`1
+  commentId: T:LobsterFramework.MenuTree`1
+  parent: LobsterFramework
+  href: LobsterFramework.MenuTree-1.html
+  name: MenuTree<T>
+  nameWithType: MenuTree<T>
+  fullName: LobsterFramework.MenuTree<T>
+  nameWithType.vb: MenuTree(Of T)
+  fullName.vb: LobsterFramework.MenuTree(Of T)
+  name.vb: MenuTree(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.MenuTree`1
+    name: MenuTree
+    href: LobsterFramework.MenuTree-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.MenuTree`1
+    name: MenuTree
+    href: LobsterFramework.MenuTree-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.VarInt
+  commentId: T:LobsterFramework.VarInt
+  parent: LobsterFramework
+  href: LobsterFramework.VarInt.html
+  name: VarInt
+  nameWithType: VarInt
+  fullName: LobsterFramework.VarInt
+- uid: LobsterFramework.SerializableList`1
+  commentId: T:LobsterFramework.SerializableList`1
+  href: LobsterFramework.SerializableList-1.html
+  name: SerializableList<T>
+  nameWithType: SerializableList<T>
+  fullName: LobsterFramework.SerializableList<T>
+  nameWithType.vb: SerializableList(Of T)
+  fullName.vb: LobsterFramework.SerializableList(Of T)
+  name.vb: SerializableList(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableList`1
+    name: SerializableList
+    href: LobsterFramework.SerializableList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.SerializableList`1
+    name: SerializableList
+    href: LobsterFramework.SerializableList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: LobsterFramework.CharacterStateManager
   commentId: T:LobsterFramework.CharacterStateManager
   href: LobsterFramework.CharacterStateManager.html
@@ -173,12 +298,24 @@ references:
   - uid: LobsterFramework.CharacterStateManager.CharacterState
     name: CharacterState
     href: LobsterFramework.CharacterStateManager.CharacterState.html
-- uid: LobsterFramework.AttackSetting
-  commentId: T:LobsterFramework.AttackSetting
-  href: LobsterFramework.AttackSetting.html
-  name: AttackSetting
-  nameWithType: AttackSetting
-  fullName: LobsterFramework.AttackSetting
+- uid: LobsterFramework.IdDistributor
+  commentId: T:LobsterFramework.IdDistributor
+  href: LobsterFramework.IdDistributor.html
+  name: IdDistributor
+  nameWithType: IdDistributor
+  fullName: LobsterFramework.IdDistributor
+- uid: LobsterFramework.DialogueNode
+  commentId: T:LobsterFramework.DialogueNode
+  href: LobsterFramework.DialogueNode.html
+  name: DialogueNode
+  nameWithType: DialogueNode
+  fullName: LobsterFramework.DialogueNode
+- uid: LobsterFramework.ObjectPool
+  commentId: T:LobsterFramework.ObjectPool
+  href: LobsterFramework.ObjectPool.html
+  name: ObjectPool
+  nameWithType: ObjectPool
+  fullName: LobsterFramework.ObjectPool
 - uid: LobsterFramework.LayerAttribute
   commentId: T:LobsterFramework.LayerAttribute
   parent: LobsterFramework
@@ -186,6 +323,13 @@ references:
   name: LayerAttribute
   nameWithType: LayerAttribute
   fullName: LobsterFramework.LayerAttribute
+- uid: LobsterFramework.DialogueObject
+  commentId: T:LobsterFramework.DialogueObject
+  parent: LobsterFramework
+  href: LobsterFramework.DialogueObject.html
+  name: DialogueObject
+  nameWithType: DialogueObject
+  fullName: LobsterFramework.DialogueObject
 - uid: LobsterFramework.EntityGroup
   commentId: T:LobsterFramework.EntityGroup
   href: LobsterFramework.EntityGroup.html
@@ -212,12 +356,108 @@ references:
   name: FieldDescriptionAttribute
   nameWithType: FieldDescriptionAttribute
   fullName: LobsterFramework.FieldDescriptionAttribute
+- uid: LobsterFramework.IntEventChannel
+  commentId: T:LobsterFramework.IntEventChannel
+  href: LobsterFramework.IntEventChannel.html
+  name: IntEventChannel
+  nameWithType: IntEventChannel
+  fullName: LobsterFramework.IntEventChannel
+- uid: LobsterFramework.TemporalObject
+  commentId: T:LobsterFramework.TemporalObject
+  href: LobsterFramework.TemporalObject.html
+  name: TemporalObject
+  nameWithType: TemporalObject
+  fullName: LobsterFramework.TemporalObject
+- uid: LobsterFramework.CoroutineRunner
+  commentId: T:LobsterFramework.CoroutineRunner
+  parent: LobsterFramework
+  href: LobsterFramework.CoroutineRunner.html
+  name: CoroutineRunner
+  nameWithType: CoroutineRunner
+  fullName: LobsterFramework.CoroutineRunner
+- uid: LobsterFramework.Projectile
+  commentId: T:LobsterFramework.Projectile
+  href: LobsterFramework.Projectile.html
+  name: Projectile
+  nameWithType: Projectile
+  fullName: LobsterFramework.Projectile
+- uid: LobsterFramework.RefBool
+  commentId: T:LobsterFramework.RefBool
+  parent: LobsterFramework
+  href: LobsterFramework.RefBool.html
+  name: RefBool
+  nameWithType: RefBool
+  fullName: LobsterFramework.RefBool
 - uid: LobsterFramework.SceneLoader
   commentId: T:LobsterFramework.SceneLoader
   href: LobsterFramework.SceneLoader.html
   name: SceneLoader
   nameWithType: SceneLoader
   fullName: LobsterFramework.SceneLoader
+- uid: LobsterFramework.SerializableType`1
+  commentId: T:LobsterFramework.SerializableType`1
+  href: LobsterFramework.SerializableType-1.html
+  name: SerializableType<T>
+  nameWithType: SerializableType<T>
+  fullName: LobsterFramework.SerializableType<T>
+  nameWithType.vb: SerializableType(Of T)
+  fullName.vb: LobsterFramework.SerializableType(Of T)
+  name.vb: SerializableType(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.SerializableType-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.SerializableType-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.SerializableType
+  commentId: T:LobsterFramework.SerializableType
+  href: LobsterFramework.SerializableType.html
+  name: SerializableType
+  nameWithType: SerializableType
+  fullName: LobsterFramework.SerializableType
+- uid: LobsterFramework.RefString
+  commentId: T:LobsterFramework.RefString
+  parent: LobsterFramework
+  href: LobsterFramework.RefString.html
+  name: RefString
+  nameWithType: RefString
+  fullName: LobsterFramework.RefString
+- uid: LobsterFramework.SortableItem`1
+  commentId: T:LobsterFramework.SortableItem`1
+  parent: LobsterFramework
+  href: LobsterFramework.SortableItem-1.html
+  name: SortableItem<T>
+  nameWithType: SortableItem<T>
+  fullName: LobsterFramework.SortableItem<T>
+  nameWithType.vb: SortableItem(Of T)
+  fullName.vb: LobsterFramework.SortableItem(Of T)
+  name.vb: SortableItem(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.SortableItem`1
+    name: SortableItem
+    href: LobsterFramework.SortableItem-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.SortableItem`1
+    name: SortableItem
+    href: LobsterFramework.SortableItem-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: LobsterFramework.RequireComponentReferenceAttribute
   commentId: T:LobsterFramework.RequireComponentReferenceAttribute
   parent: LobsterFramework
@@ -231,6 +471,25 @@ references:
   name: RequirementDescription
   nameWithType: RequirementDescription
   fullName: LobsterFramework.RequirementDescription
+- uid: LobsterFramework.FloatEventChannel
+  commentId: T:LobsterFramework.FloatEventChannel
+  href: LobsterFramework.FloatEventChannel.html
+  name: FloatEventChannel
+  nameWithType: FloatEventChannel
+  fullName: LobsterFramework.FloatEventChannel
+- uid: LobsterFramework.VarString
+  commentId: T:LobsterFramework.VarString
+  parent: LobsterFramework
+  href: LobsterFramework.VarString.html
+  name: VarString
+  nameWithType: VarString
+  fullName: LobsterFramework.VarString
+- uid: LobsterFramework.EnumCache
+  commentId: T:LobsterFramework.EnumCache
+  href: LobsterFramework.EnumCache.html
+  name: EnumCache
+  nameWithType: EnumCache
+  fullName: LobsterFramework.EnumCache
 - uid: LobsterFramework.Entity
   commentId: T:LobsterFramework.Entity
   parent: LobsterFramework
@@ -252,6 +511,38 @@ references:
   name: Damage
   nameWithType: Damage
   fullName: LobsterFramework.Damage
+- uid: LobsterFramework.Signal`1
+  commentId: T:LobsterFramework.Signal`1
+  parent: LobsterFramework
+  href: LobsterFramework.Signal-1.html
+  name: Signal<T>
+  nameWithType: Signal<T>
+  fullName: LobsterFramework.Signal<T>
+  nameWithType.vb: Signal(Of T)
+  fullName.vb: LobsterFramework.Signal(Of T)
+  name.vb: Signal(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Signal`1
+    name: Signal
+    href: LobsterFramework.Signal-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Signal`1
+    name: Signal
+    href: LobsterFramework.Signal-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.VoidEventChannel
+  commentId: T:LobsterFramework.VoidEventChannel
+  href: LobsterFramework.VoidEventChannel.html
+  name: VoidEventChannel
+  nameWithType: VoidEventChannel
+  fullName: LobsterFramework.VoidEventChannel
 - uid: LobsterFramework.ReferenceRequester
   commentId: T:LobsterFramework.ReferenceRequester
   parent: LobsterFramework
@@ -266,6 +557,12 @@ references:
   name: Setting
   nameWithType: Setting
   fullName: LobsterFramework.Setting
+- uid: LobsterFramework.GameUtility
+  commentId: T:LobsterFramework.GameUtility
+  href: LobsterFramework.GameUtility.html
+  name: GameUtility
+  nameWithType: GameUtility
+  fullName: LobsterFramework.GameUtility
 - uid: LobsterFramework.FilePathAttribute
   commentId: T:LobsterFramework.FilePathAttribute
   parent: LobsterFramework
@@ -273,12 +570,212 @@ references:
   name: FilePathAttribute
   nameWithType: FilePathAttribute
   fullName: LobsterFramework.FilePathAttribute
+- uid: LobsterFramework.Variable`1
+  commentId: T:LobsterFramework.Variable`1
+  parent: LobsterFramework
+  href: LobsterFramework.Variable-1.html
+  name: Variable<T>
+  nameWithType: Variable<T>
+  fullName: LobsterFramework.Variable<T>
+  nameWithType.vb: Variable(Of T)
+  fullName.vb: LobsterFramework.Variable(Of T)
+  name.vb: Variable(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Variable`1
+    name: Variable
+    href: LobsterFramework.Variable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Variable`1
+    name: Variable
+    href: LobsterFramework.Variable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.StringEventChannel
+  commentId: T:LobsterFramework.StringEventChannel
+  href: LobsterFramework.StringEventChannel.html
+  name: StringEventChannel
+  nameWithType: StringEventChannel
+  fullName: LobsterFramework.StringEventChannel
+- uid: LobsterFramework.SerializableDictionary`2
+  commentId: T:LobsterFramework.SerializableDictionary`2
+  href: LobsterFramework.SerializableDictionary-2.html
+  name: SerializableDictionary<TKey, TValue>
+  nameWithType: SerializableDictionary<TKey, TValue>
+  fullName: LobsterFramework.SerializableDictionary<TKey, TValue>
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue)
+  fullName.vb: LobsterFramework.SerializableDictionary(Of TKey, TValue)
+  name.vb: SerializableDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.SerializableDictionary-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.SerializableDictionary-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Coroutine
+  commentId: T:LobsterFramework.Coroutine
+  parent: LobsterFramework
+  href: LobsterFramework.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Coroutine
 - uid: LobsterFramework.InventoryUtil
   commentId: T:LobsterFramework.InventoryUtil
   href: LobsterFramework.InventoryUtil.html
   name: InventoryUtil
   nameWithType: InventoryUtil
   fullName: LobsterFramework.InventoryUtil
+- uid: LobsterFramework.RefFloat
+  commentId: T:LobsterFramework.RefFloat
+  parent: LobsterFramework
+  href: LobsterFramework.RefFloat.html
+  name: RefFloat
+  nameWithType: RefFloat
+  fullName: LobsterFramework.RefFloat
+- uid: LobsterFramework.CombinedValue`1
+  commentId: T:LobsterFramework.CombinedValue`1
+  parent: LobsterFramework
+  href: LobsterFramework.CombinedValue-1.html
+  name: CombinedValue<T>
+  nameWithType: CombinedValue<T>
+  fullName: LobsterFramework.CombinedValue<T>
+  nameWithType.vb: CombinedValue(Of T)
+  fullName.vb: LobsterFramework.CombinedValue(Of T)
+  name.vb: CombinedValue(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.CombinedValue-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.CombinedValue`1
+    name: CombinedValue
+    href: LobsterFramework.CombinedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.CombinedValueEffector`1
+  commentId: T:LobsterFramework.CombinedValueEffector`1
+  href: LobsterFramework.CombinedValueEffector-1.html
+  name: CombinedValueEffector<T>
+  nameWithType: CombinedValueEffector<T>
+  fullName: LobsterFramework.CombinedValueEffector<T>
+  nameWithType.vb: CombinedValueEffector(Of T)
+  fullName.vb: LobsterFramework.CombinedValueEffector(Of T)
+  name.vb: CombinedValueEffector(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.CombinedValueEffector`1
+    name: CombinedValueEffector
+    href: LobsterFramework.CombinedValueEffector-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.CombinedValueEffector`1
+    name: CombinedValueEffector
+    href: LobsterFramework.CombinedValueEffector-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.IntSum
+  commentId: T:LobsterFramework.IntSum
+  href: LobsterFramework.IntSum.html
+  name: IntSum
+  nameWithType: IntSum
+  fullName: LobsterFramework.IntSum
+- uid: LobsterFramework.FloatSum
+  commentId: T:LobsterFramework.FloatSum
+  parent: LobsterFramework
+  href: LobsterFramework.FloatSum.html
+  name: FloatSum
+  nameWithType: FloatSum
+  fullName: LobsterFramework.FloatSum
+- uid: LobsterFramework.FloatProduct
+  commentId: T:LobsterFramework.FloatProduct
+  parent: LobsterFramework
+  href: LobsterFramework.FloatProduct.html
+  name: FloatProduct
+  nameWithType: FloatProduct
+  fullName: LobsterFramework.FloatProduct
+- uid: LobsterFramework.OrValue
+  commentId: T:LobsterFramework.OrValue
+  parent: LobsterFramework
+  href: LobsterFramework.OrValue.html
+  name: OrValue
+  nameWithType: OrValue
+  fullName: LobsterFramework.OrValue
+- uid: LobsterFramework.AndValue
+  commentId: T:LobsterFramework.AndValue
+  href: LobsterFramework.AndValue.html
+  name: AndValue
+  nameWithType: AndValue
+  fullName: LobsterFramework.AndValue
+- uid: LobsterFramework.DialogueDisplayer
+  commentId: T:LobsterFramework.DialogueDisplayer
+  href: LobsterFramework.DialogueDisplayer.html
+  name: DialogueDisplayer
+  nameWithType: DialogueDisplayer
+  fullName: LobsterFramework.DialogueDisplayer
+- uid: LobsterFramework.DescriptionBaseSO
+  commentId: T:LobsterFramework.DescriptionBaseSO
+  parent: LobsterFramework
+  href: LobsterFramework.DescriptionBaseSO.html
+  name: DescriptionBaseSO
+  nameWithType: DescriptionBaseSO
+  fullName: LobsterFramework.DescriptionBaseSO
+- uid: LobsterFramework.BoolEventChannel
+  commentId: T:LobsterFramework.BoolEventChannel
+  href: LobsterFramework.BoolEventChannel.html
+  name: BoolEventChannel
+  nameWithType: BoolEventChannel
+  fullName: LobsterFramework.BoolEventChannel
+- uid: LobsterFramework.TypeCache
+  commentId: T:LobsterFramework.TypeCache
+  href: LobsterFramework.TypeCache.html
+  name: TypeCache
+  nameWithType: TypeCache
+  fullName: LobsterFramework.TypeCache
+- uid: LobsterFramework.DialogueResponse
+  commentId: T:LobsterFramework.DialogueResponse
+  parent: LobsterFramework
+  href: LobsterFramework.DialogueResponse.html
+  name: DialogueResponse
+  nameWithType: DialogueResponse
+  fullName: LobsterFramework.DialogueResponse
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  parent: LobsterFramework
+  href: LobsterFramework.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
 - uid: LobsterFramework.SubLevelComponent
   commentId: T:LobsterFramework.SubLevelComponent
   parent: LobsterFramework

@@ -8,6 +8,7 @@ items:
   - LobsterFramework.Setting.EXPIRE_ATTACK_TIME
   - LobsterFramework.Setting.GamePaused
   - LobsterFramework.Setting.Instance
+  - LobsterFramework.Setting.OnExit
   - LobsterFramework.Setting.POSTURE_BROKEN_DAMAGE_MODIFIER
   - LobsterFramework.Setting.POSTURE_BROKEN_DURATION
   - LobsterFramework.Setting.SUPPRESS_REGEN_DURATION
@@ -187,6 +188,33 @@ items:
       type: LobsterFramework.Setting
     content.vb: Public Shared ReadOnly Property Instance As Setting
   overload: LobsterFramework.Setting.Instance*
+- uid: LobsterFramework.Setting.OnExit
+  commentId: E:LobsterFramework.Setting.OnExit
+  id: OnExit
+  parent: LobsterFramework.Setting
+  langs:
+  - csharp
+  - vb
+  name: OnExit
+  nameWithType: Setting.OnExit
+  fullName: LobsterFramework.Setting.OnExit
+  type: Event
+  source:
+    remote:
+      path: Setting.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: OnExit
+    path: ../Setting.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public event Action OnExit
+    return:
+      type: System.Action
+    content.vb: Public Event OnExit As Action
 - uid: LobsterFramework.Setting.TARGET_FRAME_RATE
   commentId: P:LobsterFramework.Setting.TARGET_FRAME_RATE
   id: TARGET_FRAME_RATE
@@ -4795,6 +4823,14 @@ references:
   name: Setting
   nameWithType: Setting
   fullName: LobsterFramework.Setting
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
 - uid: LobsterFramework.Setting.TARGET_FRAME_RATE*
   commentId: Overload:LobsterFramework.Setting.TARGET_FRAME_RATE
   href: LobsterFramework.Setting.html#LobsterFramework.Setting.TARGET_FRAME_RATE

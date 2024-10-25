@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
 
-namespace LobsterFramework.Utility
+namespace LobsterFramework
 {
     public class DialogueDisplayer : MonoBehaviour
     {

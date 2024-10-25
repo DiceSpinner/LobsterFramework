@@ -21,7 +21,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: ReferenceProviderEditor
     path: ../Editor/Inspector/ReferenceProviderEditor.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -167,7 +167,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: referenceFieldsExpanded
     path: ../Editor/Inspector/ReferenceProviderEditor.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors
@@ -196,7 +196,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: OnInspectorGUI
     path: ../Editor/Inspector/ReferenceProviderEditor.cs
-    startLine: 26
+    startLine: 25
   assemblies:
   - LobsterFrameworkEditor
   namespace: LobsterFramework.Editors

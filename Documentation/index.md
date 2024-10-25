@@ -5,9 +5,9 @@
 As its name suggests, this is a gameplay framework built on top of Unity game engine. It comes with various gameplay systems with some prebuilt utilities and structs:
 * [Ability System](./manual/AbilitySystem.md)
   * Weapon System & Weapon Abilities
-* [Interaction](./manual/Interaction.md)
+* [Interaction (Page Under Construction)](./manual/Interaction.md)
   * Inventory & Item
-* [AI](./manual/AI.md)
+* [AI (Page Under Construction)](./manual/AI.md)
   * Statemachine & AI States
   * Pathfinding
 * Character

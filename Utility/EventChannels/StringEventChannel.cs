@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "EventChannel/String Channel")]
-public class StringEventChannel : ScriptableObject
+namespace LobsterFramework
 {
-	public UnityAction<string> OnEventRaised;
-	public void RaiseEvent(string arg)
+	[CreateAssetMenu(menuName = "EventChannel/String Channel")]
+	public class StringEventChannel : ScriptableObject
 	{
-		if (OnEventRaised != null)
-			OnEventRaised.Invoke(arg);
+		public event Action<string> OnEventRaised;
+		public void RaiseEvent(string arg)
+		{
+            OnEventRaised?.Invoke(arg);
+        }
 	}
 }

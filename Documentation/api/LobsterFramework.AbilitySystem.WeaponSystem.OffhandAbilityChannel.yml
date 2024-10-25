@@ -30,8 +30,8 @@ items:
   - System.Object
   - LobsterFramework.AbilitySystem.AbilityChannel
   inheritedMembers:
-  - LobsterFramework.AbilitySystem.AbilityChannel.context
-  - LobsterFramework.AbilitySystem.AbilityChannel.config
+  - LobsterFramework.AbilitySystem.AbilityChannel.Context
+  - LobsterFramework.AbilitySystem.AbilityChannel.Config
   - LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   - LobsterFramework.AbilitySystem.AbilityChannel.IsSuspended
   - LobsterFramework.AbilitySystem.AbilityChannel.TimeWhenAvailable
@@ -93,20 +93,20 @@ references:
   name: AbilityChannel
   nameWithType: AbilityChannel
   fullName: LobsterFramework.AbilitySystem.AbilityChannel
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.context
-  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.context
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Context
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.Context
   parent: LobsterFramework.AbilitySystem.AbilityChannel
-  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.context
-  name: context
-  nameWithType: AbilityChannel.context
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.context
-- uid: LobsterFramework.AbilitySystem.AbilityChannel.config
-  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.config
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Context
+  name: Context
+  nameWithType: AbilityChannel.Context
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Context
+- uid: LobsterFramework.AbilitySystem.AbilityChannel.Config
+  commentId: F:LobsterFramework.AbilitySystem.AbilityChannel.Config
   parent: LobsterFramework.AbilitySystem.AbilityChannel
-  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.config
-  name: config
-  nameWithType: AbilityChannel.config
-  fullName: LobsterFramework.AbilitySystem.AbilityChannel.config
+  href: LobsterFramework.AbilitySystem.AbilityChannel.html#LobsterFramework.AbilitySystem.AbilityChannel.Config
+  name: Config
+  nameWithType: AbilityChannel.Config
+  fullName: LobsterFramework.AbilitySystem.AbilityChannel.Config
 - uid: LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   commentId: P:LobsterFramework.AbilitySystem.AbilityChannel.IsRunning
   parent: LobsterFramework.AbilitySystem.AbilityChannel

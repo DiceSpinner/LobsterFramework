@@ -1,0 +1,729 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  id: CoroutineOption
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.CoroutineOption.Condition(System.Func{System.Boolean})
+  - LobsterFramework.CoroutineOption.Continue
+  - LobsterFramework.CoroutineOption.Reset
+  - LobsterFramework.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption})
+  - LobsterFramework.CoroutineOption.WaitForCoroutine(LobsterFramework.Coroutine)
+  - LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  - LobsterFramework.CoroutineOption.WaitForUnscaledSeconds(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
+  type: Struct
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: CoroutineOption
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Represents options available for Coroutines, use predefined values or utility methods to create the option needed
+  example: []
+  syntax:
+    content: public struct CoroutineOption
+    content.vb: Public Structure CoroutineOption
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: LobsterFramework.CoroutineOption.Reset
+  commentId: F:LobsterFramework.CoroutineOption.Reset
+  id: Reset
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: Reset
+  nameWithType: CoroutineOption.Reset
+  fullName: LobsterFramework.CoroutineOption.Reset
+  type: Field
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Reset
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 20
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: The coroutine option to restart the coroutine execution from the beginning
+  example: []
+  syntax:
+    content: public static readonly CoroutineOption Reset
+    return:
+      type: LobsterFramework.CoroutineOption
+    content.vb: Public Shared ReadOnly Reset As CoroutineOption
+- uid: LobsterFramework.CoroutineOption.Continue
+  commentId: F:LobsterFramework.CoroutineOption.Continue
+  id: Continue
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: Continue
+  nameWithType: CoroutineOption.Continue
+  fullName: LobsterFramework.CoroutineOption.Continue
+  type: Field
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Continue
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 24
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: The coroutine option to continue execution of the current coroutine
+  example: []
+  syntax:
+    content: public static readonly CoroutineOption Continue
+    return:
+      type: LobsterFramework.CoroutineOption
+    content.vb: Public Shared ReadOnly [Continue] As CoroutineOption
+- uid: LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  commentId: M:LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  id: WaitForSeconds(System.Single)
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: WaitForSeconds(float)
+  nameWithType: CoroutineOption.WaitForSeconds(float)
+  fullName: LobsterFramework.CoroutineOption.WaitForSeconds(float)
+  type: Method
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: WaitForSeconds
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 31
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Pause the execution of coroutine for the specified seconds, will be affected by Time.timeScale
+  example: []
+  syntax:
+    content: public static CoroutineOption WaitForSeconds(float time)
+    parameters:
+    - id: time
+      type: System.Single
+      description: time to pause the coroutine
+    return:
+      type: LobsterFramework.CoroutineOption
+      description: The CoroutineOption represents this option
+    content.vb: Public Shared Function WaitForSeconds(time As Single) As CoroutineOption
+  overload: LobsterFramework.CoroutineOption.WaitForSeconds*
+  nameWithType.vb: CoroutineOption.WaitForSeconds(Single)
+  fullName.vb: LobsterFramework.CoroutineOption.WaitForSeconds(Single)
+  name.vb: WaitForSeconds(Single)
+- uid: LobsterFramework.CoroutineOption.WaitForUnscaledSeconds(System.Single)
+  commentId: M:LobsterFramework.CoroutineOption.WaitForUnscaledSeconds(System.Single)
+  id: WaitForUnscaledSeconds(System.Single)
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: WaitForUnscaledSeconds(float)
+  nameWithType: CoroutineOption.WaitForUnscaledSeconds(float)
+  fullName: LobsterFramework.CoroutineOption.WaitForUnscaledSeconds(float)
+  type: Method
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: WaitForUnscaledSeconds
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 41
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Pause the execution of coroutine for the specified seconds, will not be affected by Time.timeScale
+  example: []
+  syntax:
+    content: public static CoroutineOption WaitForUnscaledSeconds(float time)
+    parameters:
+    - id: time
+      type: System.Single
+      description: time to pause the coroutine
+    return:
+      type: LobsterFramework.CoroutineOption
+      description: The CoroutineOption represents this option
+    content.vb: Public Shared Function WaitForUnscaledSeconds(time As Single) As CoroutineOption
+  overload: LobsterFramework.CoroutineOption.WaitForUnscaledSeconds*
+  nameWithType.vb: CoroutineOption.WaitForUnscaledSeconds(Single)
+  fullName.vb: LobsterFramework.CoroutineOption.WaitForUnscaledSeconds(Single)
+  name.vb: WaitForUnscaledSeconds(Single)
+- uid: LobsterFramework.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption})
+  commentId: M:LobsterFramework.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption})
+  id: SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption})
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: SubCoroutine(IEnumerable<CoroutineOption>)
+  nameWithType: CoroutineOption.SubCoroutine(IEnumerable<CoroutineOption>)
+  fullName: LobsterFramework.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable<LobsterFramework.CoroutineOption>)
+  type: Method
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: SubCoroutine
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 50
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Start a subcoroutine, current coroutine will not be executed until subcoroutine has finished
+  example: []
+  syntax:
+    content: public static CoroutineOption SubCoroutine(IEnumerable<CoroutineOption> subCoroutine)
+    parameters:
+    - id: subCoroutine
+      type: System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
+      description: The subcoroutine to be executed
+    return:
+      type: LobsterFramework.CoroutineOption
+      description: The CoroutineOption represents this option
+    content.vb: Public Shared Function SubCoroutine(subCoroutine As IEnumerable(Of CoroutineOption)) As CoroutineOption
+  overload: LobsterFramework.CoroutineOption.SubCoroutine*
+  nameWithType.vb: CoroutineOption.SubCoroutine(IEnumerable(Of CoroutineOption))
+  fullName.vb: LobsterFramework.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable(Of LobsterFramework.CoroutineOption))
+  name.vb: SubCoroutine(IEnumerable(Of CoroutineOption))
+- uid: LobsterFramework.CoroutineOption.WaitForCoroutine(LobsterFramework.Coroutine)
+  commentId: M:LobsterFramework.CoroutineOption.WaitForCoroutine(LobsterFramework.Coroutine)
+  id: WaitForCoroutine(LobsterFramework.Coroutine)
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: WaitForCoroutine(Coroutine)
+  nameWithType: CoroutineOption.WaitForCoroutine(Coroutine)
+  fullName: LobsterFramework.CoroutineOption.WaitForCoroutine(LobsterFramework.Coroutine)
+  type: Method
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: WaitForCoroutine
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 60
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Pause the execution of coroutine until another coroutine has finished, cannot be used to wait for the current coroutine itself
+  example: []
+  syntax:
+    content: public static CoroutineOption WaitForCoroutine(Coroutine coroutine)
+    parameters:
+    - id: coroutine
+      type: LobsterFramework.Coroutine
+      description: The coroutine to wait for, cannot be the current executing coroutine itself
+    return:
+      type: LobsterFramework.CoroutineOption
+      description: The CoroutineOption represents this option
+    content.vb: Public Shared Function WaitForCoroutine(coroutine As Coroutine) As CoroutineOption
+  overload: LobsterFramework.CoroutineOption.WaitForCoroutine*
+- uid: LobsterFramework.CoroutineOption.Condition(System.Func{System.Boolean})
+  commentId: M:LobsterFramework.CoroutineOption.Condition(System.Func{System.Boolean})
+  id: Condition(System.Func{System.Boolean})
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: Condition(Func<bool>)
+  nameWithType: CoroutineOption.Condition(Func<bool>)
+  fullName: LobsterFramework.CoroutineOption.Condition(System.Func<bool>)
+  type: Method
+  source:
+    remote:
+      path: Utility/Coroutine/CoroutineOption.cs
+      branch: main
+      repo: https://github.com/DiceSpinner/LobsterFramework.git
+    id: Condition
+    path: ../Utility/Coroutine/CoroutineOption.cs
+    startLine: 71
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Pause the execution of coroutine until the condition has been met
+  example: []
+  syntax:
+    content: public static CoroutineOption Condition(Func<bool> predicate)
+    parameters:
+    - id: predicate
+      type: System.Func{System.Boolean}
+      description: The condition to test for
+    return:
+      type: LobsterFramework.CoroutineOption
+      description: The CoroutineOption represents this option
+    content.vb: Public Shared Function Condition(predicate As Func(Of Boolean)) As CoroutineOption
+  overload: LobsterFramework.CoroutineOption.Condition*
+  nameWithType.vb: CoroutineOption.Condition(Func(Of Boolean))
+  fullName.vb: LobsterFramework.CoroutineOption.Condition(System.Func(Of Boolean))
+  name.vb: Condition(Func(Of Boolean))
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  parent: LobsterFramework
+  href: LobsterFramework.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
+- uid: LobsterFramework.CoroutineOption.WaitForSeconds*
+  commentId: Overload:LobsterFramework.CoroutineOption.WaitForSeconds
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  name: WaitForSeconds
+  nameWithType: CoroutineOption.WaitForSeconds
+  fullName: LobsterFramework.CoroutineOption.WaitForSeconds
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.CoroutineOption.WaitForUnscaledSeconds*
+  commentId: Overload:LobsterFramework.CoroutineOption.WaitForUnscaledSeconds
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.WaitForUnscaledSeconds(System.Single)
+  name: WaitForUnscaledSeconds
+  nameWithType: CoroutineOption.WaitForUnscaledSeconds
+  fullName: LobsterFramework.CoroutineOption.WaitForUnscaledSeconds
+- uid: LobsterFramework.CoroutineOption.SubCoroutine*
+  commentId: Overload:LobsterFramework.CoroutineOption.SubCoroutine
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.SubCoroutine(System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption})
+  name: SubCoroutine
+  nameWithType: CoroutineOption.SubCoroutine
+  fullName: LobsterFramework.CoroutineOption.SubCoroutine
+- uid: System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
+  commentId: T:System.Collections.Generic.IEnumerable{LobsterFramework.CoroutineOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<CoroutineOption>
+  nameWithType: IEnumerable<CoroutineOption>
+  fullName: System.Collections.Generic.IEnumerable<LobsterFramework.CoroutineOption>
+  nameWithType.vb: IEnumerable(Of CoroutineOption)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of LobsterFramework.CoroutineOption)
+  name.vb: IEnumerable(Of CoroutineOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: LobsterFramework.CoroutineOption.WaitForCoroutine*
+  commentId: Overload:LobsterFramework.CoroutineOption.WaitForCoroutine
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.WaitForCoroutine(LobsterFramework.Coroutine)
+  name: WaitForCoroutine
+  nameWithType: CoroutineOption.WaitForCoroutine
+  fullName: LobsterFramework.CoroutineOption.WaitForCoroutine
+- uid: LobsterFramework.Coroutine
+  commentId: T:LobsterFramework.Coroutine
+  parent: LobsterFramework
+  href: LobsterFramework.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Coroutine
+- uid: LobsterFramework.CoroutineOption.Condition*
+  commentId: Overload:LobsterFramework.CoroutineOption.Condition
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.Condition(System.Func{System.Boolean})
+  name: Condition
+  nameWithType: CoroutineOption.Condition
+  fullName: LobsterFramework.CoroutineOption.Condition
+- uid: System.Func{System.Boolean}
+  commentId: T:System.Func{System.Boolean}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<bool>
+  nameWithType: Func<bool>
+  fullName: System.Func<bool>
+  nameWithType.vb: Func(Of Boolean)
+  fullName.vb: System.Func(Of Boolean)
+  name.vb: Func(Of Boolean)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )

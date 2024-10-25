@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem.WeaponSystem
 {
-    public class GuardConfig : AbilityConfig
+    internal class GuardConfig : AbilityConfig
     {
         [field:SerializeField] public float DelfectTime { get; private set; }
     }

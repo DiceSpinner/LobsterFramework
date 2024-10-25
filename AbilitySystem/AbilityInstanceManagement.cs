@@ -8,7 +8,7 @@ namespace LobsterFramework.AbilitySystem{
     /// <summary>
     /// Carries out ability instance execution according to the priorities of the abilities.
     /// </summary>
-    [PlayerLoopEventGroup(typeof(PreLateUpdate.ScriptRunBehaviourLateUpdate), Priority = 0, InjectAfter = false)]
+    [PlayerLoopEventGroup(typeof(PreLateUpdate.ScriptRunBehaviourLateUpdate), Priority = 0, InjectBefore = true)]
     public sealed class AbilityInstanceManagement : IPlayerLoopEventGroup
     {
         /// <summary>

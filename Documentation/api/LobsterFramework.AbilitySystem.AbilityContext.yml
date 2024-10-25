@@ -35,8 +35,6 @@ items:
   - System.Object
   derivedClasses:
   - LobsterFramework.AbilitySystem.AbilityCoroutineContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.OffhandAbilityContext
-  - LobsterFramework.AbilitySystem.WeaponSystem.WeaponArtContext
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)

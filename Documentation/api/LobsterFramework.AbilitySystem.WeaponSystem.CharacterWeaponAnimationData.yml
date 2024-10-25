@@ -22,7 +22,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: CharacterWeaponAnimationData
     path: ../AbilitySystem/Weapon System/CharacterWeaponAnimationData.cs
-    startLine: 18
+    startLine: 16
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -122,7 +122,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetAbilityClip
     path: ../AbilitySystem/Weapon System/CharacterWeaponAnimationData.cs
-    startLine: 204
+    startLine: 202
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -170,7 +170,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetMoveClip
     path: ../AbilitySystem/Weapon System/CharacterWeaponAnimationData.cs
-    startLine: 218
+    startLine: 216
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem
@@ -205,7 +205,7 @@ items:
       repo: https://github.com/DiceSpinner/LobsterFramework.git
     id: GetWeaponAbilitySetting
     path: ../AbilitySystem/Weapon System/CharacterWeaponAnimationData.cs
-    startLine: 222
+    startLine: 220
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.WeaponSystem

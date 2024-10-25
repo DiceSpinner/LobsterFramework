@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEditor;
-using TypeCache = LobsterFramework.Utility.TypeCache;
 
 namespace LobsterFramework.Editors
 {

@@ -1,5 +1,5 @@
 using LobsterFramework.Interaction;
-using LobsterFramework.Utility;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -74,7 +74,7 @@ namespace LobsterFramework
 
 
     [Serializable]
-    public class AnimationClipArray : SerializableArray<AnimationClip> { 
+    internal class AnimationClipArray : SerializableArray<AnimationClip> { 
         public static implicit operator AnimationClip[](AnimationClipArray array) { if (array == null) { return null; } return array.items; }
         public static implicit operator AnimationClipArray(AnimationClip[] array) {
             if (array == null) { return null; }

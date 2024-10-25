@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,6 +25,7 @@ namespace LobsterFramework.Editors {
         private string emptyNote;
         #endregion
 
+        private List<T> constOptions = new();
         private Vector2 scrollPosition;
 
         public MenuTreeDrawer(MenuTree<T> startNode, Action<T> optionHandle, Func<MenuTree<T>, GUIContent> guiNodeHandle, Func<T, GUIContent> guiOptionHandle)
@@ -42,6 +43,11 @@ namespace LobsterFramework.Editors {
 
         public void SetEmptyNote(string note) {
             emptyNote = note;
+        }
+
+        public void AddConstOption(T item)
+        {
+            constOptions.Add(item);
         }
 
         public void Draw() {
@@ -95,6 +101,16 @@ namespace LobsterFramework.Editors {
                 }
             }
             GUI.color = defaultColor;
+
+            foreach (T item in constOptions)
+            {
+                GUIContent content = guiOptionHandle(item);
+                if (content == null) { continue; }
+                if (GUILayout.Button(content, GUILayout.Height(30), GUILayout.Width(180)))
+                {
+                    optionHandle(item);
+                }
+            }
             GUILayout.EndScrollView();
             if (!hasContent && emptyNote != default)
             {

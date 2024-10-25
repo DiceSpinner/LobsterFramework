@@ -18,13 +18,21 @@ namespace LobsterFramework.Editors
             this.drawer = drawer;
             menuTreeDrawer = new(AddAbilityMenuAttribute.root, SetAbilityType, DrawMenu, DrawOption);
             menuTreeDrawer.SetColors(AbilityEditorConfig.MenuPopupColor, AbilityEditorConfig.AbilityPopupColor);
-            menuTreeDrawer.SetEmptyNote("Option Exhausted"); 
+            menuTreeDrawer.SetEmptyNote("Option Exhausted");
+            menuTreeDrawer.AddConstOption(null);
         }
 
         #region Handles for menu drawer
         private void SetAbilityType(Type type)
         {
-            drawer.newSelection = type.AssemblyQualifiedName;
+            if (type == null) {
+                drawer.newSelection = "0"; // Invalid name for a class, so it must be serialized to null
+            }
+            else
+            {
+                drawer.newSelection = type.AssemblyQualifiedName;
+            }
+            
             editorWindow.Close();
         }
 
@@ -38,6 +46,13 @@ namespace LobsterFramework.Editors
 
         private GUIContent DrawOption(Type type)
         {
+            if (type == null)
+            {
+                content.image = null;
+                content.tooltip = "";
+                content.text = "None";
+                return content;
+            }
             if (restriction != null && !type.IsSubclassOf(restriction.ParentType)) {
                 if (!restriction.IncludeParent || restriction.ParentType != type) {
                     return null;
